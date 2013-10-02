@@ -1,0 +1,3 @@
+[submodule "drupal/makes"]
+	path = drupal/makes
+	url = git@github.com:miromarchi/rbv_drupal_make.git
