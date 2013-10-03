@@ -8,4 +8,5 @@ It will then become a drupal distribution.
 
 structure of the project
 ------------------------
-We use git submodule to maintain the different repositories of this project tied under the same tree.
+We use `git submodules` to maintain the different repositories of this project tied under the same tree.
+Have a look at `.gitmodules` file for the complete list of submodules repositories.
