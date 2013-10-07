@@ -1,0 +1,15 @@
+name = Common fields
+description = All the common fields in one feature.
+core = 7.x
+package = RBV contents
+version = 7.x-1.0
+project = rbv_com_fields
+dependencies[] = addressfield
+dependencies[] = features
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_com_description
+features[field_base][] = field_com_location
+features[field_base][] = field_com_logo
+project path = sites/all/modules/features
