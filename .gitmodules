@@ -1,3 +1,6 @@
 [submodule "drupal/makes"]
 	path = drupal/makes
 	url = git@github.com:miromarchi/rbv_drupal_make.git
+[submodule "drupal/features/rbv_com_fields"]
+	path = drupal/features/rbv_com_fields
+	url = git@github.com:miromarchi/rbv_com_fields.git
