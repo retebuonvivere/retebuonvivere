@@ -7,3 +7,6 @@
 [submodule "drupal/features/rbv_org"]
 	path = drupal/features/rbv_org
 	url = git@github.com:miromarchi/rbv_org.git
+[submodule "drupal/features/rbv_project"]
+	path = drupal/features/rbv_project
+	url = git@github.com:miromarchi/rbv_project.git
