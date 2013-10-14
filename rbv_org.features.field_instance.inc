@@ -33,7 +33,7 @@ function rbv_org_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_categories',
-    'label' => 'Categorie',
+    'label' => 'Settori di attività',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -81,11 +81,11 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 12,
     ),
   );
 
@@ -128,6 +128,59 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-org-field_com_foundingdate'
+  $field_instances['node-org-field_com_foundingdate'] = array(
+    'bundle' => 'org',
+    'deleted' => 0,
+    'description' => 'Quando è stata fondata questa organizzazione?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_foundingdate',
+    'label' => 'Data di fondazione',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 30,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '1800:+0',
+      ),
+      'type' => 'date_popup',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-org-field_com_history'
   $field_instances['node-org-field_com_history'] = array(
     'bundle' => 'org',
@@ -164,7 +217,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 10,
+        'rows' => 6,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -184,7 +237,6 @@ function rbv_org_field_default_field_instances() {
         'locality' => '',
         'administrative_area' => '',
         'country' => 'IT',
-        'organisation_name' => '',
       ),
     ),
     'deleted' => 0,
@@ -320,11 +372,11 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 8,
+        'rows' => 4,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -446,7 +498,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'size' => 120,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -455,7 +507,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire le rarole chiave che specificano la propria organizzazione.',
+    'description' => 'Inserire le rarole chiave che descrivono la propria organizzazione.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -473,7 +525,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_tags',
-    'label' => 'Tags',
+    'label' => 'Prole chiave',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -487,59 +539,6 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-org-field_org_foundingdate'
-  $field_instances['node-org-field_org_foundingdate'] = array(
-    'bundle' => 'org',
-    'deleted' => 0,
-    'description' => 'Inseire la data di fondazione della propria organizzazione.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_org_foundingdate',
-    'label' => 'Data di fondazione',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 30,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '1800:+0',
-      ),
-      'type' => 'date_popup',
-      'weight' => 9,
     ),
   );
 
@@ -642,27 +641,27 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   // Included for use with string extractors like potx.
   t('Altro');
   t('Caricare l\'immagine logo dell\'organizzazione.');
-  t('Categorie');
   t('Data di fondazione');
   t('Descrizione');
   t('Determine if this is an OG group.');
   t('Email');
   t('Group');
   t('Indirizzo');
-  t('Inseire la data di fondazione della propria organizzazione.');
   t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
-  t('Inserire le rarole chiave che specificano la propria organizzazione.');
+  t('Inserire le rarole chiave che descrivono la propria organizzazione.');
   t('La storia della propria organizzazione. ');
   t('Logo');
   t('Mission');
   t('Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
 Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
+  t('Prole chiave');
+  t('Quando è stata fondata questa organizzazione?');
   t('Scegliere i settori di attività.');
+  t('Settori di attività');
   t('Slogan');
   t('Slogan (o tagline, o payoff): una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione.');
   t('Storia');
-  t('Tags');
   t('Telefono');
   t('Tipologia');
   t('Tipologia di organizzazione. Esempi: Associazione di Promozione Sociale, Associazione Onlus, Associazione Culturale, Cooperativa Sociale, Fondazione, Impresa sociale, Impresa monopersonale...');
