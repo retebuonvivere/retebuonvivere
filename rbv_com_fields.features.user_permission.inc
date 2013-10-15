@@ -13,14 +13,18 @@ function rbv_com_fields_user_default_permissions() {
   // Exported permission: 'delete terms in categories'.
   $permissions['delete terms in categories'] = array(
     'name' => 'delete terms in categories',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in org_types'.
   $permissions['delete terms in org_types'] = array(
     'name' => 'delete terms in org_types',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -36,14 +40,18 @@ function rbv_com_fields_user_default_permissions() {
   // Exported permission: 'edit terms in categories'.
   $permissions['edit terms in categories'] = array(
     'name' => 'edit terms in categories',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in org_types'.
   $permissions['edit terms in org_types'] = array(
     'name' => 'edit terms in org_types',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
