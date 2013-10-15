@@ -140,11 +140,6 @@ function rbv_org_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:org:update field_tags field'
-  $permissions['node:org:update field_tags field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:org:update group'
   $permissions['node:org:update group'] = array(
     'roles' => array(),
@@ -232,11 +227,6 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_org_type field'
   $permissions['node:org:view field_org_type field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:view field_tags field'
-  $permissions['node:org:view field_tags field'] = array(
     'roles' => array(),
   );
 
