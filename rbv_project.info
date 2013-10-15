@@ -1,4 +1,4 @@
-name = rbv_project
+name = Progetto
 description = Project content type
 core = 7.x
 package = RBV contents
@@ -46,8 +46,6 @@ features[field_instance][] = node-project-field_com_tagline
 features[field_instance][] = node-project-field_com_tags
 features[field_instance][] = node-project-og_group_ref
 features[node][] = project
-features[rdf_mappings][] = node-project
-features[schemaorg][] = node-project
 features[user_permission][] = create project content
 features[user_permission][] = delete any project content
 features[user_permission][] = delete own project content
