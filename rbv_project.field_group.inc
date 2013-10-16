@@ -25,8 +25,7 @@ function rbv_project_field_group_info() {
     'children' => array(
       0 => 'field_com_location',
       1 => 'field_com_email',
-      2 => 'field_com_phone',
-      3 => 'field_com_more_contacts',
+      2 => 'field_com_more_contacts',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
