@@ -221,7 +221,7 @@ function rbv_org_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 14,
+      'weight' => 10,
     ),
   );
 
@@ -456,7 +456,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'size' => 120,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -465,7 +465,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire le rarole chiave che descrivono la propria organizzazione.',
+    'description' => 'Inserire le parole chiave che descrivono la propria organizzazione.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -483,7 +483,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_tags',
-    'label' => 'Prole chiave',
+    'label' => 'Parole chiave',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -572,7 +572,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -645,14 +645,14 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Group');
   t('Indirizzo');
   t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
-  t('Inserire le rarole chiave che descrivono la propria organizzazione.');
+  t('Inserire le parole chiave che descrivono la propria organizzazione.');
   t('La storia della propria organizzazione. ');
   t('Logo');
   t('Mission');
   t('Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
 Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
-  t('Prole chiave');
+  t('Parole chiave');
   t('Quando è stata fondata questa organizzazione?');
   t('Scegliere i settori di attività.');
   t('Settori di attività');
