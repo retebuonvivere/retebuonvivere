@@ -120,11 +120,6 @@ function rbv_org_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:org:update field_com_phone field'
-  $permissions['node:org:update field_com_phone field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:org:update field_com_tagline field'
   $permissions['node:org:update field_com_tagline field'] = array(
     'roles' => array(),
@@ -132,6 +127,11 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:update field_com_tags field'
   $permissions['node:org:update field_com_tags field'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:org:update field_com_telephone field'
+  $permissions['node:org:update field_com_telephone field'] = array(
     'roles' => array(),
   );
 
@@ -210,11 +210,6 @@ function rbv_org_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:org:view field_com_phone field'
-  $permissions['node:org:view field_com_phone field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:org:view field_com_tagline field'
   $permissions['node:org:view field_com_tagline field'] = array(
     'roles' => array(),
@@ -222,6 +217,11 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_com_tags field'
   $permissions['node:org:view field_com_tags field'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:org:view field_com_telephone field'
+  $permissions['node:org:view field_com_telephone field'] = array(
     'roles' => array(),
   );
 
