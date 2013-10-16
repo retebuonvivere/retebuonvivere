@@ -481,7 +481,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_tags',
-    'label' => 'Prole chiave',
+    'label' => 'Parole chiave',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -611,7 +611,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
   t('Mission: la ragione d\'essere di questo progetto, che cosa intende fare per il mondo.
 Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo progetto? Perché lo facciamo?');
-  t('Prole chiave');
+  t('Parole chiave');
   t('Quando è iniziato questo progetto?');
   t('Raccontare la storia di questo progetto.');
   t('Scegliere i settori di impatto del progetto.');
