@@ -246,24 +246,6 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_com_phone'
-  $field_bases['field_com_phone'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_com_phone',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'phone',
-    'settings' => array(
-      'country' => 'it',
-    ),
-    'translatable' => 0,
-    'type' => 'phone',
-  );
-
   // Exported field_base: 'field_com_tagline'
   $field_bases['field_com_tagline'] = array(
     'active' => 1,
@@ -325,6 +307,22 @@ function rbv_com_fields_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_com_telephone'
+  $field_bases['field_com_telephone'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_com_telephone',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'telephone',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'telephone',
   );
 
   // Exported field_base: 'og_group_ref'
