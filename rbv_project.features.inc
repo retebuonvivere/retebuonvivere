@@ -24,7 +24,7 @@ function rbv_project_node_info() {
     'project' => array(
       'name' => t('Progetto'),
       'base' => 'node_content',
-      'description' => t('Un progetto iniziato dalla propria organizzazione. Sarà possibile indicare le altre organizzazioni collaboratrici.'),
+      'description' => t('Un progetto o attività iniziata dalla propria organizzazione. '),
       'has_title' => '1',
       'title_label' => t('Nome'),
       'help' => '',
@@ -175,6 +175,9 @@ function rbv_project_rdf_default_mappings() {
       'predicates' => array(
         0 => 'schema:telephone',
       ),
+    ),
+    'field_collaborates_on' => array(
+      'predicates' => array(),
     ),
   );
 

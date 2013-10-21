@@ -26,6 +26,7 @@ function rbv_project_field_group_info() {
       0 => 'field_com_email',
       1 => 'field_com_location',
       2 => 'field_com_more_contacts',
+      3 => 'field_com_telephone',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -56,6 +57,7 @@ function rbv_project_field_group_info() {
       1 => 'group_project_contacts',
       2 => 'group_project_description',
       3 => 'group_project_info',
+      4 => 'group_project_rel_proj_org',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(

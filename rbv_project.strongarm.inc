@@ -14,7 +14,7 @@ function rbv_project_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_project';
-  $strongarm->value = 'edit-schemaorg-ui';
+  $strongarm->value = 'edit-auto-nodetitle';
   $export['additional_settings__active_tab_project'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -130,6 +130,7 @@ function rbv_project_strongarm() {
   $strongarm->name = 'node_options_project';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_project'] = $strongarm;
 
@@ -144,7 +145,7 @@ function rbv_project_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_project';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_project'] = $strongarm;
 
   return $export;
