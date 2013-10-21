@@ -9,6 +9,8 @@ projects[views_bulk_operations][subdir] = "contrib"
 
 projects[addressfield][subdir] = "contrib"
 
+projects[auto_nodetitle][subdir] = "contrib"
+
 projects[ctools][subdir] = "contrib"
 
 projects[date][subdir] = "contrib"
@@ -26,6 +28,8 @@ projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-corre
 
 projects[features][subdir] = "contrib"
 
+projects[field_group][subdir] = "contrib"
+
 projects[libraries][subdir] = "contrib"
 
 projects[module_filter][subdir] = "contrib"
@@ -37,6 +41,10 @@ projects[pathauto][subdir] = "contrib"
 projects[rdfa][subdir] = "contrib"
 
 projects[schemaorg][subdir] = "contrib"
+
+projects[strongarm][subdir] = "contrib"
+
+projects[telephone][subdir] = "contrib"
 
 projects[token][subdir] = "contrib"
 
@@ -58,8 +66,26 @@ projects[rbv_project][download][url] = "git@github.com:miromarchi/rbv_project.gi
 projects[rbv_project][type] = "module"
 projects[rbv_project][subdir] = "features"
 
+projects[relation_content_type][download][type] = "git"
+projects[rbv_rel][download][url] = "git@github.com:miromarchi/rbv_rel.git"
+projects[relation_content_type][type] = "module"
+projects[relation_content_type][subdir] = "features"
+
+projects[rbv_view_explore][download][type] = "git"
+projects[rbv_view_explore][download][url] = "git@github.com:miromarchi/rbv_view_explore"
+projects[rbv_view_explore][type] = "module"
+projects[rbv_view_explore][subdir] = "features"
+
+projects[rbv_view_rel][download][type] = "git"
+projects[rbv_view_rel][download][url] = "git@github.com:miromarchi/rbv_view_rel"
+projects[rbv_view_rel][type] = "module"
+projects[rbv_view_rel][subdir] = "features"
+
 ; Libraries
 libraries[arc][download][type] = "file"
 libraries[arc][download][url] = "https://github.com/semsol/arc2/archive/master.zip"
 libraries[arc][directory_name] = "arc"
 libraries[arc][type] = "library"
+
+; Themes
+projects[responsive_bartik][version] = "1.x"
