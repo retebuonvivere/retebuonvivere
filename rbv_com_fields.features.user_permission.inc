@@ -28,6 +28,13 @@ function rbv_com_fields_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in relation_categories'.
+  $permissions['delete terms in relation_categories'] = array(
+    'name' => 'delete terms in relation_categories',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in tags'.
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
@@ -55,11 +62,19 @@ function rbv_com_fields_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in relation_categories'.
+  $permissions['edit terms in relation_categories'] = array(
+    'name' => 'edit terms in relation_categories',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in tags'.
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
+      'organization member' => 'organization member',
     ),
     'module' => 'taxonomy',
   );
