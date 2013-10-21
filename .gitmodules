@@ -16,3 +16,6 @@
 [submodule "drupal/features/rbv_view_explore"]
 	path = drupal/features/rbv_view_explore
 	url = git@github.com:miromarchi/rbv_view_explore.git
+[submodule "drupal/features/rbv_view_rel"]
+	path = drupal/features/rbv_view_rel
+	url = git@github.com:miromarchi/rbv_view_rel.git
