@@ -66,10 +66,10 @@ projects[rbv_project][download][url] = "git@github.com:miromarchi/rbv_project.gi
 projects[rbv_project][type] = "module"
 projects[rbv_project][subdir] = "features"
 
-projects[relation_content_type][download][type] = "git"
+projects[rbv_rel][download][type] = "git"
 projects[rbv_rel][download][url] = "git@github.com:miromarchi/rbv_rel.git"
-projects[relation_content_type][type] = "module"
-projects[relation_content_type][subdir] = "features"
+projects[rbv_rel][type] = "module"
+projects[rbv_rel][subdir] = "features"
 
 projects[rbv_view_explore][download][type] = "git"
 projects[rbv_view_explore][download][url] = "git@github.com:miromarchi/rbv_view_explore"
