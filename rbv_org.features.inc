@@ -186,6 +186,18 @@ function rbv_org_rdf_default_mappings() {
         0 => 'schema:telephone',
       ),
     ),
+    'field_org_relation' => array(
+      'predicates' => array(),
+    ),
+    'field_collabora_con' => array(
+      'predicates' => array(),
+    ),
+    'field_collaborates_with' => array(
+      'predicates' => array(),
+    ),
+    'field_collaborates_on' => array(
+      'predicates' => array(),
+    ),
   );
 
   return $schemaorg;

@@ -39,13 +39,28 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:create relation content'
+  $permissions['node:org:create relation content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:org:delete any project content'
   $permissions['node:org:delete any project content'] = array(
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:org:delete any relation content'
+  $permissions['node:org:delete any relation content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:org:delete own project content'
   $permissions['node:org:delete own project content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:org:delete own relation content'
+  $permissions['node:org:delete own relation content'] = array(
     'roles' => array(),
   );
 
@@ -87,6 +102,11 @@ function rbv_org_og_features_default_permissions() {
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
     ),
+  );
+
+  // Exported og permission: 'node:org:update any relation content'
+  $permissions['node:org:update any relation content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:org:update field_com_categories field'
@@ -192,6 +212,30 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:update field_rel_categories field'
+  $permissions['node:org:update field_rel_categories field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:update field_rel_source field'
+  $permissions['node:org:update field_rel_source field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:update field_rel_target field'
+  $permissions['node:org:update field_rel_target field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:update group'
   $permissions['node:org:update group'] = array(
     'roles' => array(
@@ -223,6 +267,11 @@ function rbv_org_og_features_default_permissions() {
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
     ),
+  );
+
+  // Exported og permission: 'node:org:update own relation content'
+  $permissions['node:org:update own relation content'] = array(
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:org:view field_com_categories field'
@@ -347,6 +396,36 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_org_type field'
   $permissions['node:org:view field_org_type field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:view field_rel_categories field'
+  $permissions['node:org:view field_rel_categories field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:view field_rel_source field'
+  $permissions['node:org:view field_rel_source field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:view field_rel_target field'
+  $permissions['node:org:view field_rel_target field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',

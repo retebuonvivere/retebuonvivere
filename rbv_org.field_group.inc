@@ -51,12 +51,14 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dati',
-    'weight' => '4',
+    'weight' => '2',
     'children' => array(
       0 => 'group_org_history',
       1 => 'group_org_contacts',
       2 => 'group_org_description',
       3 => 'group_org_info',
+      4 => 'group_org_rel_org_org',
+      5 => 'group_org_rel_org_proj',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
