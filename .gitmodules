@@ -19,3 +19,6 @@
 [submodule "drupal/features/rbv_view_rel"]
 	path = drupal/features/rbv_view_rel
 	url = git@github.com:miromarchi/rbv_view_rel.git
+[submodule "drupal/features/rbv_siteinfo"]
+	path = drupal/features/rbv_siteinfo
+	url = git@github.com:miromarchi/rbv_siteinfo.git
