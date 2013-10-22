@@ -81,6 +81,11 @@ projects[rbv_view_rel][download][url] = "git@github.com:miromarchi/rbv_view_rel"
 projects[rbv_view_rel][type] = "module"
 projects[rbv_view_rel][subdir] = "features"
 
+projects[rbv_siteinfo][download][type] = "git"
+projects[rbv_siteinfo][download][url] = "git@github.com:miromarchi/rbv_siteinfo"
+projects[rbv_siteinfo][type] = "module"
+projects[rbv_siteinfo][subdir] = "features"
+
 ; Libraries
 libraries[arc][download][type] = "file"
 libraries[arc][download][url] = "https://github.com/semsol/arc2/archive/master.zip"
