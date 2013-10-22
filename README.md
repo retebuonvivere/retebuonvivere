@@ -22,8 +22,12 @@ Expecially we are going to:
   * hence using features to store hard-configuration 
   * and installation profile to store soft-configuration.
 
+start
+-----
+Start from the drupal [makefile][5] to build the latest website configuration.
 
 [1]: http://nuvole.org/blog/code-driven-development
 [2]: http://nuvole.org/blog/2012/feb/07/hard-and-soft-configuration-drupal-distributions
 [3]: http://nuvole.org/blog/2010/aug/24/features-based-development-workflow
 [4]: https://drupal.org/project/openatrium
+[5]: https://github.com/miromarchi/rbv_drupal_make
