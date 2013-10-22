@@ -139,6 +139,7 @@ features[variable][] = menu_parent_org
 features[variable][] = node_options_org
 features[variable][] = node_preview_org
 features[variable][] = node_submitted_org
+features[variable][] = pathauto_node_org_pattern
 features_exclude[field_base][field_com_description] = field_com_description
 features_exclude[field_base][field_com_logo] = field_com_logo
 features_exclude[field_base][field_com_location] = field_com_location
