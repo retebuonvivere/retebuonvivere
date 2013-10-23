@@ -31,7 +31,9 @@ function rbv_com_fields_user_default_permissions() {
   // Exported permission: 'delete terms in relation_categories'.
   $permissions['delete terms in relation_categories'] = array(
     'name' => 'delete terms in relation_categories',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -65,7 +67,9 @@ function rbv_com_fields_user_default_permissions() {
   // Exported permission: 'edit terms in relation_categories'.
   $permissions['edit terms in relation_categories'] = array(
     'name' => 'edit terms in relation_categories',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
