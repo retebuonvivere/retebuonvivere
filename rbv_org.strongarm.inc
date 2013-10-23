@@ -155,5 +155,40 @@ function rbv_org_strongarm() {
   $strongarm->value = 'organizzazioni/[node:title]';
   $export['pathauto_node_org_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_rdftype_org';
+  $strongarm->value = 'schema:Organization, sioc:Item, foaf:Document';
+  $export['rdf_rdftype_org'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_title_datatype_org';
+  $strongarm->value = '';
+  $export['rdf_title_datatype_org'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_title_predicates_org';
+  $strongarm->value = 'schema:name';
+  $export['rdf_title_predicates_org'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_title_type_org';
+  $strongarm->value = 'property';
+  $export['rdf_title_type_org'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'schemaorg_ui_type_org';
+  $strongarm->value = 'Organization';
+  $export['schemaorg_ui_type_org'] = $strongarm;
+
   return $export;
 }
