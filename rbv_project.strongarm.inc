@@ -158,6 +158,34 @@ function rbv_project_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_rdftype_project';
+  $strongarm->value = 'schema:Organization/Project, sioc:Item, foaf:Document';
+  $export['rdf_rdftype_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_title_datatype_project';
+  $strongarm->value = '';
+  $export['rdf_title_datatype_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_title_predicates_project';
+  $strongarm->value = 'schema:name';
+  $export['rdf_title_predicates_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rdf_title_type_project';
+  $strongarm->value = 'property';
+  $export['rdf_title_type_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'schemaorg_ui_type_project';
   $strongarm->value = 'Organization/Project';
   $export['schemaorg_ui_type_project'] = $strongarm;
