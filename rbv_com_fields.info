@@ -10,6 +10,7 @@ dependencies[] = email
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = image
+dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = telephone
 dependencies[] = text
