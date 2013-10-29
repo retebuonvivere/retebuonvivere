@@ -11,15 +11,15 @@ This repository is a submodule of [retebuonvivere] [1]
 
 Start
 -----
-Create a new drupal installation with [drush] [3] from this makefile following [these] [2] instructions. 
+Create a new drupal installation with [drush] [3] from this makefile following [these] [2] instructions: 
 
-Download all the modules, themes, libraries in the right directories.
+Download all the modules, themes, libraries and patches in the right directories with the following command:
     
     drush make retebuonvivere.make sitename
 
-Create new db with all permission
+Create new db with all permission.
 
-Install drupal with standard profile
+Install drupal with standard profile with the following command:
     
     drush site-install standard --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
 
