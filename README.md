@@ -39,8 +39,8 @@ If you want to **contribute** to this civil society network tool, great! Chose y
 
 You can start from the drupal [makefile][5] to build the latest website configuration.
 
-rationale of this project
--------------------------
+rationale of the project
+------------------------
 Civil society organizations (CSO) are non-profit associations, [cooperatives][23], [social enterprises][22], citizens' committees, [ethical purchasing groups][11], and many more.
 
 CSO have many projects on the field, and they cooperate with each other on projects. They can even be associated in networks.
