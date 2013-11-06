@@ -1,5 +1,13 @@
 retebuonvivere
 ==============
+table of contents
+* [what is retebuonvivere.org](https://github.com/fonzy85vr/retebuonvivere#what-is-retebuonvivereorg)
+* [structure of the project](https://github.com/fonzy85vr/retebuonvivere#structure-of-the-project)
+* [developing](https://github.com/fonzy85vr/retebuonvivere#developing)
+* [start](https://github.com/fonzy85vr/retebuonvivere#start)
+* [rationale of this project](https://github.com/fonzy85vr/retebuonvivere#rationale-of-the-project)
+* [promoters](https://github.com/fonzy85vr/retebuonvivere#promoters)
+* [technical staff](https://github.com/fonzy85vr/retebuonvivere#technical-staff)
 
 what is retebuonvivere.org
 --------------------------
@@ -31,7 +39,7 @@ If you want to **contribute** to this civil society network tool, great! Chose y
 
 You can start from the drupal [makefile][5] to build the latest website configuration.
 
-Rationale of this project
+rationale of this project
 -------------------------
 Civil society organizations (CSO) are non-profit associations, [cooperatives][23], [social enterprises][22], citizens' committees, [ethical purchasing groups][11], and many more.
 
@@ -51,13 +59,13 @@ This site is aimed as the main platform, main tool of representation and self-re
 
 Check out the [wiki][9] for more detailed documentation.
 
-Promoters
+promoters
 ---------
 This project is promoted by two CSO networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
 Check out [this page][17] about retebuonvivere.org project at Mag's website.
 And this [list of posts][18] about retebuonvivere project and events related to retebuonvivere project at Naturalmente Verona's website.
 
-Technical staff
+technical staff
 ---------------
 * Sirio Marchi [ohjimijimijimi][19] as drupal supervisor
 * Marco Andreoli [fonzy85vr][20] as programmer
