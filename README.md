@@ -3,7 +3,8 @@ retebuonvivere
 
 what is retebuonvivere.org
 --------------------------
-Basically retebuonvivere.org will be a [drupal][6] website for the community of the civil society of the province of Verona, Italy. 
+Basically retebuonvivere.org will be a [drupal][6] website for the community of the civil society organizations (CSO) of the province of Verona, Italy. 
+
 It will then become a drupal distribution, or we can work on top of one of the social distributions out there, e.g. [Open Atrium 2][4] and [Drupal Commons 3][8], or on top of a base distribution as [Panopoly][7].
 
 structure of the project
@@ -24,14 +25,45 @@ Expecially we are going to:
 
 start
 -----
-If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
-You can start from the drupal [makefile][5] to build the latest website configuration.
 Start from the [wiki documentation pages][9] where you can see retebuonvivere features, which features are already **[done]** with links to repositories, which features are still missing **[____]**.
 
+If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
 
-this README *todo*
-----------------
-* Add a section for the rationale of this project
+You can start from the drupal [makefile][5] to build the latest website configuration.
+
+Rationale of this project
+-------------------------
+Civil society organizations (CSO) are non-profit associations, [cooperatives][23], [social enterprises][22], citizens' committees, [ethical purchasing groups][11], and many more.
+
+CSO have many projects on the field, and they cooperate with each other on projects. They can even be associated in networks.
+
+CSO cooperates also with other groups: Government and local government organizations, and business organizations. 
+
+CSO share some high level objectives: 
+* [sustainability][12] (we act to enhance sustainability of the planet); 
+* [happiness][13] (we want and we cooperate in order to have a joyful life);
+* the [commons paradigm][10] (*we take care*! we don't wait for things to descend from above, top-down. We do it bottom-up. This way only we can achieve a social organization able to maintain sustainability);
+* [social justice][14] (bottom-up, sustainable and joyful also imply the respect of rights, recognizing diversity but pursuing social equality and solidarity).
+
+CSO are organized bottom-up from the individual CSO to local network, up to national, regional, international and global networks. We have also cross-cutting ties.
+
+This site is aimed as the main platform, main tool of representation and self-representation of the local level CSO network of the province of Verona, Italy, but in the spirit of open source community software is also aimed at being distributed to other local level networks.
+
+Check out the [wiki][9] for more detailed documentation.
+
+Promoters
+---------
+This project is promoted by two CSO networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
+Check out [this page][17] about retebuonvivere.org project at Mag's website.
+And this [list of posts][18] about retebuonvivere project and events related to retebuonvivere project at Naturalmente Verona's website.
+
+Technical staff
+---------------
+* Sirio Marchi [ohjimijimijimi][19] as drupal supervisor
+* Marco Andreoli [fonzy85vr][20] as programmer
+* Miro Marchi [miromarchi][21] as drupal configurator (I'm the anthropologist!)
+* [+ you :-D](https://github.com/fonzy85vr/retebuonvivere/edit/master/README.md#start)
+
 
 [1]: http://nuvole.org/blog/code-driven-development
 [2]: http://nuvole.org/blog/2012/feb/07/hard-and-soft-configuration-drupal-distributions
@@ -42,3 +74,17 @@ this README *todo*
 [7]: https://drupal.org/project/panopoly
 [8]: https://drupal.org/project/commons
 [9]: https://github.com/fonzy85vr/retebuonvivere/wiki
+[10]: https://en.wikipedia.org/wiki/Commons
+[11]: https://en.wikipedia.org/wiki/Ethical_purchasing_groups
+[12]: https://en.wikipedia.org/wiki/Sustainability
+[13]: https://en.wikipedia.org/wiki/Happiness
+[14]: https://en.wikipedia.org/wiki/Social_justice
+[15]: http://www.magverona.it/
+[16]: http://www.naturalmenteverona.org/
+[17]: http://www.magverona.it/la-rete-del-buon-vivere-org/
+[18]: http://www.naturalmenteverona.org/tag/portale-del-terzo-settore/
+[19]: https://github.com/ohjimijimijimi
+[20]: https://github.com/fonzy85vr
+[21]: https://github.com/miromarchi
+[22]: https://en.wikipedia.org/wiki/Social_entrepreneurship
+[23]: https://en.wikipedia.org/wiki/Cooperative
