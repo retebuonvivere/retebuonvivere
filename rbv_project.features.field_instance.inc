@@ -170,6 +170,7 @@ function rbv_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 30,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -543,10 +544,62 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     ),
   );
 
+  // Exported field_instance: 'node-project-group_access'
+  $field_instances['node-project-group_access'] = array(
+    'bundle' => 'project',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_access',
+    'label' => 'Group visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'options_onoff',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'options_onoff',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+    'widget_type' => 'options_select',
+  );
+
   // Exported field_instance: 'node-project-og_group_ref'
   $field_instances['node-project-og_group_ref'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -570,7 +623,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -581,6 +634,14 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'hide',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => 'administer group',
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -598,6 +659,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -612,6 +674,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
   t('Descrivere questo progetto, cos\'è, cosa fà...');
   t('Descrizione');
   t('Email');
+  t('Group visibility');
   t('Groups audience');
   t('Indirizzo');
   t('Le parole chiave che definiscono questo progetto.');
