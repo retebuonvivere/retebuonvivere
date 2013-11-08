@@ -78,6 +78,7 @@ function rbv_com_fields_user_default_permissions() {
     'name' => 'edit terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
       'organization member' => 'organization member',
     ),
     'module' => 'taxonomy',

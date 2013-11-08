@@ -382,21 +382,15 @@ function rbv_com_fields_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'og',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'og_behavior' => array(
-            'status' => TRUE,
-          ),
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'membership_type' => 'og_membership_type_default',
         'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'title',
-          'type' => 'property',
+          'type' => 'none',
         ),
         'target_bundles' => array(
           'org' => 'org',
@@ -439,13 +433,10 @@ function rbv_com_fields_field_default_field_bases() {
           ),
         ),
         'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'title',
-          'type' => 'property',
+          'type' => 'none',
         ),
         'target_bundles' => array(
           'org' => 'org',
-          'project' => 'project',
         ),
       ),
       'target_type' => 'node',
@@ -483,10 +474,16 @@ function rbv_com_fields_field_default_field_bases() {
           'og_behavior' => array(
             'status' => TRUE,
           ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
         ),
         'membership_type' => 'og_membership_type_default',
+        'sort' => array(
+          'type' => 'none',
+        ),
         'target_bundles' => array(
-          0 => 'org',
+          'org' => 'org',
         ),
       ),
       'handler_submit' => 'Change handler',
