@@ -36,9 +36,13 @@ projects[module_filter][subdir] = "contrib"
 
 projects[og][subdir] = "contrib"
 
+projects[panels][subdir] = "contrib"
+
 projects[pathauto][subdir] = "contrib"
 
 projects[rdfa][subdir] = "contrib"
+
+projects[rules][subdir] = "contrib"
 
 projects[schemaorg][subdir] = "contrib"
 
@@ -72,17 +76,22 @@ projects[rbv_rel][type] = "module"
 projects[rbv_rel][subdir] = "features"
 
 projects[rbv_view_explore][download][type] = "git"
-projects[rbv_view_explore][download][url] = "git@github.com:miromarchi/rbv_view_explore"
+projects[rbv_view_explore][download][url] = "git@github.com:miromarchi/rbv_view_explore.git"
 projects[rbv_view_explore][type] = "module"
 projects[rbv_view_explore][subdir] = "features"
 
+projects[rbv_view_groupcontent][download][type] = "git"
+projects[rbv_view_groupcontent][download][url] = "git@github.com:miromarchi/rbv_view_groupcontent.git"
+projects[rbv_view_groupcontent][type] = "module"
+projects[rbv_view_groupcontent][subdir] = "features"
+
 projects[rbv_view_rel][download][type] = "git"
-projects[rbv_view_rel][download][url] = "git@github.com:miromarchi/rbv_view_rel"
+projects[rbv_view_rel][download][url] = "git@github.com:miromarchi/rbv_view_rel.git"
 projects[rbv_view_rel][type] = "module"
 projects[rbv_view_rel][subdir] = "features"
 
 projects[rbv_siteinfo][download][type] = "git"
-projects[rbv_siteinfo][download][url] = "git@github.com:miromarchi/rbv_siteinfo"
+projects[rbv_siteinfo][download][url] = "git@github.com:miromarchi/rbv_siteinfo.git"
 projects[rbv_siteinfo][type] = "module"
 projects[rbv_siteinfo][subdir] = "features"
 
