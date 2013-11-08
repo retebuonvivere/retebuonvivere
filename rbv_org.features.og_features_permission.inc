@@ -251,6 +251,14 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:update group_access field'
+  $permissions['node:org:update group_access field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:update group_group field'
   $permissions['node:org:update group_group field'] = array(
     'roles' => array(),
@@ -258,7 +266,10 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:update og_group_ref field'
   $permissions['node:org:update og_group_ref field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
   );
 
   // Exported og permission: 'node:org:update own project content'
@@ -437,13 +448,21 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:view group_access field'
+  $permissions['node:org:view group_access field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:org:view group_group field'
   $permissions['node:org:view group_group field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
       'member' => 'member',
-      'non-member' => 'non-member',
     ),
   );
 
