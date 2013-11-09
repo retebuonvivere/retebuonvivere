@@ -22,3 +22,9 @@
 [submodule "drupal/features/rbv_siteinfo"]
 	path = drupal/features/rbv_siteinfo
 	url = git@github.com:miromarchi/rbv_siteinfo.git
+[submodule "drupal/features/rbv_view_groupcontent"]
+	path = drupal/features/rbv_view_groupcontent
+	url = git@github.com:miromarchi/rbv_view_groupcontent.git
+[submodule "drupal/features/rbv_sparql"]
+	path = drupal/features/rbv_sparql
+	url = git@github.com:miromarchi/rbv_sparql.git
