@@ -9,6 +9,8 @@ projects[views_bulk_operations][subdir] = "contrib"
 
 projects[addressfield][subdir] = "contrib"
 
+projects[arc2_store][subdir] = "contrib"
+
 projects[auto_nodetitle][subdir] = "contrib"
 
 projects[ctools][subdir] = "contrib"
@@ -22,6 +24,8 @@ projects[email][subdir] = "contrib"
 projects[entity][subdir] = "contrib"
 
 projects[entityreference][subdir] = "contrib"
+
+projects[entityreference_prepopulate][subdir] = "contrib"
 
 projects[rdfx][subdir] = "contrib"
 projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-correctly-1176666-14.patch
@@ -42,9 +46,13 @@ projects[pathauto][subdir] = "contrib"
 
 projects[rdfa][subdir] = "contrib"
 
+projects[rdf_indexer][subdir] = "contrib"
+
 projects[rules][subdir] = "contrib"
 
 projects[schemaorg][subdir] = "contrib"
+
+projects[search_api][subdir] = "contrib"
 
 projects[strongarm][subdir] = "contrib"
 
@@ -75,6 +83,11 @@ projects[rbv_rel][download][url] = "git@github.com:miromarchi/rbv_rel.git"
 projects[rbv_rel][type] = "module"
 projects[rbv_rel][subdir] = "features"
 
+projects[rbv_relpro][download][type] = "git"
+projects[rbv_relpro][download][url] = "git@github.com:miromarchi/rbv_relpro.git"
+projects[rbv_relpro][type] = "module"
+projects[rbv_relpro][subdir] = "features"
+
 projects[rbv_view_explore][download][type] = "git"
 projects[rbv_view_explore][download][url] = "git@github.com:miromarchi/rbv_view_explore.git"
 projects[rbv_view_explore][type] = "module"
@@ -94,6 +107,11 @@ projects[rbv_siteinfo][download][type] = "git"
 projects[rbv_siteinfo][download][url] = "git@github.com:miromarchi/rbv_siteinfo.git"
 projects[rbv_siteinfo][type] = "module"
 projects[rbv_siteinfo][subdir] = "features"
+
+projects[rbv_sparql][download][type] = "git"
+projects[rbv_sparql][download][url] = "git@github.com:miromarchi/rbv_sparql.git"
+projects[rbv_sparql][type] = "module"
+projects[rbv_sparql][subdir] = "features"
 
 ; Libraries
 libraries[arc][download][type] = "file"
