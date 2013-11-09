@@ -28,3 +28,6 @@
 [submodule "drupal/features/rbv_sparql"]
 	path = drupal/features/rbv_sparql
 	url = git@github.com:miromarchi/rbv_sparql.git
+[submodule "drupal/features/rbv_relpro"]
+	path = drupal/features/rbv_relpro
+	url = git@github.com:miromarchi/rbv_relpro.git
