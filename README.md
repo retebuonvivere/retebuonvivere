@@ -33,7 +33,7 @@ Expecially we are going to:
 
 start
 -----
-Start from the [wiki documentation pages][9] where you can see retebuonvivere features, which features are already **[done]** with links to repositories, which features are still missing **[____]**.
+Start from the **[wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** with links to repositories, which features are still missing **[____]**.
 
 If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
 
