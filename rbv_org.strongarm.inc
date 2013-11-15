@@ -69,6 +69,20 @@ function rbv_org_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_view_modes';
+  $strongarm->value = array(
+    'node' => array(
+      'vmode_group_content' => array(
+        'label' => 'VMode group content',
+        'custom settings' => 1,
+      ),
+    ),
+  );
+  $export['entity_view_modes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__org';
   $strongarm->value = array(
     'view_modes' => array(
@@ -92,6 +106,9 @@ function rbv_org_strongarm() {
       ),
       'token' => array(
         'custom_settings' => FALSE,
+      ),
+      'vmode_group_content' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(

@@ -137,11 +137,13 @@ function rbv_org_default_page_manager_handlers() {
       'types' => array(),
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Aggiungi Contenuti',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -159,8 +161,8 @@ function rbv_org_default_page_manager_handlers() {
       'context' => array(
         0 => 'argument_entity_id:node_1',
       ),
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Persone',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -176,7 +178,7 @@ function rbv_org_default_page_manager_handlers() {
     $pane->pid = 'new-4';
     $pane->panel = 'left_region';
     $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_view_groupcontent-panel_pane_2';
+    $pane->subtype = 'rbv_view_groupcontent-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -198,7 +200,7 @@ function rbv_org_default_page_manager_handlers() {
     $pane->pid = 'new-5';
     $pane->panel = 'left_region';
     $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_view_groupcontent-panel_pane_1';
+    $pane->subtype = 'rbv_view_groupcontent-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -216,6 +218,28 @@ function rbv_org_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-5'] = $pane;
     $display->panels['left_region'][3] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'left_region';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_groupcontent-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['left_region'][4] = 'new-6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;

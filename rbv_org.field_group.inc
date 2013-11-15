@@ -198,9 +198,9 @@ function rbv_org_field_group_info() {
     'label' => 'Info',
     'weight' => '1',
     'children' => array(
-      0 => 'field_org_type',
-      1 => 'field_com_logo',
-      2 => 'field_com_tagline',
+      0 => 'field_com_logo',
+      1 => 'field_com_tagline',
+      2 => 'field_org_type',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
