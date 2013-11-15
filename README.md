@@ -61,7 +61,7 @@ CSSEO share some high level (system level) aims/purposes and values:
 * the [commons paradigm][10] (*we take care*! We don't wait for things to descend from above, top-down. We do it bottom-up. This way only, we can achieve a social organization able to maintain sustainability);
 * [social justice][14] (bottom-up, sustainable and joyful also imply the respect of rights, recognizing diversity but pursuing social equality and solidarity).
 
-CSSEO are organized bottom-up from the individual CSO to local network, up to national, regional, international and global networks. We have also cross-cutting ties.
+CSSEO are organized bottom-up from the individual CSSEO to local network, up to national, regional, international and global networks. We have also cross-cutting ties.
 
 This site is aimed as the main platform, main tool of representation and self-representation of the local level CSSEO network of the province of Verona, Italy, but in the spirit of open source community software is also aimed at being distributed to other local level networks.
 
