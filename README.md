@@ -69,7 +69,7 @@ Check out the [wiki][9] for more detailed documentation.
 
 promoters
 ---------
-This project is promoted by two CSO networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
+This project is promoted by two CSSEO networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
 Check out [this page][17] about retebuonvivere.org project at Mag's website.
 And this [list of posts][18] about retebuonvivere project and events related to retebuonvivere project at Naturalmente Verona's website.
 
