@@ -51,7 +51,6 @@ features[field_instance][] = node-project-field_com_telephone
 features[field_instance][] = node-project-group_access
 features[field_instance][] = node-project-og_group_ref
 features[node][] = project
-features[rdf_mappings][] = node-project
 features[schemaorg][] = node-project
 features[user_permission][] = create project content
 features[user_permission][] = delete any project content

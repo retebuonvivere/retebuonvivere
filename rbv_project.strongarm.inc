@@ -93,6 +93,9 @@ function rbv_project_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'vmode_group_content' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
