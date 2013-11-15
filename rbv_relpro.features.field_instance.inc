@@ -30,6 +30,12 @@ function rbv_relpro_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_description',
@@ -77,6 +83,12 @@ function rbv_relpro_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_foundingdate',
@@ -118,7 +130,7 @@ function rbv_relpro_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -126,6 +138,12 @@ function rbv_relpro_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -140,7 +158,7 @@ function rbv_relpro_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -157,9 +175,10 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => 1,
+          'links' => 0,
+          'view_mode' => 'vmode_group_content',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -170,6 +189,12 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         ),
         'type' => 'entityreference_label',
         'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -197,22 +222,23 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
     ),
   );
 
-  // Exported field_instance: 'node-collaboration-field_rel_target'
-  $field_instances['node-collaboration-field_rel_target'] = array(
+  // Exported field_instance: 'node-collaboration-field_relpro_project'
+  $field_instances['node-collaboration-field_relpro_project'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'Selezionare l\'organizzazione con cui si coopera. La capacità di modificare i dati di questa relazione verrà estesa ad entrambe le organizzazioni facendo della relazione un contenuto condiviso.',
+    'description' => 'Il progetto a cui si collabora.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => 1,
+          'links' => 0,
+          'view_mode' => 'vmode_group_content',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -223,10 +249,20 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'type' => 'entityreference_label',
         'weight' => 2,
       ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'vmode_group_content',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rel_target',
-    'label' => 'Soggetto 2',
+    'field_name' => 'field_relpro_project',
+    'label' => 'Progetto',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -245,7 +281,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -270,6 +306,12 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'type' => 'hidden',
         'weight' => 5,
       ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
@@ -287,7 +329,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'disable',
+          'action' => 'hide',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'og_context' => 0,
@@ -323,13 +365,13 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
   t('Data di inizio');
   t('Descrizione della relazione');
   t('Groups audience');
+  t('Il progetto a cui si collabora.');
+  t('Progetto');
   t('Relazione');
   t('Scegliere le parole chiave che caratterizzano la relazione.');
-  t('Selezionare l\'organizzazione con cui si coopera. La capacità di modificare i dati di questa relazione verrà estesa ad entrambe le organizzazioni facendo della relazione un contenuto condiviso.');
   t('Selezionare la propria organizzazione.
 Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la relazione verrà attribuita all\'organizzazione indicata (quindi non sarete più in grado di modificare la relazione e i suoi dati).');
   t('Soggetto 1');
-  t('Soggetto 2');
 
   return $field_instances;
 }

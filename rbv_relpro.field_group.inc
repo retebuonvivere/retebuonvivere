@@ -101,20 +101,21 @@ function rbv_relpro_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Relazione',
+    'label' => 'Collaborazione',
     'weight' => '0',
     'children' => array(
       0 => 'field_rel_source',
-      1 => 'field_rel_target',
-      2 => 'field_rel_categories',
+      1 => 'field_rel_categories',
+      2 => 'field_relpro_project',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Collaborazione',
       'instance_settings' => array(
-        'description' => '',
         'classes' => 'group-relpro-dis-relation field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_relpro_dis_relation|node|collaboration|default'] = $field_group;
@@ -129,21 +130,22 @@ function rbv_relpro_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_relpro_data';
   $field_group->data = array(
-    'label' => 'Relazione',
+    'label' => 'Collaborazione',
     'weight' => '4',
     'children' => array(
       0 => 'field_rel_source',
-      1 => 'field_rel_target',
-      2 => 'field_rel_categories',
+      1 => 'field_rel_categories',
+      2 => 'field_relpro_project',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Collaborazione',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-relpro-relation field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-relpro-relation field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_relpro_relation|node|collaboration|form'] = $field_group;
