@@ -12,9 +12,8 @@ table of contents
 
 what is retebuonvivere.org
 --------------------------
-Basically retebuonvivere.org will be a [drupal][6] website for the community (the network) of the civil society and social economy organizations (CSSEO) of the province of Verona, Italy. 
-
-It will then become a drupal distribution (allowing other network to use it), or we can work on top of one of the social distributions out there, e.g. [Open Atrium 2][4] and [Drupal Commons 3][8], or on top of a base distribution as [Panopoly][7].
+Basically retebuonvivere.org will be a [drupal][6] website for the community (the network) of the civil society and social economy organizations (CSSEO) of the province of Verona, Italy.
+It will then become a drupal distribution (allowing other networks to use it).
 
 structure of the project
 ------------------------
@@ -23,25 +22,19 @@ Have a look at `.gitmodules` file for the complete list of submodules repositori
 
 developing
 ----------
-We are going to follow a *code-driven development* workflow for our custom modules and configuration, in order to boost teamworking. 
-Reference for this can be found at [nuvole.org/blog/code-driven-development][1]. 
+We are going to follow a *code-driven development* workflow for our custom modules and configuration, in order to boost teamworking.
 
-Expecially we are going to:
-* use [features][3]
-* follow the distinction between [soft-configuration and hard-configuration][2]
-  * hence using features to store hard-configuration 
-  * and installation profile to store soft-configuration.
-* We don't yet make use of `hook_update_N()` and `hook_install()`, nor we have a controller feature, only because I (miro) am not capable of implementing these workflow techniques without the help of a programmer.
+The [developing wiki][4] is the main place for documentation on this.
 
 start
 -----
 This README is *the* place where to start! This repo is the main repo.
 
-From here you can go to the **[wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** (with links to repositories), which features are still missing **[____]**, the priority of each feature and more info.
+From here you can go to the **[main wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** (with links to repositories), which features are still missing **[____]**, the priority of each feature and more info.
 
 If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
 
-You can start from the drupal [makefile][5] to build the latest website configuration.
+You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous paragraph), or visit the demo site (see next paragraph).
 
 demo
 ----
@@ -63,8 +56,7 @@ CSSEO share some high level (system level) aims/purposes and values:
 
 CSSEO are organized bottom-up from the individual CSSEO to local network, up to national, regional, international and global networks. We have also cross-cutting ties.
 
-This site is aimed as the main platform, main tool of representation and self-representation of the local level CSSEO network of the province of Verona, Italy, but in the spirit of open source community software is also aimed at being distributed to other local level networks.
-
+This site is aimed as the main platform, main tool of representation and self-representation of the local level CSSEO network of the province of Verona, Italy, but in the spirit of open source community software is also aimed at being distributed to other local level networks. 
 Check out the [wiki][9] for more detailed documentation.
 
 promoters
@@ -84,11 +76,10 @@ technical staff
 [1]: http://nuvole.org/blog/code-driven-development
 [2]: http://nuvole.org/blog/2012/feb/07/hard-and-soft-configuration-drupal-distributions
 [3]: http://nuvole.org/blog/2010/aug/24/features-based-development-workflow
-[4]: https://drupal.org/project/openatrium
+[4]: https://github.com/miromarchi/rbv_profile/wiki
 [5]: https://github.com/miromarchi/rbv_drupal_make
 [6]: https://drupal.org/
-[7]: https://drupal.org/project/panopoly
-[8]: https://drupal.org/project/commons
+
 [9]: https://github.com/fonzy85vr/retebuonvivere/wiki
 [10]: https://en.wikipedia.org/wiki/Commons
 [11]: https://en.wikipedia.org/wiki/Ethical_purchasing_groups
