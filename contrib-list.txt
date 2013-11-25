@@ -1,1 +1,1 @@
-drush dl views_bulk_operations addressfield auto_nodetitle ctools date diff email entity entityreference entityreference_prepopulate rdfx features field_group libraries module_filter og panels pathauto rdfa rules schemaorg search_api strongarm telephone token views responsive_bartik
+drush dl -y addressfield auto_nodetitle diff email entityreference_prepopulate rdfx og rdfa rules schemaorg telephone
