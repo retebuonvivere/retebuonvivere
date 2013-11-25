@@ -10,6 +10,69 @@
 function rbv_org_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer panelizer node org breadcrumbs'.
+  $permissions['administer panelizer node org breadcrumbs'] = array(
+    'name' => 'administer panelizer node org breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node org content'.
+  $permissions['administer panelizer node org content'] = array(
+    'name' => 'administer panelizer node org content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node org context'.
+  $permissions['administer panelizer node org context'] = array(
+    'name' => 'administer panelizer node org context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node org defaults'.
+  $permissions['administer panelizer node org defaults'] = array(
+    'name' => 'administer panelizer node org defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node org layout'.
+  $permissions['administer panelizer node org layout'] = array(
+    'name' => 'administer panelizer node org layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node org overview'.
+  $permissions['administer panelizer node org overview'] = array(
+    'name' => 'administer panelizer node org overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node org settings'.
+  $permissions['administer panelizer node org settings'] = array(
+    'name' => 'administer panelizer node org settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'create org content'.
   $permissions['create org content'] = array(
     'name' => 'create org content',

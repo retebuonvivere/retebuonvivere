@@ -24,6 +24,12 @@ function rbv_org_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 5,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
@@ -68,6 +74,12 @@ function rbv_org_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -116,6 +128,12 @@ function rbv_org_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 11,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -166,6 +184,12 @@ function rbv_org_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 14,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -231,6 +255,12 @@ function rbv_org_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 9,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -294,6 +324,12 @@ function rbv_org_field_default_field_instances() {
         'type' => 'addressfield_default',
         'weight' => 10,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -347,6 +383,12 @@ function rbv_org_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -412,6 +454,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -460,6 +508,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'type' => 'text_default',
         'weight' => 13,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -505,6 +559,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -553,6 +613,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -599,6 +665,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'type' => 'text_plain',
         'weight' => 15,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -643,6 +715,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -691,6 +769,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
           'field_name' => FALSE,
         ),
         'type' => 'og_group_subscribe',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
