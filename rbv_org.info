@@ -162,6 +162,7 @@ features[variable][] = menu_parent_org
 features[variable][] = node_options_org
 features[variable][] = node_preview_org
 features[variable][] = node_submitted_org
+features[variable][] = panelizer_defaults_node_org
 features[variable][] = panelizer_node:org_allowed_layouts
 features[variable][] = panelizer_node:org_allowed_layouts_default
 features[variable][] = panelizer_node:org_allowed_types
