@@ -31,42 +31,6 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:create project content'
-  $permissions['node:org:create project content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:create relation content'
-  $permissions['node:org:create relation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:delete any project content'
-  $permissions['node:org:delete any project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:delete any relation content'
-  $permissions['node:org:delete any relation content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:delete own project content'
-  $permissions['node:org:delete own project content'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:delete own relation content'
-  $permissions['node:org:delete own relation content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:org:manage members'
   $permissions['node:org:manage members'] = array(
     'roles' => array(
@@ -97,22 +61,6 @@ function rbv_org_og_features_default_permissions() {
   // Exported og permission: 'node:org:unsubscribe'
   $permissions['node:org:unsubscribe'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:update any project content'
-  $permissions['node:org:update any project content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:update any relation content'
-  $permissions['node:org:update any relation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
   );
 
   // Exported og permission: 'node:org:update field_com_categories field'
@@ -299,22 +247,6 @@ function rbv_org_og_features_default_permissions() {
   // Exported og permission: 'node:org:update og_user_node field'
   $permissions['node:org:update og_user_node field'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:update own project content'
-  $permissions['node:org:update own project content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:update own relation content'
-  $permissions['node:org:update own relation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
   );
 
   // Exported og permission: 'node:org:view field_com_categories field'

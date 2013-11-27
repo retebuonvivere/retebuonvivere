@@ -43,14 +43,14 @@ function rbv_org_node_info() {
  * Implements hook_rdf_default_mappings().
  */
 function rbv_org_rdf_default_mappings() {
-  $schemaorg = array();
+  $rdf_mappings = array();
 
   // Exported RDF mapping: org
-  $schemaorg['node']['org'] = array(
+  $rdf_mappings['node']['org'] = array(
     'rdftype' => array(
       0 => 'schema:Organization',
       1 => 'sioc:Item',
-      2 => 'foaf:Document',
+      2 => 'foaf:Organization',
     ),
     'title' => array(
       'predicates' => array(
@@ -151,7 +151,7 @@ function rbv_org_rdf_default_mappings() {
     ),
     'field_com_categories' => array(
       'predicates' => array(
-        0 => 'schema:classification',
+        0 => 'schema:issueArea',
       ),
       'type' => 'rel',
     ),
@@ -192,19 +192,7 @@ function rbv_org_rdf_default_mappings() {
         0 => 'schema:telephone',
       ),
     ),
-    'field_org_relation' => array(
-      'predicates' => array(),
-    ),
-    'field_collabora_con' => array(
-      'predicates' => array(),
-    ),
-    'field_collaborates_with' => array(
-      'predicates' => array(),
-    ),
-    'field_collaborates_on' => array(
-      'predicates' => array(),
-    ),
   );
 
-  return $schemaorg;
+  return $rdf_mappings;
 }
