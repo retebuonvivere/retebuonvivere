@@ -14,6 +14,7 @@ dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = telephone
 dependencies[] = text
+dependencies[] = og
 features[features_api][] = api:2
 features[field_base][] = field_com_categories
 features[field_base][] = field_com_description
