@@ -11,19 +11,25 @@ This repository is a submodule of [retebuonvivere][0]
 
 Start
 -----
-Create a new drupal installation using [drush][3] from retebuonvivere makefile, following [these][2] instructions: 
+Build a new retebuonvivere panopoly-based installation using [drush][3] from retebuonvivere makefile, following [these][2] instructions: 
 
-1. Download all the necessary modules, themes, libraries and patches in their right subdirectories with the following command (`--working-copy` option preserves git directories):
+1. Create a folder and get the make file e.g. with:
+   
+   `wget https://github.com/miromarchi/rbv_drupal_make/blob/master/retebuonvivere.make`
 
-   `drush make --working-copy retebuonvivere.make sitename`
+2. Download all the necessary modules, themes, libraries and patches (including drupal core and panopoly base distribution) in their right subdirectories with the following command (from inside the folder created which will become the drupal root):
 
-2. Create new db with all permission.
+   `drush make retebuonvivere.make`
 
-3. Install drupal with standard profile with the following command (from drupal root directory 'sitename'):
+3. Create new mySQL db with all permission.
 
-   `drush site-install standard --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
+4. Get [retebuonvivere profile][4] with the right folder name, e.g.:
 
-Now you need to enable all the modules by hand because we didn't build the profile module yet (see →Documentation below).
+   `git clone git@github.com:miromarchi/rbv_profile.git retebuonvivere`
+
+5. Install drupal with retebuonvivere profile with the following command (from drupal root):
+
+   `drush site-install retebuonvivere --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
 
 Documentation
 -------------
@@ -33,3 +39,4 @@ All the documentation for development (soft/hard configuration, profile, makefil
 [1]: https://github.com/miromarchi/rbv_profile/wiki
 [2]: https://drupal.org/project/drush_make
 [3]: https://drupal.org/project/drush
+[4]: https://github.com/miromarchi/rbv_profile
