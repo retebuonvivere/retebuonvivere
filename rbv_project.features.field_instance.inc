@@ -24,6 +24,12 @@ function rbv_project_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 5,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
@@ -67,6 +73,12 @@ function rbv_project_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -115,6 +127,12 @@ function rbv_project_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 7,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -165,6 +183,12 @@ function rbv_project_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -220,6 +244,12 @@ function rbv_project_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -284,6 +314,12 @@ function rbv_project_field_default_field_instances() {
         'type' => 'addressfield_default',
         'weight' => 5,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -337,6 +373,12 @@ function rbv_project_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -402,6 +444,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -450,6 +498,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -495,6 +549,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -543,6 +603,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -588,6 +654,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'settings' => array(),
         'type' => 'text_plain',
         'weight' => 6,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -637,6 +709,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -690,6 +768,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(

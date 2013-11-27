@@ -125,7 +125,7 @@ function rbv_project_rdf_default_mappings() {
     ),
     'field_com_categories' => array(
       'predicates' => array(
-        0 => 'schema:classification',
+        0 => 'schema:issueArea',
       ),
       'type' => 'rel',
     ),
