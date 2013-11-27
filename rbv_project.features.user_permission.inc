@@ -10,6 +10,15 @@
 function rbv_project_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer panelizer node project defaults'.
+  $permissions['administer panelizer node project defaults'] = array(
+    'name' => 'administer panelizer node project defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'create project content'.
   $permissions['create project content'] = array(
     'name' => 'create project content',
