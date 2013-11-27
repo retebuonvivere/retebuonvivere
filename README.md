@@ -23,11 +23,15 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
 3. Create new mySQL db with all permission.
 
-4. Get [retebuonvivere profile][4] with the right folder name, e.g.:
+4. Create a profiles directory:
+
+   `mkdir profiles`
+   
+5. Get [retebuonvivere profile][4] with the right folder name, e.g. from inside profiles dir:
 
    `git clone git@github.com:miromarchi/rbv_profile.git retebuonvivere`
 
-5. Install drupal with retebuonvivere profile with the following command (from drupal root):
+6. Install drupal with retebuonvivere profile with the following command (from drupal root):
 
    `drush site-install retebuonvivere --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
 
