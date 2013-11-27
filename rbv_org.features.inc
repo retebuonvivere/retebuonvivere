@@ -43,10 +43,10 @@ function rbv_org_node_info() {
  * Implements hook_rdf_default_mappings().
  */
 function rbv_org_rdf_default_mappings() {
-  $rdf_mappings = array();
+  $schemaorg = array();
 
   // Exported RDF mapping: org
-  $rdf_mappings['node']['org'] = array(
+  $schemaorg['node']['org'] = array(
     'rdftype' => array(
       0 => 'schema:Organization',
       1 => 'sioc:Item',
@@ -194,5 +194,5 @@ function rbv_org_rdf_default_mappings() {
     ),
   );
 
-  return $rdf_mappings;
+  return $schemaorg;
 }

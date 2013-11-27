@@ -167,38 +167,6 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:update field_rel_categories field'
-  $permissions['node:org:update field_rel_categories field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:update field_rel_source field'
-  $permissions['node:org:update field_rel_source field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:update field_rel_target field'
-  $permissions['node:org:update field_rel_target field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:update field_relpro_project field'
-  $permissions['node:org:update field_relpro_project field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
   // Exported og permission: 'node:org:update field_user_about field'
   $permissions['node:org:update field_user_about field'] = array(
     'roles' => array(
@@ -223,25 +191,9 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:update group_access field'
-  $permissions['node:org:update group_access field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
   // Exported og permission: 'node:org:update group_group field'
   $permissions['node:org:update group_group field'] = array(
     'roles' => array(),
-  );
-
-  // Exported og permission: 'node:org:update og_group_ref field'
-  $permissions['node:org:update og_group_ref field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
   );
 
   // Exported og permission: 'node:org:update og_user_node field'
@@ -379,46 +331,6 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:view field_rel_categories field'
-  $permissions['node:org:view field_rel_categories field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view field_rel_source field'
-  $permissions['node:org:view field_rel_source field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view field_rel_target field'
-  $permissions['node:org:view field_rel_target field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view field_relpro_project field'
-  $permissions['node:org:view field_relpro_project field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
   // Exported og permission: 'node:org:view field_user_about field'
   $permissions['node:org:view field_user_about field'] = array(
     'roles' => array(
@@ -439,31 +351,12 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:view group_access field'
-  $permissions['node:org:view group_access field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:org:view group_group field'
   $permissions['node:org:view group_group field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
       'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view og_group_ref field'
-  $permissions['node:org:view og_group_ref field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
     ),
   );
 
