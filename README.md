@@ -17,23 +17,56 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
    
    `wget https://github.com/miromarchi/rbv_drupal_make/blob/master/retebuonvivere.make`
 
-2. Download all the necessary modules, themes, libraries and patches (including drupal core and panopoly base distribution) in their right subdirectories with the following command (from inside the folder created which will become the drupal root):
+2. Download all the necessary modules, themes, libraries and patches (including drupal core and panopoly base distribution) in their right subdirectories with the following command (from inside the folder created, which will become the drupal root):
 
    `drush make retebuonvivere.make`
 
-3. Create new mySQL db with all permission.
+3. Download the telephone module separately because it always cause (uncomprehensible) problems in the makefile.
 
-4. Create a profiles directory:
+   `drush dl telephone`
+
+4. Create a profiles directory (from drupal root):
 
    `mkdir profiles`
    
-5. Get [retebuonvivere profile][4] with the right folder name, e.g. from inside profiles dir:
+5. Get [retebuonvivere profile][4] with the right folder name, e.g., (from drupal root):
 
-   `git clone git@github.com:miromarchi/rbv_profile.git retebuonvivere`
+   `git clone git@github.com:miromarchi/rbv_profile.git profiles/retebuonvivere`
+
+5. Create new mySQL db with all permission.
 
 6. Install drupal with retebuonvivere profile with the following command (from drupal root):
 
    `drush site-install retebuonvivere --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
+
+7. Now it's quite done, please report issues. You still need to update some contrib modules installed by panopoly:
+   `drush up -y entity entityreference field_group features simple_gmap`
+
+8. apply some patches to contrib modules installed by panopoly:
+
+```Shell
+cd sites/all/modules/contrib/entity
+wget https://drupal.org/files/php5.5_bitwise_operator_fix-2050775-7_0.patch
+patch -p1 < php5.5_bitwise_operator_fix-2050775-7_0.patch
+```
+
+```Shell
+cd sites/all/modules/contrib/fape
+wget https://drupal.org/files/fape-1846156-5.patch
+patch -p1 fape-1846156-5.patch
+```
+
+9. Get the RBV features:
+
+`cd sites/all/modules/features` 
+if not present create the features dir.
+
+```Shell
+git clone git@github.com:miromarchi/rbv_com_fields.git
+git clone git@github.com:miromarchi/rbv_org.git
+git clone git@github.com:miromarchi/rbv_project.git
+```
+10. Now you can install (in the order presented above) the features, and you are ready to go.
 
 Documentation
 -------------
