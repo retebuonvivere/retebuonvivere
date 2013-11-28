@@ -34,7 +34,7 @@ From here you can go to the **[main wiki documentation pages][9]** where you can
 
 If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
 
-You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous paragraph), or visit the demo site (see next paragraph).
+You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous section), or visit the demo site (see next section).
 
 demo
 ----
