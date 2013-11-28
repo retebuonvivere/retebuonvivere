@@ -44,28 +44,28 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
 8. apply some patches to contrib modules installed by panopoly:
 
-```Shell
-cd sites/all/modules/contrib/entity
-wget https://drupal.org/files/php5.5_bitwise_operator_fix-2050775-7_0.patch
-patch -p1 < php5.5_bitwise_operator_fix-2050775-7_0.patch
-```
+   ```Shell
+   cd sites/all/modules/contrib/entity
+   wget https://drupal.org/files/php5.5_bitwise_operator_fix-2050775-7_0.patch
+   patch -p1 < php5.5_bitwise_operator_fix-2050775-7_0.patch
+   ```
 
-```Shell
-cd sites/all/modules/contrib/fape
-wget https://drupal.org/files/fape-1846156-5.patch
-patch -p1 fape-1846156-5.patch
-```
+   ```Shell
+   cd sites/all/modules/contrib/fape
+   wget https://drupal.org/files/fape-1846156-5.patch
+   patch -p1 fape-1846156-5.patch
+   ```
 
 9. Get the RBV features:
 
-`cd sites/all/modules/features` 
-if not present create the features dir.
+   `cd sites/all/modules/features` 
+   if not present create the features dir.
 
-```Shell
-git clone git@github.com:miromarchi/rbv_com_fields.git
-git clone git@github.com:miromarchi/rbv_org.git
-git clone git@github.com:miromarchi/rbv_project.git
-```
+   ```Shell
+   git clone git@github.com:miromarchi/rbv_com_fields.git
+   git clone git@github.com:miromarchi/rbv_org.git
+   git clone git@github.com:miromarchi/rbv_project.git
+   ```
 10. Now you can install (in the order presented above) the features, and you are ready to go.
 
 Documentation
