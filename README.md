@@ -69,7 +69,7 @@ technical staff
 * Sirio Marchi [ohjimijimijimi][19] as drupal supervisor
 * Marco Andreoli [fonzy85vr][20] as programmer
 * Miro Marchi [miromarchi][21] as drupal configurator (I'm the anthropologist!)
-* [+ you :-D](https://github.com/fonzy85vr/retebuonvivere/edit/master/README.md#start)
+* [+ you :-D](https://github.com/fonzy85vr/retebuonvivere#start)
 
 
 [1]: http://nuvole.org/blog/code-driven-development
