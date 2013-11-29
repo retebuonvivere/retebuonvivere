@@ -25,11 +25,7 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
    `drush dl telephone`
 
-4. Create a profiles directory (from drupal root):
-
-   `mkdir profiles`
-   
-5. Get [retebuonvivere profile][4] with the right folder name, e.g., (from drupal root):
+4. Get [retebuonvivere profile][4] with the right folder name, e.g., (from drupal root):
 
    `git clone git@github.com:miromarchi/rbv_profile.git profiles/retebuonvivere`
 
