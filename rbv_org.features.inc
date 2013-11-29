@@ -61,7 +61,7 @@ function rbv_org_rdf_default_mappings() {
     'created' => array(
       'predicates' => array(
         0 => 'dc:date',
-//        1 => 'dc:created',
+        1 => 'dc:created',
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
