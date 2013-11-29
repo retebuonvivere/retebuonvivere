@@ -49,7 +49,7 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
    ```Shell
    cd sites/all/modules/contrib/fape
    wget https://drupal.org/files/fape-1846156-5.patch
-   patch -p1 fape-1846156-5.patch
+   patch -p1 < fape-1846156-5.patch
    ```
 
 9. Get the RBV features:
