@@ -12,7 +12,7 @@ table of contents
 
 what is retebuonvivere.org
 --------------------------
-Basically retebuonvivere.org will be a [drupal][6] website for the community (the network) of the civil society and social economy organizations (CSSEO) of the province of Verona, Italy.
+Basically retebuonvivere.org will be a [drupal][6] website for the community (the network) of the Civil Society and Social Economy Organizations (CSSEOs) of the province of Verona, Italy.
 It will then become a drupal distribution (allowing other networks to use it).
 
 structure of the project
@@ -34,7 +34,7 @@ From here you can go to the **[main wiki documentation pages][9]** where you can
 
 If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
 
-You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous paragraph), or visit the demo site (see next paragraph).
+You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous section), or visit the demo site (see next section).
 
 demo
 ----
@@ -42,26 +42,25 @@ At [dev-rbvt.gotpantheon.com][24] we mantain an updated test demo. In the demo c
 
 rationale of the project
 ------------------------
-Civil society and social economy organizations (CSSEO) are non-profit associations, [cooperatives][23], [social enterprises][22], citizens' committees, [ethical purchasing groups][11], and many more.
+«Civil society» and «social economy» organizations (CSSEOs) are non-profit associations, [cooperatives][23], [social enterprises][22], citizens' committees, [ethical purchasing groups][11], foundations, and many more.
 
-CSSEO have many projects *on the field*, and they cooperate with each other on projects. They can even be associated in networks.
+CSSEOs have many projects *on the field*, and they cooperate with each other on projects. They can  be associated in networks. Projects target specific problems in the path for improving social, economic, or environmental conditions.
 
-CSSEO cooperates also with other groups: Government and local government organizations, and business organizations. 
+CSSEOs cooperates also with other groups: Government and local Government organizations, and business organizations. 
 
-CSSEO share some high level (system level) aims/purposes and values: 
-* [sustainability][12] (we act to enhance sustainability of the planet); 
-* [happiness][13] (we want and we cooperate in order to have a joyful life);
-* the [commons paradigm][10] (*we take care*! We don't wait for things to descend from above, top-down. We do it bottom-up. This way only, we can achieve a social organization able to maintain sustainability);
-* [social justice][14] (bottom-up, sustainable and joyful also imply the respect of rights, recognizing diversity but pursuing social equality and solidarity).
+CSSEOs share some high level (system level) aims/purposes and values: 
+* [sustainability][12] («we act to enhance sustainability of the planet»); 
+* [happiness][13] («we want and we cooperate in order to have a joyful life»);
+* the [commons paradigm][10] («we take care! We don't wait for things to descend from above, top-down. We do it bottom-up. We step forward, and we seek cooperation. This way only, we can achieve a social organization able to maintain sustainability»);
+* [social justice][14] («bottom-up, sustainable and joyful also imply the respect of rights, recognizing diversity but pursuing social equality and solidarity»).
 
-CSSEO are organized bottom-up from the individual CSSEO to local network, up to national, regional, international and global networks. We have also cross-cutting ties.
+CSSEOs are organized bottom-up from the individual CSSEO to local network, up to national, regional, international and global networks. We have also cross-cutting ties. Also projects can have local or broader scopes.
 
-This site is aimed as the main platform, main tool of representation and self-representation of the local level CSSEO network of the province of Verona, Italy, but in the spirit of open source community software is also aimed at being distributed to other local level networks. 
-Check out the [wiki][9] for more detailed documentation.
+This site is aimed as the main platform, main tool of representation and self-representation of the local level CSSEOs network of the province of Verona, Italy, but in the spirit of open source community software is also aimed at being distributed to other local level networks. 
 
 promoters
 ---------
-This project is promoted by two CSSEO networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
+This project is promoted mainly by two CSSEOs networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
 Check out [this page][17] about retebuonvivere.org project at Mag's website.
 And this [list of posts][18] about retebuonvivere project and events related to retebuonvivere project at Naturalmente Verona's website.
 
@@ -70,7 +69,7 @@ technical staff
 * Sirio Marchi [ohjimijimijimi][19] as drupal supervisor
 * Marco Andreoli [fonzy85vr][20] as programmer
 * Miro Marchi [miromarchi][21] as drupal configurator (I'm the anthropologist!)
-* [+ you :-D](https://github.com/fonzy85vr/retebuonvivere/edit/master/README.md#start)
+* [+ you :-D](https://github.com/fonzy85vr/retebuonvivere#start)
 
 
 [1]: http://nuvole.org/blog/code-driven-development
