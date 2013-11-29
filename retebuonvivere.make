@@ -80,24 +80,7 @@ projects[rules][subdir] = "contrib"
 projects[schemaorg][version] = "1.0-beta3"
 projects[schemaorg][subdir] = "contrib"
 
-; RBV features commented till "SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'module' cannot be null" is not resolved
-; projects[rbv_com_fields][download][type] = "git"
-; projects[rbv_com_fields][download][url] = "git@github.com:miromarchi/rbv_com_fields.git"
-; projects[rbv_com_fields][type] = "module"
-; projects[rbv_com_fields][subdir] = "features"
-
-; projects[rbv_org][download][type] = "git"
-; projects[rbv_org][download][url] = "git@github.com:miromarchi/rbv_org.git"
-; projects[rbv_org][type] = "module"
-; projects[rbv_org][subdir] = "features"
-
-; projects[rbv_project][download][type] = "git"
-; projects[rbv_project][download][url] = "git@github.com:miromarchi/rbv_project.git"
-; projects[rbv_project][type] = "module"
-; projects[rbv_project][subdir] = "features"
-
 ; Themes
-
 ; radix 1.x as in Panopoly theme suggestion
 projects[radix][version] = 1.x-dev
 projects[radix][type] = theme
@@ -111,7 +94,6 @@ projects[responsive_bartik][version] = "1.0-beta2"
 projects[responsive_bartik][subdir] = "contrib"
 
 ; LIbraries
-
 ; arc
 libraries[arc][download][type] = "file"
 libraries[arc][download][url] = "https://github.com/semsol/arc2/archive/master.zip"
