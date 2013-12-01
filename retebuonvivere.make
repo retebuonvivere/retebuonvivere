@@ -36,7 +36,7 @@ projects[entityreference_prepopulate][subdir] = "contrib"
 
 projects[link][subdir] = "contrib"
 
-projects[telephone][subdir] = "contrib"
+; projects[telephone][subdir] = "contrib"
 
 projects[og][subdir] = "contrib"
 
