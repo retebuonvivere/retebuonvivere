@@ -20,6 +20,14 @@ structure of the project
 We use *git submodules* to maintain the different repositories of this project tied under the same tree.
 Have a look at `.gitmodules` file for the complete list of submodules repositories, or browse the directory structure from the main repo.
 
+If you wanto to get all submodules:
+```Shell
+git clone git@github.com:fonzy85vr/retebuonvivere.git
+cd retebuonvivere
+git submodule init
+git submodule update
+```
+
 developing
 ----------
 We are going to follow a *code-driven development* workflow for our custom modules and configuration, in order to boost teamworking.
