@@ -73,11 +73,8 @@ projects[schemaorg][subdir] = "contrib"
 
 
 ; Themes
-; radix 1.x as in Panopoly theme suggestion
 projects[radix][type] = theme
-projects[radix][download][type] = git
-projects[radix][download][revision] = b873330
-projects[radix][download][branch] = 7.x-1.x
+projects[radix][subdir] = "contrib"
 
 ; responsive_bartik
 projects[responsive_bartik][type] = "theme"
