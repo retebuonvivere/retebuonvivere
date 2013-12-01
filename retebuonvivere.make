@@ -91,6 +91,6 @@ libraries[arc][directory_name] = "arc"
 libraries[arc][type] = "library"
 
 ; Profile
-projects[retebuonvivere][type] = profile
-projects[retebuonvivere][download][type] = git
-projects[retebuonvivere][download][url] = git@github.com:miromarchi/rbv_profile.git
+projects[rbv_profile][type] = profile
+projects[rbv_profile][download][type] = git
+projects[rbv_profile][download][url] = git@github.com:miromarchi/rbv_profile.git
