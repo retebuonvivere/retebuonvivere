@@ -66,9 +66,14 @@ projects[radix][download][branch] = 7.x-1.x
 projects[responsive_bartik][type] = "theme"
 projects[responsive_bartik][subdir] = "contrib"
 
-; LIbraries
+; Libraries
 ; arc
 libraries[arc][download][type] = "file"
 libraries[arc][download][url] = "https://github.com/semsol/arc2/archive/master.zip"
 libraries[arc][directory_name] = "arc"
 libraries[arc][type] = "library"
+
+; Profile
+projects[retebuonvivere][type] = profile
+projects[retebuonvivere][download][type] = git
+projects[retebuonvivere][download][url] = git@github.com:miromarchi/rbv_profile.git
