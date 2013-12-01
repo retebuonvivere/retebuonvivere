@@ -26,7 +26,7 @@ function retebuonvivere_form_install_configure_form_alter(&$form, $form_state) {
   $form['admin_account']['account']['name']['#default_value'] = 'admin';
   $form['server_settings']['site_default_country']['#default_value'] = 'IT';
   $form['server_settings']['date_default_timezone']['#default_value'] = 'Europe/Rome';
-  $form['site-information']['site_slogan']['#default_value'] = 'Insieme siamo una rete';
+  $form['site_information']['site_slogan']['#default_value'] = 'Insieme siamo una rete';
   $form['server_settings']['configurable_timezones']['#default_value'] = 0;
   $form['server_settings']['date_first_day']['#default_value'] = 1;
   $form['server_settings']['theme_default']['#default_value'] = 'responsive_bartik';
