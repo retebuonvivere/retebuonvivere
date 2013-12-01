@@ -55,6 +55,23 @@ projects[rules][subdir] = "contrib"
 
 projects[schemaorg][subdir] = "contrib"
 
+; RBV features
+; projects[rbv_com_fields][download][type] = "git"
+; projects[rbv_com_fields][download][url] = "git@github.com:miromarchi/rbv_com_fields.git"
+; projects[rbv_com_fields][type] = "module"
+; projects[rbv_com_fields][subdir] = "features"
+
+; projects[rbv_org][download][type] = "git"
+; projects[rbv_org][download][url] = "git@github.com:miromarchi/rbv_org.git"
+; projects[rbv_org][type] = "module"
+; projects[rbv_org][subdir] = "features"
+
+; projects[rbv_project][download][type] = "git"
+; projects[rbv_project][download][url] = "git@github.com:miromarchi/rbv_project.git"
+; projects[rbv_project][type] = "module"
+; projects[rbv_project][subdir] = "features"
+
+
 ; Themes
 ; radix 1.x as in Panopoly theme suggestion
 projects[radix][type] = theme
