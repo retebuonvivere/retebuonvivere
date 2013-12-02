@@ -13,12 +13,10 @@ Start
 -----
 Build a new retebuonvivere panopoly-based installation using [drush][3] from retebuonvivere makefile, following [these][2] instructions: 
 
-1. Create a folder, give it the name of your site, get in, and get the make file e.g. with:
+1. Clone the makefile repository with destination name as the sitename:
    
    ```Shell
-   mkdir sitename
-   cd sitename
-   wget https://github.com/miromarchi/rbv_drupal_make/blob/master/retebuonvivere.make
+   git clone git@github.com:miromarchi/rbv_drupal_make.git sitename
    ```
 
 2. Download all the necessary modules with patches, themes, libraries (including drupal core and panopoly base distribution) and rbv_profile, in their right subdirectories with the following command (from inside the folder created, which will become the drupal root):
@@ -29,13 +27,15 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
    `drush dl telephone`
 
-4. Create new mySQL db with all permission.
+4. Create a new mySQL db with all permissions.
 
-5. Install drupal with retebuonvivere profile with the following command (from drupal root):
+5. Install drupal with rbv_profile profile with the following command (from drupal root):
 
    `drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
 
-6. Now you can access your site in the browser. Log in (user:admin pass:admin), go to status report page at admin/status/report. If you see error messages do what is needed to resolve.
+   Or you can run the installation script by accessing the site in your browser.
+
+6. Now log in to your site in the browser (user:admin pass:admin), go to status report page at admin/status/report. If you see error messages do what is needed to resolve.
 
 7. Now you have installed panopoly and some more contrib modules, you need to get the RBV features:
 
