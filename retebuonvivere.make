@@ -39,6 +39,7 @@ projects[rdfx][subdir] = contrib
 projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-correctly-1176666-14.patch
 projects[rules][subdir] = contrib
 projects[schemaorg][subdir] = contrib
+projects[simple_gmap][subdir] = contrib
 
 ; RBV features
 ; projects[rbv_com_fields][download][type] = git
