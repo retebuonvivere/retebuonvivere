@@ -10,6 +10,15 @@
 function rbv_relpro_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer panelizer node collaboration defaults'.
+  $permissions['administer panelizer node collaboration defaults'] = array(
+    'name' => 'administer panelizer node collaboration defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'create collaboration content'.
   $permissions['create collaboration content'] = array(
     'name' => 'create collaboration content',
