@@ -78,6 +78,7 @@ function rbv_org_user_default_permissions() {
     'name' => 'create org content',
     'roles' => array(
       'administrator' => 'administrator',
+      'network admin' => 'network admin',
     ),
     'module' => 'node',
   );
