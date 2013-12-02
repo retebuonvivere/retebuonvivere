@@ -10,9 +10,63 @@
 function rbv_relpro_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer panelizer node collaboration breadcrumbs'.
+  $permissions['administer panelizer node collaboration breadcrumbs'] = array(
+    'name' => 'administer panelizer node collaboration breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node collaboration content'.
+  $permissions['administer panelizer node collaboration content'] = array(
+    'name' => 'administer panelizer node collaboration content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node collaboration context'.
+  $permissions['administer panelizer node collaboration context'] = array(
+    'name' => 'administer panelizer node collaboration context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'administer panelizer node collaboration defaults'.
   $permissions['administer panelizer node collaboration defaults'] = array(
     'name' => 'administer panelizer node collaboration defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node collaboration layout'.
+  $permissions['administer panelizer node collaboration layout'] = array(
+    'name' => 'administer panelizer node collaboration layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node collaboration overview'.
+  $permissions['administer panelizer node collaboration overview'] = array(
+    'name' => 'administer panelizer node collaboration overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node collaboration settings'.
+  $permissions['administer panelizer node collaboration settings'] = array(
+    'name' => 'administer panelizer node collaboration settings',
     'roles' => array(
       'administrator' => 'administrator',
     ),

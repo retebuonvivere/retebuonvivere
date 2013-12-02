@@ -13,6 +13,34 @@ function rbv_relpro_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_collaboration';
+  $strongarm->value = 'edit-auto-nodetitle';
+  $export['additional_settings__active_tab_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_collaboration';
+  $strongarm->value = '1';
+  $export['ant_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_collaboration';
+  $strongarm->value = '[node:field-rel-source:title] collabora a [node:field-relpro-project:title]';
+  $export['ant_pattern_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_collaboration';
+  $strongarm->value = 0;
+  $export['ant_php_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_collaboration';
   $strongarm->value = 0;
   $export['comment_anonymous_collaboration'] = $strongarm;
@@ -58,6 +86,48 @@ function rbv_relpro_strongarm() {
   $strongarm->name = 'comment_subject_field_collaboration';
   $strongarm->value = 1;
   $export['comment_subject_field_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_enabled_collaboration';
+  $strongarm->value = 1;
+  $export['date_popup_authored_enabled_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_format_collaboration';
+  $strongarm->value = 'm/d/Y - H:i';
+  $export['date_popup_authored_format_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_year_range_collaboration';
+  $strongarm->value = '3';
+  $export['date_popup_authored_year_range_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_collaboration';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_collaboration';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_collaboration';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_collaboration'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -143,6 +213,42 @@ function rbv_relpro_strongarm() {
   $strongarm->name = 'node_submitted_collaboration';
   $strongarm->value = 0;
   $export['node_submitted_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_defaults_node_collaboration';
+  $strongarm->value = array(
+    'status' => 1,
+    'view modes' => array(
+      'page_manager' => array(
+        'status' => 1,
+        'default' => 1,
+        'choice' => 0,
+      ),
+      'default' => array(
+        'status' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+      'teaser' => array(
+        'status' => 1,
+        'default' => 1,
+        'choice' => 0,
+      ),
+      'vmode_group_content' => array(
+        'status' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+      'featured' => array(
+        'status' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+    ),
+  );
+  $export['panelizer_defaults_node_collaboration'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
