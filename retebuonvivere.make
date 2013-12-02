@@ -39,21 +39,23 @@ projects[rdfx][subdir] = contrib
 projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-correctly-1176666-14.patch
 projects[rules][subdir] = contrib
 projects[schemaorg][subdir] = contrib
-projects[simple_gmap][subdir] = contrib
 
-; RBV features
-; projects[rbv_com_fields][download][type] = git
-; projects[rbv_com_fields][download][url] = git@github.com:miromarchi/rbv_com_fields.git
-; projects[rbv_com_fields][type] = module
-; projects[rbv_com_fields][subdir] = features
-; projects[rbv_org][download][type] = git
-; projects[rbv_org][download][url] = git@github.com:miromarchi/rbv_org.git
-; projects[rbv_org][type] = module
-; projects[rbv_org][subdir] = features
-; projects[rbv_project][download][type] = git
-; projects[rbv_project][download][url] = git@github.com:miromarchi/rbv_project.git
-; projects[rbv_project][type] = module
-; projects[rbv_project][subdir] = features
+RBV features
+projects[rbv_com_fields][download][type] = git
+projects[rbv_com_fields][download][url] = git@github.com:miromarchi/rbv_com_fields.git
+projects[rbv_com_fields][type] = module
+projects[rbv_com_fields][subdir] = features
+projects[rbv_org][download][type] = git
+projects[rbv_org][download][url] = git@github.com:miromarchi/rbv_org.git
+projects[rbv_org][type] = module
+projects[rbv_org][subdir] = features
+projects[rbv_project][download][type] = git
+projects[rbv_project][download][url] = git@github.com:miromarchi/rbv_project.git
+projects[rbv_project][type] = module
+projects[rbv_project][subdir] = features
+projects[rbv_relpro][download][url] = git@github.com:miromarchi/rbv_relpro.git
+projects[rbv_relpro][type] = module
+projects[rbv_relpro][subdir] = features
 
 ; Themes
 projects[radix][type] = theme
