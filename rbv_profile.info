@@ -1,8 +1,8 @@
 ; Packaging information for retebuonvivere
-name = "retebuonvivere"
+name = rbv_profile
 description = "The profile for the original network of Verona."
-exclusive = "1"
-core = "7.x"
+exclusive = 1
+core = 7.24
 
 ; ------------
 ; Dependencies
@@ -101,7 +101,7 @@ dependencies[] = entityreference
 dependencies[] = entityreference_prepopulate
 dependencies[] = field_group
 dependencies[] = link
-dependencies[] = telephone
+; dependencies[] = telephone
 
 ; Input filters
 dependencies[] = caption_filter
@@ -155,7 +155,5 @@ dependencies[] = views_ui
 dependencies[] = features
 dependencies[] = strongarm
 dependencies[] = defaultcontent
-; dependencies[] = rbv_com_fields // commented tille SQLstate error is not resolved
-; dependencies[] = rbv_org
-; dependencies[] = rbv_project
 
+files[] = rbv_profile.profile
