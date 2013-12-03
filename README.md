@@ -13,7 +13,7 @@ table of contents
 what is retebuonvivere.org
 --------------------------
 Basically retebuonvivere.org will be a [drupal][6] website for the community (the network) of the Civil Society and Social Economy Organizations (CSSEOs) of the province of Verona, Italy.
-It will then become a drupal distribution (allowing other networks to use it).
+It will then become a drupal distribution (allowing other networks to use it), built on top of [Panopoly][7] base distribution.
 
 structure of the project
 ------------------------
@@ -86,6 +86,7 @@ technical staff
 [4]: https://github.com/miromarchi/rbv_profile/wiki
 [5]: https://github.com/miromarchi/rbv_drupal_make
 [6]: https://drupal.org/
+[7]: https://drupal.org/project/panopoly
 
 [9]: https://github.com/fonzy85vr/retebuonvivere/wiki
 [10]: https://en.wikipedia.org/wiki/Commons
