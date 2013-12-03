@@ -13,66 +13,35 @@ Start
 -----
 Build a new retebuonvivere panopoly-based installation using [drush][3] from retebuonvivere makefile, following [these][2] instructions: 
 
-1. Create a folder, give it the name of your site, get in, and get the make file e.g. with:
+1. Clone the makefile repository with destination name as the sitename:
    
    ```Shell
-   mkdir sitename
-   cd sitename
-   wget https://github.com/miromarchi/rbv_drupal_make/blob/master/retebuonvivere.make
+   git clone git@github.com:miromarchi/rbv_drupal_make.git sitename
    ```
 
-2. Download all the necessary modules, themes, libraries and patches (including drupal core and panopoly base distribution) in their right subdirectories with the following command (from inside the folder created, which will become the drupal root):
+2. Download all the necessary modules with patches, themes, libraries (including drupal core and panopoly base distribution) and rbv_profile, in their right subdirectories with the following command (from inside the folder created, which will become the drupal root):
 
    `drush make retebuonvivere.make`
 
-3. Download the telephone module separately because it always cause (uncomprehensible) problems in the makefile.
+3. Download the telephone module separately because it always cause problems in the makefile (see related telephone [issue][5].
 
    `drush dl telephone`
 
-4. Get [retebuonvivere profile][4] with the right folder name, e.g., (from drupal root):
+4. Create a new mySQL db with all permissions.
 
-   `git clone git@github.com:miromarchi/rbv_profile.git profiles/retebuonvivere`
-
-5. Create new mySQL db with all permission.
-
-6. Install drupal with retebuonvivere profile with the following command (from drupal root):
-
-   `drush site-install retebuonvivere --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
-
-7. Now it's quite done, please report issues. You still need to update some contrib modules installed by panopoly:
-   
-   `drush up -y entity entityreference field_group features simple_gmap`
-
-8. apply some patches to contrib modules installed by panopoly:
+5. Install drupal with rbv_profile profile with the following command (from drupal root):
 
    ```Shell
-   cd sites/all/modules/contrib/entity
-   wget https://drupal.org/files/php5.5_bitwise_operator_fix-2050775-7_0.patch
-   patch -p1 < php5.5_bitwise_operator_fix-2050775-7_0.patch
-   ```
-and
-
-   ```Shell
-   cd sites/all/modules/contrib/fape
-   wget https://drupal.org/files/fape-1846156-5.patch
-   patch -p1 < fape-1846156-5.patch
+   drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
    ```
 
-9. Now you can access your site in the browser. Log in (user:admin pass:admin), go to status report page at admin/status/report. You'll probably see a couple of error messages relating sites/default/files dir permissions. Add write permission for group to the directory with:
+   Or you can run the installation script by accessing the site in your browser.
 
-   `chmod -R g+w sites/all/files`
-   
-   Check again the status report to ensure everything is ok. 
+6. Now log in to your site in the browser (user:admin pass:admin), go to status report page at admin/status/report. If you see error messages do what is needed to resolve.
 
-10. Now you have panopoly installed, you need to get the RBV features:
+7. Now you have installed panopoly and some more contrib modules, while RBV features are only downloaded. You can enable them, go to admin/structure/features and enable them one by one from the first to the last. 
 
-   ```Shell
-   cd sites/all/modules/features
-   git clone git@github.com:miromarchi/rbv_com_fields.git
-   git clone git@github.com:miromarchi/rbv_org.git
-   git clone git@github.com:miromarchi/rbv_project.git
-   ```
-11. Now you can install (in the order presented above) the features, and you are ready to go.
+And you are ready to go.
 
 Documentation
 -------------
@@ -83,3 +52,4 @@ All the documentation for development (soft/hard configuration, profile, makefil
 [2]: https://drupal.org/project/drush_make
 [3]: https://drupal.org/project/drush
 [4]: https://github.com/miromarchi/rbv_profile
+[5]: https://drupal.org/node/2128291
