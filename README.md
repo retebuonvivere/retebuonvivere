@@ -23,7 +23,7 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
    `drush make retebuonvivere.make`
 
-3. Download the telephone module separately because it always cause (uncomprehensible) problems in the makefile.
+3. Download the telephone module separately because it always cause problems in the makefile (see related telephone [issue][5].
 
    `drush dl telephone`
 
@@ -39,15 +39,9 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
 6. Now log in to your site in the browser (user:admin pass:admin), go to status report page at admin/status/report. If you see error messages do what is needed to resolve.
 
-7. Now you have installed panopoly and some more contrib modules, you need to get the RBV features:
+7. Now you have installed panopoly and some more contrib modules, while RBV features are only downloaded. You can enable them, go to admin/structure/features and enable them one by one from the first to the last. 
 
-   ```Shell
-   cd sites/all/modules/features
-   git clone git@github.com:miromarchi/rbv_com_fields.git
-   git clone git@github.com:miromarchi/rbv_org.git
-   git clone git@github.com:miromarchi/rbv_project.git
-   ```
-8. Now you can install (in the order presented above) the features, and you are ready to go.
+And you are ready to go.
 
 Documentation
 -------------
@@ -58,3 +52,4 @@ All the documentation for development (soft/hard configuration, profile, makefil
 [2]: https://drupal.org/project/drush_make
 [3]: https://drupal.org/project/drush
 [4]: https://github.com/miromarchi/rbv_profile
+[5]: https://drupal.org/node/2128291
