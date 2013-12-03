@@ -31,7 +31,9 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
 5. Install drupal with rbv_profile profile with the following command (from drupal root):
 
-   `drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname`
+   ```Shell
+   drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
+   ```
 
    Or you can run the installation script by accessing the site in your browser.
 
