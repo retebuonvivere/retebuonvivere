@@ -58,6 +58,8 @@ projects[rbv_relpro][type] = module
 projects[rbv_relpro][subdir] = features
 
 ; Themes
+projects[radix_core][version] = 1.x-dev
+projects[radix_core][subdir] = contrib
 projects[radix][type] = theme
 projects[radix][subdir] = contrib
 projects[responsive_bartik][type] = theme
