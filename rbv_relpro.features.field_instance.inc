@@ -173,9 +173,12 @@ function rbv_relpro_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
       'weight' => 6,
     ),
   );
@@ -280,10 +283,10 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'weight' => 2,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 1,
+          'links' => 0,
           'view_mode' => 'vmode_group_content',
         ),
         'type' => 'entityreference_entity_view',

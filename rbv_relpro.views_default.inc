@@ -12,10 +12,10 @@ function rbv_relpro_views_default_views() {
 
   $view = new view();
   $view->name = 'rbv_view_projectcollaborations';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Modified clone of OG_content, displaying collaborators of a project.';
+  $view->tag = 'RBV';
   $view->base_table = 'node';
-  $view->human_name = 'rbv_view_projectcollaborations';
+  $view->human_name = 'RBV project collaborations';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -45,7 +45,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['field_rel_source']['label'] = '';
   $handler->display->display_options['fields']['field_rel_source']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

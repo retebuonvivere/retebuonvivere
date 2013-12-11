@@ -23,8 +23,8 @@ function rbv_relpro_field_group_info() {
     'label' => 'Dati',
     'weight' => '3',
     'children' => array(
-      0 => 'group_relpro_relation',
-      1 => 'group_relpro_description',
+      0 => 'group_relpro_description',
+      1 => 'group_relpro_relation',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -49,8 +49,8 @@ function rbv_relpro_field_group_info() {
     'label' => 'Descrizione',
     'weight' => '5',
     'children' => array(
-      0 => 'field_com_foundingdate',
-      1 => 'field_com_description',
+      0 => 'field_com_description',
+      1 => 'field_com_foundingdate',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -133,8 +133,8 @@ function rbv_relpro_field_group_info() {
     'label' => 'Collaborazione',
     'weight' => '4',
     'children' => array(
-      0 => 'field_rel_source',
-      1 => 'field_rel_categories',
+      0 => 'field_rel_categories',
+      1 => 'field_rel_source',
       2 => 'field_relpro_project',
     ),
     'format_type' => 'tab',
