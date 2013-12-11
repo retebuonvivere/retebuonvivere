@@ -14,8 +14,29 @@ function rbv_project_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_project';
-  $strongarm->value = 'edit-og';
+  $strongarm->value = 'edit-panelizer';
   $export['additional_settings__active_tab_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_project';
+  $strongarm->value = '';
+  $export['ant_pattern_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_project';
+  $strongarm->value = 0;
+  $export['ant_php_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_project';
+  $strongarm->value = '0';
+  $export['ant_project'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -69,6 +90,48 @@ function rbv_project_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_enabled_project';
+  $strongarm->value = 1;
+  $export['date_popup_authored_enabled_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_format_project';
+  $strongarm->value = 'm/d/Y - H:i';
+  $export['date_popup_authored_format_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_popup_authored_year_range_project';
+  $strongarm->value = '3';
+  $export['date_popup_authored_year_range_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_project';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_project';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_project';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__project';
   $strongarm->value = array(
     'view_modes' => array(
@@ -95,6 +158,12 @@ function rbv_project_strongarm() {
       ),
       'vmode_group_content' => array(
         'custom_settings' => TRUE,
+      ),
+      'featured' => array(
+        'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -156,11 +225,11 @@ function rbv_project_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_defaults_node_project';
   $strongarm->value = array(
-    'status' => 0,
+    'status' => 1,
     'view modes' => array(
       'page_manager' => array(
-        'status' => 0,
-        'default' => 0,
+        'status' => 1,
+        'default' => 1,
         'choice' => 0,
       ),
       'default' => array(
@@ -169,13 +238,13 @@ function rbv_project_strongarm() {
         'choice' => 0,
       ),
       'teaser' => array(
-        'status' => 0,
-        'default' => 0,
+        'status' => 1,
+        'default' => 1,
         'choice' => 0,
       ),
       'vmode_group_content' => array(
         'status' => 0,
-        'default' => 0,
+        'default' => 1,
         'choice' => 0,
       ),
       'featured' => array(

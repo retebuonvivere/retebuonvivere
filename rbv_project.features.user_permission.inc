@@ -10,9 +10,63 @@
 function rbv_project_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer panelizer node project breadcrumbs'.
+  $permissions['administer panelizer node project breadcrumbs'] = array(
+    'name' => 'administer panelizer node project breadcrumbs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node project content'.
+  $permissions['administer panelizer node project content'] = array(
+    'name' => 'administer panelizer node project content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node project context'.
+  $permissions['administer panelizer node project context'] = array(
+    'name' => 'administer panelizer node project context',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'administer panelizer node project defaults'.
   $permissions['administer panelizer node project defaults'] = array(
     'name' => 'administer panelizer node project defaults',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node project layout'.
+  $permissions['administer panelizer node project layout'] = array(
+    'name' => 'administer panelizer node project layout',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node project overview'.
+  $permissions['administer panelizer node project overview'] = array(
+    'name' => 'administer panelizer node project overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'panelizer',
+  );
+
+  // Exported permission: 'administer panelizer node project settings'.
+  $permissions['administer panelizer node project settings'] = array(
+    'name' => 'administer panelizer node project settings',
     'roles' => array(
       'administrator' => 'administrator',
     ),

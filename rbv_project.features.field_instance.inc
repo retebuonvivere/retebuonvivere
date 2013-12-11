@@ -41,7 +41,7 @@ function rbv_project_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -69,9 +69,16 @@ function rbv_project_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '... ',
+          'expandText' => 'espandi »',
+          'slicePoint' => 500,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 7,
       ),
       'featured' => array(
@@ -90,7 +97,7 @@ function rbv_project_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -122,7 +129,7 @@ function rbv_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
@@ -144,7 +151,7 @@ function rbv_project_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -200,7 +207,7 @@ function rbv_project_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -240,9 +247,16 @@ function rbv_project_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '... ',
+          'expandText' => 'espandi »',
+          'slicePoint' => 500,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 5,
       ),
       'featured' => array(
@@ -261,7 +275,7 @@ function rbv_project_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -303,7 +317,7 @@ function rbv_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -330,7 +344,7 @@ function rbv_project_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -365,11 +379,11 @@ function rbv_project_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'file',
+          'image_style' => 'panopoly_image_square',
         ),
         'type' => 'image',
         'weight' => 2,
@@ -385,17 +399,17 @@ function rbv_project_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'rbv_image_teaser',
         ),
         'type' => 'image',
         'weight' => 1,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'rbv_image_icon',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -407,7 +421,7 @@ function rbv_project_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 0,
+      'default_image' => 28,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -420,7 +434,7 @@ function rbv_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'medium',
+        'preview_image_style' => 'panopoly_image_square',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -439,9 +453,16 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '... ',
+          'expandText' => 'espandi »',
+          'slicePoint' => 500,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 8,
       ),
       'featured' => array(
@@ -460,7 +481,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -492,7 +513,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -514,7 +535,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -544,7 +565,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -564,10 +585,11 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'weight' => 2,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_plain',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -619,7 +641,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -649,7 +671,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
@@ -671,7 +693,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -726,7 +748,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -780,16 +802,19 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 0,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
