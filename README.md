@@ -4,7 +4,7 @@ Retebuonvivere: Organization content type
 
 Description
 -----------
-This is a [drupal feature][2], which will install the *content type* Organization for retebuonvivere website, and all dependent settings (e.g. og_permissions, since this content type is an og_group, and user related settings).
+This is a [drupal feature][2], which will install the *content type* Organization for retebuonvivere website, and all dependent settings (e.g. og_permissions, since this content type is an og_group, and settings related to users).
 
 Submodule of
 ------------
