@@ -45,6 +45,8 @@ dependencies[] = date_api
 dependencies[] = date_popup
 dependencies[] = date_popup_authored
 dependencies[] = date_views
+dependencies[] = date_ical
+dependencies[] = fullcalendar
 
 ; Panopoly Foundation
 dependencies[] = panopoly_core
@@ -70,12 +72,10 @@ dependencies[] = admin_views
 dependencies[] = module_filter
 dependencies[] = diff
 
-; Distribution Management
-dependencies[] = apps
-
 ; Other
 dependencies[] = auto_nodetitle
 dependencies[] = breakpoints
+dependencies[] = colors
 dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = entity_view_mode
@@ -83,6 +83,7 @@ dependencies[] = libraries
 dependencies[] = linkit
 dependencies[] = menu_block
 dependencies[] = pathauto
+dependencies[] = subpathauto
 dependencies[] = save_draft
 dependencies[] = simple_gmap
 dependencies[] = simplified_menu_admin
@@ -155,5 +156,12 @@ dependencies[] = views_ui
 dependencies[] = features
 dependencies[] = strongarm
 dependencies[] = defaultcontent
+
+; RBV features
+dependencies[] = rbv_com_fields
+dependencies[] = rbv_org
+dependencies[] = rbv_project
+dependencies[] = rbv_relpro
+dependencies[] = rbv_event
 
 files[] = rbv_profile.profile
