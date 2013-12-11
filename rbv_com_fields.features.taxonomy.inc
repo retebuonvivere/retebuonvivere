@@ -32,6 +32,29 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'membership_roles' => array(
+      'name' => 'Ruoli',
+      'machine_name' => 'membership_roles',
+      'description' => 'Ruoli ricoperti dalle persone nelle organizzazioni',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'org_types' => array(
       'name' => 'Tipi di organizzazione',
       'machine_name' => 'org_types',
