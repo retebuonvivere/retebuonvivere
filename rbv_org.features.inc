@@ -23,6 +23,13 @@ function rbv_org_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function rbv_org_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function rbv_org_node_info() {
@@ -36,6 +43,20 @@ function rbv_org_node_info() {
       'help' => '',
     ),
   );
+  return $items;
+}
+
+/**
+ * Implements hook_default_og_membership_type().
+ */
+function rbv_org_default_og_membership_type() {
+  $items = array();
+  $items['rbv_membership_default'] = entity_import('og_membership_type', '{
+    "name" : "rbv_membership_default",
+    "description" : "RBV membership default",
+    "language" : "",
+    "rdf_mapping" : []
+  }');
   return $items;
 }
 

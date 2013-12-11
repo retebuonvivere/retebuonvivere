@@ -70,9 +70,16 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '... ',
+          'expandText' => 'espandi »',
+          'slicePoint' => 600,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 8,
       ),
       'featured' => array(
@@ -107,7 +114,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 10,
+        'rows' => 14,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -123,7 +130,7 @@ function rbv_org_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
@@ -247,12 +254,17 @@ function rbv_org_field_default_field_instances() {
     'description' => 'La storia della propria organizzazione. ',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
+        'module' => 'jquery_expander',
         'settings' => array(
-          'trim_length' => 600,
+          'collapseTimer' => '',
+          'expandPrefix' => '... ',
+          'expandText' => 'espandi »',
+          'slicePoint' => 500,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« riduci',
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'jquery_expander',
         'weight' => 9,
       ),
       'featured' => array(
@@ -313,7 +325,7 @@ function rbv_org_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -375,11 +387,11 @@ function rbv_org_field_default_field_instances() {
     'description' => 'Caricare l\'immagine logo dell\'organizzazione.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'file',
+          'image_style' => 'panopoly_image_square',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -395,7 +407,7 @@ function rbv_org_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'rbv_image_teaser',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -405,7 +417,7 @@ function rbv_org_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'rbv_image_icon',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -417,7 +429,7 @@ function rbv_org_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 0,
+      'default_image' => 29,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -430,7 +442,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'medium',
+        'preview_image_style' => 'panopoly_image_square',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -449,9 +461,16 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '... ',
+          'expandText' => 'espandi »',
+          'slicePoint' => 500,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 7,
       ),
       'featured' => array(
@@ -502,7 +521,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -554,7 +573,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'description' => 'Slogan (o tagline, o payoff): una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -659,7 +678,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
@@ -710,7 +729,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'description' => 'Tipologia di organizzazione. Esempi: Associazione di Promozione Sociale, Associazione Onlus, Associazione Culturale, Cooperativa Sociale, Fondazione, Impresa sociale, Impresa monopersonale...',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -821,10 +840,129 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
   );
 
+  // Exported field_instance: 'og_membership-rbv_membership_default-field_com_description'
+  $field_instances['og_membership-rbv_membership_default-field_com_description'] = array(
+    'bundle' => 'rbv_membership_default',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'field_com_description',
+    'label' => 'Descrizione',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'og_membership-rbv_membership_default-field_membership_date'
+  $field_instances['og_membership-rbv_membership_default-field_membership_date'] = array(
+    'bundle' => 'rbv_membership_default',
+    'deleted' => 0,
+    'description' => 'Indicare le date della collaborazione di questa persona con questo ruolo.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'field_membership_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 30,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-50:+10',
+      ),
+      'type' => 'date_popup',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'og_membership-rbv_membership_default-field_membership_role'
+  $field_instances['og_membership-rbv_membership_default-field_membership_role'] = array(
+    'bundle' => 'rbv_membership_default',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Indicare il ruolo ricoperto dalla persona nell\'organizzazione.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'field_membership_role',
+    'label' => 'Ruolo',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'user-user-og_user_node'
   $field_instances['user-user-og_user_node'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -845,7 +983,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'entity_type' => 'user',
     'field_name' => 'og_user_node',
     'label' => 'Group membership',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -853,12 +991,15 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
             'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
-            'widget_type' => 'options_select',
+            'widget_type' => 'entityreference_autocomplete',
           ),
           'status' => TRUE,
         ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
       ),
-      'user_register_form' => FALSE,
+      'user_register_form' => 1,
     ),
     'view modes' => array(
       'full' => array(
@@ -873,10 +1014,11 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 7,
+      'weight' => 1,
     ),
   );
 
@@ -885,11 +1027,14 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Altro');
   t('Caricare l\'immagine logo dell\'organizzazione.');
   t('Data di fondazione');
+  t('Date');
   t('Descrizione');
   t('Determine if this is an OG group.');
   t('Email');
   t('Group');
   t('Group membership');
+  t('Indicare il ruolo ricoperto dalla persona nell\'organizzazione.');
+  t('Indicare le date della collaborazione di questa persona con questo ruolo.');
   t('Indirizzo');
   t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
   t('Inserire le parole chiave che descrivono la propria organizzazione.');
@@ -901,6 +1046,7 @@ Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazio
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
   t('Parole chiave');
   t('Quando è stata fondata questa organizzazione?');
+  t('Ruolo');
   t('Scegliere i settori di attività.');
   t('Settori di attività');
   t('Slogan');

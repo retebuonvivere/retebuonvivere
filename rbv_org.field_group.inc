@@ -53,12 +53,10 @@ function rbv_org_field_group_info() {
     'label' => 'Dati',
     'weight' => '2',
     'children' => array(
-      0 => 'group_org_history',
-      1 => 'group_org_contacts',
-      2 => 'group_org_description',
+      0 => 'group_org_contacts',
+      1 => 'group_org_description',
+      2 => 'group_org_history',
       3 => 'group_org_info',
-      4 => 'group_org_rel_org_org',
-      5 => 'group_org_rel_org_proj',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -254,9 +252,9 @@ function rbv_org_field_group_info() {
     'label' => 'Info',
     'weight' => '2',
     'children' => array(
-      0 => 'field_org_type',
-      1 => 'field_com_logo',
-      2 => 'field_com_tagline',
+      0 => 'field_com_logo',
+      1 => 'field_com_tagline',
+      2 => 'field_org_type',
       3 => 'title',
     ),
     'format_type' => 'tab',
