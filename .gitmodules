@@ -34,3 +34,6 @@
 [submodule "drupal/profiles/rbv_profile"]
 	path = drupal/profiles/rbv_profile
 	url = git@github.com:miromarchi/rbv_profile.git
+[submodule "drupal/features/rbv_event"]
+	path = drupal/features/rbv_event
+	url = git@github.com:miromarchi/rbv_event.git
