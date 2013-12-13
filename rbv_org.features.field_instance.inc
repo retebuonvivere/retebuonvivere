@@ -971,7 +971,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'featured' => array(
         'label' => 'above',
@@ -979,10 +979,17 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 2,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'og_user_node',
-    'label' => 'Group membership',
+    'label' => 'Organizzazione',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -1032,7 +1039,6 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Determine if this is an OG group.');
   t('Email');
   t('Group');
-  t('Group membership');
   t('Indicare il ruolo ricoperto dalla persona nell\'organizzazione.');
   t('Indicare le date della collaborazione di questa persona con questo ruolo.');
   t('Indirizzo');
@@ -1044,6 +1050,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
 Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
+  t('Organizzazione');
   t('Parole chiave');
   t('Quando è stata fondata questa organizzazione?');
   t('Ruolo');
