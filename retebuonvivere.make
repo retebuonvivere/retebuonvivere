@@ -94,3 +94,4 @@ libraries[fullcalendar][type] = library
 projects[rbv_profile][type] = profile
 projects[rbv_profile][download][type] = git
 projects[rbv_profile][download][url] = git@github.com:miromarchi/rbv_profile.git
+
