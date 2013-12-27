@@ -46,7 +46,7 @@ You can start from the drupal [makefile][5] to build the latest website configur
 
 demo
 ----
-At [dev-rbvt.gotpantheon.com][24] we mantain an updated test demo. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
+At [dev-rbv-pan.gotpantheon.com][24] we mantain an updated test demo. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
 
 rationale of the project
 ------------------------
@@ -103,4 +103,4 @@ technical staff
 [21]: https://github.com/miromarchi
 [22]: https://en.wikipedia.org/wiki/Social_entrepreneurship
 [23]: https://en.wikipedia.org/wiki/Cooperative
-[24]: http://dev-rbvt.gotpantheon.com/
+[24]: http://dev-rbv-pan.gotpantheon.com/
