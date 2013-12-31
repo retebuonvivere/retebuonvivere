@@ -226,7 +226,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
     ),
     'entity_type' => 'node',
     'field_name' => 'field_rel_source',
-    'label' => 'Soggetto 1',
+    'label' => 'Soggetto',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -240,8 +240,17 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'entityreference_autocreate' => array(
+          'active' => 1,
+          'author' => '',
+          'author_current_user' => 0,
+        ),
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
@@ -258,7 +267,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
     'description' => 'Il progetto a cui si collabora.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
@@ -309,8 +318,17 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'entityreference_autocreate' => array(
+          'active' => 1,
+          'author' => '',
+          'author_current_user' => 0,
+        ),
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
@@ -328,10 +346,9 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'featured' => array(
         'label' => 'above',
@@ -410,7 +427,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
   t('Scegliere le parole chiave che caratterizzano la relazione.');
   t('Selezionare la propria organizzazione.
 Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la relazione verrà attribuita all\'organizzazione indicata (quindi non sarete più in grado di modificare la relazione e i suoi dati).');
-  t('Soggetto 1');
+  t('Soggetto');
 
   return $field_instances;
 }

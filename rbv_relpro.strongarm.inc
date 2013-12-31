@@ -14,7 +14,7 @@ function rbv_relpro_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_collaboration';
-  $strongarm->value = 'edit-auto-nodetitle';
+  $strongarm->value = 'edit-unique-field';
   $export['additional_settings__active_tab_collaboration'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -159,6 +159,12 @@ function rbv_relpro_strongarm() {
       'vmode_group_content' => array(
         'custom_settings' => TRUE,
       ),
+      'featured' => array(
+        'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -219,10 +225,10 @@ function rbv_relpro_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_defaults_node_collaboration';
   $strongarm->value = array(
-    'status' => 1,
+    'status' => 0,
     'view modes' => array(
       'page_manager' => array(
-        'status' => 1,
+        'status' => 0,
         'default' => 1,
         'choice' => 0,
       ),
@@ -232,7 +238,7 @@ function rbv_relpro_strongarm() {
         'choice' => 0,
       ),
       'teaser' => array(
-        'status' => 1,
+        'status' => 0,
         'default' => 1,
         'choice' => 0,
       ),

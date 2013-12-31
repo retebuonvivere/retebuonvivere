@@ -77,8 +77,8 @@ function rbv_relpro_field_group_info() {
     'label' => 'Descrizione',
     'weight' => '1',
     'children' => array(
-      0 => 'field_com_foundingdate',
-      1 => 'field_com_description',
+      0 => 'field_com_description',
+      1 => 'field_com_foundingdate',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -104,8 +104,8 @@ function rbv_relpro_field_group_info() {
     'label' => 'Collaborazione',
     'weight' => '0',
     'children' => array(
-      0 => 'field_rel_source',
-      1 => 'field_rel_categories',
+      0 => 'field_rel_categories',
+      1 => 'field_rel_source',
       2 => 'field_relpro_project',
     ),
     'format_type' => 'fieldset',
