@@ -23,6 +23,7 @@ projects[calendar][subdir] = contrib
 projects[calendar][patch][1471400] = https://drupal.org/files/calendar-php54-1471400-58.patch
 projects[colors][subdir] = contrib
 projects[colors][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
+projects[d3][subdir] = contrib
 projects[date_ical][subdir] = contrib
 projects[diff][subdir] = contrib
 projects[email][subdir] = contrib
@@ -34,6 +35,7 @@ projects[entity_view_mode][subdir] = contrib
 projects[features][subdir] = contrib
 projects[fullcalendar][subdir] = contrib
 projects[jquery_expander][subdir] = contrib
+projects[graphapi][subdir] = contrib
 projects[module_filter][subdir] = contrib
 projects[og][subdir] = contrib
 projects[rdfa][subdir] = contrib
@@ -64,6 +66,9 @@ projects[rbv_relpro][subdir] = features
 projects[rbv_event][download][url] = git@github.com:miromarchi/rbv_event.git
 projects[rbv_event][type] = module
 projects[rbv_event][subdir] = features
+projects[rbv_view_graph][download][url] = git@github.com:miromarchi/rbv_view_graph.git
+projects[rbv_view_graph][type] = module
+projects[rbv_view_graph][subdir] = features
 
 ; Themes
 projects[radix_core][version] = 1.x-dev
