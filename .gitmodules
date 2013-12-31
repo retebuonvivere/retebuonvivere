@@ -37,3 +37,6 @@
 [submodule "drupal/features/rbv_event"]
 	path = drupal/features/rbv_event
 	url = git@github.com:miromarchi/rbv_event.git
+[submodule "drupal/features/rbv_view_graph"]
+	path = drupal/features/rbv_view_graph
+	url = git@github.com:miromarchi/rbv_view_graph.git
