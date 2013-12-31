@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Graph view feature.
+ */
+
+include_once 'rbv_view_graph.features.inc';

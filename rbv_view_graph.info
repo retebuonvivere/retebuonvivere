@@ -1,0 +1,14 @@
+name = Graph view
+description = The graph view orgs and projects.
+core = 7.x
+package = RBV contents
+version = 7.x-1.1-pan
+project = rbv_view_graph
+dependencies[] = ctools
+dependencies[] = d3
+dependencies[] = graphapi
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = rbv_view_graph
+project path = sites/all/modules/features
