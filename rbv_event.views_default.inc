@@ -983,7 +983,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Progetto */
+  /* Field: Content: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
