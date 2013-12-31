@@ -226,6 +226,7 @@ function rbv_org_field_group_info() {
     'children' => array(
       0 => 'field_com_foundingdate',
       1 => 'field_com_history',
+      2 => 'field_com_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

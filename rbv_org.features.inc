@@ -215,5 +215,23 @@ function rbv_org_rdf_default_mappings() {
     ),
   );
 
+  // Exported RDF mapping: user
+  $schemaorg['user']['user'] = array(
+    'rdftype' => array(
+      0 => 'sioc:UserAccount',
+    ),
+    'name' => array(
+      'predicates' => array(
+        0 => 'foaf:name',
+      ),
+    ),
+    'homepage' => array(
+      'predicates' => array(
+        0 => 'foaf:page',
+      ),
+      'type' => 'rel',
+    ),
+  );
+
   return $schemaorg;
 }

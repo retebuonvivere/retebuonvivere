@@ -31,6 +31,14 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:create event content'
+  $permissions['node:org:create event content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:manage members'
   $permissions['node:org:manage members'] = array(
     'roles' => array(
@@ -169,14 +177,6 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:update field_user_about field'
   $permissions['node:org:update field_user_about field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:update field_user_picture field'
-  $permissions['node:org:update field_user_picture field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
@@ -333,16 +333,6 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_user_about field'
   $permissions['node:org:view field_user_about field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view field_user_picture field'
-  $permissions['node:org:view field_user_picture field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',

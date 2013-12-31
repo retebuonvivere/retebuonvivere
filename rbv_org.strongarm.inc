@@ -267,7 +267,7 @@ function rbv_org_strongarm() {
         'choice' => 0,
       ),
       'vmode_group_content' => array(
-        'status' => 1,
+        'status' => 0,
         'default' => 1,
         'choice' => 0,
       ),
@@ -937,34 +937,6 @@ function rbv_org_strongarm() {
   $strongarm->name = 'pathauto_user_pattern';
   $strongarm->value = 'persone/[user:name]';
   $export['pathauto_user_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_rdftype_org';
-  $strongarm->value = 'schema:Organization, sioc:Item, foaf:Document';
-  $export['rdf_rdftype_org'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_title_datatype_org';
-  $strongarm->value = '';
-  $export['rdf_title_datatype_org'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_title_predicates_org';
-  $strongarm->value = 'schema:name';
-  $export['rdf_title_predicates_org'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_title_type_org';
-  $strongarm->value = 'property';
-  $export['rdf_title_type_org'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
