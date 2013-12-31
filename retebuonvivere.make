@@ -4,7 +4,6 @@ projects[] = drupal
 
 ; The Panopoly Foundation
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_core][patch][2087414] = https://drupal.org/files/issue-2087414.patch
 projects[panopoly_images][subdir] = panopoly
 projects[panopoly_theme][subdir] = panopoly
 projects[panopoly_magic][subdir] = panopoly
