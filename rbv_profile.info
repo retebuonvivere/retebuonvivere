@@ -99,10 +99,13 @@ dependencies[] = schemaorg
 dependencies[] = addressfield
 dependencies[] = email
 dependencies[] = entityreference
+dependencies[] = entityreference_autocreate
 dependencies[] = entityreference_prepopulate
 dependencies[] = field_group
 dependencies[] = link
-; dependencies[] = telephone
+dependencies[] = telephone
+dependencies[] = unique_field
+dependencies[] = jquery_expander
 
 ; Input filters
 dependencies[] = caption_filter
@@ -152,6 +155,10 @@ dependencies[] = views_autocomplete_filters
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 
+; Visualization
+dependencies[] = graphapi
+dependencies[] = d3
+
 ; Features
 dependencies[] = features
 dependencies[] = strongarm
@@ -163,5 +170,6 @@ dependencies[] = rbv_org
 dependencies[] = rbv_project
 dependencies[] = rbv_relpro
 dependencies[] = rbv_event
+dependencies[] = rbv_view_graph
 
 files[] = rbv_profile.profile
