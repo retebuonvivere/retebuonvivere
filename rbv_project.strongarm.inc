@@ -14,7 +14,7 @@ function rbv_project_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_project';
-  $strongarm->value = 'edit-panelizer';
+  $strongarm->value = 'edit-auto-nodetitle';
   $export['additional_settings__active_tab_project'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -262,34 +262,6 @@ function rbv_project_strongarm() {
   $strongarm->name = 'pathauto_node_project_pattern';
   $strongarm->value = 'progetti/[node:title]';
   $export['pathauto_node_project_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_rdftype_project';
-  $strongarm->value = 'schema:Organization/Project, sioc:Item, foaf:Document';
-  $export['rdf_rdftype_project'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_title_datatype_project';
-  $strongarm->value = '';
-  $export['rdf_title_datatype_project'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_title_predicates_project';
-  $strongarm->value = 'schema:name';
-  $export['rdf_title_predicates_project'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rdf_title_type_project';
-  $strongarm->value = 'property';
-  $export['rdf_title_type_project'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

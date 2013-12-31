@@ -25,7 +25,7 @@ function rbv_project_ctools_plugin_api($module = NULL, $api = NULL) {
 function rbv_project_node_info() {
   $items = array(
     'project' => array(
-      'name' => t('Progetto'),
+      'name' => t('Progetto/attività'),
       'base' => 'node_content',
       'description' => t('Un progetto o attività iniziata dalla propria organizzazione. '),
       'has_title' => '1',
