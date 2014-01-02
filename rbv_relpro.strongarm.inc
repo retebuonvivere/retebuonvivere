@@ -14,7 +14,7 @@ function rbv_relpro_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_collaboration';
-  $strongarm->value = 'edit-unique-field';
+  $strongarm->value = 'edit-auto-nodetitle';
   $export['additional_settings__active_tab_collaboration'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -262,6 +262,39 @@ function rbv_relpro_strongarm() {
   $strongarm->name = 'pathauto_node_collaboration_pattern';
   $strongarm->value = 'collaborazioni/[node:title]';
   $export['pathauto_node_collaboration_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_comp_collaboration';
+  $strongarm->value = 'all';
+  $export['unique_field_comp_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_fields_collaboration';
+  $strongarm->value = array(
+    0 => 'field_rel_source',
+    1 => 'field_relpro_project',
+  );
+  $export['unique_field_fields_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_scope_collaboration';
+  $strongarm->value = 'type';
+  $export['unique_field_scope_collaboration'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_show_matches_collaboration';
+  $strongarm->value = array(
+    0 => 'show_matches',
+  );
+  $export['unique_field_show_matches_collaboration'] = $strongarm;
 
   return $export;
 }

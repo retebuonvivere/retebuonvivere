@@ -32,9 +32,9 @@ function rbv_relpro_views_api($module = NULL, $api = NULL) {
 function rbv_relpro_node_info() {
   $items = array(
     'collaboration' => array(
-      'name' => t('Collaborazione'),
+      'name' => t('Collaborazione (a progetto/attività)'),
       'base' => 'node_content',
-      'description' => t('Una collaborazione ad un progetto.'),
+      'description' => t('Una collaborazione ad un progetto/attività.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

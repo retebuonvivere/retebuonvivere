@@ -37,7 +37,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['id'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['field'] = 'reverse_field_relpro_project_node';
-  /* Field: Content: Soggetto 1 */
+  /* Field: Content: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -75,7 +75,7 @@ function rbv_relpro_views_default_views() {
   /* Display: pane: collaboratori */
   $handler = $view->new_display('panel_pane', 'pane: collaboratori', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Soggetto 1 */
+  /* Field: Content: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
