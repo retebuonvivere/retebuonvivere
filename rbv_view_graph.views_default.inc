@@ -32,7 +32,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
   $handler->display->display_options['style_options']['d3'] = array(
-    'library' => 'forcedirected',
+    'library' => 'module_dependencies',
     'fields' => array(
       'nid' => 'from:id',
       'title' => 'from:label',
