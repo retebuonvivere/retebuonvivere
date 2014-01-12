@@ -13,13 +13,15 @@ We update 1-mode relations every time a 2-mode relation (collaborations to proje
 
 * E.g. Organization1 creates a collaboration to project2 of Organization2: 
 
+```
     Org1 → Project2
+```
 
 * The rule is fired: get all collaborators at project2 (let's say they are Organization2, Organization1 and Organization3). 
 
 ```
 Org1 \
-Org2 -→ Project2
+Org2 -|→ Project2
 Org3 /
 ```
 
