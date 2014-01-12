@@ -49,4 +49,4 @@ Go to the [relation wiki][1] for more stuff about how we want to implement relat
 [5]: https://drupal.org/project/rules_conditional
 [6]: https://github.com/miromarchi/rbv_org
 [7]: https://github.com/miromarchi/rbv_relpro
-[7]: https://github.com/miromarchi/rbv_project
+[8]: https://github.com/miromarchi/rbv_project
