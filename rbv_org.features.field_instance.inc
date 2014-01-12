@@ -78,7 +78,7 @@ function rbv_org_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 16,
+        'weight' => 4,
       ),
       'featured' => array(
         'label' => 'above',
@@ -558,6 +558,55 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
   );
 
+  // Exported field_instance: 'node-org-field_com_social_links'
+  $field_instances['node-org-field_com_social_links'] = array(
+    'bundle' => 'org',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'social_profile_field',
+        'settings' => array(),
+        'type' => 'social_profile_field_icons',
+        'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_social_links',
+    'label' => 'Seguici su',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'social_profile_field',
+      'settings' => array(),
+      'type' => 'social_profile_field_default',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-org-field_com_tagline'
   $field_instances['node-org-field_com_tagline'] = array(
     'bundle' => 'org',
@@ -727,7 +776,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'featured' => array(
         'label' => 'above',
@@ -777,12 +826,9 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(
-          'field_name' => FALSE,
-        ),
-        'type' => 'og_group_subscribe',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'featured' => array(
         'label' => 'above',
@@ -1036,6 +1082,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Indicare il ruolo ricoperto dalla persona nell\'organizzazione.');
   t('Indicare le date della collaborazione di questa persona con questo ruolo.');
   t('Indirizzo');
+  t('Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.');
   t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
   t('Inserire le parole chiave che descrivono la propria organizzazione.');
   t('La storia della propria organizzazione. ');
@@ -1048,6 +1095,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Parole chiave');
   t('Ruolo');
   t('Scegliere i settori di attività.');
+  t('Seguici su');
   t('Settori di attività');
   t('Slogan');
   t('Slogan (o tagline, o payoff): una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione.');

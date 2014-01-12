@@ -10,6 +10,26 @@
 function rbv_org_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_com_social_links'
+  $field_bases['field_com_social_links'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_com_social_links',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'url' => array(
+        0 => 'url',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'social_profile_field',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'social_profile_field_url',
+  );
+
   // Exported field_base: 'field_membership_date'
   $field_bases['field_membership_date'] = array(
     'active' => 1,

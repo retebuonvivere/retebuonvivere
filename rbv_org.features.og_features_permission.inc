@@ -95,14 +95,6 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:update field_com_foundingdate field'
-  $permissions['node:org:update field_com_foundingdate field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
   // Exported og permission: 'node:org:update field_com_history field'
   $permissions['node:org:update field_com_history field'] = array(
     'roles' => array(
@@ -223,16 +215,6 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_com_email field'
   $permissions['node:org:view field_com_email field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view field_com_foundingdate field'
-  $permissions['node:org:view field_com_foundingdate field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',

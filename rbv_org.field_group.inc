@@ -109,7 +109,7 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contatti',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_com_email',
       1 => 'field_com_location',
@@ -138,7 +138,7 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Descrizione',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_com_categories',
       1 => 'field_com_description',
@@ -167,10 +167,9 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Storia',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_com_foundingdate',
-      1 => 'field_com_history',
+      0 => 'field_com_history',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -194,11 +193,12 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '1',
+    'weight' => '0',
     'children' => array(
       0 => 'field_com_logo',
       1 => 'field_com_tagline',
       2 => 'field_org_type',
+      3 => 'field_com_social_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -224,9 +224,8 @@ function rbv_org_field_group_info() {
     'label' => 'Storia',
     'weight' => '4',
     'children' => array(
-      0 => 'field_com_foundingdate',
+      0 => 'field_com_date',
       1 => 'field_com_history',
-      2 => 'field_com_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -256,7 +255,8 @@ function rbv_org_field_group_info() {
       0 => 'field_com_logo',
       1 => 'field_com_tagline',
       2 => 'field_org_type',
-      3 => 'title',
+      3 => 'field_com_social_links',
+      4 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
