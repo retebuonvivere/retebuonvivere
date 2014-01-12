@@ -22,7 +22,7 @@ function rbv_project_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 10,
       ),
       'featured' => array(
         'label' => 'above',
@@ -57,7 +57,73 @@ function rbv_project_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_com_date'
+  $field_instances['node-project-field_com_date'] = array(
+    'bundle' => 'project',
+    'deleted' => 0,
+    'description' => 'Quando è iniziato (ed eventualmente terminato) questo progetto?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'medium',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 14,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'blank',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 30,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-80:+20',
+      ),
+      'type' => 'date_popup',
+      'weight' => 21,
     ),
   );
 
@@ -80,7 +146,7 @@ function rbv_project_field_default_field_instances() {
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 7,
+        'weight' => 12,
       ),
       'featured' => array(
         'label' => 'above',
@@ -118,7 +184,7 @@ function rbv_project_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 18,
     ),
   );
 
@@ -173,72 +239,6 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_foundingdate'
-  $field_instances['node-project-field_com_foundingdate'] = array(
-    'bundle' => 'project',
-    'deleted' => 0,
-    'description' => 'Quando è iniziato questo progetto?',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 4,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'vmode_group_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_com_foundingdate',
-    'label' => 'Data di fondazione',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'display_all_day' => 0,
-        'increment' => 30,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-50:+0',
-      ),
-      'type' => 'date_popup',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-project-field_com_history'
   $field_instances['node-project-field_com_history'] = array(
     'bundle' => 'project',
@@ -258,7 +258,7 @@ function rbv_project_field_default_field_instances() {
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 5,
+        'weight' => 15,
       ),
       'featured' => array(
         'label' => 'above',
@@ -296,7 +296,7 @@ function rbv_project_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 22,
     ),
   );
 
@@ -464,7 +464,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 8,
+        'weight' => 13,
       ),
       'featured' => array(
         'label' => 'above',
@@ -502,7 +502,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 19,
     ),
   );
 
@@ -555,6 +555,55 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
       ),
       'type' => 'text_textfield',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_com_scope'
+  $field_instances['node-project-field_com_scope'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Indicare l\'ambito/portata del progetto/attività: es. locale, regionale, nazionale...',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_scope',
+    'label' => 'Ambito/portata',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
     ),
   );
 
@@ -624,7 +673,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 11,
       ),
       'featured' => array(
         'label' => 'above',
@@ -660,7 +709,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 6,
+      'weight' => 17,
     ),
   );
 
@@ -868,12 +917,14 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
   // Translatables
   // Included for use with string extractors like potx.
   t('Altro');
-  t('Data di fondazione');
+  t('Ambito/portata');
+  t('Date');
   t('Descrivere questo progetto, cos\'è, cosa fà...');
   t('Descrizione');
   t('Email');
   t('Group visibility');
   t('Groups audience');
+  t('Indicare l\'ambito/portata del progetto/attività: es. locale, regionale, nazionale...');
   t('Indirizzo');
   t('Le parole chiave che definiscono questo progetto.');
   t('Logo');
@@ -882,7 +933,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
 Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo progetto? Perché lo facciamo?');
   t('Parole chiave');
-  t('Quando è iniziato questo progetto?');
+  t('Quando è iniziato (ed eventualmente terminato) questo progetto?');
   t('Raccontare la storia di questo progetto.');
   t('Scegliere i settori di impatto del progetto.');
   t('Settori di impatto');
