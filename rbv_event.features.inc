@@ -32,7 +32,7 @@ function rbv_event_views_api($module = NULL, $api = NULL) {
 function rbv_event_node_info() {
   $items = array(
     'event' => array(
-      'name' => t('Evento'),
+      'name' => t('Evento (calendario)'),
       'base' => 'node_content',
       'description' => t('Evento che potrà apparire sul calendario della propria organizzazione e sul calendario condiviso.'),
       'has_title' => '1',
