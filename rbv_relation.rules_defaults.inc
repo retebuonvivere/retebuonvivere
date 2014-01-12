@@ -12,11 +12,10 @@ function rbv_relation_default_rules_configuration() {
   $items['rules_rbv_auto_relation'] = entity_import('rules_config', '{ "rules_rbv_auto_relation" : {
       "LABEL" : "rbv auto relation",
       "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "rbv" ],
       "REQUIRES" : [ "rules", "rules_conditional" ],
-      "ON" : { "node_presave--collaboration" : { "bundle" : "collaboration" } },
+      "ON" : { "node_insert--collaboration" : { "bundle" : "collaboration" } },
       "DO" : [
         { "entity_query" : {
             "USING" : {
