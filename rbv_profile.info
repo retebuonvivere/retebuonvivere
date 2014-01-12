@@ -10,12 +10,14 @@ core = 7.24
 
 ; Drupal Core
 dependencies[] = color
+dependencies[] = comment
 dependencies[] = dblog
 dependencies[] = field
 dependencies[] = field_sql_storage
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = filter
+dependencies[] = forum
 dependencies[] = image
 dependencies[] = list
 dependencies[] = menu
@@ -102,10 +104,11 @@ dependencies[] = entityreference
 dependencies[] = entityreference_autocreate
 dependencies[] = entityreference_prepopulate
 dependencies[] = field_group
+dependencies[] = jquery_expander
 dependencies[] = link
+dependencies[] = social_profile_field
 dependencies[] = telephone
 dependencies[] = unique_field
-dependencies[] = jquery_expander
 
 ; Input filters
 dependencies[] = caption_filter
@@ -133,9 +136,15 @@ dependencies[] = panels
 dependencies[] = panels_breadcrumbs
 dependencies[] = panels_ipe
 
+; Relations
+dependencies[] = relation
+dependencies[] = relation_endpoint
+dependencies[] = relation_ui
+
 ; Rules
 dependencies[] = rules
 dependencies[] = rules_admin
+dependencies[] = rules_conditional
 
 ; Search
 dependencies[] = search_api
