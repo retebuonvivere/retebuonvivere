@@ -40,3 +40,6 @@
 [submodule "drupal/features/rbv_view_graph"]
 	path = drupal/features/rbv_view_graph
 	url = git@github.com:miromarchi/rbv_view_graph.git
+[submodule "drupal/features/rbv_relation"]
+	path = drupal/features/rbv_relation
+	url = git@github.com:miromarchi/rbv_relation.git
