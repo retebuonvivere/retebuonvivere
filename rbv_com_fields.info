@@ -27,7 +27,6 @@ features[field_base][] = field_com_categories
 features[field_base][] = field_com_date
 features[field_base][] = field_com_description
 features[field_base][] = field_com_email
-features[field_base][] = field_com_foundingdate
 features[field_base][] = field_com_history
 features[field_base][] = field_com_location
 features[field_base][] = field_com_logo
