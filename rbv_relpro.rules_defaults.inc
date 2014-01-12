@@ -40,5 +40,48 @@ function rbv_relpro_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_rbv_auto_collaboration_end_date'] = entity_import('rules_config', '{ "rules_rbv_auto_collaboration_end_date" : {
+      "LABEL" : "rbv auto collaboration end date",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "rbv" ],
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "ON" : { "node_presave--project" : { "bundle" : "project" } },
+      "IF" : [
+        { "NOT data_is_empty" : { "data" : [ "node:field-com-date:duration" ] } }
+      ],
+      "DO" : [
+        { "entity_query" : {
+            "USING" : {
+              "type" : "node",
+              "property" : "field_relpro_project",
+              "value" : [ "node" ]
+            },
+            "PROVIDE" : { "entity_fetched" : { "collaborations_fetched" : "Fetched collaborations" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "collaborations-fetched" ] },
+            "ITEM" : { "collaboration" : "Fetched collaboration list item" },
+            "DO" : [
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "entity_has_field" : { "entity" : [ "collaboration" ], "field" : "field_com_date" } },
+                    "DO" : [
+                      { "data_set" : {
+                          "data" : [ "collaboration:field-com-date:value2" ],
+                          "value" : [ "node:field-com-date:value2" ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }

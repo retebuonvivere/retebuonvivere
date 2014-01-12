@@ -50,7 +50,7 @@ function rbv_relpro_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'field_com_description',
-      1 => 'field_com_foundingdate',
+      1 => 'field_com_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -78,7 +78,7 @@ function rbv_relpro_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_com_description',
-      1 => 'field_com_foundingdate',
+      1 => 'field_com_date',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
