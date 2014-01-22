@@ -2,7 +2,7 @@ core = 7.24
 api = 2
 projects[] = drupal
 
-; retebuonvivere make file
+; retebuonvivere production make file
 
 ; The Panopoly Foundation
 projects[panopoly_core][subdir] = panopoly
@@ -40,7 +40,7 @@ projects[features][patch][2155945] = https://drupal.org/files/issues/features_st
 projects[fullcalendar][subdir] = contrib
 projects[jquery_expander][subdir] = contrib
 projects[graphapi][subdir] = contrib
-projects[module_filter][subdir] = contrib
+; projects[module_filter][subdir] = contrib
 projects[message][subdir] = contrib
 projects[message_notify][subdir] = contrib
 projects[message_subscribe][subdir] = contrib
@@ -55,9 +55,7 @@ projects[relation][patch][1302788] = https://drupal.org/files/relation-query_end
 projects[schemaorg][subdir] = contrib
 projects[social_profile_field][subdir] = contrib
 projects[subpathauto][subdir] = contrib
-projects[telephone][subdir] = contrib
-; adding telephone version to skip error
-projects[telephone][version] = 1.x
+; projects[telephone][subdir] = contrib
 projects[unique_field][subdir] = contrib
 projects[views_bulk_operations][subdir] = contrib
 
@@ -92,10 +90,10 @@ projects[rbv_view_explore][type] = module
 projects[rbv_view_explore][subdir] = features
 
 ; Themes
-projects[radix_core][version] = 1.x-dev
-projects[radix_core][subdir] = contrib
-projects[responsive_bartik][type] = theme
-projects[responsive_bartik][subdir] = contrib
+; projects[radix_core][version] = 1.x-dev
+; projects[radix_core][subdir] = contrib
+; projects[responsive_bartik][type] = theme
+; projects[responsive_bartik][subdir] = contrib
 projects[kalatheme][subdir] = contrib
 projects[rbv_theme_kala][download][url] = git@github.com:miromarchi/rbv_theme_kala.git
 projects[rbv_theme_kala][type] = theme
