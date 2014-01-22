@@ -56,6 +56,7 @@ features[field_instance][] = node-project-field_com_logo
 features[field_instance][] = node-project-field_com_mission
 features[field_instance][] = node-project-field_com_more_contacts
 features[field_instance][] = node-project-field_com_scope
+features[field_instance][] = node-project-field_com_social_links
 features[field_instance][] = node-project-field_com_tagline
 features[field_instance][] = node-project-field_com_tags
 features[field_instance][] = node-project-field_com_telephone

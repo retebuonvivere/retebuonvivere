@@ -15,7 +15,7 @@ function rbv_project_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Scegliere i settori di impatto del progetto.',
+    'description' => 'Scegliere i settori di impatto del progetto/attività.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -31,14 +31,14 @@ function rbv_project_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -47,7 +47,7 @@ function rbv_project_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_categories',
-    'label' => 'Settori di impatto',
+    'label' => 'Settori',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -439,7 +439,7 @@ function rbv_project_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -607,6 +607,55 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     ),
   );
 
+  // Exported field_instance: 'node-project-field_com_social_links'
+  $field_instances['node-project-field_com_social_links'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Inserire gli indirizzi delle pagine del progetto/attività nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, wikipedia, ...). Verranno visualizzati con l\'icona corrispondente.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'social_profile_field',
+        'settings' => array(),
+        'type' => 'social_profile_field_icons',
+        'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_social_links',
+    'label' => 'Seguici su',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'social_profile_field',
+      'settings' => array(),
+      'type' => 'social_profile_field_default',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_com_tagline'
   $field_instances['node-project-field_com_tagline'] = array(
     'bundle' => 'project',
@@ -657,7 +706,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -777,10 +826,9 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'featured' => array(
         'label' => 'above',
@@ -837,10 +885,9 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'featured' => array(
         'label' => 'above',
@@ -849,7 +896,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => 1,
@@ -926,6 +973,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
   t('Groups audience');
   t('Indicare l\'ambito/portata del progetto/attività: es. locale, regionale, nazionale...');
   t('Indirizzo');
+  t('Inserire gli indirizzi delle pagine del progetto/attività nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, wikipedia, ...). Verranno visualizzati con l\'icona corrispondente.');
   t('Le parole chiave che definiscono questo progetto.');
   t('Logo');
   t('Mission');
@@ -935,8 +983,9 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
   t('Parole chiave');
   t('Quando è iniziato (ed eventualmente terminato) questo progetto?');
   t('Raccontare la storia di questo progetto.');
-  t('Scegliere i settori di impatto del progetto.');
-  t('Settori di impatto');
+  t('Scegliere i settori di impatto del progetto/attività.');
+  t('Seguici su');
+  t('Settori');
   t('Slogan');
   t('Storia');
   t('Telefono');
