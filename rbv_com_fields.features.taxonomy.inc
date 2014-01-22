@@ -10,7 +10,7 @@
 function rbv_com_fields_taxonomy_default_vocabularies() {
   return array(
     'categories' => array(
-      'name' => 'Categorie',
+      'name' => 'Settori',
       'machine_name' => 'categories',
       'description' => 'Settori di attività o categorie',
       'hierarchy' => 0,
