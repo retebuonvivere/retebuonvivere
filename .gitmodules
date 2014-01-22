@@ -43,3 +43,9 @@
 [submodule "drupal/features/rbv_relation"]
 	path = drupal/features/rbv_relation
 	url = git@github.com:miromarchi/rbv_relation.git
+[submodule "drupal/themes/rbv_theme"]
+	path = drupal/themes/rbv_theme
+	url = git@github.com:fonzy85vr/rbv_theme.git
+[submodule "drupal/features/rbv_pages"]
+	path = drupal/features/rbv_pages
+	url = git@github.com:miromarchi/rbv_pages.git
