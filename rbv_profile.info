@@ -1,6 +1,6 @@
 ; Packaging information for retebuonvivere
 name = rbv_profile
-description = "The profile for the original network of Verona."
+description = "The dev profile for the original network of Verona."
 exclusive = 1
 core = 7.24
 
@@ -34,22 +34,6 @@ dependencies[] = text
 dependencies[] = update
 dependencies[] = user
 
-; Chaos tool suite
-dependencies[] = ctools
-dependencies[] = fape
-dependencies[] = page_manager
-dependencies[] = pm_existing_pages
-dependencies[] = views_content
-
-; Date/Time
-dependencies[] = date
-dependencies[] = date_api
-dependencies[] = date_popup
-dependencies[] = date_popup_authored
-dependencies[] = date_views
-dependencies[] = date_ical
-dependencies[] = fullcalendar
-
 ; Panopoly Foundation
 dependencies[] = panopoly_core
 dependencies[] = panopoly_images
@@ -63,6 +47,29 @@ dependencies[] = panopoly_users
 dependencies[] = panopoly_pages
 dependencies[] = panopoly_search
 dependencies[] = panopoly_wysiwyg
+
+; Chaos tool suite
+dependencies[] = ctools
+dependencies[] = fape
+dependencies[] = page_manager
+dependencies[] = pm_existing_pages
+dependencies[] = views_content
+
+; Panels
+dependencies[] = fieldable_panels_panes
+dependencies[] = panelizer
+dependencies[] = panels
+dependencies[] = panels_breadcrumbs
+dependencies[] = panels_ipe
+
+; Date/Time
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_popup_authored
+dependencies[] = date_views
+dependencies[] = date_ical
+dependencies[] = fullcalendar
 
 ; Administration
 dependencies[] = navbar
@@ -129,17 +136,14 @@ dependencies[] = og_context
 dependencies[] = og_field_access
 dependencies[] = og_ui
 
-; Panels
-dependencies[] = fieldable_panels_panes
-dependencies[] = panelizer
-dependencies[] = panels
-dependencies[] = panels_breadcrumbs
-dependencies[] = panels_ipe
-
 ; Relations
 dependencies[] = relation
 dependencies[] = relation_endpoint
 dependencies[] = relation_ui
+
+; Visualization
+dependencies[] = graphapi
+dependencies[] = d3
 
 ; Rules
 dependencies[] = rules
@@ -158,15 +162,17 @@ dependencies[] = facetapi
 dependencies[] = jquery_update
 dependencies[] = wysiwyg
 
+; User interaction
+; dependency [] = message
+; dependency [] = message_notify
+; dependency [] = message_subscribe
+; dependency [] = advanced_forum
+
 ; Views
 dependencies[] = views
 dependencies[] = views_autocomplete_filters
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
-
-; Visualization
-dependencies[] = graphapi
-dependencies[] = d3
 
 ; Features
 dependencies[] = features
@@ -178,7 +184,9 @@ dependencies[] = rbv_com_fields
 dependencies[] = rbv_org
 dependencies[] = rbv_project
 dependencies[] = rbv_relpro
+dependencies[] = rbv_relation
 dependencies[] = rbv_event
 dependencies[] = rbv_view_graph
+dependencies[] = rbv_view_explore
 
 files[] = rbv_profile.profile
