@@ -110,6 +110,7 @@ dependencies[] = email
 dependencies[] = entityreference
 dependencies[] = entityreference_autocreate
 dependencies[] = entityreference_prepopulate
+dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = jquery_expander
 dependencies[] = link
