@@ -82,6 +82,10 @@ projects[rbv_event][download][type] = git
 projects[rbv_event][download][url] = git@github.com:miromarchi/rbv_event.git
 projects[rbv_event][type] = module
 projects[rbv_event][subdir] = features
+projects[rbv_pages][download][type] = git
+projects[rbv_pages][download][url] = git@github.com:miromarchi/rbv_pages.git
+projects[rbv_pages][type] = module
+projects[rbv_pages][subdir] = features
 projects[rbv_view_graph][download][type] = git
 projects[rbv_view_graph][download][url] = git@github.com:miromarchi/rbv_view_graph.git
 projects[rbv_view_graph][type] = module
@@ -91,13 +95,14 @@ projects[rbv_view_explore][download][url] = git@github.com:miromarchi/rbv_view_e
 projects[rbv_view_explore][type] = module
 projects[rbv_view_explore][subdir] = features
 
+
 ; Themes
 projects[radix_core][version] = 1.x-dev
 projects[radix_core][subdir] = contrib
 projects[responsive_bartik][type] = theme
 projects[responsive_bartik][subdir] = contrib
 projects[kalatheme][subdir] = contrib
-projects[rbv_theme_kala][download][url] = git@github.com:miromarchi/rbv_theme_kala.git
+projects[rbv_theme_kala][download][url] = git@github.com:fonzy85vr/rbv_theme.git
 projects[rbv_theme_kala][type] = theme
 projects[rbv_theme_kala][subdir] = contrib
 
