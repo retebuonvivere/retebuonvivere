@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the pages feature.
+ */
+
+include_once 'rbv_pages.features.inc';

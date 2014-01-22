@@ -1,0 +1,16 @@
+name = pages
+description = Pages: home page
+core = 7.x
+package = RBV contents
+version = 7.x-1.0-pan
+project = rbv_pages
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[menu_links][] = main-menu_home:<front>
+features[page_manager_pages][] = rbv_page_home
+features_exclude[menu_custom][main-menu] = main-menu
+project path = sites/all/modules/features
