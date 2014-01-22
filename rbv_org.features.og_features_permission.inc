@@ -135,6 +135,14 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:update field_com_social_links field'
+  $permissions['node:org:update field_com_social_links field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:update field_com_tagline field'
   $permissions['node:org:update field_com_tagline field'] = array(
     'roles' => array(
@@ -167,8 +175,24 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:update field_quick_links_links field'
+  $permissions['node:org:update field_quick_links_links field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:update field_user_about field'
   $permissions['node:org:update field_user_about field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:update field_user_picture field'
+  $permissions['node:org:update field_user_picture field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
@@ -195,6 +219,16 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_com_categories field'
   $permissions['node:org:view field_com_categories field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:view field_com_date field'
+  $permissions['node:org:view field_com_date field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
@@ -273,6 +307,16 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:view field_com_social_links field'
+  $permissions['node:org:view field_com_social_links field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
   // Exported og permission: 'node:org:view field_com_tagline field'
   $permissions['node:org:view field_com_tagline field'] = array(
     'roles' => array(
@@ -313,8 +357,28 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:view field_quick_links_links field'
+  $permissions['node:org:view field_quick_links_links field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
   // Exported og permission: 'node:org:view field_user_about field'
   $permissions['node:org:view field_user_about field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
+      'non-member' => 'non-member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:view field_user_picture field'
+  $permissions['node:org:view field_user_picture field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',

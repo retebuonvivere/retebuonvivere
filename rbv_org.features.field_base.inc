@@ -10,54 +10,23 @@
 function rbv_org_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_com_social_links'
-  $field_bases['field_com_social_links'] = array(
+  // Exported field_base: 'field_membership_period'
+  $field_bases['field_membership_period'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_com_social_links',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'url' => array(
-        0 => 'url',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'social_profile_field',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'social_profile_field_url',
-  );
-
-  // Exported field_base: 'field_membership_date'
-  $field_bases['field_membership_date'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_membership_date',
+    'field_name' => 'field_membership_period',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
-    'module' => 'date',
+    'module' => 'field_collection',
     'settings' => array(
-      'cache_count' => 4,
-      'cache_enabled' => 0,
-      'granularity' => array(
-        'day' => 'day',
-        'hour' => 0,
-        'minute' => 0,
-        'month' => 'month',
-        'second' => 0,
-        'year' => 'year',
-      ),
-      'timezone_db' => '',
-      'todate' => 'optional',
-      'tz_handling' => 'none',
+      'hide_blank_items' => 1,
+      'path' => '',
     ),
     'translatable' => 0,
-    'type' => 'date',
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_membership_role'

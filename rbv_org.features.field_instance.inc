@@ -10,6 +10,124 @@
 function rbv_org_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_membership_period-field_com_date'
+  $field_instances['field_collection_item-field_membership_period-field_com_date'] = array(
+    'bundle' => 'field_membership_period',
+    'deleted' => 0,
+    'description' => 'Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_com_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'M j Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_membership_period-field_com_description'
+  $field_instances['field_collection_item-field_membership_period-field_com_description'] = array(
+    'bundle' => 'field_membership_period',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_com_description',
+    'label' => 'Descrizione',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 16,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_membership_period-field_membership_role'
+  $field_instances['field_collection_item-field_membership_period-field_membership_role'] = array(
+    'bundle' => 'field_membership_period',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Ruolo ricoperto dalla persona in questo periodo',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_membership_role',
+    'label' => 'Ruolo',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-org-field_com_categories'
   $field_instances['node-org-field_com_categories'] = array(
     'bundle' => 'org',
@@ -47,7 +165,7 @@ function rbv_org_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_categories',
-    'label' => 'Settori di attività',
+    'label' => 'Settori',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -566,7 +684,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'description' => 'Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'social_profile_field',
         'settings' => array(),
         'type' => 'social_profile_field_icons',
@@ -880,8 +998,8 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
   );
 
-  // Exported field_instance: 'og_membership-rbv_membership_default-field_com_description'
-  $field_instances['og_membership-rbv_membership_default-field_com_description'] = array(
+  // Exported field_instance: 'og_membership-rbv_membership_default-field_membership_period'
+  $field_instances['og_membership-rbv_membership_default-field_membership_period'] = array(
     'bundle' => 'rbv_membership_default',
     'default_value' => NULL,
     'deleted' => 0,
@@ -889,112 +1007,31 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'og_membership',
-    'field_name' => 'field_com_description',
-    'label' => 'Descrizione',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 0,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'og_membership-rbv_membership_default-field_membership_date'
-  $field_instances['og_membership-rbv_membership_default-field_membership_date'] = array(
-    'bundle' => 'rbv_membership_default',
-    'deleted' => 0,
-    'description' => 'Indicare le date della collaborazione di questa persona con questo ruolo.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
+        'module' => 'field_collection',
         'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
         ),
-        'type' => 'date_default',
-        'weight' => 3,
+        'type' => 'field_collection_view',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'og_membership',
-    'field_name' => 'field_membership_date',
-    'label' => 'Date',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'display_all_day' => 0,
-        'increment' => 30,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-50:+10',
-      ),
-      'type' => 'date_popup',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'og_membership-rbv_membership_default-field_membership_role'
-  $field_instances['og_membership-rbv_membership_default-field_membership_role'] = array(
-    'bundle' => 'rbv_membership_default',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Indicare il ruolo ricoperto dalla persona nell\'organizzazione.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'og_membership',
-    'field_name' => 'field_membership_role',
-    'label' => 'Ruolo',
+    'field_name' => 'field_membership_period',
+    'label' => 'Periodo',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 1,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_hidden',
+      'weight' => 8,
     ),
   );
 
@@ -1029,7 +1066,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
     'entity_type' => 'user',
     'field_name' => 'og_user_node',
-    'label' => 'Organizzazione',
+    'label' => 'Organizzazioni',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -1079,8 +1116,6 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Determine if this is an OG group.');
   t('Email');
   t('Group');
-  t('Indicare il ruolo ricoperto dalla persona nell\'organizzazione.');
-  t('Indicare le date della collaborazione di questa persona con questo ruolo.');
   t('Indirizzo');
   t('Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.');
   t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
@@ -1091,12 +1126,15 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
 Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
-  t('Organizzazione');
+  t('Organizzazioni');
   t('Parole chiave');
+  t('Periodo');
+  t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');
   t('Ruolo');
+  t('Ruolo ricoperto dalla persona in questo periodo');
   t('Scegliere i settori di attività.');
   t('Seguici su');
-  t('Settori di attività');
+  t('Settori');
   t('Slogan');
   t('Slogan (o tagline, o payoff): una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione.');
   t('Storia');

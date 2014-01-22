@@ -32,7 +32,7 @@ function rbv_org_panelizer_defaults() {
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'organizzazioni
 %node:title',
-    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_paths' => 'organizzazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();

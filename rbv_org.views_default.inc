@@ -48,7 +48,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  /* Field: OG membership: Ruolo */
+  /* Field: Field collection item: Ruolo */
   $handler->display->display_options['fields']['field_membership_role']['id'] = 'field_membership_role';
   $handler->display->display_options['fields']['field_membership_role']['table'] = 'field_data_field_membership_role';
   $handler->display->display_options['fields']['field_membership_role']['field'] = 'field_membership_role';
