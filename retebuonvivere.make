@@ -37,6 +37,7 @@ projects[entityreference_prepopulate][subdir] = contrib
 projects[entity_view_mode][subdir] = contrib
 projects[features][subdir] = contrib
 projects[features][patch][2155945] = https://drupal.org/files/issues/features_strict-warning-menu-links_2155945-3.patch
+projects[field_collection][subdir] = contrib
 projects[fullcalendar][subdir] = contrib
 projects[jquery_expander][subdir] = contrib
 projects[graphapi][subdir] = contrib
@@ -94,6 +95,10 @@ projects[rbv_view_explore][download][type] = git
 projects[rbv_view_explore][download][url] = git@github.com:miromarchi/rbv_view_explore.git
 projects[rbv_view_explore][type] = module
 projects[rbv_view_explore][subdir] = features
+projects[rbv_relation][download][type] = git
+projects[rbv_relation][download][url] = git@github.com:miromarchi/rbv_relation.git
+projects[rbv_relation][type] = module
+projects[rbv_relation][subdir] = features
 
 
 ; Themes
