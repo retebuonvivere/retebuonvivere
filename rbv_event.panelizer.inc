@@ -32,7 +32,7 @@ function rbv_event_panelizer_defaults() {
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'eventi
 %node:title',
-    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_paths' => 'eventi',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
