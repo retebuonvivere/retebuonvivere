@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1390.0004"
+   height="2134.1289"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="mock-up-04_retebuonvivere.svg"
+   inkscape:export-filename="/home/miro/Documents/UNI/Rete_Verona/retebuonvivere.org/mockup/mock-up-04_retebuonvivere.png"
+   inkscape:export-xdpi="72.004715"
+   inkscape:export-ydpi="72.004715">
+  <defs
+     id="defs4">
+    <pattern
+       inkscape:stockid="Wavy"
+       id="Wavy"
+       height="5.1805778"
+       width="30.066020"
+       patternUnits="userSpaceOnUse"
+       inkscape:collect="always">
+      <path
+         id="path5183"
+         d="M 7.597,0.061 C 5.079,-0.187 2.656,0.302 -0.01,1.788 L -0.01,3.061 C 2.773,1.431 5.173,1.052 7.472,1.280 C 9.770,1.508 11.969,2.361 14.253,3.218 C 18.820,4.931 23.804,6.676 30.066,3.061 L 30.062,1.788 C 23.622,5.497 19.246,3.770 14.691,2.061 C 12.413,1.207 10.115,0.311 7.597,0.061 z "
+         style="fill:black;stroke:none;" />
+    </pattern>
+    <linearGradient
+       id="linearGradient5270"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#ff50fd;stop-opacity:1;"
+         offset="0"
+         id="stop5272" />
+      <stop
+         style="stop-color:#ff50fd;stop-opacity:0;"
+         offset="1"
+         id="stop5274" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.244604"
+     inkscape:cx="695.00018"
+     inkscape:cy="1135.0784"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer4"
+     showgrid="false"
+     inkscape:window-width="1871"
+     inkscape:window-height="1056"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     borderlayer="true"
+     showborder="true"
+     inkscape:showpageshadow="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-from-guide="true">
+    <sodipodi:guide
+       orientation="0,1"
+       position="1595.2329,1153.4987"
+       id="guide4702" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="mock-up"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(62.142857,216.76709)"
+     style="opacity:0.37448563;display:none"
+     sodipodi:insensitive="true">
+    <image
+       y="-216.63782"
+       x="-62.142857"
+       id="image3090"
+       xlink:href="file:///home/miro/Documents/UNI/Rete_Verona/retebuonvivere.org/mockup/mock-up.png"
+       height="1698"
+       width="1390" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="guides"
+     style="display:none"
+     transform="translate(0,0.12926543)"
+     sodipodi:insensitive="true">
+    <rect
+       style="opacity:0.46502057;color:#000000;fill:url(#Wavy);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4020"
+       width="394.21783"
+       height="227.23431"
+       x="-6.8439598"
+       y="-9.1047745"
+       rx="7.9923139"
+       ry="8.0000095" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="retebuonvivere"
+     style="display:inline"
+     transform="translate(0,0.12926543)">
+    <g
+       id="g5866">
+      <rect
+         ry="8"
+         rx="8"
+         y="1.3669077"
+         x="1.4961731"
+         height="85.857918"
+         width="1387.0081"
+         id="rect4014"
+         style="color:#000000;fill:#d7d7d7;fill-opacity:1;fill-rule:nonzero;stroke:#828282;stroke-width:2.99234629;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4016"
+         y="54.831684"
+         x="16.547855"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans Bold"
+         xml:space="preserve"><tspan
+           y="54.831684"
+           x="16.547855"
+           id="tspan4018"
+           sodipodi:role="line">retebuonvivere.org</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4016-1"
+         y="55.212372"
+         x="315.79437"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans Bold"
+         xml:space="preserve"><tspan
+           y="55.212372"
+           x="315.79437"
+           id="tspan4018-9"
+           sodipodi:role="line">menu</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 292.74221,15.636987 0,57.275649"
+         id="path3286"
+         inkscape:connector-curvature="0"
+         transform="translate(0,-0.12926543)" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="organizzazione"
+     style="display:inline"
+     transform="translate(0,0.12926543)">
+    <g
+       id="g5621"
+       transform="translate(-2,-422)">
+      <rect
+         ry="8.0000095"
+         rx="7.9923139"
+         y="2026.8785"
+         x="190.53394"
+         height="100.20187"
+         width="781.00146"
+         id="rect3953"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#ff1def;stroke-width:2.99856019;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="2027.2706"
+         x="190.40059"
+         height="25"
+         width="170"
+         id="rect4022-4-2"
+         style="color:#000000;fill:#ff50fd;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-4"
+         y="2043.0397"
+         x="202.5491"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="2043.0397"
+           x="202.5491"
+           id="tspan4048-5"
+           sodipodi:role="line">Box commenti</tspan></text>
+    </g>
+    <g
+       id="g5877"
+       transform="translate(-2,12)">
+      <rect
+         ry="8"
+         rx="8"
+         y="1105.1848"
+         x="191.1954"
+         height="189"
+         width="777.81226"
+         id="rect3951"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="758.98108"
+         y="1121.7727"
+         id="text3651"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3653"
+           x="758.98108"
+           y="1121.7727">Grafo ego-network</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="429.58511"
+         y="1122.2864"
+         id="text3655"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3657"
+           x="429.58511"
+           y="1122.2864">Box organizzazioni</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="566.76385"
+         y="1122.2864"
+         id="text3659"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3661"
+           x="566.76385"
+           y="1122.2864">Box progetti</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="661.51617"
+         y="1121.7737"
+         id="text3663"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3665"
+           x="661.51617"
+           y="1121.7737">Box persone</tspan></text>
+      <path
+         style="fill:none;stroke:#b7b7b7;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 190.21172,1128.5364 170.41274,0 61.51829,0 c 0,0 -0.91421,-21.1777 11.81371,-21.8848 12.72792,-0.7071 92.88099,-0.6213 107.02312,0.086 14.14214,0.7071 16.92767,20.3848 16.92767,20.3848 l 410.82904,0"
+         id="path3667"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccsscc" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="1105.5"
+         x="191"
+         height="25"
+         width="170"
+         id="rect4022-4"
+         style="color:#000000;fill:#b7b7b7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046"
+         y="1121.269"
+         x="203.14851"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="1121.269"
+           x="203.14851"
+           id="tspan4048"
+           sodipodi:role="line">Box relazioni</tspan></text>
+      <g
+         id="g4471"
+         transform="translate(1.865997,324.49753)">
+        <rect
+           ry="7.0426035"
+           rx="6.8575883"
+           transform="translate(0,-300)"
+           y="1149.2852"
+           x="209.3036"
+           height="100.43463"
+           width="103.80495"
+           id="rect4437"
+           style="color:#000000;fill:#ffffff;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <rect
+           ry="6.5923157"
+           rx="6.8575883"
+           y="927.78265"
+           x="209.34753"
+           height="21.184631"
+           width="103.80493"
+           id="rect4437-8"
+           style="color:#000000;fill:#8e8e8e;fill-opacity:0.59360729;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4463"
+           y="942.75"
+           x="215.25"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="942.75"
+             x="215.25"
+             id="tspan4465"
+             sodipodi:role="line">Descriz. Relaz.</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4467"
+           y="886.5"
+           x="214.75"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="886.5"
+             x="214.75"
+             id="tspan4469"
+             sodipodi:role="line">Logo</tspan></text>
+      </g>
+      <g
+         transform="translate(128.05158,324.49753)"
+         style="display:inline"
+         id="g4471-2">
+        <rect
+           ry="7.0426035"
+           rx="6.8575883"
+           transform="translate(0,-300)"
+           y="1149.2852"
+           x="209.3036"
+           height="100.43463"
+           width="103.80495"
+           id="rect4437-0"
+           style="color:#000000;fill:#ffffff;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <rect
+           ry="6.5923157"
+           rx="6.8575883"
+           y="927.78265"
+           x="209.34753"
+           height="21.184631"
+           width="103.80493"
+           id="rect4437-8-3"
+           style="color:#000000;fill:#8e8e8e;fill-opacity:0.59360729;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4463-9"
+           y="942.75"
+           x="215.25"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="942.75"
+             x="215.25"
+             id="tspan4465-5"
+             sodipodi:role="line">Descriz. Relaz.</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4467-8"
+           y="886.5"
+           x="214.75"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="886.5"
+             x="214.75"
+             id="tspan4469-8"
+             sodipodi:role="line">Logo</tspan></text>
+      </g>
+      <g
+         id="g4515"
+         style="display:inline"
+         transform="translate(254.23716,324.49753)">
+        <rect
+           style="color:#000000;fill:#ffffff;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4517"
+           width="103.80495"
+           height="100.43463"
+           x="209.3036"
+           y="1149.2852"
+           transform="translate(0,-300)"
+           rx="6.8575883"
+           ry="7.0426035" />
+        <rect
+           style="color:#000000;fill:#8e8e8e;fill-opacity:0.59360729;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4519"
+           width="103.80493"
+           height="21.184631"
+           x="209.34753"
+           y="927.78265"
+           rx="6.8575883"
+           ry="6.5923157" />
+        <text
+           xml:space="preserve"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           x="215.25"
+           y="942.75"
+           id="text4521"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4523"
+             x="215.25"
+             y="942.75">Descriz. Relaz.</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           x="214.75"
+           y="886.5"
+           id="text4525"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4527"
+             x="214.75"
+             y="886.5">Logo</tspan></text>
+      </g>
+      <g
+         transform="translate(380.42276,324.49753)"
+         style="display:inline"
+         id="g4471-5">
+        <rect
+           ry="7.0426035"
+           rx="6.8575883"
+           transform="translate(0,-300)"
+           y="1149.2852"
+           x="209.3036"
+           height="100.43463"
+           width="103.80495"
+           id="rect4437-9"
+           style="color:#000000;fill:#ffffff;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <rect
+           ry="6.5923157"
+           rx="6.8575883"
+           y="927.78265"
+           x="209.34753"
+           height="21.184631"
+           width="103.80493"
+           id="rect4437-8-6"
+           style="color:#000000;fill:#8e8e8e;fill-opacity:0.59360729;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4463-4"
+           y="942.75"
+           x="215.25"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="942.75"
+             x="215.25"
+             id="tspan4465-1"
+             sodipodi:role="line">Descriz. Relaz.</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4467-5"
+           y="886.5"
+           x="214.75"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="886.5"
+             x="214.75"
+             id="tspan4469-0"
+             sodipodi:role="line">Logo</tspan></text>
+      </g>
+      <g
+         transform="translate(506.60837,324.49753)"
+         style="display:inline"
+         id="g4471-21">
+        <rect
+           ry="7.0426035"
+           rx="6.8575883"
+           transform="translate(0,-300)"
+           y="1149.2852"
+           x="209.3036"
+           height="100.43463"
+           width="103.80495"
+           id="rect4437-4"
+           style="color:#000000;fill:#ffffff;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <rect
+           ry="6.5923157"
+           rx="6.8575883"
+           y="927.78265"
+           x="209.34753"
+           height="21.184631"
+           width="103.80493"
+           id="rect4437-8-4"
+           style="color:#000000;fill:#8e8e8e;fill-opacity:0.59360729;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4463-3"
+           y="942.75"
+           x="215.25"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="942.75"
+             x="215.25"
+             id="tspan4465-13"
+             sodipodi:role="line">Descriz. Relaz.</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4467-2"
+           y="886.5"
+           x="214.75"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="886.5"
+             x="214.75"
+             id="tspan4469-6"
+             sodipodi:role="line">Logo</tspan></text>
+      </g>
+      <g
+         transform="translate(632.79392,324.49753)"
+         style="display:inline"
+         id="g4471-21-7">
+        <rect
+           ry="7.0426035"
+           rx="6.8575883"
+           transform="translate(0,-300)"
+           y="1149.2852"
+           x="209.3036"
+           height="100.43463"
+           width="103.80495"
+           id="rect4437-4-2"
+           style="color:#000000;fill:#ffffff;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b7b7b7;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <rect
+           ry="6.5923157"
+           rx="6.8575883"
+           y="927.78265"
+           x="209.34753"
+           height="21.184631"
+           width="103.80493"
+           id="rect4437-8-4-4"
+           style="color:#000000;fill:#8e8e8e;fill-opacity:0.59360729;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4463-3-9"
+           y="942.75"
+           x="215.25"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="942.75"
+             x="215.25"
+             id="tspan4465-13-5"
+             sodipodi:role="line">Descriz. Relaz.</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4467-2-9"
+           y="886.5"
+           x="214.75"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="886.5"
+             x="214.75"
+             id="tspan4469-6-5"
+             sodipodi:role="line">Logo</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="212"
+         y="1155.9996"
+         id="text3288"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3290"
+           x="212"
+           y="1155.9996">Organizzazioni con cui questa organizzazione collabora</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="368.75983"
+         y="1122.0345"
+         id="text3663-9"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3665-4"
+           x="368.75983"
+           y="1122.0345">Box reti</tspan></text>
+    </g>
+    <text
+       transform="matrix(0,-1,1,0,0,0)"
+       sodipodi:linespacing="125%"
+       id="text4698"
+       y="1365.0808"
+       x="-716.6701"
+       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#696969;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       xml:space="preserve"><tspan
+         y="1365.0808"
+         x="-716.6701"
+         id="tspan4700"
+         sodipodi:role="line">Pagina home delle organizzazioni</tspan></text>
+    <g
+       id="g5861"
+       transform="translate(0,46)">
+      <rect
+         ry="8"
+         rx="8"
+         y="1921.9331"
+         x="1.4983953"
+         height="182.56821"
+         width="1387.0032"
+         id="rect4012"
+         style="color:#000000;fill:#d7d7d7;fill-opacity:1;fill-rule:nonzero;stroke:#828282;stroke-width:2.99679065;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3788"
+         y="1966"
+         x="36"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="1966"
+           x="36"
+           id="tspan3790"
+           sodipodi:role="line">Footer retebuonvivere.org</tspan></text>
+    </g>
+    <g
+       id="g5452"
+       transform="translate(-9.999939,355)">
+      <rect
+         ry="8"
+         rx="8"
+         y="388.4642"
+         x="991.31604"
+         height="225.00876"
+         width="226.36951"
+         id="rect3792-77"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#ffe599;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="388.74689"
+         x="991.35437"
+         height="25"
+         width="170"
+         id="rect4022-5-9"
+         style="color:#000000;fill:#ffe599;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024-2-0"
+         y="404.79346"
+         x="999.81677"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="404.79346"
+           x="999.81677"
+           id="tspan4026-0-37"
+           sodipodi:role="line">Box mappa organizz.</tspan></text>
+    </g>
+    <g
+       id="g5871">
+      <rect
+         ry="8"
+         rx="8"
+         y="104.54965"
+         x="191.12936"
+         height="105.56037"
+         width="186.17055"
+         id="rect3927"
+         style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#6e6e6e;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3929"
+         y="152.21445"
+         x="203.2097"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="152.21445"
+           x="203.2097"
+           id="tspan3931"
+           sodipodi:role="line"
+           style="font-size:36px">Logo</tspan><tspan
+           id="tspan3933"
+           y="175.56476"
+           x="203.2097"
+           sodipodi:role="line">organizzazione</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3935"
+         y="128.89107"
+         x="390.0596"
+         style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans Bold"
+         xml:space="preserve"><tspan
+           y="128.89107"
+           x="390.0596"
+           id="tspan3937"
+           sodipodi:role="line">Nome organizzazione</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3939"
+         y="175.14452"
+         x="391.45316"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="175.14452"
+           x="391.45316"
+           id="tspan3941"
+           sodipodi:role="line">tipo organizzazione</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3939-8"
+         y="199.61963"
+         x="391.61722"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="199.61963"
+           x="391.61722"
+           id="tspan3941-2"
+           sodipodi:role="line">validità temporale dal al</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3939-8-4"
+         y="150.75146"
+         x="390.51663"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="150.75146"
+           x="390.51663"
+           id="tspan3941-2-8"
+           sodipodi:role="line">Pay off. Una frase breve che dovrebbe riassumere l'intero universo dell'organizzazione</tspan></text>
+    </g>
+    <g
+       transform="translate(-2,-960.83733)"
+       style="display:inline"
+       id="g5621-7">
+      <rect
+         ry="8.0000095"
+         rx="7.9923139"
+         y="2286.8784"
+         x="190.53394"
+         height="259.9176"
+         width="781.00146"
+         id="rect3953-4"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#c27ba0;stroke-width:2.99856019;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="2287.2705"
+         x="190.40059"
+         height="25"
+         width="170"
+         id="rect4022-4-2-9"
+         style="color:#000000;fill:#c27ba0;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-4-3"
+         y="2303.0396"
+         x="202.5491"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="2303.0396"
+           x="202.5491"
+           id="tspan4048-5-1"
+           sodipodi:role="line">Stream aggiornamenti</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="217"
+         y="1606.129"
+         id="text5994"
+         sodipodi:linespacing="125%"
+         transform="translate(0,734.70806)"><tspan
+           sodipodi:role="line"
+           id="tspan5996"
+           x="217"
+           y="1606.129">News / posts</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="632"
+         y="1601.129"
+         id="text5998"
+         sodipodi:linespacing="125%"
+         transform="translate(0,734.70806)"><tspan
+           sodipodi:role="line"
+           id="tspan6000"
+           x="632"
+           y="1601.129">Dicono di noi</tspan></text>
+    </g>
+    <g
+       transform="translate(-2.7418137e-6,-2059.997)"
+       style="display:inline"
+       id="g5621-7-1">
+      <rect
+         ry="8.0000095"
+         rx="7.9923139"
+         y="2286.8784"
+         x="190.53394"
+         height="241.5327"
+         width="778"
+         id="rect3953-4-6"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b4a7d6;stroke-width:2.99856019;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="2287.2705"
+         x="190.40059"
+         height="25"
+         width="170"
+         id="rect4022-4-2-9-1"
+         style="color:#000000;fill:#b4a7d6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-4-3-8"
+         y="2303.0396"
+         x="202.5491"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="2303.0396"
+           x="202.5491"
+           id="tspan4048-5-1-3"
+           sodipodi:role="line">Slide immagini</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5452-8"
+       transform="translate(-9.999939,-161.58207)">
+      <rect
+         ry="8"
+         rx="8"
+         y="388.4642"
+         x="991.31604"
+         height="242.16835"
+         width="226.36951"
+         id="rect3792-77-3"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b4a7d6;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="388.74689"
+         x="991.35437"
+         height="25"
+         width="170"
+         id="rect4022-5-9-3"
+         style="color:#000000;fill:#b4a7d6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024-2-0-2"
+         y="404.79346"
+         x="999.81677"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="404.79346"
+           x="999.81677"
+           id="tspan4026-0-37-2"
+           sodipodi:role="line">Box media</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5854-3"
+       transform="translate(-2,-62.68481)">
+      <rect
+         ry="8"
+         rx="8"
+         y="805.18481"
+         x="191.1954"
+         height="358"
+         width="777.81226"
+         id="rect3951-2"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b6d7a8;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="805.5"
+         x="191"
+         height="25"
+         width="170"
+         id="rect4022-4-9"
+         style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-7"
+         y="821.26898"
+         x="203.14851"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="821.26898"
+           x="203.14851"
+           id="tspan4048-79"
+           sodipodi:role="line">Box descrizione</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="208.65887"
+         y="921.49597"
+         id="text3523"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3525"
+           x="208.65887"
+           y="921.49597">Mission</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="209.65887"
+         y="1001.1117"
+         id="text3527"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3529"
+           x="209.65887"
+           y="1001.1117">Description</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="211.17157"
+         y="1084.496"
+         id="text3531"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3533"
+           x="211.17157"
+           y="1084.496">Storia</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="210.61195"
+         y="855.49561"
+         id="text3535-5"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3537-8"
+           x="210.61195"
+           y="855.49561">Settori di attività</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="568.12878"
+         y="827.8291"
+         id="text3539-2"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3541-8"
+           x="568.12878"
+           y="827.8291">Tags</tspan></text>
+      <g
+         id="g4175">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173"
+             sodipodi:role="line">Categoria</tspan></text>
+      </g>
+      <g
+         transform="translate(81.5,0.500002)"
+         style="display:inline"
+         id="g4175-0">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0-6"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171-6"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173-9"
+             sodipodi:role="line">Categoria</tspan></text>
+      </g>
+      <g
+         transform="translate(360,-21.999998)"
+         style="display:inline"
+         id="g4175-6">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0-3"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171-0"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173-5"
+             sodipodi:role="line">Tag</tspan></text>
+      </g>
+      <g
+         transform="translate(441,-22.499998)"
+         style="display:inline"
+         id="g4175-6-1">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0-3-8"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171-0-0"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173-5-6"
+             sodipodi:role="line">Tag</tspan></text>
+      </g>
+      <g
+         transform="translate(521,-21.499998)"
+         style="display:inline"
+         id="g4175-6-4">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0-3-86"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171-0-4"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173-5-5"
+             sodipodi:role="line">Tag</tspan></text>
+      </g>
+      <g
+         transform="translate(361,3.0000026)"
+         style="display:inline"
+         id="g4175-6-6">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0-3-1"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171-0-8"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173-5-8"
+             sodipodi:role="line">Tag</tspan></text>
+      </g>
+      <g
+         transform="translate(442,3.0000026)"
+         style="display:inline"
+         id="g4175-6-0">
+        <rect
+           style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect4022-4-9-0-3-6"
+           width="76"
+           height="21"
+           x="208"
+           y="859.18457"
+           rx="5"
+           ry="5" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4171-0-82"
+           y="874.18457"
+           x="216"
+           style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+           xml:space="preserve"><tspan
+             y="874.18457"
+             x="216"
+             id="tspan4173-5-60"
+             sodipodi:role="line">Tag</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(-2.7418137e-6,-1802.8375)"
+       style="display:inline"
+       id="g5621-7-8">
+      <rect
+         ry="8.0000095"
+         rx="7.9923139"
+         y="2286.8784"
+         x="190.53394"
+         height="242.94702"
+         width="775.3446"
+         id="rect3953-4-9"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#6aa84f;stroke-width:2.99856019;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="2287.2705"
+         x="190.40059"
+         height="25"
+         width="170"
+         id="rect4022-4-2-9-4"
+         style="color:#000000;fill:#6aa84f;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-4-3-9"
+         y="2303.0396"
+         x="202.5491"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="2303.0396"
+           x="202.5491"
+           id="tspan4048-5-1-9"
+           sodipodi:role="line">Testo libero</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5440"
+       transform="translate(-6.683899,258.26094)">
+      <rect
+         ry="8"
+         rx="8"
+         y="225.7807"
+         x="988"
+         height="243"
+         width="227"
+         id="rect3792"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#ffd966;stroke-width:3;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="226.37868"
+         x="988.35358"
+         height="25"
+         width="170"
+         id="rect4022-5"
+         style="color:#000000;fill:#ffd966;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024-2"
+         y="242.42523"
+         x="996.81598"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="242.42523"
+           x="996.81598"
+           id="tspan4026-0"
+           sodipodi:role="line">Box upcoming events</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5752"
+       transform="translate(-3.1558945,1236.5757)">
+      <rect
+         ry="8"
+         rx="8"
+         y="486.67987"
+         x="190.53465"
+         height="224.61206"
+         width="484.8924"
+         id="rect3945"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#dd7e6b;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="486.41119"
+         x="190.15942"
+         height="25"
+         width="170"
+         id="rect4022"
+         style="color:#000000;fill:#dd7e6b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024"
+         y="502.83829"
+         x="198.97542"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="502.83829"
+           x="198.97542"
+           id="tspan4026"
+           sodipodi:role="line">Box info</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5509"
+         y="531.56494"
+         x="219.85822"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="531.56494"
+           x="219.85822"
+           id="tspan5511"
+           sodipodi:role="line">Contatti</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5509-8"
+         y="658.34607"
+         x="215.73804"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="658.34607"
+           x="215.73804"
+           id="tspan5511-2"
+           sodipodi:role="line">Indirizzo</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5452-0"
+       transform="translate(-301.27062,1334.7914)">
+      <rect
+         ry="8"
+         rx="8"
+         y="388.4642"
+         x="991.31604"
+         height="224.97421"
+         width="273.74567"
+         id="rect3792-77-5"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#f9cb9c;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="388.74689"
+         x="991.35437"
+         height="25"
+         width="170"
+         id="rect4022-5-9-06"
+         style="color:#000000;fill:#f9cb9c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024-2-0-3"
+         y="404.79346"
+         x="999.81677"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="404.79346"
+           x="999.81677"
+           id="tspan4026-0-37-27"
+           sodipodi:role="line">Box social networks</tspan></text>
+    </g>
+    <g
+       id="g3223"
+       transform="translate(45.494202,-39.96521)">
+      <rect
+         style="color:#000000;fill:#dd7e6b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect4022-2"
+         width="141.36218"
+         height="25"
+         x="1022.3292"
+         y="143.01486"
+         rx="6.8575883"
+         ry="7.0426035" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3201"
+         y="160.4646"
+         x="1031.3152"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="160.4646"
+           x="1031.3152"
+           id="tspan3203"
+           sodipodi:role="line">Vai a Info e Contatti</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5452-34"
+       transform="translate(-9.99994,597.03104)">
+      <rect
+         ry="8"
+         rx="8"
+         y="388.4642"
+         x="991.31604"
+         height="225.00876"
+         width="226.36951"
+         id="rect3792-77-1"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#d0e0e3;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="388.74689"
+         x="991.35437"
+         height="25"
+         width="170"
+         id="rect4022-5-9-4"
+         style="color:#000000;fill:#d0e0e3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024-2-0-1"
+         y="404.79346"
+         x="999.81677"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="404.79346"
+           x="999.81677"
+           id="tspan4026-0-37-1"
+           sodipodi:role="line">Box strumenti</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="inactive"
+     style="display:none"
+     transform="translate(0,0.12926543)"
+     sodipodi:insensitive="true">
+    <g
+       transform="translate(-1.2890625e-6,6.7626954e-6)"
+       style="display:inline"
+       id="g5446">
+      <rect
+         ry="8"
+         rx="8"
+         y="110.05119"
+         x="987.64807"
+         height="95.863144"
+         width="227.5322"
+         id="rect3792-7"
+         style="color:#000000;fill:#ffffff;fill-opacity:0.37254902;fill-rule:nonzero;stroke:#828282;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="110.06609"
+         x="987.91321"
+         height="25"
+         width="170"
+         id="rect4022-5-7"
+         style="color:#000000;fill:#d7d7d7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4024-2-5"
+         y="126.11264"
+         x="994.72919"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="126.11264"
+           x="994.72919"
+           id="tspan4026-0-3"
+           sodipodi:role="line">Box statistiche organiz.</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5848"
+       transform="translate(4.5482254e-6,-468)">
+      <rect
+         ry="8.0000095"
+         rx="7.9923139"
+         y="1197.5012"
+         x="190.53394"
+         height="58.841652"
+         width="778"
+         id="rect3949"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#ff1def;stroke-width:2.99856019;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="1197.9456"
+         x="190.99506"
+         height="25"
+         width="170"
+         id="rect4022-4-6"
+         style="color:#000000;fill:#ff50fd;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-5"
+         y="1213.7145"
+         x="202.24438"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="1213.7145"
+           x="202.24438"
+           id="tspan4048-7"
+           sodipodi:role="line">Box categories / tags</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       id="g5452-3"
+       transform="translate(-249.15233,97.11186)">
+      <rect
+         ry="8"
+         rx="8"
+         y="388.4642"
+         x="940.31604"
+         height="225.71585"
+         width="277.36951"
+         id="rect3792-77-39"
+         style="color:#000000;fill:#f3f7fa;fill-opacity:0.59360729;fill-rule:nonzero;stroke:#b6d7a8;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         ry="7.0426035"
+         rx="6.8575883"
+         y="388.74689"
+         x="941.35437"
+         height="25"
+         width="170"
+         id="rect4022-5-9-0"
+         style="color:#000000;fill:#b6d7a8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4046-5-2"
+         y="404.50775"
+         x="947.43848"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="404.50775"
+           x="947.43848"
+           id="tspan4048-7-1"
+           sodipodi:role="line">Box categories / tags</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="961.79102"
+         y="435.7514"
+         id="text3535"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3537"
+           x="961.79102"
+           y="435.7514">Settori di attività [categories]</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="962.1123"
+         y="533.7514"
+         id="text3539"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3541"
+           x="962.1123"
+           y="533.7514">Tags</tspan></text>
+    </g>
+  </g>
+</svg>
