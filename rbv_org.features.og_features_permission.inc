@@ -31,14 +31,6 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:create event content'
-  $permissions['node:org:create event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
   // Exported og permission: 'node:org:manage members'
   $permissions['node:org:manage members'] = array(
     'roles' => array(

@@ -169,7 +169,8 @@ function rbv_org_field_group_info() {
     'label' => 'Storia',
     'weight' => '2',
     'children' => array(
-      0 => 'field_com_history',
+      0 => 'field_com_date',
+      1 => 'field_com_history',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

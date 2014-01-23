@@ -136,7 +136,7 @@ function rbv_org_field_default_field_instances() {
     'description' => 'Scegliere i settori di attività.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -189,7 +189,7 @@ function rbv_org_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'medium',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -376,7 +376,7 @@ function rbv_org_field_default_field_instances() {
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'featured' => array(
         'label' => 'above',
@@ -787,7 +787,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'description' => 'Inserire le parole chiave che descrivono la propria organizzazione.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',

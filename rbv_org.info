@@ -85,7 +85,6 @@ features[node][] = org
 features[og_features_permission][] = node:org:add user
 features[og_features_permission][] = node:org:administer group
 features[og_features_permission][] = node:org:approve and deny subscription
-features[og_features_permission][] = node:org:create event content
 features[og_features_permission][] = node:org:manage members
 features[og_features_permission][] = node:org:manage permissions
 features[og_features_permission][] = node:org:manage roles
