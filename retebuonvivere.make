@@ -63,7 +63,7 @@ projects[social_profile_field][subdir] = contrib
 projects[subpathauto][subdir] = contrib
 projects[telephone][subdir] = contrib
 ; adding telephone version to skip error
-projects[telephone][version] = 1.x
+projects[telephone][version] = 1.0-alpha1
 projects[unique_field][subdir] = contrib
 projects[views_bulk_operations][subdir] = contrib
 
@@ -107,11 +107,13 @@ projects[rbv_relation][subdir] = features
 
 
 ; Themes
-projects[radix_core][version] = 1.x-dev
-projects[radix_core][subdir] = contrib
-projects[responsive_bartik][type] = theme
-projects[responsive_bartik][subdir] = contrib
+; projects[radix_core][version] = 1.x-dev
+; projects[radix_core][subdir] = contrib
+; projects[responsive_bartik][type] = theme
+; projects[responsive_bartik][subdir] = contrib
+projects[kalatheme][type] = theme
 projects[kalatheme][subdir] = contrib
+projects[rbv_theme_kala][download][type] = git
 projects[rbv_theme_kala][download][url] = git@github.com:fonzy85vr/rbv_theme.git
 projects[rbv_theme_kala][type] = theme
 projects[rbv_theme_kala][subdir] = contrib
