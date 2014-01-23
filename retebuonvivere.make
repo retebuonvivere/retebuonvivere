@@ -25,8 +25,11 @@ projects[addressfield][subdir] = contrib
 projects[advanced_forum][subdir] = contrib
 projects[auto_nodetitle][subdir] = contrib
 projects[colors][subdir] = contrib
+; patching colors to recognize og_groups
 projects[colors][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
 projects[d3][subdir] = contrib
+; adding d3 dev version to apply bug fix
+projects[d3][version] = 1.x-dev
 projects[date][subdir] = contrib
 projects[date_ical][subdir] = contrib
 projects[diff][subdir] = contrib
@@ -48,10 +51,12 @@ projects[message_subscribe][subdir] = contrib
 projects[og][subdir] = contrib
 projects[rdfa][subdir] = contrib
 projects[rdfx][subdir] = contrib
+; patching rdfx to find arc library
 projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-correctly-1176666-14.patch
 projects[rules][subdir] = contrib
 projects[rules_conditional][subdir] = contrib
 projects[relation][subdir] = contrib
+; patching relation to allow fetch entity by property
 projects[relation][patch][1302788] = https://drupal.org/files/relation-query_endpoints-1302788-16.patch
 projects[schemaorg][subdir] = contrib
 projects[social_profile_field][subdir] = contrib
