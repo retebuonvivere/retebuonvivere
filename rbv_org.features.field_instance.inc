@@ -1035,77 +1035,6 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
   );
 
-  // Exported field_instance: 'user-user-og_user_node'
-  $field_instances['user-user-og_user_node'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 2,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'og_user_node',
-    'label' => 'Organizzazioni',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'status' => TRUE,
-        ),
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => 1,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 1,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Altro');
@@ -1126,7 +1055,6 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
 Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
 Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
-  t('Organizzazioni');
   t('Parole chiave');
   t('Periodo');
   t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');

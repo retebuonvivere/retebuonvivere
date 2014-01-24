@@ -80,7 +80,6 @@ features[field_instance][] = node-org-field_com_telephone
 features[field_instance][] = node-org-field_org_type
 features[field_instance][] = node-org-group_group
 features[field_instance][] = og_membership-rbv_membership_default-field_membership_period
-features[field_instance][] = user-user-og_user_node
 features[node][] = org
 features[og_features_permission][] = node:org:add user
 features[og_features_permission][] = node:org:administer group

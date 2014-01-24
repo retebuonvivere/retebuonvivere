@@ -41,20 +41,16 @@ function rbv_org_panelizer_defaults() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'sidebar' => array(
-        'corner_location' => 'pane',
-      ),
-      'contentmain' => array(
-        'corner_location' => 'panel',
-      ),
       'header' => NULL,
       'footer' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
     ),
     'contentmain' => array(
-      'style' => 'rounded_corners',
+      'style' => '0',
     ),
     'sidebar' => array(
-      'style' => 'rounded_corners',
+      'style' => '0',
     ),
   );
   $display->cache = array();
@@ -71,7 +67,7 @@ function rbv_org_panelizer_defaults() {
     $pane->configuration = array(
       'links' => 1,
       'no_extras' => 1,
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
       'identifier' => '',
       'link' => 0,
