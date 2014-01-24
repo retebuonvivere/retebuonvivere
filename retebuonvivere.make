@@ -114,10 +114,10 @@ projects[rbv_relation][subdir] = features
 ; projects[responsive_bartik][subdir] = contrib
 projects[kalatheme][type] = theme
 projects[kalatheme][subdir] = contrib
-projects[rbv_theme_kala][download][type] = git
-projects[rbv_theme_kala][download][url] = git@github.com:fonzy85vr/rbv_theme.git
-projects[rbv_theme_kala][type] = theme
-projects[rbv_theme_kala][subdir] = contrib
+projects[rbv_theme][download][type] = git
+projects[rbv_theme][download][url] = git@github.com:fonzy85vr/rbv_theme.git
+projects[rbv_theme][type] = theme
+projects[rbv_theme][subdir] = contrib
 
 ; Libraries
 libraries[arc][download][type] = file
