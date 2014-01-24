@@ -84,6 +84,7 @@ dependencies[] = diff
 ; Other
 dependencies[] = auto_nodetitle
 dependencies[] = breakpoints
+dependencies[] = better_exposed_filters
 dependencies[] = colors
 dependencies[] = entity
 dependencies[] = entity_token
