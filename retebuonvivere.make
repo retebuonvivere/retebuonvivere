@@ -136,6 +136,10 @@ libraries[d3][download][type] = "get"
 libraries[d3][download][url] = "https://github.com/mbostock/d3/zipball/master"
 libraries[d3][directory_name] = "d3"
 libraries[d3][destination] = "libraries"
+libraries[rbv_kala_default_bootstrap][download][type] = git
+libraries[rbv_kala_default_bootstrap][download][url] = git@github.com:miromarchi/rbv_kala_default_bootstrap.git
+libraries[rbv_kala_default_bootstrap][directory_name] = rbv_kala_default_bootstrap
+libraries[rbv_kala_default_bootstrap][type] = library
 
 ; Profile
 projects[rbv_profile][type] = profile
