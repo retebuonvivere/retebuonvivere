@@ -45,15 +45,16 @@ function rbv_event_field_default_field_instances() {
         'weight' => 4,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_categories',
-    'label' => 'Settori di attività',
+    'label' => 'Settori',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -426,7 +427,7 @@ function rbv_event_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -788,7 +789,7 @@ function rbv_event_field_default_field_instances() {
   t('Progetto di riferimento');
   t('Quando');
   t('Scegliere l\'immagine da associare a questo evento.');
-  t('Settori di attività');
+  t('Settori');
 
   return $field_instances;
 }
