@@ -10,6 +10,14 @@
 function rbv_event_og_features_default_permissions() {
   $permissions = array();
 
+  // Exported og permission: 'node:org:create event content'
+  $permissions['node:org:create event content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:delete any event content'
   $permissions['node:org:delete any event content'] = array(
     'roles' => array(),
