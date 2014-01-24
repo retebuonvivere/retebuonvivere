@@ -24,6 +24,7 @@ projects[panopoly_search][subdir] = panopoly
 projects[addressfield][subdir] = contrib
 projects[advanced_forum][subdir] = contrib
 projects[auto_nodetitle][subdir] = contrib
+projects[better_exposed_filters][subdir] = contrib
 projects[colors][subdir] = contrib
 ; patching colors to recognize og_groups
 projects[colors][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
