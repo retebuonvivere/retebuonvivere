@@ -63,6 +63,7 @@ function rbv_pages_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'contentmain' => NULL,
     ),
     'contentmain' => array(
       'style' => '0',
@@ -82,7 +83,7 @@ function rbv_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'view_settings' => 'nodes',
       'header_type' => 'none',
-      'view_mode' => 'vmode_group_content',
+      'view_mode' => 'teaser',
     );
     $pane->cache = array();
     $pane->style = array(
