@@ -310,7 +310,7 @@ function rbv_event_views_default_views() {
     'node' => 'node',
   );
   $handler->display->display_options['path'] = 'node/%/calendario';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Calendario';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['context'] = 0;

@@ -18,7 +18,7 @@ function rbv_event_field_default_field_instances() {
     'description' => 'Indicare le categorie di pertinenza per questo evento.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -38,7 +38,7 @@ function rbv_event_field_default_field_instances() {
         'weight' => 6,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -90,7 +90,7 @@ function rbv_event_field_default_field_instances() {
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 4,
+        'weight' => 9,
       ),
       'featured' => array(
         'label' => 'above',
@@ -106,10 +106,10 @@ function rbv_event_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 500,
+          'trim_length' => 600,
         ),
         'type' => 'text_trimmed',
         'weight' => 8,
@@ -313,6 +313,61 @@ function rbv_event_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_com_social_links'
+  $field_instances['node-event-field_com_social_links'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'social_profile_field',
+        'settings' => array(),
+        'type' => 'social_profile_field_icons',
+        'weight' => 12,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_social_links',
+    'label' => 'Seguici su',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'social_profile_field',
+      'settings' => array(),
+      'type' => 'social_profile_field_default',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_com_tags'
   $field_instances['node-event-field_com_tags'] = array(
     'bundle' => 'event',
@@ -321,7 +376,7 @@ function rbv_event_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -477,7 +532,7 @@ function rbv_event_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 10,
       ),
       'featured' => array(
         'label' => 'above',
@@ -552,11 +607,8 @@ function rbv_event_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'featured' => array(
@@ -576,9 +628,8 @@ function rbv_event_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'vmode_group_content' => array(
@@ -630,10 +681,9 @@ function rbv_event_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'featured' => array(
@@ -696,10 +746,9 @@ function rbv_event_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'og_list_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'featured' => array(
@@ -789,6 +838,7 @@ function rbv_event_field_default_field_instances() {
   t('Progetto di riferimento');
   t('Quando');
   t('Scegliere l\'immagine da associare a questo evento.');
+  t('Seguici su');
   t('Settori');
 
   return $field_instances;

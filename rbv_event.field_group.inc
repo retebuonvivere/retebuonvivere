@@ -58,7 +58,6 @@ function rbv_event_field_group_info() {
       1 => 'field_com_description',
       2 => 'field_com_tags',
       3 => 'field_quick_links_links',
-      4 => 'field_relpro_project',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -85,16 +84,18 @@ function rbv_event_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_com_location',
-      1 => 'field_event_date',
-      2 => 'field_com_logo',
+      1 => 'field_com_logo',
+      2 => 'field_event_date',
+      3 => 'field_com_social_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Info',
       'instance_settings' => array(
+        'classes' => 'group-event-display-info field-group-fieldset info-fieldgroup',
         'description' => '',
-        'classes' => 'group-event-display-info field-group-fieldset',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_event_display_info|node|event|default'] = $field_group;
@@ -113,8 +114,9 @@ function rbv_event_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_com_location',
-      1 => 'field_event_date',
-      2 => 'field_com_logo',
+      1 => 'field_com_logo',
+      2 => 'field_event_date',
+      3 => 'field_com_social_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
