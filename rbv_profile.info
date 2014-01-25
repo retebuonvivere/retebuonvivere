@@ -84,7 +84,7 @@ dependencies[] = diff
 ; Other
 dependencies[] = auto_nodetitle
 dependencies[] = breakpoints
-dependencies[] = better_exposed_filters
+; dependencies[] = better_exposed_filters
 dependencies[] = colors
 dependencies[] = entity
 dependencies[] = entity_token
@@ -190,5 +190,6 @@ dependencies[] = rbv_relation
 dependencies[] = rbv_event
 dependencies[] = rbv_view_graph
 dependencies[] = rbv_view_explore
+dependencies[] = rbv_pages
 
 files[] = rbv_profile.profile
