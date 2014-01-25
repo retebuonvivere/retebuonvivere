@@ -23,96 +23,16 @@ function rbv_view_explore_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Esplora la rete';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica filtro';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina filtro';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Elenca per';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
-  $handler->display->display_options['exposed_form']['options']['bef'] = array(
-    'general' => array(
-      'allow_secondary' => 1,
-      'secondary_label' => 'Piu opzioni',
-    ),
-    'sort' => array(
-      'bef_format' => 'default',
-      'advanced' => array(
-        'collapsible' => 0,
-        'collapsible_label' => 'Sort options',
-        'combine' => 0,
-        'combine_rewrite' => '',
-        'reset' => 0,
-        'reset_label' => '',
-        'is_secondary' => 0,
-      ),
-    ),
-    'pager' => array(
-      'bef_format' => 'default',
-      'is_secondary' => 0,
-    ),
-    'type' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 1,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-      ),
-    ),
-    'field_com_categories_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 1,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-      ),
-    ),
-    'field_org_type_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 0,
-        'is_secondary' => 1,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-      ),
-    ),
-    'field_com_tags_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 1,
-        'bef_collapsible' => 1,
-        'is_secondary' => 1,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-      ),
-    ),
-  );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -127,7 +47,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -140,6 +60,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['sorts']['type']['id'] = 'type';
   $handler->display->display_options['sorts']['type']['table'] = 'node';
   $handler->display->display_options['sorts']['type']['field'] = 'type';
+  $handler->display->display_options['sorts']['type']['order'] = 'DESC';
   $handler->display->display_options['sorts']['type']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['type']['expose']['label'] = 'Cosa?';
   /* Sort criterion: Content: Title */
@@ -266,19 +187,9 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_com_tags_tid']['vocabulary'] = 'tags';
   $handler->display->display_options['filters']['field_com_tags_tid']['error_message'] = FALSE;
 
-  /* Display: Page: esplora la rete */
-  $handler = $view->new_display('page', 'Page: esplora la rete', 'page');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['path'] = 'esplora';
-  $handler->display->display_options['menu']['title'] = 'Esplora la rete';
-  $handler->display->display_options['menu']['description'] = 'Visualizza tutte le organizzazioni e i progetti della società civile';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
   /* Display: pane: esplora la rete */
   $handler = $view->new_display('panel_pane', 'pane: esplora la rete', 'panel_pane_1');
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['rbv_view_explore'] = $view;
 
   $view = new view();
