@@ -130,5 +130,39 @@ function rbv_event_field_group_info() {
   );
   $export['group_event_info|node|event|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_vmode_group_content|node|event|vmode_group_content';
+  $field_group->group_name = 'group_vmode_group_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'vmode_group_content';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'vmode group content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_com_categories',
+      1 => 'field_com_location',
+      2 => 'field_com_logo',
+      3 => 'field_event_date',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'vmode group content',
+      'instance_settings' => array(
+        'classes' => 'group-vmode-group-content field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_vmode_group_content|node|event|vmode_group_content'] = $field_group;
+
   return $export;
 }

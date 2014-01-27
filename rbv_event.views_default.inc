@@ -81,6 +81,200 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
+  /* Display: page: calendar main */
+  $handler = $view->new_display('page', 'page: calendar main', 'page_4');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'fullcalendar';
+  $handler->display->display_options['style_options']['firstDay'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Legenda';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
+<ul>
+  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="eventi">vista ad elenco</a> di tutti gli eventi.</li>
+  <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
+  <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
+</ul>';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
+  );
+  $handler->display->display_options['path'] = 'calendario';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Eventi';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'normal';
+  $handler->display->display_options['tab_options']['title'] = 'Calendar';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: page: fullcalendar */
+  $handler = $view->new_display('page', 'page: fullcalendar', 'page_3');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'fullcalendar';
+  $handler->display->display_options['style_options']['firstDay'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Legenda';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
+<ul>
+  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="eventi">vista ad elenco</a> di tutti gli eventi.</li>
+  <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
+  <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
+</ul>';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
+  );
+  $handler->display->display_options['path'] = 'calendario/calendario';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'calendario';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['title'] = 'Calendar';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Page: all events */
+  $handler = $view->new_display('page', 'Page: all events', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Eventi della rete';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Eventi per pagina';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutti -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Legenda';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
+<ul>
+  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="calendario">vista calendario</a>.</li>
+  <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
+  <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
+</ul>';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Quando */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => '',
+  );
+  $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
+  /* Field: Content: Indirizzo */
+  $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
+  $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
+  $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
+  $handler->display->display_options['fields']['field_com_location']['label'] = '';
+  $handler->display->display_options['fields']['field_com_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_com_location']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_com_location']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['path'] = 'calendario/elenco';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'elenco';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
   /* Display: iCal */
   $handler = $view->new_display('feed', 'iCal', 'feed_1');
   $handler->display->display_options['pager']['type'] = 'none';
@@ -177,58 +371,10 @@ function rbv_event_views_default_views() {
     'page_1' => 0,
   );
 
-  /* Display: page: fullcalendar */
-  $handler = $view->new_display('page', 'page: fullcalendar', 'page_4');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'fullcalendar';
-  $handler->display->display_options['style_options']['firstDay'] = '1';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'Legenda';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
-<ul>
-  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="eventi">vista ad elenco</a> di tutti gli eventi.</li>
-  <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
-  <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
-</ul>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
-  );
-  $handler->display->display_options['path'] = 'calendario';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Calendario condiviso';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['type'] = 'normal';
-  $handler->display->display_options['tab_options']['title'] = 'Calendar';
-  $handler->display->display_options['tab_options']['weight'] = '0';
-
-  /* Display: page: group fullcalendar */
-  $handler = $view->new_display('page', 'page: group fullcalendar', 'page_1');
+  /* Display: pane: group fullcalendar */
+  $handler = $view->new_display('panel_pane', 'pane: group fullcalendar', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Calendario di %1';
+  $handler->display->display_options['title'] = 'Calendario';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -238,31 +384,6 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Add event';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<a href="../../node/add/event?og_group_ref=!1&destination=node/!1/calendario"><strong>+</strong> Aggiungi evento</a>';
-  $handler->display->display_options['header']['area']['format'] = 'panopoly_html_text';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'Legenda';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi di %1 - Legenda</h2>
-<ul>
-  <li>In questo calendario sono visualizzati solo gli eventi di questa organizzazione. È disponibile anche una <a href="eventi">vista ad elenco</a> di questi eventi.</li>
-  <li>Se si desidera visualizzare e restare aggiornati su tutti gli eventi della rete o programmare i propri eventi coordinandosi con gli altri, è possibile visitare il <a href=" ../../calendario">calendario condiviso della rete</a>, dove confluiscono tutti gli eventi di tutte le organizzazioni.</li>
-  <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario di questa organizzazione nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
-</ul>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
-  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
@@ -275,19 +396,16 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
@@ -309,13 +427,24 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  $handler->display->display_options['path'] = 'node/%/calendario';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Calendario';
-  $handler->display->display_options['menu']['weight'] = '1';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'OG membership: Group ID',
+    ),
+    'date_argument' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Date: Date (node)',
+    ),
+  );
 
   /* Display: group iCal */
   $handler = $view->new_display('feed', 'group iCal', 'feed_2');
@@ -445,111 +574,14 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['path'] = 'node/%/calendario/ical/%/calendar.ics';
   $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
+    'panel_pane_1' => 'panel_pane_1',
     'default' => 0,
-    'page' => 0,
     'page_4' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
-
-  /* Display: Page: all events */
-  $handler = $view->new_display('page', 'Page: all events', 'page_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Eventi della rete';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Eventi per pagina';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutti -';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'Legenda';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
-<ul>
-  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="calendario">vista calendario</a>.</li>
-  <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
-  <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
-</ul>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Quando */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['label'] = '';
-  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => '',
-  );
-  $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Indirizzo */
-  $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
-  $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
-  $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
-  $handler->display->display_options['fields']['field_com_location']['label'] = '';
-  $handler->display->display_options['fields']['field_com_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_com_location']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_com_location']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
-  );
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Quando -  start date (field_event_date) */
-  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $handler->display->display_options['path'] = 'eventi';
-  $handler->display->display_options['menu']['title'] = 'Elenco eventi';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['rbv_view_calendar'] = $view;
 
   $view = new view();
@@ -661,15 +693,6 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'All events links';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<p>Vai a <a href="%1/eventi">elenco eventi</a> o <a href="%1/calendario">calendario</a>.</p>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
-  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -734,7 +757,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
@@ -798,6 +821,12 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['field_com_categories']['label'] = '';
   $handler->display->display_options['fields']['field_com_categories']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -826,7 +855,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 'more_link';
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
@@ -841,8 +870,8 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
 
-  /* Display: pane: all projects */
-  $handler = $view->new_display('panel_pane', 'pane: all projects', 'panel_pane_4');
+  /* Display: pane: own projects */
+  $handler = $view->new_display('panel_pane', 'pane: own projects', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Progetti';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -852,6 +881,11 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -880,7 +914,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
@@ -930,12 +964,19 @@ function rbv_event_views_default_views() {
     'view_mode' => 'vmode_group_content',
     'links' => 1,
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '> pagina della collaborazione';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Relazione (field_rel_categories) */
-  $handler->display->display_options['sorts']['field_rel_categories_tid']['id'] = 'field_rel_categories_tid';
-  $handler->display->display_options['sorts']['field_rel_categories_tid']['table'] = 'field_data_field_rel_categories';
-  $handler->display->display_options['sorts']['field_rel_categories_tid']['field'] = 'field_rel_categories_tid';
-  $handler->display->display_options['sorts']['field_rel_categories_tid']['order'] = 'DESC';
+  /* Sort criterion: Content: Soggetto (field_rel_source) */
+  $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
+  $handler->display->display_options['sorts']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
+  $handler->display->display_options['sorts']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -964,7 +1005,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
@@ -979,51 +1020,6 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['link_to_view'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';
-
-  /* Display: Page: all events */
-  $handler = $view->new_display('page', 'Page: all events', 'page_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Elenco eventi';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutti -';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  /* Filter criterion: OG membership: Group_type */
-  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['filters']['group_type']['value'] = array(
-    'node' => 'node',
-  );
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-  );
-  $handler->display->display_options['path'] = 'node/%/eventi';
-  $handler->display->display_options['menu']['title'] = 'Elenco eventi';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['rbv_view_group_content'] = $view;
 
   return $export;

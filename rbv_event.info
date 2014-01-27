@@ -43,6 +43,7 @@ features[field_group][] = group_event_description|node|event|form
 features[field_group][] = group_event_dis_description|node|event|default
 features[field_group][] = group_event_display_info|node|event|default
 features[field_group][] = group_event_info|node|event|form
+features[field_group][] = group_vmode_group_content|node|event|vmode_group_content
 features[field_instance][] = node-event-field_com_categories
 features[field_instance][] = node-event-field_com_description
 features[field_instance][] = node-event-field_com_location
