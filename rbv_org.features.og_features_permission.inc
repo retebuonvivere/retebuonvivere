@@ -26,9 +26,7 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:approve and deny subscription'
   $permissions['node:org:approve and deny subscription'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:org:manage members'

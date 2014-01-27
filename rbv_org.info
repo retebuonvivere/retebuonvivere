@@ -61,6 +61,7 @@ features[field_group][] = group_org_display_history|node|org|default
 features[field_group][] = group_org_display_info|node|org|default
 features[field_group][] = group_org_history|node|org|form
 features[field_group][] = group_org_info|node|org|form
+features[field_group][] = group_vmode_group_content|node|org|vmode_group_content
 features[field_instance][] = field_collection_item-field_membership_period-field_com_date
 features[field_instance][] = field_collection_item-field_membership_period-field_com_description
 features[field_instance][] = field_collection_item-field_membership_period-field_membership_role

@@ -99,6 +99,8 @@ function rbv_org_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'network admin' => 'network admin',
+      'organization member' => 'organization member',
     ),
     'module' => 'panelizer',
   );

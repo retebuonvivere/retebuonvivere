@@ -203,11 +203,12 @@ function rbv_org_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Info',
       'instance_settings' => array(
+        'classes' => 'group-org-display-info field-group-fieldset info-fieldgroup',
         'description' => '',
-        'classes' => 'group-org-display-info field-group-fieldset',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_org_display_info|node|org|default'] = $field_group;
@@ -271,6 +272,40 @@ function rbv_org_field_group_info() {
     ),
   );
   $export['group_org_info|node|org|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_vmode_group_content|node|org|vmode_group_content';
+  $field_group->group_name = 'group_vmode_group_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'org';
+  $field_group->mode = 'vmode_group_content';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_com_categories',
+      1 => 'field_com_date',
+      2 => 'field_com_logo',
+      3 => 'field_com_tagline',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'group-vmode-group-content field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_vmode_group_content|node|org|vmode_group_content'] = $field_group;
 
   return $export;
 }

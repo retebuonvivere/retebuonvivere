@@ -32,7 +32,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'name' => 'name',
@@ -48,15 +48,6 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  /* Field: Field collection item: Ruolo */
-  $handler->display->display_options['fields']['field_membership_role']['id'] = 'field_membership_role';
-  $handler->display->display_options['fields']['field_membership_role']['table'] = 'field_data_field_membership_role';
-  $handler->display->display_options['fields']['field_membership_role']['field'] = 'field_membership_role';
-  $handler->display->display_options['fields']['field_membership_role']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['fields']['field_membership_role']['label'] = '';
-  $handler->display->display_options['fields']['field_membership_role']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_membership_role']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_membership_role']['delta_offset'] = '0';
   /* Sort criterion: OG membership: Created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'og_membership';
@@ -70,7 +61,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = '%1 members';
+  $handler->display->display_options['arguments']['gid']['title'] = 'Persone di %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -117,6 +108,66 @@ function rbv_org_views_default_views() {
     ),
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: pane: all site users */
+  $handler = $view->new_display('panel_pane', 'pane: all site users', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Persone della rete';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '40';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutte -';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Immagine */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'rbv_image_teaser',
+    'image_link' => 'content',
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Organizzazioni */
+  $handler->display->display_options['fields']['og_user_node']['id'] = 'og_user_node';
+  $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
+  $handler->display->display_options['fields']['og_user_node']['label'] = '';
+  $handler->display->display_options['fields']['og_user_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_user_node']['type'] = 'og_list_default';
+  $handler->display->display_options['fields']['og_user_node']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['og_user_node']['separator'] = ' ';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $export['rbv_view_members'] = $view;
 
   return $export;
