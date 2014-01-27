@@ -36,6 +36,21 @@ function rbv_relpro_default_rules_configuration() {
             "data" : [ "created-collaboration-own-project:field-relpro-project" ],
             "value" : [ "node" ]
           }
+        },
+        { "data_set" : {
+            "data" : [ "created-collaboration-own-project:field-com-date" ],
+            "value" : [ "node:field-com-date" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "created-collaboration-own-project:field-com-date:value" ],
+            "value" : [ "node:field-com-date:value" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "created-collaboration-own-project:field-com-date:value2" ],
+            "value" : [ "node:field-com-date:value2" ]
+          }
         }
       ]
     }
@@ -51,6 +66,7 @@ function rbv_relpro_default_rules_configuration() {
         { "NOT data_is_empty" : { "data" : [ "node:field-com-date:duration" ] } }
       ],
       "DO" : [
+        { "drupal_message" : { "message" : "\\u00c8 stata impostata la data di termine per il progetto [node:title].\\r\\nLa stessa data di termine viene automaticamente impostata per le collaborazioni a questo progetto: " } },
         { "entity_query" : {
             "USING" : {
               "type" : "node",
@@ -72,7 +88,8 @@ function rbv_relpro_default_rules_configuration() {
                           "data" : [ "collaboration:field-com-date:value2" ],
                           "value" : [ "node:field-com-date:value2" ]
                         }
-                      }
+                      },
+                      { "drupal_message" : { "message" : "- \\u003Ca href=\\u0022[collaboration:url]\\u0022\\u003E[collaboration:title]\\u003C\\/a\\u003E" } }
                     ]
                   }
                 ]
@@ -80,6 +97,19 @@ function rbv_relpro_default_rules_configuration() {
             ]
           }
         }
+      ]
+    }
+  }');
+  $items['rules_rbv_collaboration_wiki'] = entity_import('rules_config', '{ "rules_rbv_collaboration_wiki" : {
+      "LABEL" : "rbv collaboration wiki",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "rbv" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--collaboration" : { "bundle" : "collaboration" } },
+      "DO" : [
+        { "list_remove" : { "list" : [ "node:og-group-ref" ], "item" : [ "node:og-group-ref:0" ] } },
+        { "list_add" : { "list" : [ "node:og-group-ref" ], "item" : [ "node:field-rel-source" ] } }
       ]
     }
   }');

@@ -32,17 +32,20 @@ function rbv_relpro_panelizer_defaults() {
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'collaborazioni
 %node:title',
-    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_paths' => 'collaborazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'burr_flipped';
+  $display->layout = 'mccoppin';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'sidebar' => NULL,
       'contentmain' => NULL,
+      'column1' => NULL,
+      'column2' => NULL,
+      'column3' => NULL,
     ),
   );
   $display->cache = array();
@@ -51,22 +54,25 @@ function rbv_relpro_panelizer_defaults() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'column1';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_rel_source';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'inline',
+      'label' => 'title',
       'formatter' => 'entityreference_entity_view',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'links' => 0,
+        'link' => 0,
         'view_mode' => 'vmode_group_content',
+        'links' => 1,
       ),
-      'context' => 'panelizer',
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -77,22 +83,24 @@ function rbv_relpro_panelizer_defaults() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1';
+    $display->panels['column1'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'column2';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_rel_categories';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'inline',
+      'label' => 'title',
       'formatter' => 'taxonomy_term_reference_link',
-      'delta_limit' => 0,
+      'delta_limit' => '0',
       'delta_offset' => '0',
-      'delta_reversed' => FALSE,
+      'delta_reversed' => 0,
       'formatter_settings' => array(),
-      'context' => 'panelizer',
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -100,15 +108,15 @@ function rbv_relpro_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
-    $display->panels['contentmain'][1] = 'new-2';
+    $display->panels['column2'][0] = 'new-2';
     $pane = new stdClass();
     $pane->pid = 'new-3';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'column2';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_com_foundingdate';
+    $pane->subtype = 'node:field_com_date';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -118,13 +126,15 @@ function rbv_relpro_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'format_type' => 'long',
-        'fromto' => 'both',
-        'multiple_from' => '',
+        'format_type' => 'medium',
         'multiple_number' => '',
+        'multiple_from' => '',
         'multiple_to' => '',
+        'fromto' => 'both',
       ),
-      'context' => 'panelizer',
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -132,13 +142,13 @@ function rbv_relpro_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $display->content['new-3'] = $pane;
-    $display->panels['contentmain'][2] = 'new-3';
+    $display->panels['column2'][1] = 'new-3';
     $pane = new stdClass();
     $pane->pid = 'new-4';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'column2';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_com_description';
     $pane->shown = TRUE;
@@ -150,7 +160,9 @@ function rbv_relpro_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
-      'context' => 'panelizer',
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -158,28 +170,30 @@ function rbv_relpro_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $display->content['new-4'] = $pane;
-    $display->panels['contentmain'][3] = 'new-4';
+    $display->panels['column2'][2] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'column3';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_relpro_project';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'above',
+      'label' => 'title',
       'formatter' => 'entityreference_entity_view',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'links' => 0,
+        'links' => 1,
         'view_mode' => 'vmode_group_content',
       ),
       'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -187,38 +201,12 @@ function rbv_relpro_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 0;
     $pane->locks = array();
     $display->content['new-5'] = $pane;
-    $display->panels['contentmain'][4] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'contentmain';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:og_group_ref';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'above',
-      'formatter' => 'og_list_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'panelizer',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['contentmain'][5] = 'new-6';
+    $display->panels['column3'][0] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:collaboration:default'] = $panelizer;
 
@@ -250,7 +238,7 @@ function rbv_relpro_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-6';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_rel_source';
@@ -273,10 +261,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['center'][0] = 'new-7';
+    $display->content['new-6'] = $pane;
+    $display->panels['center'][0] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-8';
+    $pane->pid = 'new-7';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_rel_categories';
@@ -297,10 +285,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['center'][1] = 'new-8';
+    $display->content['new-7'] = $pane;
+    $display->panels['center'][1] = 'new-7';
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-8';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_relpro_project';
@@ -323,10 +311,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['center'][2] = 'new-9';
+    $display->content['new-8'] = $pane;
+    $display->panels['center'][2] = 'new-8';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-9';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_com_description';
@@ -347,10 +335,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['center'][3] = 'new-10';
+    $display->content['new-9'] = $pane;
+    $display->panels['center'][3] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-10';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_com_foundingdate';
@@ -371,10 +359,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['center'][4] = 'new-11';
+    $display->content['new-10'] = $pane;
+    $display->panels['center'][4] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-11';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:og_group_ref';
@@ -395,10 +383,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['center'][5] = 'new-12';
+    $display->content['new-11'] = $pane;
+    $display->panels['center'][5] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-12';
     $pane->panel = 'center';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
@@ -420,10 +408,10 @@ function rbv_relpro_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['center'][6] = 'new-13';
+    $display->content['new-12'] = $pane;
+    $display->panels['center'][6] = 'new-12';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-13';
+  $display->title_pane = 'new-12';
   $panelizer->display = $display;
   $export['node:collaboration:default:teaser'] = $panelizer;
 

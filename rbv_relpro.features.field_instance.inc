@@ -45,7 +45,7 @@ function rbv_relpro_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -106,7 +106,7 @@ function rbv_relpro_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -135,10 +135,10 @@ function rbv_relpro_field_default_field_instances() {
     'bundle' => 'collaboration',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Scegliere le parole chiave che caratterizzano la relazione.',
+    'description' => 'Scegliere le parole chiave che caratterizzano la collaborazione. Ad esempio il ruolo o il tipo di attività che l\'organizzazione svolge in questo progetto.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -161,18 +161,18 @@ function rbv_relpro_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_rel_categories',
-    'label' => 'Relazione',
+    'label' => 'Collaborazione',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
@@ -187,13 +187,16 @@ function rbv_relpro_field_default_field_instances() {
   $field_instances['node-collaboration-field_rel_source'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => 'Selezionare la propria organizzazione.
-Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la relazione verrà attribuita all\'organizzazione indicata (quindi non sarete più in grado di modificare la relazione e i suoi dati).',
+    'description' => '<ul>
+<li>Selezionare la propria organizzazione (situazione predefinita)</li>
+<li>È possibile indicare un soggetto diverso dalla propria organizzazione. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata. </li>
+<li>È inoltre possibile indicare un\'organizzazione non ancora presente in retebuonvivere.org. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita. </li>
+</ul>',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
@@ -218,10 +221,14 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'weight' => 0,
       ),
       'vmode_group_content' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'vmode_group_content',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -231,7 +238,12 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -247,10 +259,6 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         ),
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
@@ -267,7 +275,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
     'description' => 'Il progetto a cui si collabora.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
@@ -295,11 +303,11 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 0,
+          'links' => 1,
           'view_mode' => 'vmode_group_content',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 3,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -319,16 +327,12 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
       'module' => 'entityreference',
       'settings' => array(
         'entityreference_autocreate' => array(
-          'active' => 1,
+          'active' => 0,
           'author' => '',
           'author_current_user' => 0,
         ),
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
@@ -366,7 +370,7 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -418,16 +422,19 @@ Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la re
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<ul>
+<li>Selezionare la propria organizzazione (situazione predefinita)</li>
+<li>È possibile indicare un soggetto diverso dalla propria organizzazione. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata. </li>
+<li>È inoltre possibile indicare un\'organizzazione non ancora presente in retebuonvivere.org. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita. </li>
+</ul>');
+  t('Collaborazione');
   t('Date');
   t('Descrizione della collaborazione');
   t('Groups audience');
   t('Il progetto a cui si collabora.');
   t('Progetto');
   t('Quando è iniziata (ed eventualmente terminata) questa collaborazione?');
-  t('Relazione');
-  t('Scegliere le parole chiave che caratterizzano la relazione.');
-  t('Selezionare la propria organizzazione.
-Attenzione: se si indica un soggetto diverso dalla propria organizzazione, la relazione verrà attribuita all\'organizzazione indicata (quindi non sarete più in grado di modificare la relazione e i suoi dati).');
+  t('Scegliere le parole chiave che caratterizzano la collaborazione. Ad esempio il ruolo o il tipo di attività che l\'organizzazione svolge in questo progetto.');
   t('Soggetto');
 
   return $field_instances;
