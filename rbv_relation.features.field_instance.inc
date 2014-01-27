@@ -22,34 +22,22 @@ function rbv_relation_field_default_field_instances() {
         'module' => 'relation_endpoint',
         'settings' => array(
           'view_modes' => array(
-            'comment' => 'default',
-            'fieldable_panels_pane' => 'default',
-            'file' => 'default',
-            'node' => 'default',
-            'og_membership' => 'default',
-            'og_membership_type' => 'default',
-            'relation' => 'default',
-            'rules_config' => 'default',
-            'search_api_index' => 'default',
-            'search_api_server' => 'default',
-            'taxonomy_term' => 'default',
-            'taxonomy_vocabulary' => 'default',
-            'user' => 'default',
-            'wysiwyg_profile' => 'default',
+            'node' => 'vmode_group_content',
           ),
         ),
-        'type' => 'relation_endpoint',
+        'type' => 'relation_endpoint_full',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'relation',
     'field_name' => 'endpoints',
-    'label' => 'endpoints',
-    'required' => FALSE,
+    'label' => 'Organizzazioni',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'relation_endpoint',
       'settings' => array(),
       'type' => 'relation_endpoint',
@@ -78,7 +66,7 @@ function rbv_relation_field_default_field_instances() {
     ),
     'entity_type' => 'relation',
     'field_name' => 'field_rel_collaborations',
-    'label' => 'Collaborazioni',
+    'label' => 'Collaborano ai progetti',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -108,8 +96,8 @@ function rbv_relation_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Collaborazioni');
-  t('endpoints');
+  t('Collaborano ai progetti');
+  t('Organizzazioni');
 
   return $field_instances;
 }

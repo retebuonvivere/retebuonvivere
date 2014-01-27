@@ -15,7 +15,7 @@ function rbv_relation_default_rules_configuration() {
       "OWNER" : "rules",
       "TAGS" : [ "rbv" ],
       "REQUIRES" : [ "rules", "rules_conditional" ],
-      "ON" : { "node_insert--collaboration" : { "bundle" : "collaboration" } },
+      "ON" : { "node_presave--collaboration" : { "bundle" : "collaboration" } },
       "DO" : [
         { "entity_query" : {
             "USING" : {
@@ -32,67 +32,76 @@ function rbv_relation_default_rules_configuration() {
             "DO" : [
               { "CONDITIONAL" : [
                   {
-                    "IF" : { "entity_has_field" : { "entity" : [ "collaboration" ], "field" : "field_rel_source" } },
+                    "IF" : { "entity_is_of_bundle" : {
+                        "entity" : [ "collaboration" ],
+                        "type" : "node",
+                        "bundle" : { "value" : { "collaboration" : "collaboration" } }
+                      }
+                    },
                     "DO" : [
-                      { "variable_add" : {
-                          "USING" : { "type" : "list\\u003Centity\\u003E", "value" : [ "" ] },
-                          "PROVIDE" : { "variable_added" : { "endpoints_list" : "list of endpoints for the relation to be created" } }
-                        }
-                      },
-                      { "list_add" : {
-                          "list" : [ "endpoints-list" ],
-                          "item" : [ "node:field-rel-source" ],
-                          "unique" : 1
-                        }
-                      },
-                      { "list_add" : {
-                          "list" : [ "endpoints-list" ],
-                          "item" : [ "collaboration:field-rel-source" ],
-                          "unique" : 1
-                        }
-                      },
-                      { "entity_create" : {
-                          "USING" : {
-                            "type" : "relation",
-                            "param_relation_type" : "cooperates_with",
-                            "param_endpoints" : [ "endpoints-list" ]
-                          },
-                          "PROVIDE" : { "entity_created" : { "relation_created" : "Created relation from endpoint list" } }
-                        }
-                      },
-                      { "entity_save" : { "data" : [ "relation-created" ], "immediate" : 1 } },
                       { "CONDITIONAL" : [
                           {
-                            "IF" : { "NOT data_is" : {
-                                "data" : [ "node:field-rel-source" ],
-                                "value" : [ "collaboration:field-rel-source" ]
-                              }
-                            },
+                            "IF" : { "entity_has_field" : { "entity" : [ "collaboration" ], "field" : "field_rel_source" } },
                             "DO" : [
-                              { "entity_query" : {
-                                  "USING" : {
-                                    "type" : "relation",
-                                    "property" : "endpoints",
-                                    "value" : [ "endpoints-list" ]
-                                  },
-                                  "PROVIDE" : { "entity_fetched" : { "relation_fetched" : "Fetched relation from endpont list" } }
-                                }
-                              },
                               { "CONDITIONAL" : [
                                   {
-                                    "IF" : { "entity_has_field" : {
-                                        "entity" : [ "relation-fetched:0" ],
-                                        "field" : "field_rel_collaborations"
+                                    "IF" : { "NOT data_is" : {
+                                        "data" : [ "node:field-rel-source" ],
+                                        "value" : [ "collaboration:field-rel-source" ]
                                       }
                                     },
                                     "DO" : [
+                                      { "variable_add" : {
+                                          "USING" : { "type" : "list\\u003Centity\\u003E", "value" : [ "" ] },
+                                          "PROVIDE" : { "variable_added" : { "endpoints_list" : "list of endpoints for the relation to be created" } }
+                                        }
+                                      },
+                                      { "list_add" : { "list" : [ "endpoints-list" ], "item" : [ "node:field-rel-source" ] } },
                                       { "list_add" : {
-                                          "list" : [ "relation-fetched:0:field-rel-collaborations" ],
-                                          "item" : [ "node:field-relpro-project" ],
+                                          "list" : [ "endpoints-list" ],
+                                          "item" : [ "collaboration:field-rel-source" ],
                                           "unique" : 1
                                         }
                                       },
-                                      { "drupal_message" : { "message" : "Le organizzazioni [node:field_rel_source] e [collaboration:field_rel_source] hanno una relazione di cooperazione tra loro: \\u003Ca href=\\u0022[relation-fetched:0:url]\\u0022\\u003ERelazione [relation-fetched:0:rid]\\u003C\\/a\\u003E. Questa relazione \\u00e8 basata sulle collaborazioni ai progetti [relation-fetched:0:field_rel_collaborations].\\r\\n" } }
+                                      { "entity_create" : {
+                                          "USING" : {
+                                            "type" : "relation",
+                                            "param_relation_type" : "cooperates_with",
+                                            "param_endpoints" : [ "endpoints-list" ]
+                                          },
+                                          "PROVIDE" : { "entity_created" : { "relation_created" : "Created relation from endpoint list" } }
+                                        }
+                                      },
+                                      { "entity_save" : { "data" : [ "relation-created" ], "immediate" : 1 } },
+                                      { "entity_query" : {
+                                          "USING" : {
+                                            "type" : "relation",
+                                            "property" : "endpoints",
+                                            "value" : [ "endpoints-list" ],
+                                            "limit" : "1"
+                                          },
+                                          "PROVIDE" : { "entity_fetched" : { "relation_fetched" : "Fetched relation from endpont list" } }
+                                        }
+                                      },
+                                      { "CONDITIONAL" : [
+                                          {
+                                            "IF" : { "entity_has_field" : {
+                                                "entity" : [ "relation-fetched:0" ],
+                                                "field" : "field_rel_collaborations"
+                                              }
+                                            },
+                                            "DO" : [
+                                              { "list_add" : {
+                                                  "list" : [ "relation-fetched:0:field-rel-collaborations" ],
+                                                  "item" : [ "node:field-relpro-project" ],
+                                                  "unique" : 1
+                                                }
+                                              },
+                                              { "drupal_message" : { "message" : "Le organizzazioni [node:field_rel_source] e [collaboration:field_rel_source] hanno una \\u003Ca href=\\u0022[relation-fetched:0:url]\\u0022\\u003Erelazione [relation-fetched:0:rid]\\u003C\\/a\\u003E di cooperazione, sulla base dei progetti: [relation-fetched:0:field_rel_collaborations].\\r\\n" } }
+                                            ]
+                                          }
+                                        ]
+                                      }
                                     ]
                                   }
                                 ]
