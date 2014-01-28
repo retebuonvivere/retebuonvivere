@@ -168,7 +168,7 @@ dependencies[] = wysiwyg
 ; dependency [] = message
 ; dependency [] = message_notify
 ; dependency [] = message_subscribe
-; dependency [] = advanced_forum
+dependency [] = advanced_forum
 
 ; Views
 dependencies[] = views
