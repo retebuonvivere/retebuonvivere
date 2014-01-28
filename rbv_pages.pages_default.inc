@@ -889,7 +889,7 @@ progetti/attività',
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'style' => 'default',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -1453,21 +1453,6 @@ progetti/attività',
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'header' => array(
-        'devices' => array(
-          'hidden-xs' => 0,
-          'hidden-sm' => 0,
-          'hidden-md' => 0,
-          'hidden-lg' => 0,
-        ),
-        'pane_style' => array(
-          'jumbotron' => 'jumbotron',
-          'pull-left' => 0,
-          'pull-right' => 0,
-          'clearfix' => 0,
-          'well' => 0,
-        ),
-      ),
       'sidebar' => NULL,
       'contentmain' => NULL,
       'footer' => NULL,
@@ -1491,6 +1476,21 @@ progetti/attività',
           'pull-right' => 0,
           'clearfix' => 0,
           'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'header' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'jumbotron' => 'jumbotron',
+          'pull-left' => 0,
+          'pull-right' => 0,
+          'clearfix' => 0,
           'well' => 0,
         ),
       ),
@@ -1520,7 +1520,9 @@ progetti/attività',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'style' => 'default',
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
