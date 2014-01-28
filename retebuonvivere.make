@@ -24,13 +24,16 @@ projects[panopoly_search][subdir] = panopoly
 projects[addressfield][subdir] = contrib
 projects[advanced_forum][subdir] = contrib
 projects[auto_nodetitle][subdir] = contrib
-projects[better_exposed_filters][subdir] = contrib
+; projects[better_exposed_filters][subdir] = contrib
 projects[colors][subdir] = contrib
 ; patching colors to recognize og_groups
 projects[colors][patch][1814972] = https://drupal.org/files/og-7.x-2.x_0.patch
-projects[d3][subdir] = contrib
-; adding d3 dev version to apply bug fix
-projects[d3][version] = 1.x-dev
+; adding d3 git version to apply bug fix
+projects[d3][download][type] = git
+projects[d3][download][url] = http://git.drupal.org/project/d3.git
+projects[d3][type] = module
+projects[d3][subdir] = contrib	
+projects[d3][version] = 1.x
 projects[date][subdir] = contrib
 projects[date_ical][subdir] = contrib
 projects[diff][subdir] = contrib
@@ -40,7 +43,9 @@ projects[entityreference_autocreate][subdir] = contrib
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entity_view_mode][subdir] = contrib
 projects[features][subdir] = contrib
+; patching features for a menu exorting problem
 projects[features][patch][2155945] = https://drupal.org/files/issues/features_strict-warning-menu-links_2155945-3.patch
+projects[features_override][subdir] = contrib
 projects[field_collection][subdir] = contrib
 projects[fullcalendar][subdir] = contrib
 projects[jquery_expander][subdir] = contrib
@@ -105,6 +110,10 @@ projects[rbv_relation][download][type] = git
 projects[rbv_relation][download][url] = git@github.com:miromarchi/rbv_relation.git
 projects[rbv_relation][type] = module
 projects[rbv_relation][subdir] = features
+projects[rbv_overrides][download][type] = git
+projects[rbv_overrides][download][url] = git@github.com:miromarchi/rbv_overrides.git
+projects[rbv_overrides][type] = module
+projects[rbv_overrides][subdir] = features
 
 
 ; Themes
@@ -114,10 +123,10 @@ projects[rbv_relation][subdir] = features
 ; projects[responsive_bartik][subdir] = contrib
 projects[kalatheme][type] = theme
 projects[kalatheme][subdir] = contrib
-projects[rbv_theme][download][type] = git
-projects[rbv_theme][download][url] = git@github.com:fonzy85vr/rbv_theme.git
-projects[rbv_theme][type] = theme
-projects[rbv_theme][subdir] = contrib
+projects[rbv_kala_default][download][type] = git
+projects[rbv_kala_default][download][url] = git@github.com:miromarchi/rbv_kala_default.git
+projects[rbv_kala_default][type] = theme
+projects[rbv_kala_default][subdir] = contrib
 
 ; Libraries
 libraries[arc][download][type] = file
