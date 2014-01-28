@@ -1,0 +1,13 @@
+name = rbv kala default 
+description = A Kalatheme subtheme powered by Twitter Bootstrap & Science. 
+base theme = kalatheme 
+core = 7.x 
+
+regions[content] = Content 
+
+settings[toggle_logo] = 0 
+
+stylesheets[all][] = css/main.css 
+
+stylesheets[all][] = css/font-awesome.min.css 
+
