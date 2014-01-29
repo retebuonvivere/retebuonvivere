@@ -4,7 +4,6 @@ core = 7.x
 package = RBV contents
 version = 7.x-1.4-pan
 project = rbv_view_explore
-dependencies[] = better_exposed_filters
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = menu
