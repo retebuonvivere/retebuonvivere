@@ -166,7 +166,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_rel_categories',
-    'label' => 'Collaborazione',
+    'label' => 'Ruolo nella collaborazione',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -427,13 +427,13 @@ function rbv_relpro_field_default_field_instances() {
 <li>È possibile indicare un soggetto diverso dalla propria organizzazione. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata. </li>
 <li>È inoltre possibile indicare un\'organizzazione non ancora presente in retebuonvivere.org. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita. </li>
 </ul>');
-  t('Collaborazione');
   t('Date');
   t('Descrizione della collaborazione');
   t('Groups audience');
   t('Il progetto a cui si collabora.');
   t('Progetto');
   t('Quando è iniziata (ed eventualmente terminata) questa collaborazione?');
+  t('Ruolo nella collaborazione');
   t('Scegliere le parole chiave che caratterizzano la collaborazione. Ad esempio il ruolo o il tipo di attività che l\'organizzazione svolge in questo progetto.');
   t('Soggetto');
 
