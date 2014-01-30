@@ -213,7 +213,7 @@ function rbv_project_panelizer_defaults() {
     $display->content['new-5'] = $pane;
     $display->panels['sidebar'][3] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-3';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:project:default'] = $panelizer;
 
