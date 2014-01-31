@@ -182,6 +182,27 @@ function rbv_project_rdf_default_mappings() {
     'field_collaborates_on' => array(
       'predicates' => array(),
     ),
+    'og_group_ref' => array(
+      'predicates' => array(
+        0 => 'schema:sourceOrganization',
+      ),
+    ),
+    'field_com_social_links' => array(
+      'predicates' => array(
+        0 => 'schema:sameAs',
+      ),
+    ),
+    'field_com_date' => array(
+      'predicates' => array(
+        0 => 'schema:foundingDate',
+      ),
+    ),
+    'field_com_scope' => array(
+      'predicates' => array(
+        0 => 'schema:scope',
+      ),
+      'type' => 'rel',
+    ),
   );
 
   return $schemaorg;
