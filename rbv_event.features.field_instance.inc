@@ -513,7 +513,6 @@ function rbv_event_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -523,83 +522,6 @@ function rbv_event_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_quick_links_links'
-  $field_instances['node-event-field_quick_links_links'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Indicare tutti gli indirizzi internet dell\'evento: es: evento su facebook, doodle, pagina sul sito principale, ...',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 10,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'vmode_group_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_quick_links_links',
-    'label' => 'Links',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => 'markdown',
-      ),
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 6,
     ),
   );
 
@@ -661,13 +583,13 @@ function rbv_event_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
-        'entityreference_autocreate' => 0,
+        'entityreference_autocreate' => array(
+          'active' => 0,
+          'author' => '',
+          'author_current_user' => 1,
+        ),
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
@@ -837,9 +759,7 @@ function rbv_event_field_default_field_instances() {
   t('Groups audience');
   t('Immagine / logo');
   t('Indicare le categorie di pertinenza per questo evento.');
-  t('Indicare tutti gli indirizzi internet dell\'evento: es: evento su facebook, doodle, pagina sul sito principale, ...');
   t('L\'evento si riferisce ad un progetto? Se sì, indicare quale.');
-  t('Links');
   t('Parole chiave');
   t('Progetto di riferimento');
   t('Quando');

@@ -14,7 +14,7 @@ function rbv_event_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_event';
-  $strongarm->value = 'edit-auto-nodetitle';
+  $strongarm->value = 'edit-schemaorg-ui';
   $export['additional_settings__active_tab_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -37,6 +37,55 @@ function rbv_event_strongarm() {
   $strongarm->name = 'ant_php_event';
   $strongarm->value = 0;
   $export['ant_php_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_event';
+  $strongarm->value = 0;
+  $export['comment_anonymous_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_event';
+  $strongarm->value = 1;
+  $export['comment_default_mode_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_event';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_event';
+  $strongarm->value = '2';
+  $export['comment_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_event';
+  $strongarm->value = 1;
+  $export['comment_form_location_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_event';
+  $strongarm->value = '1';
+  $export['comment_preview_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_event';
+  $strongarm->value = 1;
+  $export['comment_subject_field_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

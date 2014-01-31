@@ -52,12 +52,13 @@ function rbv_event_rdf_default_mappings() {
   // Exported RDF mapping: event
   $schemaorg['node']['event'] = array(
     'rdftype' => array(
-      0 => 'sioc:Item',
-      1 => 'foaf:Document',
+      0 => 'schema:Event',
+      1 => 'sioc:Item',
+      2 => 'foaf:Document',
     ),
     'title' => array(
       'predicates' => array(
-        0 => 'dc:title',
+        0 => 'schema:name',
       ),
     ),
     'created' => array(
@@ -88,7 +89,7 @@ function rbv_event_rdf_default_mappings() {
     ),
     'name' => array(
       'predicates' => array(
-        0 => 'foaf:name',
+        0 => 'schema:name',
       ),
     ),
     'comment_count' => array(
@@ -103,6 +104,55 @@ function rbv_event_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_event_date' => array(
+      'predicates' => array(
+        0 => 'schema:startDate',
+      ),
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
+    ),
+    'field_com_location' => array(
+      'predicates' => array(
+        0 => 'schema:location',
+      ),
+    ),
+    'og_group_ref' => array(
+      'predicates' => array(
+        0 => 'schema:sourceOrganization',
+      ),
+    ),
+    'field_com_social_links' => array(
+      'predicates' => array(
+        0 => 'schema:sameAs',
+      ),
+    ),
+    'field_com_logo' => array(
+      'predicates' => array(
+        0 => 'schema:image',
+      ),
+      'type' => 'rel',
+    ),
+    'field_com_description' => array(
+      'predicates' => array(
+        0 => 'schema:summary',
+        1 => 'schema:description',
+      ),
+    ),
+    'field_relpro_project' => array(
+      'predicates' => array(
+        0 => 'schema:sourceProject',
+      ),
+    ),
+    'field_com_categories' => array(
+      'predicates' => array(
+        0 => 'schema:issueArea',
+      ),
+      'type' => 'rel',
     ),
   );
 
