@@ -2,9 +2,9 @@ core = 7.26
 api = 2
 projects[] = drupal
 
-; retebuonvivere make file - panopoly 7.x-1.1
+; retebuonvivere make file
 
-; The Panopoly Foundation 
+; The Panopoly Foundation 7.x-1.1
 projects[panopoly_core][subdir] = panopoly
 projects[panopoly_images][subdir] = panopoly
 projects[panopoly_theme][subdir] = panopoly
@@ -113,15 +113,8 @@ projects[rbv_relation][download][type] = git
 projects[rbv_relation][download][url] = git@github.com:miromarchi/rbv_relation.git
 projects[rbv_relation][type] = module
 projects[rbv_relation][subdir] = features
-projects[rbv_overrides][download][type] = git
-projects[rbv_overrides][download][url] = git@github.com:miromarchi/rbv_overrides.git
-projects[rbv_overrides][type] = module
-projects[rbv_overrides][subdir] = features
-
 
 ; Themes
-; projects[radix_core][version] = 1.x-dev
-; projects[radix_core][subdir] = contrib
 ; projects[responsive_bartik][type] = theme
 ; projects[responsive_bartik][subdir] = contrib
 projects[kalatheme][type] = theme
