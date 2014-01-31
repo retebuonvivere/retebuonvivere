@@ -1,5 +1,5 @@
 name = Project content type
-description = Project content type + perms + og field bases + panelizer
+description = Project content type + perms + panelizer
 core = 7.x
 package = RBV contents
 version = 7.x-1.8-pan
@@ -75,7 +75,6 @@ features[og_features_permission][] = node:org:view og_group_ref field
 features[panelizer_defaults][] = node:project:default
 features[panelizer_defaults][] = node:project:default:teaser
 features[panelizer_defaults][] = node:project:default:vmode_group_content
-features[rdf_mappings][] = node-project
 features[schemaorg][] = node-project
 features[taxonomy][] = project_scopes
 features[user_permission][] = create project content
