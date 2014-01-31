@@ -13,15 +13,41 @@ function rbv_event_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_event_description|node|event|form';
-  $field_group->group_name = 'group_event_description';
+  $field_group->identifier = 'group_event_dati|node|event|form';
+  $field_group->group_name = 'group_event_dati';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'event';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
+    'label' => 'Dati',
+    'weight' => '4',
+    'children' => array(
+      0 => 'group_event_description',
+      1 => 'group_event_info',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-event-dati field-group-tabs',
+      ),
+    ),
+  );
+  $export['group_event_dati|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_event_description|node|event|form';
+  $field_group->group_name = 'group_event_description';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_event_dati';
+  $field_group->data = array(
     'label' => 'Descrizione',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_com_categories',
       1 => 'field_com_description',
@@ -29,12 +55,12 @@ function rbv_event_field_group_info() {
       3 => 'field_quick_links_links',
       4 => 'field_relpro_project',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-event-description field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -108,22 +134,22 @@ function rbv_event_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'event';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_event_dati';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_com_location',
       1 => 'field_com_logo',
       2 => 'field_event_date',
       3 => 'field_com_social_links',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-event-info field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),

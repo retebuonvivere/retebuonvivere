@@ -192,7 +192,7 @@ function rbv_event_panelizer_defaults() {
     $display->content['new-4'] = $pane;
     $display->panels['sidebar'][2] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-3';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:event:default'] = $panelizer;
 
