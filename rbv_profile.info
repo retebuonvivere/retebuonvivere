@@ -192,5 +192,6 @@ dependencies[] = rbv_event
 dependencies[] = rbv_view_graph
 dependencies[] = rbv_view_explore
 dependencies[] = rbv_pages
+dependencies[] = rbv_overrides
 
 files[] = rbv_profile.profile
