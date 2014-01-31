@@ -213,6 +213,16 @@ function rbv_org_rdf_default_mappings() {
         0 => 'schema:telephone',
       ),
     ),
+    'field_com_social_links' => array(
+      'predicates' => array(
+        0 => 'schema:sameAs',
+      ),
+    ),
+    'field_com_date' => array(
+      'predicates' => array(
+        0 => 'schema:foundingDate',
+      ),
+    ),
   );
 
   // Exported RDF mapping: user
