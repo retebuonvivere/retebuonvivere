@@ -2,23 +2,7 @@ core = 7.26
 api = 2
 projects[] = drupal
 
-; retebuonvivere make file - panopoly 7.x-1.1
-
-; The Panopoly Foundation 
-projects[panopoly_core][subdir] = panopoly
-projects[panopoly_images][subdir] = panopoly
-projects[panopoly_theme][subdir] = panopoly
-projects[panopoly_magic][subdir] = panopoly
-projects[panopoly_widgets][subdir] = panopoly
-projects[panopoly_admin][subdir] = panopoly
-; panopoly pane library bug fix patch (committed in panopoly 1.1)
-; projects[panopoly_admin][patch][2155847] = https://drupal.org/files/issues/issue-2155847.patch
-projects[panopoly_users][subdir] = panopoly
-
-; The Panopoly Toolset
-projects[panopoly_pages][subdir] = panopoly
-projects[panopoly_wysiwyg][subdir] = panopoly
-projects[panopoly_search][subdir] = panopoly
+; retebuonvivere make file on a panopoly 7.x-1.1
 
 ; Contrib modules
 projects[addressfield][subdir] = contrib
