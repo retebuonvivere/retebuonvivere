@@ -52,12 +52,13 @@ function rbv_relpro_rdf_default_mappings() {
   // Exported RDF mapping: collaboration
   $schemaorg['node']['collaboration'] = array(
     'rdftype' => array(
-      0 => 'sioc:Item',
-      1 => 'foaf:Document',
+      0 => 'schema:Relation',
+      1 => 'sioc:Item',
+      2 => 'foaf:Document',
     ),
     'title' => array(
       'predicates' => array(
-        0 => 'dc:title',
+        0 => 'schema:name',
       ),
     ),
     'created' => array(
@@ -88,7 +89,7 @@ function rbv_relpro_rdf_default_mappings() {
     ),
     'name' => array(
       'predicates' => array(
-        0 => 'foaf:name',
+        0 => 'schema:name',
       ),
     ),
     'comment_count' => array(
@@ -103,6 +104,33 @@ function rbv_relpro_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_rel_source' => array(
+      'predicates' => array(
+        0 => 'schema:source',
+      ),
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
+    ),
+    'field_relpro_project' => array(
+      'predicates' => array(
+        0 => 'schema:target',
+      ),
+    ),
+    'field_com_date' => array(
+      'predicates' => array(
+        0 => 'schema:startDate',
+      ),
+    ),
+    'field_com_description' => array(
+      'predicates' => array(
+        0 => 'schema:summary',
+        1 => 'schema:description',
+      ),
     ),
   );
 
