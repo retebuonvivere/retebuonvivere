@@ -76,7 +76,7 @@ dependencies[] = navbar
 dependencies[] = backports
 dependencies[] = simplified_menu_admin
 dependencies[] = devel
-dependencies[] = uuid
+; dependencies[] = uuid
 dependencies[] = admin_views
 dependencies[] = module_filter
 dependencies[] = diff
@@ -89,7 +89,7 @@ dependencies[] = colors
 dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = entity_view_mode
-dependencies[] = libraries
+dependencies[] = libraries	
 dependencies[] = linkit
 dependencies[] = menu_block
 dependencies[] = pathauto
@@ -134,7 +134,7 @@ dependencies[] = media_youtube
 ; Organic groups
 dependencies[] = og
 dependencies[] = og_access
-dependencies[] = og_context
+; dependencies[] = og_context
 dependencies[] = og_field_access
 dependencies[] = og_ui
 
@@ -192,6 +192,5 @@ dependencies[] = rbv_event
 dependencies[] = rbv_view_graph
 dependencies[] = rbv_view_explore
 dependencies[] = rbv_pages
-dependencies[] = rbv_overrides
 
 files[] = rbv_profile.profile
