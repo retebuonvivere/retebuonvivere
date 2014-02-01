@@ -1,0 +1,84 @@
+/**
+ * @file
+ * CSS for Social Profile Field.
+ */
+/* Default widget */
+
+.field-widget-social-profile-field-default .form-item .form-item {
+    background-repeat: no-repeat;
+    height: 36px;
+}
+
+.field-widget-social-profile-field-default .form-item .form-item input.edit-field-social-profile-url {
+    margin: 7px 0 7px 40px;
+}
+
+.field-widget-social-profile-field-default .form-item .form-item {
+    background-image: url('icons/default.png');
+}
+
+.field-widget-social-profile-field-default .form-item .youtube-com,
+.field-widget-social-profile-field-default .form-item .www-youtube-com {
+    background-image: url('icons/youtube.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .linkedin-com,
+.field-widget-social-profile-field-default .form-item .www-linkedin-com {
+    background-image: url('icons/linkedin.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .facebook-com,
+.field-widget-social-profile-field-default .form-item .www-facebook-com {
+    background-image: url('icons/facebook.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .wiser-org,
+.field-widget-social-profile-field-default .form-item .www-wiser-org {
+    background-image: url('icons/wiser.org.png');
+}
+
+.field-widget-social-profile-field-default .form-item .wikipedia-org,
+.field-widget-social-profile-field-default .form-item .www-wikipedia-org {
+    background-image: url('icons/en.wikipedia.org.png');
+}
+
+.field-widget-social-profile-field-default .form-item .google-com,
+.field-widget-social-profile-field-default .form-item .www-google-com,
+.field-widget-social-profile-field-default .form-item .google-it,
+.field-widget-social-profile-field-default .form-item .www-google-it, {
+
+    background-image: url('icons/google.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .facebook-com,
+.field-widget-social-profile-field-default .form-item .www-facebook-com {
+    background-image: url('icons/facebook.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .twitter-com,
+.field-widget-social-profile-field-default .form-item .www-twitter-com {
+    background-image: url('icons/twitter.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .vimeo-com,
+.field-widget-social-profile-field-default .form-item .www-vimeo-com {
+    background-image: url('icons/vimeo.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .wordpress-com,
+.field-widget-social-profile-field-default .form-item .www-wordpress-com {
+    background-image: url('icons/wordpress.com.png');
+}
+
+.field-widget-social-profile-field-default .form-item .zoes-it,
+.field-widget-social-profile-field-default .form-item .www-zoes-it {
+    background-image: url('icons/zoes.it.png');
+}
+
+
+/* Formatter: Icons */
+.field-type-social-profile-field-url .field-item {
+    margin-right: 5px;
+    float: left;
+}
+
