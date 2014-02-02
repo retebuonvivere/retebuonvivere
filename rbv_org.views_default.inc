@@ -29,6 +29,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -39,11 +40,11 @@ function rbv_org_views_default_views() {
     'field_membership_role' => 'field_membership_role',
   );
   $handler->display->display_options['row_options']['separator'] = '|';
-  /* Relationship: OG membership: OG membership from User */
+  /* Relationship: OG membership: OG membership from Utente */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Field: User: Name */
+  /* Campo: Utente: Nome */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -60,6 +61,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Tutti';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
   $handler->display->display_options['arguments']['gid']['title'] = 'Persone di %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
@@ -68,7 +70,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Filter criterion: User: Active */
+  /* Filter criterion: Utente: Attivo */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -121,6 +123,10 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutte -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '3';
@@ -130,7 +136,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Picture */
+  /* Campo: Utente: Immagine */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -141,13 +147,13 @@ function rbv_org_views_default_views() {
     'image_style' => 'rbv_image_teaser',
     'image_link' => 'content',
   );
-  /* Field: User: Name */
+  /* Campo: Utente: Nome */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: User: Organizzazioni */
+  /* Campo: Utente: Organizzazioni */
   $handler->display->display_options['fields']['og_user_node']['id'] = 'og_user_node';
   $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
@@ -163,11 +169,37 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Filter criterion: Utente: Attivo */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
+  $translatables['rbv_view_members'] = array(
+    t('Defaults'),
+    t('Persone'),
+    t('more'),
+    t('Apply'),
+    t('Ripristina'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from user'),
+    t('Tutti'),
+    t('Persone di %1'),
+    t('Block'),
+    t('pane: group members'),
+    t('RBV members'),
+    t('View panes'),
+    t('pane: all site users'),
+    t('Persone della rete'),
+    t('Items per page'),
+    t('- Tutte -'),
+    t('Offset'),
+    t('« prima'),
+    t('‹ precedente'),
+    t('seguente ›'),
+    t('ultima »'),
+  );
   $export['rbv_view_members'] = $view;
 
   return $export;

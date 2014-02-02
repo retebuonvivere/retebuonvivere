@@ -187,11 +187,17 @@ function rbv_org_strongarm() {
         'wysiwyg' => array(
           'weight' => '4',
         ),
+        'picture' => array(
+          'weight' => '5',
+        ),
+        'locale' => array(
+          'weight' => '5',
+        ),
       ),
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'full' => array(

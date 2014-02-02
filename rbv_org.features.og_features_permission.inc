@@ -365,6 +365,7 @@ function rbv_org_og_features_default_permissions() {
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
       'member' => 'member',
+      'non-member' => 'non-member',
     ),
   );
 
