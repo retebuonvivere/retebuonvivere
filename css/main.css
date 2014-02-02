@@ -246,6 +246,10 @@ padding-bottom: 1.5em;
 }
 
 /* users */
+.field-name-og-user-node {
+clear: both;
+}
+
 .field-name-og-user-node a {
 background: #fbfbfb;
 -moz-border-radius: .4em;
