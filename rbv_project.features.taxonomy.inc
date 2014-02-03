@@ -15,7 +15,7 @@ function rbv_project_taxonomy_default_vocabularies() {
       'description' => 'Ambito/portata dei progetti',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -9,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
