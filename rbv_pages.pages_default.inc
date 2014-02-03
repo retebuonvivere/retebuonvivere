@@ -1373,6 +1373,8 @@ progetti/attività',
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'tab',
@@ -1480,10 +1482,7 @@ progetti/attività',
   $page->admin_title = 'rbv home';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
+  $page->access = array();
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -1575,16 +1574,14 @@ progetti/attività',
     $pane->pid = 'new-14';
     $pane->panel = 'column1';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:5';
+    $pane->subtype = 'fpid:3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'style' => 'default',
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -1595,7 +1592,7 @@ progetti/attività',
     $pane->pid = 'new-15';
     $pane->panel = 'column2';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:6';
+    $pane->subtype = 'fpid:4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1613,7 +1610,7 @@ progetti/attività',
     $pane->pid = 'new-16';
     $pane->panel = 'column3';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:7';
+    $pane->subtype = 'fpid:5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1629,45 +1626,40 @@ progetti/attività',
     $display->panels['column3'][0] = 'new-16';
     $pane = new stdClass();
     $pane->pid = 'new-17';
-    $pane->panel = 'header';
+    $pane->panel = 'footer';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:4';
+    $pane->subtype = 'fpid:6';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'style' => 'default',
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-17'] = $pane;
-    $display->panels['header'][0] = 'new-17';
+    $display->panels['footer'][0] = 'new-17';
     $pane = new stdClass();
     $pane->pid = 'new-18';
-    $pane->panel = 'secondarycolumn3';
+    $pane->panel = 'header';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:9';
+    $pane->subtype = 'fpid:2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-      'style' => 'default',
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-18'] = $pane;
-    $display->panels['secondarycolumn3'][0] = 'new-18';
+    $display->panels['header'][0] = 'new-18';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
