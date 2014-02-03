@@ -72,7 +72,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'medium',
+          'format_type' => 'panopoly_day',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',

@@ -144,8 +144,8 @@ function rbv_project_field_group_info() {
       0 => 'field_com_categories',
       1 => 'field_com_description',
       2 => 'field_com_mission',
-      3 => 'field_com_tags',
-      4 => 'field_com_scope',
+      3 => 'field_com_scope',
+      4 => 'field_com_tags',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -171,8 +171,8 @@ function rbv_project_field_group_info() {
     'label' => 'Storia',
     'weight' => '2',
     'children' => array(
-      0 => 'field_com_history',
-      1 => 'field_com_date',
+      0 => 'field_com_date',
+      1 => 'field_com_history',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -199,8 +199,8 @@ function rbv_project_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_com_logo',
-      1 => 'field_com_tagline',
-      2 => 'field_com_social_links',
+      1 => 'field_com_social_links',
+      2 => 'field_com_tagline',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
