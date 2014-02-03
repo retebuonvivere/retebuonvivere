@@ -15,7 +15,7 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
       'description' => 'Settori di attività o categorie',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -7,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -38,7 +38,7 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
       'description' => 'Ruoli ricoperti dalle persone nelle organizzazioni',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -8,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -61,7 +61,7 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
       'description' => 'Le tipologie di organizazione della società civile, es: Associazione Onlus, Cooperativa Sociale, Comitato, Impresa sociale, GAS',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -5,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -84,7 +84,7 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
       'description' => 'Tipologie delle relazioni di collaborazione tra organizzazioni: è socio di, è nella rete, ...',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -4,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -107,7 +107,7 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
       'description' => 'Use tags to group articles on similar topics into categories.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -6,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
