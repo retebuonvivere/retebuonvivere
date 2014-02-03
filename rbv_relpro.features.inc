@@ -36,7 +36,7 @@ function rbv_relpro_node_info() {
       'base' => 'node_content',
       'description' => t('Una collaborazione ad un progetto/attività.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
   );

@@ -126,7 +126,7 @@ function rbv_relpro_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'format_type' => 'medium',
+        'format_type' => 'panopoly_day',
         'multiple_number' => '',
         'multiple_from' => '',
         'multiple_to' => '',

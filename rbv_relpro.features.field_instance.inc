@@ -20,7 +20,7 @@ function rbv_relpro_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'panopoly_day',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',

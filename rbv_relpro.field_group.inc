@@ -77,8 +77,8 @@ function rbv_relpro_field_group_info() {
     'label' => 'Descrizione',
     'weight' => '1',
     'children' => array(
-      0 => 'field_com_description',
-      1 => 'field_com_date',
+      0 => 'field_com_date',
+      1 => 'field_com_description',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
