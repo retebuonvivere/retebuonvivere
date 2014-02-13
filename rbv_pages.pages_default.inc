@@ -1811,6 +1811,10 @@ progetti/attività',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'persone',
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'boxton';
