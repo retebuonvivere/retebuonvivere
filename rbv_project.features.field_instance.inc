@@ -439,7 +439,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 28,
+      'default_image' => 0,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
