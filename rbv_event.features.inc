@@ -36,7 +36,7 @@ function rbv_event_node_info() {
       'base' => 'node_content',
       'description' => t('Evento che potrà apparire sul calendario della propria organizzazione e sul calendario condiviso.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
   );
