@@ -556,7 +556,7 @@ function rbv_org_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 29,
+      'default_image' => 33,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -800,7 +800,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire le parole chiave che descrivono la propria organizzazione.',
+    'description' => 'Inserire le parole chiave che descrivono la propria organizzazione, <strong>separate da una virgola</strong>.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1064,7 +1064,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
   t('Indirizzo');
   t('Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.');
   t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
-  t('Inserire le parole chiave che descrivono la propria organizzazione.');
+  t('Inserire le parole chiave che descrivono la propria organizzazione, <strong>separate da una virgola</strong>.');
   t('La storia della propria organizzazione. ');
   t('Logo');
   t('Mission');
