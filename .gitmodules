@@ -49,3 +49,12 @@
 [submodule "drupal/features/rbv_pages"]
 	path = drupal/features/rbv_pages
 	url = git@github.com:miromarchi/rbv_pages.git
+[submodule "drupal/features/rbv_overrides"]
+	path = drupal/features/rbv_overrides
+	url = git@github.com:miromarchi/rbv_overrides.git
+[submodule "drupal/themes/rbv_kala_default"]
+	path = drupal/themes/rbv_kala_default
+	url = git@github.com:miromarchi/rbv_kala_default.git
+[submodule "drupal/themes/rbv_kala_default_bootstrap"]
+	path = drupal/themes/rbv_kala_default_bootstrap
+	url = git@github.com:miromarchi/rbv_kala_default_bootstrap.git
