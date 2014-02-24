@@ -28,14 +28,15 @@ function rbv_org_field_group_info() {
       2 => 'field_com_more_contacts',
       3 => 'field_com_telephone',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Contatti',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'well well-sm',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_org_contacts|node|org|form'] = $field_group;
@@ -58,11 +59,18 @@ function rbv_org_field_group_info() {
       2 => 'group_org_history',
       3 => 'group_org_info',
     ),
-    'format_type' => 'tabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'formatter' => 'open',
       'instance_settings' => array(
-        'classes' => 'group-org-dati field-group-tabs',
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -86,14 +94,15 @@ function rbv_org_field_group_info() {
       2 => 'field_com_mission',
       3 => 'field_com_tags',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Descrizione',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'well well-sm',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_org_description|node|org|form'] = $field_group;
@@ -229,14 +238,15 @@ function rbv_org_field_group_info() {
       0 => 'field_com_date',
       1 => 'field_com_history',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Storia',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-org-history field-group-tab',
         'required_fields' => 1,
+        'classes' => 'well well-sm',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_org_history|node|org|form'] = $field_group;
@@ -254,21 +264,21 @@ function rbv_org_field_group_info() {
     'label' => 'Info',
     'weight' => '2',
     'children' => array(
-      0 => 'field_com_logo',
-      1 => 'field_com_tagline',
-      2 => 'field_org_type',
-      3 => 'field_com_social_links',
+      0 => 'field_org_type',
+      1 => 'field_com_logo',
+      2 => 'field_com_social_links',
+      3 => 'field_com_tagline',
       4 => 'title',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Info',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => 'well well-sm',
         'description' => '',
       ),
-      'formatter' => 'open',
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_org_info|node|org|form'] = $field_group;
