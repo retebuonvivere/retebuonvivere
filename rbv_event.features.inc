@@ -140,7 +140,6 @@ function rbv_event_rdf_default_mappings() {
     'field_com_description' => array(
       'predicates' => array(
         0 => 'schema:summary',
-        1 => 'schema:description',
       ),
     ),
     'field_relpro_project' => array(
@@ -151,6 +150,17 @@ function rbv_event_rdf_default_mappings() {
     'field_com_categories' => array(
       'predicates' => array(
         0 => 'schema:issueArea',
+      ),
+      'type' => 'rel',
+    ),
+    'field_quick_links_links' => array(
+      'predicates' => array(
+        0 => 'schema:sameAs',
+      ),
+    ),
+    'field_com_tags' => array(
+      'predicates' => array(
+        0 => 'schema:keywords',
       ),
       'type' => 'rel',
     ),

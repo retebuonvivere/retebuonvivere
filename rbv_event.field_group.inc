@@ -26,11 +26,18 @@ function rbv_event_field_group_info() {
       0 => 'group_event_description',
       1 => 'group_event_info',
     ),
-    'format_type' => 'tabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'formatter' => 'open',
       'instance_settings' => array(
-        'classes' => 'group-event-dati field-group-tabs',
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -52,17 +59,17 @@ function rbv_event_field_group_info() {
       0 => 'field_com_categories',
       1 => 'field_com_description',
       2 => 'field_com_tags',
-      3 => 'field_quick_links_links',
-      4 => 'field_relpro_project',
+      3 => 'field_relpro_project',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Descrizione',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_event_description|node|event|form'] = $field_group;
@@ -111,8 +118,8 @@ function rbv_event_field_group_info() {
     'children' => array(
       0 => 'field_com_location',
       1 => 'field_com_logo',
-      2 => 'field_event_date',
-      3 => 'field_com_social_links',
+      2 => 'field_com_social_links',
+      3 => 'field_event_date',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -141,17 +148,19 @@ function rbv_event_field_group_info() {
     'children' => array(
       0 => 'field_com_location',
       1 => 'field_com_logo',
-      2 => 'field_event_date',
-      3 => 'field_com_social_links',
+      2 => 'field_com_social_links',
+      3 => 'field_event_date',
+      4 => 'field_quick_links_links',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Info',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_event_info|node|event|form'] = $field_group;

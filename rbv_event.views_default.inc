@@ -1012,7 +1012,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Progetto di riferimento */
+  /* Campo: Contenuto: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1020,7 +1020,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['field_relpro_project']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_relpro_project']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
-    'view_mode' => 'vmode_group_content',
+    'view_mode' => 'teaser',
     'links' => 1,
   );
   /* Campo: Contenuto: Titolo */
@@ -1029,8 +1029,9 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '> pagina della collaborazione';
+  $handler->display->display_options['fields']['title']['alter']['text'] = 'Pagina della collaborazione';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Contenuto: Soggetto (field_rel_source) */
   $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
@@ -1111,7 +1112,7 @@ function rbv_event_views_default_views() {
     t('Progetti'),
     t('pane: collaborations'),
     t('Progetti e collaborazioni'),
-    t('> pagina della collaborazione'),
+    t('Pagina della collaborazione'),
   );
   $export['rbv_view_group_content'] = $view;
 

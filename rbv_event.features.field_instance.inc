@@ -15,14 +15,14 @@ function rbv_event_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Indicare le categorie di pertinenza per questo evento.',
+    'description' => '<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui questo evento si concentra. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'featured' => array(
         'label' => 'above',
@@ -61,12 +61,12 @@ function rbv_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 8,
     ),
   );
@@ -76,7 +76,7 @@ function rbv_event_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Descrivete l\'evento come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -90,7 +90,7 @@ function rbv_event_field_default_field_instances() {
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 9,
+        'weight' => 13,
       ),
       'featured' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function rbv_event_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_trimmed',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -134,7 +134,7 @@ function rbv_event_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 16,
+        'rows' => 15,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -152,12 +152,12 @@ function rbv_event_field_default_field_instances() {
         'premise' => '',
         'postal_code' => '',
         'locality' => '',
-        'administrative_area' => '',
+        'administrative_area' => 'VR',
         'country' => 'IT',
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -243,7 +243,7 @@ function rbv_event_field_default_field_instances() {
   $field_instances['node-event-field_com_logo'] = array(
     'bundle' => 'event',
     'deleted' => 0,
-    'description' => 'Scegliere l\'immagine da associare a questo evento.',
+    'description' => '<a class="help" title="Il logo è sempre visibile accanto al nome dell\'evento. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -297,7 +297,7 @@ function rbv_event_field_default_field_instances() {
     'label' => 'Immagine / logo',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -324,7 +324,7 @@ function rbv_event_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo evento è presente. Questi link vengono visualizzati  sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -349,7 +349,7 @@ function rbv_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -360,7 +360,7 @@ function rbv_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_social_links',
-    'label' => 'Seguici su',
+    'label' => 'Seguici l\'evento su',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -379,14 +379,14 @@ function rbv_event_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Avete scelto il settore \'beni comuni\' e volete specificare che l\'evento si concentrerà in particolare su \'auto-organizzazione\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'featured' => array(
         'label' => 'above',
@@ -405,7 +405,7 @@ function rbv_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 9,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -437,7 +437,7 @@ function rbv_event_field_default_field_instances() {
   $field_instances['node-event-field_event_date'] = array(
     'bundle' => 'event',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Quando inizia e quando termina questo evento? Le date permettono di visualizzare l\'evento nel calendario della vostra organizzazione e nel calendario condiviso."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -514,7 +514,7 @@ function rbv_event_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
@@ -525,19 +525,95 @@ function rbv_event_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_quick_links_links'
+  $field_instances['node-event-field_quick_links_links'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale dell\'evento. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Usate il pulsante \'Aggiungi un altro elemento\' per aggiungere altri indirizzi, ad esempio il blog del progetto. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 14,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_quick_links_links',
+    'label' => 'Links',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_relpro_project'
   $field_instances['node-event-field_relpro_project'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'L\'evento si riferisce ad un progetto? Se sì, indicare quale.',
+    'description' => '<a class="help" title="L\'evento si riferisce ad un progetto? Indicate quale digitando il nome del progetto qui, l\'evento sarà visibile nella pagina del progetto. In questo modo si può ad esempio creare un progetto/attività per raggruppare una rassegna di eventi."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 12,
       ),
       'featured' => array(
         'label' => 'above',
@@ -558,7 +634,7 @@ function rbv_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 8,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -630,7 +706,7 @@ function rbv_event_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 10,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -692,10 +768,13 @@ function rbv_event_field_default_field_instances() {
         'weight' => 8,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -753,18 +832,25 @@ function rbv_event_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui questo evento si concentra. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Avete scelto il settore \'beni comuni\' e volete specificare che l\'evento si concentrerà in particolare su \'auto-organizzazione\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Descrivete l\'evento come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Il logo è sempre visibile accanto al nome dell\'evento. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo evento è presente. Questi link vengono visualizzati  sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="L\'evento si riferisce ad un progetto? Indicate quale digitando il nome del progetto qui, l\'evento sarà visibile nella pagina del progetto. In questo modo si può ad esempio creare un progetto/attività per raggruppare una rassegna di eventi."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Quando inizia e quando termina questo evento? Le date permettono di visualizzare l\'evento nel calendario della vostra organizzazione e nel calendario condiviso."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale dell\'evento. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Usate il pulsante \'Aggiungi un altro elemento\' per aggiungere altri indirizzi, ad esempio il blog del progetto. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>');
   t('Descrizione');
   t('Dove');
   t('Group visibility');
   t('Groups audience');
   t('Immagine / logo');
-  t('Indicare le categorie di pertinenza per questo evento.');
-  t('L\'evento si riferisce ad un progetto? Se sì, indicare quale.');
+  t('Links');
   t('Parole chiave');
   t('Progetto di riferimento');
   t('Quando');
-  t('Scegliere l\'immagine da associare a questo evento.');
-  t('Seguici su');
+  t('Seguici l\'evento su');
   t('Settori');
 
   return $field_instances;
