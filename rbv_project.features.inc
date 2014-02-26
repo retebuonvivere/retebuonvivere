@@ -112,7 +112,7 @@ function rbv_project_rdf_default_mappings() {
     ),
     'field_com_tagline' => array(
       'predicates' => array(
-        0 => 'schema:description/slogan',
+        0 => 'schema:slogan',
       ),
     ),
     'field_com_foundingdate' => array(
@@ -123,7 +123,6 @@ function rbv_project_rdf_default_mappings() {
     'field_com_description' => array(
       'predicates' => array(
         0 => 'schema:summary',
-        1 => 'schema:description',
       ),
     ),
     'field_com_categories' => array(
@@ -140,12 +139,12 @@ function rbv_project_rdf_default_mappings() {
     ),
     'field_com_mission' => array(
       'predicates' => array(
-        0 => 'schema:description/mission',
+        0 => 'schema:mission',
       ),
     ),
     'field_com_history' => array(
       'predicates' => array(
-        0 => 'schema:description/history',
+        0 => 'schema:history',
       ),
     ),
     'field_com_location' => array(
@@ -202,6 +201,16 @@ function rbv_project_rdf_default_mappings() {
         0 => 'schema:scope',
       ),
       'type' => 'rel',
+    ),
+    'field_com_more' => array(
+      'predicates' => array(
+        0 => 'schema:moreContacts',
+      ),
+    ),
+    'field_quick_links_links' => array(
+      'predicates' => array(
+        0 => 'schema:sameAs',
+      ),
     ),
   );
 

@@ -15,7 +15,7 @@ function rbv_project_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Scegliere i settori di impatto del progetto/attività.',
+    'description' => '<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui questo progetto ha un impatto. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -65,8 +65,7 @@ function rbv_project_field_default_field_instances() {
   $field_instances['node-project-field_com_date'] = array(
     'bundle' => 'project',
     'deleted' => 0,
-    'description' => 'Quando è iniziato (ed eventualmente terminato) questo progetto? <br>
-La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni al progetto ancora attive (se si sta creando il progetto per la prima volta, verrà modificata soltanto la collaborazione della propria organizzazione al progetto).',
+    'description' => '<a class="help" title="Quando è iniziato questo progetto? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario. La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni al progetto attive."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -130,7 +129,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
       'module' => 'date',
       'settings' => array(
         'increment' => 30,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
@@ -146,21 +145,21 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Descrivere questo progetto, cos\'è, cosa fà...',
+    'description' => '<a class="help" title="Descrivete il progetto come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'jquery_expander',
         'settings' => array(
           'collapseTimer' => '',
           'expandPrefix' => '... ',
           'expandText' => 'espandi »',
-          'slicePoint' => 600,
+          'slicePoint' => 1000,
           'userCollapsePrefix' => '',
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'featured' => array(
         'label' => 'above',
@@ -197,7 +196,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 10,
+        'rows' => 15,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -261,7 +260,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Raccontare la storia di questo progetto.',
+    'description' => '<a class="help" title="Raccontate la storia di questo progetto."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -270,7 +269,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
           'collapseTimer' => '',
           'expandPrefix' => '... ',
           'expandText' => 'espandi »',
-          'slicePoint' => 600,
+          'slicePoint' => 700,
           'userCollapsePrefix' => '',
           'userCollapseText' => '« riduci',
         ),
@@ -309,7 +308,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 6,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -327,12 +326,12 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
         'premise' => '',
         'postal_code' => '',
         'locality' => '',
-        'administrative_area' => '',
+        'administrative_area' => 'VR',
         'country' => 'IT',
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -394,7 +393,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
   $field_instances['node-project-field_com_logo'] = array(
     'bundle' => 'project',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Il logo è sempre visibile accanto al nome del progetto. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -465,9 +464,7 @@ La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni 
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Mission: la ragione d\'essere di questo progetto, che cosa intende fare per il mondo.
-Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
-Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo progetto? Perché lo facciamo?',
+    'description' => '<a class="help" title="Mission, la ragione d\'essere di questo progetto, che cosa il progetto intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -476,12 +473,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
           'collapseTimer' => '',
           'expandPrefix' => '... ',
           'expandText' => 'espandi »',
-          'slicePoint' => 600,
+          'slicePoint' => 700,
           'userCollapsePrefix' => '',
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'featured' => array(
         'label' => 'above',
@@ -515,7 +512,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 4,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -523,15 +520,15 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_more_contacts'
-  $field_instances['node-project-field_com_more_contacts'] = array(
+  // Exported field_instance: 'node-project-field_com_more'
+  $field_instances['node-project-field_com_more'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, un contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -547,30 +544,34 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 0,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_com_more_contacts',
+    'field_name' => 'field_com_more',
     'label' => 'Altro',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 6,
       ),
-      'type' => 'text_textfield',
+      'type' => 'text_textarea',
       'weight' => 14,
     ),
   );
@@ -580,14 +581,14 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Indicare l\'ambito/portata del progetto/attività: es. locale, regionale, nazionale...',
+    'description' => '<a class="help" title="Locale, regionale, interregionale, nazionale, globale... Qual\'è l\'ambito o la portata del progetto?"><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'featured' => array(
         'label' => 'above',
@@ -629,7 +630,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire gli indirizzi delle pagine del progetto/attività nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, wikipedia, ...). Verranno visualizzati con l\'icona corrispondente.',
+    'description' => '<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo progetto è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -659,7 +660,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_social_links',
-    'label' => 'Seguici su',
+    'label' => 'Seguici il progetto su',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -678,7 +679,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo di questo progetto. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -713,6 +714,10 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'label' => 'Slogan',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -720,7 +725,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 68,
       ),
       'type' => 'text_textfield',
       'weight' => 3,
@@ -732,7 +737,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Le parole chiave che definiscono questo progetto.',
+    'description' => '<a class="help" title="Avete scelto il settore \'economia solidale\' e volete specificare che il progetto è in particolare sul \'baratto\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -827,6 +832,76 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
       ),
       'type' => 'telephone_default',
       'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_quick_links_links'
+  $field_instances['node-project-field_quick_links_links'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale del progetto. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Usate il pulsante \'Aggiungi un altro elemento\' per aggiungere altri indirizzi, ad esempio il blog del progetto. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_separate',
+        'weight' => 9,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_quick_links_links',
+    'label' => 'Links',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 15,
     ),
   );
 
@@ -980,29 +1055,32 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo pr
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui questo progetto ha un impatto. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Avete scelto il settore \'economia solidale\' e volete specificare che il progetto è in particolare sul \'baratto\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Descrivete il progetto come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Il logo è sempre visibile accanto al nome del progetto. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo progetto è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Locale, regionale, interregionale, nazionale, globale... Qual\'è l\'ambito o la portata del progetto?"><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Mission, la ragione d\'essere di questo progetto, che cosa il progetto intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Quando è iniziato questo progetto? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario. La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni al progetto attive."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Raccontate la storia di questo progetto."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, un contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo di questo progetto. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale del progetto. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Usate il pulsante \'Aggiungi un altro elemento\' per aggiungere altri indirizzi, ad esempio il blog del progetto. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>');
   t('Altro');
   t('Ambito/portata');
   t('Date');
-  t('Descrivere questo progetto, cos\'è, cosa fà...');
   t('Descrizione');
   t('Email');
   t('Group visibility');
   t('Groups audience');
-  t('Indicare l\'ambito/portata del progetto/attività: es. locale, regionale, nazionale...');
   t('Indirizzo');
-  t('Inserire gli indirizzi delle pagine del progetto/attività nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, wikipedia, ...). Verranno visualizzati con l\'icona corrispondente.');
-  t('Le parole chiave che definiscono questo progetto.');
+  t('Links');
   t('Logo');
   t('Mission');
-  t('Mission: la ragione d\'essere di questo progetto, che cosa intende fare per il mondo.
-Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
-Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare con questo progetto? Perché lo facciamo?');
   t('Parole chiave');
-  t('Quando è iniziato (ed eventualmente terminato) questo progetto? <br>
-La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni al progetto ancora attive (se si sta creando il progetto per la prima volta, verrà modificata soltanto la collaborazione della propria organizzazione al progetto).');
-  t('Raccontare la storia di questo progetto.');
-  t('Scegliere i settori di impatto del progetto/attività.');
-  t('Seguici su');
+  t('Seguici il progetto su');
   t('Settori');
   t('Slogan');
   t('Storia');

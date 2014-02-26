@@ -25,17 +25,19 @@ function rbv_project_field_group_info() {
     'children' => array(
       0 => 'field_com_email',
       1 => 'field_com_location',
-      2 => 'field_com_more_contacts',
-      3 => 'field_com_telephone',
+      2 => 'field_com_telephone',
+      3 => 'field_com_more',
+      4 => 'field_quick_links_links',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Contatti',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-project-contacts field-group-tab',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_project_contacts|node|project|form'] = $field_group;
@@ -58,11 +60,18 @@ function rbv_project_field_group_info() {
       2 => 'group_project_history',
       3 => 'group_project_info',
     ),
-    'format_type' => 'tabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'formatter' => 'open',
       'instance_settings' => array(
-        'classes' => 'group-project-dati field-group-tabs',
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -84,17 +93,18 @@ function rbv_project_field_group_info() {
       0 => 'field_com_categories',
       1 => 'field_com_description',
       2 => 'field_com_mission',
-      3 => 'field_com_tags',
-      4 => 'field_com_scope',
+      3 => 'field_com_scope',
+      4 => 'field_com_tags',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Descrizione',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_project_description|node|project|form'] = $field_group;
@@ -114,8 +124,9 @@ function rbv_project_field_group_info() {
     'children' => array(
       0 => 'field_com_email',
       1 => 'field_com_location',
-      2 => 'field_com_more_contacts',
-      3 => 'field_com_telephone',
+      2 => 'field_com_telephone',
+      3 => 'field_com_more',
+      4 => 'field_quick_links_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -227,17 +238,18 @@ function rbv_project_field_group_info() {
     'label' => 'Storia',
     'weight' => '5',
     'children' => array(
-      0 => 'field_com_history',
-      1 => 'field_com_date',
+      0 => 'field_com_date',
+      1 => 'field_com_history',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Storia',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_project_history|node|project|form'] = $field_group;
@@ -256,18 +268,19 @@ function rbv_project_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_com_logo',
-      1 => 'field_com_tagline',
-      2 => 'field_com_social_links',
+      1 => 'field_com_social_links',
+      2 => 'field_com_tagline',
       3 => 'title',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Info',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_project_info|node|project|form'] = $field_group;
