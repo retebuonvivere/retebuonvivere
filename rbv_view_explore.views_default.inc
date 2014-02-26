@@ -56,33 +56,33 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Nessun risultato trovato. Riprovare con altre impostazioni.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Type */
+  /* Sort criterion: Contenuto: Tipo */
   $handler->display->display_options['sorts']['type']['id'] = 'type';
   $handler->display->display_options['sorts']['type']['table'] = 'node';
   $handler->display->display_options['sorts']['type']['field'] = 'type';
   $handler->display->display_options['sorts']['type']['order'] = 'DESC';
   $handler->display->display_options['sorts']['type']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['type']['expose']['label'] = 'Cosa?';
-  /* Sort criterion: Content: Title */
+  /* Sort criterion: Contenuto: Titolo */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['title']['expose']['label'] = 'Nome';
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Contenuto: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Quando è entrato in retebuonvivere.org';
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
@@ -92,14 +92,14 @@ function rbv_view_explore_views_default_views() {
     'project' => 'project',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 1;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -124,7 +124,7 @@ function rbv_view_explore_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Tipo';
   $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['group_info']['remember'] = FALSE;
   $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
@@ -132,7 +132,7 @@ function rbv_view_explore_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Settori (field_com_categories) */
+  /* Filter criterion: Contenuto: Settori (field_com_categories) */
   $handler->display->display_options['filters']['field_com_categories_tid']['id'] = 'field_com_categories_tid';
   $handler->display->display_options['filters']['field_com_categories_tid']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['filters']['field_com_categories_tid']['field'] = 'field_com_categories_tid';
@@ -154,7 +154,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_com_categories_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_com_categories_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_com_categories_tid']['vocabulary'] = 'categories';
-  /* Filter criterion: Content: Tipologia (field_org_type) */
+  /* Filter criterion: Contenuto: Tipologia (field_org_type) */
   $handler->display->display_options['filters']['field_org_type_tid']['id'] = 'field_org_type_tid';
   $handler->display->display_options['filters']['field_org_type_tid']['table'] = 'field_data_field_org_type';
   $handler->display->display_options['filters']['field_org_type_tid']['field'] = 'field_org_type_tid';
@@ -176,7 +176,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_org_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_org_type_tid']['vocabulary'] = 'org_types';
   $handler->display->display_options['filters']['field_org_type_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Parole chiave (field_com_tags) */
+  /* Filter criterion: Contenuto: Parole chiave (field_com_tags) */
   $handler->display->display_options['filters']['field_com_tags_tid']['id'] = 'field_com_tags_tid';
   $handler->display->display_options['filters']['field_com_tags_tid']['table'] = 'field_data_field_com_tags';
   $handler->display->display_options['filters']['field_com_tags_tid']['field'] = 'field_com_tags_tid';
@@ -202,7 +202,37 @@ function rbv_view_explore_views_default_views() {
 
   /* Display: pane: esplora la rete */
   $handler = $view->new_display('panel_pane', 'pane: esplora la rete', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Filtri';
   $handler->display->display_options['inherit_panels_path'] = '1';
+  $translatables['rbv_view_explore'] = array(
+    t('Master'),
+    t('Esplora la rete'),
+    t('more'),
+    t('Applica filtro'),
+    t('Ripristina filtro'),
+    t('Ordina per'),
+    t('Asc'),
+    t('Disc'),
+    t('Contentuti per pagina'),
+    t('- Tutti -'),
+    t('Offset'),
+    t('« prima'),
+    t('‹ precedente'),
+    t('successiva ›'),
+    t('ultima »'),
+    t('Nessun risultato trovato. Riprovare con altre impostazioni.'),
+    t('Cosa?'),
+    t('Nome'),
+    t('Quando è entrato in retebuonvivere.org'),
+    t('Tipo'),
+    t('Settori'),
+    t('Tipo di organizzazione'),
+    t('tags'),
+    t('pane: esplora la rete'),
+    t('Filtri'),
+    t('View panes'),
+  );
   $export['rbv_view_explore'] = $view;
 
   $view = new view();
@@ -224,6 +254,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Cerca';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -237,19 +268,19 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Updated date */
+  /* Sort criterion: Contenuto: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -277,8 +308,10 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Eventi per pagina';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '3, 5, 10, 20';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -288,27 +321,27 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Quando -  start date (field_event_date) */
+  /* Filter criterion: Contenuto: Quando -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -340,8 +373,10 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Eventi per pagina';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '3, 5, 10, 20';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -350,21 +385,21 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content statistics: Views today */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['daycount']['id'] = 'daycount';
   $handler->display->display_options['sorts']['daycount']['table'] = 'node_counter';
   $handler->display->display_options['sorts']['daycount']['field'] = 'daycount';
   $handler->display->display_options['sorts']['daycount']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -388,14 +423,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['title'] = 'Cerca';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Search: Search Terms */
+  /* Filter criterion: Cerca: Search Terms */
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
@@ -420,6 +455,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Cerca';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -427,26 +463,26 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Search: Score */
+  /* Sort criterion: Cerca: Score */
   $handler->display->display_options['sorts']['score']['id'] = 'score';
   $handler->display->display_options['sorts']['score']['table'] = 'search_index';
   $handler->display->display_options['sorts']['score']['field'] = 'score';
   $handler->display->display_options['sorts']['score']['order'] = 'DESC';
-  /* Sort criterion: Content: Updated/commented date */
+  /* Sort criterion: Contenuto: Updated/commented date */
   $handler->display->display_options['sorts']['last_updated']['id'] = 'last_updated';
   $handler->display->display_options['sorts']['last_updated']['table'] = 'node_comment_statistics';
   $handler->display->display_options['sorts']['last_updated']['field'] = 'last_updated';
   $handler->display->display_options['sorts']['last_updated']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -454,7 +490,7 @@ function rbv_view_explore_views_default_views() {
     'forum' => 'forum',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Search: Search Terms */
+  /* Filter criterion: Cerca: Search Terms */
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
@@ -488,14 +524,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -517,14 +553,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -546,19 +582,53 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'collaboration' => 'collaboration',
+  );
+  $translatables['rbv_view_lists'] = array(
+    t('Master'),
+    t('Content lists'),
+    t('more'),
+    t('Cerca'),
+    t('Ripristina'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Contenuti per pagina'),
+    t('- All -'),
+    t('Offset'),
+    t('« prima'),
+    t('‹ precedente'),
+    t('successiva ›'),
+    t('ultima »'),
+    t('pane: upcoming'),
+    t('Prossimi eventi'),
+    t('vedi tutto'),
+    t('Eventi per pagina'),
+    t('View panes'),
+    t('pane: nuovi progetti'),
+    t('Progetti/attività più visti di oggi'),
+    t('pane: search'),
+    t('pane: discussion search'),
+    t('Tutte le discussioni'),
+    t('Cerca discussione'),
+    t('pane: organizzazioni'),
+    t('Organizzazioni della rete'),
+    t('pane: progetti'),
+    t('Progetti della rete'),
+    t('pane: collaborazioni'),
+    t('Collaborazioni nella rete'),
   );
   $export['rbv_view_lists'] = $view;
 
