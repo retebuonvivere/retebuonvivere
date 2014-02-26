@@ -117,14 +117,6 @@ function rbv_org_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:org:update field_com_more_contacts field'
-  $permissions['node:org:update field_com_more_contacts field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-    ),
-  );
-
   // Exported og permission: 'node:org:update field_com_social_links field'
   $permissions['node:org:update field_com_social_links field'] = array(
     'roles' => array(
@@ -271,16 +263,6 @@ function rbv_org_og_features_default_permissions() {
 
   // Exported og permission: 'node:org:view field_com_mission field'
   $permissions['node:org:view field_com_mission field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'editor member' => 'editor member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:org:view field_com_more_contacts field'
-  $permissions['node:org:view field_com_more_contacts field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',

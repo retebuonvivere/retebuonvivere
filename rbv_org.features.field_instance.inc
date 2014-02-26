@@ -133,7 +133,7 @@ function rbv_org_field_default_field_instances() {
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Scegliere i settori di attività.',
+    'description' => '<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui la vostra organizzazione si concentra. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -183,7 +183,7 @@ function rbv_org_field_default_field_instances() {
   $field_instances['node-org-field_com_date'] = array(
     'bundle' => 'org',
     'deleted' => 0,
-    'description' => 'Data di fondazione ed eventuale data di cessazione attività di questa organizzazione?',
+    'description' => '<a class="help" title="Quando è stata fondata la vostra organizzzione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -247,7 +247,7 @@ function rbv_org_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 30,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
@@ -263,21 +263,21 @@ function rbv_org_field_default_field_instances() {
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...',
+    'description' => '<a class="help" title="Descrivete la vostra organizzazione come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'jquery_expander',
         'settings' => array(
           'collapseTimer' => '',
           'expandPrefix' => '... ',
           'expandText' => 'espandi »',
-          'slicePoint' => 600,
+          'slicePoint' => 1000,
           'userCollapsePrefix' => '',
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'featured' => array(
         'label' => 'above',
@@ -314,7 +314,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 14,
+        'rows' => 15,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -378,7 +378,7 @@ function rbv_org_field_default_field_instances() {
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'La storia della propria organizzazione. ',
+    'description' => '<a class="help" title="Le organizzazioni hanno sempre una storia, e spesso è molto interessante. Condividiamo le nostre storie."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -387,12 +387,12 @@ function rbv_org_field_default_field_instances() {
           'collapseTimer' => '',
           'expandPrefix' => '... ',
           'expandText' => 'espandi »',
-          'slicePoint' => 600,
+          'slicePoint' => 700,
           'userCollapsePrefix' => '',
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'featured' => array(
         'label' => 'above',
@@ -426,7 +426,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 6,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -444,12 +444,13 @@ function rbv_org_field_default_field_instances() {
         'premise' => '',
         'postal_code' => '',
         'locality' => '',
-        'administrative_area' => '',
+        'administrative_area' => 'VR',
         'country' => 'IT',
+        'organisation_name' => '',
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="È importante che il vostro indirizzo sia scritto esattamente come lo dovrebbe scrivere qualcuno per inviarvi un pacco postale. Ad esempio inserite il nome dell\'organizzazione. Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la vostra sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -496,8 +497,8 @@ function rbv_org_field_default_field_instances() {
         'available_countries' => array(),
         'format_handlers' => array(
           'address' => 'address',
+          'organisation' => 'organisation',
           'address-hide-country' => 0,
-          'organisation' => 0,
           'name-full' => 0,
           'name-oneline' => 0,
         ),
@@ -511,7 +512,7 @@ function rbv_org_field_default_field_instances() {
   $field_instances['node-org-field_com_logo'] = array(
     'bundle' => 'org',
     'deleted' => 0,
-    'description' => 'Caricare l\'immagine logo dell\'organizzazione.',
+    'description' => '<a class="help" title="Il logo è sempre visibile accanto al nome della vostra organizzzione. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se la vostra immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -556,7 +557,7 @@ function rbv_org_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 33,
+      'default_image' => 0,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -582,9 +583,7 @@ function rbv_org_field_default_field_instances() {
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
-Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
-Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?',
+    'description' => '<a class="help" title="Mission, la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -593,12 +592,12 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
           'collapseTimer' => '',
           'expandPrefix' => '... ',
           'expandText' => 'espandi »',
-          'slicePoint' => 600,
+          'slicePoint' => 700,
           'userCollapsePrefix' => '',
           'userCollapseText' => '« riduci',
         ),
         'type' => 'jquery_expander',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'featured' => array(
         'label' => 'above',
@@ -632,7 +631,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 4,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -640,15 +639,15 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_more_contacts'
-  $field_instances['node-org-field_com_more_contacts'] = array(
+  // Exported field_instance: 'node-org-field_com_more'
+  $field_instances['node-org-field_com_more'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, il vostro contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -664,30 +663,34 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 0,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_com_more_contacts',
+    'field_name' => 'field_com_more',
     'label' => 'Altro',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 6,
       ),
-      'type' => 'text_textfield',
+      'type' => 'text_textarea',
       'weight' => 7,
     ),
   );
@@ -697,7 +700,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.',
+    'description' => '<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui la vostra organizzazione è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -746,7 +749,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Slogan (o tagline, o payoff): una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione.',
+    'description' => '<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -781,6 +784,10 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'label' => 'Slogan',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -788,7 +795,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 120,
+        'size' => 68,
       ),
       'type' => 'text_textfield',
       'weight' => 7,
@@ -800,7 +807,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Inserire le parole chiave che descrivono la propria organizzazione, <strong>separate da una virgola</strong>.',
+    'description' => '<a class="help" title="Avete scelto il settore \'bio\' e volete specificare che voi fate \'biodinamico\'? Aggiungete parole chiave per specificare ulteriormente la vostra attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -859,7 +866,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 15,
+        'weight' => 12,
       ),
       'featured' => array(
         'label' => 'above',
@@ -903,7 +910,7 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
     'bundle' => 'org',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Tipologia di organizzazione. Esempi: Associazione di Promozione Sociale, Associazione Onlus, Associazione Culturale, Cooperativa Sociale, Fondazione, Impresa sociale, Impresa monopersonale...',
+    'description' => '<a class="help" title="Associazione, comitato, cooperativa mutualistica, cooperativa sociale, fondazione, gruppo di acquisto solidale, impresa sociale, impresa unipersonale, società di capitale... Selezionate il vostro caso. Manca una tipologia? Aprite una discussione nel forum"><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -943,6 +950,76 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-org-field_quick_links_links'
+  $field_instances['node-org-field_quick_links_links'] = array(
+    'bundle' => 'org',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale della vostra organizzazione. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Spesso le organizzazioni hanno anche un blog, che usano per diffondere le notizie. Se questo è il vostro caso potete usare il pulsante \'Aggiungi un altro elemento\' per aggiungere l\'indirizzo del blog della vostra organizzazione. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_separate',
+        'weight' => 14,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_quick_links_links',
+    'label' => 'Links',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
       'weight' => 8,
     ),
   );
@@ -1053,38 +1130,40 @@ Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo f
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui la vostra organizzazione si concentra. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Associazione, comitato, cooperativa mutualistica, cooperativa sociale, fondazione, gruppo di acquisto solidale, impresa sociale, impresa unipersonale, società di capitale... Selezionate il vostro caso. Manca una tipologia? Aprite una discussione nel forum"><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Avete scelto il settore \'bio\' e volete specificare che voi fate \'biodinamico\'? Aggiungete parole chiave per specificare ulteriormente la vostra attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Descrivete la vostra organizzazione come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Il logo è sempre visibile accanto al nome della vostra organizzzione. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se la vostra immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui la vostra organizzazione è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Le organizzazioni hanno sempre una storia, e spesso è molto interessante. Condividiamo le nostre storie."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Mission, la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Quando è stata fondata la vostra organizzzione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, il vostro contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="È importante che il vostro indirizzo sia scritto esattamente come lo dovrebbe scrivere qualcuno per inviarvi un pacco postale. Ad esempio inserite il nome dell\'organizzazione. Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la vostra sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale della vostra organizzazione. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Spesso le organizzazioni hanno anche un blog, che usano per diffondere le notizie. Se questo è il vostro caso potete usare il pulsante \'Aggiungi un altro elemento\' per aggiungere l\'indirizzo del blog della vostra organizzazione. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>');
   t('Altro');
-  t('Caricare l\'immagine logo dell\'organizzazione.');
-  t('Data di fondazione ed eventuale data di cessazione attività di questa organizzazione?');
   t('Date');
   t('Descrizione');
   t('Determine if this is an OG group.');
   t('Email');
   t('Group');
   t('Indirizzo');
-  t('Inserire gli indirizzi delle pagine dell\'organizzazione nei social network (es. wiser.org, zoes.it, facebook, twitter, google plus, ...). Verranno visualizzati con l\'icona corrispondente.');
-  t('Inserire la descrizione della propria organizzazione: cos\'è, che cosa fa, ecc...');
-  t('Inserire le parole chiave che descrivono la propria organizzazione, <strong>separate da una virgola</strong>.');
-  t('La storia della propria organizzazione. ');
+  t('Links');
   t('Logo');
   t('Mission');
-  t('Mission: la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo.
-Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri.
-Suggerimenti: provate a rispondere alle domande Cosa vogliamo fare? Perché lo facciamo?');
   t('Parole chiave');
   t('Periodo');
   t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');
   t('Ruolo');
   t('Ruolo ricoperto dalla persona in questo periodo');
-  t('Scegliere i settori di attività.');
   t('Seguici su');
   t('Settori');
   t('Slogan');
-  t('Slogan (o tagline, o payoff): una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione.');
   t('Storia');
   t('Telefono');
   t('Tipologia');
-  t('Tipologia di organizzazione. Esempi: Associazione di Promozione Sociale, Associazione Onlus, Associazione Culturale, Cooperativa Sociale, Fondazione, Impresa sociale, Impresa monopersonale...');
 
   return $field_instances;
 }

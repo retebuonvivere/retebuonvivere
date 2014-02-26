@@ -25,15 +25,16 @@ function rbv_org_field_group_info() {
     'children' => array(
       0 => 'field_com_email',
       1 => 'field_com_location',
-      2 => 'field_com_more_contacts',
-      3 => 'field_com_telephone',
+      2 => 'field_com_telephone',
+      3 => 'field_com_more',
+      4 => 'field_quick_links_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Contatti',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'well well-sm',
+        'classes' => 'wellrbv',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -99,7 +100,7 @@ function rbv_org_field_group_info() {
       'label' => 'Descrizione',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'well well-sm',
+        'classes' => 'wellrbv',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -122,8 +123,9 @@ function rbv_org_field_group_info() {
     'children' => array(
       0 => 'field_com_email',
       1 => 'field_com_location',
-      2 => 'field_com_more_contacts',
-      3 => 'field_com_telephone',
+      2 => 'field_com_telephone',
+      3 => 'field_com_more',
+      4 => 'field_quick_links_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -205,10 +207,10 @@ function rbv_org_field_group_info() {
     'label' => 'Info',
     'weight' => '0',
     'children' => array(
-      0 => 'field_com_logo',
-      1 => 'field_com_tagline',
-      2 => 'field_org_type',
-      3 => 'field_com_social_links',
+      0 => 'field_org_type',
+      1 => 'field_com_logo',
+      2 => 'field_com_social_links',
+      3 => 'field_com_tagline',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -243,7 +245,7 @@ function rbv_org_field_group_info() {
       'label' => 'Storia',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'well well-sm',
+        'classes' => 'wellrbv',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -275,7 +277,7 @@ function rbv_org_field_group_info() {
       'label' => 'Info',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'well well-sm',
+        'classes' => 'wellrbv',
         'description' => '',
       ),
       'formatter' => 'collapsible',
