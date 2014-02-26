@@ -183,7 +183,7 @@ function rbv_com_fields_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 35,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -217,13 +217,13 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_com_more_contacts'
-  $field_bases['field_com_more_contacts'] = array(
+  // Exported field_base: 'field_com_more'
+  $field_bases['field_com_more'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_com_more_contacts',
+    'field_name' => 'field_com_more',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -239,11 +239,9 @@ function rbv_com_fields_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_com_social_links'
