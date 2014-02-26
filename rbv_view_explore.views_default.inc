@@ -69,19 +69,19 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['sorts']['type']['field'] = 'type';
   $handler->display->display_options['sorts']['type']['order'] = 'DESC';
   $handler->display->display_options['sorts']['type']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['type']['expose']['label'] = 'Cosa?';
+  $handler->display->display_options['sorts']['type']['expose']['label'] = 'Tipo di contenuti';
   /* Sort criterion: Contenuto: Titolo */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Nome';
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Nome (alfabetico)';
   /* Sort criterion: Contenuto: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Quando è entrato in retebuonvivere.org';
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Quando è entrato in rbv.org';
   /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
@@ -111,7 +111,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Cosa?';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Tipo di contenuti';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
@@ -183,7 +183,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_com_tags_tid']['operator'] = 'and';
   $handler->display->display_options['filters']['field_com_tags_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_com_tags_tid']['expose']['operator_id'] = 'field_com_tags_tid_op';
-  $handler->display->display_options['filters']['field_com_tags_tid']['expose']['label'] = 'tags';
+  $handler->display->display_options['filters']['field_com_tags_tid']['expose']['label'] = 'Parole chiave';
   $handler->display->display_options['filters']['field_com_tags_tid']['expose']['operator'] = 'field_com_tags_tid_op';
   $handler->display->display_options['filters']['field_com_tags_tid']['expose']['identifier'] = 'field_com_tags_tid';
   $handler->display->display_options['filters']['field_com_tags_tid']['expose']['multiple'] = TRUE;
@@ -204,6 +204,15 @@ function rbv_view_explore_views_default_views() {
   $handler = $view->new_display('panel_pane', 'pane: esplora la rete', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Filtri';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['inherit_panels_path'] = '1';
   $translatables['rbv_view_explore'] = array(
     t('Master'),
@@ -222,13 +231,13 @@ function rbv_view_explore_views_default_views() {
     t('successiva ›'),
     t('ultima »'),
     t('Nessun risultato trovato. Riprovare con altre impostazioni.'),
-    t('Cosa?'),
-    t('Nome'),
-    t('Quando è entrato in retebuonvivere.org'),
+    t('Tipo di contenuti'),
+    t('Nome (alfabetico)'),
+    t('Quando è entrato in rbv.org'),
     t('Tipo'),
     t('Settori'),
     t('Tipo di organizzazione'),
-    t('tags'),
+    t('Parole chiave'),
     t('pane: esplora la rete'),
     t('Filtri'),
     t('View panes'),
@@ -385,7 +394,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
+  /* Sort criterion: Content statistics: Visualizzazioni oggi */
   $handler->display->display_options['sorts']['daycount']['id'] = 'daycount';
   $handler->display->display_options['sorts']['daycount']['table'] = 'node_counter';
   $handler->display->display_options['sorts']['daycount']['field'] = 'daycount';
