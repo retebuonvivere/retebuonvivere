@@ -52,7 +52,7 @@ function rbv_relpro_rdf_default_mappings() {
   // Exported RDF mapping: collaboration
   $schemaorg['node']['collaboration'] = array(
     'rdftype' => array(
-      0 => 'schema:Relation',
+      0 => 'schema:Collaboration',
       1 => 'sioc:Item',
       2 => 'foaf:Document',
     ),
@@ -129,8 +129,13 @@ function rbv_relpro_rdf_default_mappings() {
     'field_com_description' => array(
       'predicates' => array(
         0 => 'schema:summary',
-        1 => 'schema:description',
       ),
+    ),
+    'field_rel_categories' => array(
+      'predicates' => array(
+        0 => 'schema:relationType',
+      ),
+      'type' => 'rel',
     ),
   );
 

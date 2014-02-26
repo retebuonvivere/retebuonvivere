@@ -26,11 +26,18 @@ function rbv_relpro_field_group_info() {
       0 => 'group_relpro_description',
       1 => 'group_relpro_relation',
     ),
-    'format_type' => 'tabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'formatter' => 'open',
       'instance_settings' => array(
-        'classes' => 'group-relpro-data field-group-tabs',
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -49,17 +56,18 @@ function rbv_relpro_field_group_info() {
     'label' => 'Descrizione',
     'weight' => '5',
     'children' => array(
-      0 => 'field_com_description',
-      1 => 'field_com_date',
+      0 => 'field_com_date',
+      1 => 'field_com_description',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Descrizione',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-relpro-description field-group-tab',
         'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_relpro_description|node|collaboration|form'] = $field_group;
@@ -137,15 +145,15 @@ function rbv_relpro_field_group_info() {
       1 => 'field_rel_source',
       2 => 'field_relpro_project',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Collaborazione',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'group-relpro-relation field-group-tab',
+        'classes' => 'wellrbv',
         'description' => '',
       ),
-      'formatter' => 'closed',
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_relpro_relation|node|collaboration|form'] = $field_group;

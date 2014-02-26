@@ -14,7 +14,7 @@ function rbv_relpro_field_default_field_instances() {
   $field_instances['node-collaboration-field_com_date'] = array(
     'bundle' => 'collaboration',
     'deleted' => 0,
-    'description' => 'Quando è iniziata (ed eventualmente terminata) questa collaborazione?',
+    'description' => '<a class="help" title="Quando è stata iniziata questa collaborazione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Se la data di inizio non viene indicata, il sistema selezionerà la data di oggi. Quando sarà il momento, usate il pulsante \'Show end date\' per indicare che la collaborazione è terminata."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -80,7 +80,7 @@ function rbv_relpro_field_default_field_instances() {
     'bundle' => 'collaboration',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Descrivete questa collaborazione come preferite."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -134,7 +134,7 @@ function rbv_relpro_field_default_field_instances() {
     'bundle' => 'collaboration',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Scegliere le parole chiave che caratterizzano la collaborazione. Ad esempio il ruolo o il tipo di attività che l\'organizzazione svolge in questo progetto.',
+    'description' => '<a class="help" title="Scegliere il tipo di collaborazione, ad esempio il ruolo che l\'organizzazione svolge in questo progetto/attività. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -165,19 +165,16 @@ function rbv_relpro_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_rel_categories',
-    'label' => 'Ruolo nella collaborazione',
+    'label' => 'Tipo di collaborazione',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 6,
     ),
   );
@@ -188,11 +185,11 @@ function rbv_relpro_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => '<ul>
-<li>Selezionare la propria organizzazione (situazione predefinita)</li>
-<li>È possibile indicare un soggetto diverso dalla propria organizzazione. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata. </li>
-<li>È inoltre possibile indicare un\'organizzazione non ancora presente in retebuonvivere.org. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita. </li>
-</ul>',
+    'description' => '<a class="help" title="Qual è il soggetto della collaborazione?"><i class="fa fa-hand-o-down"></i></a>
+<p class="alert alert-info">Qual è il soggetto della collaborazione?<br><br>
+<i class="fa fa-circle"></i> <strong>La vostra organizzazione</strong> (situazione predefinita).<br><br>
+<i class="fa fa-circle"></i> Potete anche indicare <strong>un\'organizzazione diversa</strong>. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata.<br><br>
+<i class="fa fa-circle"></i> Inoltre potete indicare <strong>un\'organizzazione non ancora presente in retebuonvivere.org</strong>. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita.</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -240,7 +237,10 @@ function rbv_relpro_field_default_field_instances() {
           'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
-          'og_context' => 0,
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
           'skip_perm' => 0,
           'status' => 1,
         ),
@@ -271,7 +271,8 @@ function rbv_relpro_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'Il progetto a cui si collabora.',
+    'description' => '<a class="help" title="Qual è il progetto a cui l\'organizzazione indicata collabora?"><i class="fa fa-hand-o-down"></i></a>
+<p class="alert alert-info">Qual è il progetto a cui l\'organizzazione indicata collabora?<br><br> Nella <i class="fa fa-eye"></i> rete delle collaborazioni verrà disegnato un legame tra organizzazione e progetto. Nella <i class="fa fa-eye"></i> rete delle relazioni verrà disegnato un legame tra le organizzazioni che collaborano a questo progetto.</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -421,20 +422,22 @@ function rbv_relpro_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<ul>
-<li>Selezionare la propria organizzazione (situazione predefinita)</li>
-<li>È possibile indicare un soggetto diverso dalla propria organizzazione. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata. </li>
-<li>È inoltre possibile indicare un\'organizzazione non ancora presente in retebuonvivere.org. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita. </li>
-</ul>');
+  t('<a class="help" title="Descrivete questa collaborazione come preferite."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Qual è il progetto a cui l\'organizzazione indicata collabora?"><i class="fa fa-hand-o-down"></i></a>
+<p class="alert alert-info">Qual è il progetto a cui l\'organizzazione indicata collabora?<br><br> Nella <i class="fa fa-eye"></i> rete delle collaborazioni verrà disegnato un legame tra organizzazione e progetto. Nella <i class="fa fa-eye"></i> rete delle relazioni verrà disegnato un legame tra le organizzazioni che collaborano a questo progetto.</p>');
+  t('<a class="help" title="Qual è il soggetto della collaborazione?"><i class="fa fa-hand-o-down"></i></a>
+<p class="alert alert-info">Qual è il soggetto della collaborazione?<br><br>
+<i class="fa fa-circle"></i> <strong>La vostra organizzazione</strong> (situazione predefinita).<br><br>
+<i class="fa fa-circle"></i> Potete anche indicare <strong>un\'organizzazione diversa</strong>. In questo caso la relazione (e i permessi di modifica) verranno attribuiti all\'organizzazione indicata.<br><br>
+<i class="fa fa-circle"></i> Inoltre potete indicare <strong>un\'organizzazione non ancora presente in retebuonvivere.org</strong>. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita.</p>');
+  t('<a class="help" title="Quando è stata iniziata questa collaborazione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Se la data di inizio non viene indicata, il sistema selezionerà la data di oggi. Quando sarà il momento, usate il pulsante \'Show end date\' per indicare che la collaborazione è terminata."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Scegliere il tipo di collaborazione, ad esempio il ruolo che l\'organizzazione svolge in questo progetto/attività. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
   t('Date');
   t('Descrizione della collaborazione');
   t('Groups audience');
-  t('Il progetto a cui si collabora.');
   t('Progetto');
-  t('Quando è iniziata (ed eventualmente terminata) questa collaborazione?');
-  t('Ruolo nella collaborazione');
-  t('Scegliere le parole chiave che caratterizzano la collaborazione. Ad esempio il ruolo o il tipo di attività che l\'organizzazione svolge in questo progetto.');
   t('Soggetto');
+  t('Tipo di collaborazione');
 
   return $field_instances;
 }
