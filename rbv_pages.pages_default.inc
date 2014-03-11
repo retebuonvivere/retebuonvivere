@@ -1609,6 +1609,8 @@ progetti/attività',
           'well' => 0,
         ),
       ),
+      'secondarycolumn2' => NULL,
+      'secondarycolumn3' => NULL,
     ),
     'header' => array(
       'style' => 'kalacustomize',
@@ -1635,7 +1637,9 @@ progetti/attività',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -1653,7 +1657,9 @@ progetti/attività',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -1671,7 +1677,9 @@ progetti/attività',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -1680,24 +1688,6 @@ progetti/attività',
     $display->panels['column3'][0] = 'new-17';
     $pane = new stdClass();
     $pane->pid = 'new-18';
-    $pane->panel = 'footer';
-    $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'view_mode' => 'full',
-    );
-    $pane->cache = array();
-    $pane->style = array();
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['footer'][0] = 'new-18';
-    $pane = new stdClass();
-    $pane->pid = 'new-19';
     $pane->panel = 'header';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:2';
@@ -1707,13 +1697,55 @@ progetti/attività',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-18'] = $pane;
+    $display->panels['header'][0] = 'new-18';
+    $pane = new stdClass();
+    $pane->pid = 'new-19';
+    $pane->panel = 'secondarycolumn2';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-19'] = $pane;
-    $display->panels['header'][0] = 'new-19';
+    $display->panels['secondarycolumn2'][0] = 'new-19';
+    $pane = new stdClass();
+    $pane->pid = 'new-20';
+    $pane->panel = 'secondarycolumn3';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-20'] = $pane;
+    $display->panels['secondarycolumn3'][0] = 'new-20';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1771,7 +1803,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_lists-panel_pane_5';
@@ -1788,10 +1820,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['contentmain'][0] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['contentmain'][0] = 'new-21';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-20';
+  $display->title_pane = 'new-21';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_organizzazioni'] = $page;
@@ -1851,7 +1883,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_members-panel_pane_2';
@@ -1870,10 +1902,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['contentmain'][0] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['contentmain'][0] = 'new-22';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-21';
+  $display->title_pane = 'new-22';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_persone'] = $page;
@@ -1929,7 +1961,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-23';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_lists-panel_pane_6';
@@ -1946,10 +1978,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['contentmain'][0] = 'new-22';
+    $display->content['new-23'] = $pane;
+    $display->panels['contentmain'][0] = 'new-23';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-22';
+  $display->title_pane = 'new-23';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_progetti'] = $page;
