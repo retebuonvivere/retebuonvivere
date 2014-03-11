@@ -464,3 +464,6 @@ padding: .3em;
   border-color: #cccccc;
 }
 
+img {
+  vertical-align: top;
+}
