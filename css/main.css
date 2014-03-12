@@ -35,7 +35,7 @@ html {
 }
 
 .field-name-field-com-email .field-item:before {
- font-family: FontAwesome;
+ font-family: FontAwesome;field-name-field-org-type
  font-weight: normal;
  font-style: normal;
  display: inline-block;
@@ -110,7 +110,10 @@ clear: both;
  padding-right: .5em;
 }
 
-/* taxonomy all terms */
+/*
+ * taxonomy all terms 
+ */
+
 .content .field-type-taxonomy-term-reference {
  padding-bottom: 1em;
 }
@@ -151,6 +154,10 @@ clear: both;
 /* taxonomy > org-type */
 .content .field-name-field-org-type a {
  background: #FFFFFF;
+}
+
+div .content .field-name-field-org-type {
+ height: 40px;
 }
 
 /* taxonomy > scope */
@@ -464,6 +471,3 @@ padding: .3em;
   border-color: #cccccc;
 }
 
-img {
-  vertical-align: top;
-}
