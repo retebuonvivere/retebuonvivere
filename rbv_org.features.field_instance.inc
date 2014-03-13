@@ -267,16 +267,9 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 1000,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 7,
       ),
       'featured' => array(
@@ -314,7 +307,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 15,
+        'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -382,16 +375,9 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 700,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 6,
       ),
       'featured' => array(
@@ -587,16 +573,9 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 700,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 8,
       ),
       'featured' => array(
@@ -631,7 +610,7 @@ function rbv_org_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -647,7 +626,7 @@ function rbv_org_field_default_field_instances() {
     'description' => '<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, il vostro contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
