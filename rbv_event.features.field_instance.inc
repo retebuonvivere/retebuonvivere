@@ -102,9 +102,9 @@ function rbv_event_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 500,
         ),
-        'type' => 'text_trimmed',
+        'type' => 'text_summary_or_trimmed',
         'weight' => 5,
       ),
       'vmode_group_content' => array(
@@ -192,7 +192,7 @@ function rbv_event_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'vmode_group_content' => array(
         'label' => 'above',
@@ -475,7 +475,7 @@ function rbv_event_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'vmode_group_content' => array(
         'label' => 'hidden',
