@@ -80,16 +80,9 @@ function rbv_event_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 500,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 13,
       ),
       'featured' => array(
@@ -134,7 +127,7 @@ function rbv_event_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 15,
+        'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -360,7 +353,7 @@ function rbv_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_social_links',
-    'label' => 'Seguici l\'evento su',
+    'label' => 'Segui l\'evento su',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -850,7 +843,7 @@ function rbv_event_field_default_field_instances() {
   t('Parole chiave');
   t('Progetto di riferimento');
   t('Quando');
-  t('Seguici l\'evento su');
+  t('Segui l\'evento su');
   t('Settori');
 
   return $field_instances;
