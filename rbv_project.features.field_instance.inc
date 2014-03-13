@@ -149,16 +149,9 @@ function rbv_project_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 1000,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 12,
       ),
       'featured' => array(
@@ -196,7 +189,7 @@ function rbv_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 15,
+        'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -264,16 +257,9 @@ function rbv_project_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 700,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 15,
       ),
       'featured' => array(
@@ -468,16 +454,9 @@ function rbv_project_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'jquery_expander',
-        'settings' => array(
-          'collapseTimer' => '',
-          'expandPrefix' => '... ',
-          'expandText' => 'espandi »',
-          'slicePoint' => 700,
-          'userCollapsePrefix' => '',
-          'userCollapseText' => '« riduci',
-        ),
-        'type' => 'jquery_expander',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 13,
       ),
       'featured' => array(
@@ -512,7 +491,7 @@ function rbv_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -528,7 +507,7 @@ function rbv_project_field_default_field_instances() {
     'description' => '<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, un contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -660,7 +639,7 @@ function rbv_project_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_com_social_links',
-    'label' => 'Seguici il progetto su',
+    'label' => 'Segui il progetto su',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1080,7 +1059,7 @@ function rbv_project_field_default_field_instances() {
   t('Logo');
   t('Mission');
   t('Parole chiave');
-  t('Seguici il progetto su');
+  t('Segui il progetto su');
   t('Settori');
   t('Slogan');
   t('Storia');
