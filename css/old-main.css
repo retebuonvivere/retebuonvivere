@@ -16,16 +16,12 @@ html {
 /* field > address field */
 .field-type-addressfield {
  display: table;
- margin-bottom: .6em;
+ margin-bottom: .5em;
 }
 
 .grid-item .field-type-addressfield {
  margin-bottom: .5em;
  clear: both;
-}
-
-.field-type-addressfield .organisation-name {
- font-weight: bold;
 }
 
 .field-name-field-com-telephone .field-item:before {
@@ -39,17 +35,13 @@ html {
 }
 
 .field-name-field-com-email .field-item:before {
- font-family: FontAwesome;field-name-field-org-type
+ font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
  display: inline-block;
  text-decoration: inherit;
  content: "\f0e0";
  padding-right: .4em;
-}
-
-.field-name-field-com-more, .field-name-field-com-email, .field-name-field-com-telephone {
- margin-bottom: .6em;
 }
 
 /* field > date */
@@ -96,7 +88,6 @@ clear: both;
 .content .field-name-field-com-tagline .field-item:before, .field-name-field-com-tagline .field-item:after {
  content: "\""
 }
-
 /* field > social link */
 .field-name-field-com-social-links {
  padding: 1em 1em 0 0;
@@ -119,43 +110,7 @@ clear: both;
  padding-right: .5em;
 }
 
-/*
- * node titles
- */
-.node-type-org h1#page-title:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f015";
- padding-right: .4em;
-}
-.node-type-project h1#page-title:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f06c";
- padding-right: .4em;
-}
-.node-type-event h1#page-title:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f073";
- padding-right: .4em;
-}
-
-/*
- * taxonomy all terms 
- */
+/* taxonomy all terms */
 .content .field-type-taxonomy-term-reference {
  padding-bottom: 1em;
 }
@@ -177,23 +132,13 @@ clear: both;
  float: left;
 }
 
-.content .field-name-field-com-categories a:before, .page-taxonomy-term h1#page-title:before {
+.content .field-name-field-com-categories a:before, .content .field-name-field-com-tags a:before, .page-taxonomy-term h1#page-title:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
  display: inline-block;
  text-decoration: inherit;
  content: "\f02b";
- padding-right: .5em;
-}
-
-.content .field-name-field-com-tags a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- display: inline-block;
- text-decoration: inherit;
- content: "\f02c";
  padding-right: .5em;
 }
 
@@ -208,24 +153,17 @@ clear: both;
  background: #FFFFFF;
 }
 
-div .content .field-name-field-org-type {
- height: 40px;
-}
-
 /* taxonomy > scope */
 .content .field-name-field-com-scope {
  clear: both;
 }
 
-/* 
- * PANES
- */
-
+/* panes */
 .node-type-org .views-row {
  background: #fbfbfb;
  -moz-border-radius: .4em;
  border-radius: .4em;
- margin: .4em;
+ margin: .5em;
  padding: .5em;
 }
 
@@ -233,7 +171,7 @@ div .content .field-name-field-org-type {
  background: #fbfbfb;
  -moz-border-radius: .4em;
  border-radius: .4em;
- margin: 3px;
+ margin: .5em;
  padding: .5em;
  float: left;
 }
@@ -242,23 +180,19 @@ div .content .field-name-field-org-type {
  background: #fbfbfb;
  -moz-border-radius: .4em;
  border-radius: .4em;
- margin: .4em;
- padding: .5em;
-}
-
-.page-search .views-row {
  margin: .5em;
  padding: .5em;
 }
 
-.noderow {
- width: 100%;
+.page-search .views-row {
+margin: .5em;
+padding: .5em;
 }
 
 .pane-title {
  clear: both;
  font-size: 1.3em;
- padding-top: 1em;
+ margin-top: 1.5em;
 }
 
 .node h2 {
@@ -266,14 +200,14 @@ div .content .field-name-field-org-type {
 }
 
 h3 {
- clear: both;
+clear: both;
 }
 
 .collab-link a {
  margin-left: 6px;
 }
 
-/* PANE OG GROUP REFERENCE */
+/* pane og group ref */
 .group-vmode-group-content .field-name-og-group-ref {
  clear: both;
 }
@@ -281,15 +215,10 @@ h3 {
  background: #fbfbfb;
  -moz-border-radius: .4em;
  border-radius: .4em;
+ margin: .5em;
  padding: .5em;
 }
-.field-name-og-group-ref .field-items {
- float: left;
-}
-.field-name-og-group-ref .field-item {
- margin-bottom: 4px;
- padding: 7px;
-}
+
 .content .field-name-og-group-ref a:before {
  content: 'di ';
 }
@@ -299,7 +228,7 @@ h3 {
  font-size: 1.1em;
 }
 
-/* NODE TEASER */
+/* node teaser */
 .node-teaser ul.links {
  clear: both;
 }
@@ -307,58 +236,37 @@ h3 {
  float: left;
 }
 
-/* GRID ITEMS */
+/* fieldset */
+.field-group-fieldset {
+ -moz-border-radius: .8em;
+ border-radius: .8em;
+}
+fieldset legend {
+ margin-bottom: .7em;
+}
+a.fieldset-title:link {
+ font-size: .65em;
+ color: #909090;
+}
+
+/* grid items */
 .grid-item {
 background: #fbfbfb;
 margin: .5em;
 padding: .5em;
 }
 
-/*
- * FIELDSETS
- */
-.field-group-fieldset {
- margin-bottom: 6px;
- background-color: #ffffff;
- border: 1px solid #f5f5f5;
- border-radius: 4px;
- -moz-border-radius: 4px;
- -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+/* fieldset > info */
+.info-fieldgroup {
+background: #fbfbfb;
+}
+.node-org .info-fieldgroup {
+background: #edf8e5;
 }
 
-.field-group-fieldset legend {
- padding: 4px;
-/* border-top: 1px solid #fbfbfb; */
- border-top-right-radius: 4px;
- border-top-left-radius: 4px;
- color: #333333;
- background-color: #fbfbfb;
- position: relative;
- top: 18px;
- margin-bottom: 30px;
-}
-
-a.fieldset-title:link {
- font-size: .70em;
- color: #333333;
-}
-
-html.js fieldset.collapsed {
- margin-bottom: 30px;
- padding: 0;
-}
-
-.collapse-processed .fieldset-wrapper {
- margin: 0 15px;
-}
-
-/* 
- * FIELDSET INFO 
- */
 .info-fieldgroup .field-name-field-com-logo {
- padding-right: 1.6em;
- padding-bottom: 2em;
+padding-right: 1.6em;
+padding-bottom: 2em;
 }
 .info-fieldgroup .field-name-field-com-tagline {
  padding-bottom: 1em;
@@ -366,26 +274,14 @@ html.js fieldset.collapsed {
  line-height: 1.6em;
 }
 
-.info-fieldgroup {
- background-color: #ffffff;
- border: 1px solid #ECB97E;
-
-}
-
-.info-fieldgroup legend {
- background-color: #ECB97E;
-}
-
-/* 
- * FIELDSET DESCRIPTION 
- */
+/* fieldset > description */
 .field-group-fieldset .field-name-field-com-mission, .field-group-fieldset .field-name-field-com-description, .field-group-fieldset .field-name-field-com-history {
  clear: both;
  padding-top: 1em;
 }
 
 .field-group-fieldset .field-name-field-com-mission .field-item, .field-group-fieldset .field-name-field-com-description .field-item, .field-group-fieldset .field-name-field-com-history .field-item {
- padding-right: .6em;
+ padding: .6em;
 }
 
 .field-group-fieldset .field-name-field-com-mission .field-label {
@@ -393,28 +289,7 @@ html.js fieldset.collapsed {
  font-weight: normal;
 }
 
-/* 
- * FIELDSET CONTACTS 
- */
-.field-group-fieldset.group-org-display-contacts, .field-group-fieldset.group-project-dis-contacts, .field-group-fieldset.group-event-dis-contacts {
- background-color: #ffffff;
- border: 1px solid #D8C7A3;
-}
-.field-group-fieldset.group-org-display-contacts > legend, .field-group-fieldset.group-project-dis-contacts > legend, .field-group-fieldset.group-event-dis-contacts > legend {
- background-color: #D8C7A3;
-}
-.field-group-fieldset.group-org-display-contacts a.fieldset-title:before, .field-group-fieldset.group-project-dis-contacts a.fieldset-title:before, .field-group-fieldset.group-event-dis-contacts a.fieldset-title:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f0f4";
- padding-right: .4em;
-}
-
-/* div main content. i.e. excluding comments */
+/* div main content. e.g. excluding comments */
 .content {
  padding-bottom: 1em;
 }
@@ -487,10 +362,7 @@ white-space: nowrap;
 background: black;
 }
 
-/*
- * menu 
- */
-
+/* menu */
 .nav .first a:before {
  font-family: FontAwesome;
  font-weight: normal;
@@ -522,10 +394,6 @@ background: black;
  text-decoration: inherit;
  content: "\f011";
  padding-right: .4em;
-}
-
-#tabs {
- margin-bottom: 1px;
 }
 
 /* backend */
@@ -596,3 +464,6 @@ padding: .3em;
   border-color: #cccccc;
 }
 
+img {
+  vertical-align: top;
+}
