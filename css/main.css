@@ -157,7 +157,7 @@ clear: both;
  * taxonomy all terms 
  */
 .content .field-type-taxonomy-term-reference {
- padding-bottom: 1em;
+/*  padding-bottom: 1em; */
 }
 .content .field-type-taxonomy-term-reference ul.links {
  list-style: none;
@@ -205,7 +205,7 @@ clear: both;
 
 /* taxonomy > org-type */
 .content .field-name-field-org-type a {
- background: #FFFFFF;
+ background: #CEEAFF;
 }
 
 div .content .field-name-field-org-type {
@@ -528,7 +528,9 @@ background: black;
  margin-bottom: 1px;
 }
 
-/* backend */
+/* 
+ * BACKEND
+ */
 .node-form .field-name-field-com-logo {
 float: none;
 }
@@ -547,6 +549,15 @@ float: none;
 .wellrbv .fieldset-wrapper {
  margin-left: 15px;
  margin-bottom: 8px;
+}
+
+.form-checkboxes > div {
+ float: left;
+ margin-right: 1em;
+}
+
+.form-type-checkboxes > .description {
+ clear: both;
 }
 
 div .image-widget-data {
