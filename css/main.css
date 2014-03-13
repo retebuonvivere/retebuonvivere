@@ -6,22 +6,17 @@ html {
  font-size: 100%;
 }
 
-/* field labels */
+/* FIELD LABELS */
 .field .field-label {
  color: #909090;
  font-size: 1em;
  font-weight: normal;
 }
 
-/* field > address field */
+/* FIELD > ADDRESS FIELD */
 .field-type-addressfield {
  display: table;
  margin-bottom: .6em;
-}
-
-.grid-item .field-type-addressfield {
- margin-bottom: .5em;
- clear: both;
 }
 
 .field-type-addressfield .organisation-name {
@@ -52,7 +47,7 @@ html {
  margin-bottom: .6em;
 }
 
-/* field > date */
+/* FIELD > DATE */
 .date-display-start, .date-display-single {
  -moz-border-radius: .4em;
  border-radius: .4em;
@@ -68,7 +63,7 @@ html {
  line-height: 1.8em;
 }
 
-.group-vmode-group-content .field-type-date {
+.field-type-date {
 clear: both;
 }
 
@@ -108,7 +103,7 @@ clear: both;
 
 /* field > quick links */
 .field-type-link-field {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: .5em;
@@ -154,11 +149,8 @@ clear: both;
 }
 
 /*
- * taxonomy all terms 
+ * TAXONOMY 
  */
-.content .field-type-taxonomy-term-reference {
-/*  padding-bottom: 1em; */
-}
 .content .field-type-taxonomy-term-reference ul.links {
  list-style: none;
  padding-left: 0;
@@ -166,12 +158,12 @@ clear: both;
 .content .field-type-taxonomy-term-reference a {
  -moz-border-radius: .3em;
  border-radius: .3em;
- padding: .1em .3em .1em .3em;
+ padding: .1em .3em;
  margin: .2em;
  white-space: nowrap;
 }
 
-/* taxonomy > categories */
+/* TAXONOMY > CATEGORIES */
 .content .field-name-field-com-categories a {
  background: #FFEAB9;
  float: left;
@@ -197,22 +189,22 @@ clear: both;
  padding-right: .5em;
 }
 
-/* taxonomy > tags */
+/* TAXONOMY > TAGS */
 .content .field-name-field-com-tags a {
  background: #CEEAFF;
  float: left;
 }
 
-/* taxonomy > org-type */
-.content .field-name-field-org-type a {
- background: #CEEAFF;
+/* TAXONOMY > ORG-TYPE and SCOPE */
+.content .field-name-field-org-type a, .content .field-name-field-com-scope a {
+ background: #f5f5f5;
+ padding: .3em .4em;
 }
 
 div .content .field-name-field-org-type {
  height: 40px;
 }
 
-/* taxonomy > scope */
 .content .field-name-field-com-scope {
  clear: both;
 }
@@ -222,7 +214,7 @@ div .content .field-name-field-org-type {
  */
 
 .node-type-org .views-row {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: .4em;
@@ -230,7 +222,7 @@ div .content .field-name-field-org-type {
 }
 
 .node-type-project .views-row, .content .field-name-field-relpro-project {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: 3px;
@@ -239,7 +231,7 @@ div .content .field-name-field-org-type {
 }
 
 .node-type-event .field-name-field-relpro-project, .page-taxonomy-term .node {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: .4em;
@@ -278,7 +270,7 @@ h3 {
  clear: both;
 }
 .node-type-event .field-name-og-group-ref a, .node-type-project .field-name-og-group-ref a {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  padding: .5em;
@@ -307,18 +299,22 @@ h3 {
  float: left;
 }
 
-/* GRID ITEMS */
+/* GRID */
 .grid-item {
-background: #fbfbfb;
-margin: .5em;
-padding: .5em;
+ background: #f5f5f5;
+ padding: .5em;
+ border: 1px solid #f5f5f5;
+ border-radius: 4px;
+ -moz-border-radius: 4px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 /*
  * FIELDSETS
  */
 .field-group-fieldset {
- margin-bottom: 6px;
+ margin: 6px 0 0 0;
  background-color: #ffffff;
  border: 1px solid #f5f5f5;
  border-radius: 4px;
@@ -328,29 +324,28 @@ padding: .5em;
 }
 
 .field-group-fieldset legend {
- padding: 4px;
-/* border-top: 1px solid #fbfbfb; */
+ padding: 1px;
+/* border-top: 1px solid #f5f5f5; */
  border-top-right-radius: 4px;
  border-top-left-radius: 4px;
  color: #333333;
- background-color: #fbfbfb;
- position: relative;
- top: 18px;
- margin-bottom: 30px;
+ background-color: #f5f5f5;
+ margin-bottom: 0px;
 }
 
 a.fieldset-title:link {
- font-size: .70em;
+ font-size: .7em;
  color: #333333;
 }
 
 html.js fieldset.collapsed {
- margin-bottom: 30px;
+ margin-bottom: 28px;
  padding: 0;
 }
 
 .collapse-processed .fieldset-wrapper {
- margin: 0 15px;
+ margin: 15px;
+ padding-top: 0;
 }
 
 /* 
@@ -425,7 +420,7 @@ clear: both;
 }
 
 .field-name-og-user-node a {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: .5em .5em 1em .5em;
@@ -440,7 +435,7 @@ clear: both;
  list-style: none;
 }
 .views-field-og-user-node a {
- background: #fbfbfb;
+ background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  padding: .2em .4em;
@@ -471,7 +466,7 @@ margin: .2em 1em 1.2em 0;
 clear: both;
 }
 .field-name-field-rel-collaborations .node {
-background: #fbfbfb;
+background: #f5f5f5;
 padding: 1em;
 float: left;
 margin: .2em 1em 1em 0;
