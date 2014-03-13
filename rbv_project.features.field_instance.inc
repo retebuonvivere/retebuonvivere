@@ -166,7 +166,7 @@ function rbv_project_field_default_field_instances() {
         'settings' => array(
           'trim_length' => 500,
         ),
-        'type' => 'text_trimmed',
+        'type' => 'text_summary_or_trimmed',
         'weight' => 5,
       ),
       'vmode_group_content' => array(
