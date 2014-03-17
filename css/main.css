@@ -68,7 +68,7 @@ html {
  line-height: 1.8em;
 }
 
-.views-view-grid .field-type-date, .field-name-field-relpro-project .field-type-date {
+.views-view-grid .field-type-date, .field-name-field-relpro-project .field-type-date, .views-field-field-relpro-project .field-type-date {
  clear: both;
 }
 
