@@ -455,9 +455,6 @@ clear: both;
 .view-display-id-panel_pane_2 .view-content {
   margin-top: 1em;
 }
-.grid-item {
-clear: both;
-}
 
 /* relations */
 .field-name-endpoints .field-items .node {
