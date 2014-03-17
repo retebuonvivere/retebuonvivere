@@ -482,12 +482,15 @@ elenco',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'more_link' => 0,
-      'items_per_page' => '10',
+      'more_link' => 1,
+      'items_per_page' => '2',
       'context' => array(
         0 => 'argument_entity_id:node_1',
       ),
       'view_mode' => 'teaser',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => 'Tutti gli eventi',
     );
     $pane->cache = array();
     $pane->style = array(
