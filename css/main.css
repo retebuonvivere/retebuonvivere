@@ -23,6 +23,11 @@ html {
  font-weight: bold;
 }
 
+.views-row .node-teaser .field-type-addressfield {
+ float: left;
+ padding: 0 1em 1em 0;
+}
+
 .field-name-field-com-telephone .field-item:before {
  font-family: FontAwesome;
  font-weight: normal;
@@ -63,8 +68,8 @@ html {
  line-height: 1.8em;
 }
 
-.field-type-date {
-clear: both;
+.views-view-grid .field-type-date, .field-name-field-relpro-project .field-type-date {
+ clear: both;
 }
 
 /* field > group visibility */
