@@ -1025,7 +1025,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['field_relpro_project']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_relpro_project']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
-    'view_mode' => 'teaser',
+    'view_mode' => 'vmode_group_content',
     'links' => 1,
   );
   /* Campo: Contenuto: Titolo */
