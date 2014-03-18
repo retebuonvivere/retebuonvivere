@@ -207,6 +207,10 @@ html {
  padding: .3em .4em;
 }
 
+div .content .field-name-field-org-type:after {
+ clear: none;
+}
+
 .content .field-name-field-com-scope {
  clear: both;
 }
