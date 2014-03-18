@@ -72,7 +72,7 @@ html {
  clear: both;
 }
 
-/* field > group visibility */
+/* FIELD > GROUP VISIBILITY */
 .field-name-group-access {
  background: #FFF69B;
  -moz-border-radius: .4em;
@@ -81,13 +81,13 @@ html {
  padding: .5em;
 }
 
-/* field > logo */
+/* FIELD > LOGO */
 .field-name-field-com-logo, .views-field-field-com-logo {
  float: left;
  padding: 0 1em 1em 0;
 }
 
-/* field > slogan */
+/* FIELD > SLOGAN */
 .content .field-name-field-com-tagline {
  padding-bottom: 1em;
  font-family: georgia;
@@ -97,9 +97,10 @@ html {
  content: "\""
 }
 
-/* field > social link */
+/* FIELD > SOCIAL LINKS */
 .field-name-field-com-social-links {
  padding: 1em 1em 0 0;
+ height: 46px;
 }
 .content .field-name-field-com-social-links .field-item {
  padding-bottom: .45em;
@@ -204,10 +205,6 @@ html {
 .content .field-name-field-org-type a, .content .field-name-field-com-scope a {
  background: #f5f5f5;
  padding: .3em .4em;
-}
-
-div .content .field-name-field-org-type {
- height: 40px;
 }
 
 .content .field-name-field-com-scope {
@@ -361,9 +358,10 @@ html.js fieldset.collapsed {
  * FIELDSET INFO 
  */
 .info-fieldgroup .field-name-field-com-logo {
- padding-right: 1.6em;
- padding-bottom: 2em;
+ padding-right: 15px;
+ padding-bottom: 15px;
 }
+
 .info-fieldgroup .field-name-field-com-tagline {
  padding-bottom: 1em;
  font-size: 1.5em;
