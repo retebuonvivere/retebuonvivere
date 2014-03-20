@@ -64,6 +64,13 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Contenuto: Updated/commented date */
+  $handler->display->display_options['sorts']['last_updated']['id'] = 'last_updated';
+  $handler->display->display_options['sorts']['last_updated']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['sorts']['last_updated']['field'] = 'last_updated';
+  $handler->display->display_options['sorts']['last_updated']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['last_updated']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['last_updated']['expose']['label'] = 'Data aggiornamento';
   /* Sort criterion: Contenuto: Tipo */
   $handler->display->display_options['sorts']['type']['id'] = 'type';
   $handler->display->display_options['sorts']['type']['table'] = 'node';
@@ -232,6 +239,7 @@ function rbv_view_explore_views_default_views() {
     t('successiva ›'),
     t('ultima »'),
     t('Nessun risultato trovato. Riprovare con altre impostazioni.'),
+    t('Data aggiornamento'),
     t('Tipo di contenuti'),
     t('Nome (alfabetico)'),
     t('Quando è entrato in rbv.org'),
