@@ -23,6 +23,7 @@ function rbv_relpro_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Collaboratori';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -122,6 +123,15 @@ function rbv_relpro_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Pane: eventi associati al progetto', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Eventi associati';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'noderow';
@@ -145,6 +155,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['relationship'] = 'reverse_field_relpro_project_node';
+  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Contenuto: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -190,6 +201,13 @@ function rbv_relpro_views_default_views() {
     t('View panes'),
     t('Pane: eventi associati al progetto'),
     t('Eventi associati'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« prima'),
+    t('‹ precedente'),
+    t('seguente ›'),
+    t('ultima »'),
   );
   $export['rbv_view_projectcollaborations'] = $view;
 
