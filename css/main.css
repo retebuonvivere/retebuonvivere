@@ -100,7 +100,7 @@ html {
 /* FIELD > SOCIAL LINKS */
 .field-name-field-com-social-links {
  padding: 1em 1em 0 0;
- height: 46px;
+ min-height: 46px;
 }
 .content .field-name-field-com-social-links .field-item {
  padding-bottom: .45em;
