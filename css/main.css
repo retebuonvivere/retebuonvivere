@@ -93,9 +93,6 @@ html {
  font-family: georgia;
  font-style: italic;
 }
-.content .field-name-field-com-tagline .field-item:before, .field-name-field-com-tagline .field-item:after {
- content: "\""
-}
 
 /* FIELD > SOCIAL LINKS */
 .field-name-field-com-social-links {
