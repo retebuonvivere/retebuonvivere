@@ -207,6 +207,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_com_tags_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_com_tags_tid']['vocabulary'] = 'tags';
   $handler->display->display_options['filters']['field_com_tags_tid']['error_message'] = FALSE;
+  /* Filter criterion: Contenuto: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
 
   /* Display: pane: esplora la rete */
   $handler = $view->new_display('panel_pane', 'pane: esplora la rete', 'panel_pane_1');
