@@ -317,6 +317,21 @@ h3 {
  width: 100%;
 }
 
+.pane-rbv-view-explore-panel-pane-1 .views-row {
+ background: #f5f5f5;
+ margin-bottom: .5em;
+ padding: .5em;
+ border: 1px solid #f5f5f5;
+ border-radius: 4px;
+ -moz-border-radius: 4px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+ /* next two lines are to be changed if we manage to use Masonry */
+ display: table;
+ width: 30%;
+ float: left;
+}
+
 /*
  * FIELDSETS
  */
@@ -581,6 +596,16 @@ list-style: none;
 .page-admin ul li {
 padding: .3em;
 }
+
+/* NETWORK ADMIN */
+.networkadmin .view-rbv-netadmview-joined div {
+ float: left;
+}
+
+.networkadmin .view-rbv-netadmview-joined span.field-content:after {
+ content: ", \00a0";
+}
+
 
 /* media */
 .button {
