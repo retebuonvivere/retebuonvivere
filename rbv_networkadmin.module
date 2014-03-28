@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Network admin feature.
+ */
+
+include_once 'rbv_networkadmin.features.inc';

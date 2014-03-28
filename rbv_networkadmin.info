@@ -1,0 +1,12 @@
+name = Network admin
+description = Network admin tools
+core = 7.x
+package = RBV contents
+version = 7.x-1.0
+project = rbv_networkadmin
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = rbv_netadmview_organon
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/features
