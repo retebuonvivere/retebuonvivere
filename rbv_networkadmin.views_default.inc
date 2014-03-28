@@ -11,6 +11,94 @@ function rbv_networkadmin_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'rbv_netadmview_joined';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'rbv netadmview joined';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Network admin - elenco delle organizzazioni che hanno aderito';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['row_options']['separator'] = ', ';
+  /* Campo: Contenuto: Titolo */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Sort criterion: Contenuto: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  /* Filter criterion: Contenuto: Pubblicato */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Contenuto: Tipo */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'org' => 'org',
+  );
+  /* Filter criterion: Contenuto: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'networkadmin/hanno-aderito';
+
+  /* Display: pane: Hanno già aderito */
+  $handler = $view->new_display('panel_pane', 'pane: Hanno già aderito', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Hanno già aderito';
+  $translatables['rbv_netadmview_joined'] = array(
+    t('Master'),
+    t('Network admin - elenco delle organizzazioni che hanno aderito'),
+    t('more'),
+    t('Apply'),
+    t('Ripristina'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Page'),
+    t('pane: Hanno già aderito'),
+    t('Hanno già aderito'),
+    t('View panes'),
+  );
+  $export['rbv_netadmview_joined'] = $view;
+
+  $view = new view();
   $view->name = 'rbv_netadmview_organon';
   $view->description = 'Organizzazioni nominate a cui inviare una mail';
   $view->tag = 'default';
@@ -22,7 +110,7 @@ function rbv_networkadmin_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'network admin organizzazioni nominate';
+  $handler->display->display_options['title'] = 'network admin - Elenco organizzazioni nominate nelle collaborazioni';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -113,11 +201,17 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
     'link' => 1,
   );
+  /* Campo: Contenuto: Tipo di collaborazione */
+  $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
+  $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
+  $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
+  $handler->display->display_options['fields']['field_rel_categories']['label'] = 'con il ruolo di';
+  $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
   /* Campo: Campo: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
-  $handler->display->display_options['fields']['field_com_description']['label'] = 'Descrizione della relazione';
+  $handler->display->display_options['fields']['field_com_description']['label'] = 'e la descrizione';
   /* Sort criterion: Contenuto: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -152,9 +246,14 @@ function rbv_networkadmin_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'networkadmin/organizzazioni-nominate';
+
+  /* Display: pane organiz nominate */
+  $handler = $view->new_display('panel_pane', 'pane organiz nominate', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Elenco organizzazioni nominate nelle collaborazioni';
   $translatables['rbv_netadmview_organon'] = array(
     t('Master'),
-    t('network admin organizzazioni nominate'),
+    t('network admin - Elenco organizzazioni nominate nelle collaborazioni'),
     t('more'),
     t('Apply'),
     t('Ripristina'),
@@ -168,9 +267,13 @@ function rbv_networkadmin_views_default_views() {
     t('il giorno'),
     t('è stata inserita da'),
     t('tra i collaboratori del progetto'),
-    t('Descrizione della relazione'),
+    t('con il ruolo di'),
+    t('e la descrizione'),
     t('Author uid'),
     t('Page'),
+    t('pane organiz nominate'),
+    t('Elenco organizzazioni nominate nelle collaborazioni'),
+    t('View panes'),
   );
   $export['rbv_netadmview_organon'] = $view;
 
