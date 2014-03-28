@@ -58,3 +58,6 @@
 [submodule "drupal/themes/rbv_kala_default_bootstrap"]
 	path = drupal/themes/rbv_kala_default_bootstrap
 	url = git@github.com:miromarchi/rbv_kala_default_bootstrap.git
+[submodule "drupal/rbv_networkadmin"]
+	path = drupal/rbv_networkadmin
+	url = git@github.com:miromarchi/rbv_networkadmin.git
