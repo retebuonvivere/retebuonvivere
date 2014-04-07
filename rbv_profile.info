@@ -105,6 +105,9 @@ dependencies[] = rdfx
 dependencies[] = rdfa
 dependencies[] = schemaorg
 
+; SEO
+dependencies[] = metatag
+
 ; Fields
 dependencies[] = addressfield
 dependencies[] = email
@@ -183,14 +186,14 @@ dependencies[] = strongarm
 dependencies[] = defaultcontent
 
 ; RBV features
-dependencies[] = rbv_com_fields
-dependencies[] = rbv_org
-dependencies[] = rbv_project
-dependencies[] = rbv_relpro
-dependencies[] = rbv_relation
-dependencies[] = rbv_event
-dependencies[] = rbv_view_graph
-dependencies[] = rbv_view_explore
-dependencies[] = rbv_pages
+; dependencies[] = rbv_com_fields
+; dependencies[] = rbv_org
+; dependencies[] = rbv_project
+; dependencies[] = rbv_relpro
+; dependencies[] = rbv_relation
+; dependencies[] = rbv_event
+; dependencies[] = rbv_view_graph
+; dependencies[] = rbv_view_explore
+; dependencies[] = rbv_pages
 
 files[] = rbv_profile.profile
