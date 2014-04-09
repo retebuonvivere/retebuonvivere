@@ -575,6 +575,14 @@ float: none;
  clear: both;
 }
 
+div#edit-account .form-item-notify {
+ clear: both;
+}
+
+.field-widget-taxonomy-autocomplete {
+ clear: both;
+}
+
 div .image-widget-data {
  float: none;
 }
