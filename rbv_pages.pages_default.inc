@@ -1882,7 +1882,7 @@ progetti/attività',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Persone della rete';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1896,6 +1896,9 @@ progetti/attività',
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1960,7 +1963,7 @@ progetti/attività',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'I progetti della rete';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1972,6 +1975,9 @@ progetti/attività',
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'vmode_group_content',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => '',
     );
     $pane->cache = array();
     $pane->style = array(
