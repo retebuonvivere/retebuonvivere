@@ -58,9 +58,9 @@ function rbv_view_graph_views_default_views() {
  <dt><strong>Modalità di visualizzazione</strong></dt>
   <dd>
    <ul>
-    <li><a href="/rete">rete delle collaborazioni <strong>organizzazione → progetto/attività</strong></a></li>
+    <li><h4><a href="/rete">rete delle collaborazioni <strong>organizzazione → progetto/attività</strong></a></h4></li>
     <p>Questa modalità mostra organizzazioni e progetti/attività, i legami indicano le collaborazioni sulla base di progetti/attività.</p>
-    <li><a href="/rete/relazioni">rete delle relazioni <strong>organizzazione ←→ organizzazione</strong></a></li>
+    <li><h4><a href="/rete/relazioni">rete delle relazioni <strong>organizzazione ←→ organizzazione</strong></a></h4></li>
     <p>Questa modalità mostra i legami tra organizzazioni, considerate come collaboratrici, sulla base delle collaborazioni a progetti/attività.</p>
    </dd>
   </ul>
@@ -80,7 +80,7 @@ function rbv_view_graph_views_default_views() {
   </svg>
   </dd>
 </dl>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
+  $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
   $handler->display->display_options['relationships']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
@@ -415,9 +415,9 @@ function rbv_view_graph_views_default_views() {
  <dt><strong>Modalità di visualizzazione</strong></dt>
   <dd>
    <ul>
-    <li><a href="/rete">rete delle collaborazioni <strong>organizzazione → progetto/attività</strong></a></li>
+    <li><h4><a href="/rete">rete delle collaborazioni <strong>organizzazione → progetto/attività</strong></a></h4></li>
     <p>Questa modalità mostra organizzazioni e progetti/attività, i legami indicano le collaborazioni sulla base di progetti/attività.</p>
-    <li><a href="/rete/relazioni">rete delle relazioni <strong>organizzazione ←→ organizzazione</strong></a></li>
+    <li><h4><a href="/rete/relazioni">rete delle relazioni <strong>organizzazione ←→ organizzazione</strong></a></h4></li>
     <p>Questa modalità mostra i legami tra organizzazioni, considerate come collaboratrici, sulla base delle collaborazioni a progetti/attività.</p>
    </dd>
   </ul>
