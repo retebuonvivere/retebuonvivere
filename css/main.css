@@ -302,7 +302,7 @@ h3 {
  float: left;
 }
 
-/* GRID */
+/* EXPLORE VIEW */
 .grid-item {
  background: #f5f5f5;
  margin-bottom: .5em;
@@ -332,6 +332,28 @@ h3 {
  float: left;
 }
 
+select#edit-field-com-tags-tid {
+ max-width: 232px;
+}
+select#edit-field-org-type-tid {
+ max-width: 230px;
+} 
+select#edit-field-com-categories-tid {
+ max-width: 221px;
+}
+select#edit-type {
+ max-width: 158px;
+}
+.quadrato {
+ border-radius: 4px;
+ -moz-border-radius: 4px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.cozy {
+ padding: 6px 8px;
+}
 /*
  * FIELDSETS
  */
@@ -503,9 +525,9 @@ background: black;
 }
 
 /*
- * menu 
+ * MENU 
  */
-
+/** home **/
 .nav .first a:before {
  font-family: FontAwesome;
  font-weight: normal;
@@ -536,6 +558,75 @@ background: black;
  display: inline-block;
  text-decoration: inherit;
  content: "\f011";
+ padding-right: .4em;
+}
+/** vedi la rete **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\39 90 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f06e";
+ padding-right: .4em;
+}
+
+/** discussioni **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 363 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f086";
+ padding-right: .4em;
+}
+#tabs {
+ margin-bottom: 1px;
+}
+
+/** eventi **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\39 91 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f073";
+ padding-right: .4em;
+}
+
+/** blog **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 422 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f0a1";
+ padding-right: .4em;
+}
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 422 a {
+ color: #F18383;
+/**  color: #5FAFA9; **/
+}
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 422 a:hover {
+ color: #5FAFA9;
+}
+
+/** esplora **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\39 88 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f00a";
  padding-right: .4em;
 }
 
@@ -572,6 +663,14 @@ float: none;
 }
 
 .form-type-checkboxes > .description {
+ clear: both;
+}
+
+div#edit-account .form-item-notify {
+ clear: both;
+}
+
+.field-widget-taxonomy-autocomplete {
  clear: both;
 }
 
