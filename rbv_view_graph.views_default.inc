@@ -135,7 +135,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['path_1']['relationship'] = 'field_relpro_project_target_id';
   $handler->display->display_options['fields']['path_1']['label'] = '';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Ruolo nella collaborazione */
+  /* Campo: Contenuto: Tipo di collaborazione */
   $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
