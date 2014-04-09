@@ -18,6 +18,9 @@ function rbv_view_graph_menu_default_menu_links() {
     'link_title' => 'Vedi la rete',
     'options' => array(
       'identifier' => 'main-menu_vedi-la-rete:rete',
+      'attributes' => array(
+        'title' => 'Vedi la rete delle collaborazioni tra organizzazioni della società civile e dell\'economia solidale di Verona',
+      ),
     ),
     'module' => 'system',
     'hidden' => 0,
