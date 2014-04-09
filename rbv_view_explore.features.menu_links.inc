@@ -18,7 +18,7 @@ function rbv_view_explore_menu_default_menu_links() {
     'link_title' => 'Esplora la rete',
     'options' => array(
       'attributes' => array(
-        'title' => 'Visualizza tutte le organizzazioni e i progetti della società civile',
+        'title' => 'Esplora le organizzazioni e i progetti della rete del buon vivere',
       ),
       'identifier' => 'main-menu_esplora-la-rete:esplora',
     ),
