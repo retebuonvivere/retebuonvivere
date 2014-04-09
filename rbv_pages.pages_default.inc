@@ -788,6 +788,11 @@ progetti/attività',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'esplora la rete
+collaborazioni',
+    'panels_breadcrumbs_paths' => 'esplora',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'boxton';
@@ -799,18 +804,18 @@ progetti/attività',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Le collaborazioni della rete';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_view_lists-panel_pane_7';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:16';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'vmode_group_content',
+      'view_mode' => 'full',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -822,8 +827,31 @@ progetti/attività',
     $pane->locks = array();
     $display->content['new-8'] = $pane;
     $display->panels['contentmain'][0] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'vmode_group_content',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['contentmain'][1] = 'new-9';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-8';
+  $display->title_pane = 'new-9';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_collaborations'] = $page;
@@ -897,7 +925,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-9';
+    $pane->pid = 'new-10';
     $pane->panel = 'contentmain';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:9';
@@ -912,10 +940,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['contentmain'][0] = 'new-9';
+    $display->content['new-10'] = $pane;
+    $display->panels['contentmain'][0] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-11';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_explore-panel_pane_1';
@@ -937,10 +965,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['contentmain'][1] = 'new-10';
+    $display->content['new-11'] = $pane;
+    $display->panels['contentmain'][1] = 'new-11';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-10';
+  $display->title_pane = 'new-11';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_explore'] = $page;
@@ -1008,7 +1036,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-12';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_graph-panel_pane_1';
@@ -1027,10 +1055,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['contentmain'][0] = 'new-11';
+    $display->content['new-12'] = $pane;
+    $display->panels['contentmain'][0] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-13';
     $pane->panel = 'sidebar';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:2';
@@ -1047,8 +1075,8 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['sidebar'][0] = 'new-12';
+    $display->content['new-13'] = $pane;
+    $display->panels['sidebar'][0] = 'new-13';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1378,7 +1406,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-14';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_group_content-panel_pane_3';
@@ -1400,8 +1428,8 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['contentmain'][0] = 'new-13';
+    $display->content['new-14'] = $pane;
+    $display->panels['contentmain'][0] = 'new-14';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1497,7 +1525,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-15';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_group_content-panel_pane_5';
@@ -1523,8 +1551,8 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['contentmain'][0] = 'new-14';
+    $display->content['new-15'] = $pane;
+    $display->panels['contentmain'][0] = 'new-15';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1539,7 +1567,10 @@ progetti/attività',
   $page->admin_title = 'rbv home';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -1630,7 +1661,7 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-16';
     $pane->panel = 'column1';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:3';
@@ -1647,10 +1678,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['column1'][0] = 'new-15';
+    $display->content['new-16'] = $pane;
+    $display->panels['column1'][0] = 'new-16';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-17';
     $pane->panel = 'column2';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:4';
@@ -1667,10 +1698,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['column2'][0] = 'new-16';
+    $display->content['new-17'] = $pane;
+    $display->panels['column2'][0] = 'new-17';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-18';
     $pane->panel = 'column3';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:5';
@@ -1687,10 +1718,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['column3'][0] = 'new-17';
+    $display->content['new-18'] = $pane;
+    $display->panels['column3'][0] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-18';
+    $pane->pid = 'new-19';
     $pane->panel = 'header';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:2';
@@ -1707,10 +1738,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['header'][0] = 'new-18';
+    $display->content['new-19'] = $pane;
+    $display->panels['header'][0] = 'new-19';
     $pane = new stdClass();
-    $pane->pid = 'new-19';
+    $pane->pid = 'new-20';
     $pane->panel = 'secondarycolumn2';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:6';
@@ -1727,10 +1758,10 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['secondarycolumn2'][0] = 'new-19';
+    $display->content['new-20'] = $pane;
+    $display->panels['secondarycolumn2'][0] = 'new-20';
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'secondarycolumn3';
     $pane->type = 'fieldable_panels_pane';
     $pane->subtype = 'fpid:10';
@@ -1747,8 +1778,8 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['secondarycolumn3'][0] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['secondarycolumn3'][0] = 'new-21';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1791,6 +1822,11 @@ progetti/attività',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'esplora la rete
+organizzazioni',
+    'panels_breadcrumbs_paths' => 'esplora',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'boxton';
@@ -1802,18 +1838,18 @@ progetti/attività',
     ),
   );
   $display->cache = array();
-  $display->title = 'Organizzazioni';
+  $display->title = 'Le organizzazioni della rete';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_view_lists-panel_pane_5';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:16';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'vmode_group_content',
+      'view_mode' => 'full',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1823,10 +1859,33 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['contentmain'][0] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['contentmain'][0] = 'new-22';
+    $pane = new stdClass();
+    $pane->pid = 'new-23';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'vmode_group_content',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-23'] = $pane;
+    $display->panels['contentmain'][1] = 'new-23';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-21';
+  $display->title_pane = 'new-23';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_organizzazioni'] = $page;
@@ -1868,8 +1927,9 @@ progetti/attività',
     'contexts' => array(),
     'relationships' => array(),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'persone',
-    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_titles' => 'esplora la rete
+persone',
+    'panels_breadcrumbs_paths' => 'esplora',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -1886,7 +1946,25 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-24';
+    $pane->panel = 'contentmain';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:16';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-24'] = $pane;
+    $display->panels['contentmain'][0] = 'new-24';
+    $pane = new stdClass();
+    $pane->pid = 'new-25';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_members-panel_pane_2';
@@ -1906,12 +1984,12 @@ progetti/attività',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['contentmain'][0] = 'new-22';
+    $display->content['new-25'] = $pane;
+    $display->panels['contentmain'][1] = 'new-25';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-22';
+  $display->title_pane = 'new-25';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_persone'] = $page;
@@ -1952,6 +2030,11 @@ progetti/attività',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'esplora la rete
+progetti',
+    'panels_breadcrumbs_paths' => 'esplora',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'boxton';
@@ -1967,7 +2050,25 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-23';
+    $pane->pid = 'new-26';
+    $pane->panel = 'contentmain';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:16';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-26'] = $pane;
+    $display->panels['contentmain'][0] = 'new-26';
+    $pane = new stdClass();
+    $pane->pid = 'new-27';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'rbv_view_lists-panel_pane_6';
@@ -1985,12 +2086,12 @@ progetti/attività',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['contentmain'][0] = 'new-23';
+    $display->content['new-27'] = $pane;
+    $display->panels['contentmain'][1] = 'new-27';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-23';
+  $display->title_pane = 'new-27';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_progetti'] = $page;
