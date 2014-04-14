@@ -100,19 +100,15 @@ function rbv_networkadmin_default_page_manager_pages() {
     $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'column1';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_netadmview_joined-panel_pane_1';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:13';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
+      'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -161,7 +157,7 @@ function rbv_networkadmin_default_page_manager_pages() {
     $pane->pid = 'new-4';
     $pane->panel = 'column3';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:13';
+    $pane->subtype = 'fpid:18';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -177,9 +173,9 @@ function rbv_networkadmin_default_page_manager_pages() {
     $display->panels['column3'][0] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
-    $pane->panel = 'header';
+    $pane->panel = 'footer';
     $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_netadmview_organon-panel_pane_1';
+    $pane->subtype = 'rbv_netadmview_joined-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -196,9 +192,31 @@ function rbv_networkadmin_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-5'] = $pane;
-    $display->panels['header'][0] = 'new-5';
+    $display->panels['footer'][0] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'footer';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_netadmview_organon-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['footer'][1] = 'new-6';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-5';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_network_admin'] = $page;
