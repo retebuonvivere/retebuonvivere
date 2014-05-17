@@ -303,16 +303,33 @@ h3 {
 }
 
 /* EXPLORE VIEW */
-.masonry-item {
- background: #F9F9F9;
+.grid-item {
+ background: #f5f5f5;
+ margin-bottom: .5em;
  padding: .5em;
- border: 4px solid #ffffff;
+ border: 1px solid #f5f5f5;
  border-radius: 4px;
  -moz-border-radius: 4px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+ /* next two lines are to be changed if we manage to use Masonry */
  display: table;
+ width: 100%;
 }
-.masonry-item.views-row-even {
- background: #F5F5F5;
+
+.pane-rbv-view-explore-panel-pane-1 .views-row {
+ background: #f5f5f5;
+ margin-bottom: .5em;
+ padding: .5em;
+ border: 1px solid #f5f5f5;
+ border-radius: 4px;
+ -moz-border-radius: 4px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+ /* next two lines are to be changed if we manage to use Masonry */
+ display: table;
+ width: 30%;
+ float: left;
 }
 
 select#edit-field-com-tags-tid {
@@ -327,7 +344,6 @@ select#edit-field-com-categories-tid {
 select#edit-type {
  max-width: 158px;
 }
-
 .quadrato {
  border-radius: 4px;
  -moz-border-radius: 4px;
@@ -338,7 +354,6 @@ select#edit-type {
 .cozy {
  padding: 6px 8px;
 }
-
 /*
  * FIELDSETS
  */
@@ -512,8 +527,8 @@ background: black;
 /*
  * MENU 
  */
-/** menu home **/
-li.mid-1322 a:before {
+/** home **/
+.nav .first a:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
@@ -524,74 +539,6 @@ li.mid-1322 a:before {
  padding-right: .4em;
 }
 
-/** menu esplora **/
-li.mid-988 a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f00a";
- padding-right: .4em;
-}
-
-/** menu vedi la rete **/
-li.mid-990 a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f06e";
- padding-right: .4em;
-}
-
-/** menu discussioni **/
-li.mid-1363 a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f086";
- padding-right: .4em;
-}
-
-/** menu eventi **/
-li.mid-991 a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f073";
- padding-right: .4em;
-}
-
-/** menu blog **/
-li.mid-1422 a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f0a1";
- padding-right: .4em;
-}
-.navbar-default .navbar-nav>li.mid-1422 a {
- color: #F18383;
-/**  color: #5FAFA9; **/
-}
-.navbar-default .navbar-nav>li.mid-1422 a:hover {
- color: #5FAFA9;
-}
-
-/** menu profilo utente **/
 .secondary-links .first a:before {
  font-family: FontAwesome;
  font-weight: normal;
@@ -603,7 +550,6 @@ li.mid-1422 a:before {
  padding-right: .4em;
 }
 
-/** menu esci/accedi **/
 .secondary-links .last a:before {
  font-family: FontAwesome;
  font-weight: normal;
@@ -614,11 +560,79 @@ li.mid-1422 a:before {
  content: "\f011";
  padding-right: .4em;
 }
+/** vedi la rete **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\39 90 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f06e";
+ padding-right: .4em;
+}
 
+/** discussioni **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 363 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f086";
+ padding-right: .4em;
+}
 #tabs {
  margin-bottom: 1px;
 }
 
+/** eventi **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\39 91 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f073";
+ padding-right: .4em;
+}
+
+/** blog **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 422 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f0a1";
+ padding-right: .4em;
+}
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 422 a {
+ color: #F18383;
+/**  color: #5FAFA9; **/
+}
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\31 422 a:hover {
+ color: #5FAFA9;
+}
+
+/** esplora **/
+#page > header > div > nav > ul.nav.navbar-nav.links.clearfix > li.\39 88 a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f00a";
+ padding-right: .4em;
+}
+
+#tabs {
+ margin-bottom: 1px;
+}
 
 /* 
  * BACKEND
