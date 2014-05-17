@@ -47,8 +47,15 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_plugin'] = 'masonry_views';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-3';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_gutter_width'] = '';
+  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
+  $handler->display->display_options['style_options']['masonry_animated'] = TRUE;
+  $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -294,7 +301,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_plugin'] = 'masonry_views';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-12 col-md-4 col-lg-3';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
+  $handler->display->display_options['style_options']['masonry_animated'] = TRUE;
+  $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   /* Campo: Contenuto: Titolo */
@@ -558,14 +572,6 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '3';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -612,14 +618,6 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '3';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */

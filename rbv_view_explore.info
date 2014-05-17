@@ -6,6 +6,7 @@ version = 7.x-1.4-pan
 project = rbv_view_explore
 dependencies[] = ctools
 dependencies[] = features
+dependencies[] = masonry_views
 dependencies[] = menu
 dependencies[] = rbv_com_fields
 dependencies[] = rbv_org
