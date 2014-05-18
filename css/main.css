@@ -215,6 +215,10 @@ div .content .field-name-field-org-type:after {
 /* 
  * PANES
  */
+div.view-content.row {
+ margin-left: 0;
+ margin-right: 0;
+}
 
 .node-type-org .views-row {
  background: #f5f5f5;
@@ -386,8 +390,8 @@ html.js fieldset.collapsed {
 }
 
 .collapse-processed .fieldset-wrapper {
- margin: 15px;
- padding-top: 0;
+ margin: 1px 1px -5px 1px;
+/* padding-top: 0; */
 }
 
 /* 
