@@ -68,7 +68,7 @@ html {
  line-height: 1.8em;
 }
 
-.views-view-grid .field-type-date, .field-name-field-relpro-project .field-type-date, .views-field-field-relpro-project .field-type-date {
+.views-view-grid .field-type-date, .masonry .field-type-date, .field-name-field-relpro-project .field-type-date, .views-field-field-relpro-project .field-type-date {
  clear: both;
 }
 
@@ -302,17 +302,30 @@ h3 {
  float: left;
 }
 
-/* EXPLORE VIEW */
+/* EXPLORE VIEW MASONRY */
 .masonry-item {
- background: #F9F9F9;
+ background: #fcfcfc;
  padding: .5em;
- border: 4px solid #ffffff;
+ border: 5px solid #ffffff;
  border-radius: 4px;
  -moz-border-radius: 4px;
  display: table;
 }
 .masonry-item.views-row-even {
- background: #F5F5F5;
+ background: #F8F8F8;
+}
+
+/* IMAGES in firefox and IE */
+@-moz-document url-prefix() {
+ .masonry-item img {
+  width: 100%;
+ }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+ .masonry-item img {
+  width: 100%;
+ }
 }
 
 select#edit-field-com-tags-tid {
@@ -352,7 +365,7 @@ select#edit-type {
          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.field-group-fieldset legend {
+.field-group-fieldset>legend.panel-heading {
  padding: 1px;
 /* border-top: 1px solid #f5f5f5; */
  border-top-right-radius: 4px;
@@ -363,7 +376,7 @@ select#edit-type {
 }
 
 a.fieldset-title:link {
- font-size: .7em;
+ font-size: 13px;
  color: #333333;
 }
 
@@ -397,7 +410,7 @@ html.js fieldset.collapsed {
 
 }
 
-.info-fieldgroup legend {
+.info-fieldgroup>legend.panel-heading {
  background-color: #ECB97E;
 }
 
