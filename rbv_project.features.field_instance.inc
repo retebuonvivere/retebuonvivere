@@ -437,6 +437,18 @@ function rbv_project_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'panopoly_image_square',
         'progress_indicator' => 'throbber',
       ),
@@ -952,7 +964,7 @@ function rbv_project_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -987,7 +999,7 @@ function rbv_project_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Organizzazione promotrice',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1001,7 +1013,7 @@ function rbv_project_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'og_context' => 0,
@@ -1038,6 +1050,7 @@ function rbv_project_field_default_field_instances() {
   t('<a class="help" title="Avete scelto il settore \'economia solidale\' e volete specificare che il progetto è in particolare sul \'baratto\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Descrivete il progetto come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Il logo è sempre visibile accanto al nome del progetto. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo progetto è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Locale, regionale, interregionale, nazionale, globale... Qual\'è l\'ambito o la portata del progetto?"><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Mission, la ragione d\'essere di questo progetto, che cosa il progetto intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
@@ -1053,11 +1066,11 @@ function rbv_project_field_default_field_instances() {
   t('Descrizione');
   t('Email');
   t('Group visibility');
-  t('Groups audience');
   t('Indirizzo');
   t('Links');
   t('Logo');
   t('Mission');
+  t('Organizzazione promotrice');
   t('Parole chiave');
   t('Segui il progetto su');
   t('Settori');
