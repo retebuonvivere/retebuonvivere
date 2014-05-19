@@ -669,6 +669,10 @@ float: none;
  clear: both;
 }
 
+.form-item.form-type-checkbox {
+ margin-top: 0;
+}
+
 div#edit-account .form-item-notify {
  clear: both;
 }
