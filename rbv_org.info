@@ -20,6 +20,7 @@ dependencies[] = jquery_expander
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = list
+dependencies[] = masonry_views
 dependencies[] = node
 dependencies[] = og
 dependencies[] = og_access
