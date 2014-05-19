@@ -346,7 +346,7 @@ function rbv_relpro_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -375,7 +375,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Organizzazione promotrice',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -389,7 +389,7 @@ function rbv_relpro_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'og_context' => 0,
@@ -423,6 +423,7 @@ function rbv_relpro_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('<a class="help" title="Descrivete questa collaborazione come preferite."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Qual è il progetto a cui l\'organizzazione indicata collabora?"><i class="fa fa-hand-o-down"></i></a>
 <p class="alert alert-info">Qual è il progetto a cui l\'organizzazione indicata collabora?<br><br> Nella <i class="fa fa-eye"></i> rete delle collaborazioni verrà disegnato un legame tra organizzazione e progetto. Nella <i class="fa fa-eye"></i> rete delle relazioni verrà disegnato un legame tra le organizzazioni che collaborano a questo progetto.</p>');
   t('<a class="help" title="Qual è il soggetto della collaborazione?"><i class="fa fa-hand-o-down"></i></a>
@@ -434,7 +435,7 @@ function rbv_relpro_field_default_field_instances() {
   t('<a class="help" title="Scegliere il tipo di collaborazione, ad esempio il ruolo che l\'organizzazione svolge in questo progetto/attività. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
   t('Date');
   t('Descrizione della collaborazione');
-  t('Groups audience');
+  t('Organizzazione promotrice');
   t('Progetto');
   t('Soggetto');
   t('Tipo di collaborazione');
