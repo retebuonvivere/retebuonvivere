@@ -55,7 +55,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['style_options']['masonry_animated'] = TRUE;
   $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
   $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_images_first'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
