@@ -125,7 +125,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
   $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
 <ul>
-  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="eventi">vista ad elenco</a> di tutti gli eventi.</li>
+  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="calendario/elenco">vista ad elenco</a> di tutti gli eventi.</li>
   <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
   <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
 </ul>';
@@ -180,7 +180,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
   $handler->display->display_options['footer']['area']['content'] = '<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
 <ul>
-  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="eventi">vista ad elenco</a> di tutti gli eventi.</li>
+  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="calendario/elenco">vista ad elenco</a> di tutti gli eventi.</li>
   <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
   <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
 </ul>';
@@ -601,7 +601,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     t('Legenda'),
     t('<h2>Calendario eventi retebuonvivere.org - Legenda</h2>
 <ul>
-  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="eventi">vista ad elenco</a> di tutti gli eventi.</li>
+  <li>In questo calendario confluiscono tutti gli eventi di tutte le organizzazioni della rete. È così possibile restare aggiornati sui tanti eventi della rete oppure programmare i propri eventi coordinandosi con gli altri. È disponibile anche una <a href="calendario/elenco">vista ad elenco</a> di tutti gli eventi.</li>
   <li>È possibile accedere al calendario specifico di ogni organizzazione dalla home page dell\'organizzazione stessa.</li>
   <li>L\'icona "ICal" in fondo a questa pagina permette di importare il calendario della rete del buon vivere nella propria applicazione desktop/mobile preferita, come ad esempio google calendar o Apple iCal. In questo modo ad esempio è possibile visualizzare gli eventi direttamente sul calendario del proprio smartphone.</li>
 </ul>'),
