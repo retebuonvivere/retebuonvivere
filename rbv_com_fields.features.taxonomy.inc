@@ -82,7 +82,7 @@ function rbv_com_fields_taxonomy_default_vocabularies() {
       'name' => 'Tipi di relazione',
       'machine_name' => 'relation_categories',
       'description' => 'Tipologie delle relazioni di collaborazione tra organizzazioni: è socio di, è nella rete, ...',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => -4,
       'rdf_mapping' => array(
