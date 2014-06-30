@@ -57,7 +57,6 @@ features[field_instance][] = node-event-field_com_tags
 features[field_instance][] = node-event-field_event_date
 features[field_instance][] = node-event-field_quick_links_links
 features[field_instance][] = node-event-field_relpro_project
-features[field_instance][] = node-event-group_access
 features[field_instance][] = node-event-og_group_ref
 features[node][] = event
 features[og_features_permission][] = node:org:create event content
