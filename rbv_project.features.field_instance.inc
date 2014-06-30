@@ -567,6 +567,62 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project-field_com_private_og'
+  $field_instances['node-project-field_com_private_og'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<a class="help" title="Questo campo di testo è visibile soltanto agli utenti membri della vostra organizzazione. È possibile quindi inserire qui dati interni, come testo, immagini e link a file e cartelle condivise (google drive e dropbox)."><i class="fa fa-question-circle"></i></a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_private_og',
+    'label' => 'Spazio privato gruppo',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_com_scope'
   $field_instances['node-project-field_com_scope'] = array(
     'bundle' => 'project',
@@ -993,6 +1049,7 @@ function rbv_project_field_default_field_instances() {
   t('<a class="help" title="Locale, regionale, interregionale, nazionale, globale... Qual\'è l\'ambito o la portata del progetto?"><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Mission, la ragione d\'essere di questo progetto, che cosa il progetto intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Quando è iniziato questo progetto? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario. La data di termine, se inserita, andrà ad applicarsi anche alle collaborazioni al progetto attive."><i class="fa fa-question-circle"></i></a>');
+  t('<a class="help" title="Questo campo di testo è visibile soltanto agli utenti membri della vostra organizzazione. È possibile quindi inserire qui dati interni, come testo, immagini e link a file e cartelle condivise (google drive e dropbox)."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Raccontate la storia di questo progetto."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Se avete bisogno di specificare altri dettagli per i contatti usate questo campo. Esempi, un contatto skype, gli orari in cui è preferibile telefonare, ecc..."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo di questo progetto. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>');
@@ -1012,6 +1069,7 @@ function rbv_project_field_default_field_instances() {
   t('Segui il progetto su');
   t('Settori');
   t('Slogan');
+  t('Spazio privato gruppo');
   t('Storia');
   t('Telefono');
 

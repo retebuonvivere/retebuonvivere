@@ -199,6 +199,32 @@ function rbv_project_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_project_dis_private_og|node|project|default';
+  $field_group->group_name = 'group_project_dis_private_og';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Bacheca interna gruppo',
+    'weight' => '19',
+    'children' => array(
+      0 => 'field_com_private_og',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-project-dis-private-og field-group-fieldset',
+      ),
+    ),
+  );
+  $export['group_project_dis_private_og|node|project|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_project_display_info|node|project|default';
   $field_group->group_name = 'group_project_display_info';
   $field_group->entity_type = 'node';
@@ -284,6 +310,34 @@ function rbv_project_field_group_info() {
     ),
   );
   $export['group_project_info|node|project|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_project_private_og|node|project|form';
+  $field_group->group_name = 'group_project_private_og';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'project';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Dati privati gruppo',
+    'weight' => '25',
+    'children' => array(
+      0 => 'field_com_private_og',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Dati privati gruppo',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'wellrbv private-og',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_project_private_og|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

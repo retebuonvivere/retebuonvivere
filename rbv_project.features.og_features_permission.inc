@@ -36,6 +36,14 @@ function rbv_project_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:org:update field_com_private_og field'
+  $permissions['node:org:update field_com_private_og field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+    ),
+  );
+
   // Exported og permission: 'node:org:update og_group_ref field'
   $permissions['node:org:update og_group_ref field'] = array(
     'roles' => array(
@@ -49,6 +57,15 @@ function rbv_project_og_features_default_permissions() {
     'roles' => array(
       'administrator member' => 'administrator member',
       'editor member' => 'editor member',
+    ),
+  );
+
+  // Exported og permission: 'node:org:view field_com_private_og field'
+  $permissions['node:org:view field_com_private_og field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'editor member' => 'editor member',
+      'member' => 'member',
     ),
   );
 
