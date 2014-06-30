@@ -456,6 +456,15 @@ html.js fieldset.collapsed {
  padding-right: .4em;
 }
 
+/* FIELDSET PRIVATE */
+.group-project-dis-private-og {
+ background-color: #ffffff;
+ border: 1px solid #F8E200;
+}
+.group-project-dis-private-og > legend.panel-heading {
+ background-color: #FEF485;
+}
+
 /* div main content. i.e. excluding comments */
 .content {
  padding-bottom: 1em;
@@ -529,6 +538,14 @@ padding: .1em .3em .1em .3em;
 margin: .2em;
 white-space: nowrap;
 background: black;
+}
+
+/* GROUP REFERENCE FIELD */
+.page-node-edit.node-type-event .field-name-og-group-ref a, .page-node-edit.node-type-project .field-name-og-group-ref a {
+ background: none;
+ -moz-border-radius: none;
+ border-radius: none;
+ padding: 0;
 }
 
 /*
