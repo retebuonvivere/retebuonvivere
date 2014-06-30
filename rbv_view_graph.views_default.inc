@@ -44,8 +44,9 @@ function rbv_view_graph_views_default_views() {
       'field_rel_categories' => 'link:color',
     ),
   );
-  $handler->display->display_options['style_options']['graphapi']['width'] = '800';
-  $handler->display->display_options['style_options']['graphapi']['height'] = '600';
+  $handler->display->display_options['style_options']['graphapi']['width'] = '950';
+  $handler->display->display_options['style_options']['graphapi']['height'] = '610';
+  $handler->display->display_options['style_options']['graphapi']['background-color'] = 'ffffff';
   /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
@@ -54,31 +55,24 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
   $handler->display->display_options['footer']['area']['content'] = '<dl>
  <dt><strong>Una rete</strong></dt>
- <dd><p>Questa pagina mostra la rete risultante dalle relazioni di collaborazione tra i soggetti plurali della società civile organizzata di Verona. Le organizzazioni collaborano sulla base di progetti e attività specifici, per prendersi cura del bene comune.</p></dd>
- <dt><strong>Modalità di visualizzazione</strong></dt>
-  <dd>
-   <ul>
-    <li><h4><a href="/rete">rete delle collaborazioni <strong>organizzazione → progetto/attività</strong></a></h4></li>
-    <p>Questa modalità mostra organizzazioni e progetti/attività, i legami indicano le collaborazioni sulla base di progetti/attività.</p>
-    <li><h4><a href="/rete/relazioni">rete delle relazioni <strong>organizzazione ←→ organizzazione</strong></a></h4></li>
-    <p>Questa modalità mostra i legami tra organizzazioni, considerate come collaboratrici, sulla base delle collaborazioni a progetti/attività.</p>
-   </dd>
-  </ul>
- <dt><strong>Legenda</strong></dt>
-  <dd>
+ <dd><p>Questa pagina mostra la rete risultante dalle relazioni di collaborazione tra le organizzazioni della società civile e dell\'economia solidale di Verona. Le organizzazioni collaborano sulla base di progetti e attività specifici, per prendersi cura del bene comune.</p></dd>
+ <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
+ <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
+ <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
+ <dd>
   <svg width="120" height="49">
    <g class="data">
     <g class="node" transform="translate(10,12)">
-     <circle class="node" r="6" style="fill: #ffffff; stroke: #000000; stroke-width: 4px;"></circle>
-     <text class="nodetext" dx="10" dy=".35em" font-size="13">Organizzazione</text>
+     <circle class="node" r="9" style="fill: #ABDC0A; stroke: #fff; stroke-width: 4px;"></circle>
+     <text class="nodetext" dx="10" dy="1" font-size="13">Organizzazione</text>
     </g>
     <g class="node" transform="translate(10,36)">
-     <circle class="node" r="8" style="fill: #000000; stroke: #000000; stroke-width: 0px;"></circle>
-     <text class="nodetext" dx="10" dy=".35em" font-size="13">Progetto/attivita\'</text>
+     <circle class="node" r="8" style="fill: #378722; stroke: #fff; stroke-width: 0px;"></circle>
+     <text class="nodetext" dx="10" dy="1" font-size="13">Progetto/attività</text>
    </g>
    </g>
   </svg>
-  </dd>
+ </dd>
 </dl>';
   $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
   /* Relationship: Entity Reference: Referenced Entity */
@@ -411,31 +405,24 @@ function rbv_view_graph_views_default_views() {
     t('footer'),
     t('<dl>
  <dt><strong>Una rete</strong></dt>
- <dd><p>Questa pagina mostra la rete risultante dalle relazioni di collaborazione tra i soggetti plurali della società civile organizzata di Verona. Le organizzazioni collaborano sulla base di progetti e attività specifici, per prendersi cura del bene comune.</p></dd>
- <dt><strong>Modalità di visualizzazione</strong></dt>
-  <dd>
-   <ul>
-    <li><h4><a href="/rete">rete delle collaborazioni <strong>organizzazione → progetto/attività</strong></a></h4></li>
-    <p>Questa modalità mostra organizzazioni e progetti/attività, i legami indicano le collaborazioni sulla base di progetti/attività.</p>
-    <li><h4><a href="/rete/relazioni">rete delle relazioni <strong>organizzazione ←→ organizzazione</strong></a></h4></li>
-    <p>Questa modalità mostra i legami tra organizzazioni, considerate come collaboratrici, sulla base delle collaborazioni a progetti/attività.</p>
-   </dd>
-  </ul>
- <dt><strong>Legenda</strong></dt>
-  <dd>
+ <dd><p>Questa pagina mostra la rete risultante dalle relazioni di collaborazione tra le organizzazioni della società civile e dell\'economia solidale di Verona. Le organizzazioni collaborano sulla base di progetti e attività specifici, per prendersi cura del bene comune.</p></dd>
+ <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
+ <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
+ <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
+ <dd>
   <svg width="120" height="49">
    <g class="data">
     <g class="node" transform="translate(10,12)">
-     <circle class="node" r="6" style="fill: #ffffff; stroke: #000000; stroke-width: 4px;"></circle>
-     <text class="nodetext" dx="10" dy=".35em" font-size="13">Organizzazione</text>
+     <circle class="node" r="9" style="fill: #ABDC0A; stroke: #fff; stroke-width: 4px;"></circle>
+     <text class="nodetext" dx="10" dy="1" font-size="13">Organizzazione</text>
     </g>
     <g class="node" transform="translate(10,36)">
-     <circle class="node" r="8" style="fill: #000000; stroke: #000000; stroke-width: 0px;"></circle>
-     <text class="nodetext" dx="10" dy=".35em" font-size="13">Progetto/attivita\'</text>
+     <circle class="node" r="8" style="fill: #378722; stroke: #fff; stroke-width: 0px;"></circle>
+     <text class="nodetext" dx="10" dy="1" font-size="13">Progetto/attività</text>
    </g>
    </g>
   </svg>
-  </dd>
+ </dd>
 </dl>'),
     t('Contenuto entity referenced from field_rel_source'),
     t('Contenuto entity referenced from field_relpro_project'),
