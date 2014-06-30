@@ -80,35 +80,6 @@ function rbv_event_panelizer_defaults() {
     $display->content['new-74d04e31-a860-456f-8250-1fac1ea88c22'] = $pane;
     $display->panels['contentmain'][0] = 'new-74d04e31-a860-456f-8250-1fac1ea88c22';
     $pane = new stdClass();
-    $pane->pid = 'new-3cf255ae-2890-4d4a-98bd-bb2f41120902';
-    $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:group_access';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'above',
-      'formatter' => 'list_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => array(),
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '3cf255ae-2890-4d4a-98bd-bb2f41120902';
-    $display->content['new-3cf255ae-2890-4d4a-98bd-bb2f41120902'] = $pane;
-    $display->panels['sidebar'][0] = 'new-3cf255ae-2890-4d4a-98bd-bb2f41120902';
-    $pane = new stdClass();
     $pane->pid = 'new-b30a36f6-00ab-4812-935f-2ff059de5a1c';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
@@ -145,11 +116,11 @@ function rbv_event_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'b30a36f6-00ab-4812-935f-2ff059de5a1c';
     $display->content['new-b30a36f6-00ab-4812-935f-2ff059de5a1c'] = $pane;
-    $display->panels['sidebar'][1] = 'new-b30a36f6-00ab-4812-935f-2ff059de5a1c';
+    $display->panels['sidebar'][0] = 'new-b30a36f6-00ab-4812-935f-2ff059de5a1c';
     $pane = new stdClass();
     $pane->pid = 'new-54de7016-13a8-4df9-832f-735e6c0fd022';
     $pane->panel = 'sidebar';
@@ -191,11 +162,11 @@ function rbv_event_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '54de7016-13a8-4df9-832f-735e6c0fd022';
     $display->content['new-54de7016-13a8-4df9-832f-735e6c0fd022'] = $pane;
-    $display->panels['sidebar'][2] = 'new-54de7016-13a8-4df9-832f-735e6c0fd022';
+    $display->panels['sidebar'][1] = 'new-54de7016-13a8-4df9-832f-735e6c0fd022';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
