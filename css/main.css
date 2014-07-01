@@ -540,12 +540,17 @@ white-space: nowrap;
 background: black;
 }
 
-/* GROUP REFERENCE FIELD */
+/* group reference field */
 .page-node-edit.node-type-event .field-name-og-group-ref a, .page-node-edit.node-type-project .field-name-og-group-ref a {
  background: none;
  -moz-border-radius: none;
  border-radius: none;
  padding: 0;
+}
+
+/* date picker */
+select.ui-datepicker-month, select.ui-datepicker-year {
+ background: #7D7971;
 }
 
 /*
