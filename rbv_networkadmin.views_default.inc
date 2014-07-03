@@ -22,7 +22,7 @@ function rbv_networkadmin_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Network admin - elenco delle organizzazioni che hanno aderito';
+  $handler->display->display_options['title'] = 'Network admin - elenco delle organizzazioni che partecipano';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -41,6 +41,11 @@ function rbv_networkadmin_views_default_views() {
     'title' => 'title',
   );
   $handler->display->display_options['row_options']['separator'] = ', ';
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni: <strong>@total</strong>';
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -78,10 +83,10 @@ function rbv_networkadmin_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'networkadmin/hanno-aderito';
 
-  /* Display: pane: Hanno già aderito */
-  $handler = $view->new_display('panel_pane', 'pane: Hanno già aderito', 'panel_pane_1');
+  /* Display: pane: partecipano già */
+  $handler = $view->new_display('panel_pane', 'pane: partecipano già', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Hanno già aderito';
+  $handler->display->display_options['title'] = 'Partecipano già';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -93,16 +98,17 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['rbv_netadmview_joined'] = array(
     t('Master'),
-    t('Network admin - elenco delle organizzazioni che hanno aderito'),
+    t('Network admin - elenco delle organizzazioni che partecipano'),
     t('more'),
     t('Apply'),
     t('Ripristina'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Totale organizzazioni: <strong>@total</strong>'),
     t('Page'),
-    t('pane: Hanno già aderito'),
-    t('Hanno già aderito'),
+    t('pane: partecipano già'),
+    t('Partecipano già'),
     t('View panes'),
   );
   $export['rbv_netadmview_joined'] = $view;
@@ -192,7 +198,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'il giorno';
   $handler->display->display_options['fields']['created']['date_format'] = 'panopoly_day';
-  /* Campo: Contenuto: Groups audience */
+  /* Campo: Contenuto: Organizzazione promotrice */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
