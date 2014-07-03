@@ -666,7 +666,9 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['content'] = 'There is no content in this group.';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '...';
+  $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
   /* Relationship: OG membership: OG membership from Nodo */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -1100,7 +1102,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     t('‹ precedente'),
     t('seguente ›'),
     t('ultima »'),
-    t('There is no content in this group.'),
+    t('...'),
     t('OG membership from node'),
     t('Tutti'),
     t('pane: all content'),
