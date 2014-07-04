@@ -118,7 +118,7 @@ html {
 }
 
 /*
- * node titles
+ * NODE TITLES
  */
 .node-type-org h1#page-title:before {
  font-family: FontAwesome;
@@ -149,6 +149,39 @@ html {
  text-decoration: inherit;
  content: "\f073";
  padding-right: .4em;
+}
+
+article.node-org > h2 > a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: .9em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f015";
+ padding-right: .2em;
+}
+
+article.node-project > h2 > a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: .9em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f06c";
+ padding-right: .2em;
+}
+
+article.node-event > h2 > a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: .9em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f073";
+ padding-right: .2em;
 }
 
 /*
