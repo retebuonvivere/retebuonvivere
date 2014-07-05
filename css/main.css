@@ -733,6 +733,11 @@ float: none;
  margin-top: 0;
 }
 
+.page-admin .checkbox input[type=checkbox] {
+ position: relative;
+ margin-left: 0;
+}
+
 div#edit-account .form-item-notify {
  clear: both;
 }
