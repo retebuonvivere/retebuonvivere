@@ -62,8 +62,6 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Tutti';
-  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = 'Persone di %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -200,7 +198,6 @@ function rbv_org_views_default_views() {
     t('Desc'),
     t('OG membership from user'),
     t('Tutti'),
-    t('Persone di %1'),
     t('Block'),
     t('pane: group members'),
     t('RBV members'),

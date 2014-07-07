@@ -91,6 +91,32 @@ function rbv_org_panelizer_defaults() {
     $display->content['new-92b606a3-a2bd-4d21-af74-0a28965746c7'] = $pane;
     $display->panels['contentmain'][0] = 'new-92b606a3-a2bd-4d21-af74-0a28965746c7';
     $pane = new stdClass();
+    $pane->pid = 'new-a3caa266-2976-4dcf-a5c4-6417dc4614d8';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_graph-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'override_title' => '',
+      'override_title_text' => '',
+      'widget_title' => 'Rete',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a3caa266-2976-4dcf-a5c4-6417dc4614d8';
+    $display->content['new-a3caa266-2976-4dcf-a5c4-6417dc4614d8'] = $pane;
+    $display->panels['sidebar'][0] = 'new-a3caa266-2976-4dcf-a5c4-6417dc4614d8';
+    $pane = new stdClass();
     $pane->pid = 'new-0af013b2-e6b5-421d-9358-b8b957715cb7';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
@@ -132,11 +158,11 @@ function rbv_org_panelizer_defaults() {
       'css_class' => 'panel',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '0af013b2-e6b5-421d-9358-b8b957715cb7';
     $display->content['new-0af013b2-e6b5-421d-9358-b8b957715cb7'] = $pane;
-    $display->panels['sidebar'][0] = 'new-0af013b2-e6b5-421d-9358-b8b957715cb7';
+    $display->panels['sidebar'][1] = 'new-0af013b2-e6b5-421d-9358-b8b957715cb7';
     $pane = new stdClass();
     $pane->pid = 'new-887ba031-2e38-4d7e-afce-f0cbc8a8e0e7';
     $pane->panel = 'sidebar';
@@ -170,11 +196,11 @@ function rbv_org_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '887ba031-2e38-4d7e-afce-f0cbc8a8e0e7';
     $display->content['new-887ba031-2e38-4d7e-afce-f0cbc8a8e0e7'] = $pane;
-    $display->panels['sidebar'][1] = 'new-887ba031-2e38-4d7e-afce-f0cbc8a8e0e7';
+    $display->panels['sidebar'][2] = 'new-887ba031-2e38-4d7e-afce-f0cbc8a8e0e7';
     $pane = new stdClass();
     $pane->pid = 'new-6db2aa04-582c-4a16-b319-b1e2131674c9';
     $pane->panel = 'sidebar';
@@ -210,11 +236,11 @@ function rbv_org_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '6db2aa04-582c-4a16-b319-b1e2131674c9';
     $display->content['new-6db2aa04-582c-4a16-b319-b1e2131674c9'] = $pane;
-    $display->panels['sidebar'][2] = 'new-6db2aa04-582c-4a16-b319-b1e2131674c9';
+    $display->panels['sidebar'][3] = 'new-6db2aa04-582c-4a16-b319-b1e2131674c9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
