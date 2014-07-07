@@ -37,7 +37,7 @@ function rbv_relpro_field_group_info() {
         'speed' => 'fast',
         'classes' => '',
         'required_fields' => 1,
-        'id' => '',
+        'id' => 'node_collaboration_form_group_relpro_data',
       ),
     ),
   );
