@@ -222,6 +222,31 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'footer';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<dl>
+ <dt><strong>Una rete</strong></dt>
+ <dd><p>Questa pagina mostra la rete di collaborazioni tra le organizzazioni della società civile e dell\'economia solidale di Verona. Se due organizzazioni collaborano ad uno stesso progetto/attività, viene tracciata una collaborazione tra loro. </p></dd>
+ <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
+ <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
+ <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
+ <dd>
+  <svg width="120" height="49">
+   <g class="data">
+    <g class="node" transform="translate(10,12)">
+     <circle class="node" r="9" style="fill: #ABDC0A; stroke: #fff; stroke-width: 4px;"></circle>
+     <text class="nodetext" dx="10" dy="1" font-size="13">Organizzazione</text>
+    </g>
+   </g>
+  </svg>
+ </dd>
+</dl>';
+  $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Contenuto: Relation: coopera con (node ↔ node) */
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['id'] = 'relation_cooperates_with_node';
@@ -494,7 +519,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
   $handler->display->display_options['style_options']['d3'] = array(
-    'library' => 'module_dependencies',
+    'library' => 'forcedirected',
     'fields' => array(
       'nid' => 'from:id',
       'title' => 'from:label',
@@ -606,6 +631,23 @@ function rbv_view_graph_views_default_views() {
     t('Page: graph main'),
     t('Page: ER graph'),
     t('Page: relation graph'),
+    t('<dl>
+ <dt><strong>Una rete</strong></dt>
+ <dd><p>Questa pagina mostra la rete di collaborazioni tra le organizzazioni della società civile e dell\'economia solidale di Verona. Se due organizzazioni collaborano ad uno stesso progetto/attività, viene tracciata una collaborazione tra loro. </p></dd>
+ <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
+ <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
+ <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
+ <dd>
+  <svg width="120" height="49">
+   <g class="data">
+    <g class="node" transform="translate(10,12)">
+     <circle class="node" r="9" style="fill: #ABDC0A; stroke: #fff; stroke-width: 4px;"></circle>
+     <text class="nodetext" dx="10" dy="1" font-size="13">Organizzazione</text>
+    </g>
+   </g>
+  </svg>
+ </dd>
+</dl>'),
     t('coopera con'),
     t('pane: ER graph'),
     t('View panes'),
