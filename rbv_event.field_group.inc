@@ -37,7 +37,7 @@ function rbv_event_field_group_info() {
         'speed' => 'fast',
         'classes' => '',
         'required_fields' => 1,
-        'id' => '',
+        'id' => 'node_event_form_group_event_dati',
       ),
     ),
   );
@@ -193,6 +193,7 @@ function rbv_event_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_event_vmode_group_content_group_vmode_group_content',
       ),
       'formatter' => 'open',
     ),
