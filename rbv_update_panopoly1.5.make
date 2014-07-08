@@ -4,7 +4,7 @@ core = 7.x
 ; retebuonvivere make file used to update to panopoly 1.5 and core 7.28
 
 projects[drupal][version] = 7.28
-; Patch sssue "String offset cast notice in field_invoke_method_multiple()"
+; Patch isssue "String offset cast notice in field_invoke_method_multiple()"
 projects[drupal][patch][1824820] = https://drupal.org/files/issues/string-offset-cast-1824820-65-D7.patch
 
 ; The Panopoly Foundation update 7.x-1.5
