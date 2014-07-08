@@ -807,3 +807,7 @@ padding: .3em;
   border-color: #cccccc;
 }
 
+/* SIMPLE FIX for ALERT MESSAGE of type danger caused by d3 module (coupled with graph module) when showing graphs with no nodes or links */
+.node-type-org .alert-danger {
+ display: none;
+}
