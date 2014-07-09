@@ -128,10 +128,20 @@ Colors used:
   font-weight: bold;
 }
 
+/* reset fontsize of Forum col and add padding in rows */
+.views-field.views-field-name {
+  font-size: 1.1em;
+}
+.views-field.views-field-title, .views-field.views-field-field-com-categories {
+  padding: 6px;
+}
+
 /*** FORUM STATISTICS *********************************************************/
 
 #forum-statistics {
   border: 1px solid #F5F5F5;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
 }
 
 #forum-statistics-header {
@@ -157,6 +167,8 @@ Colors used:
 
 div.forum-post {
 /*  border: 1px solid #F5F5F5; */
+  border-radius: 4px;
+  -moz-border-radius: 4px;
 }
 
 /* Header at the top of each post */
@@ -168,6 +180,9 @@ div.forum-post {
   color: #333333;
   font-weight: bold;
   border-bottom: 1px solid #F5F5F5;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius: 4px;
 }
 
 .forum-posted-on {
