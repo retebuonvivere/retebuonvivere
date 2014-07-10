@@ -267,9 +267,16 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '...',
+          'expandText' => 'Espandi »',
+          'slicePoint' => 2300,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« Riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 7,
       ),
       'featured' => array(
@@ -375,9 +382,16 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '...',
+          'expandText' => 'Espandi »',
+          'slicePoint' => 1800,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => '« Riduci',
+        ),
+        'type' => 'jquery_expander',
         'weight' => 6,
       ),
       'featured' => array(
