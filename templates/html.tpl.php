@@ -59,9 +59,9 @@
       document.createElement('footer');
    </script>
   <![endif]-->
+ <?php include_once("analyticstracking.php") ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
- <?php include_once("analyticstracking.php") ?>
   <div id="skip-link">
     <a href="#main-content" class="element-focusable element-invisible"><?php print t('Skip to main content'); ?></a>
   </div>
