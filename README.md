@@ -12,7 +12,7 @@ table of contents
 
 what is retebuonvivere.org
 --------------------------
-Basically retebuonvivere.org will be a [drupal][6] website for the community (the network) of the Civil Society and Social Economy Organizations (CSSEOs) of the province of Verona, Italy.
+Basically [retebuonvivere.org][25] is a [drupal][6] website for the community (the network) of the Civil Society and Social Economy Organizations (CSSEOs) of the province of Verona, Italy.
 It will then become a drupal distribution (allowing other networks to use it), built on top of [Panopoly][7] base distribution.
 
 structure of the project
@@ -44,9 +44,11 @@ If you want to **contribute** to this civil society network tool, great! Chose y
 
 You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous section), or visit the demo site (see next section).
 
-demo
-----
-At [dev-rbv-pan.gotpantheon.com][24] we mantain an updated test demo. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
+demo and production
+-------------------
+At [dev-rbv-pan.gotpantheon.com][24] we mantain an outdated test demo. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
+
+At [www.retebuonvivere.org][25] you can find the production website for the network of Verona, Italy.
 
 rationale of the project
 ------------------------
@@ -104,3 +106,4 @@ technical staff
 [22]: https://en.wikipedia.org/wiki/Social_entrepreneurship
 [23]: https://en.wikipedia.org/wiki/Cooperative
 [24]: http://dev-rbv-pan.gotpantheon.com/
+[25]: http://www.retebuonvivere.org/
