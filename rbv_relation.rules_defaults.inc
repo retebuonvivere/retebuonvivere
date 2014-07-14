@@ -97,7 +97,11 @@ function rbv_relation_default_rules_configuration() {
                                                   "unique" : 1
                                                 }
                                               },
-                                              { "drupal_message" : { "message" : "Le organizzazioni [node:field_rel_source] e [collaboration:field_rel_source] hanno una \\u003Ca href=\\u0022[relation-fetched:0:url]\\u0022\\u003Erelazione [relation-fetched:0:rid]\\u003C\\/a\\u003E di cooperazione, sulla base dei progetti: [relation-fetched:0:field_rel_collaborations].\\r\\n" } }
+                                              { "drupal_message" : {
+                                                  "message" : "Le organizzazioni [node:field_rel_source] e [collaboration:field_rel_source] hanno una \\u003Ca href=\\u0022[relation-fetched:0:url]\\u0022\\u003Erelazione [relation-fetched:0:rid]\\u003C\\/a\\u003E di cooperazione, sulla base dei progetti: [relation-fetched:0:field_rel_collaborations].\\r\\n",
+                                                  "repeat" : 0
+                                                }
+                                              }
                                             ]
                                           }
                                         ]
