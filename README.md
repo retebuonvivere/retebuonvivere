@@ -5,7 +5,7 @@ table of contents
 * [structure of the project](https://github.com/fonzy85vr/retebuonvivere#structure-of-the-project)
 * [developing](https://github.com/fonzy85vr/retebuonvivere#developing)
 * [start](https://github.com/fonzy85vr/retebuonvivere#start)
-* [demo](https://github.com/fonzy85vr/retebuonvivere#demo)
+* [demo and production](https://github.com/fonzy85vr/retebuonvivere#demo-and-production)
 * [rationale of this project](https://github.com/fonzy85vr/retebuonvivere#rationale-of-the-project)
 * [promoters](https://github.com/fonzy85vr/retebuonvivere#promoters)
 * [technical staff](https://github.com/fonzy85vr/retebuonvivere#technical-staff)
