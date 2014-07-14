@@ -31,12 +31,21 @@ We are going to export the data from a MySQL database via json, import them into
 
 Data structure
 --------------
-| Data Object          | SVG Object | Description                                 |
-| -------------------- | ---------- | -----------                                 |
-| Organization nodes   | Lines      |                                             |
-| Projects nodes       | Lines      |                                             |
-| Events nodes         | Circles    | Circles as milestones in organization lines |
-| Collaborations nodes | Intersections | Not visible, two organizations-lines intersect each other if they have a collaboration, and in the intersection point there is the project line |
+| Data Object          | SVG Object    | Description                                 |
+| -------------------- | ------------- | -----------                                 |
+| Organization nodes   | Paths (lines) |                                             |
+| Projects nodes       | Paths (lines) |                                             |
+| Events nodes         | Circles       | Circles as milestones in organization lines. |
+| Collaborations nodes | Intersections | Not visible. Two organizations-lines intersect each other if there is a collaboration between them, and in the intersection point there is the project line. |
+
+Desired Interaction 
+-----------
+| Event                | Behavior             |
+| -------------------- | -------------------- |
+| OnMouseOver on circles | show event preview |
+| OnMouseOver on lines   | show organization or project preview |
+| OnClick on lines       | highlight ego-meshork of that organization or project → all neighbors lines |
+| OnDrag on lines        | move dragged lines to allow self adjustment of visualization |
 
 Submodule of
 ------------
