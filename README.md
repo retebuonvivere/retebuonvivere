@@ -70,6 +70,14 @@ Each content type has a compound date field, with start and end dates.
 # Sketches
 You can find some sketches in [sketches.md](sketches.md).
 
+I put here just one:
+
+![linesStripped.png](images/linesStripped.png)
+
+O: Organization line
+P: project line
+E: Event (displayed as a milestone)
+
 # Submodule of
 
 This repository is a submodule of [retebuonvivere][0]
