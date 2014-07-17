@@ -50,7 +50,7 @@ You can follow this idea in some mockup images:
 
 * Lines details
   
-  ![lines5.jpg](images/lines5.png), ![lines7.jpg](images/lines7.png), ![linesPies.jpg](images/linesPies.png).
+  ![lines5.jpg](images/lines5.jpg), ![lines7.jpg](images/lines7.jpg), ![linesPies.jpg](images/linesPies.jpg).
 
 ## Examples of meshworks
 
