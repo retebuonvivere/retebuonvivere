@@ -1,4 +1,4 @@
-ketches
+# Sketches
 
 You can follow this idea in some mockup images:
 
@@ -8,7 +8,7 @@ You can follow this idea in some mockup images:
   
 * Some organizations drawn together with project lines starting from intersections (projects lines are an entanglement of organization threads)  
   
-  ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![lines6.jpg](images/lines6.jpg), ![linesG.jpg](images/linesG.png)
+  ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![lines6.jpg](images/lines6.jpg), ![linesG.png](images/linesG.png), ![linesStripped.png](images/linesStripped.png)
 
 * Project ego-meshwork
   
@@ -17,3 +17,5 @@ You can follow this idea in some mockup images:
 * Lines details
   
   ![lines5.jpg](images/lines5.jpg), ![lines7.jpg](images/lines7.jpg), ![linesPies.jpg](images/linesPies.jpg).
+
+Go back to [README.md](README.md)
