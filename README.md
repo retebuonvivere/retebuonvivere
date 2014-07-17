@@ -32,8 +32,25 @@ The idea is fairly simple: invert nodes with edges! Traditionally network graphs
 
 In the meshwork visualization we want to assign data subject to *lines*, and data relations to *circles*. This way a node-line can be displayed in a temporal way, starting from one side of the screen, extending to the other. And when that node-line has a relation to another node-line, they intersect together. This visualization focuses more on interweaving, intertwining, entanglement. The meshwork, by incorporating time in the visualization, doesn't need a timeline to be scrolled or a movie to be played.
 
-You can follow this idea in some mockup images ![lines.jpg](images/lines.jpg), ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![linesG.jpg](images/linesG.png), ![project-meshwork.jpg](images/project-meshwork.jpg).
+## Sketches
 
+You can follow this idea in some mockup images:
+
+* Organization line 
+
+  ![lines.jpg](images/lines.jpg)
+  
+* Some organizations drawn together with project lines starting from intersections (projects lines are an entanglement of organization threads)  
+  
+  ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![lines6.jpg](images/lines6.jpg)
+
+* Project ego-meshwork
+  
+  ![linesG.jpg](images/linesG.png), ![project-meshwork.jpg](images/project-meshwork.jpg).
+
+* Lines details
+  
+  ![lines5.jpg](images/lines5.png), ![lines7.jpg](images/lines7.png), ![linesPies.jpg](images/linesPies.png).
 
 ## Examples of meshworks
 
