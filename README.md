@@ -10,12 +10,14 @@ This repository is a workshop for the creation of a [d3][2] meshwok visualizatio
 # Goals
 
 We want to:
+
 1. Create a meshwork visualization for retevuonvivere project
 
-2. Create a meshwork visualization algoritm for displaying dynamic networks
+2. Create a general meshwork visualization algoritm for displaying dynamic networks (We want to make the meshwork algorithm open, in order to be implemented in other network apps such as [gephi][3]).
 
 # Dynamic Network
-The "traditional" way to visualize dynamic networks - which are networks changing through time - is to add a timeline object (a slide) by which the user can limit the time range of data. A remarkable example is the [immersion][5] web app created by Daniel Smilkov, Deepak Jagdish, and César Hidalgo at Mit Media Lab, which displays emails. A similar solution is used in the wellknown desktop app [Gephi][3] (for details see [this tutorial](http://www.clementlevallois.net/gephi/tuto/gephi_tutorial_dynamics.pdf) by Gephi community supporter Clement Levallois).
+
+The "traditional" way to visualize dynamic networks - which are networks changing through time - is to add a timeline object (a slide) by which the user can limit the time range of data. A remarkable example is the [immersion][5] web app created by Daniel Smilkov, Deepak Jagdish, and César Hidalgo at Mit Media Lab, which displays collaborators through emails. A similar solution is used in the wellknown desktop app [Gephi][3] (for details see [this tutorial](http://www.clementlevallois.net/gephi/tuto/gephi_tutorial_dynamics.pdf) by Gephi community supporter Clement Levallois).
 
 # Meshwork
 
@@ -32,16 +34,16 @@ In the meshwork visualization we want to assign data subject to *lines*, and dat
 
 You can follow this idea in some mockup images ![lines.jpg](images/lines.jpg), ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![linesG.jpg](images/linesG.png), ![project-meshwork.jpg](images/project-meshwork.jpg).
 
-# Examples of meshwork
+
+# Examples of meshworks
+
 On the internet there are some examples of meshwork type visualizations:
-| Example | Description | JS library used |
-| ------- | ----------- | --------------- |
-| [Comic Book Narrative Charts][6], by Nancy Iskander, Matthew Thorne, Craig Kaplan. | It's a specialized instance of a [Sankey Diagram][7]. | d3.js |
 
+| Example | Author | Description | JS library used / Technology |
+| ------- | ------ | ----------- | --------------- |
+| [Comic Book Narrative Charts][6] | by Nancy Iskander, Matthew Thorne, Craig Kaplan. | It's a specialized instance of a [Sankey Diagram][7]. | d3.js / svg |
+| [Network Graph Visualizer][8] | by Tom Preston-Werner | It shows collaboration code | Don't know / canvas. |
 
-# Tools
-
-We are going to export the data from a MySQL database via json, import them into a [d3 javascript library][2] and visualize on the browser. The want to make the visualizing meshwork algorithm open, to be implemented in other network apps such as [gephi][3].
 
 # Data structure
 
@@ -78,4 +80,5 @@ This repository is a submodule of [retebuonvivere][0]
 [4]: http://geactblog.files.wordpress.com/2012/03/tim_ingold-being_alive__essays_on_movement_knowledge_and_description__-routledge2011.pdf
 [5]: https://immersion.media.mit.edu/
 [6]: http://csclub.uwaterloo.ca/~n2iskand/?page_id=13
-[7]: 
+[7]: http://bost.ocks.org/mike/sankey/
+[8]: https://github.com/blog/39-say-hello-to-the-network-graph-visualizer
