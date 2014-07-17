@@ -74,9 +74,13 @@ I put here just one:
 
 ![linesStripped.png](images/linesStripped.png)
 
-O: Organization line
-P: project line
-E: Event (displayed as a milestone)
+Legend: 
+
+**O**: Organization line
+
+**P**: project line
+
+**E**: Event (displayed as a milestone)
 
 # Submodule of
 
