@@ -82,6 +82,8 @@ Legend:
 
 **E**: Event (displayed as a milestone)
 
+The algorithm should reposition lines in order to reduce line overlapping. After each project starting point, calculate, and reposition of the remaining lines lenght.
+
 # Submodule of
 
 This repository is a submodule of [retebuonvivere][0]
