@@ -18,4 +18,10 @@ You can follow this idea in some mockup images:
   
   ![lines5.jpg](images/lines5.jpg), ![lines7.jpg](images/lines7.jpg), ![linesPies.jpg](images/linesPies.jpg).
 
-Go back to [README.md](README.md)
+
+* Christian Lovato's projection. 
+
+  Christian suggests that the meshwork display is just onother projection of a 3D graph; while the network display is a top view, the meshwork is a side view. Here is his picture:
+  
+  ![christian_projection.jpg](images/christian_projection.jpg).
+  
