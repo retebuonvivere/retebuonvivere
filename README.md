@@ -35,7 +35,7 @@ In the meshwork visualization we want to assign data subject to *lines*, and dat
 You can follow this idea in some mockup images ![lines.jpg](images/lines.jpg), ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![linesG.jpg](images/linesG.png), ![project-meshwork.jpg](images/project-meshwork.jpg).
 
 
-# Examples of meshworks
+## Examples of meshworks
 
 On the internet there are some examples of meshwork type visualizations:
 
@@ -43,6 +43,10 @@ On the internet there are some examples of meshwork type visualizations:
 | ------- | ------ | ----------- | --------------- |
 | [Comic Book Narrative Charts][6] | by Nancy Iskander, Matthew Thorne, Craig Kaplan. | It's a specialized instance of a [Sankey Diagram][7]. | d3.js / svg |
 | [Network Graph Visualizer][8] | by Tom Preston-Werner | It shows collaboration code | Don't know / canvas. |
+
+# Main workflow
+
+We are going to export data from a Drupal MySQL database via json, import them into a [d3 javascript library][2] and visualize them on the browser.
 
 
 # Data structure
@@ -65,8 +69,6 @@ Each content type has a compound date field, with start and end dates.
 | OnClick over lines       | highlight ego-meshork of that organization or project → all neighbors lines |
 | OnDrag over lines        | move dragged lines to allow self adjustment of visualization |
 | OnDoubleClick over lines | go to node url |
-
-
 
 # Submodule of
 
