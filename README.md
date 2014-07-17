@@ -42,11 +42,11 @@ You can follow this idea in some mockup images:
   
 * Some organizations drawn together with project lines starting from intersections (projects lines are an entanglement of organization threads)  
   
-  ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![lines6.jpg](images/lines6.jpg)
+  ![lines2.jpg](images/lines2.jpg), ![lines3.jpg](images/lines3.jpg), ![lines6.jpg](images/lines6.jpg), ![linesG.jpg](images/linesG.png)
 
 * Project ego-meshwork
   
-  ![linesG.jpg](images/linesG.png), ![project-meshwork.jpg](images/project-meshwork.jpg).
+  ![project-meshwork.jpg](images/project-meshwork.jpg).
 
 * Lines details
   
