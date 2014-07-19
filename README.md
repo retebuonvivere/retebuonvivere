@@ -5,7 +5,7 @@ Retebuonvivere: meshwork d3 visualization
 
 # Description
 
-This repository is a workshop for the creation of a [d3][2] meshwok visualization to be used in [retebuonvivere][0] project.
+This repository is a workshop for the creation of a [d3][2] meshwok visualization to be used in [retebuonvivere][0] project. See [fonzy85vr/retebuonvivere#74][9] for the original issue.
 
 # Goals
 
@@ -98,3 +98,4 @@ This repository is a submodule of [retebuonvivere][0]
 [6]: http://csclub.uwaterloo.ca/~n2iskand/?page_id=13
 [7]: http://bost.ocks.org/mike/sankey/
 [8]: https://github.com/blog/39-say-hello-to-the-network-graph-visualizer
+[9]: https://github.com/fonzy85vr/retebuonvivere/issues/74
