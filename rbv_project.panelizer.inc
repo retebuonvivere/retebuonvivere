@@ -114,11 +114,14 @@ function rbv_project_panelizer_defaults() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'og_list_default',
+      'formatter' => 'entityreference_entity_view',
       'delta_limit' => '0',
       'delta_offset' => '0',
       'delta_reversed' => 0,
-      'formatter_settings' => array(),
+      'formatter_settings' => array(
+        'view_mode' => 'vmode_group_content',
+        'links' => 1,
+      ),
       'context' => 'panelizer',
       'override_title' => 1,
       'override_title_text' => 'Organizzazione promotrice',
