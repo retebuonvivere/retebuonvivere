@@ -309,12 +309,21 @@ h3 {
 .group-vmode-group-content .field-name-og-group-ref {
  clear: both;
 }
-.node-type-event .field-name-og-group-ref a, .node-type-project .field-name-og-group-ref a {
+.node-type-event .field-name-og-group-ref+a, .node-type-project .field-name-og-group-ref a {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  padding: .5em;
 }
+
+.node-type-event .field-name-og-group-ref {
+ background: #f5f5f5;
+}
+
+.node-type-event .field-name-og-group-ref .field-items {
+ float: none;
+}
+
 .field-name-og-group-ref .field-items {
  float: left;
 }
