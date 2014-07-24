@@ -7,6 +7,11 @@ Retebuonvivere: meshwork d3 visualization
 
 This repository is a workshop for the creation of a [d3][2] meshwok visualization to be used in [retebuonvivere][0] project. See [fonzy85vr/retebuonvivere#74][9] for the original issue.
 
+# Submodule of
+
+This repository is a submodule of [retebuonvivere][0]
+
+
 # Goals
 
 We want to:
@@ -43,7 +48,7 @@ On the internet there are some examples of meshwork type visualizations:
 
 # Main workflow
 
-We are going to export data from a Drupal MySQL database via json, import them into a [d3 javascript library][2] and visualize them on the browser.
+We are going to export data from a Drupal MySQL database via *json*, import them into a [d3 javascript library][2] and visualize them on the browser.
 
 
 # Data structure
@@ -56,6 +61,51 @@ We are going to export data from a Drupal MySQL database via json, import them i
 | Collaborations nodes | Intersections | Not visible. Two organizations-lines intersect each other if there is a collaboration between them, and in the intersection point there is the project line. |
 
 Each content type has a compound date field, with start and end dates. 
+
+This is a sample json file to highlight data structure. Important: we want to develop on top of the standard "nodes table + edges table" format to maintain compatibility with traditional network graph data.
+
+```json
+{
+    "nodes": [
+        {
+            "nid": 1, 
+            "label": "Organization 1 name",
+            "nodeType": "organization",
+            "startDate": "2014-02-01T09:00",
+            "endDate": null,
+            "url": "http://www.retebuonvivere.org/node/1"
+        },
+        {
+            "nid": 2, 
+            "label": "Organization 2 name",
+            "nodeType": "project",
+            "startDate": "2014-03-15T10:00",
+            "endDate": "2014-07-15T18:00",
+            "url": "http://www.retebuonvivere.org/node/2"
+        }
+    ],
+    "edges": [
+        {
+            "nid": 3,
+            "source": 1,
+            "target": 2,
+            "weight": 1,
+            "label": "Collaboration 1 label",
+            "url": "http://www.retebuonvivere.org/node/3"
+        }
+    ], 
+    "events": [
+        {
+            "nid": 4,
+            "nodeId": 1,
+            "label": "Event 1 name",
+            "startDate": "2014-04-19T18:00",
+            "endDate": "2014-04-19T22:30",
+            "url": "http://www.retebuonvivere.org/node/4"
+        }
+    ]
+}
+```
 
 # Desired Interaction 
 
@@ -84,9 +134,7 @@ Legend:
 
 The algorithm should reposition lines in order to reduce line overlapping. After each project starting point, calculate, and reposition of the remaining lines lenght.
 
-# Submodule of
 
-This repository is a submodule of [retebuonvivere][0]
 
 
 [0]: https://github.com/fonzy85vr/retebuonvivere
