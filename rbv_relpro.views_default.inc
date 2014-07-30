@@ -35,10 +35,15 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_com_logo' => 'field_com_logo',
+    'title' => 'title',
+  );
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['id'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['field'] = 'reverse_field_relpro_project_node';
+  $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['label'] = 'Content referencing nid from field_relpro_project';
   /* Campo: Contenuto: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
@@ -77,17 +82,59 @@ function rbv_relpro_views_default_views() {
 
   /* Display: pane: collaboratori */
   $handler = $view->new_display('panel_pane', 'pane: collaboratori', 'panel_pane_1');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Soggetto */
-  $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
-  $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
-  $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
-  $handler->display->display_options['fields']['field_rel_source']['relationship'] = 'reverse_field_relpro_project_node';
-  $handler->display->display_options['fields']['field_rel_source']['label'] = '';
-  $handler->display->display_options['fields']['field_rel_source']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
-    'link' => 1,
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'collaborator';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_com_logo' => 'field_com_logo',
+    'title' => 'title',
   );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['id'] = 'reverse_field_relpro_project_node';
+  $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['field'] = 'reverse_field_relpro_project_node';
+  $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['label'] = 'Content referencing nid from field_relpro_project';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
+  $handler->display->display_options['relationships']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
+  $handler->display->display_options['relationships']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
+  $handler->display->display_options['relationships']['field_rel_source_target_id']['relationship'] = 'reverse_field_relpro_project_node';
+  $handler->display->display_options['relationships']['field_rel_source_target_id']['label'] = 'Content referenced from field_rel_source';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Logo */
+  $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
+  $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
+  $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';
+  $handler->display->display_options['fields']['field_com_logo']['relationship'] = 'field_rel_source_target_id';
+  $handler->display->display_options['fields']['field_com_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_com_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_com_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_com_logo']['settings'] = array(
+    'image_style' => 'rbv_image_icon',
+    'image_link' => 'content',
+  );
+  /* Campo: Contenuto: Titolo */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_rel_source_target_id';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '28';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Contenuto: Logo (field_com_logo:fid) */
+  $handler->display->display_options['sorts']['field_com_logo_fid']['id'] = 'field_com_logo_fid';
+  $handler->display->display_options['sorts']['field_com_logo_fid']['table'] = 'field_data_field_com_logo';
+  $handler->display->display_options['sorts']['field_com_logo_fid']['field'] = 'field_com_logo_fid';
+  $handler->display->display_options['sorts']['field_com_logo_fid']['relationship'] = 'field_rel_source_target_id';
+  $handler->display->display_options['sorts']['field_com_logo_fid']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Contenuto: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -195,9 +242,10 @@ function rbv_relpro_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Contenuto referencing Contenuto from field_relpro_project'),
+    t('Content referencing nid from field_relpro_project'),
     t('Tutti'),
     t('pane: collaboratori'),
+    t('Content referenced from field_rel_source'),
     t('View panes'),
     t('Pane: eventi associati al progetto'),
     t('Eventi associati'),
