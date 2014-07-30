@@ -118,6 +118,25 @@ function rbv_networkadmin_default_page_manager_pages() {
     $display->content['new-fdfa02e8-83d6-42f7-80ca-d0e9522fa049'] = $pane;
     $display->panels['column1'][0] = 'new-fdfa02e8-83d6-42f7-80ca-d0e9522fa049';
     $pane = new stdClass();
+    $pane->pid = 'new-07363ecc-7d7b-4a48-9185-0a669abe3fb4';
+    $pane->panel = 'column1';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:21';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '07363ecc-7d7b-4a48-9185-0a669abe3fb4';
+    $display->content['new-07363ecc-7d7b-4a48-9185-0a669abe3fb4'] = $pane;
+    $display->panels['column1'][1] = 'new-07363ecc-7d7b-4a48-9185-0a669abe3fb4';
+    $pane = new stdClass();
     $pane->pid = 'new-9415840c-2228-45c0-9c36-cc5c6fb223ca';
     $pane->panel = 'column2';
     $pane->type = 'fieldable_panels_pane';
