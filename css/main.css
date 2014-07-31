@@ -413,6 +413,9 @@ select#edit-type {
 /*
  * FIELDSETS
  */
+fieldset.collapsible {
+ clear: both;
+}
 .field-group-fieldset {
  margin: 6px 0 0 0;
  background-color: #ffffff;
