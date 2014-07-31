@@ -424,7 +424,7 @@ function rbv_view_graph_views_default_views() {
   /* Display: pane: ER project graph */
   $handler = $view->new_display('panel_pane', 'pane: ER project graph', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Grafo';
+  $handler->display->display_options['title'] = 'Rete';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
@@ -506,7 +506,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['inherit_panels_path'] = '0';
@@ -514,7 +514,7 @@ function rbv_view_graph_views_default_views() {
   /* Display: pane: org relation graph */
   $handler = $view->new_display('panel_pane', 'pane: org relation graph', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Collaboratori';
+  $handler->display->display_options['title'] = 'Rete';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
@@ -592,7 +592,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['rbv_view_graph'] = array(
@@ -653,10 +653,9 @@ function rbv_view_graph_views_default_views() {
     t('View panes'),
     t('pane: relation graph'),
     t('pane: ER project graph'),
-    t('Grafo'),
+    t('Rete'),
     t('Tutti'),
     t('pane: org relation graph'),
-    t('Collaboratori'),
   );
   $export['rbv_view_graph'] = $view;
 
