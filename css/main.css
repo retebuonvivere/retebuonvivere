@@ -744,7 +744,7 @@ float: none;
  margin-bottom: 8px;
 }
 
-.form-checkboxes > div {
+.field-type-taxonomy-term-reference .form-checkboxes > div {
  float: left;
  margin-right: 1em;
 }
