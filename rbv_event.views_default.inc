@@ -1012,7 +1012,16 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Progetto di riferimento */
+  /* Campo: Contenuto: Titolo */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-share-alt"></i>';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link pull-right';
+  /* Campo: Contenuto: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1021,17 +1030,8 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['field_relpro_project']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
     'view_mode' => 'vmode_group_content',
-    'links' => 1,
+    'links' => 0,
   );
-  /* Campo: Contenuto: Titolo */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = 'Pagina della collaborazione';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Contenuto: Soggetto (field_rel_source) */
   $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
@@ -1065,7 +1065,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
@@ -1113,7 +1113,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     t('Progetti'),
     t('pane: collaborations'),
     t('Progetti e collaborazioni'),
-    t('Pagina della collaborazione'),
+    t('<i class="fa fa-share-alt"></i>'),
   );
   $export['rbv_view_group_content'] = $view;
 
