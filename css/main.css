@@ -257,8 +257,8 @@ div.view-content.row {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
- margin: .4em;
- padding: .5em;
+ margin: 0 0 .5em 0;
+ padding: 0 .6em 0 .6em;
 }
 
 /* Project collaborators*/
@@ -306,7 +306,9 @@ span.views-field.views-field-field-com-logo {
 }
 
 .node h2 {
- font-size: 1.7em;
+ font-size: 1.5em;
+ margin-top: 15px;
+ margin-bottom: 8px;
 }
 
 h3 {
@@ -314,7 +316,8 @@ h3 {
 }
 
 .collab-link a {
- margin-left: 6px;
+ position: relative;
+ top: 3px; 
 }
 
 /* PANE OG GROUP REFERENCE */
