@@ -73,7 +73,7 @@
       .attr("class", "nodetext")
       .attr("dx", 10)
       .attr("dy", ".35em")
-      .attr('font-size', '12')
+      .attr('font-size', '13')
       .text(function(d) { return d.name });
 
     force.on("tick", function() {
