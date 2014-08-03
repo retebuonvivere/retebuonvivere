@@ -130,27 +130,6 @@ calendario',
     $display->content['new-2ed37283-a440-43fb-bf0c-7aacc81b0648'] = $pane;
     $display->panels['contentmain'][0] = 'new-2ed37283-a440-43fb-bf0c-7aacc81b0648';
     $pane = new stdClass();
-    $pane->pid = 'new-f4b0a769-cbc3-4bfd-a5d3-60ad90542ed0';
-    $pane->panel = 'contentmain';
-    $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'fpid:25';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'view_mode' => 'full',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'f4b0a769-cbc3-4bfd-a5d3-60ad90542ed0';
-    $display->content['new-f4b0a769-cbc3-4bfd-a5d3-60ad90542ed0'] = $pane;
-    $display->panels['contentmain'][1] = 'new-f4b0a769-cbc3-4bfd-a5d3-60ad90542ed0';
-    $pane = new stdClass();
     $pane->pid = 'new-5132e499-9dd0-4ac2-9bcc-c43a0f87c8c0';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
@@ -379,6 +358,31 @@ calendario',
     $pane->uuid = '92f83d58-9f6a-4b0d-9f38-cb2a1ff5ff37';
     $display->content['new-92f83d58-9f6a-4b0d-9f38-cb2a1ff5ff37'] = $pane;
     $display->panels['contentmain'][0] = 'new-92f83d58-9f6a-4b0d-9f38-cb2a1ff5ff37';
+    $pane = new stdClass();
+    $pane->pid = 'new-558b77e0-7289-4cd0-b8b0-709105d0e16a';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_group_content-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'items_per_page' => '3',
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'view_mode' => 'vmode_group_content',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '558b77e0-7289-4cd0-b8b0-709105d0e16a';
+    $display->content['new-558b77e0-7289-4cd0-b8b0-709105d0e16a'] = $pane;
+    $display->panels['sidebar'][0] = 'new-558b77e0-7289-4cd0-b8b0-709105d0e16a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-92f83d58-9f6a-4b0d-9f38-cb2a1ff5ff37';
   $handler->conf['display'] = $display;
@@ -445,7 +449,7 @@ calendario',
   $handler->conf = array(
     'title' => 'Panel group calendar',
     'no_blocks' => 0,
-    'pipeline' => 'standard',
+    'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => '',
@@ -467,7 +471,7 @@ elenco',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bryant_flipped_flipped';
+  $display->layout = 'boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -606,10 +610,10 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-61ba3c9c-7b19-46c5-bec8-454d29f0375a';
+    $pane->pid = 'new-d840ec8b-f7ff-499e-a3eb-11eec8075194';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_view_group_content-panel_pane_5';
+    $pane->subtype = 'rbv_view_group_content-panel_pane_6';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -620,9 +624,6 @@ progetti/attività',
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'override_title' => '',
-      'override_title_text' => '',
-      'widget_title' => 'Tutti i progetti e le attività cui collaboriamo',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -632,9 +633,9 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '61ba3c9c-7b19-46c5-bec8-454d29f0375a';
-    $display->content['new-61ba3c9c-7b19-46c5-bec8-454d29f0375a'] = $pane;
-    $display->panels['contentmain'][0] = 'new-61ba3c9c-7b19-46c5-bec8-454d29f0375a';
+    $pane->uuid = 'd840ec8b-f7ff-499e-a3eb-11eec8075194';
+    $display->content['new-d840ec8b-f7ff-499e-a3eb-11eec8075194'] = $pane;
+    $display->panels['contentmain'][0] = 'new-d840ec8b-f7ff-499e-a3eb-11eec8075194';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1352,7 +1353,7 @@ collaborazioni',
   );
   $page->menu = array(
     'type' => 'tab',
-    'title' => 'elenco',
+    'title' => 'Elenco',
     'name' => 'navigation',
     'weight' => '1',
     'parent' => array(
@@ -1413,7 +1414,7 @@ collaborazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'burr_flipped';
+  $display->layout = 'boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1549,10 +1550,10 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-160390d1-ddf1-4ddd-9522-daff63ac6c90';
+    $pane->pid = 'new-e2eccc4a-b3ad-476b-907a-6b0a565042c2';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'rbv_view_group_content-panel_pane_5';
+    $pane->subtype = 'rbv_view_group_content-panel_pane_6';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1560,12 +1561,9 @@ progetti/attività',
       'context' => array(
         0 => 'argument_entity_id:node_1',
       ),
-      'override_title' => '',
-      'override_title_text' => '',
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'widget_title' => 'Tutti i progetti e le attività cui collaboriamo',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1575,9 +1573,9 @@ progetti/attività',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '160390d1-ddf1-4ddd-9522-daff63ac6c90';
-    $display->content['new-160390d1-ddf1-4ddd-9522-daff63ac6c90'] = $pane;
-    $display->panels['contentmain'][0] = 'new-160390d1-ddf1-4ddd-9522-daff63ac6c90';
+    $pane->uuid = 'e2eccc4a-b3ad-476b-907a-6b0a565042c2';
+    $display->content['new-e2eccc4a-b3ad-476b-907a-6b0a565042c2'] = $pane;
+    $display->panels['contentmain'][0] = 'new-e2eccc4a-b3ad-476b-907a-6b0a565042c2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
