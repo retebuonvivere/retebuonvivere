@@ -150,6 +150,16 @@ html {
  content: "\f073";
  padding-right: .4em;
 }
+.node-type-collaboration h1#page-title:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f1e0";
+ padding-right: .4em;
+}
 
 article.node-org > h2 > a:before {
  font-family: FontAwesome;
