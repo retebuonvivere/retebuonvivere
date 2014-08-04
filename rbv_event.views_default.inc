@@ -747,8 +747,8 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['label'] = 'all group events link';
-  $handler->display->display_options['footer']['area']['content'] = '<a class="btn btn-primary" href="node/!1/eventi/elenco">Tutti gli eventi</a>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['footer']['area']['content'] = '<a class="btn btn-primary btn-sm pull-right btn-more" href="/node/!1/eventi/elenco">Tutti gli eventi</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Contenuto: Titolo */
@@ -1229,7 +1229,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     t('tutti gli eventi'),
     t('successiva ›'),
     t('all group events link'),
-    t('<a class="btn btn-primary" href="node/!1/eventi/elenco">Tutti gli eventi</a>'),
+    t('<a class="btn btn-primary btn-sm pull-right btn-more" href="/node/!1/eventi/elenco">Tutti gli eventi</a>'),
     t('pane: all events'),
     t('Tutti gli eventi'),
     t('tutti i gli eventi'),
