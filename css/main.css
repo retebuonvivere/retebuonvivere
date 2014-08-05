@@ -283,13 +283,16 @@ div.view-content.row {
  margin-left: 0;
  margin-right: 0;
 }
+article .content {
+ padding-bottom: 12px;
+}
 
 .node-type-org .views-row {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: 0 0 .5em 0;
- padding: 0 .6em 0 .6em;
+ padding: 0 .7em 0 .7em;
 }
 
 /* Project collaborators and Organization members */
@@ -297,24 +300,29 @@ div.view-content.row {
  background: #f8f8f8;
  -moz-border-radius: .4em;
  border-radius: .4em;
+ margin: 0 0 .5em 0;
+ padding: 0 .7em 0 .7em;
+}
+.node-type-project .views-row.collaborator, .node-type-org .views-row.member {
+ max-width: 48%;
+ height: 48px;
  margin: 3px;
  padding: 5px;
  float: left;
 }
-.collaborator, .member {
- max-width: 48%;
- height: 48px;
-}
 .view-rbv-view-projectcollaborations .views-row-even, .node-type-org .view-rbv-view-members .views-row-even {
  background: #fcfcfc;
 }
-
 .collaborator .views-field.views-field-field-com-logo, .view-rbv-view-members .views-field-field-user-picture {
  padding: 0 3px 0 0;
  float: left;
 }
 .member .views-field-name {
  font-size: 1em;
+}
+
+.view-rbv-view-projectcollaborations .pagination, .view-rbv-view-group-content .pagination {
+ display: block;
 }
 
 /* Project and Event taxonomy */
@@ -360,27 +368,21 @@ h3 {
 .group-vmode-group-content .field-name-og-group-ref {
  clear: both;
 }
-.node-type-event .field-name-og-group-ref+a, .node-type-project .field-name-og-group-ref+a {
+
+.node-type-event .field-name-og-group-ref .field-item, .node-type-project .field-name-og-group-ref .field-item {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
- padding: .5em;
+ margin: 0 0 .5em 0;
+ padding: 0 .7em 0 .7em;
 }
 
-.node-type-event .field-name-og-group-ref, .node-type-project .field-name-og-group-ref {
- background: #f5f5f5;
+.masonry-item .field-name-og-group-ref .field-items {
+ clear: both;
 }
-
-.node-type-event .field-name-og-group-ref .field-items, .node-type-project .field-name-og-group-ref .field-items {
- float: none;
-}
-
-.field-name-og-group-ref .field-items {
- float: left;
-}
-.field-name-og-group-ref .field-item {
+.masonry-item .field-name-og-group-ref {
  margin-bottom: 4px;
- padding: 7px;
+ padding: 4px;
 }
 .content .field-name-og-group-ref a:before {
  content: 'di ';
