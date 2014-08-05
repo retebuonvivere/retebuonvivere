@@ -120,7 +120,7 @@ function rbv_project_panelizer_defaults() {
       'delta_reversed' => 0,
       'formatter_settings' => array(
         'view_mode' => 'vmode_group_content',
-        'links' => 1,
+        'links' => 0,
       ),
       'context' => 'panelizer',
       'override_title' => 1,
@@ -204,7 +204,7 @@ function rbv_project_panelizer_defaults() {
       'pager_id' => NULL,
       'offset' => NULL,
       'link_to_view' => NULL,
-      'more_link' => NULL,
+      'more_link' => 0,
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
