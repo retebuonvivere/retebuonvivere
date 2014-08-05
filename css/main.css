@@ -293,13 +293,15 @@ div.view-content.row {
 }
 
 /* Project collaborators and Organization members */
-.view-rbv-view-projectcollaborations .views-row, .node-type-org .view-rbv-view-members .views-row, .content .field-name-field-relpro-project {
+.node-type-project .views-row, .node-type-org .view-rbv-view-members .views-row, .content .field-name-field-relpro-project {
  background: #f8f8f8;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: 3px;
  padding: 5px;
  float: left;
+}
+.collaborator, .member {
  max-width: 48%;
  height: 48px;
 }
@@ -307,7 +309,7 @@ div.view-content.row {
  background: #fcfcfc;
 }
 
-.view-rbv-view-projectcollaborations .views-field.views-field-field-com-logo, .view-rbv-view-members .views-field-field-user-picture {
+.collaborator .views-field.views-field-field-com-logo, .view-rbv-view-members .views-field-field-user-picture {
  padding: 0 3px 0 0;
  float: left;
 }
