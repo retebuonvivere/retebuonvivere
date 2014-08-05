@@ -35,11 +35,6 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'name' => 'name',
-    'field_membership_role' => 'field_membership_role',
-  );
-  $handler->display->display_options['row_options']['separator'] = '|';
   /* Relationship: OG membership: OG membership from Utente */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
@@ -49,6 +44,17 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
+  /* Campo: Utente: Immagine */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'rbv_image_icon',
+    'image_link' => 'content',
+  );
   /* Sort criterion: OG membership: Created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'og_membership';
@@ -82,11 +88,36 @@ function rbv_org_views_default_views() {
     1 => '1',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
-
   /* Display: pane: group members */
   $handler = $view->new_display('panel_pane', 'pane: group members', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'member';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_user_picture' => 'field_user_picture',
+    'name' => 'name',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Utente: Immagine */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'rbv_image_icon',
+    'image_link' => 'content',
+  );
+  /* Campo: Utente: Nome */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['pane_title'] = 'RBV members';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -127,8 +158,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-4';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-3';
   $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
   $handler->display->display_options['style_options']['masonry_animated'] = TRUE;
   $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
@@ -162,6 +192,9 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
   $handler->display->display_options['fields']['og_user_node']['label'] = '';
+  $handler->display->display_options['fields']['og_user_node']['alter']['max_length'] = '28';
+  $handler->display->display_options['fields']['og_user_node']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['og_user_node']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['og_user_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_user_node']['type'] = 'og_list_default';
   $handler->display->display_options['fields']['og_user_node']['settings'] = array(
@@ -198,7 +231,6 @@ function rbv_org_views_default_views() {
     t('Desc'),
     t('OG membership from user'),
     t('Tutti'),
-    t('Block'),
     t('pane: group members'),
     t('RBV members'),
     t('View panes'),
