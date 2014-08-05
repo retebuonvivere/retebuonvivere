@@ -195,7 +195,7 @@ function rbv_event_field_default_field_instances() {
         'weight' => 1,
       ),
       'vmode_group_content' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
