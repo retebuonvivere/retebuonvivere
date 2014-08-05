@@ -292,26 +292,29 @@ div.view-content.row {
  padding: 0 .6em 0 .6em;
 }
 
-/* Project collaborators*/
-.node-type-project .views-row, .content .field-name-field-relpro-project {
+/* Project collaborators and Organization members */
+.view-rbv-view-projectcollaborations .views-row, .node-type-org .view-rbv-view-members .views-row, .content .field-name-field-relpro-project {
  background: #f8f8f8;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: 3px;
  padding: 5px;
  float: left;
+ max-width: 48%;
+ height: 48px;
 }
-.node-type-project .views-row-even {
+.view-rbv-view-projectcollaborations .views-row-even, .node-type-org .view-rbv-view-members .views-row-even {
  background: #fcfcfc;
 }
 
-span.views-field.views-field-field-com-logo {
+.view-rbv-view-projectcollaborations .views-field.views-field-field-com-logo, .view-rbv-view-members .views-field-field-user-picture {
  padding: 0 3px 0 0;
+ float: left;
 }
-.collaborator {
- max-width: 50%;
- max-height: 48px;
+.member .views-field-name {
+ font-size: 1em;
 }
+
 /* Project and Event taxonomy */
 .node-type-event .field-name-field-relpro-project, .page-taxonomy-term .node {
  background: #f5f5f5;
@@ -563,38 +566,46 @@ html.js fieldset.collapsed {
 
 /* USERS */
 .field-name-og-user-node {
-clear: both;
+ clear: both;
 }
-
-.field-name-og-user-node a {
- background: #f5f5f5;
+/* profile */
+.profile .field-name-field-com-social-links {
+ margin-bottom: 1em;
+}
+.profile .field-label {
+ margin-bottom: .4em;
+}
+.profile .field-name-og-user-node .field-item {
+ background: #f8f8f8;
  -moz-border-radius: .4em;
  border-radius: .4em;
- margin: .5em .5em 1em .5em;
+ margin: 0 .5em .5em 0;
  padding: .5em;
  float: left;
+ font-size: 1.2em
 }
-.views-field-name {
- font-size: 1.4em;
+.profile .field-name-og-user-node .even {
+ background: #fcfcfc;
 }
-.views-field-og-user-node {
+/* all users explore section */
+.masonry .views-field-name {
+ font-size: 1.3em;
+}
+.masonry-item .views-field-og-user-node {
  padding: .4em 0 .4em 0;
  list-style: none;
 }
-.views-field-og-user-node a {
+.masonry-item .views-field-og-user-node a {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  padding: .2em .4em;
  float: left;
  margin: .2em;
+ max-width: 57%;
 }
-.views-field-field-user-picture {
- float: left;
- margin: 0 1em 1em 0;
-}
-.view-display-id-panel_pane_2 .view-content {
-  margin-top: 1em;
+.masonry-item .views-field-field-user-picture {
+ margin: 0 .3em .3em 0;
 }
 
 /* USERS BACKEND */
