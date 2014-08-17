@@ -1,0 +1,19 @@
+{
+    "nodes": [
+        {
+            "id":"id_1", "label": "Naturalmente Verona",
+            "type": 1
+        },
+        {
+            "id":"id_2", "label": "Biosol",
+            "type": 2
+        }
+    ],
+    "links": [
+        {
+            "source": "id_1",
+            "target": "id_2",
+            "value": 1
+        }
+    ]
+}

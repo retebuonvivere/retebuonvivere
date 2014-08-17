@@ -1,0 +1,34 @@
+{
+    "nodesLines": [
+        {
+            "id":"id_1", 
+            "label": "Label Nodo 1",
+            "type": 1,
+            "startDate": "2014-02-01:09:00",
+            "endDate": "now"
+        },
+        {
+            "id":"id_2", 
+            "label": "Label Nodo 2",
+            "type": 2,
+            "startDate": "2014-02-01:09:00",
+            "endDate": "now"
+        }
+    ],
+    "edgesCross": [
+        {
+            "source": "id_1",
+            "target": "id_2",
+            "value": 1
+        }
+    ], 
+    "events": [
+        {
+            "id": "eid_1",
+            "lineId": "id_1",
+            "label": "label Event 1",
+            "startDate": "2014-04-14:18:00",
+            "endDate": "2014-04-14:22:30"
+        }
+    ]
+}
