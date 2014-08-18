@@ -8,19 +8,38 @@
 
      var canvas = d3.select("#canvas")
      .append("svg")
-     .attr("width", 1000)
-     .attr("height", 900);
+     .attr("width", 2000)
+     .attr("height", 1900);
 
-     var diagonal = d3.svg.diagonal()
-      .source({x: 100, y: 100})
-      .target({x: 800, y: 500});
-
+	 var data=[
+	 			[
+					[100,200],
+					[200,200],
+					[250,100],
+				],
+				
+				[
+					[110,210],
+					[210,210],
+					[260,150],
+				]
+    		];
+    			
+     var l = d3.svg.line()
+/*     .x(function(d){return d.x;})
+     .y(function(d){return d.y;});*/
+     	
+/*      .source({x: 100, y: 100})
+      .target({x: 200, y: 200});*/
+	for (var i=0;i<data.length;i++)
+	{
      canvas.append("path")
-      .attr("d", diagonal)
+      .data([data[i]])
+      .attr("d", l)
       .attr("fill", "none")
       .attr("stroke", "#16b235")
       .attr("stroke-width", 6);
-
+	}
    </script>
   </div>
  </body>
