@@ -29,52 +29,50 @@
 
     var graphWidth=1000;
 
-     var canvas = d3.select("#canvas")
-     .append("svg")
-     .attr("width", graphWidth)
-     .attr("height", 600)
+    var canvas = d3.select("#canvas")
+      .append("svg")
+      .attr("width", graphWidth)
+      .attr("height", 600)
 
     			
-     var l = d3.svg.line()
-/*     .x(function(d){return d.x;})
-     .y(function(d){return d.y;});*/
-     	
-/*      .source({x: 100, y: 100})
-      .target({x: 200, y: 200});*/
-    
-    
     var graphStart=1900;  
     var now=2014;
 
-	var pixelPerYear=graphWidth/(now-graphStart);
-	function xForYear(year)
-	{
-		if (year=="never")
-		{
-			year=now;
-		}
-		return (year-graphStart)*pixelPerYear;
-	}
+	  var pixelPerYear=graphWidth/(now-graphStart);
+	  function xForYear(year)
+	    {
+		    if (year=="never")
+		    {
+			    year=now;
+		    }
+		    return (year-graphStart)*pixelPerYear;
+	    }
       
-	for (var i=0;i<data.length;i++)
-	{
-		var y=50*i+100;
-		var birthX=xForYear(data[i].birth);
-		var deathX=xForYear(data[i].death);
-		
-		timeLineData=[ 
-						[birthX,y],
-						[deathX,y]
-					];
-		
-	    canvas.append("path")
-	      .data([timeLineData])
+      
+      var l = d3.svg.line()
+//        .x(function(d){return xForYear(d.birth) xForYear(d.death);})
+//        .y(function(d,i){return i*100;});
+
+  		var birthX=xForYear(data.birth);
+	  	var deathX=xForYear(data.death);
+			var y=100;
+	
+	      
+  		timeLineData=[ 
+				[birthX,y],
+				[deathX,y]
+			];
+    
+    
+	    canvas.selectAll("path")
+	      .data(timeLineData)
+        .enter()
+  	    .append("path")
 	      .attr("d", l)
 	      .attr("fill", "none")
 	      .attr("stroke", "#16b235")
 	      .attr("stroke-width", 6);
-	      
-	}
+
    </script>
   </div>
  </body>
