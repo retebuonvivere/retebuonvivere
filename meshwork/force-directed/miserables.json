@@ -1,10 +1,10 @@
 {
   "nodes":[
-    {"name":"org1","group":1,"birth":1980,"death":1990,"age":10},
-    {"name":"org2","group":1,"birth":1978,"death":1995,"age":17}
+    {"name":"org1","group":1,"birth":1980,"death":2014},
+    {"name":"proj1","group":2,"birth":1978,"death":1995}
  
   ],
   "links":[
-    {"source":1,"target":0,"value":1}
+    {"source":0,"target":1, "start":1996, "end":2008}
   ]
 }

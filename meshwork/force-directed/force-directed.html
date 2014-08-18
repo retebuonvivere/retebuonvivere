@@ -17,17 +17,29 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var startDate=1950;
-
+var graphStart=1950;  
+var now=2014;
 
 var width = 600,
     height = 400;
+
+var pixelPerYear=width/(now-graphStart);
+
+function xForYear(year)
+{
+	if (year=="never")
+	{
+		year=now;
+	}
+	return (year-graphStart)*pixelPerYear;
+}
+      
 
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-120)
-    .linkDistance(30)
+    .linkDistance(100)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
@@ -50,10 +62,10 @@ d3.json("miserables.json", function(error, graph) {
       .data(graph.nodes)
     .enter().append("line")
       .attr("class", "node")
-      .attr("x1", function(d){return d.birth-startDate;})
-      .attr("x2", function(d){return d.death-startDate;})
-      .attr("y1",function(d,i){console.log(d);return i*100;})
-      .attr("y2",function(d,i){return i*100;})
+      .attr("x1", function(d){return xForYear(d.birth);})
+      .attr("x2", function(d){return xForYear(d.death);})
+      .attr("y1",function(d,i){return d.y;})
+      .attr("y2",function(d,i){return d.y;})
   //    .attr("stroke",function(d) { return color(d.group); })
       .style("stroke-width", 20)
       .style("stroke",function(d) { return color(d.group); })
@@ -70,8 +82,8 @@ d3.json("miserables.json", function(error, graph) {
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
 
-    node.attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
+    node.attr("y1",function(d,i){return d.y;})
+		.attr("y2",function(d,i){return d.y;});
   });
 });
 
