@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+
+function parseJson(nodesFile,edgesFile)
+{
+	var nodes;
+	d3.json(nodesFile,function(error,parsed){
+		nodes=parsed;
+	})
+	
+	var edges;
+	d3.json(edgesFile,function(error,parsed){
+		edges=parsed;
+	})
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var graphStart=1950;  
+var now=2014;
+
+var width = 600,
+    height = 400;
+
+var pixelPerYear=width/(now-graphStart);
+
+function xForYear(year)
+{
+	if (year=="never")
+	{
+		year=now;
+	}
+	return (year-graphStart)*pixelPerYear;
+}
+      
+
+var color = d3.scale.category20();
+
+var force = d3.layout.force()
+    .charge(-120)
+    .linkDistance(100)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+    
+    
+var graph=parseJson("g_nodes.json","g_edges.json")
+
+force
+  .nodes(graph.nodes)
+  .links(graph.links)
+  .start();
+
+var link = svg.selectAll(".link")
+  .data(graph.links)
+.enter().append("line")
+  .attr("class", "link")
+  .style("stroke-width", 6);
+
+var node = svg.selectAll(".node")
+  .data(graph.nodes)
+.enter().append("line")
+  .attr("class", "node")
+  .attr("x1", function(d){return xForYear(d.birth);})
+  .attr("x2", function(d){return xForYear(d.death);})
+  .attr("y1",function(d,i){return d.y;})
+  .attr("y2",function(d,i){return d.y;})
+//    .attr("stroke",function(d) { return color(d.group); })
+  .style("stroke-width", 6)
+  .style("stroke",function(d) { return color(d.group); })
+
+//   .style("fill", function(d) { return color(d.group); })
+  .call(force.drag);
+
+node.append("title")
+  .text(function(d) { return d.name; });
+
+force.on("tick", function() {
+link.attr("x1", function(d) { return xForYear(d.date-.5); })
+	.attr("y1", function(d) { return d.source.y; })
+	.attr("x2", function(d) { return xForYear(d.date+.5); })
+	.attr("y2", function(d) { return d.target.y; });
+
+node.attr("y1",function(d,i){return d.y;})
+	.attr("y2",function(d,i){return d.y;});
+});
+  
+
+
+var x = d3.scale.linear()
+	.domain([graphStart, now])
+	.range([0, width]);
+
+
+var xAxis = d3.svg.axis()
+	.scale(x)
+	.tickSize(-height)
+	.tickPadding(10)	
+	.tickSubdivide(true)	
+	.orient("bottom");	
+
+
+svg.append("g")
+    .attr("class", "x axis")
+//    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+ 
+
+</script>
