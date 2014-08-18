@@ -56,7 +56,7 @@ d3.json("miserables.json", function(error, graph) {
       .data(graph.links)
     .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+      .style("stroke-width", 6);
 
   var node = svg.selectAll(".node")
       .data(graph.nodes)
@@ -67,7 +67,7 @@ d3.json("miserables.json", function(error, graph) {
       .attr("y1",function(d,i){return d.y;})
       .attr("y2",function(d,i){return d.y;})
   //    .attr("stroke",function(d) { return color(d.group); })
-      .style("stroke-width", 20)
+      .style("stroke-width", 6)
       .style("stroke",function(d) { return color(d.group); })
 
    //   .style("fill", function(d) { return color(d.group); })
@@ -77,14 +77,35 @@ d3.json("miserables.json", function(error, graph) {
       .text(function(d) { return d.name; });
 
   force.on("tick", function() {
-    link.attr("x1", function(d) { return d.source.x; })
+    link.attr("x1", function(d) { return xForYear(d.date-.5); })
         .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
+        .attr("x2", function(d) { return xForYear(d.date+.5); })
         .attr("y2", function(d) { return d.target.y; });
 
     node.attr("y1",function(d,i){return d.y;})
 		.attr("y2",function(d,i){return d.y;});
   });
+  
 });
+
+
+var x = d3.scale.linear()
+	.domain([graphStart, now])
+	.range([0, width]);
+
+
+var xAxis = d3.svg.axis()
+	.scale(x)
+	.tickSize(-height)
+	.tickPadding(10)	
+	.tickSubdivide(true)	
+	.orient("bottom");	
+
+
+svg.append("g")
+    .attr("class", "x axis")
+//    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+ 
 
 </script>
