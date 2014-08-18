@@ -17,8 +17,11 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var width = 960,
-    height = 500;
+var startDate=1950;
+
+
+var width = 600,
+    height = 400;
 
 var color = d3.scale.category20();
 
@@ -45,10 +48,17 @@ d3.json("miserables.json", function(error, graph) {
 
   var node = svg.selectAll(".node")
       .data(graph.nodes)
-    .enter().append("circle")
+    .enter().append("line")
       .attr("class", "node")
-      .attr("r", function(d){return d.age;})
-      .style("fill", function(d) { return color(d.group); })
+      .attr("x1", function(d){return d.birth-startDate;})
+      .attr("x2", function(d){return d.death-startDate;})
+      .attr("y1",function(d,i){console.log(d);return i*100;})
+      .attr("y2",function(d,i){return i*100;})
+  //    .attr("stroke",function(d) { return color(d.group); })
+      .style("stroke-width", 20)
+      .style("stroke",function(d) { return color(d.group); })
+
+   //   .style("fill", function(d) { return color(d.group); })
       .call(force.drag);
 
   node.append("title")
