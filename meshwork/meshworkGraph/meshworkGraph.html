@@ -25,12 +25,53 @@ function parseJson(nodesFile,edgesFile)
 		nodes=parsed;
 	})
 	
-	var edges;
+	var edgesOriginal;
 	d3.json(edgesFile,function(error,parsed){
-		edges=parsed;
+		edgesOriginal=parsed;
 	})
 	
+	var nodesIdMap=d3.map()
 	
+	for (var i=0;i<nodes.length;i++)
+	{
+		var node=nodes[i];
+		nodesIdMap.set(node["id"],i);
+	}
+	
+	var edges=[];
+	
+	for (var i=0;i<edgesOriginal.length;i++)
+	{
+		var edge=edgesOriginal[i];
+		var startEdge={
+						"source":	nodesIdMap.get(edge["source"]),
+						"target":	nodesIdMap.get(edge["target"]),
+						"date":		edge["start"],
+						"type":		"start",
+						"label":	edge["label"],
+						"url":		edge["url"]
+						};
+		var endEdge={
+						"source":	nodesIdMap.get(edge["target"]),
+						"target":	nodesIdMap.get(edge["source"]),
+						"date":		edge["end"],
+						"type":		"end",
+						"label":	edge["label"],
+						"url":		edge["url"]
+						};
+		edges.push(startEdge);
+		edges.push(endEdge);
+	}
+	
+	
+	var graphData= {
+						"links":edges,
+						"nodes":nodes
+					}
+	
+	return graphData;
+	
+	/*
 	tradurre il json che viene dalle views
 	e generare un solo oggetto (vedi graph in force-directed)
 	
@@ -41,10 +82,7 @@ function parseJson(nodesFile,edgesFile)
 	edges
 		2 edges per ciascuna collaborazione (vedi miserables.json)
 		date null (end va bene, lo consideriamo now; start deve essere valorizzato)
-
-	rinumerare gli id dei nodi	
-	
-	automatizzare le query e l'esportazione dal db
+*/
 	
 }
 
@@ -93,7 +131,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
     
     
-var graph=parseJson("g_nodes.json","g_edges.json")
+var graph=parseJson("nodes.json","edges.json")
 
 force
   .nodes(graph.nodes)
