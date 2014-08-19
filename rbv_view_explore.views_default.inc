@@ -670,6 +670,7 @@ function rbv_view_explore_views_default_views() {
     'field_rel_source' => 'field_rel_source',
     'view_node' => 'view_node',
     'field_rel_categories' => 'view_node',
+    'field_com_date' => 'view_node',
     'field_relpro_project' => 'field_relpro_project',
   );
   $handler->display->display_options['style_options']['default'] = 'field_relpro_project';
@@ -683,10 +684,17 @@ function rbv_view_explore_views_default_views() {
     ),
     'view_node' => array(
       'align' => '',
-      'separator' => '',
+      'separator' => ' ',
       'empty_column' => 0,
     ),
     'field_rel_categories' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_com_date' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -735,6 +743,18 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['fields']['field_rel_categories']['alter']['text'] = '([field_rel_categories])';
   $handler->display->display_options['fields']['field_rel_categories']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
+  /* Campo: Campo: Date */
+  $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
+  $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
+  $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
+  $handler->display->display_options['fields']['field_com_date']['label'] = 'Periodo';
+  $handler->display->display_options['fields']['field_com_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Campo: Contenuto: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
@@ -813,6 +833,7 @@ function rbv_view_explore_views_default_views() {
     t('collabora a '),
     t('tipo'),
     t('([field_rel_categories])'),
+    t('Periodo'),
     t('Progetto/attività'),
   );
   $export['rbv_view_lists'] = $view;
