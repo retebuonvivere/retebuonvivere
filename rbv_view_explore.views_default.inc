@@ -667,21 +667,82 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
+    'field_rel_source' => 'field_rel_source',
+    'view_node' => 'view_node',
+    'field_rel_categories' => 'view_node',
+    'field_relpro_project' => 'field_relpro_project',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'field_relpro_project';
   $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
+    'field_rel_source' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'view_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_rel_categories' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_relpro_project' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'rete';
+  $handler->display->display_options['footer']['area']['content'] = 'La rappresentazione grafica della rete di collaborazioni si trova su <a href="rete"><i class="fa fa-eye fa-lg"></i> Vedi la rete</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Soggetto */
+  $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
+  $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
+  $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
+  $handler->display->display_options['fields']['field_rel_source']['label'] = 'Organizzazione';
+  $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
+    'link' => 1,
+  );
+  /* Campo: Contenuto: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = 'collaborazione';
+  $handler->display->display_options['fields']['view_node']['text'] = 'collabora a ';
+  /* Campo: Contenuto: Tipo di collaborazione */
+  $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
+  $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
+  $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
+  $handler->display->display_options['fields']['field_rel_categories']['label'] = 'tipo';
+  $handler->display->display_options['fields']['field_rel_categories']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_rel_categories']['alter']['text'] = '([field_rel_categories])';
+  $handler->display->display_options['fields']['field_rel_categories']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
+  /* Campo: Contenuto: Progetto di riferimento */
+  $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
+  $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
+  $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
+  $handler->display->display_options['fields']['field_relpro_project']['label'] = 'Progetto/attività';
+  $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
+    'link' => 1,
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -745,6 +806,14 @@ function rbv_view_explore_views_default_views() {
     t('Progetti della rete'),
     t('pane: collaborazioni'),
     t('Collaborazioni nella rete'),
+    t('rete'),
+    t('La rappresentazione grafica della rete di collaborazioni si trova su <a href="rete"><i class="fa fa-eye fa-lg"></i> Vedi la rete</a>'),
+    t('Organizzazione'),
+    t('collaborazione'),
+    t('collabora a '),
+    t('tipo'),
+    t('([field_rel_categories])'),
+    t('Progetto/attività'),
   );
   $export['rbv_view_lists'] = $view;
 
