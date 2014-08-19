@@ -33,7 +33,7 @@ function drawGraph(graphData)
 	  .data(graphData.links)
 	  .enter().append("line")
 	  .attr("class", "link")
-	  .style("stroke-width", 6);
+	  .style("stroke-width", 3);
 
 	var node = svg.selectAll(".node")
 	  .data(graphData.nodes)
@@ -44,7 +44,7 @@ function drawGraph(graphData)
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y;})
 	//    .attr("stroke",function(d) { return color(d.group); })
-	  .style("stroke-width", 6)
+	  .style("stroke-width", 3)
 	  .style("stroke",function(d) { return color(d.group); })
 
 	//   .style("fill", function(d) { return color(d.group); })
@@ -88,11 +88,11 @@ function drawGraph(graphData)
 
 
 
-var graphStartDate=new Date(1995,1,1,0,0,0);  
+var graphStartDate=new Date(2005,1,1,0,0,0);  
 var now=new Date();
 
-var width = 600,
-    height = 400;
+var width = 1800,
+    height = 700;
 
 var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
 
@@ -107,12 +107,7 @@ var color = d3.scale.category20();
 var force = d3.layout.force()
     .charge(-120)
     .linkDistance(100)
-    .size([width, height]);-600,000,000,000
--400,000,000,000
--200,000,000,000
-0
-200,000,000,000
-400,00
+    .size([width, height]);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
