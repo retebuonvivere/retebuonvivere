@@ -12,6 +12,9 @@
   stroke-opacity: .6;
 }
 
+svg {
+  background: #f8f8f8;
+}
 </style>
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -20,7 +23,7 @@
 var graphStart=1950;  
 var now=2014;
 
-var width = 600,
+var width = 800,
     height = 400;
 
 var pixelPerYear=width/(now-graphStart);
@@ -38,8 +41,13 @@ function xForYear(year)
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(100)
+    .charge(-600)
+    .linkDistance(50)
+//    .linkStrength(1)
+//    .friction(.9)
+//    .chargeDistance(100)
+//    .theta(.8)
+    .gravity(.2)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
@@ -57,7 +65,7 @@ d3.json("miserables.json", function(error, graph) {
       .data(graph.links)
     .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", 6);
+      .style("stroke-width", 7);
 
   var node = svg.selectAll(".node")
       .data(graph.nodes)
@@ -67,11 +75,9 @@ d3.json("miserables.json", function(error, graph) {
       .attr("x2", function(d){return xForYear(d.death);})
       .attr("y1",function(d,i){return d.y;})
       .attr("y2",function(d,i){return d.y;})
-  //    .attr("stroke",function(d) { return color(d.group); })
-      .style("stroke-width", 6)
+      .style("stroke-width", 9)
       .style("stroke",function(d) { return color(d.group); })
 
-   //   .style("fill", function(d) { return color(d.group); })
       .call(force.drag);
 
   node.append("title")
@@ -80,7 +86,7 @@ d3.json("miserables.json", function(error, graph) {
   force.on("tick", function() {
     link.attr("x1", function(d) { return xForYear(d.date-.5); })
         .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return xForYear(d.date+.5); })
+        .attr("x2", function(d) { return xForYear(d.date); })
         .attr("y2", function(d) { return d.target.y; });
 
     node.attr("y1",function(d,i){return d.y;})
@@ -110,3 +116,5 @@ svg.append("g")
  
 
 </script>
+</body>
+</html>
