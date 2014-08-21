@@ -26,20 +26,19 @@ var svg = d3.select("body").append("svg")
 var nodesFile="nodes.json";
 var edgesFile="edges.json";
 
-
 var nodes;
 
-var $ =jQuery.noConflict();
+$(document).ready(function(){
 
-	$.getJson(nodesFile,function(parsed){
+	$.getJSON(nodesFile,function(parsed){
 	//		console.log(error);
-	//		console.log(parsed);
+	//		console.log("parsed = " + parsed);
 	
 		nodes=parsed;
 	
 		var edgesOriginal;
 
-		$.getJson(edgesFile,function(parsed){
+		$.getJSON(edgesFile,function(parsed){
 			edgesOriginal=parsed;
 			var nodesIdMap=d3.map()
 
@@ -120,7 +119,8 @@ var $ =jQuery.noConflict();
 
 			drawGraph(graphData);
 
-		})
-	})
+		});
+	});
 
+});
 
