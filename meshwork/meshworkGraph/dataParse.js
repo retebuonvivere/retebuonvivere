@@ -76,6 +76,9 @@ d3.json(nodesFile,function(error,parsed){
 			
 			if (nodesIdMap.has(edge["source"]) && nodesIdMap.has(edge["target"]))
 			{
+				console.log("edge")
+				console.log(edge)
+
 				console.log("creo lo startEdge")
 				var startEdge={
 								"source":	nodesIdMap.get(edge["source"]),
@@ -100,8 +103,6 @@ d3.json(nodesFile,function(error,parsed){
 								  "url":	edge["url"]
 								  };
 					console.log(endEdge)
-					console.log("edge")
-					console.log(edge)
 					edges.push(endEdge);
 				}
 			}
