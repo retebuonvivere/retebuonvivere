@@ -74,28 +74,31 @@ d3.json(nodesFile,function(error,parsed){
 			var edge=edgesOriginal[i];
 			var edgeStartDate=new Date(edge["start"])
 			
-			var startEdge={
-							"source":	nodesIdMap.get(edge["source"]),
-							"target":	nodesIdMap.get(edge["target"]),
-							"date":		edgeStartDate,
-							"type":		"start",
-							"label":	edge["label"],
-							"url":		edge["url"]
-							};
-			edges.push(startEdge);
-			var edgeEndDate=new Date(edge["end"]);
-
-			if (!dateEquals(edgeStartDate,edgeEndDate))
+			if (nodesIdMap.has(edge["source"]) && nodesIdMap.has(edge["target"]))
 			{
-			  var endEdge={
-							  "source":	nodesIdMap.get(edge["target"]),
-							  "target":	nodesIdMap.get(edge["source"]),
-							  "date":	edgeEndDate,
-							  "type":	"end",
-							  "label":	edge["label"],
-							  "url":	edge["url"]
-							  };
-			  edges.push(endEdge);
+				var startEdge={
+								"source":	nodesIdMap.get(edge["source"]),
+								"target":	nodesIdMap.get(edge["target"]),
+								"date":		edgeStartDate,
+								"type":		"start",
+								"label":	edge["label"],
+								"url":		edge["url"]
+								};
+				edges.push(startEdge);
+				var edgeEndDate=new Date(edge["end"]);
+
+				if (!dateEquals(edgeStartDate,edgeEndDate))
+				{
+				  var endEdge={
+								  "source":	nodesIdMap.get(edge["target"]),
+								  "target":	nodesIdMap.get(edge["source"]),
+								  "date":	edgeEndDate,
+								  "type":	"end",
+								  "label":	edge["label"],
+								  "url":	edge["url"]
+								  };
+				  edges.push(endEdge);
+				}
 			}
 		}
 
