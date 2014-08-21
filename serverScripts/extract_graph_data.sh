@@ -14,8 +14,8 @@ rm $EDGES_PREFIX.json 2>/dev/null
 cat /var/www/rbv/scripts/querys/nodes.sql | mysql -u rbv rbv 
 cat /var/www/rbv/scripts/querys/edges.sql | mysql -u rbv rbv 
 
-/usr/local/bin/csvjson $NODES_PREFIX.csv >$NODES_PREFIX.json
-/usr/local/bin/csvjson $EDGES_PREFIX.csv >$EDGES_PREFIX.json
+/usr/local/bin/csvjson -p \\ $NODES_PREFIX.csv >$NODES_PREFIX.json
+/usr/local/bin/csvjson -p \\ $EDGES_PREFIX.csv >$EDGES_PREFIX.json
 
 rm $NODES_PREFIX.csv 2>/dev/null
 rm $EDGES_PREFIX.csv 2>/dev/null
