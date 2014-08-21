@@ -76,6 +76,7 @@ d3.json(nodesFile,function(error,parsed){
 			
 			if (nodesIdMap.has(edge["source"]) && nodesIdMap.has(edge["target"]))
 			{
+				console.log("creo lo startEdge")
 				var startEdge={
 								"source":	nodesIdMap.get(edge["source"]),
 								"target":	nodesIdMap.get(edge["target"]),
@@ -89,7 +90,8 @@ d3.json(nodesFile,function(error,parsed){
 
 				if (!dateEquals(edgeStartDate,edgeEndDate))
 				{
-				  var endEdge={
+					console.log("creo l' endEdge")
+					var endEdge={
 								  "source":	nodesIdMap.get(edge["target"]),
 								  "target":	nodesIdMap.get(edge["source"]),
 								  "date":	edgeEndDate,
@@ -97,7 +99,10 @@ d3.json(nodesFile,function(error,parsed){
 								  "label":	edge["label"],
 								  "url":	edge["url"]
 								  };
-				  edges.push(endEdge);
+					console.log(endEdge)
+					console.log("edge")
+					console.log(edge)
+					edges.push(endEdge);
 				}
 			}
 		}
