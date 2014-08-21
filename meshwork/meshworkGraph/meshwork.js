@@ -10,8 +10,7 @@ function drawGraph(graphData)
 	var link = svg.selectAll(".link")
 	  .data(graphData.links)
 	  .enter().append("line")
-	  .attr("class", "link")
-	  .style("stroke-width", 3);
+	  .attr("class", "link");
 
 	var node = svg.selectAll(".node")
 	  .data(graphData.nodes)
@@ -21,8 +20,7 @@ function drawGraph(graphData)
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y;})
-	  .style("stroke-width", 3)
-	  .style("stroke",function(d) { return color(d.group); })
+	  .style("stroke",function(d) { return color(d.nodeType); })
 	  .call(force.drag);
 
 	node.append("title")

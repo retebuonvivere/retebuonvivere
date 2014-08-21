@@ -11,11 +11,12 @@ function xForDate(date)
 }
       
 
-var color = d3.scale.category20();
+var color = d3.scale.category10();
 
 var force = d3.layout.force()
-    .charge(-120)
+    .charge(-250)
     .linkDistance(100)
+    .gravity(.2)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
@@ -78,10 +79,10 @@ $(document).ready(function(){
 			
 				if (nodesIdMap.has(edge["source"]) && nodesIdMap.has(edge["target"]))
 				{
-					console.log("edge")
-					console.log(edge)
+//					console.log("edge")
+//					console.log(edge)
 
-					console.log("creo lo startEdge")
+//					console.log("creo lo startEdge")
 					var startEdge={
 									"source":	nodesIdMap.get(edge["source"]),
 									"target":	nodesIdMap.get(edge["target"]),
@@ -95,7 +96,7 @@ $(document).ready(function(){
 
 					if (!dateEquals(edgeStartDate,edgeEndDate))
 					{
-						console.log("creo l' endEdge")
+//						console.log("creo l' endEdge")
 						var endEdge={
 									  "source":	nodesIdMap.get(edge["target"]),
 									  "target":	nodesIdMap.get(edge["source"]),
@@ -104,7 +105,7 @@ $(document).ready(function(){
 									  "label":	edge["label"],
 									  "url":	edge["url"]
 									  };
-						console.log(endEdge)
+//						console.log(endEdge)
 						edges.push(endEdge);
 					}
 				}
