@@ -2,16 +2,15 @@
 <meta charset="utf-8">
 <style>
 
-.node {
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
+    .node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
 
-.link {
-  stroke: #999;
-  stroke-opacity: .6;
+    .link {
+      stroke: #999;
+      stroke-opacity: .6;
 }
-
 </style>
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -21,9 +20,6 @@
 
 function drawGraph(graphData)
 {
-
-	console.log(graphData)
-
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)
@@ -39,19 +35,16 @@ function drawGraph(graphData)
 	  .data(graphData.nodes)
 	  .enter().append("line")
 	  .attr("class", "node")
-	  .attr("x1", function(d){return xForDate(d.start);})
-	  .attr("x2", function(d){return xForDate(d.end);})
+	  .attr("x1",function(d){return xForDate(d.start);})
+	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y;})
-	//    .attr("stroke",function(d) { return color(d.group); })
 	  .style("stroke-width", 3)
 	  .style("stroke",function(d) { return color(d.group); })
-
-	//   .style("fill", function(d) { return color(d.group); })
 	  .call(force.drag);
 
 	node.append("title")
-	  .text(function(d) { return d.name; });
+	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
 	link.attr("x1", function(d) { return xForDate(d.date); })
@@ -129,9 +122,8 @@ d3.json(nodesFile,function(error,parsed){
 
 	d3.json(edgesFile,function(error,parsed){
 		edgesOriginal=parsed;
-	
 		var nodesIdMap=d3.map()
-//		console.log(nodes)
+
 		for (var i=0;i<nodes.length;i++)
 		{
 			var node=nodes[i];
@@ -152,7 +144,11 @@ d3.json(nodesFile,function(error,parsed){
 			{
 			    node["end"]=new Date(node["end"])
 			}
-			
+// manca il caso in cui la data di fine sia uguale a quella di inizio, ma solo perché automaticamente settata da drupal. Non possiamo usare == con le dates
+			if (node["end"]==node["start"])
+			{
+			    node["end"]=now;
+			}
 		}
 
 		var edges=[];
