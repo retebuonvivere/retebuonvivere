@@ -168,6 +168,12 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> persone in totale.</p>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Utente: Immagine */
@@ -243,6 +249,7 @@ function rbv_org_views_default_views() {
     t('‹ precedente'),
     t('seguente ›'),
     t('ultima »'),
+    t('<p>Ci sono <strong>@total</strong> persone in totale.</p>'),
   );
   $export['rbv_view_members'] = $view;
 
