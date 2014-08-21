@@ -23,8 +23,8 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
     
     
-var nodesFile="nodesSmall.json";
-var edgesFile="edgesSmall.json";
+var nodesFile="nodes.json";
+var edgesFile="edges.json";
 
 
 var nodes;
@@ -60,7 +60,7 @@ d3.json(nodesFile,function(error,parsed){
 			{
 			    node["end"]=new Date(node["end"])
 			}
-// manca il caso in cui la data di fine sia uguale a quella di inizio, ma solo perché automaticamente settata da drupal. Non possiamo usare == con le dates
+
 			if (dateEquals(node["end"],node["start"]))
 			{
 			    node["end"]=now;
