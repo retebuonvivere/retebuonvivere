@@ -311,6 +311,12 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> contenuti in totale.</p>';
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -363,6 +369,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> eventi in programmazione.<br />
+Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> eventi</a>.</p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
@@ -427,6 +441,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> progetti. <br /> 
+Vedi <a href="progetti">tutti i <i class="fa fa-leaf fa-lg"></i> progetti</a>.</p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content statistics: Visualizzazioni oggi */
   $handler->display->display_options['sorts']['daycount']['id'] = 'daycount';
@@ -505,6 +527,14 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> discussioni. <br /> 
+Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discussioni</a>.</p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Cerca: Score */
   $handler->display->display_options['sorts']['score']['id'] = 'score';
@@ -572,6 +602,13 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> organizzazioni in totale.</p>';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -602,7 +639,7 @@ function rbv_view_explore_views_default_views() {
   /* Display: pane: progetti */
   $handler = $view->new_display('panel_pane', 'pane: progetti', 'panel_pane_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Progetti della rete';
+  $handler->display->display_options['title'] = 'Progetti/attività della rete';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
@@ -618,6 +655,13 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> progetti/attività in totale.</p>';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -728,13 +772,18 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> collaborazioni in totale.</p>';
   /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'rete';
-  $handler->display->display_options['footer']['area']['content'] = 'La rappresentazione grafica della rete di collaborazioni si trova su <a href="rete"><i class="fa fa-eye fa-lg"></i> Vedi la rete</a>';
-  $handler->display->display_options['footer']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['footer']['area']['content'] = '<p>La rappresentazione grafica della rete di collaborazioni si trova su <a href="rete"><i class="fa fa-eye fa-lg"></i> Vedi la rete</a></p>';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['id'] = 'field_relpro_project_target_id';
@@ -816,6 +865,15 @@ function rbv_view_explore_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Campo: Contenuto: Titolo */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_relpro_project_target_id';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -832,6 +890,32 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'collaboration' => 'collaboration',
   );
+  /* Filter criterion: Contenuto: Titolo */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_relpro_project_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Progetto';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -858,29 +942,39 @@ function rbv_view_explore_views_default_views() {
     t('‹ precedente'),
     t('successiva ›'),
     t('ultima »'),
+    t('total'),
+    t('<p>Ci sono <strong>@total</strong> contenuti in totale.</p>'),
     t('pane: upcoming'),
     t('Prossimi eventi'),
     t('vedi tutto'),
     t('Eventi per pagina'),
+    t('<p>Ci sono <strong>@total</strong> eventi in programmazione.<br />
+Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> eventi</a>.</p>'),
     t('View panes'),
     t('pane: nuovi progetti'),
     t('Progetti/attività più visti di oggi'),
+    t('<p>Ci sono <strong>@total</strong> progetti. <br /> 
+Vedi <a href="progetti">tutti i <i class="fa fa-leaf fa-lg"></i> progetti</a>.</p>'),
     t('pane: search'),
     t('Cerca'),
     t('pane: discussion search'),
     t('Tutte le discussioni'),
     t('Sort by'),
     t('Desc'),
+    t('<p>Ci sono <strong>@total</strong> discussioni. <br /> 
+Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discussioni</a>.</p>'),
     t('Cerca discussione'),
     t('pane: organizzazioni'),
     t('Organizzazioni della rete'),
     t('- Tutti -'),
+    t('<p>Ci sono <strong>@total</strong> organizzazioni in totale.</p>'),
     t('pane: progetti'),
-    t('Progetti della rete'),
+    t('Progetti/attività della rete'),
+    t('<p>Ci sono <strong>@total</strong> progetti/attività in totale.</p>'),
     t('pane: collaborazioni'),
     t('Collaborazioni nella rete'),
-    t('rete'),
-    t('La rappresentazione grafica della rete di collaborazioni si trova su <a href="rete"><i class="fa fa-eye fa-lg"></i> Vedi la rete</a>'),
+    t('<p>Ci sono <strong>@total</strong> collaborazioni in totale.</p>'),
+    t('<p>La rappresentazione grafica della rete di collaborazioni si trova su <a href="rete"><i class="fa fa-eye fa-lg"></i> Vedi la rete</a></p>'),
     t('entity referenced from field_relpro_project'),
     t('entity referenced from field_rel_source'),
     t('Organizzazione'),
@@ -891,6 +985,7 @@ function rbv_view_explore_views_default_views() {
     t('([field_rel_categories])'),
     t('Periodo'),
     t('Progetto/attività'),
+    t('Progetto'),
   );
   $export['rbv_view_lists'] = $view;
 
