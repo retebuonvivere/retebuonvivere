@@ -16,10 +16,13 @@ var color = d3.scale.category10();
 var force = d3.layout.force()
     .charge(-250)
     .linkDistance(100)
-    .gravity(.2)
+    .gravity(.1)
     .size([width, height]);
 
 var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
+
+var container;
+var xAxis;
 
 function xForDate(date)
 {
@@ -33,13 +36,25 @@ function drawGraph(graphData)
 	  .links(graphData.links)
 	  .start();
 
-	var link = svg.selectAll(".link")
+	container=svg.append("g")
+		
+
+/*	var drag = d3.behavior.drag()
+		.origin(function(d) { return d; })
+		.on("dragstart", dragstarted)
+		.on("drag", dragged)
+		.on("dragend", dragended);*/
+    var scale = d3.time.scale() // time.scale() invece di scale.linear()
+		.domain([graphStartDate, now])
+		.range([0, width]);
+
+	var link = container.selectAll(".link")
 	  .data(graphData.links)
 	  .enter()
 	  .append("line")
 	  .attr("class", "link");
 
-	var node = svg.selectAll(".node")
+	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
 	  .append("line")
@@ -84,21 +99,51 @@ function drawGraph(graphData)
 	});
 
 
-	var x = d3.time.scale() // time.scale() invece di scale.linear()
-		.domain([graphStartDate, now])
-		.range([0, width]);
+
+	var zoom = d3.behavior.zoom()
+		.scaleExtent([0.1, 10])
+		.on("zoom", function() {
+//			container.select("g").call(xAxis);
+			container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+			svg.call(xAxis);
+		})
+		.x(scale);
 
 
-	var xAxis = d3.svg.axis()
-		.scale(x)
+
+/*	svg.append("rect")
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("width", width)
+                .attr("height", height)
+                .attr("opacity", 0);*/
+    svg.call(zoom);
+
+
+	xAxis = d3.svg.axis()
+		.scale(scale)
 //		.ticks(d3.time.months, 2)
 		.tickSize(-height)
 		.tickPadding(10)	
 		.tickSubdivide(true)	
 		.orient("bottom");
 
-	svg.append("g")
-		.attr("class", "x-axis")
+	svg
+		.attr("class", "x axis")
 		.call(xAxis);
 
+}
+
+function dragstarted(d) {
+	console.log(d)
+  d3.event.sourceEvent.stopPropagation();
+  d3.select(this).classed("dragging", true);
+}
+
+function dragged(d) {
+  d3.select(this).attr("y1",  d3.event.x).attr("cy", d.y = d3.event.y);
+}
+
+function dragended(d) {
+  d3.select(this).classed("dragging", false);
 }
