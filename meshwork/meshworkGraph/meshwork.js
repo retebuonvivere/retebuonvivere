@@ -10,6 +10,13 @@ var force = d3.layout.force()
     .gravity(.2)
     .size([width, height]);
 
+var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
+
+function xForDate(date)
+{
+	return (date.getTime()-graphStartDate.getTime())*pixelPerMs;
+}
+      
 function drawGraph(graphData)
 {
 	force
@@ -27,7 +34,16 @@ function drawGraph(graphData)
 	  .data(graphData.nodes)
 	  .enter()
 	  .append("line")
-	  .attr("class", "node")
+	  .attr("class",function(n){
+	  		if (n.nodeType=="org-neverStarted")
+	  		{
+	  			return "node-neverStarted";
+	  		}
+	  		else
+	  		{
+	  			return "node";
+	  		}
+	  	})
 	  .attr("x1",function(d){return xForDate(d.start);})
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})

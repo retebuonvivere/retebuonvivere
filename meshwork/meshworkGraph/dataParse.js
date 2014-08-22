@@ -3,13 +3,6 @@
 
 var now=new Date();
 
-var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
-
-function xForDate(date)
-{
-	return (date.getTime()-graphStartDate.getTime())*pixelPerMs;
-}
-      
 
 
     
@@ -31,7 +24,8 @@ $(document).ready(function(){
 
 		$.getJSON(edgesFile,function(parsed){
 			edgesOriginal=parsed;
-			var nodesIdMap=d3.map()
+			var nodesIdMap=d3.map();
+			var neverStartedNodes=d3.map();
 
 			for (var i=0;i<nodes.length;i++)
 			{
@@ -39,7 +33,8 @@ $(document).ready(function(){
 				nodesIdMap.set(node["id"],i);
 				if (isNaN(new Date(node["start"]).getTime()))
 				{
-					node["start"]=graphStartDate;
+					node["start"]=null;
+					neverStartedNodes.set(i,node);
 				}
 				else
 				{
@@ -73,9 +68,28 @@ $(document).ready(function(){
 //					console.log(edge)
 
 //					console.log("creo lo startEdge")
+					var sourceNodeIndex=nodesIdMap.get(edge["source"]);
+					var targetNodeIndex=nodesIdMap.get(edge["target"]);
+					
+					if (neverStartedNodes.has(sourceNodeIndex))
+					{
+						var node=nodes[sourceNodeIndex];
+						if (node["start"]==null)
+						{
+							node["start"]=edgeStartDate;
+						}
+						else
+						{
+							if (node["start"]>edgeStartDate)
+							{
+								node["start"]=edgeStartDate;
+							}
+						}
+					}
+					
 					var startEdge={
-									"source":	nodesIdMap.get(edge["source"]),
-									"target":	nodesIdMap.get(edge["target"]),
+									"source":	sourceNodeIndex,
+									"target":	targetNodeIndex,
 									"date":		edgeStartDate,
 									"type":		"start",
 									"label":	edge["label"],
@@ -88,8 +102,8 @@ $(document).ready(function(){
 					{
 //						console.log("creo l' endEdge")
 						var endEdge={
-									  "source":	nodesIdMap.get(edge["target"]),
-									  "target":	nodesIdMap.get(edge["source"]),
+									  "source":	targetNodeIndex,
+									  "target":	sourceNodeIndex,
 									  "date":	edgeEndDate,
 									  "type":	"end",
 									  "label":	edge["label"],
@@ -100,6 +114,14 @@ $(document).ready(function(){
 					}
 				}
 			}
+			
+			neverStartedNodes.forEach(function(i,n){
+				if (n["start"]==null)
+				{
+					n["start"]=graphStartDate;
+					n["nodeType"]="org-neverStarted";
+				}			
+			})
 
 
 			var graphData= {
