@@ -54,6 +54,10 @@ function drawGraph(graphData)
 	  .append("line")
 	  .attr("class", "link");
 
+	var drag = force.drag()
+    	.on("dragstart", function (d) {
+			d3.event.sourceEvent.stopPropagation();
+		});
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
@@ -83,7 +87,7 @@ function drawGraph(graphData)
 	  		}
 	  })
 	  .style("stroke-width","4px")
-	  .call(force.drag);
+	  .call(drag);
 
 	node.append("title")
 	  .text(function(d) {return d.name;});
@@ -134,16 +138,12 @@ function drawGraph(graphData)
 
 }
 
-function dragstarted(d) {
-	console.log(d)
-  d3.event.sourceEvent.stopPropagation();
-  d3.select(this).classed("dragging", true);
-}
-
+/*
 function dragged(d) {
   d3.select(this).attr("y1",  d3.event.x).attr("cy", d.y = d3.event.y);
 }
-
+*//*
 function dragended(d) {
   d3.select(this).classed("dragging", false);
 }
+*/
