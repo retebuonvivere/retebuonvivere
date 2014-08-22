@@ -11,17 +11,7 @@ function xForDate(date)
 }
       
 
-var color = d3.scale.category10();
 
-var force = d3.layout.force()
-    .charge(-250)
-    .linkDistance(100)
-    .gravity(.2)
-    .size([width, height]);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
     
     
 var nodesFile="nodes.json";

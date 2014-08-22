@@ -1,14 +1,14 @@
 svg {
- background: #f1ffad;
+ background: #000;
 }
 .node {
   stroke: #f5e34d;
-  stroke-opacity: .75;
-  stroke-width: 6px;
+  stroke-opacity: .95;
+  stroke-width: 4px;
 }
 
 .link {
   stroke: #999;
-  stroke-opacity: .75;
-  stroke-width: 10px;
+  stroke-opacity: .65;
+  stroke-width: 4px;
 }

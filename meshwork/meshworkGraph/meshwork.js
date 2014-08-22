@@ -1,4 +1,14 @@
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
+var color = d3.scale.category10();
+
+var force = d3.layout.force()
+    .charge(-250)
+    .linkDistance(100)
+    .gravity(.2)
+    .size([width, height]);
 
 function drawGraph(graphData)
 {
@@ -35,7 +45,6 @@ function drawGraph(graphData)
 	node.attr("y1",function(d,i){return d.y;})
 		.attr("y2",function(d,i){return d.y;});
 	});
-
 
 
 	var x = d3.scale.linear()
