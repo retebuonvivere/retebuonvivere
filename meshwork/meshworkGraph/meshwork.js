@@ -1,6 +1,15 @@
+var epsilon=0.00001
+
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
+
+var gradient= svg.append("defs")
+	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
+	
+gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
+gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
+gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
 
 var color = d3.scale.category10();
 
@@ -47,8 +56,18 @@ function drawGraph(graphData)
 	  .attr("x1",function(d){return xForDate(d.start);})
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
-	  .attr("y2",function(d,i){return d.y;})
-	  .style("stroke",function(d) { return color(d.nodeType); })
+	  .attr("y2",function(d,i){return d.y+epsilon;})
+	  .style("stroke",function(n) { 
+	  		if (n.nodeType=="org-neverStarted")
+	  		{
+	  			return "url(#fadedGradient)";
+	  		}
+	  		else
+	  		{
+	  			return color(n.nodeType);
+	  		}
+	  })
+	  .style("stroke-width","4px")
 	  .call(force.drag);
 
 	node.append("title")
@@ -61,7 +80,7 @@ function drawGraph(graphData)
 		.attr("y2", function(d) { return d.target.y; });
 
 	node.attr("y1",function(d,i){return d.y;})
-		.attr("y2",function(d,i){return d.y;});
+		.attr("y2",function(d,i){return d.y+epsilon;});
 	});
 
 

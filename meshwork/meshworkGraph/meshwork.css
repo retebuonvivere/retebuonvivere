@@ -6,7 +6,11 @@ svg {
     stroke-opacity: .95;
     stroke-width: 4px;
 }
-
+.node-neverStarted {
+    stroke: url(#fadedGradient);
+    stroke-opacity: .95;
+    stroke-width: 4px;
+}
 .link {
     stroke: #999;
     stroke-opacity: .65;
