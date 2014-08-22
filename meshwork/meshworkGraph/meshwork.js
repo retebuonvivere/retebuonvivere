@@ -7,9 +7,9 @@ var svg = d3.select("body").append("svg")
 var gradient= svg.append("defs")
 	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
 	
-gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
-gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
-gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
+gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
+gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
+gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
 
 var color = d3.scale.category10();
 
@@ -63,29 +63,23 @@ function drawGraph(graphData)
 	  .enter()
 	  .append("line")
 	  .attr("class",function(n){
-	  		if (n.nodeType=="org-neverStarted")
-	  		{
-	  			return "node-neverStarted";
-	  		}
-	  		else
-	  		{
-	  			return "node";
-	  		}
+	  		return n.nodeType;
 	  	})
 	  .attr("x1",function(d){return xForDate(d.start);})
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
-	  .style("stroke",function(n) { 
+	  /*.style("stroke",function(n) { 
 	  		if (n.nodeType=="org-neverStarted")
 	  		{
 	  			return "url(#fadedGradient)";
 	  		}
-	  		else
+	  		else if
 	  		{
 	  			return color(n.nodeType);
 	  		}
-	  })
+	  })*/
+	  
 	  .style("stroke-width","4px")
 	  .call(drag);
 

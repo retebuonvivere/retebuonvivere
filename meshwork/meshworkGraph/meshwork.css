@@ -1,13 +1,18 @@
 svg {
     background: #333;
 }
-.node {
-    stroke: #f5e34d;
+.org {
+    stroke: cyan;
     stroke-opacity: .95;
     stroke-width: 4px;
 }
-.node-neverStarted {
+.org-neverStarted {
     stroke: url(#fadedGradient);
+    stroke-opacity: .95;
+    stroke-width: 4px;
+}
+.project {
+    stroke: orange;
     stroke-opacity: .95;
     stroke-width: 4px;
 }
