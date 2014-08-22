@@ -19,12 +19,14 @@ function drawGraph(graphData)
 
 	var link = svg.selectAll(".link")
 	  .data(graphData.links)
-	  .enter().append("line")
+	  .enter()
+	  .append("line")
 	  .attr("class", "link");
 
 	var node = svg.selectAll(".node")
 	  .data(graphData.nodes)
-	  .enter().append("line")
+	  .enter()
+	  .append("line")
 	  .attr("class", "node")
 	  .attr("x1",function(d){return xForDate(d.start);})
 	  .attr("x2",function(d){return xForDate(d.end);})
@@ -37,7 +39,7 @@ function drawGraph(graphData)
 	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
-	link.attr("x1", function(d) { return xForDate(d.date); })
+	link.attr("x1", function(d) { return xForDate(d.date) -3; }) //per inclinare le linee ci vuole un metodo migliore
 		.attr("y1", function(d) { return d.source.y; })
 		.attr("x2", function(d) { return xForDate(d.date); })
 		.attr("y2", function(d) { return d.target.y; });
@@ -47,22 +49,21 @@ function drawGraph(graphData)
 	});
 
 
-	var x = d3.scale.linear()
+	var x = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
 		.range([0, width]);
 
 
 	var xAxis = d3.svg.axis()
 		.scale(x)
+//		.ticks(d3.time.months, 2)
 		.tickSize(-height)
 		.tickPadding(10)	
 		.tickSubdivide(true)	
-		.orient("bottom");	
-
+		.orient("bottom");
 
 	svg.append("g")
-		.attr("class", "x axis")
-	//    .attr("transform", "translate(0," + height + ")")
+		.attr("class", "x-axis")
 		.call(xAxis);
 
 }
