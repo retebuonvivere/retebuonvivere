@@ -1,4 +1,4 @@
-var epsilon=0.00001
+var epsilon=0.01;
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -65,7 +65,16 @@ function drawGraph(graphData)
 	  .attr("class",function(n){
 	  		return n.nodeType;
 	  	})
-	  .attr("x1",function(d){return xForDate(d.start);})
+	  .attr("x1",function(d){
+			if (d.nodeType=="org-neverStarted")
+			{
+				return xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				return xForDate(d.start);
+			}
+		})
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
