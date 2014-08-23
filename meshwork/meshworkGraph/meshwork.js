@@ -39,19 +39,30 @@ function drawGraph(graphData)
 	container=svg.append("g")
 		
 
-/*	var drag = d3.behavior.drag()
-		.origin(function(d) { return d; })
-		.on("dragstart", dragstarted)
-		.on("drag", dragged)
-		.on("dragend", dragended);*/
+
     var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
 		.range([0, width]);
+	
+	
+	/*
+		link.attr("x1", function(d) { return xForDate(d.date) -3; }) //per inclinare le linee ci vuole un metodo migliore
+		.attr("y1", function(d) { return d.source.y; })
+		.attr("x2", function(d) { return xForDate(d.date); })
+		.attr("y2", function(d) { return d.target.y; });
+
+	*/
+	var diagonal=d3.svg.diagonal()
+		.source(function(l){return {x:xForDate(l.date)-3,y:l.source.y};})
+		.target(function(l){return {x:xForDate(l.date)+3,y:l.target.y};})
+//		.projection(function(d){return [xForDate(d.date),];});
+		
 
 	var link = container.selectAll(".link")
 	  .data(graphData.links)
 	  .enter()
-	  .append("line")
+	  .append("path")
+	  .attr("d",diagonal)
 	  .attr("class", "link");
 
 	var drag = force.drag()
@@ -96,10 +107,8 @@ function drawGraph(graphData)
 	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
-	link.attr("x1", function(d) { return xForDate(d.date) -3; }) //per inclinare le linee ci vuole un metodo migliore
-		.attr("y1", function(d) { return d.source.y; })
-		.attr("x2", function(d) { return xForDate(d.date); })
-		.attr("y2", function(d) { return d.target.y; });
+	
+	link.attr("d",diagonal)
 
 	node.attr("y1",function(d,i){return d.y;})
 		.attr("y2",function(d,i){return d.y+epsilon;});
