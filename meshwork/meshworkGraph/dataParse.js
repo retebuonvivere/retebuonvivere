@@ -53,8 +53,13 @@ $(document).ready(function(){
 				{
 					node["end"]=now;
 				}
+				if (node["end"]!=null && node["start"]!=null)
+				{
+					node["end"]=new Date(Math.max(node["end"].getTime(),
+	  					node["start"].getTime()+nodeMinimumDays*24*60*60*1000));
+	  			}
 			}
-
+			console.log(neverStartedNodes.values())
 			var edges=[];
 
 			for (var i=0;i<edgesOriginal.length;i++)
@@ -70,9 +75,9 @@ $(document).ready(function(){
 //					console.log("creo lo startEdge")
 					var sourceNodeIndex=nodesIdMap.get(edge["source"]);
 					var targetNodeIndex=nodesIdMap.get(edge["target"]);
-					
 					if (neverStartedNodes.has(sourceNodeIndex))
 					{
+					console.log(nodes[sourceNodeIndex]);
 						var node=nodes[sourceNodeIndex];
 						if (node["start"]==null)
 						{
@@ -96,7 +101,18 @@ $(document).ready(function(){
 									"url":		edge["url"]
 									};
 					edges.push(startEdge);
+					
+					// todo: se il nodo target (proj) inizia dopo -> spostiamo l'inizio a edgeStartDate
+					nodes[targetNodeIndex]["start"]=new Date(Math.min(nodes[targetNodeIndex]["start"].getTime(),edgeStartDate.getTime()));
+					
+					
 					var edgeEndDate=new Date(edge["end"]);
+					if (dateEquals(edgeEndDate,edgeStartDate))
+					{
+						continue;
+					}		
+					edgeEndDate=new Date(Math.max(edgeEndDate.getTime(),
+	  					edgeStartDate.getTime()+nodeMinimumDays*24*60*60*1000));
 
 					if (!dateEquals(edgeStartDate,edgeEndDate))
 					{
@@ -111,11 +127,17 @@ $(document).ready(function(){
 									  };
 //						console.log(endEdge)
 						edges.push(endEdge);
+
+					// todo: se il nodo target (proj) finisce prima -> spostiamo la fine a edgeEndDate
+					nodes[targetNodeIndex]["end"]=new Date(Math.max(nodes[targetNodeIndex]["end"].getTime(),edgeEndDate.getTime()));
+
+
 					}
 				}
 			}
 			
 			neverStartedNodes.forEach(function(i,n){
+				console.log(n);
 				if (n["start"]==null)
 				{
 					n["start"]=graphStartDate;

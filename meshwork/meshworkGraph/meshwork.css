@@ -1,5 +1,5 @@
 svg {
-    background: #333;
+    background: #ffffff;
 }
 .org {
     stroke: cyan;
@@ -20,6 +20,7 @@ svg {
     stroke: #999;
     stroke-opacity: .65;
     stroke-width: 4px;
+    fill: none;
 }
 .x-axis {
     fill: #fee000;
