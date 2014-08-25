@@ -40,7 +40,7 @@ function drawGraph(graphData)
 		
 
 
-    var scale = d3.time.scale() // time.scale() invece di scale.linear()
+    	var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
 		.range([0, width]);
 	
@@ -53,9 +53,9 @@ function drawGraph(graphData)
 
 	*/
 	var diagonal=d3.svg.diagonal()
-		.source(function(l){return {x:xForDate(l.date)-3,y:l.source.y};})
-		.target(function(l){return {x:xForDate(l.date)+3,y:l.target.y};})
-//		.projection(function(d){return [xForDate(d.date),];});
+		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
+		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
+		.projection(function(d){return [d.y,d.x];});
 		
 
 	var link = container.selectAll(".link")
