@@ -31,6 +31,7 @@ function xForDate(date)
       
 function drawGraph(graphData)
 {
+//	console.log(graphData);
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)

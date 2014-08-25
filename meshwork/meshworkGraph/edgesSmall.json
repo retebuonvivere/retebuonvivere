@@ -1,5 +1,4 @@
 [
-{"end": "2013-02-01T00:00:00", "target": "5", "start": "2013-02-01T00:00:00", "sourceName": "Naturalmente Verona - Arcipelago Scec", "label": "organizzatore principale", "source": "1", "url": "http://www.retebuonvivere.org/node/6", "targetName": "Retebuonvivere.org"}, 
-{"end": "2013-02-01T00:00:00", "target": "5", "start": "2013-02-01T00:00:00", "sourceName": "Mag Verona", "label": "organizzatore principale", "source": "4", "url": "http://www.retebuonvivere.org/node/7", "targetName": "Retebuonvivere.org"}, 
-{"end": "2013-02-01T00:00:00", "target": "70", "start": "2013-02-01T00:00:00", "sourceName": "Mag Verona", "label": "organizzatore principale", "source": "1", "url": "http://www.retebuonvivere.org/node/7", "targetName": "Retebuonvivere.org"}
+{"end": "2014-05-05T00:00:00", "target": "59", "start": "2014-04-13T00:00:00", "sourceName": "Villa Buri onlus", "label": "organizzatore principale", "source": "8", "url": "http://www.retebuonvivere.org/node/60", "targetName": "Festa di Primavera 2014"},
+{"end": "2014-04-14T00:00:00", "target": "59", "start": "2014-03-16T00:00:00", "sourceName": "Naturalmente Verona - Arcipelago Scec", "label": "collaboratore", "source": "1", "url": "http://www.retebuonvivere.org/node/61", "targetName": "Festa di Primavera 2014"}
 ]
