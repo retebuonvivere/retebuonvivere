@@ -106,7 +106,12 @@ $(document).ready(function(){
 					nodes[targetNodeIndex]["start"]=new Date(Math.min(nodes[targetNodeIndex]["start"].getTime(),edgeStartDate.getTime()));
 					
 					
-					var edgeEndDate=new Date(Math.max(new Date(edge["end"]).getTime(),
+					var edgeEndDate=new Date(edge["end"]);
+					if (dateEquals(edgeEndDate,edgeStartDate))
+					{
+						continue;
+					}		
+					edgeEndDate=new Date(Math.max(edgeEndDate.getTime(),
 	  					edgeStartDate.getTime()+nodeMinimumDays*24*60*60*1000));
 
 					if (!dateEquals(edgeStartDate,edgeEndDate))
