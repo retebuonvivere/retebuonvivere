@@ -32,6 +32,7 @@ function xForDate(date)
 function drawGraph(graphData)
 {
 //	console.log(graphData);
+	var forcePass=0;
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)
@@ -107,14 +108,80 @@ function drawGraph(graphData)
 	node.append("title")
 	  .text(function(d) {return d.name;});
 
+	var tick=0;
 	force.on("tick", function() {
-	
-	link.attr("d",diagonal)
-
-	node.attr("y1",function(d,i){return d.y;})
-		.attr("y2",function(d,i){return d.y+epsilon;});
+		node.attr("y1",function(d,i){
+				if (forcePass<1)
+				{
+					return d.y;
+					
+				}
+				else
+				{
+					return d.y+ (d["targetY"]-d["firstPassY"])/stabilizationTicks;
+				}		
+			})
+			.attr("y2",function(d,i){if (forcePass<1)
+				{
+					return d.y+epsilon;
+					
+				}
+				else
+				{
+					return d.y+ (d["targetY"]-d["firstPassY"])/stabilizationTicks+epsilon;
+				}		
+			});
+		link.attr("d",diagonal)
+		tick++;
 	});
 
+	force.on("end",function() {
+		forcePass++;
+		console.log("force ended");
+		var nodes=graphData.nodes.slice(0);
+		console.log(graphData);
+		nodes.sort(function(a,b){return a.y-b.y;});
+		var accumulatedOffset=0.0;
+		for (var i=0;i<nodes.length;i++)
+		{
+			var n=nodes[i];
+			if (i==0)
+			{
+				continue;
+			}
+			var prevNode=nodes[i-1];
+			var yDistance=n.y+accumulatedOffset-prevNode.y;
+			if (yDistance<nodesMinimumPixelDistance)
+			{
+				var offset=nodesMinimumPixelDistance-yDistance;
+				accumulatedOffset+=offset;
+			}
+			else if (accumulatedOffset>0) // && yDistance>=nodesMinimumPixelDistance
+			{
+				// posso assorbire parte dell'accumulatedOffset
+				var actualYDistance=n.y-prevNode.y;
+				accumulatedOffset = Math.min(0,accumulatedOffset-actualYDistance-nodesMinimumPixelDistance);
+			} 
+			n.y+=accumulatedOffset;
+		}
+		console.log(graphData);
+		if (forcePass==1)
+		{
+//			tick=0;
+//			force.start();
+			node.attr("y1",function(d,i){
+					return d.y;
+				})
+				.attr("y2",function(d,i){
+					return d.y;
+				});
+			link.attr("d",diagonal);
+		}
+//		node.attr("y1",function(d,i){return d.y;})
+//			.attr("y2",function(d,i){return d.y+epsilon;});
+//		link.attr("d",diagonal)
+
+	});
 
 
 	var zoom = d3.behavior.zoom()
