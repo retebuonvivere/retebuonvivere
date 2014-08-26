@@ -59,7 +59,7 @@ $(document).ready(function(){
 	  					node["start"].getTime()+nodeMinimumDays*24*60*60*1000));
 	  			}
 			}
-			console.log(neverStartedNodes.values())
+//			console.log(neverStartedNodes.values())
 			var edges=[];
 
 			for (var i=0;i<edgesOriginal.length;i++)
@@ -77,7 +77,7 @@ $(document).ready(function(){
 					var targetNodeIndex=nodesIdMap.get(edge["target"]);
 					if (neverStartedNodes.has(sourceNodeIndex))
 					{
-					console.log(nodes[sourceNodeIndex]);
+//					console.log(nodes[sourceNodeIndex]);
 						var node=nodes[sourceNodeIndex];
 						if (node["start"]==null)
 						{
@@ -137,7 +137,7 @@ $(document).ready(function(){
 			}
 			
 			neverStartedNodes.forEach(function(i,n){
-				console.log(n);
+//				console.log(n);
 				if (n["start"]==null)
 				{
 					n["start"]=graphStartDate;

@@ -31,7 +31,14 @@ function xForDate(date)
       
 function drawGraph(graphData)
 {
-//	console.log(graphData);
+	
+	testNoOverlap1();
+	testNoOverlap2();
+	testNoOverlap3();
+	testNoOverlap4();
+	testNoOverlap5();
+
+
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)
@@ -41,18 +48,10 @@ function drawGraph(graphData)
 		
 
 
-    	var scale = d3.time.scale() // time.scale() invece di scale.linear()
+   	var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
 		.range([0, width]);
 	
-	
-	/*
-		link.attr("x1", function(d) { return xForDate(d.date) -3; }) //per inclinare le linee ci vuole un metodo migliore
-		.attr("y1", function(d) { return d.source.y; })
-		.attr("x2", function(d) { return xForDate(d.date); })
-		.attr("y2", function(d) { return d.target.y; });
-
-	*/
 	var diagonal=d3.svg.diagonal()
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
 		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
@@ -70,6 +69,7 @@ function drawGraph(graphData)
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
+		
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
@@ -90,17 +90,6 @@ function drawGraph(graphData)
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
-	  /*.style("stroke",function(n) { 
-	  		if (n.nodeType=="org-neverStarted")
-	  		{
-	  			return "url(#fadedGradient)";
-	  		}
-	  		else if
-	  		{
-	  			return color(n.nodeType);
-	  		}
-	  })*/
-	  
 	  .style("stroke-width","4px")
 	  .call(drag);
 
@@ -108,13 +97,32 @@ function drawGraph(graphData)
 	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
-	
-	link.attr("d",diagonal)
-
-	node.attr("y1",function(d,i){return d.y;})
-		.attr("y2",function(d,i){return d.y+epsilon;});
+		node.attr("y1",function(d,i){
+				return d.y;
+			})
+			.attr("y2",function(d,i){
+				return d.y+epsilon;
+			});
+		link.attr("d",diagonal)
 	});
 
+	force.on("end",function() {
+	//	console.log("force ended");
+		var nodes=graphData.nodes.slice(0);
+//		console.log(graphData);
+
+		noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash);
+
+		node.transition()
+			.delay(100)
+			.attr("y1",function(d,i){
+				return d.y;
+			})
+			.attr("y2",function(d,i){
+				return d.y+epsilon;
+			});
+		link.transition().attr("d",diagonal);
+	});
 
 
 	var zoom = d3.behavior.zoom()
@@ -139,7 +147,6 @@ function drawGraph(graphData)
 
 	xAxis = d3.svg.axis()
 		.scale(scale)
-//		.ticks(d3.time.months, 2)
 		.tickSize(-height)
 		.tickPadding(10)	
 		.tickSubdivide(true)	
@@ -151,12 +158,84 @@ function drawGraph(graphData)
 
 }
 
-/*
-function dragged(d) {
-  d3.select(this).attr("y1",  d3.event.x).attr("cy", d.y = d3.event.y);
+
+
+function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash)
+{
+	nodes.sort(function(a,b){return a.y-b.y;});
+	
+	for (var i=0;i<nodes.length;i++)
+	{
+		if (i==0)
+		{
+			continue;
+		}
+		var n=nodes[i];
+		var prevNode=nodes[i-1];
+
+		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
+		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
+	}
 }
-*//*
-function dragended(d) {
-  d3.select(this).classed("dragging", false);
+
+
+
+
+
+
+
+
+
+function assert(condition, message) {
+    if (condition) {
+    	console.log("test passed");
+    }
+    else
+    {
+        throw message || "Assertion failed";
+    }
+    
 }
-*/
+
+
+function minimumDistanceGreaterThan(array,md)
+{
+	var min=9000000000;
+	for (var i=1;i<array.length;i++)
+	{
+		min=Math.min(min,array[i].y-array[i-1].y);
+	}
+	return min>=md
+}
+function testNoOverlap1()
+{
+	var nodes=[{"y":10},{"y":20},{"y":31}];
+	noOverlap(nodes,5,0);
+	assert(minimumDistanceGreaterThan(nodes,5),null);
+}
+function testNoOverlap2()
+{
+	var nodes=[{"y":10},{"y":20},{"y":31}];
+	noOverlap(nodes,20,0);
+	assert(minimumDistanceGreaterThan(nodes,20),null);
+}
+function testNoOverlap3()
+{
+	var nodes=[{"y":10},{"y":20},{"y":50},{"y":60}];
+	noOverlap(nodes,15,0);
+	assert(minimumDistanceGreaterThan(nodes,15),null);
+	assert(nodes[2].y==50);
+}
+function testNoOverlap4()
+{
+	var nodes=[{"y":10},{"y":20},{"y":31}];
+	noOverlap(nodes,30,0);
+	assert(minimumDistanceGreaterThan(nodes,30),null);
+}
+function testNoOverlap5()
+{
+	var nodes=[{"y":10},{"y":20},{"y":35},{"y":50}];
+	noOverlap(nodes,15,0);
+	assert(minimumDistanceGreaterThan(nodes,15),null);
+}
+
