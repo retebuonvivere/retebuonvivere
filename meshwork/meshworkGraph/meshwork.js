@@ -31,8 +31,14 @@ function xForDate(date)
       
 function drawGraph(graphData)
 {
-//	console.log(graphData);
-	var forcePass=0;
+	
+	testNoOverlap1();
+	testNoOverlap2();
+	testNoOverlap3();
+	testNoOverlap4();
+	testNoOverlap5();
+
+
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)
@@ -42,18 +48,10 @@ function drawGraph(graphData)
 		
 
 
-    	var scale = d3.time.scale() // time.scale() invece di scale.linear()
+   	var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
 		.range([0, width]);
 	
-	
-	/*
-		link.attr("x1", function(d) { return xForDate(d.date) -3; }) //per inclinare le linee ci vuole un metodo migliore
-		.attr("y1", function(d) { return d.source.y; })
-		.attr("x2", function(d) { return xForDate(d.date); })
-		.attr("y2", function(d) { return d.target.y; });
-
-	*/
 	var diagonal=d3.svg.diagonal()
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
 		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
@@ -71,6 +69,7 @@ function drawGraph(graphData)
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
+		
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
@@ -91,96 +90,38 @@ function drawGraph(graphData)
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
-	  /*.style("stroke",function(n) { 
-	  		if (n.nodeType=="org-neverStarted")
-	  		{
-	  			return "url(#fadedGradient)";
-	  		}
-	  		else if
-	  		{
-	  			return color(n.nodeType);
-	  		}
-	  })*/
-	  
 	  .style("stroke-width","4px")
 	  .call(drag);
 
 	node.append("title")
 	  .text(function(d) {return d.name;});
 
-	var tick=0;
 	force.on("tick", function() {
 		node.attr("y1",function(d,i){
-				if (forcePass<1)
-				{
-					return d.y;
-					
-				}
-				else
-				{
-					return d.y+ (d["targetY"]-d["firstPassY"])/stabilizationTicks;
-				}		
+				return d.y;
 			})
-			.attr("y2",function(d,i){if (forcePass<1)
-				{
-					return d.y+epsilon;
-					
-				}
-				else
-				{
-					return d.y+ (d["targetY"]-d["firstPassY"])/stabilizationTicks+epsilon;
-				}		
+			.attr("y2",function(d,i){
+				return d.y+epsilon;
 			});
 		link.attr("d",diagonal)
-		tick++;
 	});
 
 	force.on("end",function() {
-		forcePass++;
-		console.log("force ended");
+	//	console.log("force ended");
 		var nodes=graphData.nodes.slice(0);
-		console.log(graphData);
-		nodes.sort(function(a,b){return a.y-b.y;});
-		var accumulatedOffset=0.0;
-		for (var i=0;i<nodes.length;i++)
-		{
-			var n=nodes[i];
-			if (i==0)
-			{
-				continue;
-			}
-			var prevNode=nodes[i-1];
-			var yDistance=n.y+accumulatedOffset-prevNode.y;
-			if (yDistance<nodesMinimumPixelDistance)
-			{
-				var offset=nodesMinimumPixelDistance-yDistance;
-				accumulatedOffset+=offset;
-			}
-			else if (accumulatedOffset>0) // && yDistance>=nodesMinimumPixelDistance
-			{
-				// posso assorbire parte dell'accumulatedOffset
-				var actualYDistance=n.y-prevNode.y;
-				accumulatedOffset = Math.min(0,accumulatedOffset-actualYDistance-nodesMinimumPixelDistance);
-			} 
-			n.y+=accumulatedOffset;
-		}
-		console.log(graphData);
-		if (forcePass==1)
-		{
-//			tick=0;
-//			force.start();
-			node.attr("y1",function(d,i){
-					return d.y;
-				})
-				.attr("y2",function(d,i){
-					return d.y;
-				});
-			link.attr("d",diagonal);
-		}
-//		node.attr("y1",function(d,i){return d.y;})
-//			.attr("y2",function(d,i){return d.y+epsilon;});
-//		link.attr("d",diagonal)
+//		console.log(graphData);
 
+		noOverlap(nodes,nodesMinimumPixelDistance);
+
+		node.transition()
+			.delay(100)
+			.attr("y1",function(d,i){
+				return d.y;
+			})
+			.attr("y2",function(d,i){
+				return d.y+epsilon;
+			});
+		link.transition().attr("d",diagonal);
 	});
 
 
@@ -206,7 +147,6 @@ function drawGraph(graphData)
 
 	xAxis = d3.svg.axis()
 		.scale(scale)
-//		.ticks(d3.time.months, 2)
 		.tickSize(-height)
 		.tickPadding(10)	
 		.tickSubdivide(true)	
@@ -218,12 +158,83 @@ function drawGraph(graphData)
 
 }
 
-/*
-function dragged(d) {
-  d3.select(this).attr("y1",  d3.event.x).attr("cy", d.y = d3.event.y);
+
+
+function noOverlap(nodes,nodesMinimumPixelDistance)
+{
+	nodes.sort(function(a,b){return a.y-b.y;});
+	
+	for (var i=0;i<nodes.length;i++)
+	{
+		if (i==0)
+		{
+			continue;
+		}
+		var n=nodes[i];
+		var prevNode=nodes[i-1];
+
+		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance)
+	}
 }
-*//*
-function dragended(d) {
-  d3.select(this).classed("dragging", false);
+
+
+
+
+
+
+
+
+
+function assert(condition, message) {
+    if (condition) {
+    	console.log("test passed");
+    }
+    else
+    {
+        throw message || "Assertion failed";
+    }
+    
 }
-*/
+
+
+function minimumDistanceGreaterThan(array,md)
+{
+	var min=9000000000;
+	for (var i=1;i<array.length;i++)
+	{
+		min=Math.min(min,array[i].y-array[i-1].y);
+	}
+	return min>=md
+}
+function testNoOverlap1()
+{
+	var nodes=[{"y":10},{"y":20},{"y":31}];
+	noOverlap(nodes,5);
+	assert(minimumDistanceGreaterThan(nodes,5),null);
+}
+function testNoOverlap2()
+{
+	var nodes=[{"y":10},{"y":20},{"y":31}];
+	noOverlap(nodes,20);
+	assert(minimumDistanceGreaterThan(nodes,20),null);
+}
+function testNoOverlap3()
+{
+	var nodes=[{"y":10},{"y":20},{"y":50},{"y":60}];
+	noOverlap(nodes,15);
+	assert(minimumDistanceGreaterThan(nodes,15),null);
+	assert(nodes[2].y==50);
+}
+function testNoOverlap4()
+{
+	var nodes=[{"y":10},{"y":20},{"y":31}];
+	noOverlap(nodes,30);
+	assert(minimumDistanceGreaterThan(nodes,30),null);
+}
+function testNoOverlap5()
+{
+	var nodes=[{"y":10},{"y":20},{"y":35},{"y":50}];
+	noOverlap(nodes,15);
+	assert(minimumDistanceGreaterThan(nodes,15),null);
+}
+
