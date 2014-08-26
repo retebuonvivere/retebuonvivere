@@ -81,6 +81,7 @@ function drawGraph(graphData)
 		});
 		
 	
+	
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
@@ -104,7 +105,18 @@ function drawGraph(graphData)
 	  .style("stroke-width","4px")
       .on('mouseover', tooltip.show)
       .on('mouseout', tooltip.hide)
-      
+      .on("click", function(d) {
+      	console.log("click");
+      	console.log(d);
+      	$(document).sidr({
+      		name:d.name,
+      		source: function (name) {
+      			return "<h1>"+name+"</h1>";
+      		},
+      		side:"left"
+      	});
+      	$.sidr("open",d.name);
+      })      
 	  .call(drag)
 	  .call(tooltip);
 
