@@ -71,7 +71,17 @@ function drawGraph(graphData)
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
+	
+	var tooltip= d3.tip()
+		.attr("class","node-tooltip")
+//		.offset([-10,0])
+		.direction("e")
+		.html(function(d) {
+			return "<strong>"+d.name+"</strong>";
+		});
 		
+	container.call(tooltip);
+	
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
@@ -93,6 +103,8 @@ function drawGraph(graphData)
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
 	  .style("stroke-width","4px")
+      .on('mouseover', tooltip.show)
+      .on('mouseout', tooltip.hide)
 	  .call(drag);
 
 	node.append("title")
