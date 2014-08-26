@@ -111,7 +111,7 @@ function drawGraph(graphData)
 		var nodes=graphData.nodes.slice(0);
 //		console.log(graphData);
 
-		noOverlap(nodes,nodesMinimumPixelDistance);
+		noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash);
 
 		node.transition()
 			.delay(100)
@@ -160,7 +160,7 @@ function drawGraph(graphData)
 
 
 
-function noOverlap(nodes,nodesMinimumPixelDistance)
+function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash)
 {
 	nodes.sort(function(a,b){return a.y-b.y;});
 	
@@ -173,7 +173,8 @@ function noOverlap(nodes,nodesMinimumPixelDistance)
 		var n=nodes[i];
 		var prevNode=nodes[i-1];
 
-		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance)
+		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
+		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
 	}
 }
 
@@ -209,32 +210,32 @@ function minimumDistanceGreaterThan(array,md)
 function testNoOverlap1()
 {
 	var nodes=[{"y":10},{"y":20},{"y":31}];
-	noOverlap(nodes,5);
+	noOverlap(nodes,5,0);
 	assert(minimumDistanceGreaterThan(nodes,5),null);
 }
 function testNoOverlap2()
 {
 	var nodes=[{"y":10},{"y":20},{"y":31}];
-	noOverlap(nodes,20);
+	noOverlap(nodes,20,0);
 	assert(minimumDistanceGreaterThan(nodes,20),null);
 }
 function testNoOverlap3()
 {
 	var nodes=[{"y":10},{"y":20},{"y":50},{"y":60}];
-	noOverlap(nodes,15);
+	noOverlap(nodes,15,0);
 	assert(minimumDistanceGreaterThan(nodes,15),null);
 	assert(nodes[2].y==50);
 }
 function testNoOverlap4()
 {
 	var nodes=[{"y":10},{"y":20},{"y":31}];
-	noOverlap(nodes,30);
+	noOverlap(nodes,30,0);
 	assert(minimumDistanceGreaterThan(nodes,30),null);
 }
 function testNoOverlap5()
 {
 	var nodes=[{"y":10},{"y":20},{"y":35},{"y":50}];
-	noOverlap(nodes,15);
+	noOverlap(nodes,15,0);
 	assert(minimumDistanceGreaterThan(nodes,15),null);
 }
 

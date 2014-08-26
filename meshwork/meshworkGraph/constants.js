@@ -5,5 +5,5 @@ var width = 900,
 
 var nodeMinimumDays=10
 
-var nodesMinimumPixelDistance=5;
-var stabilizationTicks=10;
+var nodesMinimumPixelDistance=8;
+var nodesMinimumPixelDistanceBackLash=0.4;
