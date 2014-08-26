@@ -80,7 +80,6 @@ function drawGraph(graphData)
 			return "<strong>"+d.name+"</strong>";
 		});
 		
-	container.call(tooltip);
 	
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
@@ -105,7 +104,9 @@ function drawGraph(graphData)
 	  .style("stroke-width","4px")
       .on('mouseover', tooltip.show)
       .on('mouseout', tooltip.hide)
-	  .call(drag);
+      
+	  .call(drag)
+	  .call(tooltip);
 
 	node.append("title")
 	  .text(function(d) {return d.name;});
