@@ -16,6 +16,15 @@ svg {
     stroke-opacity: .95;
     stroke-width: 4px;
 }
+.org-neverStarted:hover {
+	stroke: url(#selectedFadedGradient);
+}
+.org:hover {
+	stroke: blue;
+}
+.project:hover {
+	stroke: orangered;
+}
 .link {
     stroke: #999;
     stroke-opacity: .65;

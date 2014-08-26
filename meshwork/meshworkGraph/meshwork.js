@@ -11,6 +11,13 @@ gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop
 gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
 gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
 
+var gradient2= svg.append("defs")
+	.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
+
+gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
+gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
+gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
+
 var color = d3.scale.category10();
 
 var force = d3.layout.force()
@@ -31,13 +38,11 @@ function xForDate(date)
       
 function drawGraph(graphData)
 {
-	
 	testNoOverlap1();
 	testNoOverlap2();
 	testNoOverlap3();
 	testNoOverlap4();
 	testNoOverlap5();
-
 
 	force
 	  .nodes(graphData.nodes)
@@ -45,8 +50,6 @@ function drawGraph(graphData)
 	  .start();
 
 	container=svg.append("g")
-		
-
 
    	var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
@@ -56,7 +59,6 @@ function drawGraph(graphData)
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
 		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
-		
 
 	var link = container.selectAll(".link")
 	  .data(graphData.links)
@@ -122,26 +124,18 @@ function drawGraph(graphData)
 				return d.y+epsilon;
 			});
 		link.transition().attr("d",diagonal);
+		
+		
 	});
-
 
 	var zoom = d3.behavior.zoom()
 		.scaleExtent([0.1, 10])
 		.on("zoom", function() {
-//			container.select("g").call(xAxis);
 			container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
 			svg.call(xAxis);
 		})
 		.x(scale);
 
-
-
-/*	svg.append("rect")
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("width", width)
-                .attr("height", height)
-                .attr("opacity", 0);*/
     svg.call(zoom);
 
 
