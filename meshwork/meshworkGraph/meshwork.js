@@ -101,11 +101,16 @@ function drawGraph(graphData)
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
-	  .style("stroke-width","4px")
+	//  .style("stroke-width","4px")
 //      .on('mouseover', tooltip.show)
-      .on('mouseout', tooltip.hide)
-	  .call(drag)
+      .on('mouseout', function(d){
+      	tooltip.hide(d);
+ //      		d3.select(this).style("stroke-width","4px")
+
+		})
+	//  .call(drag)
 	  .call(tooltip);
+	  
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
@@ -125,6 +130,7 @@ function drawGraph(graphData)
       			lastOpenedPanel=panelName
       		}
    		});
+   	//	d3.select(this).style("stroke-width","10px");
 		console.log("over")
 	//	$.sidr('open','sidrPanel'+panelId);
     });      

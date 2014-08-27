@@ -18,12 +18,15 @@ svg {
 }
 .org-neverStarted:hover {
 	stroke: url(#selectedFadedGradient);
+	stroke-width: 8;
 }
 .org:hover {
 	stroke: blue;
+	stroke-width: 8;
 }
 .project:hover {
 	stroke: orangered;
+	stroke-width: 8;
 }
 .link {
     stroke: #999;
