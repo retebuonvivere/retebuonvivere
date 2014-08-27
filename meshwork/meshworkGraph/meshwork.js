@@ -49,7 +49,7 @@ function drawGraph(graphData)
 	  .links(graphData.links)
 	  .start();
 
-	container=svg.append("g")
+	container=svg.append("g").attr("id","container");
 
    	var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
@@ -105,20 +105,22 @@ function drawGraph(graphData)
 	  .style("stroke-width","4px")
       .on('mouseover', tooltip.show)
       .on('mouseout', tooltip.hide)
-      .on("click", function(d) {
-      	console.log("click");
-      	console.log(d);
-      	$(document).sidr({
-      		name:d.name,
-      		source: function (name) {
-      			return "<h1>"+name+"</h1>";
-      		},
-      		side:"left"
-      	});
-      	$.sidr("open",d.name);
-      })      
 	  .call(drag)
 	  .call(tooltip);
+
+	node.on("click", function(d) {
+		$(document).sidr({
+			name:"sidrPanel",
+			source: function (name) {
+      			return "<h1>"+name+" "+d.nodeType+"</h1>";
+      		},
+      		side:"right",
+      		body:"#container"
+   		});
+      	console.log("click");
+      	$.sidr("open","sidrPanel");
+    });      
+
 
 	node.append("title")
 	  .text(function(d) {return d.name;});

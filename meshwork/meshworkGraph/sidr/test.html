@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Your stuff -->
+ 
+    <!-- Include Sidr bundled CSS theme -->
+    <link rel="stylesheet" href="stylesheets/jquery.sidr.dark.css">
+  </head>
+  <body>
+    <!-- Your stuff -->
+ 
+    <!-- Include jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Include the Sidr JS -->
+    <script src="jquery.sidr.min.js"></script>
+ 
+  <a id="simple-menu" href="#sidr">Toggle menu</a>
+ 
+<div id="sidr">
+  <!-- Your content -->
+  <ul>
+    <li><a href="#">List 1</a></li>
+    <li class="active"><a href="#">List 2</a></li>
+    <li><a href="#">List 3</a></li>
+  </ul>
+</div>
+ 
+<script>
+$(document).ready(function() {
+//  $('#simple-menu').sidr();
+      	$(document).sidr({
+      		name:"sidrBlock",
+      		source: function (name) {
+      			return "<h1>"+name+"</h1>";
+      		},
+      		side:"left"
+      	});
+      	$.sidr("open");
+
+
+
+});
+</script>
+</body>
+</html>
