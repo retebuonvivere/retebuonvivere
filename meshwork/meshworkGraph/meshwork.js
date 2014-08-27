@@ -1,5 +1,4 @@
 var epsilon=0.01;
-
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
@@ -10,6 +9,13 @@ var gradient= svg.append("defs")
 gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
 gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
 gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
+
+var gradient2= svg.append("defs")
+	.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
+
+gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
+gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
+gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
 
 var color = d3.scale.category10();
 
@@ -31,22 +37,18 @@ function xForDate(date)
       
 function drawGraph(graphData)
 {
-	
 	testNoOverlap1();
 	testNoOverlap2();
 	testNoOverlap3();
 	testNoOverlap4();
 	testNoOverlap5();
 
-
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)
 	  .start();
 
-	container=svg.append("g")
-		
-
+	container=svg.append("g").attr("id","container");
 
    	var scale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
@@ -56,7 +58,6 @@ function drawGraph(graphData)
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
 		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
-		
 
 	var link = container.selectAll(".link")
 	  .data(graphData.links)
@@ -69,7 +70,17 @@ function drawGraph(graphData)
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
+	
+	var tooltip= d3.tip()
+		.attr("class","node-tooltip")
+//		.offset([-10,0])
+		.direction("e")
+		.html(function(d) {
+			return "<strong>"+d.name+"</strong>";
+		});
 		
+	
+	
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
@@ -91,8 +102,38 @@ function drawGraph(graphData)
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
 	  .style("stroke-width","4px")
-	  .call(drag);
-
+//      .on('mouseover', tooltip.show)
+      .on('mouseout', tooltip.hide)
+	  .call(drag)
+	  .call(tooltip);
+	var panelId=0;	
+	var lastOpenedPanel;
+	node.on("mouseover", function(d) {
+		panelId++;
+		tooltip.show(d)
+		var panelName="sidrPanel"+panelId
+		console.log(panelName)
+		$(this).sidr({
+			name:panelName,
+			source: function (name) {
+			//[{"nodeType": "org", "name": "Naturalmente Verona - Arcipelago Scec", "url": "http://www.retebuonvivere.org/node/1", "id": "1", "start": "N", "end": "N", "orgType": "associazione", "categories": "bio"},
+				return panelContentGenerator(d);
+      		},
+      		side:"right",
+      		body:"#container",
+      		onOpen:function() {
+      			lastOpenedPanel=panelName
+      		}
+   		});
+		console.log("over")
+	//	$.sidr('open','sidrPanel'+panelId);
+    });      
+    
+    d3.select("body").on("click", function(){
+    	console.log("container click");
+    	$.sidr('close',lastOpenedPanel);
+    })
+    
 	node.append("title")
 	  .text(function(d) {return d.name;});
 
@@ -122,26 +163,18 @@ function drawGraph(graphData)
 				return d.y+epsilon;
 			});
 		link.transition().attr("d",diagonal);
+		
+		
 	});
-
 
 	var zoom = d3.behavior.zoom()
 		.scaleExtent([0.1, 10])
 		.on("zoom", function() {
-//			container.select("g").call(xAxis);
 			container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
 			svg.call(xAxis);
 		})
 		.x(scale);
 
-
-
-/*	svg.append("rect")
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("width", width)
-                .attr("height", height)
-                .attr("opacity", 0);*/
     svg.call(zoom);
 
 
