@@ -1,5 +1,4 @@
 var epsilon=0.01;
-
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
@@ -108,7 +107,9 @@ function drawGraph(graphData)
 	  .call(drag)
 	  .call(tooltip);
 	var panelId=0;	
+	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
+		panelId++;
 		tooltip.show(d)
 		var panelName="sidrPanel"+panelId
 		console.log(panelName)
@@ -124,12 +125,20 @@ function drawGraph(graphData)
       			return html;      					
       		},
       		side:"right",
-      		body:"#container"
+      		body:"#container",
+      		onOpen:function() {
+      			lastOpenedPanel=panelName
+      		}
    		});
 		console.log("over")
 	//	$.sidr('open','sidrPanel'+panelId);
-		panelId++;
     });      
+    
+    d3.select("body").on("click", function(){
+    	console.log("container click");
+    	$.sidr('close',lastOpenedPanel);
+    })
+    
 	node.append("title")
 	  .text(function(d) {return d.name;});
 
