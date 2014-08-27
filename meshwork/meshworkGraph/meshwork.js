@@ -178,7 +178,7 @@ function drawGraph(graphData)
 			var t=d3.event.translate;
 			var s=d3.event.scale;
 			console.log(t[0]*s);
-//			t[0]=Math.min(t[0],1000);
+			t[0]=Math.max(t[0],xForDate(now));
 			container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
 			svg.call(xAxis);
 		})
