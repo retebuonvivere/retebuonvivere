@@ -14,31 +14,34 @@
     <!-- Include the Sidr JS -->
     <script src="jquery.sidr.min.js"></script>
  
-  <a id="simple-menu" href="#sidr">Toggle menu</a>
+<a id="existing-content-menu" href="#existing-content-menu">Existing content</a> 
+<a id="remote-content-menu" href="#remote-content-menu">Load remotelly</a> 
+<a id="callback-menu" href="#callback-menu">Callback loaded</a>
  
-<div id="sidr">
-  <!-- Your content -->
-  <ul>
-    <li><a href="#">List 1</a></li>
-    <li class="active"><a href="#">List 2</a></li>
-    <li><a href="#">List 3</a></li>
-  </ul>
+<header id="demoheader">
+    <h1>Demos &amp; Usage</h1>
+</header>
+ 
+<div id="demo-content">
+    <p>Here are described differents ways of usage for this plugin, you can read and adapt them to your website's requeriments. Below are described all options with details.</p>
 </div>
  
 <script>
 $(document).ready(function() {
-//  $('#simple-menu').sidr();
-      	$(document).sidr({
-      		name:"sidrBlock",
-      		source: function (name) {
-      			return "<h1>"+name+"</h1>";
-      		},
-      		side:"left"
-      	});
-      	$.sidr("open");
-
-
-
+    $('#existing-content-menu').sidr({
+      name: 'sidr-existing-content1',
+      source: '#demoheader, #demo-content'
+    });
+    $('#remote-content-menu').sidr({
+      name: 'sidr-existing-content2',
+      source: 'http://www.example.com/remote-menu.html'
+    });
+    $('#callback-menu').sidr({
+      name: 'sidr-existing-content3',
+      source: function(name) {
+        return '<h1>' + name + ' menu</h1><p>Yes! You can use a callback too ;)</p>';
+      }
+    });
 });
 </script>
 </body>

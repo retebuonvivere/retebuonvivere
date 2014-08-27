@@ -107,21 +107,28 @@ function drawGraph(graphData)
       .on('mouseout', tooltip.hide)
 	  .call(drag)
 	  .call(tooltip);
-
-	node.on("click", function(d) {
-		$(document).sidr({
-			name:"sidrPanel",
+	var panelId=0;	
+	node.on("mouseover", function(d) {
+		var panelName="sidrPanel"+panelId
+		console.log(panelName)
+		$(this).sidr({
+			name:panelName,
 			source: function (name) {
-      			return "<h1>"+name+" "+d.nodeType+"</h1>";
+			//[{"nodeType": "org", "name": "Naturalmente Verona - Arcipelago Scec", "url": "http://www.retebuonvivere.org/node/1", "id": "1", "start": "N", "end": "N", "orgType": "associazione", "categories": "bio"},
+      			var html="<h1>"+d.name+"</h1>"+
+      					"<p><a href=\""+d.url+"\">Informazioni</p>"+
+      					"<p>Nascita:"+d.start+"</p>";
+      			if (d.end.getTime()<now.getTime())
+      				html=html+"<p>Chiusura:"+d.end+"</p>";
+      			return html;      					
       		},
       		side:"right",
       		body:"#container"
    		});
-      	console.log("click");
-      	$.sidr("open","sidrPanel");
+		console.log("over")
+	//	$.sidr('open','sidrPanel'+panelId);
+		panelId++;
     });      
-
-
 	node.append("title")
 	  .text(function(d) {return d.name;});
 
