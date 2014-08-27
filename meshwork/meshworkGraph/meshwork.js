@@ -172,14 +172,19 @@ function drawGraph(graphData)
 		
 		
 	});
-
 	var zoom = d3.behavior.zoom()
 		.scaleExtent([0.1, 10])
 		.on("zoom", function() {
-			container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+			var t=d3.event.translate;
+			var s=d3.event.scale;
+			console.log(t[0]*s);
+//			t[0]=Math.min(t[0],1000);
+			container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
 			svg.call(xAxis);
 		})
 		.x(scale);
+
+
 
     svg.call(zoom);
 
