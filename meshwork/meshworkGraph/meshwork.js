@@ -103,12 +103,13 @@ function drawGraph(graphData)
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
 	  .style("stroke-width","4px")
-      .on('mouseover', tooltip.show)
+//      .on('mouseover', tooltip.show)
       .on('mouseout', tooltip.hide)
 	  .call(drag)
 	  .call(tooltip);
 	var panelId=0;	
 	node.on("mouseover", function(d) {
+		tooltip.show(d)
 		var panelName="sidrPanel"+panelId
 		console.log(panelName)
 		$(this).sidr({
