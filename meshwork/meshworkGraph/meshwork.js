@@ -117,12 +117,7 @@ function drawGraph(graphData)
 			name:panelName,
 			source: function (name) {
 			//[{"nodeType": "org", "name": "Naturalmente Verona - Arcipelago Scec", "url": "http://www.retebuonvivere.org/node/1", "id": "1", "start": "N", "end": "N", "orgType": "associazione", "categories": "bio"},
-      			var html="<h1>"+d.name+"</h1>"+
-      					"<p><a href=\""+d.url+"\">Informazioni</p>"+
-      					"<p>Nascita:"+d.start+"</p>";
-      			if (d.end.getTime()<now.getTime())
-      				html=html+"<p>Chiusura:"+d.end+"</p>";
-      			return html;      					
+				return panelContentGenerator(d);
       		},
       		side:"right",
       		body:"#container",
