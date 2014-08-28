@@ -34,7 +34,12 @@ function xForDate(date)
 {
 	return (date.getTime()-graphStartDate.getTime())*pixelPerMs;
 }
-      
+
+function addClass(domElement,newClass)
+{
+  	var currentClasses=d3.select(domElement).attr("class");
+  	return currentClasses+" "+newClass;
+}
 function drawGraph(graphData)
 {
 	testNoOverlap1();
@@ -64,7 +69,14 @@ function drawGraph(graphData)
 	  .enter()
 	  .append("path")
 	  .attr("d",diagonal)
-	  .attr("class", "link");
+	  .attr("class", "link")
+	  .attr("class", function(d){
+	  	return addClass(this,"source"+d.source.id);
+	  })
+	  .attr("class", function(d){
+	  	return addClass(this,"target"+d.target.id);
+	  });
+	  
 
 	var drag = force.drag()
     	.on("dragstart", function (d) {
@@ -87,6 +99,9 @@ function drawGraph(graphData)
 	  .append("line")
 	  .attr("class",function(n){
 	  		return n.nodeType;
+	  	})
+	  .attr("class",function(n){
+	  		return addClass(this,"id"+n.id);
 	  	})
 	  .attr("x1",function(d){
 			if (d.nodeType=="org-neverStarted")
@@ -117,11 +132,9 @@ function drawGraph(graphData)
 		panelId++;
 		tooltip.show(d)
 		var panelName="sidrPanel"+panelId
-		console.log(panelName)
 		$(this).sidr({
 			name:panelName,
 			source: function (name) {
-			//[{"nodeType": "org", "name": "Naturalmente Verona - Arcipelago Scec", "url": "http://www.retebuonvivere.org/node/1", "id": "1", "start": "N", "end": "N", "orgType": "associazione", "categories": "bio"},
 				return panelContentGenerator(d);
       		},
       		side:"right",
@@ -130,9 +143,7 @@ function drawGraph(graphData)
       			lastOpenedPanel=panelName
       		}
    		});
-   	//	d3.select(this).style("stroke-width","10px");
-		console.log("over")
-	//	$.sidr('open','sidrPanel'+panelId);
+   		
     });      
     
     d3.select("body").on("click", function(){
