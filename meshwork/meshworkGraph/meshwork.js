@@ -50,7 +50,7 @@ function drawGraph(graphData)
 
 	container=svg.append("g").attr("id","container");
 
-   	var scale = d3.time.scale() // time.scale() invece di scale.linear()
+   	var timeScale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([graphStartDate, now])
 		.range([0, width]);
 	
@@ -177,12 +177,15 @@ function drawGraph(graphData)
 		.on("zoom", function() {
 			var t=d3.event.translate;
 			var s=d3.event.scale;
-			console.log(t[0]*s);
-			t[0]=Math.max(t[0],xForDate(now));
+			if (t[0]<-width*(s-1))
+			{
+				t[0]=-width*(s-1);
+				zoom.translate(t);
+			}
 			container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
 			svg.call(xAxis);
 		})
-		.x(scale);
+		.x(timeScale);
 
 
 
@@ -190,7 +193,7 @@ function drawGraph(graphData)
 
 
 	xAxis = d3.svg.axis()
-		.scale(scale)
+		.scale(timeScale)
 		.tickSize(-height)
 		.tickPadding(10)	
 		.tickSubdivide(true)	
