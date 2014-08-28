@@ -116,14 +116,10 @@ function drawGraph(graphData)
 	  .attr("x2",function(d){return xForDate(d.end);})
 	  .attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;})
-	//  .style("stroke-width","4px")
-//      .on('mouseover', tooltip.show)
       .on('mouseout', function(d){
-      	tooltip.hide(d);
- //      		d3.select(this).style("stroke-width","4px")
-
-		})
-	//  .call(drag)
+			tooltip.hide(d);
+			d3.selectAll(".hover").classed("hover",false);
+   		})
 	  .call(tooltip);
 	  
 	var panelId=0;	
@@ -143,7 +139,14 @@ function drawGraph(graphData)
       			lastOpenedPanel=panelName
       		}
    		});
-   		
+		d3.select(this).classed("hover",true);
+		d3.selectAll("."+"source"+d.id).classed("hover",true).call(function(){
+			var allClasses=this.attr("class").split(" ");
+			var targetClass=allClasses.filter(function(e){return e.match(/target.*/);})[0];
+			var targetId=targetClass.substr(6);
+			d3.select(".project.id"+targetId).classed("hover",true);
+		});
+		d3.select("."+"target"+d.id).classed("hover",true);
     });      
     
     d3.select("body").on("click", function(){

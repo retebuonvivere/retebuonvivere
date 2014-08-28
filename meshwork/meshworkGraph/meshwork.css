@@ -16,15 +16,15 @@ svg {
     stroke-opacity: .95;
     stroke-width: 4px;
 }
-.org-neverStarted:hover {
+.org-neverStarted:hover, .org-neverStarted.hover {
 	stroke: url(#selectedFadedGradient);
 	stroke-width: 8;
 }
-.org:hover {
+.org:hover, .org.hover {
 	stroke: blue;
 	stroke-width: 8;
 }
-.project:hover {
+.project:hover, .project.hover {
 	stroke: orangered;
 	stroke-width: 8;
 }
@@ -34,6 +34,13 @@ svg {
     stroke-width: 4px;
     fill: none;
 }
+.link.hover {
+    stroke: #999;
+    stroke-opacity: .95;
+    stroke-width: 6px;
+    fill: none;
+}
+
 .x-axis {
     fill: #fee000;
     font-family: sans-serif;
