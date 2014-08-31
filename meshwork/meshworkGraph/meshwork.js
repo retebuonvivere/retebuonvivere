@@ -96,8 +96,10 @@ function drawGraph(graphData)
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
-	  .append("line")
-	  .attr("class",function(n){
+	  .append("g");
+	  
+	var nodeLines = node.append("line")
+		.attr("class",function(n){
 	  		return n.nodeType;
 	  	})
 	  .attr("class",function(n){
@@ -121,7 +123,43 @@ function drawGraph(graphData)
 			d3.selectAll(".hover").classed("hover",false);
    		})
 	  .call(tooltip);
-	  
+	
+	node.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
+	node.classed("ended",function(d){return (d.end!=now)});
+
+	var startedNodes=d3.selectAll(".started").each(function(d){
+		var nodeg=d3.select(this);
+		if (typeof d==="undefined") return;
+		nodeg.append("circle")
+			.attr("class",function(){
+				return d.nodeType;
+			})
+			.attr("class",function(){
+				return addClass(this,"id"+d.id);
+			})
+			.attr("cy",function(){return d.y;})
+			.attr("cx",function(){return xForDate(d.start);})
+			.attr("r",circleRadius);
+	});
+	
+	
+	var endedNodes=d3.selectAll(".ended").each(function(d){
+		var nodeg=d3.select(this);
+		if (typeof d==="undefined") return;
+		nodeg.append("circle")
+			.attr("class",function(){
+				return d.nodeType;
+			})
+			.attr("class",function(){
+				return addClass(this,"id"+d.id);
+			})
+			.attr("cy",function(){return d.y;})
+			.attr("cx",function(){return xForDate(d.end);})
+			.attr("r",circleRadius);
+	});
+
+	console.log(startedNodes);
+	
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
@@ -155,7 +193,6 @@ function drawGraph(graphData)
     });      
     
     d3.select("body").on("click", function(){
-    	console.log("container click");
     	$.sidr('close',lastOpenedPanel);
     })
     
@@ -163,12 +200,12 @@ function drawGraph(graphData)
 	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
-		node.attr("y1",function(d,i){
-				return d.y;
-			})
-			.attr("y2",function(d,i){
-				return d.y+epsilon;
-			});
+		nodeLines.attr("y1",function(d,i){
+			return d.y;
+		})
+		.attr("y2",function(d,i){
+			return d.y+epsilon;
+		});
 		link.attr("d",diagonal)
 	});
 
