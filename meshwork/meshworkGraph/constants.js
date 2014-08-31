@@ -1,4 +1,6 @@
-var graphStartDate=new Date(2005,1,1,0,0,0);  
+
+var mesiVisualizzati=18;
+var graphStartDate=new Date(new Date().getTime()-mesiVisualizzati*30*24*60*60*1000);  
 
 var width = 900,
     height = 700;

@@ -140,13 +140,18 @@ function drawGraph(graphData)
       		}
    		});
 		d3.select(this).classed("hover",true);
-		d3.selectAll("."+"source"+d.id).classed("hover",true).call(function(){
-			var allClasses=this.attr("class").split(" ");
+		d3.selectAll("."+"source"+d.id+",."+"target"+d.id).classed("hover",true).each(function(){
+			var edge=d3.select(this);
+			
+			var allClasses=edge.attr("class").split(" ");
 			var targetClass=allClasses.filter(function(e){return e.match(/target.*/);})[0];
 			var targetId=targetClass.substr(6);
-			d3.select(".project.id"+targetId).classed("hover",true);
+			d3.selectAll(".id"+targetId).classed("hover",true);
+		
+			var sourceClass=allClasses.filter(function(e){return e.match(/source.*/);})[0];
+			var sourceId=sourceClass.substr(6);
+			d3.selectAll(".id"+sourceId).classed("hover",true);
 		});
-		d3.select("."+"target"+d.id).classed("hover",true);
     });      
     
     d3.select("body").on("click", function(){
