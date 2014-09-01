@@ -16,15 +16,15 @@ line.org-neverStarted {
     stroke-opacity: .95;
     stroke-width: 4px;
 }
-line.org-neverStarted:hover, line.org-neverStarted.hover {
+line.org-neverStarted.hover {
 	stroke: url(#selectedFadedGradient);
 	stroke-width: 8;
 }
-.org:hover, .org.hover, circle.org-neverStarted.hover {
+ .org.hover, circle.org-neverStarted.hover {
 	stroke: blue;
 	stroke-width: 8;
 }
-.project:hover, .project.hover {
+.project.hover {
 	stroke: orangered;
 	stroke-width: 8;
 }
