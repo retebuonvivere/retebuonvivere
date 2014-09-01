@@ -1,6 +1,6 @@
 var epsilon=0.01;
 var svg = d3.select("body").append("svg")
-    .attr("width", width)
+    .attr("width", width+circleRadius+1)
     .attr("height", height);
 
 var gradient= svg.append("defs")
@@ -71,6 +71,11 @@ function moveY(node,y){
 	}
 	var newTransform=matches[1]+"translate("+matches[2]+","+y+")"+matches[4];
 	d3.select(node).attr("transform",newTransform);		
+}
+
+function dateAddMs(date,ms)
+{
+	return new Date(date.getTime()+ms)
 }
 
 function drawGraph(graphData)
