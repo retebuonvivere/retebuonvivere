@@ -125,21 +125,27 @@ function drawGraph(graphData)
 		});
 		
 	var node = container.selectAll(".node")
-	  .data(graphData.nodes)
-	  .enter()
-	  .append("g")
-	  .each(function(d){
-	  	var x=0;
-	  	if (d.nodeType=="org-neverStarted")
-		{
-			x=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
-		}
-		else
-		{
-			x=xForDate(d.start);
-		}
-	  	move(this,x,d.y);
-	  })
+		.data(graphData.nodes)
+		.enter()
+		.append("g")
+		.each(function(d){
+			var x=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				x=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				x=xForDate(d.start);
+			}
+			move(this,x,d.y);
+		})
+		.on('mouseout', function(d){
+			tooltip.hide(d);
+			d3.selectAll(".hover").classed("hover",false);
+   		})
+		.call(tooltip);
+
 	  
   	  /*.attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;});*/
@@ -167,11 +173,6 @@ function drawGraph(graphData)
 		})
 	  .attr("y1",0)
 	  .attr("y2",epsilon)
-      .on('mouseout', function(d){
-			tooltip.hide(d);
-			d3.selectAll(".hover").classed("hover",false);
-   		})
-	  .call(tooltip);
 	
 	node.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
 	node.classed("ended",function(d){return (d.end!=now)});
@@ -244,6 +245,8 @@ function drawGraph(graphData)
 			d["panelCreated"]=true;
 		}
 		d3.select(this).classed("hover",true);
+		d3.selectAll(".id"+d.id).classed("hover",true);
+		
 		d3.selectAll("."+"source"+d.id+",."+"target"+d.id).classed("hover",true).each(function(){
 			var edge=d3.select(this);
 			

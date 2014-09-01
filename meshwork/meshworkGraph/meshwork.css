@@ -1,12 +1,12 @@
 svg {
     background: #ffffff;
 }
-.org {
+.org, circle.org-neverStarted {
     stroke: cyan;
     stroke-opacity: .95;
     stroke-width: 4px;
 }
-.org-neverStarted {
+line.org-neverStarted {
     stroke: url(#fadedGradient);
     stroke-opacity: .95;
     stroke-width: 4px;
@@ -16,11 +16,11 @@ svg {
     stroke-opacity: .95;
     stroke-width: 4px;
 }
-.org-neverStarted:hover, .org-neverStarted.hover {
+line.org-neverStarted:hover, line.org-neverStarted.hover {
 	stroke: url(#selectedFadedGradient);
 	stroke-width: 8;
 }
-.org:hover, .org.hover {
+.org:hover, .org.hover, circle.org-neverStarted.hover {
 	stroke: blue;
 	stroke-width: 8;
 }
