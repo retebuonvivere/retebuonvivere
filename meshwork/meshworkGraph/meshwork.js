@@ -1,6 +1,6 @@
 var epsilon=0.01;
 var svg = d3.select("body").append("svg")
-    .attr("width", width)
+    .attr("width", width+circleRadius+1)
     .attr("height", height);
 
 var gradient= svg.append("defs")
@@ -40,6 +40,44 @@ function addClass(domElement,newClass)
   	var currentClasses=d3.select(domElement).attr("class");
   	return currentClasses+" "+newClass;
 }
+
+function move(node,x,y){
+	var previousTransform=d3.select(node).attr("transform")
+	var matches;
+	if (previousTransform==null)
+	{
+		matches=["","","","",""];
+	}
+	else
+	{
+		var pattern=/(.*)translate\(([-\d.]+),([-\d.]+)\)(.*)/;
+		matches=previousTransform.match(pattern);
+	}
+	var newTransform=matches[1]+"translate("+x+","+y+")"+matches[4];
+	d3.select(node).attr("transform",newTransform);		
+}
+
+function moveY(node,y){
+	var previousTransform=d3.select(node).attr("transform")
+	var matches;
+	if (previousTransform==null)
+	{
+		matches=["","","","",""];
+	}
+	else
+	{
+		var pattern=/(.*)translate\(([-\d.]+),([-\d.]+)\)(.*)/;
+		matches=previousTransform.match(pattern);
+	}
+	var newTransform=matches[1]+"translate("+matches[2]+","+y+")"+matches[4];
+	d3.select(node).attr("transform",newTransform);		
+}
+
+function dateAddMs(date,ms)
+{
+	return new Date(date.getTime()+ms)
+}
+
 function drawGraph(graphData)
 {
 	testNoOverlap1();
@@ -91,55 +129,129 @@ function drawGraph(graphData)
 			return "<strong>"+d.name+"</strong>";
 		});
 		
-	
-	
 	var node = container.selectAll(".node")
-	  .data(graphData.nodes)
-	  .enter()
-	  .append("line")
-	  .attr("class",function(n){
+		.data(graphData.nodes)
+		.enter()
+		.append("g")
+		.each(function(d){
+			var x=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				x=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				x=xForDate(d.start);
+			}
+			move(this,x,d.y);
+		})
+		.on('mouseout', function(d){
+			tooltip.hide(d);
+			d3.selectAll(".hover").classed("hover",false);
+   		})
+		.call(tooltip);
+
+	  
+  	  /*.attr("y1",function(d,i){return d.y;})
+	  .attr("y2",function(d,i){return d.y+epsilon;});*/
+	  
+	var nodeLines = node.append("line")
+		.attr("class",function(n){
 	  		return n.nodeType;
 	  	})
 	  .attr("class",function(n){
 	  		return addClass(this,"id"+n.id);
 	  	})
-	  .attr("x1",function(d){
+	  .attr("x1",0)
+	  .attr("x2",function(d){
+			var startx=0;
 			if (d.nodeType=="org-neverStarted")
 			{
-				return xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+				startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
 			}
 			else
 			{
-				return xForDate(d.start);
+				startx=xForDate(d.start);
 			}
+
+			return xForDate(d.end)-startx;
 		})
-	  .attr("x2",function(d){return xForDate(d.end);})
-	  .attr("y1",function(d,i){return d.y;})
-	  .attr("y2",function(d,i){return d.y+epsilon;})
-      .on('mouseout', function(d){
-			tooltip.hide(d);
-			d3.selectAll(".hover").classed("hover",false);
-   		})
-	  .call(tooltip);
-	  
+	  .attr("y1",0)
+	  .attr("y2",epsilon)
+	
+	node.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
+	node.classed("ended",function(d){return (d.end!=now)});
+
+	var startedNodes=d3.selectAll(".started").each(function(d){
+		var nodeg=d3.select(this);
+		if (typeof d==="undefined") return;
+		nodeg.append("circle")
+			.attr("class",function(){
+				return d.nodeType;
+			})
+			.attr("class",function(){
+				return addClass(this,"id"+d.id);
+			})
+			.attr("cy",0)
+			.attr("cx",0)
+			.attr("r",circleRadius);
+	});
+	
+	
+	var endedNodes=d3.selectAll(".ended").each(function(d){
+		var nodeg=d3.select(this);
+		if (typeof d==="undefined") return;
+		nodeg.append("circle")
+			.attr("class",function(){
+				return d.nodeType;
+			})
+			.attr("class",function(){
+				return addClass(this,"id"+d.id);
+			})
+			.attr("cy",0)
+			.attr("cx",function(d){
+				var startx=0;
+				if (d.nodeType=="org-neverStarted")
+				{
+					startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+				}
+				else
+				{
+					startx=xForDate(d.start);
+				}
+
+				return xForDate(d.end)-startx;
+			})
+			.attr("r",circleRadius);
+	});
+
+	console.log(startedNodes);
+	
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
-		panelId++;
 		tooltip.show(d)
-		var panelName="sidrPanel"+panelId
-		$(this).sidr({
-			name:panelName,
-			source: function (name) {
-				return panelContentGenerator(d);
-      		},
-      		side:"right",
-      		body:"#container",
-      		onOpen:function() {
-      			lastOpenedPanel=panelName
-      		}
-   		});
+		if (typeof d["panelCreated"] == "undefined")
+		{
+			panelId++;
+			var panelName="sidrPanel"+panelId
+			$(this).sidr({
+				name:panelName,
+				source: function (name) {
+					return panelContentGenerator(d);
+	      		},
+	      		side:"right",
+	      		body:"#container",
+	      		onOpen:function() {
+	      			lastOpenedPanel=panelName
+	      		}
+	      
+			});
+			d["panelCreated"]=true;
+		}
 		d3.select(this).classed("hover",true);
+		d3.selectAll(".id"+d.id).classed("hover",true);
+		
 		d3.selectAll("."+"source"+d.id+",."+"target"+d.id).classed("hover",true).each(function(){
 			var edge=d3.select(this);
 			
@@ -155,7 +267,6 @@ function drawGraph(graphData)
     });      
     
     d3.select("body").on("click", function(){
-    	console.log("container click");
     	$.sidr('close',lastOpenedPanel);
     })
     
@@ -163,12 +274,9 @@ function drawGraph(graphData)
 	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
-		node.attr("y1",function(d,i){
-				return d.y;
-			})
-			.attr("y2",function(d,i){
-				return d.y+epsilon;
-			});
+		node.each(function(d){
+			moveY(this,d.y)
+		})
 		link.attr("d",diagonal)
 	});
 
@@ -181,12 +289,9 @@ function drawGraph(graphData)
 
 		node.transition()
 			.delay(100)
-			.attr("y1",function(d,i){
-				return d.y;
+			.each(function(d){
+				moveY(this,d.y)
 			})
-			.attr("y2",function(d,i){
-				return d.y+epsilon;
-			});
 		link.transition().attr("d",diagonal);
 		
 		

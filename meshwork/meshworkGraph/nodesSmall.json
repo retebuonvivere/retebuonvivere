@@ -5,6 +5,9 @@
 
 {"nodeType": "project", "name": "ProjectA", "url": "no", "id": "3", "start": "2005-01-01T00:00:00", "end": "2013-12-31T00:00:00", "orgType": "N", "categories": "beni comuni"}, 
 
-{"nodeType": "project", "name": "ProjectB", "url": "no", "id": "4", "start": "2007-01-01T00:00:00", "end": "2013-12-31T00:00:00", "orgType": "N", "categories": "beni comuni"}
+{"nodeType": "project", "name": "ProjectB", "url": "no", "id": "4", "start": "2007-01-01T00:00:00", "end": "2013-12-31T00:00:00", "orgType": "N", "categories": "beni comuni"},
+
+{"nodeType": "org", "name": "Il Melograno", "url": "http://www.retebuonvivere.org/node/161", "id": "161", "start": "N", "end": "2013-05-14T00:00:00", "orgType": "N", "categories": "N"}
+
 ]
 

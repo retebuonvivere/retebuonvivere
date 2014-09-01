@@ -4,6 +4,8 @@ var graphStartDate=new Date(new Date().getTime()-mesiVisualizzati*30*24*60*60*10
 
 var width = 900,
     height = 700;
+    
+var circleRadius=5;
 
 var nodeMinimumDays=10
 
