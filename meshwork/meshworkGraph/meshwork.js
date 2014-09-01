@@ -40,6 +40,39 @@ function addClass(domElement,newClass)
   	var currentClasses=d3.select(domElement).attr("class");
   	return currentClasses+" "+newClass;
 }
+
+function move(node,x,y){
+	var previousTransform=d3.select(node).attr("transform")
+	var matches;
+	if (previousTransform==null)
+	{
+		matches=["","","","",""];
+	}
+	else
+	{
+		var pattern=/(.*)translate\(([-\d.]+),([-\d.]+)\)(.*)/;
+		matches=previousTransform.match(pattern);
+	}
+	var newTransform=matches[1]+"translate("+x+","+y+")"+matches[4];
+	d3.select(node).attr("transform",newTransform);		
+}
+
+function moveY(node,y){
+	var previousTransform=d3.select(node).attr("transform")
+	var matches;
+	if (previousTransform==null)
+	{
+		matches=["","","","",""];
+	}
+	else
+	{
+		var pattern=/(.*)translate\(([-\d.]+),([-\d.]+)\)(.*)/;
+		matches=previousTransform.match(pattern);
+	}
+	var newTransform=matches[1]+"translate("+matches[2]+","+y+")"+matches[4];
+	d3.select(node).attr("transform",newTransform);		
+}
+
 function drawGraph(graphData)
 {
 	testNoOverlap1();
@@ -91,12 +124,25 @@ function drawGraph(graphData)
 			return "<strong>"+d.name+"</strong>";
 		});
 		
-	
-	
 	var node = container.selectAll(".node")
 	  .data(graphData.nodes)
 	  .enter()
-	  .append("g");
+	  .append("g")
+	  .each(function(d){
+	  	var x=0;
+	  	if (d.nodeType=="org-neverStarted")
+		{
+			x=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+		}
+		else
+		{
+			x=xForDate(d.start);
+		}
+	  	move(this,x,d.y);
+	  })
+	  
+  	  /*.attr("y1",function(d,i){return d.y;})
+	  .attr("y2",function(d,i){return d.y+epsilon;});*/
 	  
 	var nodeLines = node.append("line")
 		.attr("class",function(n){
@@ -105,19 +151,22 @@ function drawGraph(graphData)
 	  .attr("class",function(n){
 	  		return addClass(this,"id"+n.id);
 	  	})
-	  .attr("x1",function(d){
+	  .attr("x1",0)
+	  .attr("x2",function(d){
+			var startx=0;
 			if (d.nodeType=="org-neverStarted")
 			{
-				return xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+				startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
 			}
 			else
 			{
-				return xForDate(d.start);
+				startx=xForDate(d.start);
 			}
+
+			return xForDate(d.end)-startx;
 		})
-	  .attr("x2",function(d){return xForDate(d.end);})
-	  .attr("y1",function(d,i){return d.y;})
-	  .attr("y2",function(d,i){return d.y+epsilon;})
+	  .attr("y1",0)
+	  .attr("y2",epsilon)
       .on('mouseout', function(d){
 			tooltip.hide(d);
 			d3.selectAll(".hover").classed("hover",false);
@@ -137,8 +186,8 @@ function drawGraph(graphData)
 			.attr("class",function(){
 				return addClass(this,"id"+d.id);
 			})
-			.attr("cy",function(){return d.y;})
-			.attr("cx",function(){return xForDate(d.start);})
+			.attr("cy",0)
+			.attr("cx",0)
 			.attr("r",circleRadius);
 	});
 	
@@ -153,8 +202,20 @@ function drawGraph(graphData)
 			.attr("class",function(){
 				return addClass(this,"id"+d.id);
 			})
-			.attr("cy",function(){return d.y;})
-			.attr("cx",function(){return xForDate(d.end);})
+			.attr("cy",0)
+			.attr("cx",function(d){
+				var startx=0;
+				if (d.nodeType=="org-neverStarted")
+				{
+					startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+				}
+				else
+				{
+					startx=xForDate(d.start);
+				}
+
+				return xForDate(d.end)-startx;
+			})
 			.attr("r",circleRadius);
 	});
 
@@ -200,12 +261,9 @@ function drawGraph(graphData)
 	  .text(function(d) {return d.name;});
 
 	force.on("tick", function() {
-		nodeLines.attr("y1",function(d,i){
-			return d.y;
+		node.each(function(d){
+			moveY(this,d.y)
 		})
-		.attr("y2",function(d,i){
-			return d.y+epsilon;
-		});
 		link.attr("d",diagonal)
 	});
 
@@ -218,12 +276,9 @@ function drawGraph(graphData)
 
 		node.transition()
 			.delay(100)
-			.attr("y1",function(d,i){
-				return d.y;
+			.each(function(d){
+				moveY(this,d.y)
 			})
-			.attr("y2",function(d,i){
-				return d.y+epsilon;
-			});
 		link.transition().attr("d",diagonal);
 		
 		
