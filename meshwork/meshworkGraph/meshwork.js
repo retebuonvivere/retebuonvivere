@@ -224,20 +224,25 @@ function drawGraph(graphData)
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
-		panelId++;
 		tooltip.show(d)
-		var panelName="sidrPanel"+panelId
-		$(this).sidr({
-			name:panelName,
-			source: function (name) {
-				return panelContentGenerator(d);
-      		},
-      		side:"right",
-      		body:"#container",
-      		onOpen:function() {
-      			lastOpenedPanel=panelName
-      		}
-   		});
+		if (typeof d["panelCreated"] == "undefined")
+		{
+			panelId++;
+			var panelName="sidrPanel"+panelId
+			$(this).sidr({
+				name:panelName,
+				source: function (name) {
+					return panelContentGenerator(d);
+	      		},
+	      		side:"right",
+	      		body:"#container",
+	      		onOpen:function() {
+	      			lastOpenedPanel=panelName
+	      		}
+	      
+			});
+			d["panelCreated"]=true;
+		}
 		d3.select(this).classed("hover",true);
 		d3.selectAll("."+"source"+d.id+",."+"target"+d.id).classed("hover",true).each(function(){
 			var edge=d3.select(this);
