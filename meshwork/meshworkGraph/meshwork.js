@@ -1,6 +1,6 @@
 var epsilon=0.01;
 var svg = d3.select("body").append("svg")
-    .attr("width", width+circleRadius+1)
+    .attr("width", width+circleRadius+10)
     .attr("height", height);
 
 var gradient= svg.append("defs")
@@ -78,6 +78,17 @@ function dateAddMs(date,ms)
 	return new Date(date.getTime()+ms)
 }
 
+function readNodeEnd(node)
+{
+	if (node.end==null)
+	{
+		return now;
+	}
+	else
+	{
+		return node.end;
+	}
+}
 function drawGraph(graphData)
 {
 	testNoOverlap1();
@@ -137,7 +148,7 @@ function drawGraph(graphData)
 			var x=0;
 			if (d.nodeType=="org-neverStarted")
 			{
-				x=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+				x=xForDate(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
 			}
 			else
 			{
@@ -167,20 +178,20 @@ function drawGraph(graphData)
 			var startx=0;
 			if (d.nodeType=="org-neverStarted")
 			{
-				startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+				startx=xForDate(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
 			}
 			else
 			{
 				startx=xForDate(d.start);
 			}
 
-			return xForDate(d.end)-startx;
+			return xForDate(readNodeEnd(d))-startx;
 		})
 	  .attr("y1",0)
 	  .attr("y2",epsilon)
 	
 	node.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
-	node.classed("ended",function(d){return (d.end!=now)});
+	node.classed("ended",function(d){return (d.end!=null)});
 
 	var startedNodes=d3.selectAll(".started").each(function(d){
 		var nodeg=d3.select(this);

@@ -42,7 +42,7 @@ $(document).ready(function(){
 				}
 				if (isNaN(new Date(node["end"]).getTime()))
 				{
-					node["end"]=now;
+					node["end"]=null;
 				}
 				else
 				{
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 				if (dateEquals(node["end"],node["start"]))
 				{
-					node["end"]=now;
+					node["end"]=null;
 				}
 				if (node["end"]!=null && node["start"]!=null)
 				{
@@ -128,9 +128,11 @@ $(document).ready(function(){
 //						console.log(endEdge)
 						edges.push(endEdge);
 
-					// todo: se il nodo target (proj) finisce prima -> spostiamo la fine a edgeEndDate
-					nodes[targetNodeIndex]["end"]=new Date(Math.max(nodes[targetNodeIndex]["end"].getTime(),edgeEndDate.getTime()));
-
+						if (nodes[targetNodeIndex]["end"]!=null)
+						{
+							// todo: se il nodo target (proj) finisce prima -> spostiamo la fine a edgeEndDate
+							nodes[targetNodeIndex]["end"]=new Date(Math.max(nodes[targetNodeIndex]["end"].getTime(),edgeEndDate.getTime()));
+						}
 
 					}
 				}
