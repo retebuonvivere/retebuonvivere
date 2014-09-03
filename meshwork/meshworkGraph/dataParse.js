@@ -30,6 +30,7 @@ $(document).ready(function(){
 			for (var i=0;i<nodes.length;i++)
 			{
 				var node=nodes[i];
+				node["clicked"]=false;
 				nodesIdMap.set(node["id"],i);
 				if (isNaN(new Date(node["start"]).getTime()))
 				{

@@ -41,6 +41,10 @@ line.org-neverStarted.hover {
     fill: none;
 }
 
+.node.unclicked > * {
+    stroke-opacity: .25;
+    opacity: .25;
+}
 .x-axis {
     fill: #fee000;
     font-family: sans-serif;

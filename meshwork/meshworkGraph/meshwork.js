@@ -19,11 +19,6 @@ gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr(
 
 var color = d3.scale.category10();
 
-var force = d3.layout.force()
-    .charge(-250)
-    .linkDistance(100)
-    .gravity(.1)
-    .size([width, height]);
 
 var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
 
@@ -89,6 +84,9 @@ function readNodeEnd(node)
 		return node.end;
 	}
 }
+
+var someNodeClicked=false;
+
 function drawGraph(graphData)
 {
 	testNoOverlap1();
@@ -96,6 +94,54 @@ function drawGraph(graphData)
 	testNoOverlap3();
 	testNoOverlap4();
 	testNoOverlap5();
+
+	
+	var force = d3.layout.force()
+		.friction(0.9)
+	/*	.charge(function(d,i){
+			if (someNodeClicked)
+			{
+				if (d["clicked"])
+				{
+					return -500;
+				}
+				else
+				{
+					return -250;
+				}
+			}
+			else
+			{
+				return -250;
+			}
+		})*/
+/*		.linkStrength(
+		.friction(
+		.chargeDistance(
+		*/
+		.linkDistance(function(e,i){
+			if (someNodeClicked)
+			{
+				if (e.source["clicked"] && e.target["clicked"])
+				{
+					return 100;
+				}
+				else if (!e.source["clicked"] && !e.target["clicked"])
+				{
+					return 1;
+				}
+				else
+				{
+					return 500;
+				}
+			}
+			else
+			{
+				return 100;
+			}
+		})
+		.gravity(.2)
+		.size([width, height]);
 
 	force
 	  .nodes(graphData.nodes)
@@ -160,6 +206,7 @@ function drawGraph(graphData)
 			tooltip.hide(d);
 			d3.selectAll(".hover").classed("hover",false);
    		})
+   		.classed("node",true)
 		.call(tooltip);
 
 	  
@@ -241,6 +288,8 @@ function drawGraph(graphData)
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
+		d3.selectAll(".selected").classed("selected",false);
+
 		tooltip.show(d)
 		if (typeof d["panelCreated"] == "undefined")
 		{
@@ -275,10 +324,32 @@ function drawGraph(graphData)
 			var sourceId=sourceClass.substr(6);
 			d3.selectAll(".id"+sourceId).classed("hover",true);
 		});
+		
+		d3.selectAll(".hover").classed("selected",true);
     });      
+    
+    node.on("click", function() {
+    	d3.event.stopPropagation();
+    	d3.selectAll(".selected").classed("clicked",true).each(function(d){
+	    	console.log("node clicked");
+    		d["clicked"]=true;
+    	});
+    	d3.selectAll("*:not(.clicked)").classed("unclicked",true).each(function(d){
+    		console.log("node unclicked");
+    	});
+    	someNodeClicked=true;
+    	force.start();
+    });
     
     d3.select("body").on("click", function(){
     	$.sidr('close',lastOpenedPanel);
+    	d3.selectAll(".clicked").each(function(d){
+    		d["clicked"]=false;
+    	});
+    	console.log("body clicked");
+    	d3.selectAll(".clicked").classed("clicked",false);
+    	d3.selectAll(".unclicked").classed("unclicked",false);
+    	someNodeClicked=false;
     })
     
 	node.append("title")
@@ -354,6 +425,10 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 		}
 		var n=nodes[i];
 		var prevNode=nodes[i-1];
+		if (someNodeClicked && !n["clicked"])
+		{
+			continue;
+		}
 
 		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
 		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
