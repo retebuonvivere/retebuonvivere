@@ -36,20 +36,9 @@ function addClass(domElement,newClass)
   	return currentClasses+" "+newClass;
 }
 
-function move(node,x,y){
-	var previousTransform=d3.select(node).attr("transform")
-	var matches;
-	if (previousTransform==null)
-	{
-		matches=["","","","",""];
-	}
-	else
-	{
-		var pattern=/(.*)translate\(([-\d.]+),([-\d.]+)\)(.*)/;
-		matches=previousTransform.match(pattern);
-	}
-	var newTransform=matches[1]+"translate("+x+","+y+")"+matches[4];
-	d3.select(node).attr("transform",newTransform);		
+function setTranslate(node,x,y){
+	// butta via le altre transform
+	d3.select(node).attr("transform","translate("+x+","+y+")");		
 }
 
 function moveY(node,y){
@@ -97,7 +86,7 @@ function drawGraph(graphData)
 
 	
 	var force = d3.layout.force()
-		.friction(0.9)
+		.friction(0.7)
 	/*	.charge(function(d,i){
 			if (someNodeClicked)
 			{
@@ -190,6 +179,12 @@ function drawGraph(graphData)
 		.data(graphData.nodes)
 		.enter()
 		.append("g")
+		.attr("class",function(d){
+			return d.nodeType;
+		})
+		.attr("class",function(d){
+			return addClass(this,"id"+d.id);
+		})
 		.each(function(d){
 			var x=0;
 			if (d.nodeType=="org-neverStarted")
@@ -200,7 +195,8 @@ function drawGraph(graphData)
 			{
 				x=xForDate(d.start);
 			}
-			move(this,x,d.y);
+			d.origX=x;
+			setTranslate(this,x,d.y);
 		})
 		.on('mouseout', function(d){
 			tooltip.hide(d);
@@ -220,6 +216,7 @@ function drawGraph(graphData)
 	  .attr("class",function(n){
 	  		return addClass(this,"id"+n.id);
 	  	})
+		.classed("node",true)
 	  .attr("x1",0)
 	  .attr("x2",function(d){
 			var startx=0;
@@ -250,6 +247,7 @@ function drawGraph(graphData)
 			.attr("class",function(){
 				return addClass(this,"id"+d.id);
 			})
+			.classed("node",true)
 			.attr("cy",0)
 			.attr("cx",0)
 			.attr("r",circleRadius);
@@ -266,6 +264,7 @@ function drawGraph(graphData)
 			.attr("class",function(){
 				return addClass(this,"id"+d.id);
 			})
+			.classed("node",true)
 			.attr("cy",0)
 			.attr("cx",function(d){
 				var startx=0;
@@ -323,9 +322,10 @@ function drawGraph(graphData)
 			var sourceClass=allClasses.filter(function(e){return e.match(/source.*/);})[0];
 			var sourceId=sourceClass.substr(6);
 			d3.selectAll(".id"+sourceId).classed("hover",true);
+			d3.selectAll(".hover").classed("selected",true).each(function() {console.log("selectedA");});
 		});
 		
-		d3.selectAll(".hover").classed("selected",true);
+		d3.selectAll(".hover").classed("selected",true).each(function() {console.log("selectedB");});;
     });      
     
     node.on("click", function() {
@@ -357,7 +357,7 @@ function drawGraph(graphData)
 
 	force.on("tick", function() {
 		node.each(function(d){
-			moveY(this,d.y)
+			setTranslate(this,d.origX,d.y)
 		})
 		link.attr("d",diagonal)
 	});
