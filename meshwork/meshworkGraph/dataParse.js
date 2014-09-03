@@ -102,8 +102,10 @@ $(document).ready(function(){
 									};
 					edges.push(startEdge);
 					
-					// todo: se il nodo target (proj) inizia dopo -> spostiamo l'inizio a edgeStartDate
+					// todo: se un nodo inizia dopo -> spostiamo l'inizio a edgeStartDate
 					nodes[targetNodeIndex]["start"]=new Date(Math.min(nodes[targetNodeIndex]["start"].getTime(),edgeStartDate.getTime()));
+					nodes[sourceNodeIndex]["start"]=new Date(Math.min(nodes[sourceNodeIndex]["start"].getTime(),edgeStartDate.getTime()));
+					
 					
 					
 					var edgeEndDate=new Date(edge["end"]);
@@ -128,10 +130,14 @@ $(document).ready(function(){
 //						console.log(endEdge)
 						edges.push(endEdge);
 
+						// todo: se un nodo finisce prima -> spostiamo la fine a edgeEndDate
 						if (nodes[targetNodeIndex]["end"]!=null)
 						{
-							// todo: se il nodo target (proj) finisce prima -> spostiamo la fine a edgeEndDate
 							nodes[targetNodeIndex]["end"]=new Date(Math.max(nodes[targetNodeIndex]["end"].getTime(),edgeEndDate.getTime()));
+						}
+						if (nodes[sourceNodeIndex]["end"]!=null)
+						{
+							nodes[sourceNodeIndex]["end"]=new Date(Math.max(nodes[sourceNodeIndex]["end"].getTime(),edgeEndDate.getTime()));
 						}
 
 					}
