@@ -167,15 +167,7 @@ function drawGraph(graphData)
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
-	
-	var tooltip= d3.tip()
-		.attr("class","node-tooltip")
-//		.offset([-10,0])
-		.direction("e")
-		.html(function(d) {
-			return "<strong>"+d.name+"</strong>";
-		});
-		
+
 	var node = container.selectAll(".node")
 		.data(graphData.nodes)
 		.enter()
@@ -191,10 +183,8 @@ function drawGraph(graphData)
 			setTranslate(this,0,d.y);
 		})
 		.on('mouseout', function(d){
-			tooltip.hide(d);
 			d3.selectAll(".hover").classed("hover",false);
-   		})
-		.call(tooltip);
+   		});
 		
 	node.append("text")
 		.text(function(d){return d.name;})
@@ -304,9 +294,9 @@ function drawGraph(graphData)
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
+		if (someNodeClicked) return;
 		d3.selectAll(".selected").classed("selected",false);
 
-		tooltip.show(d)
 		if (typeof d["panelCreated"] == "undefined")
 		{
 			panelId++;
@@ -339,20 +329,20 @@ function drawGraph(graphData)
 			var sourceClass=allClasses.filter(function(e){return e.match(/source.*/);})[0];
 			var sourceId=sourceClass.substr(6);
 			d3.selectAll(".id"+sourceId).classed("hover",true);
-			d3.selectAll(".hover").classed("selected",true).each(function() {console.log("selectedA");});
+			d3.selectAll(".hover").classed("selected",true);
 		});
 		
-		d3.selectAll(".hover").classed("selected",true).each(function() {console.log("selectedB");});;
+		d3.selectAll(".hover").classed("selected",true);
     });      
     
     node.on("click", function() {
     	d3.event.stopPropagation();
+		if (someNodeClicked) return;
+
     	d3.selectAll(".selected").classed("clicked",true).each(function(d){
-	    	console.log("node clicked");
     		d["clicked"]=true;
     	});
     	d3.selectAll("*:not(.clicked)").classed("unclicked",true).each(function(d){
-    		console.log("node unclicked");
     	});
     	someNodeClicked=true;
 //    	force.start();
@@ -363,7 +353,6 @@ function drawGraph(graphData)
     	d3.selectAll(".clicked").each(function(d){
     		d["clicked"]=false;
     	});
-    	console.log("body clicked");
     	d3.selectAll(".clicked").classed("clicked",false);
     	d3.selectAll(".unclicked").classed("unclicked",false);
     	someNodeClicked=false;
