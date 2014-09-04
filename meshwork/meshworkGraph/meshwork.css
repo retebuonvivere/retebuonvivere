@@ -41,9 +41,14 @@ line.org-neverStarted.hover {
     fill: none;
 }
 
-.node.unclicked > * {
-    stroke-opacity: .25;
-    opacity: .25;
+.node.unclicked, .node.unclicked > *{
+    stroke-opacity: .45;
+    opacity: .45;
+}
+
+.link.unclicked {
+    stroke-opacity: .15;
+    opacity: .15;
 }
 .x-axis {
     fill: #fee000;
