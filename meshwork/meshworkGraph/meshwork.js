@@ -73,16 +73,19 @@ function readNodeEnd(node)
 		return node.end;
 	}
 }
-
+var node;
+var link;
+var diagonal;
 var someNodeClicked=false;
 var graphData;
 function drawGraph()
 {
-	testNoOverlap1();
+/*	non vanno senza node...
+testNoOverlap1();
 	testNoOverlap2();
 	testNoOverlap3();
 	testNoOverlap4();
-	testNoOverlap5();
+	testNoOverlap5();*/
 
 	
 	var force = d3.layout.force()
@@ -145,12 +148,12 @@ function drawGraph()
 		.domain([graphStartDate, now])
 		.range([0, width]);
 	
-	var diagonal=d3.svg.diagonal()
+	diagonal=d3.svg.diagonal()
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
 		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
 
-	var link = container.selectAll(".link")
+	link = container.selectAll(".link")
 	  .data(graphData.links)
 	  .enter()
 	  .append("path")
@@ -169,7 +172,7 @@ function drawGraph()
 			d3.event.sourceEvent.stopPropagation();
 		});
 
-	var node = container.selectAll(".node")
+	node = container.selectAll(".node")
 		.data(graphData.nodes)
 		.enter()
 		.append("g")
@@ -376,12 +379,7 @@ function drawGraph()
 
 		noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash);
 
-		node.transition()
-			.delay(100)
-			.each(function(d){
-				moveY(this,d.y)
-			})
-		link.transition().attr("d",diagonal);
+		
 		
 		
 	});
@@ -422,6 +420,8 @@ function drawGraph()
 
 function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash)
 {
+	if (typeof node == "undefined")
+		return;
 	nodes.sort(function(a,b){return a.y-b.y;});
 	
 	for (var i=0;i<nodes.length;i++)
@@ -440,9 +440,23 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
 		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
 	}
+	
+	node.transition()
+			.delay(100)
+			.each(function(d){
+				moveY(this,d.y)
+			})
+	link.transition().attr("d",diagonal);
 }
 
-
+function relayout(selector)
+{
+	var selectedNodes=[];
+	d3.selectAll(selector).each(function(d){
+		selectedNodes.push(d);
+	})
+	noOverlap(selectedNodes,nodesMinimumPixelDistance*2,nodesMinimumPixelDistanceBackLash*2);
+}
 
 
 
