@@ -87,6 +87,7 @@ function drawGraph(graphData)
 	
 	var force = d3.layout.force()
 		.friction(0.7)
+		.charge(-200)
 	/*	.charge(function(d,i){
 			if (someNodeClicked)
 			{
@@ -129,7 +130,7 @@ function drawGraph(graphData)
 				return 100;
 			}
 		})
-		.gravity(.2)
+		.gravity(.1)
 		.size([width, height]);
 
 	force
@@ -338,7 +339,7 @@ function drawGraph(graphData)
     		console.log("node unclicked");
     	});
     	someNodeClicked=true;
-    	force.start();
+//    	force.start();
     });
     
     d3.select("body").on("click", function(){
