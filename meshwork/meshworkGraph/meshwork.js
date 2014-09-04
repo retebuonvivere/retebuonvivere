@@ -1,6 +1,6 @@
 var epsilon=0.01;
 var svg = d3.select("body").append("svg")
-    .attr("width", width+circleRadius+10)
+    .attr("width", width+circleRadius+10+textWidth)
     .attr("height", height);
 
 var gradient= svg.append("defs")
@@ -195,6 +195,10 @@ function drawGraph(graphData)
 			d3.selectAll(".hover").classed("hover",false);
    		})
 		.call(tooltip);
+		
+	node.append("text")
+		.text(function(d){return d.name;})
+		.attr("x",width+10);
 
 	var nodeXG= node.append("g")
 		.attr("class",function(d){

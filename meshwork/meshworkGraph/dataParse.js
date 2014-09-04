@@ -7,8 +7,8 @@ var now=new Date();
 
     
     
-var nodesFile="nodes.json";
-var edgesFile="edges.json";
+var nodesFile="nodesSmall.json";
+var edgesFile="edgesSmall.json";
 
 var nodes;
 

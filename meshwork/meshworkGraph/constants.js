@@ -7,6 +7,8 @@ var width = 900,
     
 var circleRadius=5;
 
+var textWidth=100;
+
 var nodeMinimumDays=10
 
 var nodesMinimumPixelDistance=5;
