@@ -75,8 +75,8 @@ function readNodeEnd(node)
 }
 
 var someNodeClicked=false;
-
-function drawGraph(graphData)
+var graphData;
+function drawGraph()
 {
 	testNoOverlap1();
 	testNoOverlap2();
@@ -418,7 +418,7 @@ function drawGraph(graphData)
 
 }
 
-
+		
 
 function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash)
 {

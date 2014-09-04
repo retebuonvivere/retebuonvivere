@@ -155,13 +155,14 @@ $(document).ready(function(){
 			})
 
 
-			var graphData= {
+			graphData= {
 								"links":edges,
 								"nodes":nodes
 							}
 
 			console.log(graphData);
-			drawGraph(graphData);
+			
+			drawGraph();
 
 		});
 	});
