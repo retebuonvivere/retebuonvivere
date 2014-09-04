@@ -86,7 +86,7 @@ function drawGraph(graphData)
 
 	
 	var force = d3.layout.force()
-		.friction(0.7)
+		.friction(0.9)
 		.charge(-200)
 	/*	.charge(function(d,i){
 			if (someNodeClicked)
@@ -136,7 +136,8 @@ function drawGraph(graphData)
 	force
 	  .nodes(graphData.nodes)
 	  .links(graphData.links)
-	  .start();
+	  .start()
+	  .alpha(0.01);
 
 	container=svg.append("g").attr("id","container");
 
