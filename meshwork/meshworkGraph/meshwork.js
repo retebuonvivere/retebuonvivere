@@ -349,6 +349,7 @@ testNoOverlap1();
     	d3.selectAll("*:not(.clicked)").classed("unclicked",true).each(function(d){
     	});
     	someNodeClicked=true;
+    	relayout(".node.clicked")
 //    	force.start();
     });
     
@@ -360,6 +361,7 @@ testNoOverlap1();
     	d3.selectAll(".clicked").classed("clicked",false);
     	d3.selectAll(".unclicked").classed("unclicked",false);
     	someNodeClicked=false;
+    	force.friction(unclickFriction).start().alpha(unclickAlpha);
     })
     
 	node.append("title")
@@ -444,7 +446,8 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 	node.transition()
 			.delay(100)
 			.each(function(d){
-				moveY(this,d.y)
+				console.log(d);
+				setTranslate(this,0,d.y)
 			})
 	link.transition().attr("d",diagonal);
 }
@@ -453,9 +456,12 @@ function relayout(selector)
 {
 	var selectedNodes=[];
 	d3.selectAll(selector).each(function(d){
-		selectedNodes.push(d);
+		if (selectedNodes.indexOf(d)==-1)
+			selectedNodes.push(d);
 	})
-	noOverlap(selectedNodes,nodesMinimumPixelDistance*2,nodesMinimumPixelDistanceBackLash*2);
+	console.log("relayout selectedNodes:");
+	console.log(selectedNodes);
+	noOverlap(selectedNodes,height/(selectedNodes.length+2),nodesMinimumPixelDistanceBackLash*2);
 }
 
 

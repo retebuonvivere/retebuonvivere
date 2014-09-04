@@ -14,6 +14,9 @@ var nodeMinimumDays=10
 var nodesMinimumPixelDistance=5;
 var nodesMinimumPixelDistanceBackLash=0.4;
 
+var unclickAlpha=0.006;
+var unclickFriction=0.1;
+
 function panelContentGenerator(node)
 {
 	var html="<h1>"+node.name+"</h1>"+
