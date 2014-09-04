@@ -186,6 +186,24 @@ function drawGraph(graphData)
 		.attr("class",function(d){
 			return addClass(this,"id"+d.id);
 		})
+   		.classed("node",true)
+		.each(function(d){
+			setTranslate(this,0,d.y);
+		})
+		.on('mouseout', function(d){
+			tooltip.hide(d);
+			d3.selectAll(".hover").classed("hover",false);
+   		})
+		.call(tooltip);
+
+	var nodeXG= node.append("g")
+		.attr("class",function(d){
+			return d.nodeType;
+		})
+		.attr("class",function(d){
+			return addClass(this,"id"+d.id);
+		})
+   		.classed("node",true)
 		.each(function(d){
 			var x=0;
 			if (d.nodeType=="org-neverStarted")
@@ -197,20 +215,14 @@ function drawGraph(graphData)
 				x=xForDate(d.start);
 			}
 			d.origX=x;
-			setTranslate(this,x,d.y);
+			setTranslate(this,x,0);
 		})
-		.on('mouseout', function(d){
-			tooltip.hide(d);
-			d3.selectAll(".hover").classed("hover",false);
-   		})
-   		.classed("node",true)
-		.call(tooltip);
 
 	  
   	  /*.attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;});*/
 	  
-	var nodeLines = node.append("line")
+	var nodeLines = nodeXG.append("line")
 		.attr("class",function(n){
 	  		return n.nodeType;
 	  	})
@@ -235,8 +247,8 @@ function drawGraph(graphData)
 	  .attr("y1",0)
 	  .attr("y2",epsilon)
 	
-	node.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
-	node.classed("ended",function(d){return (d.end!=null)});
+	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
+	nodeXG.classed("ended",function(d){return (d.end!=null)});
 
 	var startedNodes=d3.selectAll(".started").each(function(d){
 		var nodeg=d3.select(this);
@@ -358,7 +370,7 @@ function drawGraph(graphData)
 
 	force.on("tick", function() {
 		node.each(function(d){
-			setTranslate(this,d.origX,d.y)
+			setTranslate(this,0,d.y)
 		})
 		link.attr("d",diagonal)
 	});
