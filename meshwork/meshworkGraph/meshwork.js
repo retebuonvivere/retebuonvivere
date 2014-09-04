@@ -1,6 +1,6 @@
 var epsilon=0.01;
 var svg = d3.select("body").append("svg")
-    .attr("width", width+circleRadius+10)
+    .attr("width", width+circleRadius+10+textWidth)
     .attr("height", height);
 
 var gradient= svg.append("defs")
@@ -19,11 +19,6 @@ gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr(
 
 var color = d3.scale.category10();
 
-var force = d3.layout.force()
-    .charge(-250)
-    .linkDistance(100)
-    .gravity(.1)
-    .size([width, height]);
 
 var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
 
@@ -41,20 +36,9 @@ function addClass(domElement,newClass)
   	return currentClasses+" "+newClass;
 }
 
-function move(node,x,y){
-	var previousTransform=d3.select(node).attr("transform")
-	var matches;
-	if (previousTransform==null)
-	{
-		matches=["","","","",""];
-	}
-	else
-	{
-		var pattern=/(.*)translate\(([-\d.]+),([-\d.]+)\)(.*)/;
-		matches=previousTransform.match(pattern);
-	}
-	var newTransform=matches[1]+"translate("+x+","+y+")"+matches[4];
-	d3.select(node).attr("transform",newTransform);		
+function setTranslate(node,x,y){
+	// butta via le altre transform
+	d3.select(node).attr("transform","translate("+x+","+y+")");		
 }
 
 function moveY(node,y){
@@ -89,6 +73,9 @@ function readNodeEnd(node)
 		return node.end;
 	}
 }
+
+var someNodeClicked=false;
+
 function drawGraph(graphData)
 {
 	testNoOverlap1();
@@ -96,6 +83,55 @@ function drawGraph(graphData)
 	testNoOverlap3();
 	testNoOverlap4();
 	testNoOverlap5();
+
+	
+	var force = d3.layout.force()
+		.friction(0.7)
+		.charge(-200)
+	/*	.charge(function(d,i){
+			if (someNodeClicked)
+			{
+				if (d["clicked"])
+				{
+					return -500;
+				}
+				else
+				{
+					return -250;
+				}
+			}
+			else
+			{
+				return -250;
+			}
+		})*/
+/*		.linkStrength(
+		.friction(
+		.chargeDistance(
+		*/
+		.linkDistance(function(e,i){
+			if (someNodeClicked)
+			{
+				if (e.source["clicked"] && e.target["clicked"])
+				{
+					return 100;
+				}
+				else if (!e.source["clicked"] && !e.target["clicked"])
+				{
+					return 1;
+				}
+				else
+				{
+					return 500;
+				}
+			}
+			else
+			{
+				return 100;
+			}
+		})
+		.gravity(.1)
+		.size([width, height]);
 
 	force
 	  .nodes(graphData.nodes)
@@ -131,19 +167,37 @@ function drawGraph(graphData)
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
-	
-	var tooltip= d3.tip()
-		.attr("class","node-tooltip")
-//		.offset([-10,0])
-		.direction("e")
-		.html(function(d) {
-			return "<strong>"+d.name+"</strong>";
-		});
-		
+
 	var node = container.selectAll(".node")
 		.data(graphData.nodes)
 		.enter()
 		.append("g")
+		.attr("class",function(d){
+			return d.nodeType;
+		})
+		.attr("class",function(d){
+			return addClass(this,"id"+d.id);
+		})
+   		.classed("node",true)
+		.each(function(d){
+			setTranslate(this,0,d.y);
+		})
+		.on('mouseout', function(d){
+			d3.selectAll(".hover").classed("hover",false);
+   		});
+		
+	node.append("text")
+		.text(function(d){return d.name;})
+		.attr("x",width+10);
+
+	var nodeXG= node.append("g")
+		.attr("class",function(d){
+			return d.nodeType;
+		})
+		.attr("class",function(d){
+			return addClass(this,"id"+d.id);
+		})
+   		.classed("node",true)
 		.each(function(d){
 			var x=0;
 			if (d.nodeType=="org-neverStarted")
@@ -154,25 +208,22 @@ function drawGraph(graphData)
 			{
 				x=xForDate(d.start);
 			}
-			move(this,x,d.y);
+			d.origX=x;
+			setTranslate(this,x,0);
 		})
-		.on('mouseout', function(d){
-			tooltip.hide(d);
-			d3.selectAll(".hover").classed("hover",false);
-   		})
-		.call(tooltip);
 
 	  
   	  /*.attr("y1",function(d,i){return d.y;})
 	  .attr("y2",function(d,i){return d.y+epsilon;});*/
 	  
-	var nodeLines = node.append("line")
+	var nodeLines = nodeXG.append("line")
 		.attr("class",function(n){
 	  		return n.nodeType;
 	  	})
 	  .attr("class",function(n){
 	  		return addClass(this,"id"+n.id);
 	  	})
+		.classed("node",true)
 	  .attr("x1",0)
 	  .attr("x2",function(d){
 			var startx=0;
@@ -190,8 +241,8 @@ function drawGraph(graphData)
 	  .attr("y1",0)
 	  .attr("y2",epsilon)
 	
-	node.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
-	node.classed("ended",function(d){return (d.end!=null)});
+	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
+	nodeXG.classed("ended",function(d){return (d.end!=null)});
 
 	var startedNodes=d3.selectAll(".started").each(function(d){
 		var nodeg=d3.select(this);
@@ -203,6 +254,7 @@ function drawGraph(graphData)
 			.attr("class",function(){
 				return addClass(this,"id"+d.id);
 			})
+			.classed("node",true)
 			.attr("cy",0)
 			.attr("cx",0)
 			.attr("r",circleRadius);
@@ -219,6 +271,7 @@ function drawGraph(graphData)
 			.attr("class",function(){
 				return addClass(this,"id"+d.id);
 			})
+			.classed("node",true)
 			.attr("cy",0)
 			.attr("cx",function(d){
 				var startx=0;
@@ -241,7 +294,9 @@ function drawGraph(graphData)
 	var panelId=0;	
 	var lastOpenedPanel;
 	node.on("mouseover", function(d) {
-		tooltip.show(d)
+		if (someNodeClicked) return;
+		d3.selectAll(".selected").classed("selected",false);
+
 		if (typeof d["panelCreated"] == "undefined")
 		{
 			panelId++;
@@ -274,11 +329,33 @@ function drawGraph(graphData)
 			var sourceClass=allClasses.filter(function(e){return e.match(/source.*/);})[0];
 			var sourceId=sourceClass.substr(6);
 			d3.selectAll(".id"+sourceId).classed("hover",true);
+			d3.selectAll(".hover").classed("selected",true);
 		});
+		
+		d3.selectAll(".hover").classed("selected",true);
     });      
+    
+    node.on("click", function() {
+    	d3.event.stopPropagation();
+		if (someNodeClicked) return;
+
+    	d3.selectAll(".selected").classed("clicked",true).each(function(d){
+    		d["clicked"]=true;
+    	});
+    	d3.selectAll("*:not(.clicked)").classed("unclicked",true).each(function(d){
+    	});
+    	someNodeClicked=true;
+//    	force.start();
+    });
     
     d3.select("body").on("click", function(){
     	$.sidr('close',lastOpenedPanel);
+    	d3.selectAll(".clicked").each(function(d){
+    		d["clicked"]=false;
+    	});
+    	d3.selectAll(".clicked").classed("clicked",false);
+    	d3.selectAll(".unclicked").classed("unclicked",false);
+    	someNodeClicked=false;
     })
     
 	node.append("title")
@@ -286,7 +363,7 @@ function drawGraph(graphData)
 
 	force.on("tick", function() {
 		node.each(function(d){
-			moveY(this,d.y)
+			setTranslate(this,0,d.y)
 		})
 		link.attr("d",diagonal)
 	});
@@ -354,6 +431,10 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 		}
 		var n=nodes[i];
 		var prevNode=nodes[i-1];
+		if (someNodeClicked && !n["clicked"])
+		{
+			continue;
+		}
 
 		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
 		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);

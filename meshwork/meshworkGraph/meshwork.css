@@ -40,7 +40,25 @@ line.org-neverStarted.hover {
     stroke-width: 6px;
     fill: none;
 }
+.node.hover text, .node.clicked text {
+	font-family: Arial;
+	font-size: 8;
+	stroke: none;
+	stroke-width: 1;
+}
+.node:not(.hover):not(.clicked) text{
+	stroke: none;
+	fill: none;
+}
+.node.unclicked, .node.unclicked > *{
+    stroke-opacity: .45;
+    opacity: .45;
+}
 
+.link.unclicked {
+    stroke-opacity: .15;
+    opacity: .15;
+}
 .x-axis {
     fill: #fee000;
     font-family: sans-serif;
