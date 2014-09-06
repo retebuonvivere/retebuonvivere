@@ -28,7 +28,9 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica filtro';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina filtro';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
@@ -64,7 +66,7 @@ function rbv_view_graph_views_default_views() {
 <p>Vengono visualizzate soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate.</p>
 <p>Chi è interessato all\'aspetto tecnologico della visualizzazione delle reti può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a>!</p>
 <p>È possibile utilizzare i filtri per vedere la rete di particolari organizzazioni o dei progetti. I filtri agiscono sul nome dei gruppi. È possibile inserire più nomi contemporaneamente ed utilizzare le " " per cercare un nome completo (es: il filtro <em>Rosso Verde</em> restituirà qualsiasi nome che contenga almeno una delle parole <em>Rosso</em> o <em>Verde</em>. Mentre il filtro <em>"Rosso Verde"</em> restituirà solo i nomi che contengono entrambe le parole).</p>
-<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni (una collaborazione di tanti anni sembra uguale ad una ancora recente). Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
+<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni. Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
 
   <svg width="120" height="49">
    <g class="data">
@@ -77,9 +79,7 @@ function rbv_view_graph_views_default_views() {
      <text class="nodetext" dx="10" dy="1" font-size="13">Progetto/attività</text>
    </g>
    </g>
-  </svg>
- 
-</dl>';
+  </svg>';
   $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
@@ -155,7 +155,9 @@ function rbv_view_graph_views_default_views() {
   $handler = $view->new_display('page', 'Page: graph main', 'page_2');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica filtro';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina filtro';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -340,13 +342,19 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['label'] = 'footer';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<dl>
- <dt><strong>Una rete</strong></dt>
- <dd><p>Questa pagina mostra la rete di collaborazioni tra le organizzazioni della società civile e dell\'economia solidale di Verona. Se due organizzazioni collaborano ad uno stesso progetto/attività, viene tracciata una collaborazione tra loro. </p></dd>
- <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
- <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
- <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
- <dd>
+  $handler->display->display_options['footer']['area']['content'] = '<div class="callout callout-info">
+    <h4>Una rete</h4>
+    <p>Questa pagina mostra la rete di collaborazioni tra le organizzazioni della società civile e dell\'economia solidale. Se due organizzazioni collaborano ad uno stesso progetto/attività, viene tracciata una collaborazione tra loro.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+<p>Vengono visualizzate soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate.</p>
+<p>Chi è interessato all\'aspetto tecnologico della visualizzazione delle reti può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a>!</p>
+<p>È possibile utilizzare i filtri per vedere la rete di particolari organizzazioni o dei progetti. I filtri agiscono sul nome dei gruppi. È possibile inserire più nomi contemporaneamente ed utilizzare le " " per cercare un nome completo (es: il filtro <em>Rosso Verde</em> restituirà qualsiasi nome che contenga almeno una delle parole <em>Rosso</em> o <em>Verde</em>. Mentre il filtro <em>"Rosso Verde"</em> restituirà solo i nomi che contengono entrambe le parole).</p>
+<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni. Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
+
   <svg width="120" height="49">
    <g class="data">
     <g class="node" transform="translate(10,12)">
@@ -354,9 +362,7 @@ function rbv_view_graph_views_default_views() {
      <text class="nodetext" dx="10" dy="1" font-size="13">Organizzazione</text>
     </g>
    </g>
-  </svg>
- </dd>
-</dl>';
+  </svg>';
   $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Contenuto: Relation: coopera con (node ↔ node) */
@@ -787,8 +793,8 @@ function rbv_view_graph_views_default_views() {
     t('Master'),
     t('Insieme siamo una rete'),
     t('more'),
-    t('Apply'),
-    t('Ripristina'),
+    t('Applica filtro'),
+    t('Ripristina filtro'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
@@ -804,7 +810,7 @@ function rbv_view_graph_views_default_views() {
 <p>Vengono visualizzate soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate.</p>
 <p>Chi è interessato all\'aspetto tecnologico della visualizzazione delle reti può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a>!</p>
 <p>È possibile utilizzare i filtri per vedere la rete di particolari organizzazioni o dei progetti. I filtri agiscono sul nome dei gruppi. È possibile inserire più nomi contemporaneamente ed utilizzare le " " per cercare un nome completo (es: il filtro <em>Rosso Verde</em> restituirà qualsiasi nome che contenga almeno una delle parole <em>Rosso</em> o <em>Verde</em>. Mentre il filtro <em>"Rosso Verde"</em> restituirà solo i nomi che contengono entrambe le parole).</p>
-<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni (una collaborazione di tanti anni sembra uguale ad una ancora recente). Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
+<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni. Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
 
   <svg width="120" height="49">
    <g class="data">
@@ -817,9 +823,7 @@ function rbv_view_graph_views_default_views() {
      <text class="nodetext" dx="10" dy="1" font-size="13">Progetto/attività</text>
    </g>
    </g>
-  </svg>
- 
-</dl>'),
+  </svg>'),
     t('Contenuto entity referenced from field_rel_source'),
     t('Contenuto entity referenced from field_relpro_project'),
     t('Page: graph main'),
@@ -827,13 +831,19 @@ function rbv_view_graph_views_default_views() {
     t('Progetti/attività'),
     t('Page: ER graph'),
     t('Page: relation graph'),
-    t('<dl>
- <dt><strong>Una rete</strong></dt>
- <dd><p>Questa pagina mostra la rete di collaborazioni tra le organizzazioni della società civile e dell\'economia solidale di Verona. Se due organizzazioni collaborano ad uno stesso progetto/attività, viene tracciata una collaborazione tra loro. </p></dd>
- <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
- <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
- <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
- <dd>
+    t('<div class="callout callout-info">
+    <h4>Una rete</h4>
+    <p>Questa pagina mostra la rete di collaborazioni tra le organizzazioni della società civile e dell\'economia solidale. Se due organizzazioni collaborano ad uno stesso progetto/attività, viene tracciata una collaborazione tra loro.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+<p>Vengono visualizzate soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate.</p>
+<p>Chi è interessato all\'aspetto tecnologico della visualizzazione delle reti può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a>!</p>
+<p>È possibile utilizzare i filtri per vedere la rete di particolari organizzazioni o dei progetti. I filtri agiscono sul nome dei gruppi. È possibile inserire più nomi contemporaneamente ed utilizzare le " " per cercare un nome completo (es: il filtro <em>Rosso Verde</em> restituirà qualsiasi nome che contenga almeno una delle parole <em>Rosso</em> o <em>Verde</em>. Mentre il filtro <em>"Rosso Verde"</em> restituirà solo i nomi che contengono entrambe le parole).</p>
+<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni. Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
+
   <svg width="120" height="49">
    <g class="data">
     <g class="node" transform="translate(10,12)">
@@ -841,9 +851,7 @@ function rbv_view_graph_views_default_views() {
      <text class="nodetext" dx="10" dy="1" font-size="13">Organizzazione</text>
     </g>
    </g>
-  </svg>
- </dd>
-</dl>'),
+  </svg>'),
     t('coopera con'),
     t('pane: ER graph'),
     t('View panes'),
