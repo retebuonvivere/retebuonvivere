@@ -53,13 +53,19 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['label'] = 'footer';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<dl>
- <dt><strong>Una rete</strong></dt>
- <dd><p>Questa pagina mostra la rete risultante dalle relazioni di collaborazione tra le organizzazioni della società civile e dell\'economia solidale di Verona. Le organizzazioni collaborano sulla base di progetti e attività specifici, per prendersi cura del bene comune.</p></dd>
- <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
- <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
- <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
- <dd>
+  $handler->display->display_options['footer']['area']['content'] = '<div class="callout callout-info">
+    <h4>Una rete</h4>
+    <p>Per prendersi cura dei beni comuni, le organizzazioni della società civile e dell\'economia solidale collaborano spesso sulla base di progetti e attività specifiche. Questa pagina mostra la rete risultante dalle relazioni di collaborazione.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+<p>Vengono visualizzate soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate.</p>
+<p>Chi è interessato all\'aspetto tecnologico della visualizzazione delle reti può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a>!</p>
+<p>È possibile utilizzare i filtri per vedere la rete di particolari organizzazioni o dei progetti. I filtri agiscono sul nome dei gruppi. È possibile inserire più nomi contemporaneamente ed utilizzare le " " per cercare un nome completo (es: il filtro <em>Rosso Verde</em> restituirà qualsiasi nome che contenga almeno una delle parole <em>Rosso</em> o <em>Verde</em>. Mentre il filtro <em>"Rosso Verde"</em> restituirà solo i nomi che contengono entrambe le parole).</p>
+<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni (una collaborazione di tanti anni sembra uguale ad una ancora recente). Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
+
   <svg width="120" height="49">
    <g class="data">
     <g class="node" transform="translate(10,12)">
@@ -72,7 +78,7 @@ function rbv_view_graph_views_default_views() {
    </g>
    </g>
   </svg>
- </dd>
+ 
 </dl>';
   $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
   /* Relationship: Entity Reference: Referenced Entity */
@@ -147,6 +153,9 @@ function rbv_view_graph_views_default_views() {
 
   /* Display: Page: graph main */
   $handler = $view->new_display('page', 'Page: graph main', 'page_2');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -163,6 +172,56 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'collaboration' => 'collaboration',
   );
+  /* Filter criterion: Contenuto: Titolo */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_rel_source_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'word';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Organizzazioni';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Contenuto: Titolo */
+  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['table'] = 'node';
+  $handler->display->display_options['filters']['title_1']['field'] = 'title';
+  $handler->display->display_options['filters']['title_1']['relationship'] = 'field_relpro_project_target_id';
+  $handler->display->display_options['filters']['title_1']['operator'] = 'word';
+  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Progetti/attività';
+  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'rete';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Vedi la rete';
@@ -192,6 +251,56 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'collaboration' => 'collaboration',
   );
+  /* Filter criterion: Contenuto: Titolo */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_rel_source_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'word';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Organizzazioni';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Contenuto: Titolo */
+  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['table'] = 'node';
+  $handler->display->display_options['filters']['title_1']['field'] = 'title';
+  $handler->display->display_options['filters']['title_1']['relationship'] = 'field_relpro_project_target_id';
+  $handler->display->display_options['filters']['title_1']['operator'] = 'word';
+  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Progetti/attività';
+  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'rete/collaborazioni';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Collaborazioni';
@@ -212,8 +321,10 @@ function rbv_view_graph_views_default_views() {
     'fields' => array(
       'nid' => 'from:id',
       'title' => 'from:label',
+      'path' => 'from:URI',
       'nid_1' => 'to:id',
       'title_1' => 'to:label',
+      'path_1' => 'to:URI',
     ),
   );
   $handler->display->display_options['style_options']['graphapi']['width'] = '1024';
@@ -269,6 +380,12 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Campo: Contenuto: Percorso */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Campo: Contenuto: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
@@ -284,6 +401,46 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Campo: Contenuto: Percorso */
+  $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
+  $handler->display->display_options['fields']['path_1']['table'] = 'node';
+  $handler->display->display_options['fields']['path_1']['field'] = 'path';
+  $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['path_1']['label'] = '';
+  $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Contenuto: Pubblicato */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Contenuto: Titolo */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'word';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Organizzazioni';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'rete/collaboratori';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Collaboratori';
@@ -636,13 +793,19 @@ function rbv_view_graph_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('footer'),
-    t('<dl>
- <dt><strong>Una rete</strong></dt>
- <dd><p>Questa pagina mostra la rete risultante dalle relazioni di collaborazione tra le organizzazioni della società civile e dell\'economia solidale di Verona. Le organizzazioni collaborano sulla base di progetti e attività specifici, per prendersi cura del bene comune.</p></dd>
- <dd><p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p></dd>
- <dd><p>Vengono visualizzate per il momento soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate. Questo è soltanto un limite tecnico e chi fosse interessato può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a> e trovare una soluzione insieme per superare questo limite!</p></dd>
- <dd><p>Questa visualizzazione inoltre non permette ancora di tenere conto della temporalità delle collaborazioni. Allo stesso tempo, disegnando le organizzazioni e i progetti come cerchi e le relazioni come collegamenti, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle relazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p></dd>
- <dd>
+    t('<div class="callout callout-info">
+    <h4>Una rete</h4>
+    <p>Per prendersi cura dei beni comuni, le organizzazioni della società civile e dell\'economia solidale collaborano spesso sulla base di progetti e attività specifiche. Questa pagina mostra la rete risultante dalle relazioni di collaborazione.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+<p>Vengono visualizzate soltanto le organizzazioni connesse tramite almeno una collaborazione. Per questo tutte le organizzazioni di retebuonvivere che non hanno ancora inserito un progetto/attività o una collaborazione, non vengono visualizzate.</p>
+<p>Chi è interessato all\'aspetto tecnologico della visualizzazione delle reti può <a href="discussioni/unirsi-al-gruppo-di-sviluppo">unirsi al gruppo di sviluppo</a>!</p>
+<p>È possibile utilizzare i filtri per vedere la rete di particolari organizzazioni o dei progetti. I filtri agiscono sul nome dei gruppi. È possibile inserire più nomi contemporaneamente ed utilizzare le " " per cercare un nome completo (es: il filtro <em>Rosso Verde</em> restituirà qualsiasi nome che contenga almeno una delle parole <em>Rosso</em> o <em>Verde</em>. Mentre il filtro <em>"Rosso Verde"</em> restituirà solo i nomi che contengono entrambe le parole).</p>
+<p>Questa visualizzazione non permette ancora di tenere conto della temporalità delle collaborazioni (una collaborazione di tanti anni sembra uguale ad una ancora recente). Inoltre, disegnando le organizzazioni e i progetti come cerchi e le collaborazioni come linee, porta l\'attenzione sull\'identità delle organizzazioni. Per introdurre la dimensione del tempo e spostare l\'attenzione sulle collaborazioni è stato proposto un metodo. Chi è interessato può partecipare o seguire la discussione <a href="discussioni/inserire-la-dimensione-del-tempo">"inserire la dimensione del tempo"</a>.</p>
+
   <svg width="120" height="49">
    <g class="data">
     <g class="node" transform="translate(10,12)">
@@ -655,11 +818,13 @@ function rbv_view_graph_views_default_views() {
    </g>
    </g>
   </svg>
- </dd>
+ 
 </dl>'),
     t('Contenuto entity referenced from field_rel_source'),
     t('Contenuto entity referenced from field_relpro_project'),
     t('Page: graph main'),
+    t('Organizzazioni'),
+    t('Progetti/attività'),
     t('Page: ER graph'),
     t('Page: relation graph'),
     t('<dl>
