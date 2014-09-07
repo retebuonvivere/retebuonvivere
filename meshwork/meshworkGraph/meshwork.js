@@ -5,6 +5,7 @@ var svg = d3.select("body").append("svg")
 
 var gradient= svg.append("defs")
 	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
+var dummy=svg.append("g");
 	
 gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
 gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
@@ -82,6 +83,8 @@ var link;
 var diagonal;
 var someNodeClicked=false;
 var graphData;
+var force;
+
 function drawGraph()
 {
 /*	non vanno senza node...
@@ -92,7 +95,7 @@ testNoOverlap1();
 	testNoOverlap5();*/
 
 	
-	var force = d3.layout.force()
+	force = d3.layout.force()
 		.friction(0.9)
 		.charge(-250)
 	/*	.charge(function(d,i){
@@ -299,76 +302,10 @@ testNoOverlap1();
 
 	console.log(startedNodes);
 	
-	var panelId=0;	
-	var lastOpenedPanel;
-	node.on("mouseover", function(d) {
-		if (someNodeClicked) return;
-		d3.selectAll(".selected").classed("selected",false);
 
-		if (typeof d["panelCreated"] == "undefined")
-		{
-			panelId++;
-			var panelName="sidrPanel"+panelId
-			$(this).sidr({
-				name:panelName,
-				source: function (name) {
-					return panelContentGenerator(d);
-	      		},
-	      		side:"right",
-	      		body:"#container",
-	      		onOpen:function() {
-	      			lastOpenedPanel=panelName;
-			}
-	      
-			});
-			d["panelCreated"]=true;
-		}
-		d3.select(this).classed("hover",true);
-		d3.selectAll(".id"+d.id).classed("hover",true);
-		
-		d3.selectAll("."+"source"+d.id+",."+"target"+d.id).classed("hover",true).each(function(){
-			var edge=d3.select(this);
-			
-			var allClasses=edge.attr("class").split(" ");
-			var targetClass=allClasses.filter(function(e){return e.match(/target.*/);})[0];
-			var targetId=targetClass.substr(6);
-			d3.selectAll(".id"+targetId).classed("hover",true);
-		
-			var sourceClass=allClasses.filter(function(e){return e.match(/source.*/);})[0];
-			var sourceId=sourceClass.substr(6);
-			d3.selectAll(".id"+sourceId).classed("hover",true);
-			d3.selectAll(".hover").classed("selected",true);
-		});
-		
-		d3.selectAll(".hover").classed("selected",true);
-    });      
-    
-    node.on("click", function(d) {
-	console.log(d.name);
-    	if (!someNodeClicked || d3.select(this).classed("clicked")) 
-		d3.event.stopPropagation();
-	if (someNodeClicked) return;
-
-    	d3.selectAll(".selected").classed("clicked",true).attr("z-index",100).each(function(d){
-    		d["clicked"]=true;
-    	});
-    	d3.selectAll("*:not(.clicked)").classed("unclicked",true).attr("z-index",0).each(function(d){
-    	});
-    	someNodeClicked=true;
-    	relayout(".node.clicked")
-//    	force.start();
-    });
-    
-    d3.select("body").on("click", function(){
-    	$.sidr('close',lastOpenedPanel);
-    	d3.selectAll(".clicked").each(function(d){
-    		d["clicked"]=false;
-    	});
-    	d3.selectAll(".clicked").classed("clicked",false);
-    	d3.selectAll(".unclicked").classed("unclicked",false);
-    	someNodeClicked=false;
-    	force.friction(unclickFriction).start().alpha(unclickAlpha);
-    })
+	node.on("mouseover",nodeOverHandler);         
+	node.on("click", nodeClickHandler);
+	d3.select("body").on("click", bodyClickHandler)
     
 	node.append("title")
 	  .text(function(d) {return d.name;});
@@ -424,7 +361,90 @@ testNoOverlap1();
 
 }
 
+function bodyClickHandler(){
+
+	$.sidr('close',"sidrPanel");
+	d3.selectAll(".clicked").each(function(d){
+		d["clicked"]=false;
+	});
+	d3.selectAll(".clicked").classed("clicked",false);
+	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
+	d3.selectAll(".unclicked").classed("unclicked",false);
+	someNodeClicked=false;
+	force.friction(unclickFriction).start().alpha(unclickAlpha);
+}
+
+function nodeOverHandler(d) {
+	if (someNodeClicked) return;
+	d3.selectAll(".selected").classed("selected",false);
+
+	d3.select(this).classed("hover",true);
+	d3.selectAll(".id"+d.id).classed("hover",true);
+	
+	d3.selectAll("."+"source"+d.id+",."+"target"+d.id).classed("hover",true).each(function(){
+		var edge=d3.select(this);
 		
+		var allClasses=edge.attr("class").split(" ");
+		var targetClass=allClasses.filter(function(e){return e.match(/target.*/);})[0];
+		var targetId=targetClass.substr(6);
+		d3.selectAll(".id"+targetId).classed("hover",true);
+	
+		var sourceClass=allClasses.filter(function(e){return e.match(/source.*/);})[0];
+		var sourceId=sourceClass.substr(6);
+		d3.selectAll(".id"+sourceId).classed("hover",true);
+		d3.selectAll(".hover").classed("selected",true);
+	});
+	
+	d3.selectAll(".hover").classed("selected",true);
+}
+
+var isPanelOpen=false;
+
+function nodeClickHandler(d) {
+	console.log(d.name);
+    	if (someNodeClicked && !d3.select(this).classed("clicked")) 
+		return;		
+	d3.event.stopPropagation();
+	shouldPanelOpen=true;
+
+	dummy.call(function(){
+		$(this).sidr({
+			name:"sidrPanel",
+			source: function (name) {
+				return panelContentGenerator(d);
+	      		},
+	   		side:"right",
+	      		body:"#container",
+			onOpen:function(){
+				isPanelOpen=true;
+			},
+			onClose:function(){
+				isPanelOpen=false;
+			}
+			
+		});
+	});
+	d["panelCreated"]=true;
+
+	// poi si apre il nuovo;
+	$.sidr("close","sidrPanel");
+	setTimeout(function(){
+		console.log("opening");
+		$.sidr("open","sidrPanel");},500);
+	
+	
+	if (!someNodeClicked)
+	{
+		d3.selectAll(".selected").classed("clicked",true).attr("z-index",100).each(function(d){
+	    		d["clicked"]=true;
+	    	});
+	    	d3.selectAll(".node:not(.clicked)").classed("unclicked",true).attr("z-index",0).on("click",null).on("mouseover",null);
+	    	someNodeClicked=true;
+	    	relayout(".node.clicked");
+	}
+    }	
+
+
 
 function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash)
 {
