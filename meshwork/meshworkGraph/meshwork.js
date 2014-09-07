@@ -438,7 +438,7 @@ function nodeClickHandler(d) {
 		d3.selectAll(".selected").classed("clicked",true).attr("z-index",100).each(function(d){
 	    		d["clicked"]=true;
 	    	});
-	    	d3.selectAll(".node:not(.clicked)").classed("unclicked",true).attr("z-index",0).on("click",null).on("mouseover",null);
+	    	d3.selectAll(".node:not(.clicked),.link:not(.clicked)").classed("unclicked",true).attr("z-index",0).on("click",null).on("mouseover",null);
 	    	someNodeClicked=true;
 	    	relayout(".node.clicked");
 	}
