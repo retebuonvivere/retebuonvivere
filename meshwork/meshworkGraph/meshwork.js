@@ -90,7 +90,7 @@ testNoOverlap1();
 	
 	var force = d3.layout.force()
 		.friction(0.9)
-		.charge(-200)
+		.charge(-250)
 	/*	.charge(function(d,i){
 			if (someNodeClicked)
 			{
@@ -446,7 +446,7 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 	node.transition()
 			.delay(100)
 			.each(function(d){
-				console.log(d);
+//				console.log(d);
 				setTranslate(this,0,d.y)
 			})
 	link.transition().attr("d",diagonal);
