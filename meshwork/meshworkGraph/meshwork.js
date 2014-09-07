@@ -451,7 +451,7 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
 	}
 
-	var H=nodes[nodes.length-1].y-margin;
+	var H=nodes[nodes.length-1].y;
 	var h=height-margin;
 	
 	for (var i=0;i<nodes.length;i++)
