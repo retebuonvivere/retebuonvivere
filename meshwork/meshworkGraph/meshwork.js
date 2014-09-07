@@ -317,8 +317,8 @@ testNoOverlap1();
 	      		side:"right",
 	      		body:"#container",
 	      		onOpen:function() {
-	      			lastOpenedPanel=panelName
-	      		}
+	      			lastOpenedPanel=panelName;
+			}
 	      
 			});
 			d["panelCreated"]=true;
@@ -343,14 +343,16 @@ testNoOverlap1();
 		d3.selectAll(".hover").classed("selected",true);
     });      
     
-    node.on("click", function() {
-    	d3.event.stopPropagation();
-		if (someNodeClicked) return;
+    node.on("click", function(d) {
+	console.log(d.name);
+    	if (!someNodeClicked || d3.select(this).classed("clicked")) 
+		d3.event.stopPropagation();
+	if (someNodeClicked) return;
 
-    	d3.selectAll(".selected").classed("clicked",true).each(function(d){
+    	d3.selectAll(".selected").classed("clicked",true).attr("z-index",100).each(function(d){
     		d["clicked"]=true;
     	});
-    	d3.selectAll("*:not(.clicked)").classed("unclicked",true).each(function(d){
+    	d3.selectAll("*:not(.clicked)").classed("unclicked",true).attr("z-index",0).each(function(d){
     	});
     	someNodeClicked=true;
     	relayout(".node.clicked")
@@ -430,7 +432,8 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 		return;
 	nodes.sort(function(a,b){return a.y-b.y;});
 	var yshift=0;
-	var o=axisHeight+margin;
+	var adaptedMargin=nodes.length>4?margin:margin*2;
+	var o=axisHeight+adaptedMargin;
 	for (var i=0;i<nodes.length;i++)
 	{
 		var n=nodes[i];
@@ -452,7 +455,7 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 	}
 
 	var H=nodes[nodes.length-1].y;
-	var h=height-margin;
+	var h=height-adaptedMargin;
 	
 	for (var i=0;i<nodes.length;i++)
 	{
@@ -470,6 +473,8 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 
 function relayout(selector)
 {
+	container.attr("transform", "translate(0,0)scale(1)");
+
 	var selectedNodes=[];
 	d3.selectAll(selector).each(function(d){
 		if (selectedNodes.indexOf(d)==-1)
