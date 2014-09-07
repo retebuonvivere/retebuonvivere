@@ -476,13 +476,14 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 
 	var H=nodes[nodes.length-1].y;
 	var h=height-adaptedMargin;
-	
-	for (var i=0;i<nodes.length;i++)
+	if (nodes.length>1)
 	{
-		var n=nodes[i];
-		n.y=(n.y*h-n.y*o-o*h+o*o)/(H-o)+o;
+		for (var i=0;i<nodes.length;i++)
+		{
+			var n=nodes[i];
+			n.y=(n.y*h-n.y*o-o*h+o*o)/(H-o)+o;
+		}
 	}
-
 	
 	node.transition()
 			.attr("transform",function(d){
