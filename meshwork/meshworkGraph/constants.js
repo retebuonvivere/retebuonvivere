@@ -3,8 +3,11 @@ var mesiVisualizzati=18;
 var graphStartDate=new Date(new Date().getTime()-mesiVisualizzati*30*24*60*60*1000);  
 
 var width = 1000,
-    height = 700;
-    
+    height = 300;
+
+var axisHeight=30;
+var margin = 10;
+
 var circleRadius=5;
 
 var textWidth=100;

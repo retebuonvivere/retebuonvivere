@@ -407,9 +407,9 @@ testNoOverlap1();
 
 	xAxis = d3.svg.axis()
 		.scale(timeScale)
-		.tickSize(-height)
-		.tickPadding(10)	
-		.tickSubdivide(true)	
+		.tickSize(0,0)
+		/*.tickPadding(10)	
+		.tickSubdivide(true)	*/
 		.orient("bottom");
 
 	svg
@@ -425,14 +425,17 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 	if (typeof node == "undefined")
 		return;
 	nodes.sort(function(a,b){return a.y-b.y;});
-	
+	var yshift=0;
+	var o=axisHeight+margin;
 	for (var i=0;i<nodes.length;i++)
 	{
+		var n=nodes[i];
 		if (i==0)
 		{
+			yshift=n.y-o;
+			n.y=o;
 			continue;
 		}
-		var n=nodes[i];
 		var prevNode=nodes[i-1];
 		if (someNodeClicked && !n["clicked"])
 		{
@@ -440,11 +443,23 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 		}
 
 		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
+		n.y-=yshift;
 		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
 	}
+
+	var H=nodes[nodes.length-1].y-margin;
+	var h=height-margin;
+	
+	for (var i=0;i<nodes.length;i++)
+	{
+		var n=nodes[i];
+		n.y=(n.y*h-n.y*o-o*h+o*o)/(H-o)+o;
+	}
+
 	
 	node.transition()
 			.delay(100)
+			.duration(2000)
 			.each(function(d){
 //				console.log(d);
 				setTranslate(this,0,d.y)
