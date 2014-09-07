@@ -38,7 +38,11 @@ function addClass(domElement,newClass)
 
 function setTranslate(node,x,y){
 	// butta via le altre transform
-	d3.select(node).attr("transform","translate("+x+","+y+")");		
+	d3.select(node).attr("transform",translateString(x,y));		
+}
+
+function translateString(x,y) {
+	return "translate("+x+","+y+")";
 }
 
 function moveY(node,y){
@@ -458,11 +462,8 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 
 	
 	node.transition()
-			.delay(100)
-			.duration(2000)
-			.each(function(d){
-//				console.log(d);
-				setTranslate(this,0,d.y)
+			.attr("transform",function(d){
+				return translateString(0,d.y);
 			})
 	link.transition().attr("d",diagonal);
 }
