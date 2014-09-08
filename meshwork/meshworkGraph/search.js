@@ -8,7 +8,7 @@ function textBoxKeyPress(e,form)
 	console.log(searchWord);
 	
 	console.log(graphData);
-	var re=new RegExp(searchWord);
+	var re=new RegExp(searchWord,"i");
 	d3.selectAll(".node").filter(function(d){
 		return 	d.name.match(re) != null;
 	}).classed("searched",true);
