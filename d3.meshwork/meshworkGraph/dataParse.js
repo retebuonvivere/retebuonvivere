@@ -12,8 +12,10 @@ var edgesFile="edges2.json";
 
 var nodes;
 
-$(document).ready(function(){
 
+
+function main()
+{
 	$.getJSON(nodesFile,function(parsed){
 	//		console.log(error);
 	//		console.log("parsed = " + parsed);
@@ -166,6 +168,4 @@ $(document).ready(function(){
 
 		});
 	});
-
-});
-
+}
