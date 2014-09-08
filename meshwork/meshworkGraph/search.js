@@ -1,10 +1,4 @@
-function searchClicked(form)
-{
-	console.log("searchClicked");
-	console.log(form);
-}
 
-var searchTyped="";
 function textBoxKeyPress(e,form)
 {
 	var searchWord=document.getElementById("searchBox").value;
