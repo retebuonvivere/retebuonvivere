@@ -10,7 +10,7 @@ var margin = 10;
 
 var circleRadius=5;
 
-var textWidth=100;
+var textWidth=200;
 
 var nodeMinimumDays=10
 
