@@ -2,17 +2,23 @@
 var mesiVisualizzati=18;
 var graphStartDate=new Date(new Date().getTime()-mesiVisualizzati*30*24*60*60*1000);  
 
-var width = 900,
-    height = 700;
-    
+var width = 1000,
+    height = 300;
+
+var axisHeight=30;
+var margin = 10;
+
 var circleRadius=5;
 
-var textWidth=100;
+var textWidth=200;
 
 var nodeMinimumDays=10
 
-var nodesMinimumPixelDistance=5;
+var nodesMinimumPixelDistance=6;
 var nodesMinimumPixelDistanceBackLash=0.4;
+
+var unclickAlpha=0.006;
+var unclickFriction=0.1;
 
 function panelContentGenerator(node)
 {

@@ -7,8 +7,8 @@ var now=new Date();
 
     
     
-var nodesFile="nodesSmall.json";
-var edgesFile="edgesSmall.json";
+var nodesFile="nodes2.json";
+var edgesFile="edges2.json";
 
 var nodes;
 
@@ -155,13 +155,14 @@ $(document).ready(function(){
 			})
 
 
-			var graphData= {
+			graphData= {
 								"links":edges,
 								"nodes":nodes
 							}
 
 			console.log(graphData);
-			drawGraph(graphData);
+			
+			drawGraph();
 
 		});
 	});
