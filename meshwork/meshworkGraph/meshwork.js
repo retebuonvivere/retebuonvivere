@@ -331,6 +331,8 @@ testNoOverlap1();
 	var zoom = d3.behavior.zoom()
 		.scaleExtent([0.1, 10])
 		.on("zoom", function() {
+//			console.log("zoom");
+			isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
 			if (t[0]<-width*(s-1))
@@ -343,9 +345,17 @@ testNoOverlap1();
 		})
 		.x(timeScale);
 
+//	svg.on("mouseup",function(){
+//		console.log("mouseup");
+//	});
 
 
-    svg.call(zoom);
+	svg.on("mousedown",function(){
+//		console.log("mousedown");
+		isZooming=false;	
+	});
+
+	svg.call(zoom);
 
 
 	xAxis = d3.svg.axis()
@@ -361,8 +371,12 @@ testNoOverlap1();
 
 }
 
-function bodyClickHandler(){
+var isZooming=false;
 
+function bodyClickHandler(){
+//	console.log("bodyClick");
+	if (isZooming) return;
+	console.log("not zooming");
 	$.sidr('close',"sidrPanel");
 	d3.selectAll(".clicked").each(function(d){
 		d["clicked"]=false;
