@@ -1,26 +1,26 @@
 
-var mesiVisualizzati=18;
-var graphStartDate=new Date(new Date().getTime()-mesiVisualizzati*30*24*60*60*1000);  
+var meshwork_mesiVisualizzati=18;
+var meshwork_graphStartDate=new Date(new Date().getTime()-meshwork_mesiVisualizzati*30*24*60*60*1000);  
 
-var width = 1000,
-    height = 300;
+var meshwork_width = 1000,
+    meshwork_height = 300;
 
-var axisHeight=30;
-var margin = 10;
+var meshwork_axisHeight=30;
+var meshwork_margin = 10;
 
-var circleRadius=5;
+var meshwork_circleRadius=5;
 
-var textWidth=200;
+var meshwork_textWidth=200;
 
-var nodeMinimumDays=10
+var meshwork_nodeMinimumDays=10
 
-var nodesMinimumPixelDistance=6;
-var nodesMinimumPixelDistanceBackLash=0.4;
+var meshwork_nodesMinimumPixelDistance=6;
+var meshwork_nodesMinimumPixelDistanceBackLash=0.4;
 
-var unclickAlpha=0.006;
-var unclickFriction=0.1;
+var meshwork_unclickAlpha=0.006;
+var meshwork_unclickFriction=0.1;
 
-function panelContentGenerator(node)
+function meshwork_panelContentGenerator(node)
 {
 	var html="<h1>"+node.name+"</h1>"+
 			"<p><a href=\""+node.url+"\">Informazioni</p>"+

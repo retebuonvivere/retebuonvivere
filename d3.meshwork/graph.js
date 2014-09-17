@@ -1,7 +1,7 @@
 var epsilon=0.01;
 var svg = d3.select("body").append("svg")
-    .attr("width", width+circleRadius+10+textWidth)
-    .attr("height", height);
+    .attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
+    .attr("height", meshwork_height);
 
 var gradient= svg.append("defs")
 	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
@@ -21,14 +21,14 @@ gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr(
 var color = d3.scale.category10();
 
 
-var pixelPerMs=width/(now.getTime()-graphStartDate.getTime());
+var pixelPerMs=meshwork_width/(now.getTime()-meshwork_graphStartDate.getTime());
 
 var container;
 var xAxis;
 
 function xForDate(date)
 {
-	return (date.getTime()-graphStartDate.getTime())*pixelPerMs;
+	return (date.getTime()-meshwork_graphStartDate.getTime())*pixelPerMs;
 }
 
 function addClass(domElement,newClass)
@@ -141,7 +141,7 @@ testNoOverlap1();
 			}
 		})
 		.gravity(.1)
-		.size([width, height]);
+		.size([meshwork_width, meshwork_height]);
 
 	force
 	  .nodes(graphData.nodes)
@@ -152,8 +152,8 @@ testNoOverlap1();
 	container=svg.append("g").attr("id","container");
 
    	var timeScale = d3.time.scale() // time.scale() invece di scale.linear()
-		.domain([graphStartDate, now])
-		.range([0, width]);
+		.domain([meshwork_graphStartDate, now])
+		.range([0, meshwork_width]);
 	
 	diagonal=d3.svg.diagonal()
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
@@ -199,7 +199,7 @@ testNoOverlap1();
 		
 	node.append("text")
 		.text(function(d){return d.name;})
-		.attr("x",width+10);
+		.attr("x",meshwork_width+10);
 
 	var nodeXG= node.append("g")
 		.attr("class",function(d){
@@ -268,7 +268,7 @@ testNoOverlap1();
 			.classed("node",true)
 			.attr("cy",0)
 			.attr("cx",0)
-			.attr("r",circleRadius);
+			.attr("r",meshwork_circleRadius);
 	});
 	
 	
@@ -297,7 +297,7 @@ testNoOverlap1();
 
 				return xForDate(d.end)-startx;
 			})
-			.attr("r",circleRadius);
+			.attr("r",meshwork_circleRadius);
 	});
 
 	console.log(startedNodes);
@@ -322,7 +322,7 @@ testNoOverlap1();
 		var nodes=graphData.nodes.slice(0);
 //		console.log(graphData);
 
-		noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash);
+		noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash);
 
 		
 		
@@ -335,9 +335,9 @@ testNoOverlap1();
 			isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
-			if (t[0]<-width*(s-1))
+			if (t[0]<-meshwork_width*(s-1))
 			{
-				t[0]=-width*(s-1);
+				t[0]=-meshwork_width*(s-1);
 				zoom.translate(t);
 			}
 			container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
@@ -385,7 +385,7 @@ function bodyClickHandler(){
 	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
 	someNodeClicked=false;
-	force.friction(unclickFriction).start().alpha(unclickAlpha);
+	force.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
 }
 
 function nodeOverHandler(d) {
@@ -425,7 +425,7 @@ function nodeClickHandler(d) {
 		$(this).sidr({
 			name:"sidrPanel",
 			source: function (name) {
-				return panelContentGenerator(d);
+				return meshwork_panelContentGenerator(d);
 	      		},
 	   		side:"right",
 	      		body:"#container",
@@ -460,14 +460,14 @@ function nodeClickHandler(d) {
 
 
 
-function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBackLash)
+function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash)
 {
 	if (typeof node == "undefined")
 		return;
 	nodes.sort(function(a,b){return a.y-b.y;});
 	var yshift=0;
-	var adaptedMargin=nodes.length>4?margin:margin*2;
-	var o=axisHeight+adaptedMargin;
+	var adaptedMargin=nodes.length>4?meshwork_margin:meshwork_margin*2;
+	var o=meshwork_axisHeight+adaptedMargin;
 	for (var i=0;i<nodes.length;i++)
 	{
 		var n=nodes[i];
@@ -483,13 +483,13 @@ function noOverlap(nodes,nodesMinimumPixelDistance,nodesMinimumPixelDistanceBack
 			continue;
 		}
 
-		var backLash=nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance*Math.random() - nodesMinimumPixelDistanceBackLash*nodesMinimumPixelDistance/2;
+		var backLash=meshwork_nodesMinimumPixelDistanceBackLash*meshwork_nodesMinimumPixelDistance*Math.random() - meshwork_nodesMinimumPixelDistanceBackLash*meshwork_nodesMinimumPixelDistance/2;
 		n.y-=yshift;
-		n.y=Math.max(n.y,prevNode.y+nodesMinimumPixelDistance+backLash);
+		n.y=Math.max(n.y,prevNode.y+meshwork_nodesMinimumPixelDistance+backLash);
 	}
 
 	var H=nodes[nodes.length-1].y;
-	var h=height-adaptedMargin;
+	var h=meshwork_height-adaptedMargin;
 	if (nodes.length>1)
 	{
 		for (var i=0;i<nodes.length;i++)
@@ -517,7 +517,7 @@ function relayout(selector)
 	})
 	console.log("relayout selectedNodes:");
 	console.log(selectedNodes);
-	noOverlap(selectedNodes,height/(selectedNodes.length+2),nodesMinimumPixelDistanceBackLash*2);
+	noOverlap(selectedNodes,meshwork_height/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
 }
 
 

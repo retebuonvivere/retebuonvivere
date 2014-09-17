@@ -59,7 +59,7 @@ function main()
 				if (node["end"]!=null && node["start"]!=null)
 				{
 					node["end"]=new Date(Math.max(node["end"].getTime(),
-	  					node["start"].getTime()+nodeMinimumDays*24*60*60*1000));
+	  					node["start"].getTime()+meshwork_nodeMinimumDays*24*60*60*1000));
 	  			}
 			}
 //			console.log(neverStartedNodes.values())
@@ -117,7 +117,7 @@ function main()
 						continue;
 					}		
 					edgeEndDate=new Date(Math.max(edgeEndDate.getTime(),
-	  					edgeStartDate.getTime()+nodeMinimumDays*24*60*60*1000));
+	  					edgeStartDate.getTime()+meshwork_nodeMinimumDays*24*60*60*1000));
 
 					if (!dateEquals(edgeStartDate,edgeEndDate))
 					{
@@ -151,7 +151,7 @@ function main()
 //				console.log(n);
 				if (n["start"]==null)
 				{
-					n["start"]=graphStartDate;
+					n["start"]=meshwork_graphStartDate;
 					n["nodeType"]="org-neverStarted";
 				}			
 			})

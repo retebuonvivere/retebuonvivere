@@ -14,8 +14,15 @@
    *   id: required. This will be needed to attach your 
    *       visualization to the DOM.
    */
+   
+   
+   
   Drupal.d3.meshwork = function (select, settings) {
 	console.log(settings);
+	
+	
+	
+	
   }
 
 })(jQuery);
