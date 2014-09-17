@@ -83,7 +83,7 @@ var meshwork_someNodeClicked=false;
 var meshwork_graphData;
 var meshwork_link;
 
-function drawGraph()
+function meshwork_drawGraph()
 {
 /*	non vanno senza node...
 testNoOverlap1();
@@ -375,7 +375,7 @@ function bodyClickHandler(){
 //	console.log("bodyClick");
 	if (meshwork_isZooming) return;
 	console.log("not zooming");
-	$.sidr('close',"sidrPanel");
+	jQuery.sidr('close',"sidrPanel");
 	d3.selectAll(".clicked").each(function(d){
 		d["clicked"]=false;
 	});
@@ -420,7 +420,7 @@ function nodeClickHandler(d) {
 	shouldPanelOpen=true;
 
 	meshwork_dummy.call(function(){
-		$(this).sidr({
+		jQuery(this).sidr({
 			name:"sidrPanel",
 			source: function (name) {
 				return meshwork_panelContentGenerator(d);
@@ -439,10 +439,10 @@ function nodeClickHandler(d) {
 	d["panelCreated"]=true;
 
 	// poi si apre il nuovo;
-	$.sidr("close","sidrPanel");
+	jQuery.sidr("close","sidrPanel");
 	setTimeout(function(){
 		console.log("opening");
-		$.sidr("open","sidrPanel");},500);
+		jQuery.sidr("open","sidrPanel");},500);
 	
 	
 	if (!meshwork_someNodeClicked)

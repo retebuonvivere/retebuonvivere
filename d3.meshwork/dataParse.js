@@ -1,7 +1,7 @@
 
 var meshwork_now=new Date();
 
-function meshwork_main()
+function meshwork_main($)
 {
 	var nodesFile="nodes2.json";
 	var edgesFile="edges2.json";
