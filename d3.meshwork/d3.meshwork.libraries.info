@@ -4,14 +4,8 @@ files[css][] = sidr/stylesheets/jquery.sidr.light.css
 files[css][] = meshwork.css
 files[js][] = meshwork.js
 files[js][] = sidr/jquery.sidr.min.js
-files[js][] = 
-files[js][] = 
-files[js][] = 
+files[js][] = dataParse.js
+files[js][] = graph.js
+files[js][] = search.js
+files[js][] = utils.js
 version = 0.1
-
-; Information added by Drupal.org packaging script on 2014-05-02
-version = "7.x-1.x-dev"
-core = "7.x"
-project = "d3"
-datestamp = "1399059149"
-
