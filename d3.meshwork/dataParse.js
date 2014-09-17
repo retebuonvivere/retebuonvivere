@@ -1,8 +1,10 @@
+console.log("loading dataParse.js");
 
 var meshwork_now=new Date();
 
 function meshwork_main($)
 {
+
 	var nodesFile="nodes2.json";
 	var edgesFile="edges2.json";
 	$.getJSON(nodesFile,function(parsed){

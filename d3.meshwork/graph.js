@@ -1,3 +1,4 @@
+console.log("loading graph.js");
 var meshwork_epsilon=0.01;
 var meshwork_svg = d3.select("body").append("svg")
     .attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
