@@ -7,7 +7,7 @@ function textBoxKeyPress(e,form)
 	console.log("---------------");
 	console.log(searchWord);
 	
-	console.log(graphData);
+	console.log(meshwork_graphData);
 	var re=new RegExp(searchWord,"i");
 	d3.selectAll(".node").filter(function(d){
 		return 	d.name.match(re) != null;

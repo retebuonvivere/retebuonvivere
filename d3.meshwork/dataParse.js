@@ -1,26 +1,15 @@
 
-
-
-var now=new Date();
-
-
-
-    
-    
-var nodesFile="nodes2.json";
-var edgesFile="edges2.json";
-
-var nodes;
-
-
+var meshwork_now=new Date();
 
 function main()
 {
+	var nodesFile="nodes2.json";
+	var edgesFile="edges2.json";
 	$.getJSON(nodesFile,function(parsed){
 	//		console.log(error);
 	//		console.log("parsed = " + parsed);
 	
-		nodes=parsed;
+		var nodes=parsed;
 	
 		var edgesOriginal;
 
@@ -157,12 +146,12 @@ function main()
 			})
 
 
-			graphData= {
+			meshwork_graphData= {
 								"links":edges,
 								"nodes":nodes
 							}
 
-			console.log(graphData);
+			console.log(meshwork_graphData);
 			
 			drawGraph();
 

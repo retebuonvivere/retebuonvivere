@@ -25,7 +25,7 @@ function meshwork_panelContentGenerator(node)
 	var html="<h1>"+node.name+"</h1>"+
 			"<p><a href=\""+node.url+"\">Informazioni</p>"+
 			"<p>Nascita:"+node.start+"</p>";
-	if (node.end!=null && node.end.getTime()<now.getTime())
+	if (node.end!=null && node.end.getTime()<meshwork_now.getTime())
 		html=html+"<p>Chiusura:"+node.end+"</p>";
 	return html;      					
 }

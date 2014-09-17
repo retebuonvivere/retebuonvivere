@@ -1,34 +1,32 @@
-var epsilon=0.01;
-var svg = d3.select("body").append("svg")
+var meshwork_epsilon=0.01;
+var meshwork_svg = d3.select("body").append("svg")
     .attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
     .attr("height", meshwork_height);
 
-var gradient= svg.append("defs")
+var meshwork_gradient= meshwork_svg.append("defs")
 	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
-var dummy=svg.append("g");
+var meshwork_dummy=meshwork_svg.append("g");
 	
-gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
-gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
-gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
+meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
+meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
+meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
 
-var gradient2= svg.append("defs")
+var meshwork_gradient2= meshwork_svg.append("defs")
 	.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
 
-gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
-gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
-gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
-
-var color = d3.scale.category10();
+meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
+meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
+meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
 
 
-var pixelPerMs=meshwork_width/(now.getTime()-meshwork_graphStartDate.getTime());
+var meshwork_pixelPerMs=meshwork_width/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
 
-var container;
-var xAxis;
+var meshwork_container;
+var meshwork_xAxis;
 
 function xForDate(date)
 {
-	return (date.getTime()-meshwork_graphStartDate.getTime())*pixelPerMs;
+	return (date.getTime()-meshwork_graphStartDate.getTime())*meshwork_pixelPerMs;
 }
 
 function addClass(domElement,newClass)
@@ -71,19 +69,19 @@ function readNodeEnd(node)
 {
 	if (node.end==null)
 	{
-		return now;
+		return meshwork_now;
 	}
 	else
 	{
 		return node.end;
 	}
 }
-var node;
-var link;
-var diagonal;
-var someNodeClicked=false;
-var graphData;
-var force;
+var meshwork_node;
+var meshwork_link;
+var meshwork_diagonal;
+var meshwork_someNodeClicked=false;
+var meshwork_graphData;
+var meshwork_link;
 
 function drawGraph()
 {
@@ -95,11 +93,11 @@ testNoOverlap1();
 	testNoOverlap5();*/
 
 	
-	force = d3.layout.force()
+	meshwork_link = d3.layout.force()
 		.friction(0.9)
 		.charge(-250)
 	/*	.charge(function(d,i){
-			if (someNodeClicked)
+			if (meshwork_someNodeClicked)
 			{
 				if (d["clicked"])
 				{
@@ -120,7 +118,7 @@ testNoOverlap1();
 		.chargeDistance(
 		*/
 		.linkDistance(function(e,i){
-			if (someNodeClicked)
+			if (meshwork_someNodeClicked)
 			{
 				if (e.source["clicked"] && e.target["clicked"])
 				{
@@ -143,28 +141,28 @@ testNoOverlap1();
 		.gravity(.1)
 		.size([meshwork_width, meshwork_height]);
 
-	force
-	  .nodes(graphData.nodes)
-	  .links(graphData.links)
+	meshwork_link
+	  .nodes(meshwork_graphData.nodes)
+	  .links(meshwork_graphData.links)
 	  .start()
 	  .alpha(0.01);
 
-	container=svg.append("g").attr("id","container");
+	meshwork_container=meshwork_svg.append("g").attr("id","container");
 
    	var timeScale = d3.time.scale() // time.scale() invece di scale.linear()
-		.domain([meshwork_graphStartDate, now])
+		.domain([meshwork_graphStartDate, meshwork_now])
 		.range([0, meshwork_width]);
 	
-	diagonal=d3.svg.diagonal()
+	meshwork_diagonal=d3.svg.diagonal()
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
 		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
 
-	link = container.selectAll(".link")
-	  .data(graphData.links)
+	meshwork_link = meshwork_container.selectAll(".link")
+	  .data(meshwork_graphData.links)
 	  .enter()
 	  .append("path")
-	  .attr("d",diagonal)
+	  .attr("d",meshwork_diagonal)
 	  .attr("class", "link")
 	  .attr("class", function(d){
 	  	return addClass(this,"source"+d.source.id);
@@ -174,13 +172,13 @@ testNoOverlap1();
 	  });
 	  
 
-	var drag = force.drag()
+	var drag = meshwork_link.drag()
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
 
-	node = container.selectAll(".node")
-		.data(graphData.nodes)
+	meshwork_node = meshwork_container.selectAll(".node")
+		.data(meshwork_graphData.nodes)
 		.enter()
 		.append("g")
 		.attr("class",function(d){
@@ -197,11 +195,11 @@ testNoOverlap1();
 			d3.selectAll(".hover").classed("hover",false);
    		});
 		
-	node.append("text")
+	meshwork_node.append("text")
 		.text(function(d){return d.name;})
 		.attr("x",meshwork_width+10);
 
-	var nodeXG= node.append("g")
+	var nodeXG= meshwork_node.append("g")
 		.attr("class",function(d){
 			return d.nodeType;
 		})
@@ -225,7 +223,7 @@ testNoOverlap1();
 
 	  
   	  /*.attr("y1",function(d,i){return d.y;})
-	  .attr("y2",function(d,i){return d.y+epsilon;});*/
+	  .attr("y2",function(d,i){return d.y+meshwork_epsilon;});*/
 	  
 	var nodeLines = nodeXG.append("line")
 		.attr("class",function(n){
@@ -250,7 +248,7 @@ testNoOverlap1();
 			return xForDate(readNodeEnd(d))-startx;
 		})
 	  .attr("y1",0)
-	  .attr("y2",epsilon)
+	  .attr("y2",meshwork_epsilon)
 	
 	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
 	nodeXG.classed("ended",function(d){return (d.end!=null)});
@@ -303,24 +301,24 @@ testNoOverlap1();
 	console.log(startedNodes);
 	
 
-	node.on("mouseover",nodeOverHandler);         
-	node.on("click", nodeClickHandler);
+	meshwork_node.on("mouseover",nodeOverHandler);         
+	meshwork_node.on("click", nodeClickHandler);
 	d3.select("body").on("click", bodyClickHandler)
     
-	node.append("title")
+	meshwork_node.append("title")
 	  .text(function(d) {return d.name;});
 
-	force.on("tick", function() {
-		node.each(function(d){
+	meshwork_link.on("tick", function() {
+		meshwork_node.each(function(d){
 			setTranslate(this,0,d.y)
 		})
-		link.attr("d",diagonal)
+		meshwork_link.attr("d",meshwork_diagonal)
 	});
 
-	force.on("end",function() {
+	meshwork_link.on("end",function() {
 	//	console.log("force ended");
-		var nodes=graphData.nodes.slice(0);
-//		console.log(graphData);
+		var nodes=meshwork_graphData.nodes.slice(0);
+//		console.log(meshwork_graphData);
 
 		noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash);
 
@@ -332,7 +330,7 @@ testNoOverlap1();
 		.scaleExtent([0.1, 10])
 		.on("zoom", function() {
 //			console.log("zoom");
-			isZooming=true;
+			meshwork_isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
 			if (t[0]<-meshwork_width*(s-1))
@@ -340,8 +338,8 @@ testNoOverlap1();
 				t[0]=-meshwork_width*(s-1);
 				zoom.translate(t);
 			}
-			container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
-			svg.call(xAxis);
+			meshwork_container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
+			meshwork_svg.call(meshwork_xAxis);
 		})
 		.x(timeScale);
 
@@ -350,32 +348,32 @@ testNoOverlap1();
 //	});
 
 
-	svg.on("mousedown",function(){
+	meshwork_svg.on("mousedown",function(){
 //		console.log("mousedown");
-		isZooming=false;	
+		meshwork_isZooming=false;	
 	});
 
-	svg.call(zoom);
+	meshwork_svg.call(zoom);
 
 
-	xAxis = d3.svg.axis()
+	meshwork_xAxis = d3.svg.axis()
 		.scale(timeScale)
 		.tickSize(0,0)
 		/*.tickPadding(10)	
 		.tickSubdivide(true)	*/
 		.orient("bottom");
 
-	svg
+	meshwork_svg
 		.attr("class", "x axis")
-		.call(xAxis);
+		.call(meshwork_xAxis);
 
 }
 
-var isZooming=false;
+var meshwork_isZooming=false;
 
 function bodyClickHandler(){
 //	console.log("bodyClick");
-	if (isZooming) return;
+	if (meshwork_isZooming) return;
 	console.log("not zooming");
 	$.sidr('close',"sidrPanel");
 	d3.selectAll(".clicked").each(function(d){
@@ -384,12 +382,12 @@ function bodyClickHandler(){
 	d3.selectAll(".clicked").classed("clicked",false);
 	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
-	someNodeClicked=false;
-	force.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
+	meshwork_someNodeClicked=false;
+	meshwork_link.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
 }
 
 function nodeOverHandler(d) {
-	if (someNodeClicked) return;
+	if (meshwork_someNodeClicked) return;
 	d3.selectAll(".selected").classed("selected",false);
 
 	d3.select(this).classed("hover",true);
@@ -412,16 +410,16 @@ function nodeOverHandler(d) {
 	d3.selectAll(".hover").classed("selected",true);
 }
 
-var isPanelOpen=false;
+var meshwork_isPanelOpen=false;
 
 function nodeClickHandler(d) {
 	console.log(d.name);
-    	if (someNodeClicked && !d3.select(this).classed("clicked")) 
+    	if (meshwork_someNodeClicked && !d3.select(this).classed("clicked")) 
 		return;		
 	d3.event.stopPropagation();
 	shouldPanelOpen=true;
 
-	dummy.call(function(){
+	meshwork_dummy.call(function(){
 		$(this).sidr({
 			name:"sidrPanel",
 			source: function (name) {
@@ -430,10 +428,10 @@ function nodeClickHandler(d) {
 	   		side:"right",
 	      		body:"#container",
 			onOpen:function(){
-				isPanelOpen=true;
+				meshwork_isPanelOpen=true;
 			},
 			onClose:function(){
-				isPanelOpen=false;
+				meshwork_isPanelOpen=false;
 			}
 			
 		});
@@ -447,13 +445,13 @@ function nodeClickHandler(d) {
 		$.sidr("open","sidrPanel");},500);
 	
 	
-	if (!someNodeClicked)
+	if (!meshwork_someNodeClicked)
 	{
 		d3.selectAll(".selected").classed("clicked",true).attr("z-index",100).each(function(d){
 	    		d["clicked"]=true;
 	    	});
 	    	d3.selectAll(".node:not(.clicked),.link:not(.clicked)").classed("unclicked",true).attr("z-index",0).on("click",null).on("mouseover",null);
-	    	someNodeClicked=true;
+	    	meshwork_someNodeClicked=true;
 	    	relayout(".node.clicked");
 	}
     }	
@@ -462,7 +460,7 @@ function nodeClickHandler(d) {
 
 function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash)
 {
-	if (typeof node == "undefined")
+	if (typeof meshwork_node == "undefined")
 		return;
 	nodes.sort(function(a,b){return a.y-b.y;});
 	var yshift=0;
@@ -478,7 +476,7 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 			continue;
 		}
 		var prevNode=nodes[i-1];
-		if (someNodeClicked && !n["clicked"])
+		if (meshwork_someNodeClicked && !n["clicked"])
 		{
 			continue;
 		}
@@ -499,16 +497,16 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 		}
 	}
 	
-	node.transition()
+	meshwork_node.transition()
 			.attr("transform",function(d){
 				return translateString(0,d.y);
 			})
-	link.transition().attr("d",diagonal);
+	meshwork_link.transition().attr("d",meshwork_diagonal);
 }
 
 function relayout(selector)
 {
-	container.attr("transform", "translate(0,0)scale(1)");
+	meshwork_container.attr("transform", "translate(0,0)scale(1)");
 
 	var selectedNodes=[];
 	d3.selectAll(selector).each(function(d){
