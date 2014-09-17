@@ -15,7 +15,7 @@
    *       visualization to the DOM.
    */
   Drupal.d3.meshwork = function (select, settings) {
-	main();
+	console.log(settings);
   }
 
 })(jQuery);
