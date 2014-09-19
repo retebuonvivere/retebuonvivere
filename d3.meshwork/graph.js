@@ -1,21 +1,26 @@
 console.log("loading graph.js");
 var meshwork_epsilon=0.01;
 
-var meshwork_gradient= meshwork_svg.append("defs")
-	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
-var meshwork_dummy=meshwork_svg.append("g");
+var meshwork_gradient;
+var meshwork_gradient2;
+var meshwork_dummy;
+
+function buildGradients()
+{
+	meshwork_gradient= meshwork_svg.append("defs")
+		.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
 	
-meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
-meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
-meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
+	meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
+	meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
+	meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
 
-var meshwork_gradient2= meshwork_svg.append("defs")
-	.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
+	meshwork_gradient2= meshwork_svg.append("defs")
+		.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
 
-meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
-meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
-meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
-
+	meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
+	meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
+	meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
+}
 
 var meshwork_pixelPerMs=meshwork_width/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
 
@@ -89,7 +94,8 @@ testNoOverlap1();
 	testNoOverlap3();
 	testNoOverlap4();
 	testNoOverlap5();*/
-
+	buildGradients();
+	meshwork_dummy=meshwork_svg.append("g");
 	
 	meshwork_link = d3.layout.force()
 		.friction(0.9)
