@@ -9,4 +9,4 @@ LEFT JOIN taxonomy_term_data AS taxonomy_term_data_2 ON field_data_field_org_typ
 LEFT JOIN field_data_field_com_date ON node.nid = field_data_field_com_date.entity_id AND (field_data_field_com_date.entity_type = 'node' AND field_data_field_com_date.deleted = '0')
 WHERE (( (node.status = '1') AND (node.type IN  ('org', 'project')) ))
 GROUP BY Id
-INTO OUTFILE '/var/www/rbv/graph_data/nodes.csv' FIELDS TERMINATED BY ','
+INTO OUTFILE '/var/www/rbv/site/sites/default/files/graph_data/nodes.csv' FIELDS TERMINATED BY ','

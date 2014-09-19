@@ -10,4 +10,4 @@ LEFT JOIN field_data_field_rel_categories ON node.nid = field_data_field_rel_cat
 LEFT JOIN taxonomy_term_data ON field_data_field_rel_categories.field_rel_categories_tid = taxonomy_term_data.tid
 LEFT JOIN field_data_field_com_date ON node.nid = field_data_field_com_date.entity_id AND (field_data_field_com_date.entity_type = 'node' AND field_data_field_com_date.deleted = '0')
 WHERE (( (node.status = '1') AND (node.type IN ('collaboration')) ))
-INTO OUTFILE '/var/www/rbv/graph_data/edges.csv' FIELDS TERMINATED BY ','
+INTO OUTFILE '/var/www/rbv/site/sites/default/files/graph_data/edges.csv' FIELDS TERMINATED BY ','
