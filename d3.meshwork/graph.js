@@ -1,8 +1,5 @@
 console.log("loading graph.js");
 var meshwork_epsilon=0.01;
-var meshwork_svg = d3.select("body").append("svg")
-    .attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
-    .attr("height", meshwork_height);
 
 var meshwork_gradient= meshwork_svg.append("defs")
 	.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");

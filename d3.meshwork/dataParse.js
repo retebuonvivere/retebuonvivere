@@ -1,10 +1,14 @@
 console.log("loading dataParse.js");
 
 var meshwork_now=new Date();
+var meshwork_svg;
 
-function meshwork_main($)
+function meshwork_main($,id)
 {
 
+	meshwork_svg = d3.select(id).append("svg")
+		.attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
+		.attr("height", meshwork_height);
 	var nodesFile="sites/default/files/graph_data/nodes.json";
 	var edgesFile="sites/default/files/graph_data/edges.json";
 	$.getJSON(nodesFile,function(parsed){

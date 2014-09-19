@@ -19,7 +19,7 @@
    
   Drupal.d3.meshwork = function (select, settings) {
 	console.log(settings);
-	meshwork_main($);
+	meshwork_main($,settings.id);
 	
 	
 	
