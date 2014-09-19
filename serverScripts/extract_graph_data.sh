@@ -19,3 +19,5 @@ cat /var/www/rbv/scripts/querys/edges.sql | mysql -u rbv rbv
 
 rm $NODES_PREFIX.csv 2>/dev/null
 rm $EDGES_PREFIX.csv 2>/dev/null
+
+touch /tmp/extract_data_executed
