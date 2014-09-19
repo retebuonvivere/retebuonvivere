@@ -3,8 +3,8 @@
 mkdir /var/www/rbv/graph_data 2> /dev/null
 chmod o+w /var/www/rbv/graph_data 2> /dev/null
 
-NODES_PREFIX=/var/www/rbv/graph_data/nodes
-EDGES_PREFIX=/var/www/rbv/graph_data/edges
+NODES_PREFIX=/var/www/rbv/site/sites/default/files/graph_data/nodes
+EDGES_PREFIX=/var/www/rbv/site/sites/default/files/graph_data/edges
 
 rm $NODES_PREFIX.csv 2>/dev/null
 rm $EDGES_PREFIX.csv 2>/dev/null
