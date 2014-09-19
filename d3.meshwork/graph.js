@@ -430,7 +430,6 @@ function nodeClickHandler(d) {
 				return meshwork_panelContentGenerator(d);
 	      		},
 	   		side:"right",
-	      		body:"#container",
 			onOpen:function(){
 				meshwork_isPanelOpen=true;
 			},
