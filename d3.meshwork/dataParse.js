@@ -155,7 +155,7 @@ function meshwork_main($)
 
 			console.log(meshwork_graphData);
 			
-			drawGraph();
+			meshwork_drawGraph();
 
 		});
 	});
