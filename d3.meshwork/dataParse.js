@@ -5,8 +5,8 @@ var meshwork_now=new Date();
 function meshwork_main($)
 {
 
-	var nodesFile="nodes2.json";
-	var edgesFile="edges2.json";
+	var nodesFile="sites/default/files/graph_data/nodes.json";
+	var edgesFile="sites/default/files/graph_data/edges.json";
 	$.getJSON(nodesFile,function(parsed){
 	//		console.log(error);
 	//		console.log("parsed = " + parsed);

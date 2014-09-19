@@ -1,4 +1,4 @@
-
+console.log("loading constants.js");
 var meshwork_mesiVisualizzati=18;
 var meshwork_graphStartDate=new Date(new Date().getTime()-meshwork_mesiVisualizzati*30*24*60*60*1000);  
 
