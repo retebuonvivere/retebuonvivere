@@ -84,7 +84,7 @@ var meshwork_link;
 var meshwork_diagonal;
 var meshwork_someNodeClicked=false;
 var meshwork_graphData;
-var meshwork_link;
+var meshwork_force;
 
 function meshwork_drawGraph()
 {
@@ -97,7 +97,7 @@ testNoOverlap1();
 	buildGradients();
 	meshwork_dummy=meshwork_svg.append("g");
 	
-	meshwork_link = d3.layout.force()
+	meshwork_force = d3.layout.force()
 		.friction(0.9)
 		.charge(-250)
 	/*	.charge(function(d,i){
@@ -145,7 +145,7 @@ testNoOverlap1();
 		.gravity(.1)
 		.size([meshwork_width, meshwork_height]);
 
-	meshwork_link
+	meshwork_force
 	  .nodes(meshwork_graphData.nodes)
 	  .links(meshwork_graphData.links)
 	  .start()
@@ -176,7 +176,7 @@ testNoOverlap1();
 	  });
 	  
 
-	var drag = meshwork_link.drag()
+	var drag = meshwork_force.drag()
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
 		});
@@ -312,14 +312,14 @@ testNoOverlap1();
 	meshwork_node.append("title")
 	  .text(function(d) {return d.name;});
 
-	meshwork_link.on("tick", function() {
+	meshwork_force.on("tick", function() {
 		meshwork_node.each(function(d){
 			setTranslate(this,0,d.y)
 		})
 		meshwork_link.attr("d",meshwork_diagonal)
 	});
 
-	meshwork_link.on("end",function() {
+	meshwork_force.on("end",function() {
 	//	console.log("force ended");
 		var nodes=meshwork_graphData.nodes.slice(0);
 //		console.log(meshwork_graphData);
@@ -387,7 +387,7 @@ function bodyClickHandler(){
 	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
 	meshwork_someNodeClicked=false;
-	meshwork_link.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
+	meshwork_force.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
 }
 
 function nodeOverHandler(d) {
