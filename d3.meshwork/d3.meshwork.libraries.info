@@ -1,6 +1,6 @@
 name = meshwork 
 description = D3 meshwork visualization library
-files[css][] = sidr/stylesheets/jquery.sidr.light.css
+files[css][] = sidr/stylesheets/mysidr.css
 files[css][] = meshwork.css
 files[js][] = constants.js
 files[js][] = sidr/jquery.sidr.min.js

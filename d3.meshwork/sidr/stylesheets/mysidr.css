@@ -1,20 +1,22 @@
 .sidr{
+    padding-top:30px;
     display:none;
     position:absolute;
     position:fixed;
     top:0;
     height:100%;
     z-index:999999;
-    width:260px;
+    width:330px;
     overflow-x:none;
     overflow-y:auto;
     font-family:arial,sans-serif;
     font-size:15px;
-    background:#f8f8f8;
+    background:#fcfcfc;
     color:#333;
-    -webkit-box-shadow:inset 0 0 5px 5px #ebebeb;
-    -moz-box-shadow:inset 0 0 5px 5px #ebebeb;
-    box-shadow:inset 0 0 5px 5px #ebebeb
+/*    -webkit-box-shadow:inset 0 0 5px 5px #ebebeb;*/
+/*    -moz-box-shadow:inset 0 0 5px 5px #ebebeb;*/
+/*    box-shadow:inset 0 0 5px 5px #ebebeb;*/
+    border-left:2px solid #D8C7A3;
 }
 .sidr .sidr-inner{
     padding:0 0 15px
@@ -34,18 +36,19 @@
 .sidr h1,.sidr h2,.sidr h3,.sidr h4,.sidr h5,.sidr h6{
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
-    padding:0 15px;
-    margin:0 0 5px;
+    padding:15px 10px;
+    margin-bottom:15px;
     line-height: 1.4;
     color: inherit;
-/*    background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dfdfdf));
-    background-image:-webkit-linear-gradient(#ffffff,#dfdfdf);
-    background-image:-moz-linear-gradient(#ffffff,#dfdfdf);
-    background-image:-o-linear-gradient(#ffffff,#dfdfdf);
-    background-image:linear-gradient(#ffffff,#dfdfdf);
+/*    background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dfdfdf));*/
+/*    background-image:-webkit-linear-gradient(#ffffff,#dfdfdf);*/
+/*    background-image:-moz-linear-gradient(#ffffff,#dfdfdf);*/
+/*    background-image:-o-linear-gradient(#ffffff,#dfdfdf);*/
+/*    background-image:linear-gradient(#ffffff,#dfdfdf);*/
     -webkit-box-shadow:0 5px 5px 3px rgba(0,0,0,0.2);
     -moz-box-shadow:0 5px 5px 3px rgba(0,0,0,0.2);
-    box-shadow:0 5px 5px 3px rgba(0,0,0,0.2)*/
+    box-shadow:0 5px 5px 3px rgba(0,0,0,0.2);
+    background-color:#D8C7A3;
 }
 .sidr p{
     font-size:13px;

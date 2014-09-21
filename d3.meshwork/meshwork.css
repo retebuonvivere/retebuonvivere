@@ -1,8 +1,8 @@
 svg {
-    background: #fcfcfc;
+    background: #ffffff;
 }
 .org, circle.org-neverStarted {
-    stroke: cyan;
+    stroke: #378722;
     stroke-opacity: .95;
     stroke-width: 4px;
 }
@@ -12,21 +12,24 @@ line.org-neverStarted {
     stroke-width: 4px;
 }
 .project {
-    stroke: orange;
+    stroke: #ABDC0A;
     stroke-opacity: .95;
     stroke-width: 4px;
 }
 line.org-neverStarted.hover {
 	stroke: url(#selectedFadedGradient);
 	stroke-width: 8;
+    stroke-opacity: 1;
 }
- .org.hover, circle.org-neverStarted.hover {
-	stroke: blue;
+.org.hover, .org.clicked, circle.org-neverStarted.hover {
+	stroke: #4E3FFF;
 	stroke-width: 8;
+    stroke-opacity: 1;
 }
-.project.hover {
-	stroke: orangered;
-	stroke-width: 8;
+.project.hover, .project.clicked {
+	stroke: #3FA9FF;
+	stroke-width: 10;
+	stroke-opacity: 1;
 }
 .link {
     stroke: #999;
@@ -34,10 +37,10 @@ line.org-neverStarted.hover {
     stroke-width: 4px;
     fill: none;
 }
-.link.hover {
-    stroke: #999;
-    stroke-opacity: .95;
-    stroke-width: 6px;
+.link.hover, .link.clicked {
+    stroke: #FF6A3F;
+    stroke-opacity: 1;
+    stroke-width: 7px;
     fill: none;
 }
 .node.hover text, .node.clicked text, .node.searched > text {
@@ -45,6 +48,7 @@ line.org-neverStarted.hover {
 	font-size: 8;
 	stroke: none;
 	stroke-width: 1;
+	stroke-opacity: 1;
 }
 .node:not(.hover):not(.clicked):not(.searched) text{
 	stroke: none;
@@ -54,15 +58,14 @@ line.org-neverStarted.hover {
     stroke-opacity: .45;
     opacity: .45;
 }
-
-.node.searched > * {
-	stroke: yellow;
-	stroke-width: 8;
-}
-
 .link.unclicked {
     stroke-opacity: .15;
     opacity: .15;
+}
+.node.searched > * {
+	stroke: yellow;
+	stroke-width: 8;
+	stroke-opacity: 1;
 }
 .x-axis {
     fill: #fee000;
