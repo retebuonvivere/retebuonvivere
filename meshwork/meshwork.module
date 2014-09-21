@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * D3 Example module file.
+ */
+
+
+/**
+ * Create meshwork graph using the D3 API directly.
+ */
+function meshwork_meshwork() {
+
+  $chart = array(
+    'id' => 'visualization',
+    'type' => 'Meshwork',
+  );
+
+  return d3_draw($chart);
+}
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path
+ *   Which path of the site we're using to display help
+ * @param arg
+ *   Array that holds the current path as returned from arg() function
+ */
+function meshwork_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#meshwork":
+      return '<p>' . t("This module just create the function meshwork_meshwork() which call the d3.meshwork library in sites/all/libraries, where all the code is. The meshwork_meshwork() function is called by a reusable panel with a php snipped.") . '</p>';
+      break;
+  }
+} 

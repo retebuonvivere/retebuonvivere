@@ -1,0 +1,11 @@
+1) copiare o linkare la cartella d3.meshwork in drupalroot/sites/all/libraries/
+2) copiare o linkare la cartella meshwork in drupalroot/sites/all/modules/custom/
+3) creare un pannello (dal modulo panels) con un codice simile a:
+text format:PHP code
+
+<?php print meshwork_meshwork(); ?>
+<form class="navbar-form navbar-left" role="search" action="#">
+	<div class="form-group">
+		<input type="text" id="searchBox" class="form-control" placeholder="Search" onKeyUp="textBoxKeyPress(event,this.form)">
+	</div>
+</form>
