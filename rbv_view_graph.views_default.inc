@@ -153,6 +153,7 @@ function rbv_view_graph_views_default_views() {
 
   /* Display: Page: graph main */
   $handler = $view->new_display('page', 'Page: graph main', 'page_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica filtro';
@@ -237,6 +238,7 @@ function rbv_view_graph_views_default_views() {
 
   /* Display: Page: ER graph */
   $handler = $view->new_display('page', 'Page: ER graph', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -315,6 +317,7 @@ function rbv_view_graph_views_default_views() {
 
   /* Display: Page: relation graph */
   $handler = $view->new_display('page', 'Page: relation graph', 'page_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
