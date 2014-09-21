@@ -11,6 +11,373 @@ function rbv_pages_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'rbv_graph';
+  $page->task = 'page';
+  $page->admin_title = 'Graph';
+  $page->admin_description = '';
+  $page->path = 'rete';
+  $page->access = array(
+    'logic' => 'and',
+    'plugins' => array(),
+  );
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Vedi la rete',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'normal',
+      'title' => 'Vedi la rete',
+      'name' => 'main-menu',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_rbv_graph_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_graph';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-graph',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Vedi la rete
+Collaborazioni',
+    'panels_breadcrumbs_paths' => 'rete',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '97b38f62-0e99-40ff-b2e5-4f3bbf4a8ec8';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-b28738d0-6ef5-4cd9-bd8f-653e746cb322';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_graph-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b28738d0-6ef5-4cd9-bd8f-653e746cb322';
+    $display->content['new-b28738d0-6ef5-4cd9-bd8f-653e746cb322'] = $pane;
+    $display->panels['contentmain'][0] = 'new-b28738d0-6ef5-4cd9-bd8f-653e746cb322';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_graph'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_graph_er';
+  $page->task = 'page';
+  $page->admin_title = 'Graph er';
+  $page->admin_description = '';
+  $page->path = 'rete/collaborazioni';
+  $page->access = array(
+    'logic' => 'and',
+  );
+  $page->menu = array(
+    'type' => 'default tab',
+    'title' => 'Collaborazioni',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'normal',
+      'title' => 'Vedi la rete',
+      'name' => 'main-menu',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_rbv_graph_er_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_graph_er';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-graph',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Vedi la rete
+Collaborazioni',
+    'panels_breadcrumbs_paths' => 'rete',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '97b38f62-0e99-40ff-b2e5-4f3bbf4a8ec8';
+  $display->content = array();
+  $display->panels = array();
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_graph_er'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_graph_meshwork';
+  $page->task = 'page';
+  $page->admin_title = 'Graph meshwork';
+  $page->admin_description = '';
+  $page->path = 'rete/meshwork';
+  $page->access = array(
+    'logic' => 'and',
+    'plugins' => array(),
+  );
+  $page->menu = array(
+    'type' => 'tab',
+    'title' => 'La rete nel tempo',
+    'name' => 'navigation',
+    'weight' => '1',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_rbv_graph_meshwork_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_graph_meshwork';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-graph-meshwork',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Vedi la rete
+La rete nel tempo',
+    'panels_breadcrumbs_paths' => 'rete',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '037678fd-8196-44d8-88a6-82281885d920';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-588d22da-c040-4a3c-8471-3895dac0f970';
+    $pane->panel = 'contentmain';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:23';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '588d22da-c040-4a3c-8471-3895dac0f970';
+    $display->content['new-588d22da-c040-4a3c-8471-3895dac0f970'] = $pane;
+    $display->panels['contentmain'][0] = 'new-588d22da-c040-4a3c-8471-3895dac0f970';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_graph_meshwork'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_graph_relation';
+  $page->task = 'page';
+  $page->admin_title = 'Graph relation';
+  $page->admin_description = '';
+  $page->path = 'rete/collaboratori';
+  $page->access = array(
+    'logic' => 'and',
+  );
+  $page->menu = array(
+    'type' => 'tab',
+    'title' => 'Collaboratori',
+    'name' => 'navigation',
+    'weight' => '2',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_rbv_graph_relation_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_graph_relation';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-graph-relation',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Vedi la rete
+Collaboratori',
+    'panels_breadcrumbs_paths' => 'rete',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '18794b56-3422-4540-8c2e-326fd13f6c67';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-7bc5a57d-45bc-4bd7-882e-623587a7d77a';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_graph-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7bc5a57d-45bc-4bd7-882e-623587a7d77a';
+    $display->content['new-7bc5a57d-45bc-4bd7-882e-623587a7d77a'] = $pane;
+    $display->panels['contentmain'][0] = 'new-7bc5a57d-45bc-4bd7-882e-623587a7d77a';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-7bc5a57d-45bc-4bd7-882e-623587a7d77a';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_graph_relation'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'rbv_group_calendar';
   $page->task = 'page';
   $page->admin_title = 'RBV group calendar';
@@ -942,6 +1309,25 @@ collaborazioni',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-323641c9-f0cf-40f4-8004-4ac466f200c6';
+    $pane->panel = 'contentmain';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:23';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '323641c9-f0cf-40f4-8004-4ac466f200c6';
+    $display->content['new-323641c9-f0cf-40f4-8004-4ac466f200c6'] = $pane;
+    $display->panels['contentmain'][0] = 'new-323641c9-f0cf-40f4-8004-4ac466f200c6';
+    $pane = new stdClass();
     $pane->pid = 'new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
     $pane->panel = 'contentmain';
     $pane->type = 'fieldable_panels_pane';
@@ -955,11 +1341,11 @@ collaborazioni',
     $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
     $display->content['new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e'] = $pane;
-    $display->panels['contentmain'][0] = 'new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
+    $display->panels['contentmain'][1] = 'new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
     $pane = new stdClass();
     $pane->pid = 'new-3a44c142-947f-4283-8c81-b2cc57c8cbfd';
     $pane->panel = 'contentmain';
@@ -981,11 +1367,11 @@ collaborazioni',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '3a44c142-947f-4283-8c81-b2cc57c8cbfd';
     $display->content['new-3a44c142-947f-4283-8c81-b2cc57c8cbfd'] = $pane;
-    $display->panels['contentmain'][1] = 'new-3a44c142-947f-4283-8c81-b2cc57c8cbfd';
+    $display->panels['contentmain'][2] = 'new-3a44c142-947f-4283-8c81-b2cc57c8cbfd';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-3a44c142-947f-4283-8c81-b2cc57c8cbfd';
   $handler->conf['display'] = $display;
@@ -1892,6 +2278,25 @@ organizzazioni',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-2c0c5be3-c326-4f92-8a43-91acf2a231ce';
+    $pane->panel = 'contentmain';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:23';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '2c0c5be3-c326-4f92-8a43-91acf2a231ce';
+    $display->content['new-2c0c5be3-c326-4f92-8a43-91acf2a231ce'] = $pane;
+    $display->panels['contentmain'][0] = 'new-2c0c5be3-c326-4f92-8a43-91acf2a231ce';
+    $pane = new stdClass();
     $pane->pid = 'new-994e844a-8eb9-4a24-b0fe-71027ad71f76';
     $pane->panel = 'contentmain';
     $pane->type = 'fieldable_panels_pane';
@@ -1907,11 +2312,11 @@ organizzazioni',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '994e844a-8eb9-4a24-b0fe-71027ad71f76';
     $display->content['new-994e844a-8eb9-4a24-b0fe-71027ad71f76'] = $pane;
-    $display->panels['contentmain'][0] = 'new-994e844a-8eb9-4a24-b0fe-71027ad71f76';
+    $display->panels['contentmain'][1] = 'new-994e844a-8eb9-4a24-b0fe-71027ad71f76';
     $pane = new stdClass();
     $pane->pid = 'new-c452383a-f072-4095-a84c-bd81cb64ff5e';
     $pane->panel = 'contentmain';
@@ -1931,11 +2336,11 @@ organizzazioni',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'c452383a-f072-4095-a84c-bd81cb64ff5e';
     $display->content['new-c452383a-f072-4095-a84c-bd81cb64ff5e'] = $pane;
-    $display->panels['contentmain'][1] = 'new-c452383a-f072-4095-a84c-bd81cb64ff5e';
+    $display->panels['contentmain'][2] = 'new-c452383a-f072-4095-a84c-bd81cb64ff5e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-c452383a-f072-4095-a84c-bd81cb64ff5e';
   $handler->conf['display'] = $display;
