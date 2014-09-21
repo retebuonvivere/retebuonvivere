@@ -9,9 +9,13 @@ function meshwork_main($,id)
 	meshwork_svg = d3.select("#"+id).append("svg")
 		.attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
 		.attr("height", meshwork_height);
-	var nodesFile="sites/default/files/graph_data/nodes.json";
-	var edgesFile="sites/default/files/graph_data/edges.json";
+	var nodesFile=Drupal.settings.basePath+"sites/default/files/graph_data/nodes.json";
+	var edgesFile=Drupal.settings.basePath+"sites/default/files/graph_data/edges.json";
+	console.log("searching for data files")
+	console.log(Drupal.settings)
 	$.getJSON(nodesFile,function(parsed){
+		console.log("nodes file parsed")
+
 	//		console.log(error);
 	//		console.log("parsed = " + parsed);
 	
@@ -20,6 +24,7 @@ function meshwork_main($,id)
 		var edgesOriginal;
 
 		$.getJSON(edgesFile,function(parsed){
+			console.log("edges file parsed")
 			edgesOriginal=parsed;
 			var nodesIdMap=d3.map();
 			var neverStartedNodes=d3.map();
