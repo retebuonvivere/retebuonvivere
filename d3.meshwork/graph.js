@@ -411,7 +411,8 @@ function meshwork_fullscreenChanged()
 	meshwork_pixelPerMs=meshwork_currentWidth/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
 	if (typeof meshwork_force != "undefined")
 	{
-		meshwork_force.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]).start();
+		//meshwork_force.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]).start();
+		relayout(".node,.link");
 	}
 }
 
