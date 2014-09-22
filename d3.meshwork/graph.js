@@ -394,7 +394,7 @@ function meshwork_enterFullscreen()
 function meshwork_fullscreenChanged()
 {
 	console.log("fullscreen changed")
-	var isFullscreen=(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+	var isFullscreen=(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
 	if (isFullscreen) 
 	{
 		meshwork_currentWidth=jQuery(window).width();
