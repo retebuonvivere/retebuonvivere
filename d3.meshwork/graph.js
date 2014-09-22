@@ -373,38 +373,17 @@ testNoOverlap1();
 		.call(meshwork_xAxis);
 
 }
-function meshwork_toggleFullscreen()
+function meshwork_enterFullscreen()
 {
 	var fsElem = jQuery("#"+meshwork_fullscreenPanel).get(0);
-	
-	if (
-		fsElem.fullscreenElement ||
-		fsElem.webkitFullscreenElement ||
-		fsElem.mozFullScreenElement ||
-		fsElem.msFullscreenElement
-	) {
-
-		if (fsElem.exitFullscreen) {
-			fsElem.exitFullscreen();
-		}
-		else if (fsElem.mozCancelFullScreen) {
-			fsElem.mozCancelFullScreen();
-		}
-		else if (fsElem.webkitCancelFullScreen) {
-			fsElem.webkitCancelFullScreen();
-		}
+	if (fsElem.requestFullscreen) {
+		fsElem.requestFullscreen();
 	}
-	else	
-	{
-		if (fsElem.requestFullscreen) {
-			fsElem.requestFullscreen();
-		}
-		else if (fsElem.mozRequestFullScreen) {
-			fsElem.mozRequestFullScreen();
-		}
-		else if (fsElem.webkitRequestFullScreen) {
-			fsElem.webkitRequestFullScreen();
-		}
+	else if (fsElem.mozRequestFullScreen) {
+		fsElem.mozRequestFullScreen();
+	}
+	else if (fsElem.webkitRequestFullScreen) {
+		fsElem.webkitRequestFullScreen();
 	}
 }
 
