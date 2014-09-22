@@ -1,7 +1,10 @@
-1) copiare o linkare la cartella d3.meshwork in drupalroot/sites/all/libraries/
-2) copiare o linkare la cartella meshwork in drupalroot/sites/all/modules/custom/
-3) creare un pannello (dal modulo panels) con un codice simile a:
-text format:PHP code
+- copiare o linkare la cartella d3.meshwork in drupalroot/sites/all/libraries/
+- copiare o linkare la cartella meshwork in drupalroot/sites/all/modules/custom/
+- attuivare il modulo con 
+	drush en meshwork
+- è necessario attivare il modulo php
+- creare un pannello (dal modulo panels) con un codice simile a:
+	text format:PHP code
 
 <?php print meshwork_meshwork(); ?>
 <form class="navbar-form navbar-left" role="search" action="#">
