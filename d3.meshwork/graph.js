@@ -12,6 +12,9 @@ var meshwork_someNodeClicked=false;
 var meshwork_graphData;
 var meshwork_force;
 
+var meshwork_currentWidth;
+var meshwork_currentHeight;
+
 function buildGradients()
 {
 	meshwork_gradient= meshwork_svg.append("defs")
@@ -29,7 +32,7 @@ function buildGradients()
 	meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
 }
 
-var meshwork_pixelPerMs=meshwork_width/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
+var meshwork_pixelPerMs;
 
 var meshwork_container;
 var meshwork_xAxis;
@@ -144,7 +147,7 @@ testNoOverlap1();
 			}
 		})
 		.gravity(.1)
-		.size([meshwork_width, meshwork_height]);
+		.size([meshwork_currentWidth, meshwork_currentHeight]);
 
 	meshwork_force
 	  .nodes(meshwork_graphData.nodes)
@@ -156,7 +159,7 @@ testNoOverlap1();
 
    	var timeScale = d3.time.scale() // time.scale() invece di scale.linear()
 		.domain([meshwork_graphStartDate, meshwork_now])
-		.range([0, meshwork_width]);
+		.range([0, meshwork_currentWidth]);
 	
 	meshwork_diagonal=d3.svg.diagonal()
 		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
@@ -202,7 +205,7 @@ testNoOverlap1();
 		
 	meshwork_node.append("text")
 		.text(function(d){return d.name;})
-		.attr("x",meshwork_width+10);
+		.attr("x",meshwork_currentWidth+10);
 
 	var nodeXG= meshwork_node.append("g")
 		.attr("class",function(d){
@@ -338,9 +341,9 @@ testNoOverlap1();
 			meshwork_isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
-			if (t[0]<-meshwork_width*(s-1))
+			if (t[0]<-meshwork_currentWidth*(s-1))
 			{
-				t[0]=-meshwork_width*(s-1);
+				t[0]=-meshwork_currentWidth*(s-1);
 				zoom.translate(t);
 			}
 			meshwork_container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
@@ -385,6 +388,28 @@ function meshwork_enterFullscreen()
 	else if (fsElem.webkitRequestFullScreen) {
 		fsElem.webkitRequestFullScreen();
 	}
+	
+}
+
+function meshwork_fullscreenChanged()
+{
+	console.log("fullscreen changed")
+	var isFullscreen=(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+	if (isFullscreen) 
+	{
+		meshwork_currentWidth=jQuery(window).width();
+		meshwork_currentHeight=jQuery(window).height();
+	}
+	else
+	{
+		meshwork_currentWidth=meshwork_width;
+		meshwork_currentHeight=meshwork_height;
+	}
+	meshwork_svg.attr("width",meshwork_currentWidth)
+				.attr("height",meshwork_currentHeight)
+
+	meshwork_pixelPerMs=meshwork_currentWidth/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
+	meshwork_force.size([meshwork_currentWidth, meshwork_currentHeight]).start();
 }
 
 
@@ -526,7 +551,7 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 	}
 
 	var H=nodes[nodes.length-1].y;
-	var h=meshwork_height-adaptedMargin;
+	var h=meshwork_currentHeight-adaptedMargin;
 	if (nodes.length>1)
 	{
 		for (var i=0;i<nodes.length;i++)
@@ -554,7 +579,7 @@ function relayout(selector)
 	})
 	console.log("relayout selectedNodes:");
 	console.log(selectedNodes);
-	noOverlap(selectedNodes,meshwork_height/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
+	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
 }
 
 
