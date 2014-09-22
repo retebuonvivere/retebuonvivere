@@ -9,7 +9,8 @@ function meshwork_main($,id)
 {
 	meshwork_drupalPanel=id;
 	meshwork_svg = d3.select("#"+id).append("svg");
-	
+	meshwork_width=$("#"+meshwork_drupalPanel).width();
+	meshwork_height=$(window).height()*0.6;
 	document.addEventListener("fullscreenchange", meshwork_fullscreenChanged,false)
 	document.addEventListener("webkitfullscreenchange", meshwork_fullscreenChanged,false)
 	document.addEventListener("mozfullscreenchange", meshwork_fullscreenChanged,false)

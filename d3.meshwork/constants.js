@@ -2,9 +2,9 @@ console.log("loading constants.js");
 var meshwork_mesiVisualizzati=18;
 var meshwork_graphStartDate=new Date(new Date().getTime()-meshwork_mesiVisualizzati*30*24*60*60*1000);  
 
-var meshwork_width = 920,
-    meshwork_height = 600;
-
+var meshwork_width,
+    meshwork_height;
+    
 var meshwork_axisHeight=30;
 var meshwork_margin = 10;
 
