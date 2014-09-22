@@ -409,7 +409,10 @@ function meshwork_fullscreenChanged()
 				.attr("height",meshwork_currentHeight)
 
 	meshwork_pixelPerMs=meshwork_currentWidth/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
-	meshwork_force.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]).start();
+	if (typeof meshwork_force != "undefined")
+	{
+		meshwork_force.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]).start();
+	}
 }
 
 
