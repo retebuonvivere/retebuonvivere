@@ -147,7 +147,7 @@ testNoOverlap1();
 			}
 		})
 		.gravity(.1)
-		.size([meshwork_currentWidth, meshwork_currentHeight]);
+		.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]);
 
 	meshwork_force
 	  .nodes(meshwork_graphData.nodes)
@@ -409,7 +409,7 @@ function meshwork_fullscreenChanged()
 				.attr("height",meshwork_currentHeight)
 
 	meshwork_pixelPerMs=meshwork_currentWidth/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
-	meshwork_force.size([meshwork_currentWidth, meshwork_currentHeight]).start();
+	meshwork_force.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]).start();
 }
 
 
