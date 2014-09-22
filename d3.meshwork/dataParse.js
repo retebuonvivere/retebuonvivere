@@ -3,9 +3,10 @@ console.log("loading dataParse.js");
 var meshwork_now=new Date();
 var meshwork_svg;
 
+var meshwork_drupalPanel;
 function meshwork_main($,id)
 {
-
+	meshwork_drupalPanel=id;
 	meshwork_svg = d3.select("#"+id).append("svg")
 		.attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
 		.attr("height", meshwork_height);

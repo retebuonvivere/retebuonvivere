@@ -373,17 +373,38 @@ testNoOverlap1();
 		.call(meshwork_xAxis);
 
 }
-function meshwork_requestFullscreen()
+function meshwork_toggleFullscreen()
 {
-	var docElm = meshwork_svg[0][0];
-	if (docElm.requestFullscreen) {
-		docElm.requestFullscreen();
+	var fsElem = jQuery("#"+meshwork_drupalPanel).get(0);
+	
+	if (
+		fsElem.fullscreenElement ||
+		fsElem.webkitFullscreenElement ||
+		fsElem.mozFullScreenElement ||
+		fsElem.msFullscreenElement
+	) {
+
+		if (fsElem.exitFullscreen) {
+			fsElem.exitFullscreen();
+		}
+		else if (fsElem.mozCancelFullScreen) {
+			fsElem.mozCancelFullScreen();
+		}
+		else if (fsElem.webkitCancelFullScreen) {
+			fsElem.webkitCancelFullScreen();
+		}
 	}
-	else if (docElm.mozRequestFullScreen) {
-		docElm.mozRequestFullScreen();
-	}
-	else if (docElm.webkitRequestFullScreen) {
-		docElm.webkitRequestFullScreen();
+	else	
+	{
+		if (fsElem.requestFullscreen) {
+			fsElem.requestFullscreen();
+		}
+		else if (fsElem.mozRequestFullScreen) {
+			fsElem.mozRequestFullScreen();
+		}
+		else if (fsElem.webkitRequestFullScreen) {
+			fsElem.webkitRequestFullScreen();
+		}
 	}
 }
 
