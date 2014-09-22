@@ -20,6 +20,8 @@ var meshwork_nodesMinimumPixelDistanceBackLash=0.4;
 var meshwork_unclickAlpha=0.006;
 var meshwork_unclickFriction=0.1;
 
+var meshwork_fullscreenPanel="meshworkDiv";
+
 function meshwork_panelContentGenerator(node,neighbours,edges)
 {
 	var html="<h3>"+node.name+"</h3>";

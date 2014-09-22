@@ -375,7 +375,7 @@ testNoOverlap1();
 }
 function meshwork_toggleFullscreen()
 {
-	var fsElem = jQuery("#"+meshwork_drupalPanel).get(0);
+	var fsElem = jQuery("#"+meshwork_fullscreenPanel).get(0);
 	
 	if (
 		fsElem.fullscreenElement ||
