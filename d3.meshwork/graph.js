@@ -5,6 +5,13 @@ var meshwork_gradient;
 var meshwork_gradient2;
 var meshwork_dummy;
 
+var meshwork_node;
+var meshwork_link;
+var meshwork_diagonal;
+var meshwork_someNodeClicked=false;
+var meshwork_graphData;
+var meshwork_force;
+
 function buildGradients()
 {
 	meshwork_gradient= meshwork_svg.append("defs")
@@ -79,12 +86,6 @@ function readNodeEnd(node)
 		return node.end;
 	}
 }
-var meshwork_node;
-var meshwork_link;
-var meshwork_diagonal;
-var meshwork_someNodeClicked=false;
-var meshwork_graphData;
-var meshwork_force;
 
 function meshwork_drawGraph()
 {
@@ -427,7 +428,8 @@ function nodeClickHandler(d) {
 		jQuery(this).sidr({
 			name:"sidrPanel",
 			source: function (name) {
-				return meshwork_panelContentGenerator(d);
+				var neighboursAndEdges=neighboursAndEdgesOfNode(d)
+				return meshwork_panelContentGenerator(d,neighboursAndEdges["nodes"],neighboursAndEdges["edges"]);
 	      		},
 	   		side:"right",
 	   		displace: false,
@@ -458,8 +460,27 @@ function nodeClickHandler(d) {
 	    	meshwork_someNodeClicked=true;
 	    	relayout(".node.clicked");
 	}
-    }	
+}	
 
+function neighboursAndEdgesOfNode(n)
+{
+	var result={"nodes":[],"edges":[]}
+	var links=meshwork_graphData["links"];
+	for (var i=0;i<links.length;i++)
+	{
+		if (links[i].source==n)
+		{
+			result["nodes"].push(links[i].target)
+			result["edges"].push(links[i])
+		}
+		else if (links[i].target==n)
+		{
+			result["nodes"].push(links[i].source)
+			result["edges"].push(links[i])
+		}			
+	}
+	return result;
+}
 
 
 function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash)

@@ -20,7 +20,7 @@ var meshwork_nodesMinimumPixelDistanceBackLash=0.4;
 var meshwork_unclickAlpha=0.006;
 var meshwork_unclickFriction=0.1;
 
-function meshwork_panelContentGenerator(node)
+function meshwork_panelContentGenerator(node,neighbours,edges)
 {
 	var html="<h3>"+node.name+"</h3>";
     if (node.nodeType=="org" && node.orgType=="N")
@@ -35,5 +35,14 @@ function meshwork_panelContentGenerator(node)
 		html=html+"<p><span class=\"date-display-end\">"+node.end+"</p>";
     if (node.categories!="N")
         html=html+"<p><strong>Settori</strong>: "+node.categories+"...</p>";
+        
+    for (var i=0;i<neighbours.length;i++)
+    {
+    	html+="<h4>"+neighbours[i].name+"</h4>";
+    }
+    for (var i=0;i<edges.length;i++)
+    {
+    	html+="<h4>"+edges[i].url+"</h4>";
+    }
 	return html;      					
 }
