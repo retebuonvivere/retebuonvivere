@@ -205,7 +205,7 @@ testNoOverlap1();
 		
 	meshwork_node.append("text")
 		.text(function(d){return d.name;})
-		.attr("x",meshwork_currentWidth+10);
+		.attr("x",meshwork_currentWidth-meshwork_textWidth-meshwork_circleRadius);
 
 	var nodeXG= meshwork_node.append("g")
 		.attr("class",function(d){
@@ -398,7 +398,7 @@ function meshwork_fullscreenChanged()
 	if (isFullscreen) 
 	{
 		meshwork_currentWidth=jQuery(window).width();
-		meshwork_currentHeight=jQuery(window).height();
+		meshwork_currentHeight=jQuery(window).height()-50;
 	}
 	else
 	{
