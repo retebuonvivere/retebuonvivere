@@ -417,7 +417,7 @@ function bodyClickHandler(){
 		d["clicked"]=false;
 	});
 	d3.selectAll(".clicked").classed("clicked",false);
-	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
+	d3.selectAll(".node.unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
 	meshwork_someNodeClicked=false;
 	if (meshwork_force.alpha()<=0)
