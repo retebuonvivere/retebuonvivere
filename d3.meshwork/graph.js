@@ -148,12 +148,14 @@ testNoOverlap1();
 		})
 		.gravity(.1)
 		.size([meshwork_currentWidth, meshwork_currentHeight]);
-
-	meshwork_force
-	  .nodes(meshwork_graphData.nodes)
-	  .links(meshwork_graphData.links)
-	  .start()
-	  .alpha(0.01);
+	if (meshwork_force.alpha()<=0 || typeof(meshwork_force.alpha())=="undefined")
+	{
+		meshwork_force
+		  .nodes(meshwork_graphData.nodes)
+		  .links(meshwork_graphData.links)
+  		  .start()
+		  .alpha(0.01);
+	}
 
 	meshwork_container=meshwork_svg.append("g").attr("id","container");
 
@@ -306,12 +308,9 @@ testNoOverlap1();
 			.attr("r",meshwork_circleRadius);
 	});
 
-	console.log(startedNodes);
-	
-
 	meshwork_node.on("mouseover",nodeOverHandler);         
 	meshwork_node.on("click", nodeClickHandler);
-	d3.select("body").on("click", bodyClickHandler)
+	meshwork_svg.on("click", bodyClickHandler)
     
 	meshwork_node.append("title")
 	  .text(function(d) {return d.name;});
@@ -324,9 +323,7 @@ testNoOverlap1();
 	});
 
 	meshwork_force.on("end",function() {
-	//	console.log("force ended");
 		var nodes=meshwork_graphData.nodes.slice(0);
-//		console.log(meshwork_graphData);
 
 		noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash);
 
@@ -337,7 +334,6 @@ testNoOverlap1();
 	var zoom = d3.behavior.zoom()
 		.scaleExtent([0.1, 10])
 		.on("zoom", function() {
-//			console.log("zoom");
 			meshwork_isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
@@ -351,13 +347,7 @@ testNoOverlap1();
 		})
 		.x(timeScale);
 
-//	svg.on("mouseup",function(){
-//		console.log("mouseup");
-//	});
-
-
 	meshwork_svg.on("mousedown",function(){
-//		console.log("mousedown");
 		meshwork_isZooming=false;	
 	});
 
@@ -393,7 +383,6 @@ function meshwork_enterFullscreen()
 
 function meshwork_fullscreenChanged()
 {
-	console.log("fullscreen changed")
 	var isFullscreen=(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
 	if (isFullscreen) 
 	{
@@ -422,9 +411,7 @@ function meshwork_fullscreenChanged()
 var meshwork_isZooming=false;
 
 function bodyClickHandler(){
-//	console.log("bodyClick");
 	if (meshwork_isZooming) return;
-	console.log("not zooming");
 	jQuery.sidr('close',"sidrPanel");
 	d3.selectAll(".clicked").each(function(d){
 		d["clicked"]=false;
@@ -433,7 +420,10 @@ function bodyClickHandler(){
 	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
 	meshwork_someNodeClicked=false;
-	meshwork_force.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
+	if (meshwork_force.alpha()<=0)
+	{
+		meshwork_force.friction(meshwork_unclickFriction).alpha(meshwork_unclickAlpha);
+	}
 }
 
 function nodeOverHandler(d) {
@@ -463,8 +453,7 @@ function nodeOverHandler(d) {
 var meshwork_isPanelOpen=false;
 
 function nodeClickHandler(d) {
-	console.log(d.name);
-    	if (meshwork_someNodeClicked && !d3.select(this).classed("clicked")) 
+   	if (meshwork_someNodeClicked && !d3.select(this).classed("clicked")) 
 		return;		
 	d3.event.stopPropagation();
 	shouldPanelOpen=true;
@@ -495,7 +484,6 @@ function nodeClickHandler(d) {
 	// poi si apre il nuovo;
 	jQuery.sidr("close","sidrPanel");
 	setTimeout(function(){
-		console.log("opening");
 		jQuery.sidr("open","sidrPanel");},500);
 	
 	
@@ -536,7 +524,6 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 	if (typeof meshwork_node == "undefined")
 		return;
 		
-	console.log("nooverlap");
 	nodes.sort(function(a,b){return a.y-b.y;});
 	var yshift=0;
 	var adaptedMargin=nodes.length>4?meshwork_margin:meshwork_margin*2;
@@ -588,8 +575,6 @@ function relayout(selector)
 		if (selectedNodes.indexOf(d)==-1)
 			selectedNodes.push(d);
 	})
-	console.log("relayout selectedNodes:");
-	console.log(selectedNodes);
 	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
 }
 
