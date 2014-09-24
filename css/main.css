@@ -568,6 +568,7 @@ html.js fieldset.collapsed {
  padding-bottom: 1em;
 }
 
+
 /* USERS */
 .field-name-og-user-node {
  clear: both;
@@ -610,11 +611,6 @@ html.js fieldset.collapsed {
 }
 .masonry-item .views-field-field-user-picture {
  margin: 0 .3em .3em 0;
-}
-
-/* USERS BACKEND */
-fieldset#user_user_form_group_user_profile {
- clear: both;
 }
 
 /* relations */
@@ -769,6 +765,26 @@ li.mid-1422 a:before {
  margin-bottom: 1px;
 }
 
+/* USERS BACKEND */
+fieldset#user_user_form_group_user_profile {
+ clear: both;
+}
+
+/* BUTTONS */
+#meshworkDiv .form-group {
+    margin-right:.8em!important;
+    margin-left:.8em!important;
+}
+.fullScreen:before{
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f1b2";
+ padding-right: .4em;
+}
 
 /* 
  * BACKEND
@@ -880,14 +896,6 @@ padding: .3em;
   border-color: #cccccc;
 }
 
-/* temporary workaround for d3_graphapi() empty graph notice 
-.node-type-org .alert-danger, .node-type-project .alert-danger {
- display: none;
-}
-.page-node-edit .alert-danger {
- display: block;
-}
-*/
 
 
 
