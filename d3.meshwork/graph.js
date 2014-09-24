@@ -463,7 +463,7 @@ function nodeClickHandler(d) {
 				var neighboursAndEdges=neighboursAndEdgesOfNode(d)
 				return meshwork_panelContentGenerator(d,neighboursAndEdges["nodes"],neighboursAndEdges["edges"]);
 	      		},
-	   		side:"right",
+	   		side:"left",
 	   		displace: false,
 			onOpen:function(){
 				meshwork_isPanelOpen=true;
