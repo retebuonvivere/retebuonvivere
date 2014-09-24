@@ -776,6 +776,21 @@ li.mid-1422 a:before {
  margin-bottom: 1px;
 }
 
+/* BUTTONS */
+#meshworkDiv .form-group {
+    margin-right:.8em!important;
+    margin-left:.8em!important;
+}
+.fullScreen:before{
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f1b2";
+ padding-right: .4em;
+}
 
 /* 
  * BACKEND
