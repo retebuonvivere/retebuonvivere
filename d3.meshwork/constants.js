@@ -8,7 +8,7 @@ var meshwork_width,
 var meshwork_axisHeight=30;
 var meshwork_margin = 10;
 
-var meshwork_circleRadius=5;
+var meshwork_circleRadius=4;
 
 var meshwork_textWidth=200;
 
@@ -26,13 +26,26 @@ function meshwork_panelContentGenerator(node,neighbours,edges)
 {
 	var html;
 	var title = node.name;
-	
-    var type = node.nodeType;
+	    
+    var type;
+    if (node.nodeType=="org-neverStarted"||node.nodeType=="org")
+        type = "organizzazione..";
+    if (node.nodeType=="project")
+        type="progetto/attività";
     if (node.orgType!="N")
         type = node.orgType;
-    
-    var startDate = new Date(node.start).toString("dd MMMM yyyy");
-    var endDate = new Date(node.end).toString("dd MMMM yyyy");
+	
+    var startDateObj = new Date(node.start);
+    var startDate;
+    if (node.nodeType != "org-neverStarted"){
+        startDate = startDateObj.getDate()+' - '+startDateObj.getMonth()+' - '+startDateObj.getFullYear();
+        } else {
+            startDate = "data mancante;";
+        }
+    var endDateObj = new Date(node.end);
+    if (node.end != null){
+        var endDate = endDateObj.getDate()+' - '+endDateObj.getMonth()+' - '+endDateObj.getFullYear();
+    }
 
     function neighboursHtmlList(node,edges){
         var output = [];
@@ -59,21 +72,16 @@ function meshwork_panelContentGenerator(node,neighbours,edges)
             output.push(neighbourTpl);
         }
         return output.join('');
-    }
-    
+    }    
     
     html='<h3>'+title+'</h3>'+
         '<p>'+type+'</p>'+
         '<p><a href="'+node.url+'" class="btn btn-primary">Vai alla scheda</a></p>'+
-        '<p><span class="date-display-start">'+startDate+
-        '<span class="date-display-end">'+endDate+'</p>'+
-        '<p><strong>Settori</strong>: '+node.categories+'...</p>'+
-        '<p><strong>Collaborazioni:</strong></p>'+
+        '<p><span class="date-display-start">'+startDate+' ';
+        if(node.end != null){ html+='<span class="date-display-end">'+endDate+'</p>'; }
+        if(node.categories!="N"){ html+='<p><strong>Settori</strong>: '+node.categories+'...</p>'; }
+    html+='<h4>Collaborazioni:</h4>'+
         '<ul>'+neighboursHtmlList(node, edges)+'</ul>';
-        
-    
-    
-    
     
 	return html;      					
 }

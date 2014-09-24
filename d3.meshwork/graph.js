@@ -20,16 +20,16 @@ function buildGradients()
 	meshwork_gradient= meshwork_svg.append("defs")
 		.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
 	
-	meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
-	meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
-	meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
+	meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","#378722");
+	meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","#378722");
+	meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","#378722");
 
 	meshwork_gradient2= meshwork_svg.append("defs")
 		.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
 
-	meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
-	meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
-	meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
+	meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","#4E3FFF");
+	meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","#4E3FFF");
+	meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","#4E3FFF");
 }
 
 var meshwork_pixelPerMs;
