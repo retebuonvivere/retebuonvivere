@@ -159,7 +159,7 @@ testNoOverlap1();
 
 	meshwork_container=meshwork_svg.append("g").attr("id","container");
 
-   	var timeScale = d3.time.scale() // time.scale() invece di scale.linear()
+   	var timeScale = d3.time.scale()
 		.domain([meshwork_graphStartDate, meshwork_now])
 		.range([0, meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth)]);
 	
@@ -400,8 +400,6 @@ function meshwork_fullscreenChanged()
 	meshwork_pixelPerMs=meshwork_currentWidth/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
 	if (typeof meshwork_force != "undefined")
 	{
-		//meshwork_force.size([meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth), meshwork_currentHeight]).start();
-		//relayout(".node,.link");
 		meshwork_svg.selectAll("*").remove()
 		meshwork_drawGraph();
 	}

@@ -35,16 +35,17 @@ function meshwork_panelContentGenerator(node,neighbours,edges)
     if (node.orgType!="N")
         type = node.orgType;
 	
+	var mesi = ["feb", "gen", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
     var startDateObj = new Date(node.start);
     var startDate;
     if (node.nodeType != "org-neverStarted"){
-        startDate = startDateObj.getDate()+' - '+startDateObj.getMonth()+' - '+startDateObj.getFullYear();
+        startDate = startDateObj.getDate()+' '+mesi[startDateObj.getMonth()]+' '+startDateObj.getFullYear();
         } else {
             startDate = "data mancante;";
         }
     var endDateObj = new Date(node.end);
     if (node.end != null){
-        var endDate = endDateObj.getDate()+' - '+endDateObj.getMonth()+' - '+endDateObj.getFullYear();
+        var endDate = endDateObj.getDate()+' '+mesi[endDateObj.getMonth()]+' '+endDateObj.getFullYear();
     }
 
     function neighboursHtmlList(node,edges){
