@@ -121,9 +121,7 @@
 
           </div> <!-- /#name-and-slogan -->
         <?php endif; ?>
-<!--        <div class="col-md-3 nav nabvar-nav navbar-right">
-          <?php print $search_box; ?>
-        </div> -->
+
       </div><!-- /.navbar-header -->
 
       <nav class="collapse navbar-collapse <?php if (!$main_menu && !$secondary_menu) { print 'element-invisible'; } ?>" role="navigation">
