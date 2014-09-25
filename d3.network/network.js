@@ -2,19 +2,34 @@
  * @file
  * D3 Module Depedencies library
  */
-
+var distanceFromAge;
 (function($) {
   Drupal.d3.network = function (select, settings) {
 //    var width   = (settings.config.width || 300),
     var network_width = 	$("#graphapi-default").width();
+    var now=new Date();
+    
+    	
+	var min=50;
+	var max=300;
+	var b=Math.E;
+	var k=daysToMs(365)/Math.log(max-min);
+
+	distanceFromAge=function(age){
+    	var v=Math.pow(b,age/k)+min;
+ //   	v=Math.min(max,Math.max(min,v));
+    	return v;
+    };
+    
+    var distanceForLink=function(link){
+    	return distanceFromAge(link.age);
+    }
+
 //        height  = (settings.config.height || 300),
     var network_height  = Math.max($(window).height()*0.65,320);
     
     var network_nodes   = settings.nodes,
-        network_links   = settings.links,
-        z       = d3.scale.ordinal().range(["blue", "red", "orange", "green"]),
-        k       = Math.sqrt(network_nodes.length / (network_width * network_height)),
-        color   = d3.scale.category20();
+        network_links   = settings.links;
 
     // Add an attribute to each node that is a source node so that we can
     // use that attribute to style them differently.
@@ -40,13 +55,33 @@
     if (settings.charge) {
       force.charge(settings.charge)
     }
-    if (settings.linkDistance) {
-      force.linkDistance(settings.linkDistance)
-    }
 
     for (var i=0;i<network_links.length;i++){
-		console.log("network_links[i].color "+network_links[i].color);
+    	var link=network_links[i];
+    	console.log("=================================")
+
+		console.log("network_links[i].color "+link.color);
+		var dateComponents=link.color.split(",");
+		link.start=new Date(dateComponents[0]);
+		link.end=new Date(dateComponents[1]);
+		if (!dateValid(link.start) || !dateValid(link.end))
+		{
+			link.age=daysToMs(365);
+		}
+		else if (dateEquals(link.start,link.end) || link.end.getTime()>now.getTime())
+		{
+			link.age=1;
+		}
+		else 
+		{
+			link.age=now.getTime()-link.end.getTime();
+		}
+		console.log("age:"+msToDays(link.age)+" distance:"+distanceFromAge(link))
 	}
+	
+    network_force.linkDistance(distanceForLink)
+
+
 
     var network_svg = d3.select('#' + settings.id).append("svg")
         .attr("width", network_width)
@@ -95,8 +130,64 @@
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
           .attr("cy", function(d) { return d.y; });
     });
+	function testDaysToMs()
+	{
+		assert(daysToMs(0)==0)
+		assert(daysToMs(1)==8.64e+7)
+		assert(msToDays(8.64e+7)==1)
+		
+	}
 
+	function testDistanceFunction1()
+	{
+		assert(distanceFromAge(daysToMs(0))<60);
+		assert(distanceFromAge(daysToMs(180))<100);
+		assert(distanceFromAge(daysToMs(300))>140);
+		assert(distanceFromAge(daysToMs(365))>290);
+		console.log(distanceFromAge(daysToMs(1.1574074074074074e-8)));
+		assert(distanceFromAge(daysToMs(1.1574074074074074e-8))<60);
+	}
+	testDaysToMs()
+	testDistanceFunction1();
   }
 
 })(jQuery);
+
+function dateEquals(date1,date2)
+{
+	if (date1==null || date2==null)
+	{
+		return false;	
+	}
+	return !(date1>date2) && !(date1<date2);
+};
+
+function msToDays(ms)
+{
+	return ms/(1000.0*60.0*60.0*24.0);
+}
+
+function daysToMs(days)
+{
+	return days*1000.0*60.0*60.0*24.0;
+}
+
+
+function dateValid(d)
+{
+	return !isNaN(d.getTime());
+};
+
+function assert(condition, message) {
+    if (condition) {
+    	console.log("test passed");
+    }
+    else
+    {
+        throw message || "Assertion failed";
+    }
+    
+}
+
+
 
