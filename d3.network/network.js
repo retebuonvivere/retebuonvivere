@@ -9,11 +9,11 @@ var distanceFromAge;
     var network_width = 	$("#graphapi-default").width();
     var now=new Date();
     
-    	
-	var min=50;
-	var max=300;
+    var maxDays=200;	
+	var min=70;
+	var max=180;
 	var b=Math.E;
-	var k=daysToMs(365)/Math.log(max-min);
+	var k=daysToMs(maxDays)/Math.log(max-min);
 
 	distanceFromAge=function(age){
     	var v=Math.pow(b,age/k)+min;
@@ -58,9 +58,9 @@ var distanceFromAge;
 
     for (var i=0;i<network_links.length;i++){
     	var link=network_links[i];
-    	console.log("=================================")
+//    	console.log("=================================")
 
-		console.log("network_links[i].color "+link.color);
+	//	console.log("network_links[i].color "+link.color);
 		var dateComponents=link.color.split(",");
 		link.start=new Date(dateComponents[0]);
 		link.end=new Date(dateComponents[1]);
@@ -76,7 +76,7 @@ var distanceFromAge;
 		{
 			link.age=now.getTime()-link.end.getTime();
 		}
-		console.log("age:"+msToDays(link.age)+" distance:"+distanceFromAge(link))
+		console.log("age:"+msToDays(link.age)+" distance:"+distanceFromAge(link.age))
 	}
 	
     network_force.linkDistance(distanceForLink)
