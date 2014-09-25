@@ -11,13 +11,13 @@ var distanceFromAge;
     
     var maxDays=200;	
 	var min=70;
-	var max=180;
+	var max=230;
 	var b=Math.E;
 	var k=daysToMs(maxDays)/Math.log(max-min);
 
 	distanceFromAge=function(age){
     	var v=Math.pow(b,age/k)+min;
- //   	v=Math.min(max,Math.max(min,v));
+    	v=Math.min(max,Math.max(min,v));
     	return v;
     };
     
@@ -100,6 +100,26 @@ var distanceFromAge;
       .enter().append("line")
         .attr("class", "link");
 
+    var opacityMax=1;
+    var opacityMin=0;
+    var opacityForAge=function(age)
+    {
+/*	    var o=opacityMin;
+    	var O=opacityMax;
+    	var m=min;
+    	var M=max;
+    	var a=(O*M-o*m)/(O-o);
+    	var k=(M-a)/o;
+    	var op=distanceFromAge(age)*k+a;*/
+    	
+    	var op=Math.abs(max-distanceFromAge(age))/max;
+    	return op;
+    }
+    network_link.style("stroke-opacity",function(link){
+    	return opacityForAge(link.age);
+    })
+
+
     var network_node = network_graph.selectAll("g.node")
         .data(network_nodes)
       .enter().append("svg:g")
@@ -138,17 +158,7 @@ var distanceFromAge;
 		
 	}
 
-	function testDistanceFunction1()
-	{
-		assert(distanceFromAge(daysToMs(0))<60);
-		assert(distanceFromAge(daysToMs(180))<100);
-		assert(distanceFromAge(daysToMs(300))>140);
-		assert(distanceFromAge(daysToMs(365))>290);
-		console.log(distanceFromAge(daysToMs(1.1574074074074074e-8)));
-		assert(distanceFromAge(daysToMs(1.1574074074074074e-8))<60);
-	}
 	testDaysToMs()
-	testDistanceFunction1();
   }
 
 })(jQuery);
