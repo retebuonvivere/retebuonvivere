@@ -1,6 +1,7 @@
 name = network 
 description = D3 visualization library
 files[js][] = network.js
+files[js][] = search.js
 files[css][] = network.css
 version = 0.1
 
