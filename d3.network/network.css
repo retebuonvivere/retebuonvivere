@@ -5,7 +5,7 @@
 circle.node.searched {
     fill:#FF0064!important;
 /*    stroke:#FF0064!important;*/
-    stroke-width:4px!important;
+    stroke-width:4px;
 }
 
 .node.searched text{
