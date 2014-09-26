@@ -84,12 +84,20 @@ function rbv_relpro_default_rules_configuration() {
                   {
                     "IF" : { "entity_has_field" : { "entity" : [ "collaboration" ], "field" : "field_com_date" } },
                     "DO" : [
-                      { "data_set" : {
-                          "data" : [ "collaboration:field-com-date:value2" ],
-                          "value" : [ "node:field-com-date:value2" ]
-                        }
-                      },
-                      { "drupal_message" : { "message" : "- \\u003Ca href=\\u0022[collaboration:url]\\u0022\\u003E[collaboration:title]\\u003C\\/a\\u003E" } }
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "data_is_empty" : { "data" : [ "collaboration:field-com-date:duration" ] } },
+                            "DO" : [
+                              { "data_set" : {
+                                  "data" : [ "collaboration:field-com-date:value2" ],
+                                  "value" : [ "node:field-com-date:value2" ]
+                                }
+                              },
+                              { "drupal_message" : { "message" : "- \\u003Ca href=\\u0022[collaboration:url]\\u0022\\u003E[collaboration:title]\\u003C\\/a\\u003E" } }
+                            ]
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
