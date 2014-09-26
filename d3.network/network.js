@@ -7,11 +7,14 @@ var distanceFromAge;
   Drupal.d3.network = function (select, settings) {
 //    var width   = (settings.config.width || 300),
     var network_width = 	$("#graphapi-default").width();
+//        height  = (settings.config.height || 300),
+    var network_height  = Math.max($(window).height()*0.65,320);
+
     var now=new Date();
     
     var maxDays=200;	
 	var min=70;
-	var max=230;
+	var max=300;
 	var b=Math.E;
 	var k=daysToMs(maxDays)/Math.log(max-min);
 
@@ -24,9 +27,6 @@ var distanceFromAge;
     var distanceForLink=function(link){
     	return distanceFromAge(link.age);
     }
-
-//        height  = (settings.config.height || 300),
-    var network_height  = Math.max($(window).height()*0.65,320);
     
     var network_nodes   = settings.nodes,
         network_links   = settings.links;
@@ -36,25 +36,11 @@ var distanceFromAge;
     network_links.map(function(d) { network_nodes[d.target].is_source = true; });
 
     var network_force = d3.layout.force()
-      .size([network_width, network_height])
+      .size([network_width-200, network_height])
       .charge(-100)
       .distance(100)
-      .friction(.94)
-      .gravity(.01);
-
-    // additional settings for the advanced force directed graphs
-    if (settings.gravity) {
-      force.gravity(settings.gravity)
-    }
-    if (settings.friction) {
-      force.friction(settings.friction)
-    }
-    if (settings.theta) {
-      force.theta(settings.theta)
-    }
-    if (settings.charge) {
-      force.charge(settings.charge)
-    }
+      .friction(0.92)
+      .gravity(0.01);
 
     for (var i=0;i<network_links.length;i++){
     	var link=network_links[i];
@@ -87,6 +73,10 @@ var distanceFromAge;
         .attr("width", network_width)
         .attr("height", network_height);
 
+    // guide per visualizzare il centro del div
+    network_svg.append("line").attr("x1",network_width/2).attr("x2",network_width/2).attr("y1",0).attr("y2",network_height).attr("stroke", "red");
+    network_svg.append("line").attr("y1",network_height/2).attr("y2",network_height/2).attr("x1",0).attr("x2",network_width).attr("stroke", "red");
+
     var network_graph = network_svg.append("g")
         .attr("class", "data");
 
@@ -101,18 +91,19 @@ var distanceFromAge;
         .attr("class", "link");
 
     var opacityMax=1;
-    var opacityMin=0;
+    var opacityMin=0.4;
     var opacityForAge=function(age)
     {
-/*	    var o=opacityMin;
+	    var o=opacityMin;
     	var O=opacityMax;
     	var m=min;
     	var M=max;
-    	var a=(O*M-o*m)/(O-o);
-    	var k=(M-a)/o;
-    	var op=distanceFromAge(age)*k+a;*/
+    	var a=o-m*(O-o)/(M-m)
+    	var k=(O-o)/(M-m)
+    	var d=M-distanceFromAge(age)
+    	var op=k*d+a;
     	
-    	var op=Math.abs(max-distanceFromAge(age))/max;
+//    	var op=Math.abs(max-distanceFromAge(age))/max;
     	return op;
     }
     network_link.style("stroke-opacity",function(link){
@@ -138,7 +129,7 @@ var distanceFromAge;
         .attr("class", "nodetext")
         .attr("dx", 10)
         .attr("dy", "1")
-        .text(function(d) { return d.name });
+        .text(function(d) { return (d.name).substring(0,20)+"..."+d.content });
 
     network_force.on("tick", function() {
       network_link.attr("x1", function(d) { return d.source.x; })
