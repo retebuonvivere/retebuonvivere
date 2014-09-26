@@ -113,12 +113,12 @@ var distanceFromAge;
     var opacityMax=1;
     var opacityMin=0.4;
     
-    function linearRelation(O,o,M,m)
+    function linearRelation(px,py,qx,qy,y)
     {
-	    var a=M-o*(m-M)/(O-o);
-    	var k=(m-M)/(O-o);
-    	var op=k*d+a;
-    	return op;	
+	    var a=py-px*(qy-py)/(qx-px);
+    	var k=(qy-py)/(qx-px);
+    	var x=(y-a)/k;
+    	return x;	
     }
     
     var opacityForLinkAge=function(age)
@@ -128,7 +128,7 @@ var distanceFromAge;
     	var m=min;
     	var M=max;
     	var d=distanceFromAge(age)
-    	return linearRelation(O,o,M,m,d);
+    	return linearRelation(o,M,O,m,d);
     }
     network_link.style("stroke-opacity",function(link){
     	return opacityForLinkAge(link.age);
