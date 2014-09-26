@@ -121,18 +121,16 @@ var distanceFromAge;
     	return x;	
     }
     
-    var opacityForLinkAge=function(age)
+    var opacityForLink=function(link)
     {
 	    var o=opacityMin;
     	var O=opacityMax;
     	var m=min;
     	var M=max;
-    	var d=distanceFromAge(age)
+    	var d=distanceFromAge(link.age)
     	return linearRelation(o,M,O,m,d);
     }
-    network_link.style("stroke-opacity",function(link){
-    	return opacityForLinkAge(link.age);
-    })
+    network_link.style("stroke-opacity",opacityForLink)
 
 
     var network_node = network_graph.selectAll("g.node")
@@ -141,15 +139,22 @@ var distanceFromAge;
         .attr("class", "node")
         .call(network_force.drag);
 
-	var opacityForNodeAge(
+	var opacityForNode=function(node)
+    {
+	    var o=opacityMin;
+    	var O=opacityMax;
+    	var ageMin=0;
+    	var ageMax=daysToMs(365);
+    	return linearRelation(o,ageMax,O,ageMin,node.age);
+    }
 
     network_node.append("svg:circle")
       .attr("class", "node")
       .attr("r", function(d) { return (d.is_source) ? 9 : 9; })
       .style("fill", function (d) { return (d.is_source) ? d3.hsl('#378722') : d3.hsl('#ABDC0A'); })
       .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); })
-      .style("fill-opacity", function(node) { return opacityForNodeAge(node.age); })
-      .style("stroke-opacity", function(node) { return opacityForNodeAge(node.age); });
+      .style("fill-opacity", opacityForNode)
+      .style("stroke-opacity", opacityForNode);
 
     network_node.append("svg:a")
         .attr("xlink:href",function(d) { return d.uri })
@@ -176,11 +181,6 @@ var distanceFromAge;
 		assert(msToDays(8.64e+7)==1)
 		
 	}
-	function testOpacityForAge()
-	{
-		assert(opacityForAge(0)==opacityMax);
-	}
-	testOpacityForAge();
 	testDaysToMs();
   }
 
