@@ -1,7 +1,4 @@
-/**
- * @file
- * D3 Module Depedencies library
- */
+
 var distanceFromAge;
 (function($) {
   Drupal.d3.network = function (select, settings) {
@@ -11,6 +8,39 @@ var distanceFromAge;
     var network_height  = Math.max($(window).height()*0.65,320);
 
     var now=new Date();
+    
+    function setStartEnd(object, timefield)
+	{
+		var s=object[timefield];
+		if (s==null)
+		{
+			object.start=new Date(0);
+			object.end=now;
+		}
+		else
+		{
+			var dateComponents=s.split(",");
+			object.start=new Date(dateComponents[0]);
+			object.end=new Date(dateComponents[1]);
+		}
+	}
+ 
+	function setAge(object)
+	{
+		if (!dateValid(object.start) || !dateValid(object.end))
+		{
+			object.age=daysToMs(365);
+		}
+		else if (dateEquals(object.start,object.end) || object.end.getTime()>now.getTime())
+		{
+			object.age=1;
+		}
+		else 
+		{
+			object.age=now.getTime()-object.end.getTime();
+		}
+	}
+ 
     
     var maxDays=200;	
 	var min=70;
@@ -44,29 +74,19 @@ var distanceFromAge;
 
     for (var i=0;i<network_links.length;i++){
     	var link=network_links[i];
-//    	console.log("=================================")
-
-	//	console.log("network_links[i].color "+link.color);
-		var dateComponents=link.color.split(",");
-		link.start=new Date(dateComponents[0]);
-		link.end=new Date(dateComponents[1]);
-		if (!dateValid(link.start) || !dateValid(link.end))
-		{
-			link.age=daysToMs(365);
-		}
-		else if (dateEquals(link.start,link.end) || link.end.getTime()>now.getTime())
-		{
-			link.age=1;
-		}
-		else 
-		{
-			link.age=now.getTime()-link.end.getTime();
-		}
-		console.log("age:"+msToDays(link.age)+" distance:"+distanceFromAge(link.age))
+		setStartEnd(link,"color");
+		setAge(link);
+//		console.log("age:"+msToDays(link.age)+" distance:"+distanceFromAge(link.age))
 	}
 	
     network_force.linkDistance(distanceForLink)
 
+	for (var i=0;i<network_nodes.length;i++){
+		var node=network_nodes[i];
+		setStartEnd(node,"content");
+		setAge(node);		
+		console.log("age:"+msToDays(node.age))
+	}
 
 
     var network_svg = d3.select('#' + settings.id).append("svg")
@@ -121,7 +141,9 @@ var distanceFromAge;
       .attr("class", "node")
       .attr("r", function(d) { return (d.is_source) ? 9 : 9; })
       .style("fill", function (d) { return (d.is_source) ? d3.hsl('#378722') : d3.hsl('#ABDC0A'); })
-      .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); });
+      .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); })
+      .style("fill-opacity", function(node) { return opacityForAge(node.age); })
+      .style("stroke-opacity", function(node) { return opacityForAge(node.age); });
 
     network_node.append("svg:a")
         .attr("xlink:href",function(d) { return d.uri })
