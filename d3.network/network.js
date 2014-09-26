@@ -14,7 +14,7 @@ var distanceFromAge;
 		var s=object[timefield];
 		if (s==null)
 		{
-			object.start=new Date(0);
+			object.start=new Date(0,0,0,0,0,0);
 			object.end=now;
 		}
 		else
@@ -112,22 +112,26 @@ var distanceFromAge;
 
     var opacityMax=1;
     var opacityMin=0.4;
-    var opacityForAge=function(age)
+    
+    function linearRelation(O,o,M,m)
+    {
+	    var a=M-o*(m-M)/(O-o);
+    	var k=(m-M)/(O-o);
+    	var op=k*d+a;
+    	return op;	
+    }
+    
+    var opacityForLinkAge=function(age)
     {
 	    var o=opacityMin;
     	var O=opacityMax;
     	var m=min;
     	var M=max;
-    	var a=o-m*(O-o)/(M-m)
-    	var k=(O-o)/(M-m)
-    	var d=M-distanceFromAge(age)
-    	var op=k*d+a;
-    	
-//    	var op=Math.abs(max-distanceFromAge(age))/max;
-    	return op;
+    	var d=distanceFromAge(age)
+    	return linearRelation(O,o,M,m,d);
     }
     network_link.style("stroke-opacity",function(link){
-    	return opacityForAge(link.age);
+    	return opacityForLinkAge(link.age);
     })
 
 
@@ -137,13 +141,15 @@ var distanceFromAge;
         .attr("class", "node")
         .call(network_force.drag);
 
+	var opacityForNodeAge(
+
     network_node.append("svg:circle")
       .attr("class", "node")
       .attr("r", function(d) { return (d.is_source) ? 9 : 9; })
       .style("fill", function (d) { return (d.is_source) ? d3.hsl('#378722') : d3.hsl('#ABDC0A'); })
       .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); })
-      .style("fill-opacity", function(node) { return opacityForAge(node.age); })
-      .style("stroke-opacity", function(node) { return opacityForAge(node.age); });
+      .style("fill-opacity", function(node) { return opacityForNodeAge(node.age); })
+      .style("stroke-opacity", function(node) { return opacityForNodeAge(node.age); });
 
     network_node.append("svg:a")
         .attr("xlink:href",function(d) { return d.uri })
@@ -151,7 +157,7 @@ var distanceFromAge;
         .attr("class", "nodetext")
         .attr("dx", 10)
         .attr("dy", "1")
-        .text(function(d) { return (d.name).substring(0,20)+"..."+d.content });
+        .text(function(d) { return (d.name).substring(0,20)+"..."/*+d.content */});
 
     network_force.on("tick", function() {
       network_link.attr("x1", function(d) { return d.source.x; })
@@ -170,8 +176,12 @@ var distanceFromAge;
 		assert(msToDays(8.64e+7)==1)
 		
 	}
-
-	testDaysToMs()
+	function testOpacityForAge()
+	{
+		assert(opacityForAge(0)==opacityMax);
+	}
+	testOpacityForAge();
+	testDaysToMs();
   }
 
 })(jQuery);
