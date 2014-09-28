@@ -12,6 +12,7 @@ circle.node.searched {
     font-size: 20px;
     font-weight:bold;
     fill:#FF0064;
+    fill-opacity:1;
 }
 .link {
     stroke:#257924;
@@ -22,4 +23,9 @@ circle.node {
 }
 text {
     font-size:13px;
+}
+
+.fixed circle {
+    fill:#FF0064!important;
+/*    stroke:#FF0064!important;*/
 }
