@@ -228,14 +228,14 @@
             
     });
     
-	function testDaysToMs()
-	{
-		assert(daysToMs(0)==0)
-		assert(daysToMs(1)==8.64e+7)
-		assert(msToDays(8.64e+7)==1)
-		
-	}
-	testDaysToMs();
+//	function testDaysToMs()
+//	{
+//		assert(daysToMs(0)==0)
+//		assert(daysToMs(1)==8.64e+7)
+//		assert(msToDays(8.64e+7)==1)
+//		
+//	}
+//	testDaysToMs();
   }
 
 })(jQuery);

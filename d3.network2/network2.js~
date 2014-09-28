@@ -84,7 +84,7 @@
       .size([network_width-200, network_height])
       .charge(-250)
       .friction(0.92)
-      .linkDistance(120)
+      .linkDistance(110)
       .gravity(0.1);
 
     for (var i=0;i<network_links.length;i++){
