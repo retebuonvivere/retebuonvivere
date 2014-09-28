@@ -101,8 +101,7 @@ testNoOverlap1();
 	
 	var zoomScale=1;
 	var zoomTranslate=[0,0];
-	
-	
+
    	var timeScale = d3.time.scale()
 		.domain([meshwork_graphStartDate, meshwork_now])
 		.range([0, meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth)]);
