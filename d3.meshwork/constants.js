@@ -35,7 +35,7 @@ function meshwork_panelContentGenerator(node,neighbours,edges)
     if (node.orgType!="N")
         type = node.orgType;
 	
-	var mesi = ["feb", "gen", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
+	var mesi = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
     var startDateObj = new Date(node.start);
     var startDate;
     if (node.nodeType != "org-neverStarted"){
