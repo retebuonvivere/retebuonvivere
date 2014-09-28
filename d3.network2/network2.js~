@@ -1,5 +1,6 @@
 (function($) {
-  Drupal.d3.network = function (select, settings) {
+  Drupal.d3.network2 = function (select, settings) {
+    console.log("network2");
     var network_width = $("#graphapi-default").width();
 //    (settings.config.height || 
     var network_height;
@@ -81,9 +82,10 @@
 
     var network_force = d3.layout.force()
       .size([network_width-200, network_height])
-      .charge(-100)
+      .charge(-250)
       .friction(0.92)
-      .gravity(0.01);
+      .linkDistance(111)
+      .gravity(0.1);
 
     for (var i=0;i<network_links.length;i++){
     	var link=network_links[i];
@@ -91,7 +93,7 @@
 		setAge(link);
 	}
 	
-    network_force.linkDistance(distanceForLink)
+//    network_force.linkDistance(distanceForLink)
 
 	for (var i=0;i<network_nodes.length;i++){
 		var node=network_nodes[i];
@@ -154,7 +156,7 @@
     	var d=distanceFromAge(link.age)
     	return linearRelation(o,M,O,m,d);
     }
-    network_link.style("stroke-opacity",opacityForLink)
+//    network_link.style("stroke-opacity",opacityForLink)
 
     var forceDrag = network_force.drag()
     .on("dragstart", forceDragStart);
@@ -202,7 +204,7 @@
     network_node.append("svg:circle")
       .attr("class", "node")
       .attr("r", function(d) { return (d.is_source) ? 9 : 9; })
-      .style("fill", function (d) { return (d.is_source) ? d3.hsl('#378722') : d3.hsl('#ABDC0A'); })
+      .style("fill", function (d) { return (d.is_source) ? d3.hsl('#ABDC0A') : d3.hsl('#ABDC0A'); })
       .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); })
       .style("fill-opacity", opacityForNode)
       .style("stroke-opacity", opacityForNode);
