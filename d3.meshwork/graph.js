@@ -265,8 +265,36 @@ testNoOverlap1();
 	  .attr("y1",0)
 	  .attr("y2",meshwork_epsilon)
 	
+	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
+	nodeXG.classed("ended",function(d){return (d.end!=null)});
+
+
 	var endedNodes=d3.selectAll(".ended");
 	
+	var endedCircles=endedNodes.append("circle")
+		.classed("endCircle",true)
+		.attr("class",function(d){
+			return d.nodeType;
+		})
+		.attr("class",function(d){
+			return addClass(this,"id"+d.id);
+		})
+		.classed("node",true)
+		.attr("cy",0)
+		.attr("cx",function(d){
+			var startx=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				startx=timeScale(d.start);
+			}
+
+			return timeScale(d.end)-startx;
+		})
+		.attr("r",meshwork_circleRadius);
 	  
 	var resetNodeLengths=function(){
 		nodeLines.attr("x2",function(d){
@@ -283,41 +311,26 @@ testNoOverlap1();
 			return timeScale(readNodeEnd(d))-startx;
 		})
 		
-		endedNodes.each(function(d){
-			var nodeg=d3.select(this);
-			if (typeof d==="undefined") return;
-			nodeg.append("circle")
-				.attr("class",function(){
-					return d.nodeType;
-				})
-				.attr("class",function(){
-					return addClass(this,"id"+d.id);
-				})
-				.classed("node",true)
-				.attr("cy",0)
-				.attr("cx",function(d){
-					var startx=0;
-					if (d.nodeType=="org-neverStarted")
-					{
-						startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
-					}
-					else
-					{
-						startx=timeScale(d.start);
-					}
+		endedCircles.attr("cx",function(d){
+			var startx=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				startx=timeScale(d.start);
+			}
 
-					return timeScale(d.end)-startx;
-				})
-				.attr("r",meshwork_circleRadius);
-		});
+			return timeScale(d.end)-startx;
+		})
+
 
 	};
 	
 	
-	resetNodeLengths();
 	
-	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
-	nodeXG.classed("ended",function(d){return (d.end!=null)});
+	resetNodeLengths();
 
 	var startedNodes=d3.selectAll(".started").each(function(d){
 		var nodeg=d3.select(this);
