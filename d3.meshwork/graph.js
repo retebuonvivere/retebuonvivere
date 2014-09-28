@@ -234,7 +234,6 @@ testNoOverlap1();
 		}
 		d.origX=x;
 		setTranslate(this,x,0);
-		console.log("xForDate: x="+x);
 	}
 
 	var nodeXG= meshwork_node.append("g")
@@ -260,7 +259,14 @@ testNoOverlap1();
 	  	})
 		.classed("node",true)
 	  .attr("x1",0)
-	  .attr("x2",function(d){
+	  .attr("y1",0)
+	  .attr("y2",meshwork_epsilon)
+	
+	var endedNodes=d3.selectAll(".ended");
+	
+	  
+	var resetNodeLengths=function(){
+		nodeLines.attr("x2",function(d){
 			var startx=0;
 			if (d.nodeType=="org-neverStarted")
 			{
@@ -273,8 +279,39 @@ testNoOverlap1();
 
 			return timeScale(readNodeEnd(d))-startx;
 		})
-	  .attr("y1",0)
-	  .attr("y2",meshwork_epsilon)
+		
+		endedNodes.each(function(d){
+			var nodeg=d3.select(this);
+			if (typeof d==="undefined") return;
+			nodeg.append("circle")
+				.attr("class",function(){
+					return d.nodeType;
+				})
+				.attr("class",function(){
+					return addClass(this,"id"+d.id);
+				})
+				.classed("node",true)
+				.attr("cy",0)
+				.attr("cx",function(d){
+					var startx=0;
+					if (d.nodeType=="org-neverStarted")
+					{
+						startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
+					}
+					else
+					{
+						startx=timeScale(d.start);
+					}
+
+					return timeScale(d.end)-startx;
+				})
+				.attr("r",meshwork_circleRadius);
+		});
+
+	};
+	
+	
+	resetNodeLengths();
 	
 	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
 	nodeXG.classed("ended",function(d){return (d.end!=null)});
@@ -296,33 +333,7 @@ testNoOverlap1();
 	});
 	
 	
-	var endedNodes=d3.selectAll(".ended").each(function(d){
-		var nodeg=d3.select(this);
-		if (typeof d==="undefined") return;
-		nodeg.append("circle")
-			.attr("class",function(){
-				return d.nodeType;
-			})
-			.attr("class",function(){
-				return addClass(this,"id"+d.id);
-			})
-			.classed("node",true)
-			.attr("cy",0)
-			.attr("cx",function(d){
-				var startx=0;
-				if (d.nodeType=="org-neverStarted")
-				{
-					startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
-				}
-				else
-				{
-					startx=timeScale(d.start);
-				}
 
-				return timeScale(d.end)-startx;
-			})
-			.attr("r",meshwork_circleRadius);
-	});
 
 	meshwork_node.on("mouseover",nodeOverHandler);         
 	meshwork_node.on("click", nodeClickHandler);
@@ -344,6 +355,7 @@ testNoOverlap1();
 		meshwork_node.each(function(d){
 			setTranslate(this,0,zoomTranslate[1]+zoomScale*d.y)
 		})
+		resetNodeLengths();
 		meshwork_link.attr("d",meshwork_diagonal)
 		meshwork_svg.call(meshwork_xAxis);
 	};
@@ -361,7 +373,6 @@ testNoOverlap1();
 			meshwork_isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
-			console.log("zoom: t="+t+" scale="+s);
 	/*		if (t[0]<-meshwork_currentWidth*(s-1))
 			{
 				t[0]=-meshwork_currentWidth*(s-1);
@@ -604,7 +615,6 @@ function relayout(selector)
 		})
 	}
 	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
-	meshwork_svg.call(zoom);
 }
 
 
