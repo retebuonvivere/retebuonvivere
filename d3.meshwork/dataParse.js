@@ -19,8 +19,8 @@ function meshwork_main($,id)
 	
 	meshwork_fullscreenChanged()
 	
-	var nodesFile=Drupal.settings.basePath+"sites/default/files/graph_data/nodes.json";
-	var edgesFile=Drupal.settings.basePath+"sites/default/files/graph_data/edges.json";
+	var nodesFile=Drupal.settings.basePath+"sites/default/files/graph_data/nodesSmall.json";
+	var edgesFile=Drupal.settings.basePath+"sites/default/files/graph_data/edgesSmall.json";
 	console.log("searching for data files")
 	console.log(Drupal.settings)
 	$.getJSON(nodesFile,function(parsed){

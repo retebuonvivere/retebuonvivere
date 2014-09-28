@@ -96,8 +96,12 @@ function meshwork_drawGraph()
 testNoOverlap1();
 	testNoOverlap2();
 	testNoOverlap3();
-	testNoOverlap4();
+	testNoOverlap4(); 
 	testNoOverlap5();*/
+   	var timeScale = d3.time.scale()
+		.domain([meshwork_graphStartDate, meshwork_now])
+		.range([0, meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth)]);
+
 	buildGradients();
 	meshwork_dummy=meshwork_svg.append("g");
 	
@@ -159,13 +163,9 @@ testNoOverlap1();
 
 	meshwork_container=meshwork_svg.append("g").attr("id","container");
 
-   	var timeScale = d3.time.scale()
-		.domain([meshwork_graphStartDate, meshwork_now])
-		.range([0, meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth)]);
-	
 	meshwork_diagonal=d3.svg.diagonal()
-		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
-		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
+		.source(function(l){return {y:timeScale(l.date)-4,x:l.source.y};})
+		.target(function(l){return {y:timeScale(l.date)+4,x:l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
 
 	meshwork_link = meshwork_container.selectAll(".link")
@@ -209,6 +209,21 @@ testNoOverlap1();
 		.text(function(d){return d.name;})
 		.attr("x",meshwork_currentWidth-meshwork_textWidth-meshwork_circleRadius);
 
+	function setXForNode(d)
+	{
+		var x=0;
+		if (d.nodeType=="org-neverStarted")
+		{
+			x=timeScale(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
+		}
+		else
+		{
+			x=timeScale(d.start);
+		}
+		d.origX=x;
+		setTranslate(this,x,0);
+	}
+
 	var nodeXG= meshwork_node.append("g")
 		.attr("class",function(d){
 			return d.nodeType;
@@ -217,19 +232,7 @@ testNoOverlap1();
 			return addClass(this,"id"+d.id);
 		})
    		.classed("node",true)
-		.each(function(d){
-			var x=0;
-			if (d.nodeType=="org-neverStarted")
-			{
-				x=xForDate(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
-			}
-			else
-			{
-				x=xForDate(d.start);
-			}
-			d.origX=x;
-			setTranslate(this,x,0);
-		})
+		.each(setXForNode)
 
 	  
   	  /*.attr("y1",function(d,i){return d.y;})
@@ -248,14 +251,14 @@ testNoOverlap1();
 			var startx=0;
 			if (d.nodeType=="org-neverStarted")
 			{
-				startx=xForDate(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
+				startx=timeScale(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
 			}
 			else
 			{
-				startx=xForDate(d.start);
+				startx=timeScale(d.start);
 			}
 
-			return xForDate(readNodeEnd(d))-startx;
+			return timeScale(readNodeEnd(d))-startx;
 		})
 	  .attr("y1",0)
 	  .attr("y2",meshwork_epsilon)
@@ -296,14 +299,14 @@ testNoOverlap1();
 				var startx=0;
 				if (d.nodeType=="org-neverStarted")
 				{
-					startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
+					startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
 				}
 				else
 				{
-					startx=xForDate(d.start);
+					startx=timeScale(d.start);
 				}
 
-				return xForDate(d.end)-startx;
+				return timeScale(d.end)-startx;
 			})
 			.attr("r",meshwork_circleRadius);
 	});
@@ -316,6 +319,7 @@ testNoOverlap1();
 	  .text(function(d) {return d.name;});
 
 	meshwork_force.on("tick", function() {
+		nodeXG.each(setXForNode);
 		meshwork_node.each(function(d){
 			setTranslate(this,0,d.y)
 		})
@@ -326,10 +330,6 @@ testNoOverlap1();
 		var nodes=meshwork_graphData.nodes.slice(0);
 
 		noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash);
-
-		
-		
-		
 	});
 	var zoom = d3.behavior.zoom()
 		.scaleExtent([0.1, 10])
@@ -418,10 +418,15 @@ function bodyClickHandler(){
 	d3.selectAll(".node.unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
 	meshwork_someNodeClicked=false;
+/*	currentTransform=meshwork_container.attr("transform");
+	var pattern=/(.*)translate\(([-\d.,]+)\)(.*)/;
+	matches=currentTransform.match(pattern);
+	meshwork_container.attr("transform",matches[1]+"translate("+matches[2]+") scale(1)");
 	if (meshwork_force.alpha()<=0)
 	{
 		meshwork_force.friction(meshwork_unclickFriction).alpha(meshwork_unclickAlpha);
-	}
+	}*/
+	relayout()
 }
 
 function nodeOverHandler(d) {
@@ -567,13 +572,16 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 function relayout(selector)
 {
 	meshwork_container.attr("transform", "translate(0,0)scale(1)");
-
 	var selectedNodes=[];
-	d3.selectAll(selector).each(function(d){
-		if (selectedNodes.indexOf(d)==-1)
-			selectedNodes.push(d);
-	})
+	if (selector!=null)
+	{
+		d3.selectAll(selector).each(function(d){
+			if (selectedNodes.indexOf(d)==-1)
+				selectedNodes.push(d);
+		})
+	}
 	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
+	meshwork_svg.call(zoom);
 }
 
 
