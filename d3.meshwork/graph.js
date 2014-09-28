@@ -203,6 +203,7 @@ testNoOverlap1();
 		.data(meshwork_graphData.nodes)
 		.enter()
 		.append("g")
+		.style("z-index",1)
 		.attr("class",function(d){
 			return d.nodeType;
 		})
@@ -219,7 +220,9 @@ testNoOverlap1();
 		
 	meshwork_node.append("text")
 		.text(function(d){return d.name;})
-		.attr("x",meshwork_currentWidth-meshwork_textWidth-meshwork_circleRadius);
+		.attr("x",meshwork_currentWidth-meshwork_textWidth-meshwork_circleRadius)
+		.attr("y",-5)
+		.style("z-index",50);
 
 	function setXForNode(d)
 	{
@@ -614,7 +617,7 @@ function relayout(selector)
 				selectedNodes.push(d);
 		})
 	}
-	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
+//	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
 }
 
 
