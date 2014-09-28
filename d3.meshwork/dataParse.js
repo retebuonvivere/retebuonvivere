@@ -8,7 +8,7 @@ var meshwork_drupalPanel;
 function meshwork_main($,id)
 {
 	meshwork_drupalPanel=id;
-	meshwork_svg = d3.select("#"+id).append("svg");
+	meshwork_svg = d3.select("#"+id).append("svg"); 
 	
 	meshwork_width=$("#"+meshwork_drupalPanel).width();
 	meshwork_height=$(window).height()*0.6;

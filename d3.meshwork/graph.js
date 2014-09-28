@@ -168,8 +168,8 @@ testNoOverlap1();
 	meshwork_container=meshwork_svg.append("g").attr("id","container");
 
 	meshwork_diagonal=d3.svg.diagonal()
-		.source(function(l){return {y:zoomTranslate[0]+zoomScale*timeScale(l.date)-4, x:zoomTranslate[1]+zoomScale*l.source.y};})
-		.target(function(l){return {y:zoomTranslate[0]+zoomScale*timeScale(l.date)+4, x:zoomTranslate[1]+zoomScale*l.target.y};})
+		.source(function(l){return {y:timeScale(l.date)-4, x:zoomTranslate[1]+zoomScale*l.source.y};})
+		.target(function(l){return {y:timeScale(l.date)+4, x:zoomTranslate[1]+zoomScale*l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
 
 	meshwork_link = meshwork_container.selectAll(".link")
@@ -186,10 +186,18 @@ testNoOverlap1();
 	  });
 	  
 
-	var drag = meshwork_force.drag()
+/*	var drag = meshwork_force.drag()
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
-		});
+		})
+		.on("drag", function (d) {
+			//get mouse coordinates relative to the visualization
+			//coordinate system:
+			var mouse = d3.mouse(vis.node());
+			d.x = (mouse[0] - translation[0])/scaleFactor; 
+			d.y = (mouse[1] - translation[1])/scaleFactor; 
+			tick();//re-position this node and any links
+		});*/
 
 	meshwork_node = meshwork_container.selectAll(".node")
 		.data(meshwork_graphData.nodes)
@@ -218,14 +226,15 @@ testNoOverlap1();
 		var x=0;
 		if (d.nodeType=="org-neverStarted")
 		{
-			x=zoomTranslate[0]+zoomScale*timeScale(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
+			x=timeScale(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
 		}
 		else
 		{
-			x=zoomTranslate[0]+zoomScale*timeScale(d.start);
+			x=timeScale(d.start);
 		}
 		d.origX=x;
 		setTranslate(this,x,0);
+		console.log("xForDate: x="+x);
 	}
 
 	var nodeXG= meshwork_node.append("g")
@@ -322,12 +331,21 @@ testNoOverlap1();
 	meshwork_node.append("title")
 	  .text(function(d) {return d.name;});
 
-	var tick= function() {
+
+	meshwork_xAxis = d3.svg.axis()
+		.scale(timeScale)
+		.tickSize(0,0)
+		/*.tickPadding(10)	
+		.tickSubdivide(true)	*/
+		.orient("bottom");
+
+	var tick=function() {
 		nodeXG.each(setXForNode);
 		meshwork_node.each(function(d){
 			setTranslate(this,0,zoomTranslate[1]+zoomScale*d.y)
 		})
 		meshwork_link.attr("d",meshwork_diagonal)
+		meshwork_svg.call(meshwork_xAxis);
 	};
 
 	meshwork_force.on("tick",tick);
@@ -343,16 +361,17 @@ testNoOverlap1();
 			meshwork_isZooming=true;
 			var t=d3.event.translate;
 			var s=d3.event.scale;
-			if (t[0]<-meshwork_currentWidth*(s-1))
+			console.log("zoom: t="+t+" scale="+s);
+	/*		if (t[0]<-meshwork_currentWidth*(s-1))
 			{
 				t[0]=-meshwork_currentWidth*(s-1);
 	//			zoom.translate(t);
-			}
+			}*/
 //			meshwork_container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
 			zoomScale=s;
 			zoomTranslate=t;
 
-			meshwork_svg.call(meshwork_xAxis);
+	//		meshwork_svg.call(meshwork_xAxis);
 			tick();
 		})
 		.x(timeScale);
@@ -364,12 +383,6 @@ testNoOverlap1();
 	meshwork_svg.call(zoom);
 
 
-	meshwork_xAxis = d3.svg.axis()
-		.scale(timeScale)
-		.tickSize(0,0)
-		/*.tickPadding(10)	
-		.tickSubdivide(true)	*/
-		.orient("bottom");
 
 	meshwork_svg
 		.attr("class", "x axis")
