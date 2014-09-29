@@ -15,8 +15,8 @@ circle.node.searched {
     fill-opacity:1;
 }
 .link {
-    stroke:#257924;
-    stroke-width:2;
+    stroke:#999;
+    stroke-width:2px;
     stroke-opacity:0.5;
 }
 circle.node {
