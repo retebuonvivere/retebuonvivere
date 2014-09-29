@@ -77,9 +77,10 @@
     
     var network_force = d3.layout.force()
       .size([network_width, network_height])
-      .charge(-100)
+      .charge(-250)
       .friction(0.92)
-      .gravity(0.01)
+      .gravity(0.1)
+      .linkDistance(110)
       .on("tick", tick);
 
     var zoomListener = d3.behavior.zoom()
@@ -105,7 +106,7 @@
     // Add an attribute to each node that is a source node so that we can use that attribute to style them differently.
     network_links.map(function(d) { network_nodes[d.target].is_source = true; });
 
-    network_force.linkDistance(distanceForLink)
+//    network_force.linkDistance(distanceForLink)
 
 	for (var i=0;i<network_nodes.length;i++){
 		var node=network_nodes[i];
@@ -160,7 +161,7 @@
     	var d=distanceFromAge(link.age)
     	return linearRelation(o,M,O,m,d);
     }
-    network_link.style("stroke-opacity",opacityForLink)
+//    network_link.style("stroke-opacity",opacityForLink)
 
     var forceDrag = network_force.drag()
     .on("dragstart", forceDragStart);
