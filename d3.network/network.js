@@ -57,6 +57,7 @@
 		{
 			object.age=now.getTime()-object.end.getTime();
 		}
+		console.log(object.age)
 	}
     
     var maxDays=200;	
