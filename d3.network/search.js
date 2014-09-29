@@ -7,6 +7,6 @@ function textBoxKeyPress()
 	var re=new RegExp(searchWord,"i");
 	d3.selectAll("g.node").filter(function(d){
 	console.log(d);
-		return 	(replaceHtmlSpecialChars(d.name)).match(re) != null;
+		return 	(replaceHtmlSpecialChars(d.name)).match(re);
 	}).classed("searched",true);
 }
