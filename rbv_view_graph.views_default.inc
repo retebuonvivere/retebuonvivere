@@ -456,7 +456,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['label'] = '';
   $handler->display->display_options['fields']['field_com_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_com_date']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
+  $handler->display->display_options['fields']['field_com_date']['alter']['text'] = '[field_com_date-value],[field_com_date-value2]';
   $handler->display->display_options['fields']['field_com_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_date']['settings'] = array(
     'format_type' => 'long',
