@@ -41,6 +41,7 @@
 			object.start=new Date(dateComponents[0]);
 			object.end=new Date(dateComponents[1]);
 		}
+		console.log(object[timefield])
 	}
  
 	function setAge(object)
