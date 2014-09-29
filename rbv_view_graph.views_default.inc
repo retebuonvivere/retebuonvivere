@@ -286,6 +286,8 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['label'] = '';
+  $handler->display->display_options['fields']['field_com_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_com_date']['alter']['text'] = '[field_com_date-value],[field_com_date-value2]';
   $handler->display->display_options['fields']['field_com_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_date']['settings'] = array(
     'format_type' => 'long',
@@ -323,7 +325,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'relation_cooperates_with_node';
   $handler->display->display_options['fields']['field_com_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_com_date_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_com_date_1']['alter']['text'] = '[field_com_date_1-value] ,[field_com_date_1-value2]';
+  $handler->display->display_options['fields']['field_com_date_1']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
   $handler->display->display_options['fields']['field_com_date_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_date_1']['settings'] = array(
     'format_type' => 'long',
@@ -453,6 +455,8 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['label'] = '';
+  $handler->display->display_options['fields']['field_com_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_com_date']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
   $handler->display->display_options['fields']['field_com_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_date']['settings'] = array(
     'format_type' => 'long',
@@ -577,7 +581,6 @@ function rbv_view_graph_views_default_views() {
     t('View panes'),
     t('pane: relation graph'),
     t('coopera con'),
-    t('[field_com_date_1-value] ,[field_com_date_1-value2]'),
     t('pane: ER project graph'),
     t('Rete'),
     t('Tutti'),
