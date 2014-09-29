@@ -1,12 +1,14 @@
 (function($) {
   Drupal.d3.network = function (select, settings) {
     var network_width = $("#graphapi-default").width();
-//    (settings.config.height || 
     var network_height;
     if ($("#graphapi-default").width() > 360)
         network_height = Math.max($(window).height()*0.65,320);
     else
         network_height = settings.config.height;
+
+    var scaleFactor = 1;
+    var translation = [0,0];
 
     var now=new Date();
     
@@ -73,40 +75,44 @@
     	return distanceFromAge(link.age);
     }
     
-    var network_nodes = settings.nodes,
-        network_links = settings.links;
-
-    // Add an attribute to each node that is a source node so that we can use that attribute to style them differently.
-    network_links.map(function(d) { network_nodes[d.target].is_source = true; });
-
     var network_force = d3.layout.force()
-      .size([network_width-200, network_height])
+      .size([network_width, network_height])
       .charge(-100)
       .friction(0.92)
-      .gravity(0.01);
-
-    for (var i=0;i<network_links.length;i++){
-    	var link=network_links[i];
-		setStartEnd(link,"color");
-		setAge(link);
-	}
-	
-    network_force.linkDistance(distanceForLink)
-
-	for (var i=0;i<network_nodes.length;i++){
-		var node=network_nodes[i];
-		setStartEnd(node,"content");
-		setAge(node);		
-	}
+      .gravity(0.01)
+      .on("tick", tick);
 
     var zoomListener = d3.behavior.zoom()
         .scaleExtent([-10, 10])
         .on("zoom", zoomHandler);
     
     function zoomHandler() {
-        network_graph.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        scaleFactor = d3.event.scale;
+        translation = d3.event.translate;
+//        console.log("zoom: "+ d3.event.translate, d3.event.scale);
+        tick();
     }
+    
+    var network_nodes = settings.nodes,
+        network_links = settings.links;
 
+    for (var i=0;i<network_links.length;i++){
+    	var link=network_links[i];
+		setStartEnd(link,"color");
+		setAge(link);
+	}
+
+    // Add an attribute to each node that is a source node so that we can use that attribute to style them differently.
+    network_links.map(function(d) { network_nodes[d.target].is_source = true; });
+
+    network_force.linkDistance(distanceForLink)
+
+	for (var i=0;i<network_nodes.length;i++){
+		var node=network_nodes[i];
+		setStartEnd(node,"content");
+		setAge(node);	
+	}	
+    
     var network_svg = d3.select('#' + settings.id).append("svg")
         .attr("width", network_width)
         .attr("height", network_height)
@@ -206,6 +212,9 @@
       .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); })
       .style("fill-opacity", opacityForNode)
       .style("stroke-opacity", opacityForNode);
+      
+    network_node.append("title")
+	  .text(function(d) {return replaceHtmlSpecialChars(d.name);});
 
     network_node.append("svg:a")
         .attr("xlink:href",function(d) { return d.uri })
@@ -216,18 +225,15 @@
         .text(function(d) { return replaceHtmlSpecialChars((d.name).substring(0,20)+"...")})
         .attr("fill-opacity", opacityForNode);
 
-    network_force.on("tick", function() {
-        network_link.attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
+    function tick() {
+        network_link.attr("x1", function(d) { return translation[0] + scaleFactor*d.source.x; })
+            .attr("y1", function(d) { return translation[1] + scaleFactor*d.source.y; })
+            .attr("x2", function(d) { return translation[0] + scaleFactor*d.target.x; })
+            .attr("y2", function(d) { return translation[1] + scaleFactor*d.target.y; });
 
-        network_node.attr("cx", function(d) { return d.x; })
-            .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-            .attr("cy", function(d) { return d.y; });
+        network_node.attr("transform", function(d) { return "translate(" + (translation[0] + scaleFactor*d.x) + "," + (translation[1] + scaleFactor*d.y) + ")"; });
+    }
             
-    });
-    
 //	function testDaysToMs()
 //	{
 //		assert(daysToMs(0)==0)
