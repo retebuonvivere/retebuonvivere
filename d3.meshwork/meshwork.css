@@ -7,17 +7,17 @@ circle {
 .org, circle.org-neverStarted {
     stroke: #378722;
     stroke-opacity: .95;
-    stroke-width: 2.7px;
+    stroke-width: 3.5px;
 }
 line.org-neverStarted {
     stroke: url(#fadedGradient);
     stroke-opacity: .95;
-    stroke-width: 2.7px;
+    stroke-width: 3.5px;
 }
 .project {
     stroke: #ABDC0A;
     stroke-opacity: .95;
-    stroke-width: 2.7px;
+    stroke-width: 3.5px;
 }
 line.org-neverStarted.hover {
 	stroke: url(#selectedFadedGradient);
@@ -37,7 +37,7 @@ line.org-neverStarted.hover {
 .link {
     stroke: #999;
     stroke-opacity: .65;
-    stroke-width: 2.7px;
+    stroke-width: 3.5px;
     fill: none;
 }
 .link.hover, .link.clicked {
