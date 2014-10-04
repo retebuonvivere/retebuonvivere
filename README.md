@@ -76,9 +76,11 @@ And this [list of posts][18] about retebuonvivere project and events related to 
 
 technical staff
 ---------------
-* Sirio Marchi [ohjimijimijimi][19] as drupal supervisor
-* Marco Andreoli [fonzy85vr][20] as programmer
-* Miro Marchi [miromarchi][21] as drupal configurator (I'm the anthropologist!)
+* Sirio Marchi [ohjimijimijimi][19] contributes as drupal supervisor
+* Marco Andreoli [fonzy85vr][20] contributed as programmer and Agile project manager
+* Miro Marchi [miromarchi][21] contributes as drupal configurator (I'm the anthropologist!) and still main reference for this project
+* Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
+* Lucia Fiorio [linkedin profile][27] contributes in network administration and network growth
 * [+ you :-D](https://github.com/fonzy85vr/retebuonvivere#start)
 
 
@@ -107,3 +109,5 @@ technical staff
 [23]: https://en.wikipedia.org/wiki/Cooperative
 [24]: http://dev-rbv-pan.gotpantheon.com/
 [25]: http://www.retebuonvivere.org/
+[26]: https://github.com/hariseldon78
+[27]: http://it.linkedin.com/pub/lucia-fiorio/70/391/ab1/en
