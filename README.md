@@ -23,13 +23,9 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
    `drush make retebuonvivere.make`
 
-3. Download the telephone module separately because it always cause problems in the makefile (see related telephone [issue][5].
+3. Create a new mySQL db with all permissions.
 
-   `drush dl telephone`
-
-4. Create a new mySQL db with all permissions.
-
-5. Install drupal with rbv_profile profile with the following command (from drupal root):
+4. Install drupal with rbv_profile profile with the following command (from drupal root):
 
    ```Shell
    drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
@@ -37,9 +33,7 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
    Or you can run the installation script by accessing the site in your browser.
 
-6. Now log in to your site in the browser (user:admin pass:admin), go to status report page at admin/status/report. If you see error messages do what is needed to resolve.
-
-7. Now you have installed panopoly and some more contrib modules, while RBV features are only downloaded. You can enable them, go to admin/structure/features and enable them one by one from the first to the last. 
+5. Now log in to your site in the browser (user:admin pass:admin), go to status report page at admin/status/report. If you see error messages do what is needed to resolve.
 
 And you are ready to go.
 
