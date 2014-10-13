@@ -230,7 +230,7 @@ function rbv_relpro_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_rel_source',
     'label' => 'Soggetto',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
@@ -313,7 +313,7 @@ function rbv_relpro_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_relpro_project',
     'label' => 'Progetto',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
