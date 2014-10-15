@@ -16,6 +16,9 @@ function rbv_kala_default_form_alter(&$form, &$form_state, $form_id) {
     $form['#attributes']['class'][] = 'navbar-form';
     $form['#attributes']['role'][] = 'search';
   }
+  if ($form_id == 'edit-keys') {
+    $form['#attributes']['class'][] = 'pippo';
+  }
 }
 
 ?>

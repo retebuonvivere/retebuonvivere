@@ -5,13 +5,33 @@
 html {
  font-size: 100%;
 }
-
+/* FRONT PAGE */
+h1#site-name{
+    font-size:30px;
+}
 /* HEADER */
 /*header.navbar{*/
 /*    background:#D8C7A3;*/
 /*    border-radius:0;*/
 /*    border:none;*/
 /*}*/
+
+.nav-search-box label{
+    display:none;
+}
+.nav-search-box .form-item-keys{
+/*    float:left;*/
+    margin-top:0;
+}
+.nav-search-box input#edit-keys{
+    width:auto;
+    float:left;
+}
+#logo img{
+/*    position:absolute;*/
+/*    float:left;*/
+    width:82px;
+}
 
 /* FIELD LABELS */
 .field .field-label {
@@ -853,12 +873,9 @@ div .image-widget-data {
  font-size: 2em;
  color: #FF5C00;
 }
-
-.form-item, .form-actions {
- margin-top: .5em;
- margin-bottom: .6em;
+form .form-actions .btn {
+    margin-bottom: 8px;
 }
-
 /* admin */
 .page-admin ul {
 list-style: none;
@@ -948,6 +965,10 @@ padding: .3em;
     margin-top: 0;
 }
 
+/* TRICKS */
+.invisible-separator{
+    font-size:0;
+}
 
 
 

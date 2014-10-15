@@ -121,9 +121,10 @@
 
           </div> <!-- /#name-and-slogan -->
         <?php endif; ?>
-
       </div><!-- /.navbar-header -->
-
+      <div class="navbar-right nav-search-box">
+        <?php print $search_box; ?>
+      </div>
       <nav class="collapse navbar-collapse <?php if (!$main_menu && !$secondary_menu) { print 'element-invisible'; } ?>" role="navigation">
         <?php
           $pri_attributes = array();
