@@ -13,11 +13,10 @@ function rbv_kala_default_preprocess_page(&$variables){
  */
 function rbv_kala_default_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_form') {
-    $form['#attributes']['class'][] = 'navbar-form';
-    $form['#attributes']['role'][] = 'search';
-  }
-  if ($form_id == 'edit-keys') {
-    $form['#attributes']['class'][] = 'pippo';
+    $form['#attributes'] = array(
+      'class'=> array('navbar-form'),
+      'role' => array(t('search')),
+    );
   }
 }
 
