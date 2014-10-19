@@ -46,9 +46,9 @@ You can start from the drupal [makefile][5] to build the latest website configur
 
 demo and production
 -------------------
-At [dev-rbv-pan.gotpantheon.com][24] we mantain an outdated test demo. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
+We no longer mantain the testing demo site at [dev-rbv-pan.gotpantheon.com][24]. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
 
-At [www.retebuonvivere.org][25] you can find the production website for the network of Verona, Italy.
+At [www.retebuonvivere.org][25] you can find the working production website for the network of Verona, Italy.
 
 rationale of the project
 ------------------------
