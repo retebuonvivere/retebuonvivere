@@ -1045,7 +1045,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-share-alt"></i>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link pull-right';
   /* Campo: Contenuto: Progetto */
@@ -1148,7 +1148,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-share-alt"></i>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link pull-right';
   /* Campo: Contenuto: Progetto */
@@ -1245,7 +1245,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     t('Progetti'),
     t('pane: collaborations'),
     t('Progetti e collaborazioni'),
-    t('<i class="fa fa-share-alt"></i>'),
+    t('<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>'),
     t('pane: collab masonry'),
   );
   $export['rbv_view_group_content'] = $view;
