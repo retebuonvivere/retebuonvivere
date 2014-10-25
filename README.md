@@ -33,23 +33,23 @@ developing
 ----------
 We are going to follow a *code-driven development* workflow for our custom modules and configuration, in order to boost teamworking.
 
-The [developing wiki][4] is the main place for documentation on this.
+The [developing wiki][4] is the main place for documentation on this. **not completely updated now**
 
 start
 -----
 This README is *the* place where to start! This repo is the main repo.
 
-From here you can go to the **[main wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** (with links to repositories), which features are still missing **[____]**, the priority of each feature and more info. The list is not complete nor completely updated.
+From here you can go to the **[main wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** (with links to repositories), which features are still missing **[____]**, the priority of each feature and more info. **The list is not complete nor completely updated now**.
 
 If you want to **contribute** to this civil society network tool, great! **Get in touch with us: write to info@retebuonvivere.org**.
 
-You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous section), or visit the demo site (see next section).
+You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous section), or visit the website (see next section).
 
 demo and production
 -------------------
-We **no longer mantain** the testing demo site at [dev-rbv-pan.gotpantheon.com][24]. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
-
 At [www.retebuonvivere.org][25] you can find the **working production website for the network of Verona**, Italy.
+
+We **no longer mantain** the testing demo site at [dev-rbv-pan.gotpantheon.com][24]. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
 
 rationale of the project
 ------------------------
@@ -71,7 +71,7 @@ This site is aimed as the main platform, main tool of representation and self-re
 
 promoters
 ---------
-This project is promoted mainly by two CSSEOs networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. 
+This project is promoted mainly by two CSSEOs networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. Reference person for retevuonvivere at Naturalmente Verona is [Andrea Tronchin][28], at Mag Verona is [Loredana Aldegheri][29]. Thank you!
 Check out [this page][17] about retebuonvivere.org project at Mag's website.
 And this [list of posts][18] about retebuonvivere project and events related to retebuonvivere project at Naturalmente Verona's website.
 
@@ -79,7 +79,7 @@ technical staff
 ---------------
 Present:
 * Miro Marchi [miromarchi][21] contributes as drupal configurator (I'm the anthropologist!) and still main reference for this project
-* Lucia Fiorio [linkedin profile][27] contributes in network administration and network growth
+* Lucia Fiorio ([linkedin profile][27]) contributes in network administration and network growth
 Past:
 * Sirio Marchi [ohjimijimijimi][19] contributed as drupal supervisor
 * Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
@@ -123,3 +123,5 @@ Get in touch with us:
 [25]: http://www.retebuonvivere.org/
 [26]: https://github.com/hariseldon78
 [27]: http://it.linkedin.com/pub/lucia-fiorio/70/391/ab1/en
+[28]: https://www.facebook.com/atronchin
+[29]: http://www.magverona.it/testi-e-interventi-di-loredana-aldegheri/
