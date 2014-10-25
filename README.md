@@ -72,6 +72,7 @@ This site is aimed as the main platform, main tool of representation and self-re
 promoters
 ---------
 This project is promoted mainly by two CSSEOs networks of Verona: [Mag Verona][15] and [Naturalmente Verona][16]. Reference person for retevuonvivere at Naturalmente Verona is [Andrea Tronchin][28], at Mag Verona is [Loredana Aldegheri][29]. Thank you!
+
 Check out [this page][17] about retebuonvivere.org project at Mag's website.
 And this [list of posts][18] about retebuonvivere project and events related to retebuonvivere project at Naturalmente Verona's website.
 
@@ -80,10 +81,12 @@ technical staff
 Present:
 * Miro Marchi [miromarchi][21] contributes as drupal configurator (I'm the anthropologist!) and still main reference for this project
 * Lucia Fiorio ([linkedin profile][27]) contributes in network administration and network growth
+
 Past:
 * Sirio Marchi [ohjimijimijimi][19] contributed as drupal supervisor
 * Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
 * Marco Andreoli [fonzy85vr][20] contributed as programmer and Agile project manager
+
 Future:
 * [+ you :-D](https://github.com/fonzy85vr/retebuonvivere#start)
 
