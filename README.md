@@ -9,6 +9,7 @@ table of contents
 * [rationale of this project](https://github.com/fonzy85vr/retebuonvivere#rationale-of-the-project)
 * [promoters](https://github.com/fonzy85vr/retebuonvivere#promoters)
 * [technical staff](https://github.com/fonzy85vr/retebuonvivere#technical-staff)
+* [contacts](https://github.com/fonzy85vr/retebuonvivere#contacts)
 
 what is retebuonvivere.org
 --------------------------
@@ -38,17 +39,17 @@ start
 -----
 This README is *the* place where to start! This repo is the main repo.
 
-From here you can go to the **[main wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** (with links to repositories), which features are still missing **[____]**, the priority of each feature and more info.
+From here you can go to the **[main wiki documentation pages][9]** where you can see retebuonvivere features, which features are already **[done]** (with links to repositories), which features are still missing **[____]**, the priority of each feature and more info. The list is not complete nor completely updated.
 
-If you want to **contribute** to this civil society network tool, great! Chose your piece :-) **get involved**.
+If you want to **contribute** to this civil society network tool, great! **Get in touch with us: write to info@retebuonvivere.org**.
 
 You can start from the drupal [makefile][5] to build the latest website configuration, or visit the developing wiki (see previous section), or visit the demo site (see next section).
 
 demo and production
 -------------------
-We no longer mantain the testing demo site at [dev-rbv-pan.gotpantheon.com][24]. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
+We **no longer mantain** the testing demo site at [dev-rbv-pan.gotpantheon.com][24]. In the demo content we placed contextual links to the wiki pages, in order to facilitate cooperation.
 
-At [www.retebuonvivere.org][25] you can find the working production website for the network of Verona, Italy.
+At [www.retebuonvivere.org][25] you can find the **working production website for the network of Verona**, Italy.
 
 rationale of the project
 ------------------------
@@ -76,12 +77,23 @@ And this [list of posts][18] about retebuonvivere project and events related to 
 
 technical staff
 ---------------
-* Sirio Marchi [ohjimijimijimi][19] contributes as drupal supervisor
-* Marco Andreoli [fonzy85vr][20] contributed as programmer and Agile project manager
+Present:
 * Miro Marchi [miromarchi][21] contributes as drupal configurator (I'm the anthropologist!) and still main reference for this project
-* Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
 * Lucia Fiorio [linkedin profile][27] contributes in network administration and network growth
+Past:
+* Sirio Marchi [ohjimijimijimi][19] contributed as drupal supervisor
+* Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
+* Marco Andreoli [fonzy85vr][20] contributed as programmer and Agile project manager
+Future:
 * [+ you :-D](https://github.com/fonzy85vr/retebuonvivere#start)
+
+contacts
+--------
+Get in touch with us:
+* write to info@retebuonvivere.org
+* website: http://www.retebuonvivere.org/
+* facebook: https://www.facebook.com/retebuonvivere
+* google+: https://plus.google.com/+RetebuonvivereOrg1
 
 
 [1]: http://nuvole.org/blog/code-driven-development
