@@ -64,3 +64,6 @@
 [submodule "drupal/features/rbv_meshwork"]
 	path = drupal/features/rbv_meshwork
 	url = git@github.com:miromarchi/rbv_meshwork.git
+[submodule "drupal/features/rbv_network"]
+	path = drupal/features/rbv_network
+	url = git@github.com:miromarchi/rbv_network.git
