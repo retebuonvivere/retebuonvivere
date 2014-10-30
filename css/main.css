@@ -969,7 +969,9 @@ padding: .3em;
 .invisible-separator{
     font-size:0;
 }
-
+input#edit-delete{
+  display:none;
+}
 
 
 
