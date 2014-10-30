@@ -1,7 +1,7 @@
 api = 2
 core = 7.x
 
-; retebuonvivere make file (not finished, not verified)
+; retebuonvivere make file (not tested)
 
 projects[drupal][version] = 7.32
 ; Patch isssue "String offset cast notice in field_invoke_method_multiple()"
@@ -64,8 +64,6 @@ projects[entityreference_prepopulate][version] = 1.5
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entity_view_mode][version] = 1.0-rc1
 projects[entity_view_mode][subdir] = contrib
-projects[features_override][version] = 2.0-rc1
-projects[features_override][subdir] = contrib
 projects[field_collection][version] = 1.0-beta7
 projects[field_collection][subdir] = contrib
 projects[fullcalendar][version] = 2.0
@@ -152,6 +150,15 @@ projects[rbv_relation][download][type] = git
 projects[rbv_relation][download][url] = git@github.com:miromarchi/rbv_relation.git
 projects[rbv_relation][type] = module
 projects[rbv_relation][subdir] = features
+projects[rbv_meshwork][download][type] = git
+projects[rbv_meshwork][download][url] = git@github.com:miromarchi/rbv_meshwork.git
+projects[rbv_meshwork][type] = module
+projects[rbv_meshwork][subdir] = features
+projects[rbv_network][download][type] = git
+projects[rbv_network][download][url] = git@github.com:miromarchi/rbv_network.git
+projects[rbv_network][type] = module
+projects[rbv_network][subdir] = features
+
 
 ; Themes
 projects[kalatheme][type] = theme

@@ -21,7 +21,7 @@ Build a new retebuonvivere panopoly-based installation using [drush][3] from ret
 
 2. Download all the necessary modules with patches, themes, libraries (including drupal core and panopoly base distribution) and rbv_profile, in their right subdirectories with the following command (from inside the folder created, which will become the drupal root):
 
-   `drush make retebuonvivere.make`
+   `drush make retebuonvivere1.13.make` #please keep in mind we didn't test the updated makefile (we use to update panopoly versions and other contrib modules)
 
 3. Create a new mySQL db with all permissions.
 
