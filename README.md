@@ -5,7 +5,7 @@ Retebuonvivere: meshwork d3 visualization
 
 # Description
 
-This repository is a workshop for the creation of a [d3][2] meshwok visualization to be used in [retebuonvivere][0] project. See [fonzy85vr/retebuonvivere#74][9] for the original issue.
+This repository is a workshop for the creation of a [d3.js][2] meshwok visualization to be used in [retebuonvivere][0] project. See [fonzy85vr/retebuonvivere#74][9] for the original issue.
 
 # Demonstration
 See the meshwork graph in retebuonvivere website at http://www.retebuonvivere.org/rete/meshwork
@@ -46,8 +46,9 @@ On the internet there are some examples of meshwork type visualizations:
 
 | Example | Author | Description | JS library used / Technology |
 | ------- | ------ | ----------- | --------------- |
-| [Comic Book Narrative Charts][6] | by Nancy Iskander, Matthew Thorne, Craig Kaplan. | It's a specialized instance of a [Sankey Diagram][7]. | d3.js / svg |
-| [Network Graph Visualizer][8] | by Tom Preston-Werner | It shows collaboration code | Don't know / canvas. |
+| 1# [Comic Book Narrative Charts][6] | by Nancy Iskander, Matthew Thorne, Craig Kaplan. | It's a specialized instance of a [Sankey Diagram][7]. | d3.js / svg |
+| 2# [Software Evolution Storylines][10] | by Michael Ogawa | As #1 is ispired by [XKCD Comic, movie narrative chart][11] | [Processing.js][12] / HTML5 svg |
+| 3# [Network Graph Visualizer][8] | by Tom Preston-Werner | It shows collaboration code | Don't know / HTML5 canvas. |
 
 # Main workflow
 
@@ -150,3 +151,6 @@ The algorithm should reposition lines in order to reduce line overlapping. After
 [7]: http://bost.ocks.org/mike/sankey/
 [8]: https://github.com/blog/39-say-hello-to-the-network-graph-visualizer
 [9]: https://github.com/fonzy85vr/retebuonvivere/issues/74
+[10]: http://www.michaelogawa.com/research/storylines/
+[11]: http://xkcd.com/657/
+[12]: http://processingjs.org/
