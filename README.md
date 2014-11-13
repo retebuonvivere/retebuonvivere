@@ -1,17 +1,17 @@
 retebuonvivere
 ==============
+This fork is the new main repo for www.retebuonvivere.org.
+
 table of contents
 * [what is retebuonvivere.org](#what-is-retebuonvivereorg)
-* [structure of the project](https://github.com/fonzy85vr/retebuonvivere#structure-of-the-project)
-* [developing](https://github.com/fonzy85vr/retebuonvivere#developing)
-* [start](https://github.com/fonzy85vr/retebuonvivere#start)
-* [demo and production](https://github.com/fonzy85vr/retebuonvivere#demo-and-production)
-* [rationale of this project](https://github.com/fonzy85vr/retebuonvivere#rationale-of-the-project)
-* [promoters](https://github.com/fonzy85vr/retebuonvivere#promoters)
-* [technical staff](https://github.com/fonzy85vr/retebuonvivere#technical-staff)
-* [contacts](https://github.com/fonzy85vr/retebuonvivere#contacts)
-
-This fork is the new main repo for www.retebuonvivere.org
+* [structure of the project](#structure-of-the-project)
+* [developing](#developing)
+* [start](#start)
+* [demo and production](#demo-and-production)
+* [rationale of this project](#rationale-of-the-project)
+* [promoters](#promoters)
+* [technical staff](#technical-staff)
+* [contacts](#contacts)
 
 what is retebuonvivere.org
 --------------------------
