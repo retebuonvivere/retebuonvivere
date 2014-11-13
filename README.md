@@ -1,7 +1,7 @@
 retebuonvivere
 ==============
 table of contents
-* [what is retebuonvivere.org](https://github.com/fonzy85vr/retebuonvivere#what-is-retebuonvivereorg)
+* [what is retebuonvivere.org](#what-is-retebuonvivereorg)
 * [structure of the project](https://github.com/fonzy85vr/retebuonvivere#structure-of-the-project)
 * [developing](https://github.com/fonzy85vr/retebuonvivere#developing)
 * [start](https://github.com/fonzy85vr/retebuonvivere#start)
@@ -10,6 +10,8 @@ table of contents
 * [promoters](https://github.com/fonzy85vr/retebuonvivere#promoters)
 * [technical staff](https://github.com/fonzy85vr/retebuonvivere#technical-staff)
 * [contacts](https://github.com/fonzy85vr/retebuonvivere#contacts)
+
+This fork is the new main repo for www.retebuonvivere.org
 
 what is retebuonvivere.org
 --------------------------
