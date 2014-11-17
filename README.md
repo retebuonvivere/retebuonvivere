@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/retebuonvivere/retebuonvivere.png?label=ready&title=Ready)](https://waffle.io/retebuonvivere/retebuonvivere)
 retebuonvivere
 ==============
 This fork is the new main repo for www.retebuonvivere.org.
