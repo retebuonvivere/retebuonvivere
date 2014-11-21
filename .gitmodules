@@ -7,6 +7,3 @@
 [submodule "drupal/themes/rbv_kala_default_bootstrap"]
 	path = drupal/themes/rbv_kala_default_bootstrap
 	url = git@github.com:retebuonvivere/rbv_kala_default_bootstrap.git
-[submodule "drupal/rbv_networkadmin"]
-	path = drupal/features/rbv_networkadmin
-	url = git@github.com:retebuonvivere/rbv_networkadmin.git
