@@ -10,9 +10,6 @@
 [submodule "drupal/rbv_networkadmin"]
 	path = drupal/features/rbv_networkadmin
 	url = git@github.com:retebuonvivere/rbv_networkadmin.git
-[submodule "drupal/features/rbv_meshwork"]
-	path = drupal/features/rbv_meshwork
-	url = git@github.com:retebuonvivere/rbv_meshwork.git
 [submodule "drupal/features/rbv_network"]
 	path = drupal/features/rbv_network
 	url = git@github.com:retebuonvivere/rbv_network.git
