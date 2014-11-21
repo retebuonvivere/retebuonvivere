@@ -40,13 +40,11 @@ We do it this way (example):
 git clone git@github.com:retebuonvivere/retebuonvivere.git reponame
 cd reponame
 drush make makes/retebuonvivere1.13.make sitename
-cp -R drupal/profile/rbv_profile/ sitename/profiles/
-cp -R drupal/features/ sitename/sites/all/modules/
-cp -R drupal/themes/rbv_kala_default/ sitename/sites/all/themes/custom/
-cp -R drupal/themes/rbv_kala_default_bootstrap/ sitename/sites/all/libraries/
-
+cp -R drupal/profile/* sitename/profiles/
+cp -R drupal/features/* sitename/sites/all/modules/features/
+cp -R drupal/themes/* sitename/sites/all/themes/custom/
+cp -R drupal/libraries/* sitename/sites/all/libraries/
 ```
-Copy 
 Now create a new mySQL db with all permissions
 ```shell
 cd sitename
