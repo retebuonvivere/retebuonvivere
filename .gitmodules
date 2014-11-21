@@ -1,69 +1,48 @@
 [submodule "drupal/makes"]
 	path = drupal/makes
-	url = git@github.com:miromarchi/rbv_drupal_make.git
+	url = git@github.com:retebuonvivere/rbv_drupal_make.git
 [submodule "drupal/features/rbv_com_fields"]
 	path = drupal/features/rbv_com_fields
-	url = git@github.com:miromarchi/rbv_com_fields.git
+	url = git@github.com:retebuonvivere/rbv_com_fields.git
 [submodule "drupal/features/rbv_org"]
 	path = drupal/features/rbv_org
-	url = git@github.com:miromarchi/rbv_org.git
+	url = git@github.com:retebuonvivere/rbv_org.git
 [submodule "drupal/features/rbv_project"]
 	path = drupal/features/rbv_project
-	url = git@github.com:miromarchi/rbv_project.git
-[submodule "drupal/features/rbv_rel"]
-	path = drupal/features/rbv_rel
-	url = git@github.com:miromarchi/rbv_rel.git
+	url = git@github.com:retebuonvivere/rbv_project.git
 [submodule "drupal/features/rbv_view_explore"]
 	path = drupal/features/rbv_view_explore
-	url = git@github.com:miromarchi/rbv_view_explore.git
-[submodule "drupal/features/rbv_view_rel"]
-	path = drupal/features/rbv_view_rel
-	url = git@github.com:miromarchi/rbv_view_rel.git
-[submodule "drupal/features/rbv_siteinfo"]
-	path = drupal/features/rbv_siteinfo
-	url = git@github.com:miromarchi/rbv_siteinfo.git
-[submodule "drupal/features/rbv_view_groupcontent"]
-	path = drupal/features/rbv_view_groupcontent
-	url = git@github.com:miromarchi/rbv_view_groupcontent.git
-[submodule "drupal/features/rbv_sparql"]
-	path = drupal/features/rbv_sparql
-	url = git@github.com:miromarchi/rbv_sparql.git
+	url = git@github.com:retebuonvivere/rbv_view_explore.git
 [submodule "drupal/features/rbv_relpro"]
 	path = drupal/features/rbv_relpro
-	url = git@github.com:miromarchi/rbv_relpro.git
+	url = git@github.com:retebuonvivere/rbv_relpro.git
 [submodule "drupal/profiles/rbv_profile"]
 	path = drupal/profiles/rbv_profile
-	url = git@github.com:miromarchi/rbv_profile.git
+	url = git@github.com:retebuonvivere/rbv_profile.git
 [submodule "drupal/features/rbv_event"]
 	path = drupal/features/rbv_event
-	url = git@github.com:miromarchi/rbv_event.git
+	url = git@github.com:retebuonvivere/rbv_event.git
 [submodule "drupal/features/rbv_view_graph"]
 	path = drupal/features/rbv_view_graph
-	url = git@github.com:miromarchi/rbv_view_graph.git
+	url = git@github.com:retebuonvivere/rbv_view_graph.git
 [submodule "drupal/features/rbv_relation"]
 	path = drupal/features/rbv_relation
-	url = git@github.com:miromarchi/rbv_relation.git
-[submodule "drupal/themes/rbv_theme"]
-	path = drupal/themes/rbv_theme
-	url = git@github.com:fonzy85vr/rbv_theme.git
+	url = git@github.com:retebuonvivere/rbv_relation.git
 [submodule "drupal/features/rbv_pages"]
 	path = drupal/features/rbv_pages
-	url = git@github.com:miromarchi/rbv_pages.git
-[submodule "drupal/features/rbv_overrides"]
-	path = drupal/features/rbv_overrides
-	url = git@github.com:miromarchi/rbv_overrides.git
+	url = git@github.com:retebuonvivere/rbv_pages.git
 [submodule "drupal/themes/rbv_kala_default"]
 	path = drupal/themes/rbv_kala_default
-	url = git@github.com:miromarchi/rbv_kala_default.git
+	url = git@github.com:retebuonvivere/rbv_kala_default.git
 [submodule "drupal/themes/rbv_kala_default_bootstrap"]
 	path = drupal/themes/rbv_kala_default_bootstrap
-	url = git@github.com:miromarchi/rbv_kala_default_bootstrap.git
+	url = git@github.com:retebuonvivere/rbv_kala_default_bootstrap.git
 [submodule "drupal/rbv_networkadmin"]
 	path = drupal/features/rbv_networkadmin
-	url = git@github.com:miromarchi/rbv_networkadmin.git
+	url = git@github.com:retebuonvivere/rbv_networkadmin.git
 [submodule "drupal/features/rbv_meshwork"]
 	path = drupal/features/rbv_meshwork
-	url = git@github.com:miromarchi/rbv_meshwork.git
+	url = git@github.com:retebuonvivere/rbv_meshwork.git
 [submodule "drupal/features/rbv_network"]
 	path = drupal/features/rbv_network
-	url = git@github.com:miromarchi/rbv_network.git
+	url = git@github.com:retebuonvivere/rbv_network.git
