@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Relation feature.
+ */
+
+include_once 'rbv_relation.features.inc';
