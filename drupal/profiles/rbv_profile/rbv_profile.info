@@ -2,13 +2,14 @@
 name = rbv_profile
 description = "The dev profile for the original network of Verona."
 exclusive = 1
-core = 7.32
+core = 7.x
 
 ; ------------
 ; Dependencies
 ; ------------
 
 ; Drupal Core
+dependencies[] = block
 dependencies[] = color
 dependencies[] = comment
 dependencies[] = dblog
@@ -21,13 +22,16 @@ dependencies[] = forum
 dependencies[] = image
 dependencies[] = list
 dependencies[] = menu
+dependencies[] = locale
 dependencies[] = node
 dependencies[] = number
 dependencies[] = options
 dependencies[] = path
+dependencies[] = php
 dependencies[] = rdf
 dependencies[] = search
 dependencies[] = shortcut
+dependencies[] = statistics
 dependencies[] = system
 dependencies[] = taxonomy
 dependencies[] = text
@@ -48,142 +52,21 @@ dependencies[] = panopoly_pages
 dependencies[] = panopoly_search
 dependencies[] = panopoly_wysiwyg
 
-; Chaos tool suite
-dependencies[] = ctools
-dependencies[] = fape
-dependencies[] = page_manager
-dependencies[] = pm_existing_pages
-dependencies[] = views_content
-
-; Panels
-dependencies[] = fieldable_panels_panes
-dependencies[] = panelizer
-dependencies[] = panels
-dependencies[] = panels_breadcrumbs
-dependencies[] = panels_ipe
-
-; Date/Time
-dependencies[] = date
-dependencies[] = date_api
-dependencies[] = date_popup
-dependencies[] = date_popup_authored
-dependencies[] = date_views
-dependencies[] = date_ical
-dependencies[] = fullcalendar
-
-; Administration
+; Panopoly Recommended - Admin & UI
 dependencies[] = navbar
+dependencies[] = breakpoints
 dependencies[] = backports
 dependencies[] = simplified_menu_admin
-dependencies[] = devel
-; dependencies[] = uuid
-dependencies[] = admin_views
-dependencies[] = module_filter
-dependencies[] = diff
-
-; Other
-dependencies[] = auto_nodetitle
-dependencies[] = breakpoints
-; dependencies[] = better_exposed_filters
-dependencies[] = colors
-dependencies[] = entity
-dependencies[] = entity_token
-dependencies[] = entity_view_mode
-dependencies[] = libraries	
-dependencies[] = linkit
-dependencies[] = menu_block
-dependencies[] = pathauto
-dependencies[] = subpathauto
 dependencies[] = save_draft
-dependencies[] = simple_gmap
-dependencies[] = simplified_menu_admin
-dependencies[] = tablefield
-dependencies[] = token
-
-; RDF
-dependencies[] = rdfx
-dependencies[] = rdfa
-dependencies[] = schemaorg
-
-; SEO
-dependencies[] = metatag
-
-; Fields
-dependencies[] = addressfield
-dependencies[] = email
-dependencies[] = entityreference
-dependencies[] = entityreference_autocreate
-dependencies[] = entityreference_prepopulate
-dependencies[] = field_collection
-dependencies[] = field_group
-dependencies[] = jquery_expander
-dependencies[] = link
-dependencies[] = social_profile_field
-dependencies[] = telephone
-dependencies[] = unique_field
-
-; Input filters
-dependencies[] = caption_filter
-dependencies[] = image_resize_filter
-dependencies[] = wysiwyg_filter
-
-; Media
-dependencies[] = file_entity
-dependencies[] = media
-dependencies[] = media_internet
-dependencies[] = media_vimeo
-dependencies[] = media_youtube
-
-; Organic groups
-dependencies[] = og
-dependencies[] = og_access
-; dependencies[] = og_context
-dependencies[] = og_field_access
-dependencies[] = og_ui
-
-; Relations
-dependencies[] = relation
-dependencies[] = relation_endpoint
-dependencies[] = relation_ui
-
-; Visualization
-dependencies[] = graphapi
-dependencies[] = d3
-
-; Rules
-dependencies[] = rules
-dependencies[] = rules_admin
-dependencies[] = rules_conditional
-
-; Search
-dependencies[] = search_api
-dependencies[] = search_api_db
-dependencies[] = search_api_facetapi
-dependencies[] = search_api_solr
-dependencies[] = search_api_views
-dependencies[] = facetapi
-
-; User interface
-dependencies[] = jquery_update
-dependencies[] = wysiwyg
-
-; User interaction
-; dependency [] = message
-; dependency [] = message_notify
-; dependency [] = message_subscribe
-dependency [] = advanced_forum
-
-; Views
-dependencies[] = views
-dependencies[] = views_autocomplete_filters
-dependencies[] = views_bulk_operations
+dependencies[] = module_filter
+dependencies[] = date_popup_authored
 dependencies[] = views_ui
 
-; Features
-dependencies[] = features
-; dependencies[] = features_override
-dependencies[] = strongarm
-dependencies[] = defaultcontent
+; Panopoly Recommended - Other
+dependencies[] = devel
+dependencies[] = distro_update
+dependencies[] = uuid
+; dependencies[] = apps
 
 ; RBV features
 dependencies[] = rbv_com_fields

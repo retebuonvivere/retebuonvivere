@@ -33,7 +33,7 @@ We also use [bountysource][30] to give some money to developers who contribute w
 
 install
 -------
-To install this drpal website you can start from the latest drupal [makefile][31] and build the latest website configuration.
+To install this drupal website you can start from the latest drupal [makefile][31] and build the latest website configuration.
 
 We do it this way (example):
 ```shell
