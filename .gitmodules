@@ -1,9 +1,6 @@
 [submodule "drupal/profiles/rbv_profile"]
 	path = drupal/profiles/rbv_profile
 	url = git@github.com:retebuonvivere/rbv_profile.git
-[submodule "drupal/features/rbv_view_graph"]
-	path = drupal/features/rbv_view_graph
-	url = git@github.com:retebuonvivere/rbv_view_graph.git
 [submodule "drupal/features/rbv_relation"]
 	path = drupal/features/rbv_relation
 	url = git@github.com:retebuonvivere/rbv_relation.git
