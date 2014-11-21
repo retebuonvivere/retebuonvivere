@@ -10,9 +10,6 @@
 [submodule "drupal/features/rbv_relation"]
 	path = drupal/features/rbv_relation
 	url = git@github.com:retebuonvivere/rbv_relation.git
-[submodule "drupal/features/rbv_pages"]
-	path = drupal/features/rbv_pages
-	url = git@github.com:retebuonvivere/rbv_pages.git
 [submodule "drupal/themes/rbv_kala_default"]
 	path = drupal/themes/rbv_kala_default
 	url = git@github.com:retebuonvivere/rbv_kala_default.git
