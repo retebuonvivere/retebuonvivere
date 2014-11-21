@@ -1,0 +1,469 @@
+/*! 
+ * Kalatheme (http://drupal.org/project/kalatheme) 
+ * rbv_kala_default kalatheme subtheme
+ */
+html {
+ font-size: 100%;
+}
+
+/* field labels */
+.field .field-label {
+ color: #909090;
+ font-size: 1em;
+ font-weight: normal;
+}
+
+/* field > address field */
+.field-type-addressfield {
+ display: table;
+ margin-bottom: .5em;
+}
+
+.grid-item .field-type-addressfield {
+ margin-bottom: .5em;
+ clear: both;
+}
+
+.field-name-field-com-telephone .field-item:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f095";
+ padding-right: .6em;
+}
+
+.field-name-field-com-email .field-item:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f0e0";
+ padding-right: .4em;
+}
+
+/* field > date */
+.date-display-start, .date-display-single {
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ background: #E3FFCE;
+ padding: .3em .5em .2em .5em;
+ line-height: 1.8em;
+}
+.date-display-end {
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ background: #FFCECE;
+ padding: .3em .5em .2em .5em;
+ line-height: 1.8em;
+}
+
+.group-vmode-group-content .field-type-date {
+clear: both;
+}
+
+/* field > group visibility */
+.field-name-group-access {
+ background: #FFF69B;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em;
+ padding: .5em;
+}
+
+/* field > logo */
+.field-name-field-com-logo, .views-field-field-com-logo {
+ float: left;
+ padding: 0 1em 1em 0;
+}
+
+/* field > slogan */
+.content .field-name-field-com-tagline {
+ padding-bottom: 1em;
+ font-family: georgia;
+ font-style: italic;
+}
+.content .field-name-field-com-tagline .field-item:before, .field-name-field-com-tagline .field-item:after {
+ content: "\""
+}
+/* field > social link */
+.field-name-field-com-social-links {
+ padding: 1em 1em 0 0;
+}
+.content .field-name-field-com-social-links .field-item {
+ padding-bottom: .45em;
+ float: right;
+}
+
+/* field > quick links */
+.field-type-link-field {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em;
+ padding: .5em;
+}
+.field-name-field-quick-links-links .link-title {
+ float: left;
+ padding-right: .5em;
+}
+
+/* taxonomy all terms */
+.content .field-type-taxonomy-term-reference {
+ padding-bottom: 1em;
+}
+.content .field-type-taxonomy-term-reference ul.links {
+ list-style: none;
+ padding-left: 0;
+}
+.content .field-type-taxonomy-term-reference a {
+ -moz-border-radius: .3em;
+ border-radius: .3em;
+ padding: .1em .3em .1em .3em;
+ margin: .2em;
+ white-space: nowrap;
+}
+
+/* taxonomy > categories */
+.content .field-name-field-com-categories a {
+ background: #FFEAB9;
+ float: left;
+}
+
+.content .field-name-field-com-categories a:before, .content .field-name-field-com-tags a:before, .page-taxonomy-term h1#page-title:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f02b";
+ padding-right: .5em;
+}
+
+/* taxonomy > tags */
+.content .field-name-field-com-tags a {
+ background: #CEEAFF;
+ float: left;
+}
+
+/* taxonomy > org-type */
+.content .field-name-field-org-type a {
+ background: #FFFFFF;
+}
+
+/* taxonomy > scope */
+.content .field-name-field-com-scope {
+ clear: both;
+}
+
+/* panes */
+.node-type-org .views-row {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em;
+ padding: .5em;
+}
+
+.node-type-project .views-row, .content .field-name-field-relpro-project {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em;
+ padding: .5em;
+ float: left;
+}
+
+.node-type-event .field-name-field-relpro-project, .page-taxonomy-term .node {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em;
+ padding: .5em;
+}
+
+.page-search .views-row {
+margin: .5em;
+padding: .5em;
+}
+
+.pane-title {
+ clear: both;
+ font-size: 1.3em;
+ margin-top: 1.5em;
+}
+
+.node h2 {
+ font-size: 1.7em;
+}
+
+h3 {
+clear: both;
+}
+
+.collab-link a {
+ margin-left: 6px;
+}
+
+/* pane og group ref */
+.group-vmode-group-content .field-name-og-group-ref {
+ clear: both;
+}
+.node-type-event .field-name-og-group-ref a, .node-type-project .field-name-og-group-ref a {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em;
+ padding: .5em;
+}
+
+.content .field-name-og-group-ref a:before {
+ content: 'di ';
+}
+
+.group-vmode-group-content .field-name-field-com-tagline {
+ padding-bottom: 0;
+ font-size: 1.1em;
+}
+
+/* node teaser */
+.node-teaser ul.links {
+ clear: both;
+}
+.node-teaser .field-name-field-com-categories a {
+ float: left;
+}
+
+/* fieldset */
+.field-group-fieldset {
+ -moz-border-radius: .8em;
+ border-radius: .8em;
+}
+fieldset legend {
+ margin-bottom: .7em;
+}
+a.fieldset-title:link {
+ font-size: .65em;
+ color: #909090;
+}
+
+/* grid items */
+.grid-item {
+background: #fbfbfb;
+margin: .5em;
+padding: .5em;
+}
+
+/* fieldset > info */
+.info-fieldgroup {
+background: #fbfbfb;
+}
+.node-org .info-fieldgroup {
+background: #edf8e5;
+}
+
+.info-fieldgroup .field-name-field-com-logo {
+padding-right: 1.6em;
+padding-bottom: 2em;
+}
+.info-fieldgroup .field-name-field-com-tagline {
+ padding-bottom: 1em;
+ font-size: 1.5em;
+ line-height: 1.6em;
+}
+
+/* fieldset > description */
+.field-group-fieldset .field-name-field-com-mission, .field-group-fieldset .field-name-field-com-description, .field-group-fieldset .field-name-field-com-history {
+ clear: both;
+ padding-top: 1em;
+}
+
+.field-group-fieldset .field-name-field-com-mission .field-item, .field-group-fieldset .field-name-field-com-description .field-item, .field-group-fieldset .field-name-field-com-history .field-item {
+ padding: .6em;
+}
+
+.field-group-fieldset .field-name-field-com-mission .field-label {
+ color: #909090;
+ font-weight: normal;
+}
+
+/* div main content. e.g. excluding comments */
+.content {
+ padding-bottom: 1em;
+}
+
+/* users */
+.field-name-og-user-node {
+clear: both;
+}
+
+.field-name-og-user-node a {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ margin: .5em .5em 1em .5em;
+ padding: .5em;
+ float: left;
+}
+.views-field-name {
+ font-size: 1.4em;
+}
+.views-field-og-user-node {
+ padding: .4em 0 .4em 0;
+ list-style: none;
+}
+.views-field-og-user-node a {
+ background: #fbfbfb;
+ -moz-border-radius: .4em;
+ border-radius: .4em;
+ padding: .2em .4em;
+ float: left;
+ margin: .2em;
+}
+.views-field-field-user-picture {
+ float: left;
+ margin: 0 1em 1em 0;
+}
+.view-display-id-panel_pane_2 .view-content {
+  margin-top: 1em;
+}
+.grid-item {
+clear: both;
+}
+
+/* relations */
+.field-name-endpoints .field-items .node {
+background: #edf8e5;
+-moz-border-radius: .4em;
+border-radius: .4em;
+padding: 1em;
+float: left;
+margin: .2em 1em 1.2em 0;
+}
+.field-name-field-rel-collaborations {
+clear: both;
+}
+.field-name-field-rel-collaborations .node {
+background: #fbfbfb;
+padding: 1em;
+float: left;
+margin: .2em 1em 1em 0;
+}
+
+/* forum */
+.related {
+-moz-border-radius: .3em;
+border-radius: .3em;
+padding: .1em .3em .1em .3em;
+margin: .2em;
+white-space: nowrap;
+background: black;
+}
+
+/* menu */
+.nav .first a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f015";
+ padding-right: .4em;
+}
+
+.secondary-links .first a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f007";
+ padding-right: .4em;
+}
+
+.secondary-links .last a:before {
+ font-family: FontAwesome;
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1em;
+ display: inline-block;
+ text-decoration: inherit;
+ content: "\f011";
+ padding-right: .4em;
+}
+
+/* backend */
+.node-form .field-name-field-com-logo {
+float: none;
+}
+
+.wellrbv {
+  min-height: 20px;
+  padding: 2px;
+  margin-bottom: 4px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.wellrbv .fieldset-wrapper {
+ margin-left: 15px;
+ margin-bottom: 8px;
+}
+
+div .image-widget-data {
+ float: none;
+}
+
+.help {
+ font-size: 2em;
+ color: #FF5C00;
+}
+
+.form-item, .form-actions {
+ margin-top: .5em;
+ margin-bottom: .6em;
+}
+
+/* admin */
+.page-admin ul {
+list-style: none;
+}
+.page-admin ul li {
+padding: .3em;
+}
+
+/* media */
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 .3em 0 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+img {
+  vertical-align: top;
+}
