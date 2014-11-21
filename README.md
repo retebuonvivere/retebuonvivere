@@ -19,7 +19,7 @@ what is retebuonvivere.org
 * [Retebuonvivere.org][25] is a [drupal][6]-based collaboration graph for the community (the network) of the Civil Society and Social Economy Organizations (CSSESBOs) of the province of Verona, Italy.
 * It is built on top of [Panopoly][7] base distribution. 
 * The code can be cloned to build similar websites
-* The specificity of the website is its massive use of network graphs visualizations to render collaboration between organizations (see the big picture).
+* The specificity of the website is its massive use of network graphs visualizations to render collaboration between organizations (to let people see the big picture).
 
 structure of the project
 ------------------------
@@ -41,7 +41,7 @@ git clone git@github.com:retebuonvivere/retebuonvivere.git reponame
 cd reponame
 drush make makes/retebuonvivere1.13.make sitename
 ```
-Create a new mySQL db with all permissions
+Now create a new mySQL db with all permissions
 ```shell
 cd sitename
 drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
@@ -66,7 +66,7 @@ CSSESBOs share some high level (system level) aims/purposes and values:
 
 CSSESBOs are organized bottom-up from the individual CSSESBO to local network, up to national, regional, international and global networks. We have also cross-cutting ties. Also, projects can have local or broader scopes.
 
-This site is a representational tool for any local level CSSESBOs network. We maintain a working site [www.retebuonvivere.org][9] which serves the local network of Verona, Italy. In the spirit of open-source community-based software, the code is here to be forked, cloned and used from other networks.
+This site is a representational tool for any local level CSSESBOs network. We maintain a working site [www.retebuonvivere.org][9] which serves the local network of Verona, Italy. In the spirit of open-source community-based software, the code is here to be forked, cloned and used from other networks, and to join forces to create the tools we all need!
 
 promoters
 ---------
@@ -91,8 +91,8 @@ contacts
 Get in touch with us:
 * write to info@retebuonvivere.org
 * website: [www.retebuonvivere.org][9]
-* facebook: https://www.facebook.com/retebuonvivere
-* google+: https://plus.google.com/+RetebuonvivereOrg1
+* facebook: [facebook.com/retebuonvivere][32]
+* google+: [plus.google.com/+RetebuonvivereOrg1][33]
 
 
 [1]: http://nuvole.org/blog/code-driven-development
@@ -126,3 +126,5 @@ Get in touch with us:
 [29]: http://www.magverona.it/testi-e-interventi-di-loredana-aldegheri/
 [30]: https://www.bountysource.com/teams/retebuonvivere
 [31]: https://github.com/retebuonvivere/retebuonvivere/tree/master/drupal/makes
+[32]: https://www.facebook.com/retebuonvivere
+[33]: https://plus.google.com/+RetebuonvivereOrg1
