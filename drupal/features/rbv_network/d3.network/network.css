@@ -1,0 +1,31 @@
+/**
+ * Your custom CSS.
+ */
+
+circle.node.searched {
+    fill:#FF0064!important;
+/*    stroke:#FF0064!important;*/
+    stroke-width:4px;
+}
+
+.node.searched text{
+    font-size: 20px;
+    font-weight:bold;
+    fill:#FF0064;
+    fill-opacity:1;
+}
+.link {
+    stroke:#257924;
+    stroke-width:2;
+}
+circle.node {
+    stroke-width:3px;
+}
+text {
+    font-size:13px;
+}
+
+.fixed circle {
+    fill:#FF0064!important;
+/*    stroke:#FF0064!important;*/
+}
