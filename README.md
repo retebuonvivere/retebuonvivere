@@ -39,7 +39,7 @@ We do it this way (example):
 ```shell
 git clone git@github.com:retebuonvivere/retebuonvivere.git reponame
 cd reponame
-drush make makes/retebuonvivere1.13.make sitename
+drush make drupal/makes/retebuonvivere1.13.make sitename
 cp -R drupal/profile/* sitename/profiles/
 cp -R drupal/features/* sitename/sites/all/modules/features/
 cp -R drupal/themes/* sitename/sites/all/themes/custom/

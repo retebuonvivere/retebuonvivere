@@ -115,61 +115,10 @@ projects[telephone][subdir] = contrib
 projects[unique_field][version] = 1.0-rc1
 projects[unique_field][subdir] = contrib
 
-; RBV features
-projects[rbv_com_fields][download][type] = git
-projects[rbv_com_fields][download][url] = git@github.com:retebuonvivere/rbv_com_fields.git
-projects[rbv_com_fields][type] = module
-projects[rbv_com_fields][subdir] = features
-projects[rbv_org][download][type] = git
-projects[rbv_org][download][url] = git@github.com:retebuonvivere/rbv_org.git
-projects[rbv_org][type] = module
-projects[rbv_org][subdir] = features
-projects[rbv_project][download][type] = git
-projects[rbv_project][download][url] = git@github.com:retebuonvivere/rbv_project.git
-projects[rbv_project][type] = module
-projects[rbv_project][subdir] = features
-projects[rbv_relpro][download][type] = git
-projects[rbv_relpro][download][url] = git@github.com:retebuonvivere/rbv_relpro.git
-projects[rbv_relpro][type] = module
-projects[rbv_relpro][subdir] = features
-projects[rbv_event][download][type] = git
-projects[rbv_event][download][url] = git@github.com:retebuonvivere/rbv_event.git
-projects[rbv_event][type] = module
-projects[rbv_event][subdir] = features
-projects[rbv_pages][download][type] = git
-projects[rbv_pages][download][url] = git@github.com:retebuonvivere/rbv_pages.git
-projects[rbv_pages][type] = module
-projects[rbv_pages][subdir] = features
-projects[rbv_view_graph][download][type] = git
-projects[rbv_view_graph][download][url] = git@github.com:retebuonvivere/rbv_view_graph.git
-projects[rbv_view_graph][type] = module
-projects[rbv_view_graph][subdir] = features
-projects[rbv_view_explore][download][type] = git
-projects[rbv_view_explore][download][url] = git@github.com:retebuonvivere/rbv_view_explore.git
-projects[rbv_view_explore][type] = module
-projects[rbv_view_explore][subdir] = features
-projects[rbv_relation][download][type] = git
-projects[rbv_relation][download][url] = git@github.com:retebuonvivere/rbv_relation.git
-projects[rbv_relation][type] = module
-projects[rbv_relation][subdir] = features
-projects[rbv_meshwork][download][type] = git
-projects[rbv_meshwork][download][url] = git@github.com:retebuonvivere/rbv_meshwork.git
-projects[rbv_meshwork][type] = module
-projects[rbv_meshwork][subdir] = features
-projects[rbv_network][download][type] = git
-projects[rbv_network][download][url] = git@github.com:retebuonvivere/rbv_network.git
-projects[rbv_network][type] = module
-projects[rbv_network][subdir] = features
-
-
 ; Themes
 projects[kalatheme][type] = theme
 projects[kalatheme][version] = 3.0
 projects[kalatheme][subdir] = contrib
-projects[rbv_kala_default][download][type] = git
-projects[rbv_kala_default][download][url] = git@github.com:retebuonvivere/rbv_kala_default.git
-projects[rbv_kala_default][type] = theme
-projects[rbv_kala_default][subdir] = custom
 
 ; Libraries
 libraries[arc][download][type] = file
@@ -193,12 +142,3 @@ libraries[masonry][download][type] = "get"
 libraries[masonry][download][url] = "http://desandro.github.io/masonry/jquery.masonry.min.js"
 libraries[masonry][directory_name] = "masonry"
 libraries[masonry][type] = library
-libraries[rbv_kala_default_bootstrap][download][type] = git
-libraries[rbv_kala_default_bootstrap][download][url] = git@github.com:retebuonvivere/rbv_kala_default_bootstrap.git
-libraries[rbv_kala_default_bootstrap][directory_name] = rbv_kala_default_bootstrap
-libraries[rbv_kala_default_bootstrap][type] = library
-
-; Profile
-projects[rbv_profile][type] = profile
-projects[rbv_profile][download][type] = git
-projects[rbv_profile][download][url] = git@github.com:retebuonvivere/rbv_profile.git
