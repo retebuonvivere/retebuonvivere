@@ -2,7 +2,7 @@
 name = rbv_profile
 description = "The dev profile for the original network of Verona."
 exclusive = 1
-core = 7.24
+core = 7.32
 
 ; ------------
 ; Dependencies
@@ -186,14 +186,15 @@ dependencies[] = strongarm
 dependencies[] = defaultcontent
 
 ; RBV features
-; dependencies[] = rbv_com_fields
-; dependencies[] = rbv_org
-; dependencies[] = rbv_project
-; dependencies[] = rbv_relpro
-; dependencies[] = rbv_relation
-; dependencies[] = rbv_event
-; dependencies[] = rbv_view_graph
-; dependencies[] = rbv_view_explore
-; dependencies[] = rbv_pages
+dependencies[] = rbv_com_fields
+dependencies[] = rbv_org
+dependencies[] = rbv_project
+dependencies[] = rbv_relpro
+dependencies[] = rbv_relation
+dependencies[] = rbv_event
+dependencies[] = rbv_view_graph
+dependencies[] = rbv_view_explore
+dependencies[] = rbv_pages
+dependencies[] = rbv_networkadmin
 
 files[] = rbv_profile.profile

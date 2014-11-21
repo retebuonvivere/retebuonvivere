@@ -40,8 +40,9 @@ We do it this way (example):
 git clone git@github.com:retebuonvivere/retebuonvivere.git reponame
 cd reponame
 drush make drupal/makes/retebuonvivere1.13.make sitename
-cp -R drupal/profile/* sitename/profiles/
-cp -R drupal/features/* sitename/sites/all/modules/features/
+cp -R drupal/profiles/* sitename/profiles/
+cp -R drupal/features/ sitename/sites/all/modules/
+mkdir sitename/sites/all/themes/custom
 cp -R drupal/themes/* sitename/sites/all/themes/custom/
 cp -R drupal/libraries/* sitename/sites/all/libraries/
 ```
