@@ -1,0 +1,70 @@
+.sidr{
+    padding-top:25px;
+    display:none;
+    position:absolute;
+    position:fixed;
+    top:0;
+    height:100%;
+    z-index:999999;
+    width:285px;
+    overflow-x:none;
+    overflow-y:auto;
+    font-family:arial,sans-serif;
+    font-size:15px;
+    background:#fcfcfc;
+    color:#333;
+}
+.sidr.right{
+    left:auto;
+    right:-285px;
+    border-left:2px solid #D8C7A3;
+}
+.sidr.left{
+    left:-285px;
+    right:auto;
+    border-right:2px solid #D8C7A3;
+}
+.sidr h1,.sidr h2, .sidr h3{
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    padding:10px 10px;
+    margin-bottom:15px;
+    line-height: 1.4;
+    color: inherit;
+    -webkit-box-shadow:0 5px 5px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 5px 5px 3px rgba(0,0,0,0.2);
+    box-shadow:0 5px 5px 3px rgba(0,0,0,0.2);
+    background-color:#D8C7A3;
+}
+.sidr h4,.sidr h5,.sidr h6{
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    padding:10px 10px;
+    margin-bottom:-12px;
+    line-height: 1.4;
+    color: inherit;
+}
+.sidr p{
+    font-size:13px;
+/*    margin:0 0 10px*/
+    margin-left:10px;
+    margin-right:10px
+}
+.sidr ul{
+    display:block;
+    list-style:disc inside!important;
+    padding:10px;
+}
+.sidr li{
+    margin:0;
+}
+.sidr li a:hover{
+    color:#333;
+}
+
+.sidr form{
+    margin:0 15px
+}
+.sidr label{
+    font-size:13px
+}

@@ -1,0 +1,13 @@
+<div id=graph>
+    <div id="meshworkDiv">
+        <?php print meshwork_meshwork(); ?>
+    </div>
+    <form class="pull-left" role="search" action="#">
+        <div class="form-group">
+	        <input type="text" id="searchBox" class="form-control" size="75" placeholder="Cerca" onKeyDown="textBoxKeyPress()">
+        </div>
+    </form>
+    <div class="input-group fullScreen">
+        <input id="fullScreen" class="btn btn-default" type="button" value="Full Screen" onclick="meshwork_enterFullscreen();" />
+    </div>
+</div>
