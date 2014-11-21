@@ -1,5 +1,0 @@
-name = meshwork
-description = Force directed meshwork graph
-core = 7.x
-package = Visualization
-dependencies[] = d3
