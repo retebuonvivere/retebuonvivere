@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Common fields feature.
+ */
+
+include_once 'rbv_com_fields.features.inc';

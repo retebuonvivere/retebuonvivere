@@ -1,6 +1,3 @@
-[submodule "drupal/features/rbv_com_fields"]
-	path = drupal/features/rbv_com_fields
-	url = git@github.com:retebuonvivere/rbv_com_fields.git
 [submodule "drupal/features/rbv_org"]
 	path = drupal/features/rbv_org
 	url = git@github.com:retebuonvivere/rbv_org.git
