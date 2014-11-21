@@ -12,31 +12,34 @@ var meshwork_someNodeClicked=false;
 var meshwork_graphData;
 var meshwork_force;
 
+var meshwork_currentWidth;
+var meshwork_currentHeight;
+
 function buildGradients()
 {
 	meshwork_gradient= meshwork_svg.append("defs")
 		.append("linearGradient").attr("id","fadedGradient").attr("x1","0%").attr("x2","100%");
 	
-	meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","cyan");
-	meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","cyan");
-	meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","cyan");
+	meshwork_gradient.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","#378722");
+	meshwork_gradient.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","#378722");
+	meshwork_gradient.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","#378722");
 
 	meshwork_gradient2= meshwork_svg.append("defs")
 		.append("linearGradient").attr("id","selectedFadedGradient").attr("x1","0%").attr("x2","100%");
 
-	meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","blue");
-	meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","blue");
-	meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","blue");
+	meshwork_gradient2.append("stop").attr("offset","0%").attr("stop-opacity","0%").attr("stop-color","#4E3FFF");
+	meshwork_gradient2.append("stop").attr("offset","85%").attr("stop-opacity","00%").attr("stop-color","#4E3FFF");
+	meshwork_gradient2.append("stop").attr("offset","100%").attr("stop-opacity","100%").attr("stop-color","#4E3FFF");
 }
 
-var meshwork_pixelPerMs=meshwork_width/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
+var meshwork_pixelPerMs;
 
 var meshwork_container;
 var meshwork_xAxis;
 
 function xForDate(date)
-{
-	return (date.getTime()-meshwork_graphStartDate.getTime())*meshwork_pixelPerMs;
+{	
+	return (date.getTime()-meshwork_graphStartDate.getTime())*meshwork_pixelPerMs-(meshwork_circleRadius+10+meshwork_textWidth);
 }
 
 function addClass(domElement,newClass)
@@ -93,8 +96,16 @@ function meshwork_drawGraph()
 testNoOverlap1();
 	testNoOverlap2();
 	testNoOverlap3();
-	testNoOverlap4();
+	testNoOverlap4(); 
 	testNoOverlap5();*/
+	
+	var zoomScale=1;
+	var zoomTranslate=[0,0];
+
+   	var timeScale = d3.time.scale()
+		.domain([meshwork_graphStartDate, meshwork_now])
+		.range([0, meshwork_currentWidth-(meshwork_circleRadius+10+meshwork_textWidth)]);
+
 	buildGradients();
 	meshwork_dummy=meshwork_svg.append("g");
 	
@@ -144,23 +155,21 @@ testNoOverlap1();
 			}
 		})
 		.gravity(.1)
-		.size([meshwork_width, meshwork_height]);
-
-	meshwork_force
-	  .nodes(meshwork_graphData.nodes)
-	  .links(meshwork_graphData.links)
-	  .start()
-	  .alpha(0.01);
+		.size([meshwork_currentWidth, meshwork_currentHeight]);
+	if (meshwork_force.alpha()<=0 || typeof(meshwork_force.alpha())=="undefined")
+	{
+		meshwork_force
+		  .nodes(meshwork_graphData.nodes)
+		  .links(meshwork_graphData.links)
+  		  .start()
+		  .alpha(0.01);
+	}
 
 	meshwork_container=meshwork_svg.append("g").attr("id","container");
 
-   	var timeScale = d3.time.scale() // time.scale() invece di scale.linear()
-		.domain([meshwork_graphStartDate, meshwork_now])
-		.range([0, meshwork_width]);
-	
 	meshwork_diagonal=d3.svg.diagonal()
-		.source(function(l){return {y:xForDate(l.date)-4,x:l.source.y};})
-		.target(function(l){return {y:xForDate(l.date)+4,x:l.target.y};})
+		.source(function(l){return {y:timeScale(l.date)-4, x:zoomTranslate[1]+zoomScale*l.source.y};})
+		.target(function(l){return {y:timeScale(l.date)+4, x:zoomTranslate[1]+zoomScale*l.target.y};})
 		.projection(function(d){return [d.y,d.x];});
 
 	meshwork_link = meshwork_container.selectAll(".link")
@@ -177,15 +186,24 @@ testNoOverlap1();
 	  });
 	  
 
-	var drag = meshwork_force.drag()
+/*	var drag = meshwork_force.drag()
     	.on("dragstart", function (d) {
 			d3.event.sourceEvent.stopPropagation();
-		});
+		})
+		.on("drag", function (d) {
+			//get mouse coordinates relative to the visualization
+			//coordinate system:
+			var mouse = d3.mouse(vis.node());
+			d.x = (mouse[0] - translation[0])/scaleFactor; 
+			d.y = (mouse[1] - translation[1])/scaleFactor; 
+			tick();//re-position this node and any links
+		});*/
 
 	meshwork_node = meshwork_container.selectAll(".node")
 		.data(meshwork_graphData.nodes)
 		.enter()
 		.append("g")
+		.style("z-index",1)
 		.attr("class",function(d){
 			return d.nodeType;
 		})
@@ -202,7 +220,24 @@ testNoOverlap1();
 		
 	meshwork_node.append("text")
 		.text(function(d){return d.name;})
-		.attr("x",meshwork_width+10);
+		.attr("x",meshwork_currentWidth-meshwork_textWidth-meshwork_circleRadius)
+		.attr("y",-5)
+		.style("z-index",50);
+
+	function setXForNode(d)
+	{
+		var x=0;
+		if (d.nodeType=="org-neverStarted")
+		{
+			x=timeScale(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
+		}
+		else
+		{
+			x=timeScale(d.start);
+		}
+		d.origX=x;
+		setTranslate(this,x,0);
+	}
 
 	var nodeXG= meshwork_node.append("g")
 		.attr("class",function(d){
@@ -212,19 +247,7 @@ testNoOverlap1();
 			return addClass(this,"id"+d.id);
 		})
    		.classed("node",true)
-		.each(function(d){
-			var x=0;
-			if (d.nodeType=="org-neverStarted")
-			{
-				x=xForDate(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
-			}
-			else
-			{
-				x=xForDate(d.start);
-			}
-			d.origX=x;
-			setTranslate(this,x,0);
-		})
+		.each(setXForNode)
 
 	  
   	  /*.attr("y1",function(d,i){return d.y;})
@@ -239,24 +262,75 @@ testNoOverlap1();
 	  	})
 		.classed("node",true)
 	  .attr("x1",0)
-	  .attr("x2",function(d){
-			var startx=0;
-			if (d.nodeType=="org-neverStarted")
-			{
-				startx=xForDate(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
-			}
-			else
-			{
-				startx=xForDate(d.start);
-			}
-
-			return xForDate(readNodeEnd(d))-startx;
-		})
 	  .attr("y1",0)
 	  .attr("y2",meshwork_epsilon)
 	
 	nodeXG.classed("started",function(d){return (d.nodeType!="org-neverStarted")});
 	nodeXG.classed("ended",function(d){return (d.end!=null)});
+
+
+	var endedNodes=d3.selectAll(".ended");
+	
+	var endedCircles=endedNodes.append("circle")
+		.classed("endCircle",true)
+		.attr("class",function(d){
+			return d.nodeType;
+		})
+		.attr("class",function(d){
+			return addClass(this,"id"+d.id);
+		})
+		.classed("node",true)
+		.attr("cy",0)
+		.attr("cx",function(d){
+			var startx=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				startx=timeScale(d.start);
+			}
+
+			return timeScale(d.end)-startx;
+		})
+		.attr("r",meshwork_circleRadius);
+	  
+	var resetNodeLengths=function(){
+		nodeLines.attr("x2",function(d){
+			var startx=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				startx=timeScale(new Date(readNodeEnd(d).getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				startx=timeScale(d.start);
+			}
+
+			return timeScale(readNodeEnd(d))-startx;
+		})
+		
+		endedCircles.attr("cx",function(d){
+			var startx=0;
+			if (d.nodeType=="org-neverStarted")
+			{
+				startx=timeScale(new Date(d.end.getTime()-365*24*60*60*1000));
+			}
+			else
+			{
+				startx=timeScale(d.start);
+			}
+
+			return timeScale(d.end)-startx;
+		})
+
+
+	};
+	
+	
+	
+	resetNodeLengths();
 
 	var startedNodes=d3.selectAll(".started").each(function(d){
 		var nodeg=d3.select(this);
@@ -275,90 +349,14 @@ testNoOverlap1();
 	});
 	
 	
-	var endedNodes=d3.selectAll(".ended").each(function(d){
-		var nodeg=d3.select(this);
-		if (typeof d==="undefined") return;
-		nodeg.append("circle")
-			.attr("class",function(){
-				return d.nodeType;
-			})
-			.attr("class",function(){
-				return addClass(this,"id"+d.id);
-			})
-			.classed("node",true)
-			.attr("cy",0)
-			.attr("cx",function(d){
-				var startx=0;
-				if (d.nodeType=="org-neverStarted")
-				{
-					startx=xForDate(new Date(d.end.getTime()-365*24*60*60*1000));
-				}
-				else
-				{
-					startx=xForDate(d.start);
-				}
 
-				return xForDate(d.end)-startx;
-			})
-			.attr("r",meshwork_circleRadius);
-	});
-
-	console.log(startedNodes);
-	
 
 	meshwork_node.on("mouseover",nodeOverHandler);         
 	meshwork_node.on("click", nodeClickHandler);
-	d3.select("body").on("click", bodyClickHandler)
+	meshwork_svg.on("click", bodyClickHandler)
     
 	meshwork_node.append("title")
 	  .text(function(d) {return d.name;});
-
-	meshwork_force.on("tick", function() {
-		meshwork_node.each(function(d){
-			setTranslate(this,0,d.y)
-		})
-		meshwork_link.attr("d",meshwork_diagonal)
-	});
-
-	meshwork_force.on("end",function() {
-	//	console.log("force ended");
-		var nodes=meshwork_graphData.nodes.slice(0);
-//		console.log(meshwork_graphData);
-
-		noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash);
-
-		
-		
-		
-	});
-	var zoom = d3.behavior.zoom()
-		.scaleExtent([0.1, 10])
-		.on("zoom", function() {
-//			console.log("zoom");
-			meshwork_isZooming=true;
-			var t=d3.event.translate;
-			var s=d3.event.scale;
-			if (t[0]<-meshwork_width*(s-1))
-			{
-				t[0]=-meshwork_width*(s-1);
-				zoom.translate(t);
-			}
-			meshwork_container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
-			meshwork_svg.call(meshwork_xAxis);
-		})
-		.x(timeScale);
-
-//	svg.on("mouseup",function(){
-//		console.log("mouseup");
-//	});
-
-
-	meshwork_svg.on("mousedown",function(){
-//		console.log("mousedown");
-		meshwork_isZooming=false;	
-	});
-
-	meshwork_svg.call(zoom);
 
 
 	meshwork_xAxis = d3.svg.axis()
@@ -368,27 +366,117 @@ testNoOverlap1();
 		.tickSubdivide(true)	*/
 		.orient("bottom");
 
+	var tick=function() {
+		nodeXG.each(setXForNode);
+		meshwork_node.each(function(d){
+			setTranslate(this,0,zoomTranslate[1]+zoomScale*d.y)
+		})
+		resetNodeLengths();
+		meshwork_link.attr("d",meshwork_diagonal)
+		meshwork_svg.call(meshwork_xAxis);
+	};
+
+	meshwork_force.on("tick",tick);
+
+	meshwork_force.on("end",function() {
+		var nodes=meshwork_graphData.nodes.slice(0);
+
+		noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimumPixelDistanceBackLash);
+	});
+	var zoom = d3.behavior.zoom()
+		.scaleExtent([0.1, 10])
+		.on("zoom", function() {
+			meshwork_isZooming=true;
+			var t=d3.event.translate;
+			var s=d3.event.scale;
+	/*		if (t[0]<-meshwork_currentWidth*(s-1))
+			{
+				t[0]=-meshwork_currentWidth*(s-1);
+	//			zoom.translate(t);
+			}*/
+//			meshwork_container.attr("transform", "translate(" + t + ")scale(" + d3.event.scale + ")");
+			zoomScale=s;
+			zoomTranslate=t;
+
+	//		meshwork_svg.call(meshwork_xAxis);
+			tick();
+		})
+		.x(timeScale);
+
+	meshwork_svg.on("mousedown",function(){
+		meshwork_isZooming=false;	
+	});
+
+	meshwork_svg.call(zoom);
+
+
+
 	meshwork_svg
 		.attr("class", "x axis")
 		.call(meshwork_xAxis);
 
 }
+function meshwork_enterFullscreen()
+{
+	var fsElem = jQuery("#"+meshwork_fullscreenPanel).get(0);
+	if (fsElem.requestFullscreen) {
+		fsElem.requestFullscreen();
+	}
+	else if (fsElem.mozRequestFullScreen) {
+		fsElem.mozRequestFullScreen();
+	}
+	else if (fsElem.webkitRequestFullScreen) {
+		fsElem.webkitRequestFullScreen();
+	}
+	
+}
+
+function meshwork_fullscreenChanged()
+{
+	var isFullscreen=(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+	if (isFullscreen) 
+	{
+		meshwork_currentWidth=jQuery(window).width();
+		meshwork_currentHeight=jQuery(window).height()-50;
+	}
+	else
+	{
+		meshwork_currentWidth=meshwork_width;
+		meshwork_currentHeight=meshwork_height;
+	}
+	meshwork_svg.attr("width",meshwork_currentWidth)
+				.attr("height",meshwork_currentHeight)
+
+	meshwork_pixelPerMs=meshwork_currentWidth/(meshwork_now.getTime()-meshwork_graphStartDate.getTime());
+	if (typeof meshwork_force != "undefined")
+	{
+		meshwork_svg.selectAll("*").remove()
+		meshwork_drawGraph();
+	}
+}
+
 
 var meshwork_isZooming=false;
 
 function bodyClickHandler(){
-//	console.log("bodyClick");
 	if (meshwork_isZooming) return;
-	console.log("not zooming");
 	jQuery.sidr('close',"sidrPanel");
 	d3.selectAll(".clicked").each(function(d){
 		d["clicked"]=false;
 	});
 	d3.selectAll(".clicked").classed("clicked",false);
-	d3.selectAll(".unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
+	d3.selectAll(".node.unclicked").on("click",nodeClickHandler).on("mouseover",nodeOverHandler);
 	d3.selectAll(".unclicked").classed("unclicked",false);
 	meshwork_someNodeClicked=false;
-	meshwork_force.friction(meshwork_unclickFriction).start().alpha(meshwork_unclickAlpha);
+/*	currentTransform=meshwork_container.attr("transform");
+	var pattern=/(.*)translate\(([-\d.,]+)\)(.*)/;
+	matches=currentTransform.match(pattern);
+	meshwork_container.attr("transform",matches[1]+"translate("+matches[2]+") scale(1)");
+	if (meshwork_force.alpha()<=0)
+	{
+		meshwork_force.friction(meshwork_unclickFriction).alpha(meshwork_unclickAlpha);
+	}*/
+	relayout()
 }
 
 function nodeOverHandler(d) {
@@ -418,8 +506,7 @@ function nodeOverHandler(d) {
 var meshwork_isPanelOpen=false;
 
 function nodeClickHandler(d) {
-	console.log(d.name);
-    	if (meshwork_someNodeClicked && !d3.select(this).classed("clicked")) 
+   	if (meshwork_someNodeClicked && !d3.select(this).classed("clicked")) 
 		return;		
 	d3.event.stopPropagation();
 	shouldPanelOpen=true;
@@ -431,7 +518,7 @@ function nodeClickHandler(d) {
 				var neighboursAndEdges=neighboursAndEdgesOfNode(d)
 				return meshwork_panelContentGenerator(d,neighboursAndEdges["nodes"],neighboursAndEdges["edges"]);
 	      		},
-	   		side:"right",
+	   		side:"left",
 	   		displace: false,
 			onOpen:function(){
 				meshwork_isPanelOpen=true;
@@ -441,13 +528,15 @@ function nodeClickHandler(d) {
 			}
 			
 		});
+		var sidrPanel=jQuery("#sidrPanel").get(0);
+		d3.select("#sidrPanel").remove();
+		jQuery("#"+meshwork_drupalPanel).get(0).appendChild(sidrPanel);
 	});
 	d["panelCreated"]=true;
 
 	// poi si apre il nuovo;
 	jQuery.sidr("close","sidrPanel");
 	setTimeout(function(){
-		console.log("opening");
 		jQuery.sidr("open","sidrPanel");},500);
 	
 	
@@ -487,6 +576,7 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 {
 	if (typeof meshwork_node == "undefined")
 		return;
+		
 	nodes.sort(function(a,b){return a.y-b.y;});
 	var yshift=0;
 	var adaptedMargin=nodes.length>4?meshwork_margin:meshwork_margin*2;
@@ -512,7 +602,7 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 	}
 
 	var H=nodes[nodes.length-1].y;
-	var h=meshwork_height-adaptedMargin;
+	var h=meshwork_currentHeight-adaptedMargin;
 	if (nodes.length>1)
 	{
 		for (var i=0;i<nodes.length;i++)
@@ -532,15 +622,15 @@ function noOverlap(nodes,meshwork_nodesMinimumPixelDistance,meshwork_nodesMinimu
 function relayout(selector)
 {
 	meshwork_container.attr("transform", "translate(0,0)scale(1)");
-
 	var selectedNodes=[];
-	d3.selectAll(selector).each(function(d){
-		if (selectedNodes.indexOf(d)==-1)
-			selectedNodes.push(d);
-	})
-	console.log("relayout selectedNodes:");
-	console.log(selectedNodes);
-	noOverlap(selectedNodes,meshwork_height/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
+	if (selector!=null)
+	{
+		d3.selectAll(selector).each(function(d){
+			if (selectedNodes.indexOf(d)==-1)
+				selectedNodes.push(d);
+		})
+	}
+//	noOverlap(selectedNodes,meshwork_currentHeight/(selectedNodes.length+2),meshwork_nodesMinimumPixelDistanceBackLash*2);
 }
 
 

@@ -3,12 +3,22 @@ console.log("loading dataParse.js");
 var meshwork_now=new Date();
 var meshwork_svg;
 
+var meshwork_drupalPanel;
+
 function meshwork_main($,id)
 {
-
-	meshwork_svg = d3.select("#"+id).append("svg")
-		.attr("width", meshwork_width+meshwork_circleRadius+10+meshwork_textWidth)
-		.attr("height", meshwork_height);
+	meshwork_drupalPanel=id;
+	meshwork_svg = d3.select("#"+id).append("svg"); 
+	
+	meshwork_width=$("#"+meshwork_drupalPanel).width();
+	meshwork_height=$(window).height()*0.6;
+	
+	document.addEventListener("fullscreenchange", meshwork_fullscreenChanged,false)
+	document.addEventListener("webkitfullscreenchange", meshwork_fullscreenChanged,false)
+	document.addEventListener("mozfullscreenchange", meshwork_fullscreenChanged,false)
+	
+	meshwork_fullscreenChanged()
+	
 	var nodesFile=Drupal.settings.basePath+"sites/default/files/graph_data/nodes.json";
 	var edgesFile=Drupal.settings.basePath+"sites/default/files/graph_data/edges.json";
 	console.log("searching for data files")
