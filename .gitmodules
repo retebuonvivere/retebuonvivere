@@ -1,6 +1,3 @@
-[submodule "drupal/features/rbv_view_explore"]
-	path = drupal/features/rbv_view_explore
-	url = git@github.com:retebuonvivere/rbv_view_explore.git
 [submodule "drupal/features/rbv_relpro"]
 	path = drupal/features/rbv_relpro
 	url = git@github.com:retebuonvivere/rbv_relpro.git
