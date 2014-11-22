@@ -61,11 +61,8 @@ drush fr -y rbv_com_fields rbv_org rbv_project rbv_relpro rbv_relation rbv_view_
 drush cc all
 ```
 Open the website in your browser and check the reports page.
-If you want to use fullcalendar you need:
-```
-cd path/to/sitename/sites/all/libraries/
-mv fullcalendar/fullcalendar/* fullcalendar/
-```
+
+
 demo and production
 -------------------
 At [www.retebuonvivere.org][25] you can find the *working production website for the network of Verona, Italy*. Check out particularly www.retebuonvivere.org/rete and www.retebuonvivere.org/rete/meshwork.
