@@ -87,6 +87,15 @@ dependencies[] = link
 dependencies[] = social_profile_field
 dependencies[] = telephone
 
+; Date/Time
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_popup_authored
+dependencies[] = date_views
+dependencies[] = date_ical
+; dependencies[] = fullcalendar
+
 ; Other
 dependencies[] = auto_nodetitle
 ; dependencies[] = better_exposed_filters
@@ -124,6 +133,12 @@ dependencies[] = relation_ui
 dependencies[] = rules
 dependencies[] = rules_admin
 dependencies[] = rules_conditional
+
+; Views
+dependencies[] = views
+dependencies[] = views_autocomplete_filters
+dependencies[] = views_bulk_operations
+dependencies[] = views_ui
 
 ; Visualization
 dependencies[] = graphapi

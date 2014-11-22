@@ -93,6 +93,8 @@ projects[rdfx][version] = 2.0-alpha4
 projects[rdfx][subdir] = contrib
 ; patching rdfx to find arc library
 projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-correctly-1176666-14.patch
+projects[role_delegation][version] = 1.1
+projects[role_delegation][subdir] = contrib
 projects[rules][version] = 2.6
 projects[rules][subdir] = contrib
 projects[rules_conditional][version] = 1.0-beta2
