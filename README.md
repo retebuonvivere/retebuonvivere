@@ -39,17 +39,16 @@ We do it this way (example):
 ```shell
 git clone git@github.com:retebuonvivere/retebuonvivere.git reponame
 cd reponame
-drush make drupal/makes/retebuonvivere1.13.make sitename
-cp -R drupal/profiles/* sitename/profiles/
-cp -R drupal/features/ sitename/sites/all/modules/
-mkdir sitename/sites/all/themes/custom
-cp -R drupal/themes/* sitename/sites/all/themes/custom/
-cp -R drupal/libraries/* sitename/sites/all/libraries/
+drush make drupal/makes/retebuonvivere1.13.make path/to/sitename
+ln -s drupal/profiles/* path/to/sitename/profiles/
+ln -s drupal/features/ path/to/sitename/sites/all/modules/
+ln -s drupal/themes/custom/ path/to/sitename/sites/all/themes/
+ln -s drupal/libraries/* path/to/sitename/sites/all/libraries/
 ```
-Now create a new mySQL db with all permissions
+Then create a new mySQL dbname with all permissions and
 ```shell
-cd sitename
-drush site-install rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
+cd path/to/sitename
+drush si rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
 ```
 demo and production
 -------------------
