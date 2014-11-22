@@ -68,6 +68,77 @@ dependencies[] = distro_update
 dependencies[] = uuid
 ; dependencies[] = apps
 
+; Features
+dependencies[] = features
+; dependencies[] = features_override
+dependencies[] = strongarm
+dependencies[] = defaultcontent
+
+; Fields
+dependencies[] = addressfield
+dependencies[] = email
+dependencies[] = entityreference
+dependencies[] = entityreference_autocreate
+dependencies[] = entityreference_prepopulate
+dependencies[] = field_collection
+dependencies[] = field_group
+dependencies[] = jquery_expander
+dependencies[] = link
+dependencies[] = social_profile_field
+dependencies[] = telephone
+
+; Other
+dependencies[] = auto_nodetitle
+; dependencies[] = better_exposed_filters
+dependencies[] = colors
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = entity_view_mode
+dependencies[] = linkit
+dependencies[] = pathauto
+dependencies[] = role_delegation
+dependencies[] = subpathauto
+dependencies[] = token
+dependencies[] = unique_field
+
+; RDF & SEO
+dependencies[] = rdfx
+dependencies[] = rdfa
+dependencies[] = schemaorg
+dependencies[] = schemaorg_contrib
+dependencies[] = metatag
+
+; Organic groups
+dependencies[] = og
+dependencies[] = og_access
+; dependencies[] = og_context
+dependencies[] = og_field_access
+dependencies[] = og_ui
+
+; Relations
+dependencies[] = relation
+dependencies[] = relation_endpoint
+dependencies[] = relation_ui
+
+; Rules
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = rules_conditional
+
+; Visualization
+dependencies[] = graphapi
+dependencies[] = d3
+dependencies[] = meshwork
+
+; Security
+dependencies[] = spambot
+
+; User interaction
+; dependency [] = message
+; dependency [] = message_notify
+; dependency [] = message_subscribe
+dependency [] = advanced_forum
+
 ; RBV features
 dependencies[] = rbv_com_fields
 dependencies[] = rbv_org

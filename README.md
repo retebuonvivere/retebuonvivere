@@ -35,20 +35,36 @@ install
 -------
 To install this drupal website you can start from the latest drupal [makefile][31] and build the latest website configuration.
 
-We do it this way (example):
+We do it this way (linux based example):
 ```shell
 git clone git@github.com:retebuonvivere/retebuonvivere.git reponame
-cd reponame
+cd reponame/
 drush make drupal/makes/retebuonvivere1.13.make path/to/sitename
-ln -s drupal/profiles/* path/to/sitename/profiles/
-ln -s drupal/features/ path/to/sitename/sites/all/modules/
-ln -s drupal/themes/custom/ path/to/sitename/sites/all/themes/
-ln -s drupal/libraries/* path/to/sitename/sites/all/libraries/
+cd path/to/sitename/profiles/
+ln -s path/to/reponame/drupal/profiles/rbv_profile/ rbv_profile
+cd path/to/sitename/sites/all/modules/
+ln -s path/to/reponame/drupal/modules/features/ features
+ln -s path/to/reponame/drupal/modules/custom/ custom
+cd path/to/sitename/sites/all/themes/
+ln -s path/to/reponame/drupal/themes/custom/ custom
+cd path/to/sitename/sites/all/libraries/
+ln -s path/to/reponame/drupal/libraries/d3.meshwork d3.meshwork
+ln -s path/to/reponame/drupal/libraries/d3.network d3.network
+ln -s path/to/reponame/drupal/libraries/d3.network2 d3.network2
+ln -s path/to/reponame/drupal/libraries/rbv_kala_default_bootstrap rbv_kala_default_bootstrap
 ```
 Then create a new mySQL dbname with all permissions and
 ```shell
 cd path/to/sitename
 drush si rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
+drush fr -y rbv_com_fields rbv_org rbv_project rbv_relpro rbv_relation rbv_view_graph rbv_event rbv_view_explore rbv_pages rbv_networkadmin
+drush cc all
+```
+Open the website in your browser and check the reports page.
+If you want to use fullcalendar you need:
+```
+cd path/to/sitename/sites/all/libraries/
+mv fullcalendar/fullcalendar/* fullcalendar/
 ```
 demo and production
 -------------------
