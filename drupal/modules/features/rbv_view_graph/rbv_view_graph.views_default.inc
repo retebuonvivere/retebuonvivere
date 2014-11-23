@@ -197,6 +197,9 @@ function rbv_view_graph_views_default_views() {
   /* Display: pane: ER graph */
   $handler = $view->new_display('panel_pane', 'pane: ER graph', 'panel_pane_1');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
