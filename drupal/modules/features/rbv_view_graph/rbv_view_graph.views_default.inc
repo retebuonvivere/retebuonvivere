@@ -51,7 +51,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['style_options']['graphapi']['width'] = '300';
   $handler->display->display_options['style_options']['graphapi']['height'] = '300';
   $handler->display->display_options['style_options']['graphapi']['background-color'] = 'ffffff';
-  /* Piè di pagina: Global: Text area */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -83,43 +83,44 @@ function rbv_view_graph_views_default_views() {
    </g>
   </svg>';
   $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
-  $handler->display->display_options['relationships']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
-  $handler->display->display_options['relationships']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Relationship: referencing from field_rel_source */
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['id'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['ui_name'] = 'referencing from field_rel_source';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
+  /* Relationship: progetto */
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['id'] = 'field_relpro_project_target_id';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['field'] = 'field_relpro_project_target_id';
-  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['relationships']['field_relpro_project_target_id']['relationship'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['field_relpro_project_target_id']['ui_name'] = 'progetto';
+  $handler->display->display_options['relationships']['field_relpro_project_target_id']['label'] = 'entity referenced from field_relpro_project';
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Campo: Contenuto: Percorso */
+  /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['field_com_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_com_date_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_date_1']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
@@ -131,14 +132,14 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Contenuto: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_relpro_project_target_id';
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -146,14 +147,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Campo: Contenuto: Percorso */
+  /* Field: Content: Path */
   $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
   $handler->display->display_options['fields']['path_1']['table'] = 'node';
   $handler->display->display_options['fields']['path_1']['field'] = 'path';
   $handler->display->display_options['fields']['path_1']['relationship'] = 'field_relpro_project_target_id';
   $handler->display->display_options['fields']['path_1']['label'] = '';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date_2']['id'] = 'field_com_date_2';
   $handler->display->display_options['fields']['field_com_date_2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_2']['field'] = 'field_com_date';
@@ -169,10 +170,11 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
+  $handler->display->display_options['fields']['field_com_date']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['fields']['field_com_date']['label'] = '';
   $handler->display->display_options['fields']['field_com_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_date']['alter']['text'] = '[field_com_date-value],[field_com_date-value2]';
@@ -184,7 +186,7 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -199,19 +201,19 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'collaboration' => 'collaboration',
+    'org' => 'org',
   );
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Tipo';
@@ -245,27 +247,27 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Contenuto: Relation: coopera con (node ↔ node) */
+  /* Relationship: Content: Relation: coopera con (node ↔ node) */
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['id'] = 'relation_cooperates_with_node';
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['field'] = 'relation_cooperates_with_node';
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['required'] = TRUE;
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_right'] = 0;
-  /* Relationship: Contenuto: Relation: coopera con (node → relation) */
+  /* Relationship: Content: Relation: coopera con (node → relation) */
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['id'] = 'relation_base_left_cooperates_with';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['field'] = 'relation_base_left_cooperates_with';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['entity_deduplication_left'] = 1;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -275,13 +277,13 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Campo: Contenuto: Percorso */
+  /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
@@ -296,14 +298,14 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Contenuto: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'relation_cooperates_with_node';
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -311,14 +313,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Campo: Contenuto: Percorso */
+  /* Field: Content: Path */
   $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
   $handler->display->display_options['fields']['path_1']['table'] = 'node';
   $handler->display->display_options['fields']['path_1']['field'] = 'path';
   $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_cooperates_with_node';
   $handler->display->display_options['fields']['path_1']['label'] = '';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
@@ -334,7 +336,7 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Relation: Collaborano ai progetti */
+  /* Field: Relation: Collaborano ai progetti */
   $handler->display->display_options['fields']['field_rel_collaborations']['id'] = 'field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['table'] = 'field_data_field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['field'] = 'field_rel_collaborations';
@@ -354,7 +356,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -367,7 +369,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -414,27 +416,27 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Contenuto: Relation: coopera con (node ↔ node) */
+  /* Relationship: Content: Relation: coopera con (node ↔ node) */
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['id'] = 'relation_cooperates_with_node';
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['field'] = 'relation_cooperates_with_node';
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['required'] = TRUE;
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_right'] = 0;
-  /* Relationship: Contenuto: Relation: coopera con (node → relation) */
+  /* Relationship: Content: Relation: coopera con (node → relation) */
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['id'] = 'relation_base_left_cooperates_with';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['field'] = 'relation_base_left_cooperates_with';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['entity_deduplication_left'] = 1;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -444,13 +446,13 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Campo: Contenuto: Percorso */
+  /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
@@ -465,14 +467,14 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Contenuto: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'relation_cooperates_with_node';
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -480,14 +482,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Campo: Contenuto: Percorso */
+  /* Field: Content: Path */
   $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
   $handler->display->display_options['fields']['path_1']['table'] = 'node';
   $handler->display->display_options['fields']['path_1']['field'] = 'path';
   $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_cooperates_with_node';
   $handler->display->display_options['fields']['path_1']['label'] = '';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
-  /* Campo: Campo: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
@@ -503,7 +505,7 @@ function rbv_view_graph_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Relation: Collaborano ai progetti */
+  /* Field: Relation: Collaborano ai progetti */
   $handler->display->display_options['fields']['field_rel_collaborations']['id'] = 'field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['table'] = 'field_data_field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['field'] = 'field_rel_collaborations';
@@ -517,7 +519,7 @@ function rbv_view_graph_views_default_views() {
   );
   $handler->display->display_options['fields']['field_rel_collaborations']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -571,8 +573,8 @@ function rbv_view_graph_views_default_views() {
    </g>
    </g>
   </svg>'),
-    t('Contenuto entity referenced from field_rel_source'),
-    t('Contenuto entity referenced from field_relpro_project'),
+    t('referencing from field_rel_source'),
+    t('entity referenced from field_relpro_project'),
     t('[field_com_date_1-value],[field_com_date_1-value2]'),
     t('[field_com_date_2-value],[field_com_date_2-value2]'),
     t('[field_com_date-value],[field_com_date-value2]'),
