@@ -57,13 +57,13 @@ ln -s path/to/reponame/drupal/libraries/fullcalendar fullcalendar
 Then create a new mySQL dbname with all permissions and
 ```shell
 cd path/to/sitename
-drush si rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname
+drush si rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://dbuser:dbpass@localhost/dbname --locale=it
 drush fr -y rbv_com_fields rbv_org rbv_project rbv_relpro rbv_relation rbv_view_graph rbv_event rbv_view_explore rbv_pages rbv_networkadmin
 drush cc all
 ```
 Open the website in your browser and check the reports page. 
 
-You'll probably need to rebuild permissions.
+You'll probably need to rebuild permissions. And keep in mind that you may also need to set some permissions (we haven't export those settings much).
 
 If you want to enable the production theme, go to appearence, enable and set default rbv kala default. Then go to the theme settings and hit save configuration.
 
