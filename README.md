@@ -27,9 +27,10 @@ We don't use *git submodules* anymore, so now there is only one repo (this one) 
 
 developing
 ----------
-We follow a *code-driven development* workflow for our custom modules and configuration, in order to boost teamworking.
-If you want to **contribute** to this civil society network tool, great! **Get in touch with us: write to info@retebuonvivere.org**.
-We also use [bountysource][30] to give some money to developers who contribute with the issue queue. So, go check it out!
+* We follow a *code-driven development* workflow for our custom modules and configuration, in order to boost teamworking.
+* If you want to **contribute** to this civil society network tool, great! **Get in touch with us: write to info@retebuonvivere.org**.
+* We also use [bountysource][30] to give some money to developers who contribute with the issue queue. So, go check it out!
+* And we use [waffle.io][34] as issue tracker! 
 
 install
 -------
@@ -152,3 +153,4 @@ Get in touch with us:
 [31]: https://github.com/retebuonvivere/retebuonvivere/tree/master/drupal/makes
 [32]: https://www.facebook.com/retebuonvivere
 [33]: https://plus.google.com/+RetebuonvivereOrg1
+[34]: https://waffle.io/retebuonvivere/retebuonvivere
