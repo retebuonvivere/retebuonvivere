@@ -52,6 +52,7 @@ ln -s path/to/reponame/drupal/libraries/d3.meshwork d3.meshwork
 ln -s path/to/reponame/drupal/libraries/d3.network d3.network
 ln -s path/to/reponame/drupal/libraries/d3.network2 d3.network2
 ln -s path/to/reponame/drupal/libraries/rbv_kala_default_bootstrap rbv_kala_default_bootstrap
+ln -s path/to/reponame/drupal/libraries/fullcalendar fullcalendar
 ```
 Then create a new mySQL dbname with all permissions and
 ```shell
@@ -60,7 +61,13 @@ drush si rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://
 drush fr -y rbv_com_fields rbv_org rbv_project rbv_relpro rbv_relation rbv_view_graph rbv_event rbv_view_explore rbv_pages rbv_networkadmin
 drush cc all
 ```
-Open the website in your browser and check the reports page.
+Open the website in your browser and check the reports page. 
+
+You'll probably need to rebuild permissions.
+
+If you want to enable the production theme, go to appearence, enable and set default rbv kala default. Then go to the theme settings and hit save configuration.
+
+We have slightly modified d3 module to support more graph api fields (nodes uri, links dates...). So, if you need to use those features you need to manually apply the changes (more details coming soon).
 
 
 demo and production
