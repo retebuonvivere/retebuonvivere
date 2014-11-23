@@ -83,26 +83,29 @@ function rbv_view_graph_views_default_views() {
    </g>
   </svg>';
   $handler->display->display_options['footer']['area']['format'] = 'rbv_full_html';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
-  $handler->display->display_options['relationships']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
-  $handler->display->display_options['relationships']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Relationship: referencing from field_rel_source */
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['id'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['ui_name'] = 'referencing from field_rel_source';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
+  /* Relationship: progetto */
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['id'] = 'field_relpro_project_target_id';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['field'] = 'field_relpro_project_target_id';
+  $handler->display->display_options['relationships']['field_relpro_project_target_id']['relationship'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['field_relpro_project_target_id']['ui_name'] = 'progetto';
+  $handler->display->display_options['relationships']['field_relpro_project_target_id']['label'] = 'entity referenced from field_relpro_project';
   /* Campo: Contenuto: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
@@ -112,14 +115,12 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Campo: Campo: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['fields']['field_com_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_com_date_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_date_1']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
@@ -173,6 +174,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
+  $handler->display->display_options['fields']['field_com_date']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['fields']['field_com_date']['label'] = '';
   $handler->display->display_options['fields']['field_com_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_date']['alter']['text'] = '[field_com_date-value],[field_com_date-value2]';
@@ -211,7 +213,7 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'collaboration' => 'collaboration',
+    'org' => 'org',
   );
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Tipo';
@@ -571,8 +573,8 @@ function rbv_view_graph_views_default_views() {
    </g>
    </g>
   </svg>'),
-    t('Contenuto entity referenced from field_rel_source'),
-    t('Contenuto entity referenced from field_relpro_project'),
+    t('referencing from field_rel_source'),
+    t('entity referenced from field_relpro_project'),
     t('[field_com_date_1-value],[field_com_date_1-value2]'),
     t('[field_com_date_2-value],[field_com_date_2-value2]'),
     t('[field_com_date-value],[field_com_date-value2]'),
