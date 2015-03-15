@@ -2163,7 +2163,6 @@ progetti/attività',
       'default' => NULL,
       'sidebar' => NULL,
       'contentmain' => NULL,
-      'footer' => NULL,
       'slider' => NULL,
       'slidergutter' => NULL,
       'column1' => NULL,
@@ -2212,6 +2211,9 @@ progetti/attività',
       'style' => 'kalacustomize',
     ),
     'secondarycolumn3' => array(
+      'style' => '0',
+    ),
+    'footer' => array(
       'style' => '0',
     ),
   );
@@ -2283,6 +2285,25 @@ progetti/attività',
     $pane->uuid = 'ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
     $display->content['new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290'] = $pane;
     $display->panels['column3'][0] = 'new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
+    $pane = new stdClass();
+    $pane->pid = 'new-b3fcedf0-0c13-47aa-9690-43204521dbe4';
+    $pane->panel = 'footer';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:29';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b3fcedf0-0c13-47aa-9690-43204521dbe4';
+    $display->content['new-b3fcedf0-0c13-47aa-9690-43204521dbe4'] = $pane;
+    $display->panels['footer'][0] = 'new-b3fcedf0-0c13-47aa-9690-43204521dbe4';
     $pane = new stdClass();
     $pane->pid = 'new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
     $pane->panel = 'header';
