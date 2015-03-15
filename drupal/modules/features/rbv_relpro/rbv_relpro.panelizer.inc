@@ -36,7 +36,7 @@ function rbv_relpro_panelizer_defaults() {
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'mccoppin';
+  $display->layout = 'radix_mccoppin';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(

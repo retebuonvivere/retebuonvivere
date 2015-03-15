@@ -65,7 +65,7 @@ Collaborazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'boxton';
+  $display->layout = 'radix_boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -140,7 +140,7 @@ Collaborazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'brenham_flipped';
+  $display->layout = 'radix_brenham_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -294,7 +294,7 @@ La rete nel tempo',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'brenham_flipped';
+  $display->layout = 'radix_brenham_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -445,7 +445,7 @@ Collaboratori',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'brenham_flipped';
+  $display->layout = 'radix_brenham_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1461,7 +1461,7 @@ collaborazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'boxton';
+  $display->layout = 'radix_boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -2156,7 +2156,7 @@ progetti/attività',
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'pond';
+  $display->layout = 'radix_pond';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -2435,7 +2435,7 @@ organizzazioni',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'boxton';
+  $display->layout = 'radix_boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
