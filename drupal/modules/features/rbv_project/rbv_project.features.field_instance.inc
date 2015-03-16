@@ -305,17 +305,7 @@ function rbv_project_field_default_field_instances() {
   // Exported field_instance: 'node-project-field_com_location'
   $field_instances['node-project-field_com_location'] = array(
     'bundle' => 'project',
-    'default_value' => array(
-      0 => array(
-        'element_key' => 'node|project|field_com_location|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'postal_code' => '',
-        'locality' => '',
-        'administrative_area' => 'VR',
-        'country' => 'IT',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
@@ -362,6 +352,7 @@ function rbv_project_field_default_field_instances() {
       'module' => 'addressfield',
       'settings' => array(
         'available_countries' => array(),
+        'default_country' => '',
         'format_handlers' => array(
           'address' => 'address',
           'address-hide-country' => 0,

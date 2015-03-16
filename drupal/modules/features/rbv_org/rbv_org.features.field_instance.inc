@@ -437,18 +437,7 @@ function rbv_org_field_default_field_instances() {
   // Exported field_instance: 'node-org-field_com_location'
   $field_instances['node-org-field_com_location'] = array(
     'bundle' => 'org',
-    'default_value' => array(
-      0 => array(
-        'element_key' => 'node|org|field_com_location|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'postal_code' => '',
-        'locality' => '',
-        'administrative_area' => 'VR',
-        'country' => 'IT',
-        'organisation_name' => '',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '<a class="help" title="È importante che il vostro indirizzo sia scritto esattamente come lo dovrebbe scrivere qualcuno per inviarvi un pacco postale. Ad esempio inserite il nome dell\'organizzazione. Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la vostra sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
@@ -495,12 +484,16 @@ function rbv_org_field_default_field_instances() {
       'module' => 'addressfield',
       'settings' => array(
         'available_countries' => array(),
+        'default_country' => '',
         'format_handlers' => array(
           'address' => 'address',
-          'organisation' => 'organisation',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
           'address-hide-country' => 0,
+          'organisation' => 0,
           'name-full' => 0,
           'name-oneline' => 0,
+          'address-optional' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
