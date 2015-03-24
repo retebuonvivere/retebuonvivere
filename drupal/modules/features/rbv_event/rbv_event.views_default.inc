@@ -966,10 +966,11 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
+  $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
+  $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
+  $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
+  $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -1172,6 +1173,11 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
+  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
+  $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
+  $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
+  $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
+  $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */

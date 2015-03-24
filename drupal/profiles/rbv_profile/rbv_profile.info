@@ -89,6 +89,7 @@ dependencies[] = colors
 dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = entity_view_mode
+dependencies[] = googleanalytics
 dependencies[] = libraries	
 dependencies[] = linkit
 dependencies[] = menu_block
