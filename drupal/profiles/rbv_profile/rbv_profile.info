@@ -116,6 +116,7 @@ dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = jquery_expander
 dependencies[] = link
+dependencies[] = smart_trim
 dependencies[] = social_profile_field
 dependencies[] = telephone
 dependencies[] = unique_field
