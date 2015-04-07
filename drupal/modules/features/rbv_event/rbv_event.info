@@ -31,6 +31,7 @@ dependencies[] = rbv_project
 dependencies[] = rbv_relpro
 dependencies[] = rdf
 dependencies[] = schemaorg
+dependencies[] = smart_trim
 dependencies[] = social_profile_field
 dependencies[] = strongarm
 dependencies[] = taxonomy
