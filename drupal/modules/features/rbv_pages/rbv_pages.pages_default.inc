@@ -1063,7 +1063,7 @@ elenco',
   $page->task = 'page';
   $page->admin_title = 'rbv group projects collaborations';
   $page->admin_description = '';
-  $page->path = 'node/%node/progetti/collaborzioni';
+  $page->path = 'node/%node/progetti/collaborazioni';
   $page->access = array(
     'plugins' => array(
       0 => array(
