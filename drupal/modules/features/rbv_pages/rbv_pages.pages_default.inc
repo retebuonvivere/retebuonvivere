@@ -146,6 +146,8 @@ Collaborazioni',
     'style_settings' => array(
       'default' => NULL,
       'contentmain' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -164,7 +166,9 @@ Collaborazioni',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -185,7 +189,9 @@ Collaborazioni',
       'view_mode' => 'teaser',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -204,7 +210,9 @@ Collaborazioni',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
@@ -223,7 +231,9 @@ Collaborazioni',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -231,7 +241,7 @@ Collaborazioni',
     $pane->uuid = '9be68ad4-36d0-4e27-baff-e80d0d1f08b1';
     $display->content['new-9be68ad4-36d0-4e27-baff-e80d0d1f08b1'] = $pane;
     $display->panels['sidebar'][0] = 'new-9be68ad4-36d0-4e27-baff-e80d0d1f08b1';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -300,6 +310,8 @@ La rete nel tempo',
     'style_settings' => array(
       'default' => NULL,
       'contentmain' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -318,7 +330,9 @@ La rete nel tempo',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -375,6 +389,7 @@ La rete nel tempo',
     $pane->cache = array();
     $pane->style = array(
       'style' => 'default',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
@@ -383,7 +398,7 @@ La rete nel tempo',
     $pane->uuid = '8b8e0888-dcbd-42ad-be92-b2e58e5def06';
     $display->content['new-8b8e0888-dcbd-42ad-be92-b2e58e5def06'] = $pane;
     $display->panels['sidebar'][0] = 'new-8b8e0888-dcbd-42ad-be92-b2e58e5def06';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -451,6 +466,8 @@ Collaboratori',
     'style_settings' => array(
       'default' => NULL,
       'contentmain' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -469,7 +486,9 @@ Collaboratori',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -511,7 +530,9 @@ Collaboratori',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
@@ -530,7 +551,9 @@ Collaboratori',
       'view_mode' => 'full',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
@@ -538,7 +561,7 @@ Collaboratori',
     $pane->uuid = '4eac88bd-12b7-4f73-80cb-ba18b705e569';
     $display->content['new-4eac88bd-12b7-4f73-80cb-ba18b705e569'] = $pane;
     $display->panels['sidebar'][0] = 'new-4eac88bd-12b7-4f73-80cb-ba18b705e569';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-7bc5a57d-45bc-4bd7-882e-623587a7d77a';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
