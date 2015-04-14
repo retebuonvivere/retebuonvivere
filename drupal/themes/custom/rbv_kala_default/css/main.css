@@ -972,7 +972,9 @@ padding: .3em;
 input#edit-delete{
   display:none;
 }
-
+.page-node-progetti .alert-danger {
+    display:none;
+}
 
 
 

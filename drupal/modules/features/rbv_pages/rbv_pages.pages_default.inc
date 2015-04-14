@@ -2095,12 +2095,13 @@ progetti/attività',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'boxton';
+  $display->layout = 'radix_burr_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'contentmain' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -2135,6 +2136,33 @@ progetti/attività',
     $pane->uuid = 'e2eccc4a-b3ad-476b-907a-6b0a565042c2';
     $display->content['new-e2eccc4a-b3ad-476b-907a-6b0a565042c2'] = $pane;
     $display->panels['contentmain'][0] = 'new-e2eccc4a-b3ad-476b-907a-6b0a565042c2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3200319d-f5a8-4a5c-9d38-8bd519c36ab2';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_graph-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => 'Rete',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3200319d-f5a8-4a5c-9d38-8bd519c36ab2';
+    $display->content['new-3200319d-f5a8-4a5c-9d38-8bd519c36ab2'] = $pane;
+    $display->panels['sidebar'][0] = 'new-3200319d-f5a8-4a5c-9d38-8bd519c36ab2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
