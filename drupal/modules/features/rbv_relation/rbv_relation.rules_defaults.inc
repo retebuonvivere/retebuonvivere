@@ -21,7 +21,8 @@ function rbv_relation_default_rules_configuration() {
             "USING" : {
               "type" : "node",
               "property" : "field_relpro_project",
-              "value" : [ "node:field-relpro-project" ]
+              "value" : [ "node:field-relpro-project" ],
+              "limit" : "120"
             },
             "PROVIDE" : { "entity_fetched" : { "collaborations_fetched" : "Collaborations fetched from project field" } }
           }
