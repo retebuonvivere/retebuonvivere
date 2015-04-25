@@ -88,6 +88,7 @@ function rbv_networkadmin_views_default_views() {
   $handler = $view->new_display('panel_pane', 'pane: partecipano già', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Partecipano già';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -245,7 +246,7 @@ function rbv_networkadmin_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Campo: Contenuto: Progetto */
+  /* Campo: Contenuto: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
