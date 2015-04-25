@@ -812,6 +812,20 @@ li.mid-1422 a:before {
  padding-right: .4em;
 }
 
+.badge {
+  margin-left: 10px;
+}
+.badge-org {
+  background-color: #026510;
+}
+.badge-project {
+  background-color: #ABDC0A;
+  color: #333;
+}
+.badge-collaboration {
+  background-color: #4E9915;
+}
+
 /* 
  * BACKEND
  */

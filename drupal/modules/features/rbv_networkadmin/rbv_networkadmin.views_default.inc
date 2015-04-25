@@ -45,7 +45,8 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni: <strong>@total</strong>';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni partecipanti: <strong>@total</strong>';
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -96,6 +97,38 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: pane: partecipanti count */
+  $handler = $view->new_display('panel_pane', 'pane: partecipanti count', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-participants" title="Totale organizzazioni partecipanti (iscritte a rbv)">@total</span> org. partecipanti.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'RBV count';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['rbv_netadmview_joined'] = array(
     t('Master'),
     t('Network admin - elenco delle organizzazioni che partecipano'),
@@ -105,11 +138,15 @@ function rbv_networkadmin_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Totale organizzazioni: <strong>@total</strong>'),
+    t('total'),
+    t('Totale organizzazioni partecipanti: <strong>@total</strong>'),
     t('Page'),
     t('pane: partecipano già'),
     t('Partecipano già'),
     t('View panes'),
+    t('pane: partecipanti count'),
+    t('<span class="badge badge-participants" title="Totale organizzazioni partecipanti (iscritte a rbv)">@total</span> org. partecipanti.'),
+    t('RBV count'),
   );
   $export['rbv_netadmview_joined'] = $view;
 
