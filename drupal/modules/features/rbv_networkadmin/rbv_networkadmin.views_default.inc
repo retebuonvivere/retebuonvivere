@@ -104,6 +104,15 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Piè di pagina: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
@@ -146,6 +155,13 @@ function rbv_networkadmin_views_default_views() {
     t('Partecipano già'),
     t('View panes'),
     t('pane: partecipanti count'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« prima'),
+    t('‹ precedente'),
+    t('seguente ›'),
+    t('ultima »'),
     t('<span class="badge badge-participants" title="Totale organizzazioni partecipanti (iscritte a rbv)">@total</span> org. partecipanti.'),
     t('RBV count'),
   );

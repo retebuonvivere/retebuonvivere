@@ -231,8 +231,14 @@ function rbv_org_views_default_views() {
   $handler = $view->new_display('panel_pane', 'pane: users count', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -325,6 +331,7 @@ function rbv_org_views_default_views() {
     t('ultima »'),
     t('<p>Ci sono <strong>@total</strong> persone in totale.</p>'),
     t('pane: users count'),
+    t('- All -'),
     t('total'),
     t('<span class="badge badge-people" title="Totale persone iscritte a rbv">@total</span> persone.'),
     t('RBV count'),
