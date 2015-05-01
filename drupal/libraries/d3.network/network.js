@@ -41,7 +41,7 @@
 			object.start=new Date(dateComponents[0]);
 			object.end=new Date(dateComponents[1]);
 		}
-		console.log(object[timefield])
+		//console.log(object[timefield])
 	}
  
 	function setAge(object)
@@ -58,7 +58,7 @@
 		{
 			object.age=now.getTime()-object.end.getTime();
 		}
-		console.log(object.age)
+		//console.log(object.age)
 	}
     
     var maxDays=200;	
