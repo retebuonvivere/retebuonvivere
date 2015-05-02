@@ -31,7 +31,7 @@ contributing
 * If you want to **contribute** to this civil society network tool, great! **Get in touch with us: write to info@retebuonvivere.org**.
 * We also use [bountysource][30] to give some money to developers who contribute with the issue queue. So, go check it out!
 * And we use [waffle.io][34] as issue tracker! 
-* [Fork](https://github.com/retebuonvivere/retebuonvivere#fork-destination-box) this repo and use this drupal installation to build your own collaboration graph.
+* Fork this repo and use this drupal installation to build your own collaboration graph.
 
 install
 -------
