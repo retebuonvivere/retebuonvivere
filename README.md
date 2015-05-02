@@ -6,7 +6,7 @@ This fork is the new main repo for www.retebuonvivere.org.
 table of contents
 * [what is retebuonvivere.org](#what-is-retebuonvivereorg)
 * [structure of the project](#structure-of-the-project)
-* [developing](#developing)
+* [contributing](#contributing)
 * [install](#install)
 * [demo and production](#demo-and-production)
 * [rationale of this project](#rationale-of-the-project)
@@ -25,12 +25,13 @@ structure of the project
 ------------------------
 We don't use *git submodules* anymore, so now there is only one repo (this one) and one tree (we changed this to better integrate our workflow with *bountysource*).
 
-developing
+contributing
 ----------
 * We (try to) follow a [code-driven development][3] workflow for our custom modules and configuration, in order to boost teamworking.
 * If you want to **contribute** to this civil society network tool, great! **Get in touch with us: write to info@retebuonvivere.org**.
 * We also use [bountysource][30] to give some money to developers who contribute with the issue queue. So, go check it out!
 * And we use [waffle.io][34] as issue tracker! 
+* You can fork this repo and use this drupal installation to build your own collaboration graph.
 
 install
 -------
@@ -62,14 +63,13 @@ drush si rbv_profile --account-name=admin --account-pass=admin --db-url=mysql://
 drush fr -y rbv_com_fields rbv_org rbv_project rbv_relpro rbv_relation rbv_view_graph rbv_event rbv_view_explore rbv_pages rbv_networkadmin
 drush cc all
 ```
-Open the website in your browser and check the reports page. 
+* Open the website in your browser and check the reports page. 
 
-You'll probably need to rebuild permissions. And keep in mind that you may also need to set some permissions (we haven't export those settings much).
+* You'll probably need to rebuild permissions. And keep in mind that you may also need to set some permissions (we haven't export those settings much).
 
-If you want to enable the production theme, go to appearence, enable and set default rbv kala default. Then go to the theme settings and hit save configuration.
+* If you want to enable the production theme, go to appearence, enable and set default rbv kala default. Then go to the theme settings and hit save configuration.
 
-We have slightly modified d3 module to support more graph api fields (nodes uri, links dates...). So, if you need to use those features you need to manually apply the changes (more details coming soon).
-
+* We have slightly modified d3 module to support more graph api fields (nodes uri, links dates...). So, if you need to use those features you need to manually apply the changes (more details coming soon).
 
 demo and production
 -------------------
@@ -104,10 +104,10 @@ technical staff
 ---------------
 Present:
 * Miro Marchi [miromarchi][21] contributes as drupal configurator and maintainer for this project. Please bear in mind that I am an anthropology PhD candidate, not a programmer. So be patient please, I'm a newbie! This website is part of my thesis.
-* Lucia Fiorio ([linkedin profile][27]) contributes in network administration and network growth
-* Sirio Marchi [ohjimijimijimi][19] contributes as drupal and git supervisor
 
 Past:
+* Lucia Fiorio ([linkedin profile][27]) contributed in network administration and network growth
+* Sirio Marchi [ohjimijimijimi][19] contributed as drupal and git supervisor
 * Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
 * Marco Andreoli [fonzy85vr][20] contributed as programmer and Agile project manager
 
