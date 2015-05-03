@@ -65,7 +65,7 @@ function rbv_pages_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'code' => '301',
-    'destination' => 'node/add/collaboration?destination=calendario',
+    'destination' => 'node/add/event?destination=calendario',
     'access' => array(
       'plugins' => array(),
       'logic' => 'and',
@@ -132,7 +132,7 @@ function rbv_pages_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'code' => '301',
-    'destination' => 'node/add/collaboration?destination=calendario/elenco',
+    'destination' => 'node/add/event?destination=calendario/elenco',
     'access' => array(
       'plugins' => array(),
       'logic' => 'and',
