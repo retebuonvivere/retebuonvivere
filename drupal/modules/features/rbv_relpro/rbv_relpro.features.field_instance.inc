@@ -269,7 +269,7 @@ function rbv_relpro_field_default_field_instances() {
   $field_instances['node-collaboration-field_relpro_project'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '<a class="help" title="Qual è il progetto a cui l\'organizzazione indicata collabora?"><i class="fa fa-hand-o-down"></i></a>
 <p class="alert alert-info">Qual è il progetto a cui l\'organizzazione indicata collabora?<br><br> Nella <i class="fa fa-eye"></i> rete delle collaborazioni verrà disegnato un legame tra organizzazione e progetto. Nella <i class="fa fa-eye"></i> rete delle relazioni verrà disegnato un legame tra le organizzazioni che collaborano a questo progetto.</p>',
@@ -317,7 +317,15 @@ function rbv_relpro_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,

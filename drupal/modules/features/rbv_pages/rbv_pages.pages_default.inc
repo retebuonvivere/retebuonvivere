@@ -11,6 +11,140 @@ function rbv_pages_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'rbv_calendar_add_event';
+  $page->task = 'page';
+  $page->admin_title = 'rbv calendar add event';
+  $page->admin_description = '';
+  $page->path = 'calendario/add-event';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi evento',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect8';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_calendar_add_event';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect8',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/collaboration?destination=calendario',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect8',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_calendar_add_event'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_events_add_event';
+  $page->task = 'page';
+  $page->admin_title = 'rbv events add event';
+  $page->admin_description = '';
+  $page->path = 'calendario/elenco/add-event';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi evento',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect9';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_events_add_event';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect9',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/collaboration?destination=calendario/elenco',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect9',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_events_add_event'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'rbv_graph';
   $page->task = 'page';
   $page->admin_title = 'Graph';
@@ -741,6 +875,17 @@ calendario',
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'og_perm',
+        'settings' => array(
+          'perm' => 'create event content',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_1',
+        ),
+        'not' => FALSE,
+      ),
     ),
     'logic' => 'and',
     'type' => 'none',
@@ -748,7 +893,7 @@ calendario',
   );
   $page->menu = array(
     'type' => 'action',
-    'title' => 'aggiungi evento',
+    'title' => 'Aggiungi evento',
     'name' => 'navigation',
     'weight' => '0',
     'parent' => array(
@@ -1078,6 +1223,338 @@ elenco',
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_group_calendar_list'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_group_events_add';
+  $page->task = 'page';
+  $page->admin_title = 'rbv group events add';
+  $page->admin_description = '';
+  $page->path = 'node/%node/eventi/elenco/add';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'org' => 'org',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'og_perm',
+        'settings' => array(
+          'perm' => 'create event content',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_1',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi evento',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Node: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_group_events_add';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'HTTP response code',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/event?og_group_ref=%node:nid&destination=node/%node:nid/eventi/elenco',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_group_events_add'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_group_own_proj_add';
+  $page->task = 'page';
+  $page->admin_title = 'rbv group own proj add';
+  $page->admin_description = '';
+  $page->path = 'node/%node/progetti/propri/add';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'org' => 'org',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'og_perm',
+        'settings' => array(
+          'perm' => 'create project content',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_1',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi progetto/attività',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Node: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect4';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_group_own_proj_add';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect4',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/project?og_group_ref=%node:nid&destination=node/%node:nid/progetti/propri',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect4',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_group_own_proj_add'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_group_projects_add';
+  $page->task = 'page';
+  $page->admin_title = 'rbv group projects add';
+  $page->admin_description = '';
+  $page->path = 'node/%node/progetti/add';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'org' => 'org',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'og_perm',
+        'settings' => array(
+          'perm' => 'create project content',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_1',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi progetto/attività',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Node: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__http_response_code';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_group_projects_add';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'HTTP response code',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/project?og_group_ref=%node:nid&destination=node/%node:nid/progetti',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'http_response_code',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_group_projects_add'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_group_projects_add_col';
+  $page->task = 'page';
+  $page->admin_title = 'rbv group projects add col';
+  $page->admin_description = '';
+  $page->path = 'node/%node/progetti/add-collaboration';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'org' => 'org',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'og_perm',
+        'settings' => array(
+          'perm' => 'create collaboration content',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_1',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi collaborazione',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Node: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect3';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_group_projects_add_col';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect3',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/collaboration?og_group_ref=%node:nid&field_rel_source=%node:nid&destination=node/%node:nid/progetti',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect3',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_group_projects_add_col'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
@@ -2789,6 +3266,446 @@ progetti',
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_progetti'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_project_add_col';
+  $page->task = 'page';
+  $page->admin_title = 'rbv project add col';
+  $page->admin_description = '';
+  $page->path = 'node/%node/add-collaboration';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'project' => 'project',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi collaborazione a questo progetto',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Nodo: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect5';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_project_add_col';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect5',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/collaboration?field_relpro_project=%node:nid&destination=node/%node:nid',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect5',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_project_add_col'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_rete_add_col';
+  $page->task = 'page';
+  $page->admin_title = 'rbv rete add col';
+  $page->admin_description = '';
+  $page->path = 'rete/add-collaboration';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi collaborazione',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect6';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_rete_add_col';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect6',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/collaboration?destination=rete',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect6',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_rete_add_col'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_rete_add_project';
+  $page->task = 'page';
+  $page->admin_title = 'rbv rete add project';
+  $page->admin_description = '';
+  $page->path = 'rete/add-project';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi progetto/attività',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect7';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_rete_add_project';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect7',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/project?destination=rete',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect7',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_rete_add_project'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_user_add_col';
+  $page->task = 'page';
+  $page->admin_title = 'rbv user add col';
+  $page->admin_description = '';
+  $page->path = 'user/%user/add-collaboration';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi collaborazione',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'user' => array(
+      'id' => 1,
+      'identifier' => 'Utente: ID',
+      'name' => 'entity_id:user',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect10';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_user_add_col';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect10',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/collaboration?destination=user/%user:uid',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect10',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_user_add_col'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_user_add_event';
+  $page->task = 'page';
+  $page->admin_title = 'rbv user add event';
+  $page->admin_description = '';
+  $page->path = 'user/%user/add-event';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi evento',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'user' => array(
+      'id' => 1,
+      'identifier' => 'Utente: ID',
+      'name' => 'entity_id:user',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect12';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_user_add_event';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect12',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/event?destination=user/%user:uid',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect12',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_user_add_event'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'rbv_user_add_project';
+  $page->task = 'page';
+  $page->admin_title = 'rbv user add project';
+  $page->admin_description = '';
+  $page->path = 'user/%user/add-project';
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi progetto/attività',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'user' => array(
+      'id' => 1,
+      'identifier' => 'Utente: ID',
+      'name' => 'entity_id:user',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect11';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_user_add_project';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect11',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/project?destination=user/%user:uid',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect11',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_user_add_project'] = $page;
 
   return $pages;
 

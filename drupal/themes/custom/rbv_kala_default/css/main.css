@@ -681,11 +681,6 @@ background: black;
  padding: 0;
 }
 
-/* date picker */
-select.ui-datepicker-month, select.ui-datepicker-year {
- background: #7D7971;
-}
-
 /*
  * MENU 
  */
@@ -890,6 +885,29 @@ div .image-widget-data {
 form .form-actions .btn {
     margin-bottom: 8px;
 }
+
+/* date picker */
+select.ui-datepicker-month, select.ui-datepicker-year {
+ background: #7D7971;
+}
+/* date inputs */
+.start-date-wrapper input {
+  background: #DFFBCB;
+}
+.end-date-wrapper input {
+  background: #FFCECE;
+}
+
+/* add collaboration */
+input#edit-field-rel-source-und-0-target-id {
+  background: #ABDC0A;
+  color: #333;
+}
+input#edit-field-relpro-project-und-0-target-id {
+  background: #378722;
+  color: #fff;
+}
+
 /* admin */
 .page-admin ul {
 list-style: none;
