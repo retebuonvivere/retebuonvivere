@@ -51,6 +51,11 @@ function rbv_relpro_default_rules_configuration() {
             "data" : [ "created-collaboration-own-project:field-com-date:value2" ],
             "value" : [ "node:field-com-date:value2" ]
           }
+        },
+        { "data_set" : {
+            "data" : [ "created-collaboration-own-project:field-rel-categories" ],
+            "value" : { "value" : { "27" : "27" } }
+          }
         }
       ]
     }
