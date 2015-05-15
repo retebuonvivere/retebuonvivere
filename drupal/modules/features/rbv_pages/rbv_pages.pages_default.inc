@@ -3354,6 +3354,90 @@ progetti',
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'rbv_project_add_event';
+  $page->task = 'page';
+  $page->admin_title = 'rbv project add event';
+  $page->admin_description = '';
+  $page->path = 'node/%node/add-event';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'project' => 'project',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 6,
+            2 => 5,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'action',
+    'title' => 'Aggiungi evento a questo progetto',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Nodo: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page__redirect5b';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_project_add_event';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'redirect5b',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'node/add/event?field_relpro_project=%node:nid&destination=node/%node:nid',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'name' => 'redirect5b',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_project_add_event'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'rbv_rete_add_col';
   $page->task = 'page';
   $page->admin_title = 'rbv rete add col';

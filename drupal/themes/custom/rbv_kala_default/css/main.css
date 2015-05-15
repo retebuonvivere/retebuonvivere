@@ -898,6 +898,12 @@ select.ui-datepicker-month, select.ui-datepicker-year {
   background: #FFCECE;
 }
 
+/* editors */
+textarea.markItUpEditor {
+  font-family:monospace;
+  font-size:11pt;
+}
+
 /* add collaboration */
 input#edit-field-rel-source-und-0-target-id {
   background: #ABDC0A;

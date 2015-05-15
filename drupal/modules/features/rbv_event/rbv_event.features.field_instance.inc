@@ -614,7 +614,7 @@ function rbv_event_field_default_field_instances() {
   $field_instances['node-event-field_relpro_project'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '<a class="help" title="L\'evento si riferisce ad un progetto? Indicate quale digitando il nome del progetto qui, l\'evento sarà visibile nella pagina del progetto. In questo modo si può ad esempio creare un progetto/attività per raggruppare una rassegna di eventi."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
@@ -659,7 +659,15 @@ function rbv_event_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,

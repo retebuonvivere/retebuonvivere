@@ -39,6 +39,7 @@ features[page_manager_pages][] = rbv_page_organizzazioni
 features[page_manager_pages][] = rbv_page_persone
 features[page_manager_pages][] = rbv_page_progetti
 features[page_manager_pages][] = rbv_project_add_col
+features[page_manager_pages][] = rbv_project_add_event
 features[page_manager_pages][] = rbv_rete_add_col
 features[page_manager_pages][] = rbv_rete_add_project
 features[page_manager_pages][] = rbv_user_add_col
