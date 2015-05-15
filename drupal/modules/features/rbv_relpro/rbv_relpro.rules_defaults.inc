@@ -118,11 +118,30 @@ function rbv_relpro_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "rbv" ],
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "rules", "rules_conditional" ],
       "ON" : { "node_insert--collaboration" : { "bundle" : "collaboration" } },
       "DO" : [
         { "list_remove" : { "list" : [ "node:og-group-ref" ], "item" : [ "node:og-group-ref:0" ] } },
-        { "list_add" : { "list" : [ "node:og-group-ref" ], "item" : [ "node:field-rel-source" ] } }
+        { "list_add" : { "list" : [ "node:og-group-ref" ], "item" : [ "node:field-rel-source" ] } },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : { "entity" : [ "node:field-relpro-project" ], "field" : "og_group_ref" } },
+              "DO" : [
+                { "list_add" : {
+                    "list" : [ "node:og-group-ref" ],
+                    "item" : [ "node:field-relpro-project:og-group-ref:0" ],
+                    "unique" : 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        { "drupal_message" : {
+            "message" : "Vedi \\u003Ca href=\\u0022[node:url]\\u0022\\u003Ela pagina della collaborazione creata\\u003C\\/a\\u003E.",
+            "type" : "warning"
+          }
+        }
       ]
     }
   }');
