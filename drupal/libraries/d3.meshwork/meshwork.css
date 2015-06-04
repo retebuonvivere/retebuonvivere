@@ -5,7 +5,7 @@ circle {
     fill:#333;
 }
 .org, circle.org-neverStarted {
-    stroke: #378722;
+    stroke: #ABDC0A;
     stroke-opacity: .95;
     stroke-width: 3.5px;
 }
@@ -15,7 +15,7 @@ line.org-neverStarted {
     stroke-width: 3.5px;
 }
 .project {
-    stroke: #ABDC0A;
+    stroke: #378722;
     stroke-opacity: .95;
     stroke-width: 3.5px;
 }
@@ -25,12 +25,12 @@ line.org-neverStarted.hover {
     stroke-opacity: 1;
 }
 .org.hover, .org.clicked, circle.org-neverStarted.hover {
-	stroke: #4E3FFF;
+        stroke: #3FA9FF;
 	stroke-width: 6px;
     stroke-opacity: 1;
 }
 .project.hover, .project.clicked {
-	stroke: #3FA9FF;
+	stroke: #4E3FFF;
 	stroke-width: 6px;
 	stroke-opacity: 1;
 }
