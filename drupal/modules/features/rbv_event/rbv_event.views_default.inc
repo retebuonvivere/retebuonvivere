@@ -1035,24 +1035,27 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: OG membership: OG membership from Nodo */
-  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['id'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
+  $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link pull-right';
   /* Campo: Contenuto: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
+  $handler->display->display_options['fields']['field_relpro_project']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['fields']['field_relpro_project']['label'] = '';
   $handler->display->display_options['fields']['field_relpro_project']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_relpro_project']['type'] = 'entityreference_entity_view';
@@ -1065,11 +1068,24 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
+  $handler->display->display_options['sorts']['field_rel_source_target_id']['relationship'] = 'reverse_field_rel_source_node';
   /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
+  $handler->display->display_options['sorts']['field_com_date_value2']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Contenuto: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tutti';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -1077,21 +1093,6 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
-  /* Filter criterion: OG membership: Group_type */
-  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['filters']['group_type']['value'] = array(
-    'node' => 'node',
-  );
-  /* Filter criterion: Contenuto: Tipo */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'collaboration' => 'collaboration',
-  );
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -1143,24 +1144,27 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: OG membership: OG membership from Nodo */
-  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['id'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
+  $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
+  $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'collab-link pull-right';
   /* Campo: Contenuto: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
+  $handler->display->display_options['fields']['field_relpro_project']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['fields']['field_relpro_project']['label'] = '';
   $handler->display->display_options['fields']['field_relpro_project']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_relpro_project']['type'] = 'entityreference_entity_view';
@@ -1169,15 +1173,23 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'links' => 1,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Soggetto (field_rel_source) */
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
   /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
+  $handler->display->display_options['sorts']['field_com_date_value2']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Contenuto: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tutti';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Contenuto: Pubblicato */
@@ -1185,21 +1197,6 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
-  /* Filter criterion: OG membership: Group_type */
-  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['filters']['group_type']['value'] = array(
-    'node' => 'node',
-  );
-  /* Filter criterion: Contenuto: Tipo */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'collaboration' => 'collaboration',
-  );
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -1256,6 +1253,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     t('Progetti'),
     t('pane: collaborations'),
     t('Progetti e collaborazioni'),
+    t('referencing from field_rel_source'),
     t('<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>'),
     t('pane: collab masonry'),
   );
