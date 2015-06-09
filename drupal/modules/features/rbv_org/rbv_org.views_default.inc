@@ -230,62 +230,29 @@ function rbv_org_views_default_views() {
   /* Display: pane: users count */
   $handler = $view->new_display('panel_pane', 'pane: users count', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'user';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
-  $handler->display->display_options['footer']['result']['id'] = 'result';
-  $handler->display->display_options['footer']['result']['table'] = 'views';
-  $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['label'] = 'total';
-  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-people" title="Totale persone iscritte a rbv">@total</span> persone.';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Utente: Immagine */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'rbv_image_teaser',
-    'image_link' => 'content',
-  );
-  /* Campo: Utente: Nome */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Campo: Utente: Organizzazioni */
-  $handler->display->display_options['fields']['og_user_node']['id'] = 'og_user_node';
-  $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
-  $handler->display->display_options['fields']['og_user_node']['label'] = '';
-  $handler->display->display_options['fields']['og_user_node']['alter']['max_length'] = '28';
-  $handler->display->display_options['fields']['og_user_node']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['og_user_node']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['og_user_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['og_user_node']['type'] = 'og_list_default';
-  $handler->display->display_options['fields']['og_user_node']['settings'] = array(
-    'link' => 1,
-  );
-  $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['og_user_node']['separator'] = ' ';
+  /* Campo: Utente: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['uid']['alter']['text'] = '<span class="badge badge-person" title="Totale persone">[uid]</span> <a href="persone">persone</a>.';
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -331,9 +298,7 @@ function rbv_org_views_default_views() {
     t('ultima »'),
     t('<p>Ci sono <strong>@total</strong> persone in totale.</p>'),
     t('pane: users count'),
-    t('- All -'),
-    t('total'),
-    t('<span class="badge badge-people" title="Totale persone iscritte a rbv">@total</span> persone.'),
+    t('<span class="badge badge-person" title="Totale persone">[uid]</span> <a href="persone">persone</a>.'),
     t('RBV count'),
   );
   $export['rbv_view_members'] = $view;

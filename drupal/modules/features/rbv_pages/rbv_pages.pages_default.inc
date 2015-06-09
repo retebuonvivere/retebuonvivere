@@ -2882,6 +2882,296 @@ progetti/attività',
     $display->content['new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50'] = $pane;
     $display->panels['header'][0] = 'new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
     $pane = new stdClass();
+    $pane->pid = 'new-d31acf8f-4cc9-4aa4-953d-bc4817880efe';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_8';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'd31acf8f-4cc9-4aa4-953d-bc4817880efe';
+    $display->content['new-d31acf8f-4cc9-4aa4-953d-bc4817880efe'] = $pane;
+    $display->panels['header'][1] = 'new-d31acf8f-4cc9-4aa4-953d-bc4817880efe';
+    $pane = new stdClass();
+    $pane->pid = 'new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_members-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'full',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
+    $display->content['new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f'] = $pane;
+    $display->panels['header'][2] = 'new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
+    $pane = new stdClass();
+    $pane->pid = 'new-3bf42efe-2286-4999-ac6b-5f1ac27d4232';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_netadmview_joined-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '3bf42efe-2286-4999-ac6b-5f1ac27d4232';
+    $display->content['new-3bf42efe-2286-4999-ac6b-5f1ac27d4232'] = $pane;
+    $display->panels['header'][3] = 'new-3bf42efe-2286-4999-ac6b-5f1ac27d4232';
+    $pane = new stdClass();
+    $pane->pid = 'new-6f189743-9d3c-4d04-92ea-9bbc60931db3';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_11';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '6f189743-9d3c-4d04-92ea-9bbc60931db3';
+    $display->content['new-6f189743-9d3c-4d04-92ea-9bbc60931db3'] = $pane;
+    $display->panels['header'][4] = 'new-6f189743-9d3c-4d04-92ea-9bbc60931db3';
+    $pane = new stdClass();
+    $pane->pid = 'new-ae41e07c-6708-4013-b08e-330da2e07741';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_9';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = 'ae41e07c-6708-4013-b08e-330da2e07741';
+    $display->content['new-ae41e07c-6708-4013-b08e-330da2e07741'] = $pane;
+    $display->panels['header'][5] = 'new-ae41e07c-6708-4013-b08e-330da2e07741';
+    $pane = new stdClass();
+    $pane->pid = 'new-f036e35b-6f76-4690-bd61-d146575e42af';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => '',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = 'f036e35b-6f76-4690-bd61-d146575e42af';
+    $display->content['new-f036e35b-6f76-4690-bd61-d146575e42af'] = $pane;
+    $display->panels['header'][6] = 'new-f036e35b-6f76-4690-bd61-d146575e42af';
+    $pane = new stdClass();
+    $pane->pid = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'rbv_view_lists-panel_pane_12';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 'pull-left',
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
+      'style' => 'kalacustomize',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = 'bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+    $display->content['new-bcecce42-7e7d-4dd2-bc9d-de9188fede84'] = $pane;
+    $display->panels['header'][7] = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+    $pane = new stdClass();
     $pane->pid = 'new-e6f28570-ac83-4356-8f80-e07ab7ee616c';
     $pane->panel = 'secondarycolumn1';
     $pane->type = 'fieldable_panels_pane';

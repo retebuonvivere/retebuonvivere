@@ -844,7 +844,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Contenuto: Progetto */
+  /* Campo: Contenuto: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -930,29 +930,28 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   /* Display: pane: organizzazioni count */
   $handler = $view->new_display('panel_pane', 'pane: organizzazioni count', 'panel_pane_8');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
-  $handler->display->display_options['footer']['result']['id'] = 'result';
-  $handler->display->display_options['footer']['result']['table'] = 'views';
-  $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['label'] = 'total';
-  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-org" title="Totale organizzazioni nominate">@total</span> organizzazioni.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-org" title="Totale organizzazioni">[nid]</span> <a href="organizzazioni">organizzazioni</a>.';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -986,29 +985,28 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   /* Display: pane: progetti count */
   $handler = $view->new_display('panel_pane', 'pane: progetti count', 'panel_pane_9');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
-  $handler->display->display_options['footer']['result']['id'] = 'result';
-  $handler->display->display_options['footer']['result']['table'] = 'views';
-  $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['label'] = 'total';
-  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-project" title="Totale progetti/attività">@total</span> progetti/attività.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-project" title="Totale progetti">[nid]</span> <a href="progetti">progetti</a>.';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1042,109 +1040,29 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   /* Display: pane: collaborazioni count */
   $handler = $view->new_display('panel_pane', 'pane: collaborazioni count', 'panel_pane_10');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
-  $handler->display->display_options['footer']['result']['id'] = 'result';
-  $handler->display->display_options['footer']['result']['table'] = 'views';
-  $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['label'] = 'total';
-  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-collaboration" title="Totale collaborazioni">@total</span> collaborazioni.';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Soggetto */
-  $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
-  $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
-  $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
-  $handler->display->display_options['fields']['field_rel_source']['label'] = 'Organizzazione';
-  $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
-    'link' => 1,
-  );
-  /* Campo: Campo: Date */
-  $handler->display->display_options['fields']['field_com_date_2']['id'] = 'field_com_date_2';
-  $handler->display->display_options['fields']['field_com_date_2']['table'] = 'field_data_field_com_date';
-  $handler->display->display_options['fields']['field_com_date_2']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date_2']['relationship'] = 'field_rel_source_target_id';
-  $handler->display->display_options['fields']['field_com_date_2']['label'] = 'Data';
-  $handler->display->display_options['fields']['field_com_date_2']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Campo: Contenuto: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = 'collaborazione';
-  $handler->display->display_options['fields']['view_node']['text'] = 'collabora a ';
-  /* Campo: Contenuto: Tipo di collaborazione */
-  $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
-  $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
-  $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
-  $handler->display->display_options['fields']['field_rel_categories']['label'] = 'tipo';
-  $handler->display->display_options['fields']['field_rel_categories']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_rel_categories']['alter']['text'] = '([field_rel_categories])';
-  $handler->display->display_options['fields']['field_rel_categories']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
-  /* Campo: Campo: Date */
-  $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
-  $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date']['label'] = 'Periodo';
-  $handler->display->display_options['fields']['field_com_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Campo: Contenuto: Progetto */
-  $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
-  $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
-  $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
-  $handler->display->display_options['fields']['field_relpro_project']['label'] = 'Progetto/attività';
-  $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
-    'link' => 1,
-  );
-  /* Campo: Campo: Date */
-  $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
-  $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
-  $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'field_relpro_project_target_id';
-  $handler->display->display_options['fields']['field_com_date_1']['label'] = 'Data';
-  $handler->display->display_options['fields']['field_com_date_1']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Campo: Contenuto: Titolo */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_relpro_project_target_id';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-collaboration" title="Totale collaborazioni">[nid]</span> <a href="collaborazioni">collaborazioni</a>.';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1186,30 +1104,28 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'vedi tutto';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
-  $handler->display->display_options['footer']['result']['id'] = 'result';
-  $handler->display->display_options['footer']['result']['table'] = 'views';
-  $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['label'] = 'total';
-  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-event" title="Totale eventi">@total</span> eventi.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-event" title="Totale eventi">[nid]</span> <a href="calendario/elenco">eventi</a>.';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1243,33 +1159,32 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   /* Display: pane: discussions count */
   $handler = $view->new_display('panel_pane', 'pane: discussions count', 'panel_pane_12');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Cerca';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
-  $handler->display->display_options['footer']['result']['id'] = 'result';
-  $handler->display->display_options['footer']['result']['table'] = 'views';
-  $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['label'] = 'total';
-  $handler->display->display_options['footer']['result']['content'] = '<span class="badge badge-discussion" title="Totale discussioni">@total</span> discussioni.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-discussion" title="Totale discussioni">[nid]</span> <a href="forum">discussioni</a>.';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1351,18 +1266,16 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     t('Progetto/attività'),
     t('Progetto'),
     t('pane: organizzazioni count'),
-    t('Items per page'),
-    t('seguente ›'),
-    t('<span class="badge badge-org" title="Totale organizzazioni nominate">@total</span> organizzazioni.'),
+    t('<span class="badge badge-org" title="Totale organizzazioni">[nid]</span> <a href="organizzazioni">organizzazioni</a>.'),
     t('RBV count'),
     t('pane: progetti count'),
-    t('<span class="badge badge-project" title="Totale progetti/attività">@total</span> progetti/attività.'),
+    t('<span class="badge badge-project" title="Totale progetti">[nid]</span> <a href="progetti">progetti</a>.'),
     t('pane: collaborazioni count'),
-    t('<span class="badge badge-collaboration" title="Totale collaborazioni">@total</span> collaborazioni.'),
+    t('<span class="badge badge-collaboration" title="Totale collaborazioni">[nid]</span> <a href="collaborazioni">collaborazioni</a>.'),
     t('pane: eventi count'),
-    t('<span class="badge badge-event" title="Totale eventi">@total</span> eventi.'),
+    t('<span class="badge badge-event" title="Totale eventi">[nid]</span> <a href="calendario/elenco">eventi</a>.'),
     t('pane: discussions count'),
-    t('<span class="badge badge-discussion" title="Totale discussioni">@total</span> discussioni.'),
+    t('<span class="badge badge-discussion" title="Totale discussioni">[nid]</span> <a href="forum">discussioni</a>.'),
   );
   $export['rbv_view_lists'] = $view;
 
