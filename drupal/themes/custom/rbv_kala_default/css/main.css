@@ -811,11 +811,11 @@ li.mid-1422 a:before {
   margin-left: 20px;
 }
 .badge-org {
-  background-color: #026510;
-}
-.badge-project {
   background-color: #ABDC0A;
   color: #333;
+}
+.badge-project {
+  background-color: #026510;
 }
 .badge-collaboration {
   background-color: #4E9915;
