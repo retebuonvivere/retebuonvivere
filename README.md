@@ -108,6 +108,7 @@ Present:
 Past (descending order, from last collaboration):
 * Lucia Fiorio ([linkedin profile][27]) contributed in network administration and network growth.
 * Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz.
+* Pierluigi Tacinelli [linkedin profile][35] contributed setting up the linux virtual server.
 * Sirio Marchi [ohjimijimijimi][19] contributed as drupal and git supervisor.
 * Marco Andreoli [fonzy85vr][20] contributed as (original) programmer and Agile project manager.
 
@@ -154,3 +155,4 @@ Get in touch with us:
 [32]: https://www.facebook.com/retebuonvivere
 [33]: https://plus.google.com/+RetebuonvivereOrg1
 [34]: https://waffle.io/retebuonvivere/retebuonvivere
+[35]: https://www.linkedin.com/pub/pierluigi-tacinelli/b/8a5/9a7
