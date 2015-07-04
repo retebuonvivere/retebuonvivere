@@ -153,6 +153,8 @@ function rbv_pages_default_page_manager_pages() {
   $page->access = array(
     'logic' => 'and',
     'plugins' => array(),
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'normal',
@@ -228,6 +230,8 @@ Collaborazioni',
   $page->path = 'rete/collaborazioni';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'default tab',
@@ -392,6 +396,8 @@ Collaborazioni',
   $page->access = array(
     'logic' => 'and',
     'plugins' => array(),
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'tab',
@@ -548,6 +554,8 @@ La rete nel tempo',
   $page->path = 'rete/collaboratori';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'tab',
@@ -3155,9 +3163,9 @@ progetti/attività',
           'hidden-lg' => 0,
         ),
         'pane_style' => array(
-          'pull-left' => 'pull-left',
+          'clearfix' => 'clearfix',
+          'pull-left' => 0,
           'pull-right' => 0,
-          'clearfix' => 0,
           'jumbotron' => 0,
           'well' => 0,
         ),
