@@ -132,7 +132,11 @@ function rbv_relpro_field_default_field_instances() {
   // Exported field_instance: 'node-collaboration-field_rel_categories'
   $field_instances['node-collaboration-field_rel_categories'] = array(
     'bundle' => 'collaboration',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 28,
+      ),
+    ),
     'deleted' => 0,
     'description' => '<a class="help" title="Scegliere il tipo di collaborazione, ad esempio il ruolo che l\'organizzazione svolge in questo progetto/attività. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>',
     'display' => array(
