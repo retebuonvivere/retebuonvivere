@@ -79,7 +79,7 @@ rationale of the project
 ------------------------
 [«Civil Society»][4], [«Social Economy»][5] and [Social Business][8] organizations (CSSESBOs :-) are non-profit associations, [cooperatives][23], [social enterprises][22], [social businesses][8], citizens' committees, [ethical purchasing groups][11], foundations, and many more.
 
-CSSESBOs have many projects *on the field*, and they cooperate with each other on projects. They can be associated in networks. Projects target specific problems in the path for improving social, economic, or environmental conditions.
+CSSESBOs have many projects *in the field*, and they cooperate with each other on projects. They can be associated in networks. Projects target specific problems in the path for improving social, economic, or environmental conditions.
 
 CSSESBOs cooperates also with other groups: Government and local Government organizations, and "traditional" business organizations. 
 
@@ -89,9 +89,9 @@ CSSESBOs share some high level (system level) aims/purposes and values:
 * the [commons paradigm][10] («we take care! We don't wait for things to descend from above, top-down. We do it bottom-up. We step forward, and we seek cooperation. This way only, we can achieve a social organization able to maintain sustainability»);
 * [social justice][14] («bottom-up, sustainable and joyful also imply the respect of rights, recognizing diversity but pursuing social equality and solidarity»).
 
-CSSESBOs are organized bottom-up from the individual CSSESBO to local network, up to national, regional, international and global networks. We have also cross-cutting ties. Also, projects can have local or broader scopes.
+CSSESBOs are organized bottom-up, from the individual organization to local networks, up to national, regional, international and global networks. We have also cross-cutting ties. Also, projects can have local or broader scopes.
 
-This site is a representational tool for any local level CSSESBOs network. We maintain a working site [www.retebuonvivere.org][9] which serves the local network of Verona, Italy. In the spirit of open-source community-based software, the code is here to be forked, cloned and used from other networks, and to join forces to create the tools we all need!
+This site is a representational tool for any local level CSSESBOs network. We maintain a working site [www.retebuonvivere.org][9] which serves the local network of Verona, Italy. In the spirit of open-source, community-based software, the code is here to be forked, cloned and used from other networks, and to join forces to create the tools we all need!
 
 promoters
 ---------
@@ -105,11 +105,12 @@ technical staff
 Present:
 * Miro Marchi [miromarchi][21] contributes as drupal configurator and maintainer for this project. Please bear in mind that I am an anthropology PhD candidate, not a programmer. So be patient please, I'm a newbie! This website is part of my thesis.
 
-Past:
-* Lucia Fiorio ([linkedin profile][27]) contributed in network administration and network growth
-* Sirio Marchi [ohjimijimijimi][19] contributed as drupal and git supervisor
-* Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz
-* Marco Andreoli [fonzy85vr][20] contributed as programmer and Agile project manager
+Past (descending order, from last collaboration):
+* Lucia Fiorio ([linkedin profile][27]) contributed in network administration and network growth.
+* Roberto Previdi [hariseldon78][26] contributed as javascript programmer for d3js viz.
+* Pierluigi Tacinelli [linkedin profile][35] contributed setting up the linux virtual server.
+* Sirio Marchi [ohjimijimijimi][19] contributed as drupal and git supervisor.
+* Marco Andreoli [fonzy85vr][20] contributed as (original) programmer and Agile project manager.
 
 contacts
 --------
@@ -154,3 +155,4 @@ Get in touch with us:
 [32]: https://www.facebook.com/retebuonvivere
 [33]: https://plus.google.com/+RetebuonvivereOrg1
 [34]: https://waffle.io/retebuonvivere/retebuonvivere
+[35]: https://www.linkedin.com/pub/pierluigi-tacinelli/b/8a5/9a7
