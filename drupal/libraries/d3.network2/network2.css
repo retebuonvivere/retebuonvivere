@@ -16,11 +16,15 @@ circle.node.searched {
 }
 .link {
     stroke:#999;
+/*
     stroke-width:2px;
     stroke-opacity:0.12;
+*/
 }
 circle.node {
     stroke-width:3px;
+    stroke: #fff;
+    fill: #ABDC0A;
 }
 text {
     font-size:13px;

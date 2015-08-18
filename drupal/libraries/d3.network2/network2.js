@@ -27,61 +27,64 @@
 	    return !isNaN(d.getTime());
     };
     
-    function setStartEnd(object, timefield)
-	{
-		var s=object[timefield];
-		if (s==null)
-		{
-			object.start=new Date(0,0,0,0,0,0);
-			object.end=now;
-		}
-		else
-		{
-			var dateComponents=s.split(",");
-			object.start=new Date(dateComponents[0]);
-			object.end=new Date(dateComponents[1]);
-		}
-	}
- 
-	function setAge(object)
-	{
-		if (!dateValid(object.start) || !dateValid(object.end))
-		{
-			object.age=daysToMs(365);
-		}
-		else if (dateEquals(object.start,object.end) || object.end.getTime()>now.getTime())
-		{
-			object.age=1;
-		}
-		else 
-		{
-			object.age=now.getTime()-object.end.getTime();
-		}
-	}
-    
-    var maxDays=200;	
-	var min=70; /* Min and max distance */
-	var max=260;
-	var b=Math.E;
-	var k=daysToMs(maxDays)/Math.log(max-min);
+ //    function setStartEnd(object, timefield)
+	// {
+	// 	var s=object[timefield];
+	// 	if (s==null)
+	// 	{
+	// 		object.start=new Date(0,0,0,0,0,0);
+	// 		object.end=now;
+	// 	}
+	// 	else
+	// 	{
+	// 		var dateComponents=s.split(",");
+	// 		object.start=new Date(dateComponents[0]);
+	// 		object.end=new Date(dateComponents[1]);
+	// 	}
+ //        console.log(s, object.start, object.end);
+	// }
 
-	var distanceFromAge=function(age){
-    	var v=Math.pow(b,age/k)+min;
-    	v=Math.min(max,Math.max(min,v));
-    	return v;
-    };
+ 
+	// function setAge(object)
+	// {
+	// 	if (!dateValid(object.start) || !dateValid(object.end))
+	// 	{
+	// 		object.age=daysToMs(365);
+	// 	}
+	// 	else if (dateEquals(object.start,object.end) || object.end.getTime()>now.getTime())
+	// 	{
+	// 		object.age=1;
+	// 	}
+	// 	else 
+	// 	{
+	// 		object.age=now.getTime()-object.end.getTime();
+	// 	}
+	// }
     
-    var distanceForLink=function(link){
-    	return distanceFromAge(link.age);
-    }
+    // var maxDays=200;	
+	// var min=70; /* Min and max distance */
+	// var max=260;
+	// var b=Math.E;
+	// var k=daysToMs(maxDays)/Math.log(max-min);
+
+	// var distanceFromAge=function(age){
+ //    	var v=Math.pow(b,age/k)+min;
+ //    	v=Math.min(max,Math.max(min,v));
+ //    	return v;
+ //    };
     
+ //    var distanceForLink=function(link){
+ //    	return distanceFromAge(link.age);
+ //    }
+
     var network_force = d3.layout.force()
       .size([network_width, network_height])
-      .charge(-250)
-      .friction(0.92)
+      .charge(-200)
+      .friction(0.8)
       .gravity(0.1)
-      .linkDistance(110)
+      .linkDistance(110)      
       .on("tick", tick);
+
 
     var zoomListener = d3.behavior.zoom()
         .scaleExtent([-10, 10])
@@ -97,22 +100,20 @@
     var network_nodes = settings.nodes,
         network_links = settings.links;
 
-    for (var i=0;i<network_links.length;i++){
-    	var link=network_links[i];
-		setStartEnd(link,"color");
-		setAge(link);
-	}
 
-    // Add an attribute to each node that is a source node so that we can use that attribute to style them differently.
-    network_links.map(function(d) { network_nodes[d.target].is_source = true; });
 
-//    network_force.linkDistance(distanceForLink)
+ //    for (var i=0;i<network_links.length;i++){
+ //    	var link=network_links[i];
+	// 	setStartEnd(link,"content");
+	// 	setAge(link);
+	// }
 
-	for (var i=0;i<network_nodes.length;i++){
-		var node=network_nodes[i];
-		setStartEnd(node,"content");
-		setAge(node);	
-	}	
+
+	// for (var i=0;i<network_nodes.length;i++){
+	// 	var node=network_nodes[i];
+	// 	setStartEnd(node,"content");
+	// 	setAge(node);	
+	// }	
     
     var network_svg = d3.select('#' + settings.id).append("svg")
         .attr("width", network_width)
@@ -130,18 +131,37 @@
     var network_graph = network_svg.append("g")
         .attr("class", "data");
 
+    var minWeight = d3.min(network_links, function(d) { return d.color; });
+    var maxWeight = d3.max(network_links, function(d) { return d.color; });
+    var normalizeWeight = d3.scale.linear()
+        .domain([1,maxWeight])
+        .range([0.1,1]);
+    
+    var normInvertedWeight = d3.scale.linear()
+        .domain([1,maxWeight])
+        .range([1,0.1]);
+    
     network_force
         .nodes(network_nodes)
         .links(network_links)
+        .linkDistance(function(l){ return normInvertedWeight(l.color)*100;})
+        // .linkStrength(function(l){ return normalizeWeight(l.color) })
         .start();
+
 
     var network_link = network_graph.selectAll("line.link")
         .data(network_links)
       .enter().append("line")
-        .attr("class", "link");
+        .attr("class", "link")
+        //graphapi_color =>  number of collaborations per relation => relation weight
+        .attr("stroke", "#999")
+        .attr("stroke-width", function(d){
+            return (d.color*d.color)/2+0.5;             
+        })
+        .style("stroke-opacity", function(d){
+            return normalizeWeight(d.color);
+        });
 
-    var opacityMax=1;
-    var opacityMin=0.3;
     
     function linearRelation(px,py,qx,qy,y)
     {
@@ -152,15 +172,15 @@
     	return xLimited;	
     }
     
-    var opacityForLink=function(link)
-    {
-	    var o=opacityMin;
-    	var O=opacityMax;
-    	var m=min;
-    	var M=max;
-    	var d=distanceFromAge(link.age)
-    	return linearRelation(o,M,O,m,d);
-    }
+    // var opacityForLink=function(link)
+    // {
+	   //  var o=opacityMin;
+    // 	var O=opacityMax;
+    // 	var m=min;
+    // 	var M=max;
+    // 	var d=distanceFromAge(link.age)
+    // 	return linearRelation(o,M,O,m,d);
+    // }
 //    network_link.style("stroke-opacity",opacityForLink)
 
     var forceDrag = network_force.drag()
@@ -177,15 +197,18 @@
       .enter().append("svg:g")
         .attr("class", "node")
         .call(forceDrag);
+    
+    var opacityMax=1;
+    var opacityMin=0.2;
         
-	var opacityForNode=function(node)
-    {
-	    var o=opacityMin;
-    	var O=opacityMax;
-    	var ageMin=0;
-    	var ageMax=daysToMs(365);
-    	return linearRelation(o,ageMax,O,ageMin,node.age);
-    }
+	// var opacityForNode=function(node)
+ //    {
+	//     var o=opacityMin;
+ //    	var O=opacityMax;
+ //    	var ageMin=0;
+ //    	var ageMax=daysToMs(365);
+ //    	return linearRelation(o,ageMax,O,ageMin,node.age);
+ //    }
 
 //  These lines are useful for logging    
 //	for (var i=0;i<network_nodes.length;i++){
@@ -208,11 +231,9 @@
 
     network_node.append("svg:circle")
       .attr("class", "node")
-      .attr("r", function(d) { return (d.is_source) ? 9 : 9; })
-      .style("fill", function (d) { return (d.is_source) ? d3.hsl('#ABDC0A') : d3.hsl('#ABDC0A'); })
-      .style("stroke", function(d) { return (d.is_source) ? d3.hsl('#fff') : d3.hsl('#fff'); })
-      .style("fill-opacity", opacityForNode)
-      .style("stroke-opacity", opacityForNode);
+      .attr("r", 9);
+      //.style("fill-opacity", opacityForNode)
+      //.style("stroke-opacity", opacityForNode);
       
     network_node.append("title")
 	  .text(function(d) {return replaceHtmlSpecialChars(d.name);});
@@ -224,7 +245,7 @@
         .attr("dx", 10)
         .attr("dy", 0)
         .text(function(d) { return replaceHtmlSpecialChars((d.name).substring(0,20)+"...")})
-        .attr("fill-opacity", opacityForNode);
+        .attr("fill-opacity", 0.9);
 
     function tick() {
         network_link.attr("x1", function(d) { return translation[0] + scaleFactor*d.source.x; })

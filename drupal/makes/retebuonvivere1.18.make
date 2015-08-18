@@ -1,7 +1,7 @@
 api = 2
 core = 7.x
 
-; retebuonvivere make file (not tested)
+; retebuonvivere make file (not tested) + update rules and relation patch
 
 projects[drupal][version] = 7.34
 
@@ -93,15 +93,16 @@ projects[rdfx][subdir] = contrib
 projects[rdfx][patch][1176666] = https://drupal.org/files/find-arc-library-correctly-1176666-14.patch
 projects[role_delegation][version] = 1.1
 projects[role_delegation][subdir] = contrib
-projects[rules][version] = 2.6
+projects[rules][version] = 2.9
 projects[rules][subdir] = contrib
 projects[rules_conditional][version] = 1.0-beta2
 projects[rules_conditional][subdir] = contrib
 projects[relation][version] = 1.0-rc4
 projects[relation][subdir] = contrib
-; patching relation to allow fetch entity by property let's try the new patch
+; patching relation to allow fetch entity by property let's try the new new patch
 ; projects[relation][patch][1302788] = https://drupal.org/files/relation-query_endpoints-1302788-16.patch
-projects[relation][patch][1302788] = https://drupal.org/files/issues/relation-query_endpoints-1302788-24.patch
+; projects[relation][patch][1302788] = https://drupal.org/files/issues/relation-query_endpoints-1302788-24.patch
+projects[relation][patch][1302788] = https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch
 projects[schemaorg][version] = 1.0-beta4
 projects[schemaorg][subdir] = contrib
 projects[smart_trim][version] = 1.4

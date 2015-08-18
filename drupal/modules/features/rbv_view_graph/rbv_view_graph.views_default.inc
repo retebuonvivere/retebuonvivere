@@ -13,7 +13,7 @@ function rbv_view_graph_views_default_views() {
   $view = new view();
   $view->name = 'rbv_view_graph';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'RBV';
   $view->base_table = 'node';
   $view->human_name = 'RBV graph';
   $view->core = 7;
@@ -228,6 +228,8 @@ function rbv_view_graph_views_default_views() {
 
   /* Display: pane: relation graph */
   $handler = $view->new_display('panel_pane', 'pane: relation graph', 'panel_pane_2');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
@@ -245,25 +247,27 @@ function rbv_view_graph_views_default_views() {
       'field_rel_collaborations' => 'link:color',
     ),
   );
-  $handler->display->display_options['style_options']['graphapi']['width'] = '800';
-  $handler->display->display_options['style_options']['graphapi']['height'] = '600';
+  $handler->display->display_options['style_options']['graphapi']['width'] = '1024';
+  $handler->display->display_options['style_options']['graphapi']['height'] = '800';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Contenuto: Relation: coopera con (node ↔ node) */
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['id'] = 'relation_cooperates_with_node';
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['field'] = 'relation_cooperates_with_node';
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_left'] = 0;
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_right'] = 0;
   /* Relationship: Contenuto: Relation: coopera con (node → relation) */
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['id'] = 'relation_base_left_cooperates_with';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['field'] = 'relation_base_left_cooperates_with';
+  $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['required'] = TRUE;
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['entity_deduplication_left'] = 1;
+  /* Relationship: Relation: Relation: coopera con (relation → node) */
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['id'] = 'relation_base_cooperates_with_node';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['field'] = 'relation_base_cooperates_with_node';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['relationship'] = 'relation_base_left_cooperates_with';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['label'] = 'target';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['entity_deduplication_right'] = 1;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Contenuto: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -307,14 +311,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
@@ -322,14 +326,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
   $handler->display->display_options['fields']['path_1']['table'] = 'node';
   $handler->display->display_options['fields']['path_1']['field'] = 'path';
-  $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['path_1']['label'] = '';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
   /* Campo: Campo: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['field_com_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_com_date_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_date_1']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
@@ -346,12 +350,10 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_rel_collaborations']['table'] = 'field_data_field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['field'] = 'field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['relationship'] = 'relation_base_left_cooperates_with';
+  $handler->display->display_options['fields']['field_rel_collaborations']['group_type'] = 'count';
   $handler->display->display_options['fields']['field_rel_collaborations']['label'] = '';
   $handler->display->display_options['fields']['field_rel_collaborations']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_rel_collaborations']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_rel_collaborations']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_rel_collaborations']['separator'] = ', ';
   $handler->display->display_options['pane_category']['name'] = 'RBV graph';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -400,6 +402,8 @@ function rbv_view_graph_views_default_views() {
   $handler = $view->new_display('panel_pane', 'pane: org relation graph', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Rete';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'graphapi_style';
   $handler->display->display_options['style_options']['engine'] = 'd3';
@@ -425,18 +429,20 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Contenuto: Relation: coopera con (node ↔ node) */
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['id'] = 'relation_cooperates_with_node';
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['field'] = 'relation_cooperates_with_node';
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_left'] = 0;
-  $handler->display->display_options['relationships']['relation_cooperates_with_node']['entity_deduplication_right'] = 0;
   /* Relationship: Contenuto: Relation: coopera con (node → relation) */
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['id'] = 'relation_base_left_cooperates_with';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['table'] = 'node';
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['field'] = 'relation_base_left_cooperates_with';
+  $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['required'] = TRUE;
   $handler->display->display_options['relationships']['relation_base_left_cooperates_with']['entity_deduplication_left'] = 1;
+  /* Relationship: Relation: Relation: coopera con (relation → node) */
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['id'] = 'relation_base_cooperates_with_node';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['field'] = 'relation_base_cooperates_with_node';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['relationship'] = 'relation_base_left_cooperates_with';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['label'] = 'target';
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_base_cooperates_with_node']['entity_deduplication_right'] = 1;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Contenuto: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -480,14 +486,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
@@ -495,14 +501,14 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
   $handler->display->display_options['fields']['path_1']['table'] = 'node';
   $handler->display->display_options['fields']['path_1']['field'] = 'path';
-  $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['path_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['path_1']['label'] = '';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
   /* Campo: Campo: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
-  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'relation_cooperates_with_node';
+  $handler->display->display_options['fields']['field_com_date_1']['relationship'] = 'relation_base_cooperates_with_node';
   $handler->display->display_options['fields']['field_com_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_com_date_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_date_1']['alter']['text'] = '[field_com_date_1-value],[field_com_date_1-value2]';
@@ -519,14 +525,12 @@ function rbv_view_graph_views_default_views() {
   $handler->display->display_options['fields']['field_rel_collaborations']['table'] = 'field_data_field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['field'] = 'field_rel_collaborations';
   $handler->display->display_options['fields']['field_rel_collaborations']['relationship'] = 'relation_base_left_cooperates_with';
+  $handler->display->display_options['fields']['field_rel_collaborations']['group_type'] = 'count';
   $handler->display->display_options['fields']['field_rel_collaborations']['label'] = '';
   $handler->display->display_options['fields']['field_rel_collaborations']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_rel_collaborations']['alter']['text'] = '[field_rel_collaborations]';
   $handler->display->display_options['fields']['field_rel_collaborations']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_rel_collaborations']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_rel_collaborations']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_rel_collaborations']['separator'] = ', ';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Contenuto: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -634,6 +638,7 @@ function rbv_view_graph_views_default_views() {
     t('RBV graph'),
     t('pane: relation graph'),
     t('coopera con'),
+    t('target'),
     t('pane: ER project graph'),
     t('Rete'),
     t('Tutti'),
