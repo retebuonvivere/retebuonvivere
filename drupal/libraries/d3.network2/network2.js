@@ -144,8 +144,8 @@
     network_force
         .nodes(network_nodes)
         .links(network_links)
-        .linkDistance(function(l){ return normInvertedWeight(l.color)*100;})
-        // .linkStrength(function(l){ return normalizeWeight(l.color) })
+        .linkDistance(function(l){ return normInvertedWeight(l.color)*120+8;})
+        //.linkStrength(function(l){ return normalizeWeight(l.color);})
         .start();
 
 
@@ -156,10 +156,10 @@
         //graphapi_color =>  number of collaborations per relation => relation weight
         .attr("stroke", "#999")
         .attr("stroke-width", function(d){
-            return (d.color*d.color)/2+0.5;             
+            return (normalizeWeight(d.color)*10);             
         })
         .style("stroke-opacity", function(d){
-            return normalizeWeight(d.color);
+            return normalizeWeight(d.color)+0.1;
         });
 
     
