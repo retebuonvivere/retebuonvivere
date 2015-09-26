@@ -45,7 +45,8 @@ function rbv_relation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-cooperates_with-field_rel_collaborations'
+  // Exported field_instance:
+  // 'relation-cooperates_with-field_rel_collaborations'
   $field_instances['relation-cooperates_with-field_rel_collaborations'] = array(
     'bundle' => 'cooperates_with',
     'default_value' => NULL,

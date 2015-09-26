@@ -10,7 +10,8 @@
 function rbv_org_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_membership_period-field_com_date'
+  // Exported field_instance:
+  // 'field_collection_item-field_membership_period-field_com_date'
   $field_instances['field_collection_item-field_membership_period-field_com_date'] = array(
     'bundle' => 'field_membership_period',
     'deleted' => 0,
@@ -25,6 +26,7 @@ function rbv_org_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -58,7 +60,8 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_membership_period-field_com_description'
+  // Exported field_instance:
+  // 'field_collection_item-field_membership_period-field_com_description'
   $field_instances['field_collection_item-field_membership_period-field_com_description'] = array(
     'bundle' => 'field_membership_period',
     'default_value' => NULL,
@@ -94,7 +97,8 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_membership_period-field_membership_role'
+  // Exported field_instance:
+  // 'field_collection_item-field_membership_period-field_membership_role'
   $field_instances['field_collection_item-field_membership_period-field_membership_role'] = array(
     'bundle' => 'field_membership_period',
     'default_value' => NULL,
@@ -194,6 +198,7 @@ function rbv_org_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -213,6 +218,7 @@ function rbv_org_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -226,6 +232,7 @@ function rbv_org_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -1104,7 +1111,8 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'og_membership-rbv_membership_default-field_membership_period'
+  // Exported field_instance:
+  // 'og_membership-rbv_membership_default-field_membership_period'
   $field_instances['og_membership-rbv_membership_default-field_membership_period'] = array(
     'bundle' => 'rbv_membership_default',
     'default_value' => NULL,

@@ -30,10 +30,10 @@ function rbv_view_graph_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Vedi la rete');
-
 
   return $menu_links;
 }

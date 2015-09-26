@@ -17,7 +17,6 @@ function rbv_relation_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'endpoints',
-    'foreign keys' => array(),
     'indexes' => array(
       'relation' => array(
         0 => 'entity_type',
@@ -39,14 +38,6 @@ function rbv_relation_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_rel_collaborations',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

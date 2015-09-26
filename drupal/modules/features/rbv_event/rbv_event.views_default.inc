@@ -44,7 +44,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Se tutti usassimo un calendario condiviso, potremmo ridurre le sovrapposizioni ed iniziare cicli di eventi che si rimandano l\'un l\'altro. In questo modo, anche, la società civile apparirebbe meno frammentata e più connessa. 
 Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, passati e futuri del tuo gruppo.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -53,7 +53,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Campo: Contenuto: Quando */
+  /* Campo: Content: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -70,7 +70,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Campo: Contenuto: Indirizzo */
+  /* Campo: Content: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -83,14 +83,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
       'address' => 'address',
     ),
   );
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -133,14 +133,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -241,7 +241,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
 </ul>';
   $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Quando */
+  /* Campo: Content: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -258,7 +258,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Campo: Contenuto: Indirizzo */
+  /* Campo: Content: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -272,14 +272,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     ),
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
+  /* Sort criterion: Content: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -287,7 +287,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -316,7 +316,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'skip_blank_dates' => 1,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -325,7 +325,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Campo: Contenuto: Quando */
+  /* Campo: Content: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -342,7 +342,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Campo: Contenuto: Indirizzo */
+  /* Campo: Content: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -355,7 +355,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
       'address' => 'address',
     ),
   );
-  /* Campo: Campo: Descrizione */
+  /* Campo: Field: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
@@ -363,7 +363,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['field_com_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -371,14 +371,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Data: Date (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -412,7 +412,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: OG membership: OG membership from Nodo */
+  /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
@@ -430,7 +430,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -481,12 +481,12 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'skip_blank_dates' => 1,
   );
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: OG membership: OG membership from Nodo */
+  /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -495,7 +495,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Campo: Contenuto: Quando */
+  /* Campo: Content: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -512,7 +512,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Campo: Contenuto: Indirizzo */
+  /* Campo: Content: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -525,7 +525,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
       'address' => 'address',
     ),
   );
-  /* Campo: Campo: Descrizione */
+  /* Campo: Field: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
@@ -547,7 +547,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -555,14 +555,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Data: Date (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -668,11 +668,11 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  /* Relationship: OG membership: OG membership from Nodo */
+  /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Sort criterion: Contenuto: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
@@ -689,7 +689,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -757,13 +757,13 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Quando */
+  /* Campo: Content: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -776,7 +776,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Contenuto: Settori */
+  /* Campo: Content: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -785,7 +785,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -798,14 +798,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Data: Date (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -873,13 +873,13 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Quando */
+  /* Campo: Content: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -892,7 +892,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Contenuto: Settori */
+  /* Campo: Content: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -900,14 +900,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['field_com_categories']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
+  /* Sort criterion: Content: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -920,7 +920,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -966,14 +966,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
+  /* Sort criterion: Field: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -986,7 +986,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1041,7 +1041,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1051,7 +1051,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Progetto di riferimento */
+  /* Campo: Content: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1064,19 +1064,19 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'links' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Soggetto (field_rel_source) */
+  /* Sort criterion: Content: Soggetto (field_rel_source) */
   $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
   $handler->display->display_options['sorts']['field_rel_source_target_id']['relationship'] = 'reverse_field_rel_source_node';
-  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
+  /* Sort criterion: Field: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -1088,7 +1088,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1150,7 +1150,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1160,7 +1160,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Campo: Contenuto: Progetto di riferimento */
+  /* Campo: Content: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1173,14 +1173,14 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
     'links' => 1,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
+  /* Sort criterion: Field: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -1192,7 +1192,7 @@ Inizia tu stesso ad usare questo calendario, inserisci gli eventi presenti, pass
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

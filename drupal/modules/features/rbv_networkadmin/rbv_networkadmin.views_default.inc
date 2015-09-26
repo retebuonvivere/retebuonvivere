@@ -47,31 +47,31 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['label'] = 'total';
   $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni partecipanti: <strong>@total</strong>';
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sort criterion: Contenuto: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'org' => 'org',
   );
-  /* Filter criterion: Contenuto: Author uid */
+  /* Filter criterion: Content: Author uid */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'node';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -111,7 +111,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Nid */
+  /* Campo: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -210,7 +210,7 @@ function rbv_networkadmin_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Contenuto: Autore */
+  /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -224,7 +224,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['field'] = 'field_relpro_project_target_id';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['label'] = 'e referenced from field_relpro_project';
-  /* Campo: Contenuto: Soggetto */
+  /* Campo: Content: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -232,13 +232,13 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Contenuto: Post date */
+  /* Campo: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'il giorno';
   $handler->display->display_options['fields']['created']['date_format'] = 'panopoly_day';
-  /* Campo: Contenuto: Organizzazione promotrice */
+  /* Campo: Content: Organizzazione promotrice */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -248,7 +248,7 @@ function rbv_networkadmin_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Campo: Contenuto: Progetto di riferimento */
+  /* Campo: Content: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -256,36 +256,36 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Contenuto: Tipo di collaborazione */
+  /* Campo: Content: Tipo di collaborazione */
   $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['label'] = 'con il ruolo di';
   $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
-  /* Campo: Campo: Descrizione */
+  /* Campo: Field: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['label'] = 'e la descrizione';
-  /* Sort criterion: Contenuto: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'collaboration' => 'collaboration',
   );
-  /* Filter criterion: Contenuto: Author uid */
+  /* Filter criterion: Content: Author uid */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'node';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';

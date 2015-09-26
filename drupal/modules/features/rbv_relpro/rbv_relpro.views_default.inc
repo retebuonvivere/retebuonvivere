@@ -44,7 +44,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['field'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['label'] = 'Content referencing nid from field_relpro_project';
-  /* Campo: Contenuto: Soggetto */
+  /* Campo: Content: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -54,14 +54,14 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -71,7 +71,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -106,7 +106,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['relationships']['field_rel_source_target_id']['relationship'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['relationships']['field_rel_source_target_id']['label'] = 'Content referenced from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Logo */
+  /* Campo: Content: Logo */
   $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';
@@ -118,7 +118,7 @@ function rbv_relpro_views_default_views() {
     'image_style' => 'rbv_image_icon',
     'image_link' => 'content',
   );
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -129,14 +129,14 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Logo (field_com_logo:fid) */
+  /* Sort criterion: Content: Logo (field_com_logo:fid) */
   $handler->display->display_options['sorts']['field_com_logo_fid']['id'] = 'field_com_logo_fid';
   $handler->display->display_options['sorts']['field_com_logo_fid']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['sorts']['field_com_logo_fid']['field'] = 'field_com_logo_fid';
   $handler->display->display_options['sorts']['field_com_logo_fid']['relationship'] = 'field_rel_source_target_id';
   $handler->display->display_options['sorts']['field_com_logo_fid']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -148,7 +148,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -156,7 +156,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -190,7 +190,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Contenuto: Titolo */
+  /* Campo: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -198,14 +198,14 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
+  /* Sort criterion: Content: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['relationship'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Contenuto: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -217,7 +217,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Contenuto: Pubblicato */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -225,7 +225,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Contenuto: Tipo */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
