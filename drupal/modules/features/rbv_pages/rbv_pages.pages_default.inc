@@ -468,6 +468,134 @@ La rete nel tempo',
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1443887577,
+      'uid' => '1',
+      'title' => '',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '25',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 0,
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1411324731',
+      'changed' => 1443887577,
+      'uuid' => '',
+      'language' => '',
+      'current_vid' => '1593',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div class="callout callout-info">
+    <h4>La rete nel tempo</h4>
+    <p>Per prendersi cura dei beni comuni, le organizzazioni della società civile e dell\'economia solidale collaborano spesso sulla base di progetti e attività specifiche. In questa pagina organizzazioni e progetti/attività sono disegnati come linee nel tempo per mostrare la temporalità delle collaborazioni.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+
+<svg width="120" height="80">
+    <g>
+        <g transform="translate(10,12)">
+            <line x1="10" y1="12" x2="100" y2="12" style="stroke: #ABDC0A; stroke-width: 4px;"></line>
+            <text dx="10" dy="1" font-size="13">Organizzazione</text>
+        </g>
+        <g transform="translate(10,36)">
+            <line x1="10" y1="30" x2="100" y2="30"  style="stroke: #378722; stroke-width: 4px;"></line>
+            <text dx="10" dy="18" font-size="13">Progetto/attività</text>
+        </g>
+    </g>
+</svg>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1593',
+        'timestamp' => '1443887558',
+        'uid' => '1',
+        'title' => '',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '25',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1411324731',
+        'changed' => '1443887558',
+        'uuid' => '',
+        'language' => '',
+        'current_vid' => '1593',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div class="callout callout-info">
+    <h4>La rete nel tempo</h4>
+    <p>Per prendersi cura dei beni comuni, le organizzazioni della società civile e dell\'economia solidale collaborano spesso sulla base di progetti e attività specifiche. In questa pagina organizzazioni e progetti/attività sono disegnati come linee nel tempo per mostrare la temporalità delle collaborazioni.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+
+<svg width="120" height="80">
+    <g>
+        <g transform="translate(10,12)">
+            <line x1="10" y1="12" x2="100" y2="12" style="stroke: #ABDC0A; stroke-width: 5px;"></line>
+            <text dx="10" dy="1" font-size="13">Organizzazione</text>
+        </g>
+        <g transform="translate(10,36)">
+            <line x1="10" y1="30" x2="100" y2="30"  style="stroke: #378722; stroke-width: 5px;"></line>
+            <text dx="10" dy="18" font-size="13">Progetto/attività</text>
+        </g>
+    </g>
+</svg>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<div class="callout callout-info">
+    <h4>La rete nel tempo</h4>
+    <p>Per prendersi cura dei beni comuni, le organizzazioni della società civile e dell\'economia solidale collaborano spesso sulla base di progetti e attività specifiche. In questa pagina organizzazioni e progetti/attività sono disegnati come linee nel tempo per mostrare la temporalità delle collaborazioni.</p>
+</div>
+<div class="callout callout-warning">
+    <h4>I dati</h4>
+    <p>La rete è disegnata in base ai dati inseriti in retebuonvivere, per questo <strong>è davvero importante la partecipazione di tutti nell\'inserimento dei dati</strong>.</p>
+</div>
+
+<svg width="120" height="80">
+    <g>
+        <g transform="translate(10,12)">
+            <line x1="10" y1="12" x2="100" y2="12" style="stroke: #ABDC0A; stroke-width: 5px;"></line>
+            <text dx="10" dy="1" font-size="13">Organizzazione</text>
+        </g>
+        <g transform="translate(10,36)">
+            <line x1="10" y1="30" x2="100" y2="30"  style="stroke: #378722; stroke-width: 5px;"></line>
+            <text dx="10" dy="18" font-size="13">Progetto/attività</text>
+        </g>
+    </g>
+</svg>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1593',
+      'vid' => '1594',
+    ),
   );
   $pane->cache = array();
   $pane->style = array(
