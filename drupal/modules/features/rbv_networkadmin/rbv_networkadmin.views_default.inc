@@ -13,7 +13,7 @@ function rbv_networkadmin_views_default_views() {
   $view = new view();
   $view->name = 'rbv_netadmview_joined';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'RBV';
   $view->base_table = 'node';
   $view->human_name = 'rbv netadmview joined';
   $view->core = 7;
@@ -132,6 +132,62 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: pane: adesioni data */
+  $handler = $view->new_display('panel_pane', 'pane: adesioni data', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Data adesioni';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'created' => 'created',
+  );
+  $handler->display->display_options['style_options']['default'] = 'created';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Organizzazione';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Campo: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Data di adesione';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'Y-m-d';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'panopoly_time';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['rbv_netadmview_joined'] = array(
     t('Master'),
     t('Network admin - elenco delle organizzazioni che partecipano'),
@@ -150,13 +206,17 @@ function rbv_networkadmin_views_default_views() {
     t('pane: partecipanti count'),
     t('<span class="badge badge-participant" title="Totale organizzazioni partecipanti (iscritte a rbv)">[nid]</span> <a href="esplora?type%5B%5D=org">org. partecipanti</a>.'),
     t('RBV count'),
+    t('pane: adesioni data'),
+    t('Data adesioni'),
+    t('Organizzazione'),
+    t('Data di adesione'),
   );
   $export['rbv_netadmview_joined'] = $view;
 
   $view = new view();
   $view->name = 'rbv_netadmview_organon';
   $view->description = 'Organizzazioni nominate a cui inviare una mail';
-  $view->tag = 'default';
+  $view->tag = 'RBV';
   $view->base_table = 'node';
   $view->human_name = 'rbv netadmview organon';
   $view->core = 7;

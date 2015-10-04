@@ -13,7 +13,7 @@ function rbv_event_views_default_views() {
   $view = new view();
   $view->name = 'rbv_view_calendar';
   $view->description = '';
-  $view->tag = 'Calendar';
+  $view->tag = 'RBV';
   $view->base_table = 'node';
   $view->human_name = 'RBV Calendar';
   $view->core = 7;

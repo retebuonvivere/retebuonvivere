@@ -271,7 +271,7 @@ function rbv_view_explore_views_default_views() {
   $view = new view();
   $view->name = 'rbv_view_lists';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'RBV';
   $view->base_table = 'node';
   $view->human_name = 'RBV content lists';
   $view->core = 7;
