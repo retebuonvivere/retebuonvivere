@@ -141,6 +141,78 @@ function rbv_networkadmin_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1444917673,
+      'uid' => '1',
+      'title' => 'Gruppo di sviluppo',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '21',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 0,
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1406542089',
+      'changed' => 1444917673,
+      'uuid' => '',
+      'language' => '',
+      'current_vid' => '1596',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a> Code repository</p>
+<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239;"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a> Team communication</p>',
+            'format' => 'panopoly_html_text',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1596',
+        'timestamp' => '1444917512',
+        'uid' => '1',
+        'title' => 'Gruppo di sviluppo',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '21',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1406542089',
+        'changed' => '1444917512',
+        'uuid' => '',
+        'language' => '',
+        'current_vid' => '1596',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a></p>
+<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239;"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a></p>',
+              'format' => 'panopoly_html_text',
+              'safe_value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a></p>
+<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a></p>
+',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1596',
+      'vid' => '1597',
+    ),
   );
   $pane->cache = array();
   $pane->style = array(
@@ -497,6 +569,73 @@ function rbv_networkadmin_default_page_manager_pages() {
   $display->content['new-0b870323-b0d5-431b-b469-52927c9138f8'] = $pane;
   $display->panels['footer'][7] = 'new-0b870323-b0d5-431b-b469-52927c9138f8';
   $pane = new stdClass();
+  $pane->pid = 'new-a762898d-af94-4bbb-9df6-b8d028548a97';
+  $pane->panel = 'footer';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'fpid:31';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'bundle' => 'text',
+      'language' => 'und',
+      'is_new' => TRUE,
+      'title' => '',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 0,
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'vid' => '1598',
+      'current_vid' => '',
+      'revision' => 1,
+      'fpid' => '31',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<p><a href="/networkadmin/hanno-aderito" class="btn btn-default">Tabelle organizzazioni partecipanti e nominate</a></p>',
+            'format' => 'panopoly_html_text',
+          ),
+        ),
+      ),
+      'log' => '',
+      'created' => 1444917781,
+      'timestamp' => 1444917781,
+      'changed' => 1444917781,
+      'uuid' => '',
+      'uid' => '1',
+      'vuuid' => '',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'clearfix' => 'clearfix',
+        'pull-left' => 0,
+        'pull-right' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 8;
+  $pane->locks = array();
+  $pane->uuid = 'a762898d-af94-4bbb-9df6-b8d028548a97';
+  $display->content['new-a762898d-af94-4bbb-9df6-b8d028548a97'] = $pane;
+  $display->panels['footer'][8] = 'new-a762898d-af94-4bbb-9df6-b8d028548a97';
+  $pane = new stdClass();
   $pane->pid = 'new-4865779f-b118-4aa4-a60c-d54ffb758da4';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
@@ -514,11 +653,11 @@ function rbv_networkadmin_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 9;
   $pane->locks = array();
   $pane->uuid = '4865779f-b118-4aa4-a60c-d54ffb758da4';
   $display->content['new-4865779f-b118-4aa4-a60c-d54ffb758da4'] = $pane;
-  $display->panels['footer'][8] = 'new-4865779f-b118-4aa4-a60c-d54ffb758da4';
+  $display->panels['footer'][9] = 'new-4865779f-b118-4aa4-a60c-d54ffb758da4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-0b870323-b0d5-431b-b469-52927c9138f8';
   $handler->conf['display'] = $display;

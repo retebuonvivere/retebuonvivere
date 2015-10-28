@@ -80,8 +80,52 @@ function rbv_networkadmin_views_default_views() {
     0 => 0,
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Page: partecipano già */
+  $handler = $view->new_display('page', 'Page: partecipano già', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Network admin - elenco organizzazioni partecipanti a RBV';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_com_categories' => 'field_com_categories',
+  );
+  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_com_categories' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Nome';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Campo: Content: Settori */
+  $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['path'] = 'networkadmin/hanno-aderito';
 
   /* Display: pane: partecipano già */
@@ -188,6 +232,88 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Allegato: nominate */
+  $handler = $view->new_display('attachment', 'Allegato: nominate', 'attachment_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Elenco organizzazioni nominate come collaboratori';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Intestazione: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h1>Elenco organizzazioni nominate come collaboratori</h1>';
+  $handler->display->display_options['header']['area']['format'] = 'panopoly_html_text';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Global: Result summary */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['label'] = 'total';
+  $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni nominate: <strong>@total</strong>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Nome';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'org' => 'org',
+  );
+  /* Filter criterion: Content: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+    'panel_pane_1' => 0,
+    'panel_pane_2' => 0,
+    'panel_pane_3' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
   $translatables['rbv_netadmview_joined'] = array(
     t('Master'),
     t('Network admin - elenco delle organizzazioni che partecipano'),
@@ -199,7 +325,10 @@ function rbv_networkadmin_views_default_views() {
     t('Desc'),
     t('total'),
     t('Totale organizzazioni partecipanti: <strong>@total</strong>'),
-    t('Page'),
+    t('Page: partecipano già'),
+    t('Network admin - elenco organizzazioni partecipanti a RBV'),
+    t('Nome'),
+    t('Settori'),
     t('pane: partecipano già'),
     t('Partecipano già'),
     t('View panes'),
@@ -210,6 +339,10 @@ function rbv_networkadmin_views_default_views() {
     t('Data adesioni'),
     t('Organizzazione'),
     t('Data di adesione'),
+    t('Allegato: nominate'),
+    t('Elenco organizzazioni nominate come collaboratori'),
+    t('<h1>Elenco organizzazioni nominate come collaboratori</h1>'),
+    t('Totale organizzazioni nominate: <strong>@total</strong>'),
   );
   $export['rbv_netadmview_joined'] = $view;
 
