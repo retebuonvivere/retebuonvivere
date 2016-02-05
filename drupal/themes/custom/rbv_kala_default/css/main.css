@@ -40,7 +40,7 @@ h1#site-name{
  font-weight: normal;
 }
 
-/* FIELD > ADDRESS FIELD */
+/* FIELDS */
 .field-type-addressfield {
  display: table;
  margin-bottom: .6em;
@@ -77,6 +77,16 @@ h1#site-name{
 
 .field-name-field-com-more, .field-name-field-com-email, .field-name-field-com-telephone {
  margin-bottom: .6em;
+}
+
+.field-name-body h4 {
+  margin-top: 2em;
+}
+.field-name-body h5 {
+  margin-top: 1.5em;
+}
+.field-name-body h6 {
+  margin-top: 1.4em;
 }
 
 /* FIELD > DATE */
