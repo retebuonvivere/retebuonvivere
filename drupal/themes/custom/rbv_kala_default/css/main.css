@@ -340,6 +340,20 @@ article .content {
  margin: 0 0 .5em 0;
  padding: 0 .7em 0 .7em;
 }
+
+/* nuove nate*/
+.view-rbv-view-lists.view-display-id-panel_pane_13 .views-row {
+	clear: both;
+	padding: 8px;
+}
+.view-rbv-view-lists.view-display-id-panel_pane_13 .views-row.views-row-first {
+  background: #eee;
+  -moz-border-radius: .4em;
+  border-radius: .4em;
+  min-height: 54px;
+  font-size: 2em;
+}
+
 .node-type-project .views-row.collaborator, .node-type-org .views-row.member {
  max-width: 48%;
  height: 48px;
