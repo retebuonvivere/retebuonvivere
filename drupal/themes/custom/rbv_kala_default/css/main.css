@@ -40,7 +40,7 @@ h1#site-name{
  font-weight: normal;
 }
 
-/* FIELD > ADDRESS FIELD */
+/* FIELDS */
 .field-type-addressfield {
  display: table;
  margin-bottom: .6em;
@@ -77,6 +77,16 @@ h1#site-name{
 
 .field-name-field-com-more, .field-name-field-com-email, .field-name-field-com-telephone {
  margin-bottom: .6em;
+}
+
+.field-name-body h4 {
+  margin-top: 2em;
+}
+.field-name-body h5 {
+  margin-top: 1.5em;
+}
+.field-name-body h6 {
+  margin-top: 1.4em;
 }
 
 /* FIELD > DATE */
@@ -330,6 +340,20 @@ article .content {
  margin: 0 0 .5em 0;
  padding: 0 .7em 0 .7em;
 }
+
+/* nuove nate*/
+.view-rbv-view-lists.view-display-id-panel_pane_13 .views-row {
+	clear: both;
+	padding: 8px;
+}
+.view-rbv-view-lists.view-display-id-panel_pane_13 .views-row.views-row-first {
+  background: #eee;
+  -moz-border-radius: .4em;
+  border-radius: .4em;
+  min-height: 54px;
+  font-size: 2em;
+}
+
 .node-type-project .views-row.collaborator, .node-type-org .views-row.member {
  max-width: 48%;
  height: 48px;
@@ -1009,6 +1033,9 @@ padding: .3em;
 }
 input#edit-delete{
   display:none;
+}
+.node-type-event input#edit-delete, .node-type-panopoly-page input#edit-delete{
+  display:inline-block;
 }
 .page-node-progetti .alert-danger {
     display:none;
