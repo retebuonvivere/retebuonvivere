@@ -131,6 +131,11 @@ h1#site-name{
  font-style: italic;
 }
 
+/* LINKS */
+.field-type-link-field {
+ margin: .5em;
+ padding: .5em;
+}
 /* FIELD > SOCIAL LINKS */
 .field-name-field-com-social-links {
  padding: 1em 1em 0 0;
@@ -141,13 +146,16 @@ h1#site-name{
  float: right;
 }
 
+/* field > social links new */
+.field-name-field-com-ln-fb {
+  float: right;
+}
+
 /* field > quick links */
-.field-type-link-field {
+.field-name-field-quick-links-links {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
- margin: .5em;
- padding: .5em;
 }
 .field-name-field-quick-links-links .link-title {
  float: left;
@@ -324,7 +332,7 @@ article .content {
  padding-bottom: 12px;
 }
 
-.node-type-org .views-row {
+.node-type-org .views-row article{
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
