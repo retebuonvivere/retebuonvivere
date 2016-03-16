@@ -20,4 +20,18 @@ function rbv_kala_default_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-?>
+/*
+ *	Theming facebook fboauth login button
+ */
+
+function rbv_kala_default_fboauth_action__connect($variables) {
+  $action = $variables['action'];
+  $link = $variables['properties'];
+  $url = url($link['href'], array('query' => $link['query']));
+  $link['attributes']['class'][] = 'facebook-action-connect btn btn-primary';
+  $link['attributes']['rel'] = 'nofollow';
+  $attributes = isset($link['attributes']) ? drupal_attributes($link['attributes']) : '';
+  $title = isset($link['title']) ? check_plain($link['title']) : '';
+  $src = ($GLOBALS['is_https'] ? 'https' : 'http') . '://www.facebook.com/images/fbconnect/login-buttons/connect_light_medium_short.gif';
+  return '<a ' . $attributes . ' href="' . $url . '"><i class="fa fa-facebook"></i>  Accedi con facebook</a>';
+}
