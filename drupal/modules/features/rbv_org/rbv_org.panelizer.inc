@@ -18,7 +18,7 @@ function rbv_org_panelizer_defaults() {
   $panelizer->panelizer_type = 'node';
   $panelizer->panelizer_key = 'org';
   $panelizer->no_blocks = FALSE;
-  $panelizer->css_id = '';
+  $panelizer->css_id = 'organizzazioni';
   $panelizer->css = '';
   $panelizer->pipeline = 'ipe';
   $panelizer->contexts = array();
@@ -36,7 +36,7 @@ function rbv_org_panelizer_defaults() {
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'radix_burr_flipped';
+  $display->layout = 'radix_moscone_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -92,11 +92,22 @@ function rbv_org_panelizer_defaults() {
   $display->panels['contentmain'][0] = 'new-92b606a3-a2bd-4d21-af74-0a28965746c7';
   $pane = new stdClass();
   $pane->pid = 'new-a3caa266-2976-4dcf-a5c4-6417dc4614d8';
-  $pane->panel = 'sidebar';
+  $pane->panel = 'footer';
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_view_graph-panel_pane_4';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_4\',$contexts[\'panelizer\']->data->nid));',
+        ),
+        'not' => TRUE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'view_settings' => 'fields',
     'header_type' => 'none',
@@ -115,7 +126,30 @@ function rbv_org_panelizer_defaults() {
   $pane->locks = array();
   $pane->uuid = 'a3caa266-2976-4dcf-a5c4-6417dc4614d8';
   $display->content['new-a3caa266-2976-4dcf-a5c4-6417dc4614d8'] = $pane;
-  $display->panels['sidebar'][0] = 'new-a3caa266-2976-4dcf-a5c4-6417dc4614d8';
+  $display->panels['footer'][0] = 'new-a3caa266-2976-4dcf-a5c4-6417dc4614d8';
+  $pane = new stdClass();
+  $pane->pid = 'new-4a55bbdc-48d1-462f-bee3-0e5fbb079eac';
+  $pane->panel = 'sidebar';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_fb-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'titles',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '4a55bbdc-48d1-462f-bee3-0e5fbb079eac';
+  $display->content['new-4a55bbdc-48d1-462f-bee3-0e5fbb079eac'] = $pane;
+  $display->panels['sidebar'][0] = 'new-4a55bbdc-48d1-462f-bee3-0e5fbb079eac';
   $pane = new stdClass();
   $pane->pid = 'new-0af013b2-e6b5-421d-9358-b8b957715cb7';
   $pane->panel = 'sidebar';

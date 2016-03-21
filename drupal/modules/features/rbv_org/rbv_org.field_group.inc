@@ -21,7 +21,7 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = 'group_org_dati';
   $field_group->data = array(
     'label' => 'Contatti',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_com_email',
       1 => 'field_com_location',
@@ -88,7 +88,7 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = 'group_org_dati';
   $field_group->data = array(
     'label' => 'Descrizione',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_com_categories',
       1 => 'field_com_description',
@@ -209,8 +209,8 @@ function rbv_org_field_group_info() {
     'children' => array(
       0 => 'field_org_type',
       1 => 'field_com_logo',
-      2 => 'field_com_social_links',
-      3 => 'field_com_tagline',
+      2 => 'field_com_tagline',
+      3 => 'field_com_ln_fb',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -235,7 +235,7 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = 'group_org_dati';
   $field_group->data = array(
     'label' => 'Storia',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_com_date',
       1 => 'field_com_history',
@@ -268,9 +268,9 @@ function rbv_org_field_group_info() {
     'children' => array(
       0 => 'field_org_type',
       1 => 'field_com_logo',
-      2 => 'field_com_social_links',
-      3 => 'field_com_tagline',
-      4 => 'title',
+      2 => 'field_com_tagline',
+      3 => 'title',
+      4 => 'group_org_social',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -284,6 +284,35 @@ function rbv_org_field_group_info() {
     ),
   );
   $export['group_org_info|node|org|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_org_social|node|org|form';
+  $field_group->group_name = 'group_org_social';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'org';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_org_info';
+  $field_group->data = array(
+    'label' => 'Social links',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_com_social_links',
+      1 => 'field_com_ln_fb',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Social links',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'wellrbv',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_org_social|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

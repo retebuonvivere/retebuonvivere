@@ -983,7 +983,7 @@ Collaboratori',
   $pages['rbv_graph_relation'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_group_calendar';
   $page->task = 'page';
@@ -1238,6 +1238,14 @@ calendario',
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => 'return empty(views_get_view_result(\'rbv_view_calendar\',\'panel_pane_1\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+        ),
+        'not' => TRUE,
+      ),
     ),
     'logic' => 'and',
     'type' => 'none',
@@ -1247,12 +1255,12 @@ calendario',
     'type' => 'default tab',
     'title' => 'Calendario',
     'name' => 'navigation',
-    'weight' => '1',
+    'weight' => '0',
     'parent' => array(
       'type' => 'tab',
       'title' => 'Eventi',
       'name' => 'navigation',
-      'weight' => '0',
+      'weight' => '4',
     ),
   );
   $page->arguments = array(
@@ -1857,6 +1865,14 @@ elenco',
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+        ),
+        'not' => TRUE,
+      ),
     ),
     'logic' => 'and',
     'type' => 'none',
@@ -1960,7 +1976,18 @@ progetti/attività',
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_view_graph-panel_pane_5';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'panelizer\']->data->nid));',
+        ),
+        'not' => TRUE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => '',
     'override_title_text' => '',
@@ -2338,7 +2365,7 @@ collaborazioni',
   $pages['rbv_page_explore'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_graph';
   $page->task = 'page';
@@ -2685,7 +2712,7 @@ collaborazioni',
   $pages['rbv_page_group_add_project'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_group_calendar';
   $page->task = 'page';
@@ -2806,7 +2833,7 @@ collaborazioni',
   $pages['rbv_page_group_calendar'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_group_projects';
   $page->task = 'page';
@@ -2825,6 +2852,14 @@ collaborazioni',
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+        ),
+        'not' => TRUE,
+      ),
     ),
     'logic' => 'and',
     'type' => 'none',
@@ -2834,7 +2869,7 @@ collaborazioni',
     'type' => 'tab',
     'title' => 'Progetti/attività',
     'name' => 'navigation',
-    'weight' => '0',
+    'weight' => '3',
     'parent' => array(
       'type' => 'none',
       'title' => '',
@@ -2928,13 +2963,24 @@ progetti/attività',
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_view_graph-panel_pane_5';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'panelizer\']->data->nid));',
+        ),
+        'not' => TRUE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => '',
     'override_title_text' => '',
     'override_title_heading' => 'h2',
     'view_settings' => 'fields',
-    'header_type' => 'none',
+    'header_type' => 'titles',
     'view_mode' => 'teaser',
     'widget_title' => 'Rete',
   );

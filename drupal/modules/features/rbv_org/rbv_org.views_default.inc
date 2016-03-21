@@ -226,6 +226,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: pane: users count */
   $handler = $view->new_display('panel_pane', 'pane: users count', 'panel_pane_3');

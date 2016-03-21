@@ -125,6 +125,9 @@ function rbv_org_strongarm() {
         'path' => array(
           'weight' => '1',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),

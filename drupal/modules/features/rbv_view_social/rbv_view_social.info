@@ -1,12 +1,13 @@
-name = rbv view social
+name = RBV social views
 description = Facebook related views
 core = 7.x
 package = RBV contents
-version = 7.x-1.0-beta1
+version = 7.x-1.0-beta2
+dependencies[] = ctools
+dependencies[] = rbv_com_fields
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = rbv_view_fb
-features_exclude[dependencies][ctools] = ctools
 project path = sites/all/modules/features

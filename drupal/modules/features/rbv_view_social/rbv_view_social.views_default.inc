@@ -22,7 +22,7 @@ function rbv_view_social_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Facebook';
+  $handler->display->display_options['title'] = 'Pagina facebook';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -41,7 +41,7 @@ function rbv_view_social_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: link facebook */
+  /* Field: Content: Pagina facebook */
   $handler->display->display_options['fields']['field_com_ln_fb']['id'] = 'field_com_ln_fb';
   $handler->display->display_options['fields']['field_com_ln_fb']['table'] = 'field_data_field_com_ln_fb';
   $handler->display->display_options['fields']['field_com_ln_fb']['field'] = 'field_com_ln_fb';
@@ -67,14 +67,11 @@ function rbv_view_social_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'org' => 'org',
-    'project' => 'project',
-  );
+  /* Filter criterion: Content: Pagina facebook (field_com_ln_fb:url) */
+  $handler->display->display_options['filters']['field_com_ln_fb_url']['id'] = 'field_com_ln_fb_url';
+  $handler->display->display_options['filters']['field_com_ln_fb_url']['table'] = 'field_data_field_com_ln_fb';
+  $handler->display->display_options['filters']['field_com_ln_fb_url']['field'] = 'field_com_ln_fb_url';
+  $handler->display->display_options['filters']['field_com_ln_fb_url']['operator'] = 'not empty';
 
   /* Display: facebook page plugin */
   $handler = $view->new_display('panel_pane', 'facebook page plugin', 'panel_pane_1');
@@ -93,6 +90,7 @@ function rbv_view_social_views_default_views() {
 
   /* Display: facebook like button */
   $handler = $view->new_display('panel_pane', 'facebook like button', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -103,7 +101,7 @@ function rbv_view_social_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: link facebook */
+  /* Field: Content: Pagina facebook */
   $handler->display->display_options['fields']['field_com_ln_fb']['id'] = 'field_com_ln_fb';
   $handler->display->display_options['fields']['field_com_ln_fb']['table'] = 'field_data_field_com_ln_fb';
   $handler->display->display_options['fields']['field_com_ln_fb']['field'] = 'field_com_ln_fb';
@@ -111,7 +109,6 @@ function rbv_view_social_views_default_views() {
   $handler->display->display_options['fields']['field_com_ln_fb']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_com_ln_fb']['alter']['text'] = '<div class="fb-like" data-href="[field_com_ln_fb-url]" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>';
   $handler->display->display_options['fields']['field_com_ln_fb']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_com_ln_fb']['click_sort_column'] = 'url';
   $handler->display->display_options['pane_category']['name'] = 'RBV social';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -126,7 +123,7 @@ function rbv_view_social_views_default_views() {
   $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
   $translatables['rbv_view_fb'] = array(
     t('Master'),
-    t('Facebook'),
+    t('Pagina facebook'),
     t('more'),
     t('Apply'),
     t('Reset'),

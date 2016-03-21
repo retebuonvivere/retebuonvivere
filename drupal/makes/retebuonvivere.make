@@ -1,34 +1,34 @@
-core = 7.28
+core = 7.43
 api = 2
 projects[] = drupal
 
-; retebuonvivere make file - update to panopoly 1.5
+; retebuonvivere make file - updated to panopoly 1.32
 
-; The Panopoly Foundation 7.x-1.5
-projects[panopoly_core][version] = 1.5
+; The Panopoly Foundation update 7.x-1.32
+projects[panopoly_core][version] = 1.32
 projects[panopoly_core][subdir] = panopoly
-projects[panopoly_images][version] = 1.5
+projects[panopoly_images][version] = 1.32
 projects[panopoly_images][subdir] = panopoly
-projects[panopoly_theme][version] = 1.5
+projects[panopoly_theme][version] = 1.32
 projects[panopoly_theme][subdir] = panopoly
-projects[panopoly_magic][version] = 1.5
+projects[panopoly_magic][version] = 1.32
 projects[panopoly_magic][subdir] = panopoly
-projects[panopoly_widgets][version] = 1.5
+projects[panopoly_widgets][version] = 1.32
 projects[panopoly_widgets][subdir] = panopoly
-projects[panopoly_admin][version] = 1.5
+projects[panopoly_admin][version] = 1.32
 projects[panopoly_admin][subdir] = panopoly
-projects[panopoly_users][version] = 1.5
+projects[panopoly_users][version] = 1.32
 projects[panopoly_users][subdir] = panopoly
 
-; The Panopoly Toolset
-projects[panopoly_pages][version] = 1.5
+; The Panopoly Toolset update 7.x-1.32
+projects[panopoly_pages][version] = 1.32
 projects[panopoly_pages][subdir] = panopoly
-projects[panopoly_wysiwyg][version] = 1.5
+projects[panopoly_wysiwyg][version] = 1.32
 projects[panopoly_wysiwyg][subdir] = panopoly
-projects[panopoly_search][version] = 1.5
+projects[panopoly_search][version] = 1.32
 projects[panopoly_search][subdir] = panopoly
 
-; Contrib modules
+; Contrib modules (alphabetical)
 projects[addressfield][subdir] = contrib
 projects[advanced_forum][subdir] = contrib
 projects[auto_nodetitle][subdir] = contrib
@@ -46,11 +46,11 @@ projects[date][subdir] = contrib
 projects[date_ical][subdir] = contrib
 projects[diff][subdir] = contrib
 projects[email][subdir] = contrib
-; entity already updated in pan 1.1
-; projects[entity][subdir] = contrib
 projects[entityreference_autocreate][subdir] = contrib
 projects[entityreference_prepopulate][subdir] = contrib
 projects[entity_view_mode][subdir] = contrib
+projects[eu_cookie_compliance][subdir] = contrib
+projects[fboauth][subdir] = contrib
 projects[features][subdir] = contrib
 ; patching features for a menu exorting problem
 projects[features][patch][2155945] = https://drupal.org/files/issues/features_strict-warning-menu-links_2155945-3.patch

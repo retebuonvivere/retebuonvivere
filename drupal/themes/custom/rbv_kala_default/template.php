@@ -1,5 +1,15 @@
 <?php
 /*
+ *  Add js to add bootstrap tooltip-popover opt-in.
+ */
+function rbv_kala_default_preprocess_html(&$variables) {
+  $options = array(
+    'group' => JS_THEME,
+  );
+  drupal_add_js(drupal_get_path('theme', 'rbv_kala_default'). '/scripts/bootstrap-optin.js', $options);
+}
+
+/*
  *  Preprocess page.tpl.php to inject the $search_box variable.
  */
 function rbv_kala_default_preprocess_page(&$variables){
@@ -9,7 +19,7 @@ function rbv_kala_default_preprocess_page(&$variables){
 }
 
 /*
- *  Form alter to add missing bootstrap classes and tole to search form.
+ *  Form alter to add missing bootstrap classes and role to search form.
  */
 function rbv_kala_default_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_form') {

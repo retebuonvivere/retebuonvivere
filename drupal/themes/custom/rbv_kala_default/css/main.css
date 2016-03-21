@@ -121,7 +121,7 @@ h1#site-name{
 /* FIELD > LOGO */
 .field-name-field-com-logo, .views-field-field-com-logo {
  float: left;
- padding: 0 1em 1em 0;
+ padding: 0 1em .8em 0;
 }
 
 /* FIELD > SLOGAN */
@@ -149,6 +149,11 @@ h1#site-name{
 /* field > social links new */
 .field-name-field-com-ln-fb {
   float: right;
+  margin: 0 1em 0 0;
+  padding: 0;
+}
+.page-node-edit .field-name-field-com-ln-fb{
+  width: 100%;
 }
 
 /* field > quick links */
@@ -332,12 +337,12 @@ article .content {
  padding-bottom: 12px;
 }
 
-.node-type-org .views-row article{
+.node-type-org .views-row {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
  margin: 0 0 .5em 0;
- padding: 0 .7em 0 .7em;
+ padding: .7em;
 }
 
 /* Project collaborators and Organization members */
@@ -554,17 +559,37 @@ html.js fieldset.collapsed {
 /* 
  * FIELDSET INFO 
  */
-.info-fieldgroup .field-name-field-com-logo {
- padding-right: 15px;
- padding-bottom: 15px;
-}
-
 .info-fieldgroup .field-name-field-com-tagline {
- padding-bottom: 1em;
- font-size: 1.5em;
- line-height: 1.6em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  font-size: 1.4em;
+  line-height: 1.55em;
+  min-height: 5em;
 }
-
+.info-fieldgroup .field-name-field-com-tagline .field-item:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  text-decoration: inherit;
+  content: "\f10d";
+  padding-right: .4em;
+  position: relative;
+  top: -.4em;
+}
+.info-fieldgroup .field-name-field-com-tagline .field-item:after {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  text-decoration: inherit;
+  content: "\f10e";
+  padding-left: .4em;
+  position: relative;
+  top: .6em;
+}
 .info-fieldgroup {
  background-color: #ffffff;
  border: 1px solid #ECB97E;

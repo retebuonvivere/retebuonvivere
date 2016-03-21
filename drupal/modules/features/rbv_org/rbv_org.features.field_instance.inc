@@ -451,6 +451,80 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-org-field_com_ln_fb'
+  $field_instances['node-org-field_com_ln_fb'] = array(
+    'bundle' => 'org',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Pagina facebook" data-content="Inserisci qui l\'indirizzo url completo (\'http...\') della \'pagina facebook\' di [current-page:title]. Ricorda che le \'pagine facebook\' sono speciali tipi di contenuti, adatti alle organizzazioni. Se la tua  organizzazione utilizza un \'profilo personale\' o un \'gruppo\' facebook, non inserirli qui, ma nel campo Links in fondo alla pagina." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_ln_fb',
+    'label' => 'Pagina facebook',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'linkit' => array(
+        'button_text' => 'Cerca',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '<i class="fa fa-facebook-square fa-3x"></i>',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 41,
+    ),
+  );
+
   // Exported field_instance: 'node-org-field_com_location'
   $field_instances['node-org-field_com_location'] = array(
     'bundle' => 'org',
@@ -709,7 +783,7 @@ function rbv_org_field_default_field_instances() {
         'rows' => 6,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -722,9 +796,8 @@ function rbv_org_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'social_profile_field',
         'settings' => array(),
-        'type' => 'social_profile_field_icons',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'featured' => array(
@@ -758,7 +831,7 @@ function rbv_org_field_default_field_instances() {
       'module' => 'social_profile_field',
       'settings' => array(),
       'type' => 'social_profile_field_default',
-      'weight' => 9,
+      'weight' => 42,
     ),
   );
 
@@ -1042,7 +1115,7 @@ function rbv_org_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1166,6 +1239,7 @@ function rbv_org_field_default_field_instances() {
   t('<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo dell\'organizzazione. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="È importante che il vostro indirizzo sia scritto esattamente come lo dovrebbe scrivere qualcuno per inviarvi un pacco postale. Usate la riga 1 per l\'indirizzo ufficiale, come via e numero civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la vostra sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale della vostra organizzazione. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Spesso le organizzazioni hanno anche un blog, che usano per diffondere le notizie. Se questo è il vostro caso potete usare il pulsante \'Aggiungi un altro elemento\' per aggiungere l\'indirizzo del blog della vostra organizzazione. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>');
+  t('<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Pagina facebook" data-content="Inserisci qui l\'indirizzo url completo (\'http...\') della \'pagina facebook\' di [current-page:title]. Ricorda che le \'pagine facebook\' sono speciali tipi di contenuti, adatti alle organizzazioni. Se la tua  organizzazione utilizza un \'profilo personale\' o un \'gruppo\' facebook, non inserirli qui, ma nel campo Links in fondo alla pagina." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>');
   t('Altro');
   t('Date');
   t('Descrizione');
@@ -1176,6 +1250,7 @@ function rbv_org_field_default_field_instances() {
   t('Links');
   t('Logo');
   t('Mission');
+  t('Pagina facebook');
   t('Parole chiave');
   t('Periodo');
   t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');
