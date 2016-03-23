@@ -983,7 +983,7 @@ Collaboratori',
   $pages['rbv_graph_relation'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_group_calendar';
   $page->task = 'page';
@@ -1242,7 +1242,8 @@ calendario',
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_calendar\',\'panel_pane_1\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_calendar\',\'panel_pane_1\',$contexts[\'argument_entity_id:node_1\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),
@@ -1869,7 +1870,8 @@ elenco',
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'argument_entity_id:node_1\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),
@@ -1982,7 +1984,8 @@ progetti/attività',
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'panelizer\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'panelizer\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),
@@ -2365,7 +2368,7 @@ collaborazioni',
   $pages['rbv_page_explore'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_graph';
   $page->task = 'page';
@@ -2712,7 +2715,7 @@ collaborazioni',
   $pages['rbv_page_group_add_project'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_group_calendar';
   $page->task = 'page';
@@ -2833,7 +2836,7 @@ collaborazioni',
   $pages['rbv_page_group_calendar'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_group_projects';
   $page->task = 'page';

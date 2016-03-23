@@ -79,7 +79,6 @@ features[field_instance][] = node-org-field_com_location
 features[field_instance][] = node-org-field_com_logo
 features[field_instance][] = node-org-field_com_mission
 features[field_instance][] = node-org-field_com_more
-features[field_instance][] = node-org-field_com_social_links
 features[field_instance][] = node-org-field_com_tagline
 features[field_instance][] = node-org-field_com_tags
 features[field_instance][] = node-org-field_com_telephone

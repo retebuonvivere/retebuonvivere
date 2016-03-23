@@ -11,7 +11,7 @@ function rbv_org_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_membership_period-field_com_date'
+  // 'field_collection_item-field_membership_period-field_com_date'.
   $field_instances['field_collection_item-field_membership_period-field_com_date'] = array(
     'bundle' => 'field_membership_period',
     'deleted' => 0,
@@ -61,7 +61,7 @@ function rbv_org_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_membership_period-field_com_description'
+  // 'field_collection_item-field_membership_period-field_com_description'.
   $field_instances['field_collection_item-field_membership_period-field_com_description'] = array(
     'bundle' => 'field_membership_period',
     'default_value' => NULL,
@@ -98,7 +98,7 @@ function rbv_org_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_membership_period-field_membership_role'
+  // 'field_collection_item-field_membership_period-field_membership_role'.
   $field_instances['field_collection_item-field_membership_period-field_membership_role'] = array(
     'bundle' => 'field_membership_period',
     'default_value' => NULL,
@@ -132,7 +132,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_categories'
+  // Exported field_instance: 'node-org-field_com_categories'.
   $field_instances['node-org-field_com_categories'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -183,7 +183,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_date'
+  // Exported field_instance: 'node-org-field_com_date'.
   $field_instances['node-org-field_com_date'] = array(
     'bundle' => 'org',
     'deleted' => 0,
@@ -265,7 +265,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_description'
+  // Exported field_instance: 'node-org-field_com_description'.
   $field_instances['node-org-field_com_description'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -339,7 +339,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_email'
+  // Exported field_instance: 'node-org-field_com_email'.
   $field_instances['node-org-field_com_email'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -390,7 +390,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_history'
+  // Exported field_instance: 'node-org-field_com_history'.
   $field_instances['node-org-field_com_history'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -451,7 +451,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_ln_fb'
+  // Exported field_instance: 'node-org-field_com_ln_fb'.
   $field_instances['node-org-field_com_ln_fb'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -525,7 +525,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_location'
+  // Exported field_instance: 'node-org-field_com_location'.
   $field_instances['node-org-field_com_location'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -592,7 +592,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_logo'
+  // Exported field_instance: 'node-org-field_com_logo'.
   $field_instances['node-org-field_com_logo'] = array(
     'bundle' => 'org',
     'deleted' => 0,
@@ -676,7 +676,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_mission'
+  // Exported field_instance: 'node-org-field_com_mission'.
   $field_instances['node-org-field_com_mission'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -730,7 +730,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_more'
+  // Exported field_instance: 'node-org-field_com_more'.
   $field_instances['node-org-field_com_more'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -787,55 +787,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_social_links'
-  $field_instances['node-org-field_com_social_links'] = array(
-    'bundle' => 'org',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui la vostra organizzazione è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'vmode_group_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_com_social_links',
-    'label' => 'Seguici su',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'social_profile_field',
-      'settings' => array(),
-      'type' => 'social_profile_field_default',
-      'weight' => 42,
-    ),
-  );
-
-  // Exported field_instance: 'node-org-field_com_tagline'
+  // Exported field_instance: 'node-org-field_com_tagline'.
   $field_instances['node-org-field_com_tagline'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -894,7 +846,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_tags'
+  // Exported field_instance: 'node-org-field_com_tags'.
   $field_instances['node-org-field_com_tags'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -946,7 +898,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_telephone'
+  // Exported field_instance: 'node-org-field_com_telephone'.
   $field_instances['node-org-field_com_telephone'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -997,7 +949,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_org_type'
+  // Exported field_instance: 'node-org-field_org_type'.
   $field_instances['node-org-field_org_type'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -1046,7 +998,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_quick_links_links'
+  // Exported field_instance: 'node-org-field_quick_links_links'.
   $field_instances['node-org-field_quick_links_links'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -1119,7 +1071,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-group_group'
+  // Exported field_instance: 'node-org-group_group'.
   $field_instances['node-org-group_group'] = array(
     'bundle' => 'org',
     'default_value' => array(
@@ -1187,7 +1139,7 @@ function rbv_org_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'og_membership-rbv_membership_default-field_membership_period'
+  // 'og_membership-rbv_membership_default-field_membership_period'.
   $field_instances['og_membership-rbv_membership_default-field_membership_period'] = array(
     'bundle' => 'rbv_membership_default',
     'default_value' => NULL,
@@ -1231,7 +1183,6 @@ function rbv_org_field_default_field_instances() {
   t('<a class="help" title="Avete scelto il settore \'bio\' e volete specificare che voi fate \'biodinamico\'? Aggiungete parole chiave per specificare ulteriormente la vostra attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Descrivete la vostra organizzazione come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Il logo è sempre visibile accanto al nome della vostra organizzzione. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se la vostra immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
-  t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui la vostra organizzazione è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Le organizzazioni hanno sempre una storia, e spesso è molto interessante. Condividiamo le nostre storie."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Mission, la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Quando è stata fondata la vostra organizzzione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario."><i class="fa fa-question-circle"></i></a>');
@@ -1256,7 +1207,6 @@ function rbv_org_field_default_field_instances() {
   t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');
   t('Ruolo');
   t('Ruolo ricoperto dalla persona in questo periodo');
-  t('Seguici su');
   t('Settori');
   t('Slogan');
   t('Storia');

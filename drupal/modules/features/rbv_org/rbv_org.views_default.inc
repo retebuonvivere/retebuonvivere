@@ -39,12 +39,12 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Campo: User: Name */
+  /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  /* Campo: User: Immagine */
+  /* Field: User: Immagine */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -102,7 +102,7 @@ function rbv_org_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: User: Immagine */
+  /* Field: User: Immagine */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -113,7 +113,7 @@ function rbv_org_views_default_views() {
     'image_style' => 'rbv_image_icon',
     'image_link' => 'content',
   );
-  /* Campo: User: Name */
+  /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -169,14 +169,14 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> persone in totale.</p>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: User: Immagine */
+  /* Field: User: Immagine */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -187,13 +187,13 @@ function rbv_org_views_default_views() {
     'image_style' => 'rbv_image_teaser',
     'image_link' => 'content',
   );
-  /* Campo: User: Name */
+  /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Campo: User: Organizzazioni */
+  /* Field: User: Organizzazioni */
   $handler->display->display_options['fields']['og_user_node']['id'] = 'og_user_node';
   $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
@@ -245,7 +245,7 @@ function rbv_org_views_default_views() {
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: User: Uid */
+  /* Field: User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';

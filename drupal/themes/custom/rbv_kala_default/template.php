@@ -43,5 +43,5 @@ function rbv_kala_default_fboauth_action__connect($variables) {
   $attributes = isset($link['attributes']) ? drupal_attributes($link['attributes']) : '';
   $title = isset($link['title']) ? check_plain($link['title']) : '';
   $src = ($GLOBALS['is_https'] ? 'https' : 'http') . '://www.facebook.com/images/fbconnect/login-buttons/connect_light_medium_short.gif';
-  return '<a ' . $attributes . ' href="' . $url . '"><i class="fa fa-facebook"></i>  Accedi con facebook</a>';
+  return '<a ' . $attributes . ' href="' . $url . '"><i class="fa fa-facebook"></i>  Connettiti con facebook</a>';
 }
