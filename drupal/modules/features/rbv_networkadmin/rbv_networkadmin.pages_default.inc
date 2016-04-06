@@ -42,8 +42,8 @@ function rbv_networkadmin_default_page_manager_pages() {
     'logic' => 'or',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
+    'type' => 'default tab',
+    'title' => 'Dashboard',
     'name' => 'navigation',
     'weight' => '0',
     'parent' => array(
@@ -98,6 +98,7 @@ function rbv_networkadmin_default_page_manager_pages() {
       'secondarycolumn2' => NULL,
       'secondarycolumn3' => NULL,
       'footer' => NULL,
+      'header' => NULL,
     ),
     'header' => array(
       'style' => '0',
@@ -142,7 +143,7 @@ function rbv_networkadmin_default_page_manager_pages() {
   $pane->configuration = array(
     'view_mode' => 'full',
     'fieldable_panels_pane' => (object) array(
-      'timestamp' => 1444917673,
+      'timestamp' => 1459870100,
       'uid' => '1',
       'title' => 'Gruppo di sviluppo',
       'log' => '',
@@ -158,15 +159,16 @@ function rbv_networkadmin_default_page_manager_pages() {
       'view_access' => NULL,
       'edit_access' => NULL,
       'created' => '1406542089',
-      'changed' => 1444917673,
+      'changed' => 1459870100,
       'uuid' => '',
       'language' => '',
-      'current_vid' => '1596',
+      'current_vid' => '1597',
       'field_basic_text_text' => array(
         'und' => array(
           0 => array(
             'value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a> Code repository</p>
-<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239;"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a> Team communication</p>',
+<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239;"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a> Team communication</p>
+<p><a href="https://trello.com/b/oignbFQp/retebuonvivere" class="btn btn-default" style="background-color:#0079BF; color:#ffffff;"><i class="fa fa-trello fa-lg"></i> retebuonvivere</a> Task manager</p>',
             'format' => 'panopoly_html_text',
           ),
         ),
@@ -175,8 +177,8 @@ function rbv_networkadmin_default_page_manager_pages() {
       'revision' => 1,
       'is_new' => FALSE,
       'original' => (object) array(
-        'vid' => '1596',
-        'timestamp' => '1444917512',
+        'vid' => '1597',
+        'timestamp' => '1444917673',
         'uid' => '1',
         'title' => 'Gruppo di sviluppo',
         'log' => '',
@@ -192,26 +194,25 @@ function rbv_networkadmin_default_page_manager_pages() {
         'view_access' => NULL,
         'edit_access' => NULL,
         'created' => '1406542089',
-        'changed' => '1444917512',
+        'changed' => '1444917673',
         'uuid' => '',
         'language' => '',
-        'current_vid' => '1596',
+        'current_vid' => '1597',
         'field_basic_text_text' => array(
           'und' => array(
             0 => array(
-              'value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a></p>
-<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239;"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a></p>',
+              'value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a> Code repository</p>
+<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239;"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a> Team communication</p>',
               'format' => 'panopoly_html_text',
-              'safe_value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a></p>
-<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a></p>
-',
+              'safe_value' => '<p><a href="https://github.com/retebuonvivere/retebuonvivere" class="btn btn-default"><i class="fa fa-github fa-lg"></i> retebuonvivere</a> Code repository</p>
+<p><a href="https://retebuonvivere.slack.com" class="btn btn-default" style="background-color:#D3D3D3; color:#2C3239"><i class="fa fa-slack fa-lg"></i> retebuonvivere</a> Team communication</p>',
             ),
           ),
         ),
         'rdf_mapping' => array(),
       ),
-      'old_vid' => '1596',
-      'vid' => '1597',
+      'old_vid' => '1597',
+      'vid' => '1604',
     ),
   );
   $pane->cache = array();
@@ -255,6 +256,74 @@ function rbv_networkadmin_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1459870157,
+      'uid' => '1',
+      'title' => 'Blog',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '14',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 0,
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1396944422',
+      'changed' => 1459870157,
+      'uuid' => '',
+      'language' => '',
+      'current_vid' => '414',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<p><a href="http://retebuonvivere.wordpress.com/" class="btn btn-primary"><i class="fa fa-wordpress fa-lg"></i> retebuonvivere.wordpress.com</a></p>',
+            'format' => 'panopoly_html_text',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '414',
+        'timestamp' => '1396944623',
+        'uid' => '1',
+        'title' => 'Blog',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '14',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1396944422',
+        'changed' => '1406542122',
+        'uuid' => '',
+        'language' => '',
+        'current_vid' => '414',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<p><a href="http://retebuonvivere.wordpress.com/" class="btn btn-primary"><i class="fa fa-bullhorn fa-lg"></i> retebuonvivere.wordpress.com</a></p>',
+              'format' => 'panopoly_html_text',
+              'safe_value' => '<p><a href="http://retebuonvivere.wordpress.com/" class="btn btn-primary"><i class="fa fa-bullhorn fa-lg"></i> retebuonvivere.wordpress.com</a></p>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '414',
+      'vid' => '1605',
+    ),
   );
   $pane->cache = array();
   $pane->style = array(
@@ -299,7 +368,9 @@ function rbv_networkadmin_default_page_manager_pages() {
     'view_mode' => 'full',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
@@ -658,6 +729,50 @@ function rbv_networkadmin_default_page_manager_pages() {
   $pane->uuid = '4865779f-b118-4aa4-a60c-d54ffb758da4';
   $display->content['new-4865779f-b118-4aa4-a60c-d54ffb758da4'] = $pane;
   $display->panels['footer'][9] = 'new-4865779f-b118-4aa4-a60c-d54ffb758da4';
+  $pane = new stdClass();
+  $pane->pid = 'new-c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $pane->panel = 'secondarycolumn1';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_netadmview_joined-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array();
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $display->content['new-c2e0581f-3163-4b62-8913-c1e0f51ac738'] = $pane;
+  $display->panels['secondarycolumn1'][0] = 'new-c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $pane = new stdClass();
+  $pane->pid = 'new-094e02de-1547-47ee-b002-1c8754014c84';
+  $pane->panel = 'secondarycolumn3';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_netadmview_joined-panel_pane_5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '094e02de-1547-47ee-b002-1c8754014c84';
+  $display->content['new-094e02de-1547-47ee-b002-1c8754014c84'] = $pane;
+  $display->panels['secondarycolumn3'][0] = 'new-094e02de-1547-47ee-b002-1c8754014c84';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-0b870323-b0d5-431b-b469-52927c9138f8';
   $handler->conf['display'] = $display;

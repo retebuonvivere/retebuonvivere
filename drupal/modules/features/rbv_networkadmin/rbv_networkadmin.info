@@ -4,6 +4,7 @@ core = 7.x
 package = RBV contents
 version = 7.x-1.0
 project = rbv_networkadmin
+dependencies[] = d3_views
 dependencies[] = page_manager
 dependencies[] = rbv_relpro
 dependencies[] = views
