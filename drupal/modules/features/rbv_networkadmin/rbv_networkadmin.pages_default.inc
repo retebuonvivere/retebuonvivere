@@ -15,7 +15,7 @@ function rbv_networkadmin_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'rbv network admin';
   $page->admin_description = 'Network administration tools';
-  $page->path = 'networkadmin';
+  $page->path = 'networkadmin/dashboard';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -358,108 +358,99 @@ function rbv_networkadmin_default_page_manager_pages() {
   $display->content['new-09a9076b-62b7-4395-aea9-c99326b2cc00'] = $pane;
   $display->panels['column3'][0] = 'new-09a9076b-62b7-4395-aea9-c99326b2cc00';
   $pane = new stdClass();
-  $pane->pid = 'new-ea492960-4d54-4d75-9ae9-577d994a8959';
+  $pane->pid = 'new-c5fa4bed-fb88-4516-a332-a68a990e76c2';
   $pane->panel = 'footer';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:30';
+  $pane->subtype = 'fpid:35';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1459927792,
+      'uid' => '1',
+      'title' => '',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '35',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 0,
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1459927540',
+      'changed' => 1459927792,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1609',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<h4>Partecipanti a RBV</h4>',
+            'format' => 'panopoly_wysiwyg_text',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1609',
+        'timestamp' => '1459927540',
+        'uid' => '1',
+        'title' => '',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '35',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1459927540',
+        'changed' => '1459927540',
+        'uuid' => '',
+        'language' => 'und',
+        'current_vid' => '1609',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<p>Partecipanti a RBV</p>',
+              'format' => 'panopoly_wysiwyg_text',
+              'safe_value' => '<p>Partecipanti a RBV</p>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1609',
+      'vid' => '1610',
+    ),
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'ea492960-4d54-4d75-9ae9-577d994a8959';
-  $display->content['new-ea492960-4d54-4d75-9ae9-577d994a8959'] = $pane;
-  $display->panels['footer'][0] = 'new-ea492960-4d54-4d75-9ae9-577d994a8959';
+  $pane->uuid = 'c5fa4bed-fb88-4516-a332-a68a990e76c2';
+  $display->content['new-c5fa4bed-fb88-4516-a332-a68a990e76c2'] = $pane;
+  $display->panels['footer'][0] = 'new-c5fa4bed-fb88-4516-a332-a68a990e76c2';
   $pane = new stdClass();
-  $pane->pid = 'new-a809b62f-c032-4303-8f0f-4d0be2f9f635';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_members-panel_pane_3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_mode' => 'full',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'a809b62f-c032-4303-8f0f-4d0be2f9f635';
-  $display->content['new-a809b62f-c032-4303-8f0f-4d0be2f9f635'] = $pane;
-  $display->panels['footer'][1] = 'new-a809b62f-c032-4303-8f0f-4d0be2f9f635';
-  $pane = new stdClass();
-  $pane->pid = 'new-a95f7798-5418-42df-b09b-22c24fbe5cfd';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_8';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_mode' => 'vmode_group_content',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'a95f7798-5418-42df-b09b-22c24fbe5cfd';
-  $display->content['new-a95f7798-5418-42df-b09b-22c24fbe5cfd'] = $pane;
-  $display->panels['footer'][2] = 'new-a95f7798-5418-42df-b09b-22c24fbe5cfd';
-  $pane = new stdClass();
-  $pane->pid = 'new-7bee6105-39bd-418d-8cb4-89c3e3a49071';
+  $pane->pid = 'new-306c4ce4-6b30-44da-abab-f184cefcee85';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_netadmview_joined-panel_pane_2';
@@ -476,157 +467,57 @@ function rbv_networkadmin_default_page_manager_pages() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'style' => 'kalacustomize',
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '7bee6105-39bd-418d-8cb4-89c3e3a49071';
-  $display->content['new-7bee6105-39bd-418d-8cb4-89c3e3a49071'] = $pane;
-  $display->panels['footer'][3] = 'new-7bee6105-39bd-418d-8cb4-89c3e3a49071';
+  $pane->uuid = '306c4ce4-6b30-44da-abab-f184cefcee85';
+  $display->content['new-306c4ce4-6b30-44da-abab-f184cefcee85'] = $pane;
+  $display->panels['footer'][1] = 'new-306c4ce4-6b30-44da-abab-f184cefcee85';
   $pane = new stdClass();
-  $pane->pid = 'new-ad264c7a-76bd-481c-86e6-780d288f339b';
+  $pane->pid = 'new-e370759e-0323-449b-b412-113aa39cb31b';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_9';
+  $pane->subtype = 'rbv_view_members-panel_pane_3';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => '',
     'override_title_text' => '',
     'override_title_heading' => 'h2',
-    'view_mode' => 'vmode_group_content',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = 'ad264c7a-76bd-481c-86e6-780d288f339b';
-  $display->content['new-ad264c7a-76bd-481c-86e6-780d288f339b'] = $pane;
-  $display->panels['footer'][4] = 'new-ad264c7a-76bd-481c-86e6-780d288f339b';
-  $pane = new stdClass();
-  $pane->pid = 'new-2514424b-e0c2-4852-b7bf-398848b89d34';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_10';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
     'view_mode' => 'full',
     'widget_title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '2514424b-e0c2-4852-b7bf-398848b89d34';
-  $display->content['new-2514424b-e0c2-4852-b7bf-398848b89d34'] = $pane;
-  $display->panels['footer'][5] = 'new-2514424b-e0c2-4852-b7bf-398848b89d34';
+  $pane->uuid = 'e370759e-0323-449b-b412-113aa39cb31b';
+  $display->content['new-e370759e-0323-449b-b412-113aa39cb31b'] = $pane;
+  $display->panels['footer'][2] = 'new-e370759e-0323-449b-b412-113aa39cb31b';
   $pane = new stdClass();
-  $pane->pid = 'new-80dc33b4-c67c-4a5e-b16a-bdf5d8a4d57c';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_12';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 6;
-  $pane->locks = array();
-  $pane->uuid = '80dc33b4-c67c-4a5e-b16a-bdf5d8a4d57c';
-  $display->content['new-80dc33b4-c67c-4a5e-b16a-bdf5d8a4d57c'] = $pane;
-  $display->panels['footer'][6] = 'new-80dc33b4-c67c-4a5e-b16a-bdf5d8a4d57c';
-  $pane = new stdClass();
-  $pane->pid = 'new-0b870323-b0d5-431b-b469-52927c9138f8';
+  $pane->pid = 'new-100fa6f3-5c8c-42e6-8b93-76f1f804c07b';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_netadmview_joined-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
     'view_settings' => 'fields',
     'header_type' => 'none',
     'view_mode' => 'teaser',
+    'widget_title' => 'Partecipano già',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -634,89 +525,27 @@ function rbv_networkadmin_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = '0b870323-b0d5-431b-b469-52927c9138f8';
-  $display->content['new-0b870323-b0d5-431b-b469-52927c9138f8'] = $pane;
-  $display->panels['footer'][7] = 'new-0b870323-b0d5-431b-b469-52927c9138f8';
+  $pane->uuid = '100fa6f3-5c8c-42e6-8b93-76f1f804c07b';
+  $display->content['new-100fa6f3-5c8c-42e6-8b93-76f1f804c07b'] = $pane;
+  $display->panels['footer'][3] = 'new-100fa6f3-5c8c-42e6-8b93-76f1f804c07b';
   $pane = new stdClass();
-  $pane->pid = 'new-a762898d-af94-4bbb-9df6-b8d028548a97';
-  $pane->panel = 'footer';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:31';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-    'fieldable_panels_pane' => (object) array(
-      'bundle' => 'text',
-      'language' => 'und',
-      'is_new' => TRUE,
-      'title' => '',
-      'link' => 0,
-      'path' => '',
-      'reusable' => 0,
-      'admin_title' => '',
-      'admin_description' => '',
-      'category' => 'Reusable Content',
-      'vid' => '1598',
-      'current_vid' => '',
-      'revision' => 1,
-      'fpid' => '31',
-      'field_basic_text_text' => array(
-        'und' => array(
-          0 => array(
-            'value' => '<p><a href="/networkadmin/hanno-aderito" class="btn btn-default">Tabelle organizzazioni partecipanti e nominate</a></p>',
-            'format' => 'panopoly_html_text',
-          ),
-        ),
-      ),
-      'log' => '',
-      'created' => 1444917781,
-      'timestamp' => 1444917781,
-      'changed' => 1444917781,
-      'uuid' => '',
-      'uid' => '1',
-      'vuuid' => '',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'clearfix' => 'clearfix',
-        'pull-left' => 0,
-        'pull-right' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 8;
-  $pane->locks = array();
-  $pane->uuid = 'a762898d-af94-4bbb-9df6-b8d028548a97';
-  $display->content['new-a762898d-af94-4bbb-9df6-b8d028548a97'] = $pane;
-  $display->panels['footer'][8] = 'new-a762898d-af94-4bbb-9df6-b8d028548a97';
-  $pane = new stdClass();
-  $pane->pid = 'new-4865779f-b118-4aa4-a60c-d54ffb758da4';
+  $pane->pid = 'new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_netadmview_organon-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_settings' => 'fields',
-    'header_type' => 'none',
+    'items_per_page' => '5',
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'table',
+    'header_type' => 'titles',
     'view_mode' => 'teaser',
+    'widget_title' => 'Organizzazioni (limit 5) nominate nelle collaborazioni',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -724,35 +553,103 @@ function rbv_networkadmin_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 9;
+  $pane->position = 4;
   $pane->locks = array();
-  $pane->uuid = '4865779f-b118-4aa4-a60c-d54ffb758da4';
-  $display->content['new-4865779f-b118-4aa4-a60c-d54ffb758da4'] = $pane;
-  $display->panels['footer'][9] = 'new-4865779f-b118-4aa4-a60c-d54ffb758da4';
+  $pane->uuid = '4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
+  $display->content['new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89'] = $pane;
+  $display->panels['footer'][4] = 'new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
   $pane = new stdClass();
-  $pane->pid = 'new-c2e0581f-3163-4b62-8913-c1e0f51ac738';
-  $pane->panel = 'secondarycolumn1';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_netadmview_joined-panel_pane_6';
+  $pane->pid = 'new-11a71998-a940-4d85-b6da-1b56dd234c2e';
+  $pane->panel = 'footer';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'fpid:34';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
+    'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1459926377,
+      'uid' => '1',
+      'title' => '',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '34',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 0,
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1459926279',
+      'changed' => 1459926377,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1607',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<a class="btn btn-default" href="/networkadmin/nominate">Elenco completo</a>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1607',
+        'timestamp' => '1459926279',
+        'uid' => '1',
+        'title' => 'Elenco completo',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '34',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1459926279',
+        'changed' => '1459926279',
+        'uuid' => '',
+        'language' => 'und',
+        'current_vid' => '1607',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<a class="btn btn-default" href="/networkadmin/nominate">Elenco completo</a>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<a class="btn btn-default" href="/networkadmin/nominate">Elenco completo</a>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1607',
+      'vid' => '1608',
+    ),
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 5;
   $pane->locks = array();
-  $pane->uuid = 'c2e0581f-3163-4b62-8913-c1e0f51ac738';
-  $display->content['new-c2e0581f-3163-4b62-8913-c1e0f51ac738'] = $pane;
-  $display->panels['secondarycolumn1'][0] = 'new-c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $pane->uuid = '11a71998-a940-4d85-b6da-1b56dd234c2e';
+  $display->content['new-11a71998-a940-4d85-b6da-1b56dd234c2e'] = $pane;
+  $display->panels['footer'][5] = 'new-11a71998-a940-4d85-b6da-1b56dd234c2e';
   $pane = new stdClass();
   $pane->pid = 'new-094e02de-1547-47ee-b002-1c8754014c84';
-  $pane->panel = 'secondarycolumn3';
+  $pane->panel = 'secondarycolumn1';
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_netadmview_joined-panel_pane_5';
   $pane->shown = TRUE;
@@ -772,9 +669,58 @@ function rbv_networkadmin_default_page_manager_pages() {
   $pane->locks = array();
   $pane->uuid = '094e02de-1547-47ee-b002-1c8754014c84';
   $display->content['new-094e02de-1547-47ee-b002-1c8754014c84'] = $pane;
-  $display->panels['secondarycolumn3'][0] = 'new-094e02de-1547-47ee-b002-1c8754014c84';
+  $display->panels['secondarycolumn1'][0] = 'new-094e02de-1547-47ee-b002-1c8754014c84';
+  $pane = new stdClass();
+  $pane->pid = 'new-c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $pane->panel = 'secondarycolumn3';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_netadmview_joined-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'clearfix',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $display->content['new-c2e0581f-3163-4b62-8913-c1e0f51ac738'] = $pane;
+  $display->panels['secondarycolumn3'][0] = 'new-c2e0581f-3163-4b62-8913-c1e0f51ac738';
+  $pane = new stdClass();
+  $pane->pid = 'new-71b126d9-6a32-4c29-ad39-61aecd9f7a2f';
+  $pane->panel = 'secondarycolumn3';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_netadmview_joined-panel_pane_7';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '71b126d9-6a32-4c29-ad39-61aecd9f7a2f';
+  $display->content['new-71b126d9-6a32-4c29-ad39-61aecd9f7a2f'] = $pane;
+  $display->panels['secondarycolumn3'][1] = 'new-71b126d9-6a32-4c29-ad39-61aecd9f7a2f';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-0b870323-b0d5-431b-b469-52927c9138f8';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['rbv_page_network_admin'] = $page;
