@@ -50,7 +50,7 @@ function rbv_kala_default_button($variables) {
     $element['#attributes']['class'][] = 'btn-primary';
   }
 
-  if ($element['#id'] == 'edit-delete' || $element['#attributes']['value'] == 'Elimina') {
+  if ((isset($element['#id']) && $element['#id'] == 'edit-delete') || $element['#attributes']['value'] == 'Elimina') {
     $element['#attributes']['class'][] = 'btn-danger';
   }
 
