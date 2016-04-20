@@ -3714,7 +3714,7 @@ progetti/attività',
   $pane->configuration = array(
     'view_mode' => 'full',
     'fieldable_panels_pane' => (object) array(
-      'timestamp' => 1459921615,
+      'timestamp' => 1461136274,
       'uid' => '1',
       'title' => 'Contatti',
       'log' => '',
@@ -3730,10 +3730,10 @@ progetti/attività',
       'view_access' => NULL,
       'edit_access' => NULL,
       'created' => '1393581288',
-      'changed' => 1459921615,
+      'changed' => 1461136274,
       'uuid' => '',
       'language' => '',
-      'current_vid' => '1529',
+      'current_vid' => '1600',
       'field_basic_text_text' => array(
         'und' => array(
           0 => array(
@@ -3745,7 +3745,7 @@ progetti/attività',
  <div class="panel-body">
   <p style="padding-left: .6em;">Email generica retebuonvivere.org
    <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope-o" fa-lg></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+    <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
    </ul>
   </p>
   <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
@@ -3771,8 +3771,8 @@ progetti/attività',
       'revision' => 1,
       'is_new' => FALSE,
       'original' => (object) array(
-        'vid' => '1529',
-        'timestamp' => '1430123169',
+        'vid' => '1600',
+        'timestamp' => '1459921615',
         'uid' => '1',
         'title' => 'Contatti',
         'log' => '',
@@ -3788,10 +3788,10 @@ progetti/attività',
         'view_access' => NULL,
         'edit_access' => NULL,
         'created' => '1393581288',
-        'changed' => '1430123169',
+        'changed' => '1459921615',
         'uuid' => '',
         'language' => '',
-        'current_vid' => '1529',
+        'current_vid' => '1600',
         'field_basic_text_text' => array(
           'und' => array(
             0 => array(
@@ -3808,15 +3808,15 @@ progetti/attività',
   </p>
   <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
    <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
-    <li><i class="fa fa-phone" fa-lg></i> 045 8100279</li>
+    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone"></i> 045 8100279</li>
     <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
    </ul>
   </p>
   <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
    <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
-    <li><i class="fa fa-phone" fa-lg></i> 340 7665125</li>
+    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone"></i> 340 7665125</li>
    </ul>
   </p>
  </div>
@@ -3835,15 +3835,15 @@ progetti/attività',
   </p>
   <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
    <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
-    <li><i class="fa fa-phone" fa-lg></i> 045 8100279</li>
+    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone"></i> 045 8100279</li>
     <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
    </ul>
   </p>
   <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
    <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
-    <li><i class="fa fa-phone" fa-lg></i> 340 7665125</li>
+    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone"></i> 340 7665125</li>
    </ul>
   </p>
  </div>
@@ -3853,8 +3853,8 @@ progetti/attività',
         ),
         'rdf_mapping' => array(),
       ),
-      'old_vid' => '1529',
-      'vid' => '1600',
+      'old_vid' => '1600',
+      'vid' => '1601',
     ),
   );
   $pane->cache = array();

@@ -41,13 +41,13 @@ function rbv_networkadmin_views_default_views() {
     'title' => 'title',
   );
   $handler->display->display_options['row_options']['separator'] = ', ';
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['label'] = 'total';
   $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni partecipanti: <strong>@total</strong>';
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -109,13 +109,13 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Nome';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Campo: Content: Settori */
+  /* Field: Content: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -158,7 +158,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -212,13 +212,13 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Organizzazione';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Campo: Content: Post date */
+  /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -261,21 +261,21 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Intestazione: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h1>Elenco organizzazioni nominate come collaboratori</h1>';
   $handler->display->display_options['header']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['label'] = 'total';
   $handler->display->display_options['footer']['result']['content'] = 'Totale organizzazioni nominate: <strong>@total</strong>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -980,7 +980,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['field'] = 'field_relpro_project_target_id';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['label'] = 'e referenced from field_relpro_project';
-  /* Campo: Content: Soggetto */
+  /* Field: Content: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -988,13 +988,13 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Content: Post date */
+  /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'il giorno';
   $handler->display->display_options['fields']['created']['date_format'] = 'panopoly_day';
-  /* Campo: Content: Organizzazione promotrice */
+  /* Field: Content: Organizzazione promotrice */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1004,7 +1004,7 @@ function rbv_networkadmin_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Campo: Content: Progetto */
+  /* Field: Content: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1012,13 +1012,13 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Content: Tipo di collaborazione */
+  /* Field: Content: Tipo di collaborazione */
   $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['label'] = 'con il ruolo di';
   $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
-  /* Campo: Field: Descrizione */
+  /* Field: Field: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
