@@ -102,7 +102,8 @@ function rbv_org_panelizer_defaults() {
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_4\',$contexts[\'panelizer\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_graph\',\'panel_pane_4\',$contexts[\'panelizer\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),

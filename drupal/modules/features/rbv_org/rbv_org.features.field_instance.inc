@@ -787,55 +787,7 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-org-field_com_social_links'
-  $field_instances['node-org-field_com_social_links'] = array(
-    'bundle' => 'org',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui la vostra organizzazione è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'vmode_group_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_com_social_links',
-    'label' => 'Seguici su',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'social_profile_field',
-      'settings' => array(),
-      'type' => 'social_profile_field_default',
-      'weight' => 42,
-    ),
-  );
-
-  // Exported field_instance: 'node-org-field_com_tagline'
+  // Exported field_instance: 'node-org-field_com_tagline'.
   $field_instances['node-org-field_com_tagline'] = array(
     'bundle' => 'org',
     'default_value' => NULL,
@@ -1231,7 +1183,6 @@ function rbv_org_field_default_field_instances() {
   t('<a class="help" title="Avete scelto il settore \'bio\' e volete specificare che voi fate \'biodinamico\'? Aggiungete parole chiave per specificare ulteriormente la vostra attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Descrivete la vostra organizzazione come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Il logo è sempre visibile accanto al nome della vostra organizzzione. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se la vostra immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
-  t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui la vostra organizzazione è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Le organizzazioni hanno sempre una storia, e spesso è molto interessante. Condividiamo le nostre storie."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Mission, la ragione d\'essere dell\'organizzazione, che cosa questa organizzazione intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti dell\'organizzazione, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Quando è stata fondata la vostra organizzzione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Usare il pulsante \'Show end date\' per attivare la data di cessazione attività, se necessario."><i class="fa fa-question-circle"></i></a>');
@@ -1256,7 +1207,6 @@ function rbv_org_field_default_field_instances() {
   t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');
   t('Ruolo');
   t('Ruolo ricoperto dalla persona in questo periodo');
-  t('Seguici su');
   t('Settori');
   t('Slogan');
   t('Storia');

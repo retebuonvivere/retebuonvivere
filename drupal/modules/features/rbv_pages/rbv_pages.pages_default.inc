@@ -983,7 +983,7 @@ Collaboratori',
   $pages['rbv_graph_relation'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_group_calendar';
   $page->task = 'page';
@@ -1242,7 +1242,8 @@ calendario',
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_calendar\',\'panel_pane_1\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_calendar\',\'panel_pane_1\',$contexts[\'argument_entity_id:node_1\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),
@@ -1869,7 +1870,8 @@ elenco',
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'argument_entity_id:node_1\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'argument_entity_id:node_1\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),
@@ -1982,7 +1984,8 @@ progetti/attività',
         'name' => 'php',
         'settings' => array(
           'description' => 'empty view',
-          'php' => 'return empty(views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'panelizer\']->data->nid));',
+          'php' => '$vista = views_get_view_result(\'rbv_view_graph\',\'panel_pane_5\',$contexts[\'panelizer\']->data->nid);
+return empty($vista);',
         ),
         'not' => TRUE,
       ),
@@ -2365,7 +2368,7 @@ collaborazioni',
   $pages['rbv_page_explore'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_graph';
   $page->task = 'page';
@@ -2712,7 +2715,7 @@ collaborazioni',
   $pages['rbv_page_group_add_project'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_group_calendar';
   $page->task = 'page';
@@ -2833,7 +2836,7 @@ collaborazioni',
   $pages['rbv_page_group_calendar'] = $page;
 
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'rbv_page_group_projects';
   $page->task = 'page';
@@ -3533,7 +3536,7 @@ progetti/attività',
     'view_settings' => 'fields',
     'header_type' => 'none',
     'view_mode' => 'teaser',
-    'widget_title' => 'Nuove realtà',
+    'widget_title' => 'Nuove realtà aderenti',
   );
   $pane->cache = array();
   $pane->style = array();
@@ -3553,6 +3556,144 @@ progetti/attività',
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1459866488,
+      'uid' => '1',
+      'title' => 'Social',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '19',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 1,
+      'admin_title' => 'social',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1397226890',
+      'changed' => 1459866488,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1307',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div class="panel panel-default">
+  <div class="panel-heading" style="background-color: #82B6A7;">
+    <h2 class="panel-title"><i class="fa fa-users fa-lg"></i> Restiamo in contatto</h2>
+  </div>
+  <div class="panel-body">
+    <div class="fb-page" data-href="https://www.facebook.com/retebuonvivere" data-tabs="timeline, events, messages" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/retebuonvivere"><a href="https://www.facebook.com/retebuonvivere">Retebuonvivere</a></blockquote></div>
+    </div>
+    <div>
+      <br />
+      <div class="g-plusone" data-href="https://www.google.com/+RetebuonvivereOrg1"></div>
+    </div>
+    <!-- Place this tag after the last +1 button tag. -->
+    <script type="text/javascript">
+      window.___gcfg = {lang: \'it\'};
+
+      (function() {
+        var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
+        po.src = \'https://apis.google.com/js/platform.js\';
+        var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+  </div>
+</div>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1307',
+        'timestamp' => '1414864534',
+        'uid' => '1',
+        'title' => 'Social',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '19',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '1',
+        'admin_title' => 'social',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1397226890',
+        'changed' => '1414864534',
+        'uuid' => '',
+        'language' => 'und',
+        'current_vid' => '1307',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div class="panel panel-default">
+ <div class="panel-heading" style="background-color: #82B6A7;">
+  <h2 class="panel-title"><i class="fa fa-users fa-lg"></i> Restiamo in contatto</h2>
+ </div>
+ <div class="panel-body">
+ <div class="pull-left">
+  <p><a style="color: #DC4C3A;" href="https://www.google.com/+RetebuonvivereOrg1"><i class="fa fa-google-plus-square fa-4x"></i></a></p>
+  <p><div class="g-plusone" data-href="https://www.google.com/+RetebuonvivereOrg1"></div></p>
+ </div>
+<div class="pull-left">
+  <p><a style="color: #45619D;" href="https://www.facebook.com/retebuonvivere"><i class="fa fa-facebook-square fa-4x"></i></a></p>
+  <p><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fretebuonvivere&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=200" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:212px; height:200px;" allowTransparency="true"></iframe></p>
+ </div>
+ </div>
+</div>
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: \'it\'};
+
+  (function() {
+    var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
+    po.src = \'https://apis.google.com/js/platform.js\';
+    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<div class="panel panel-default">
+ <div class="panel-heading" style="background-color: #82B6A7;">
+  <h2 class="panel-title"><i class="fa fa-users fa-lg"></i> Restiamo in contatto</h2>
+ </div>
+ <div class="panel-body">
+ <div class="pull-left">
+  <p><a style="color: #DC4C3A;" href="https://www.google.com/+RetebuonvivereOrg1"><i class="fa fa-google-plus-square fa-4x"></i></a></p>
+  <p><div class="g-plusone" data-href="https://www.google.com/+RetebuonvivereOrg1"></div></p>
+ </div>
+<div class="pull-left">
+  <p><a style="color: #45619D;" href="https://www.facebook.com/retebuonvivere"><i class="fa fa-facebook-square fa-4x"></i></a></p>
+  <p><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fretebuonvivere&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=200" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:212px; height:200px;" allowTransparency="true"></iframe></p>
+ </div>
+ </div>
+</div>
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: \'it\'};
+
+  (function() {
+    var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
+    po.src = \'https://apis.google.com/js/platform.js\';
+    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1307',
+      'vid' => '1599',
+    ),
   );
   $pane->cache = array();
   $pane->style = array();
@@ -3572,6 +3713,149 @@ progetti/attività',
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1459921615,
+      'uid' => '1',
+      'title' => 'Contatti',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '10',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => 1,
+      'admin_title' => 'contatti',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1393581288',
+      'changed' => 1459921615,
+      'uuid' => '',
+      'language' => '',
+      'current_vid' => '1529',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div class="panel panel-default">
+<a id="anccontact"></a>
+ <div class="panel-heading" style="background-color: #D8C7A3;">
+  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
+ </div>
+ <div class="panel-body">
+  <p style="padding-left: .6em;">Email generica retebuonvivere.org
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope-o" fa-lg></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone"></i> 045 8100279</li>
+    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone"></i> 340 7665125</li>
+   </ul>
+  </p>
+ </div>
+</div>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1529',
+        'timestamp' => '1430123169',
+        'uid' => '1',
+        'title' => 'Contatti',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '10',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '1',
+        'admin_title' => 'contatti',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1393581288',
+        'changed' => '1430123169',
+        'uuid' => '',
+        'language' => '',
+        'current_vid' => '1529',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div class="panel panel-default">
+<a id="anccontact"></a>
+ <div class="panel-heading" style="background-color: #D8C7A3;">
+  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
+ </div>
+ <div class="panel-body">
+  <p style="padding-left: .6em;">Email generica retebuonvivere.org
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope-o" fa-lg></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone" fa-lg></i> 045 8100279</li>
+    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone" fa-lg></i> 340 7665125</li>
+   </ul>
+  </p>
+ </div>
+</div>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<div class="panel panel-default">
+<a id="anccontact"></a>
+ <div class="panel-heading" style="background-color: #D8C7A3;">
+  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
+ </div>
+ <div class="panel-body">
+  <p style="padding-left: .6em;">Email generica retebuonvivere.org
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope-o" fa-lg></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone" fa-lg></i> 045 8100279</li>
+    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope" fa-lg></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone" fa-lg></i> 340 7665125</li>
+   </ul>
+  </p>
+ </div>
+</div>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1529',
+      'vid' => '1600',
+    ),
   );
   $pane->cache = array();
   $pane->style = array(

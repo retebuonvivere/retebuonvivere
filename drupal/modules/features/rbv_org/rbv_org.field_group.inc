@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function rbv_org_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function rbv_org_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_org_contacts|node|org|form'] = $field_group;
+  $field_groups['group_org_contacts|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -75,7 +75,7 @@ function rbv_org_field_group_info() {
       ),
     ),
   );
-  $export['group_org_dati|node|org|form'] = $field_group;
+  $field_groups['group_org_dati|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -106,7 +106,7 @@ function rbv_org_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_org_description|node|org|form'] = $field_group;
+  $field_groups['group_org_description|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -136,7 +136,7 @@ function rbv_org_field_group_info() {
       ),
     ),
   );
-  $export['group_org_display_contacts|node|org|default'] = $field_group;
+  $field_groups['group_org_display_contacts|node|org|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -165,7 +165,7 @@ function rbv_org_field_group_info() {
       ),
     ),
   );
-  $export['group_org_display_description|node|org|default'] = $field_group;
+  $field_groups['group_org_display_description|node|org|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -192,7 +192,7 @@ function rbv_org_field_group_info() {
       ),
     ),
   );
-  $export['group_org_display_history|node|org|default'] = $field_group;
+  $field_groups['group_org_display_history|node|org|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -222,7 +222,7 @@ function rbv_org_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_org_display_info|node|org|default'] = $field_group;
+  $field_groups['group_org_display_info|node|org|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -251,7 +251,7 @@ function rbv_org_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_org_history|node|org|form'] = $field_group;
+  $field_groups['group_org_history|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -283,7 +283,7 @@ function rbv_org_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_org_info|node|org|form'] = $field_group;
+  $field_groups['group_org_info|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -312,7 +312,7 @@ function rbv_org_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_org_social|node|org|form'] = $field_group;
+  $field_groups['group_org_social|node|org|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -347,7 +347,16 @@ function rbv_org_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_vmode_group_content|node|org|vmode_group_content'] = $field_group;
+  $field_groups['group_vmode_group_content|node|org|vmode_group_content'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Contatti');
+  t('Dati');
+  t('Descrizione');
+  t('Info');
+  t('Social links');
+  t('Storia');
+
+  return $field_groups;
 }

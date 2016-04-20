@@ -144,6 +144,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
 
   /* Display: pane: partecipanti count */
   $handler = $view->new_display('panel_pane', 'pane: partecipanti count', 'panel_pane_2');
@@ -384,19 +385,6 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'd3_style';
   $handler->display->display_options['style_options']['library'] = 'd3.piechart';
-  $handler->display->display_options['style_options']['fields'] = array(
-    'rows' => array(
-      'name' => array(
-        'field' => 'type',
-        'aggregation' => '_none',
-      ),
-      'value' => array(
-        'field' => 'nid',
-        'aggregation' => '_none',
-      ),
-    ),
-  );
-  $handler->display->display_options['style_options']['show_table'] = 1;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -441,33 +429,6 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'd3_style';
   $handler->display->display_options['style_options']['library'] = 'd3.columnchart';
-  $handler->display->display_options['style_options']['fields'] = array(
-    'rows' => array(
-      'x_label' => array(
-        'field' => 'name',
-        'aggregation' => '_none',
-      ),
-      'value0' => array(
-        'field' => 'nid',
-        'aggregation' => '_none',
-      ),
-      'value1' => array(
-        'field' => '__none',
-        'aggregation' => '_none',
-      ),
-    ),
-    'legend' => array(
-      0 => array(
-        'field' => 'name',
-        'aggregation' => '_none',
-      ),
-      1 => array(
-        'field' => '__none',
-        'aggregation' => '_none',
-      ),
-    ),
-  );
-  $handler->display->display_options['style_options']['show_table'] = 0;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -566,33 +527,6 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'd3_style';
   $handler->display->display_options['style_options']['library'] = 'd3.columnchart';
-  $handler->display->display_options['style_options']['fields'] = array(
-    'rows' => array(
-      'x_label' => array(
-        'field' => 'name',
-        'aggregation' => '_none',
-      ),
-      'value0' => array(
-        'field' => 'nid',
-        'aggregation' => '_none',
-      ),
-      'value1' => array(
-        'field' => '__none',
-        'aggregation' => '_none',
-      ),
-    ),
-    'legend' => array(
-      0 => array(
-        'field' => 'name',
-        'aggregation' => '_none',
-      ),
-      1 => array(
-        'field' => '__none',
-        'aggregation' => '_none',
-      ),
-    ),
-  );
-  $handler->display->display_options['style_options']['show_table'] = 0;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
