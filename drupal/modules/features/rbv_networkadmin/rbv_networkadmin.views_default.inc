@@ -133,6 +133,8 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Partecipano già';
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'RBV stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -142,6 +144,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
 
   /* Display: pane: partecipanti count */
   $handler = $view->new_display('panel_pane', 'pane: partecipanti count', 'panel_pane_2');
@@ -314,6 +317,538 @@ function rbv_networkadmin_views_default_views() {
     'panel_pane_3' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: pane: adesioni data */
+  $handler = $view->new_display('panel_pane', 'pane: adesioni data', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Data adesioni';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'created' => 'created',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Organizzazione';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Data di adesione';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'Y-m-d';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'panopoly_time';
+  $handler->display->display_options['pane_category']['name'] = 'View stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Contenuti per tipo */
+  $handler = $view->new_display('panel_pane', 'Contenuti per tipo', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contenuti per categoria';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'd3_style';
+  $handler->display->display_options['style_options']['library'] = 'd3.piechart';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'Tipo di contenuti';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['nid']['label'] = 'Totale';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'RBV charts';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Contenuti per utente */
+  $handler = $view->new_display('panel_pane', 'Contenuti per utente', 'panel_pane_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contenuti per creator';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'd3_style';
+  $handler->display->display_options['style_options']['library'] = 'd3.columnchart';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Info';
+  $handler->display->display_options['footer']['area']['content'] = 'Utenti che hanno inserito almeno un contenuto (oltre l\'Organizzazione), escluso il gruppo di redazione di RBV.';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Utente';
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'all' => 'all',
+    'collaboration' => 'collaboration',
+    'panopoly_page' => 'panopoly_page',
+    'forum' => 'forum',
+    'event' => 'event',
+    'panopoly_landing_page' => 'panopoly_landing_page',
+    'org' => 'org',
+    'project' => 'project',
+  );
+  /* Filter criterion: Content: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+    4 => '4',
+    5 => '5',
+  );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '1';
+  $handler->display->display_options['pane_category']['name'] = 'RBV stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Contenuti per admin */
+  $handler = $view->new_display('panel_pane', 'Contenuti per admin', 'panel_pane_7');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contenuti per admin';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'd3_style';
+  $handler->display->display_options['style_options']['library'] = 'd3.columnchart';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Info';
+  $handler->display->display_options['footer']['area']['content'] = 'Gruppo di redazione';
+  $handler->display->display_options['footer']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Utente';
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'all' => 'all',
+    'collaboration' => 'collaboration',
+    'panopoly_page' => 'panopoly_page',
+    'forum' => 'forum',
+    'event' => 'event',
+    'panopoly_landing_page' => 'panopoly_landing_page',
+    'org' => 'org',
+    'project' => 'project',
+  );
+  /* Filter criterion: Content: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+    4 => '4',
+    5 => '5',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'RBV stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Contenuti per utente per data */
+  $handler = $view->new_display('panel_pane', 'Contenuti per utente per data', 'panel_pane_8');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contenuti per utente per data';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'created' => 'created',
+    'type' => 'type',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'type' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Utente';
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'Y-m-d';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'panopoly_time';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'Tipo';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'all' => 'all',
+    'collaboration' => 'collaboration',
+    'panopoly_page' => 'panopoly_page',
+    'forum' => 'forum',
+    'event' => 'event',
+    'panopoly_landing_page' => 'panopoly_landing_page',
+    'org' => 'org',
+    'project' => 'project',
+  );
+  /* Filter criterion: Content: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'RBV stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Partecipanti details */
+  $handler = $view->new_display('panel_pane', 'Partecipanti details', 'panel_pane_9');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Org. partecipanti - dettagli';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
+  $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
+  $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';
+  $handler->display->display_options['fields']['field_com_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_com_logo']['settings'] = array(
+    'image_style' => 'rbv_image_icon',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Nome';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Settori */
+  $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
+  /* Field: Content: Slogan */
+  $handler->display->display_options['fields']['field_com_tagline']['id'] = 'field_com_tagline';
+  $handler->display->display_options['fields']['field_com_tagline']['table'] = 'field_data_field_com_tagline';
+  $handler->display->display_options['fields']['field_com_tagline']['field'] = 'field_com_tagline';
+  $handler->display->display_options['fields']['field_com_tagline']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_com_tagline']['alter']['text'] = '<i class="fa fa-check fa-lg"></i>';
+  $handler->display->display_options['fields']['field_com_tagline']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '50',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'trim_options' => array(
+      'text' => 'text',
+    ),
+    'trim_preserve_tags' => '',
+  );
+  /* Field: Field: Descrizione */
+  $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
+  $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
+  $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
+  $handler->display->display_options['fields']['field_com_description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_com_description']['alter']['text'] = '<i class="fa fa-check fa-lg"></i>';
+  $handler->display->display_options['fields']['field_com_description']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '80',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'summary_handler' => 'full',
+    'trim_options' => array(
+      'text' => 'text',
+    ),
+    'trim_preserve_tags' => '',
+  );
+  /* Field: Content: Mission */
+  $handler->display->display_options['fields']['field_com_mission']['id'] = 'field_com_mission';
+  $handler->display->display_options['fields']['field_com_mission']['table'] = 'field_data_field_com_mission';
+  $handler->display->display_options['fields']['field_com_mission']['field'] = 'field_com_mission';
+  $handler->display->display_options['fields']['field_com_mission']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_com_mission']['alter']['text'] = '<i class="fa fa-check fa-lg"></i>';
+  $handler->display->display_options['fields']['field_com_mission']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '80',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'summary_handler' => 'full',
+    'trim_options' => array(
+      'text' => 'text',
+    ),
+    'trim_preserve_tags' => '',
+  );
+  /* Field: Content: Storia */
+  $handler->display->display_options['fields']['field_com_history']['id'] = 'field_com_history';
+  $handler->display->display_options['fields']['field_com_history']['table'] = 'field_data_field_com_history';
+  $handler->display->display_options['fields']['field_com_history']['field'] = 'field_com_history';
+  $handler->display->display_options['fields']['field_com_history']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_com_history']['alter']['text'] = '<i class="fa fa-check fa-lg"></i>';
+  $handler->display->display_options['fields']['field_com_history']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '50',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'summary_handler' => 'full',
+    'trim_options' => array(
+      'text' => 'text',
+    ),
+    'trim_preserve_tags' => '',
+  );
+  /* Field: Content: Pagina facebook */
+  $handler->display->display_options['fields']['field_com_ln_fb']['id'] = 'field_com_ln_fb';
+  $handler->display->display_options['fields']['field_com_ln_fb']['table'] = 'field_data_field_com_ln_fb';
+  $handler->display->display_options['fields']['field_com_ln_fb']['field'] = 'field_com_ln_fb';
+  $handler->display->display_options['fields']['field_com_ln_fb']['click_sort_column'] = 'url';
+  $handler->display->display_options['pane_category']['name'] = 'RBV stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
   $translatables['rbv_netadmview_joined'] = array(
     t('Master'),
     t('Network admin - elenco delle organizzazioni che partecipano'),
@@ -331,7 +866,7 @@ function rbv_networkadmin_views_default_views() {
     t('Settori'),
     t('pane: partecipano già'),
     t('Partecipano già'),
-    t('View panes'),
+    t('RBV stats'),
     t('pane: partecipanti count'),
     t('<span class="badge badge-participant" title="Totale organizzazioni partecipanti (iscritte a rbv)">[nid]</span> <a href="esplora?type%5B%5D=org">org. partecipanti</a>.'),
     t('RBV count'),
@@ -339,10 +874,38 @@ function rbv_networkadmin_views_default_views() {
     t('Data adesioni'),
     t('Organizzazione'),
     t('Data di adesione'),
+    t('View panes'),
     t('Allegato: nominate'),
     t('Elenco organizzazioni nominate come collaboratori'),
     t('<h1>Elenco organizzazioni nominate come collaboratori</h1>'),
     t('Totale organizzazioni nominate: <strong>@total</strong>'),
+    t('View stats'),
+    t('Contenuti per tipo'),
+    t('Contenuti per categoria'),
+    t('Tipo di contenuti'),
+    t('Totale'),
+    t('RBV charts'),
+    t('Contenuti per utente'),
+    t('Contenuti per creator'),
+    t('Info'),
+    t('Utenti che hanno inserito almeno un contenuto (oltre l\'Organizzazione), escluso il gruppo di redazione di RBV.'),
+    t('author'),
+    t('Utente'),
+    t('Nid'),
+    t('Contenuti per admin'),
+    t('Gruppo di redazione'),
+    t('Contenuti per utente per data'),
+    t('Post date'),
+    t('Tipo'),
+    t('Partecipanti details'),
+    t('Org. partecipanti - dettagli'),
+    t('Logo'),
+    t('Slogan'),
+    t('<i class="fa fa-check fa-lg"></i>'),
+    t('Descrizione'),
+    t('Mission'),
+    t('Storia'),
+    t('Pagina facebook'),
   );
   $export['rbv_netadmview_joined'] = $view;
 
@@ -464,6 +1027,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -499,6 +1063,22 @@ function rbv_networkadmin_views_default_views() {
   $handler = $view->new_display('panel_pane', 'pane organiz nominate', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Elenco organizzazioni nominate nelle collaborazioni';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pane_category']['name'] = 'RBV stats';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
   $translatables['rbv_netadmview_organon'] = array(
     t('Master'),
     t('network admin - Elenco organizzazioni nominate nelle collaborazioni'),
@@ -521,7 +1101,7 @@ function rbv_networkadmin_views_default_views() {
     t('Page'),
     t('pane organiz nominate'),
     t('Elenco organizzazioni nominate nelle collaborazioni'),
-    t('View panes'),
+    t('RBV stats'),
   );
   $export['rbv_netadmview_organon'] = $view;
 
