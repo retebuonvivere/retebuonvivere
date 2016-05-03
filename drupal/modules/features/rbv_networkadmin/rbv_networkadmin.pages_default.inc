@@ -630,58 +630,6 @@ function rbv_networkadmin_default_page_manager_pages() {
   $display->content['new-42b7d219-e4c0-4017-8ccd-0bbaf52a851c'] = $pane;
   $display->panels['footer'][3] = 'new-42b7d219-e4c0-4017-8ccd-0bbaf52a851c';
   $pane = new stdClass();
-  $pane->pid = 'new-cd226678-bd9a-4290-82ff-af4c3c66c3a0';
-  $pane->panel = 'footer';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:32';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-    'fieldable_panels_pane' => (object) array(
-      'bundle' => 'text',
-      'language' => 'und',
-      'is_new' => TRUE,
-      'title' => '',
-      'link' => 0,
-      'path' => '',
-      'reusable' => 0,
-      'admin_title' => '',
-      'admin_description' => '',
-      'category' => 'Reusable Content',
-      'vid' => '1602',
-      'current_vid' => '',
-      'revision' => 1,
-      'fpid' => '32',
-      'field_basic_text_text' => array(
-        'und' => array(
-          0 => array(
-            'value' => '<a class="btn btn-default" href="/networkadmin/partecipanti">Dettagli org. partecipanti</a>',
-            'format' => 'panopoly_html_text',
-          ),
-        ),
-      ),
-      'log' => '',
-      'created' => 1461134247,
-      'timestamp' => 1461134247,
-      'changed' => 1461134247,
-      'uuid' => '',
-      'uid' => '1',
-      'vuuid' => '',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = 'cd226678-bd9a-4290-82ff-af4c3c66c3a0';
-  $display->content['new-cd226678-bd9a-4290-82ff-af4c3c66c3a0'] = $pane;
-  $display->panels['footer'][4] = 'new-cd226678-bd9a-4290-82ff-af4c3c66c3a0';
-  $pane = new stdClass();
   $pane->pid = 'new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
@@ -704,11 +652,11 @@ function rbv_networkadmin_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
   $display->content['new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89'] = $pane;
-  $display->panels['footer'][5] = 'new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
+  $display->panels['footer'][4] = 'new-4948cc24-2cfd-425a-bc6f-7a28bf8b2a89';
   $pane = new stdClass();
   $pane->pid = 'new-11a71998-a940-4d85-b6da-1b56dd234c2e';
   $pane->panel = 'footer';
@@ -793,11 +741,11 @@ function rbv_networkadmin_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '11a71998-a940-4d85-b6da-1b56dd234c2e';
   $display->content['new-11a71998-a940-4d85-b6da-1b56dd234c2e'] = $pane;
-  $display->panels['footer'][6] = 'new-11a71998-a940-4d85-b6da-1b56dd234c2e';
+  $display->panels['footer'][5] = 'new-11a71998-a940-4d85-b6da-1b56dd234c2e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
