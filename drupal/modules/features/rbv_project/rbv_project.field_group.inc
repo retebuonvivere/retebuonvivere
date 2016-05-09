@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function rbv_project_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function rbv_project_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_project_contacts|node|project|form'] = $field_group;
+  $field_groups['group_project_contacts|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -75,7 +75,7 @@ function rbv_project_field_group_info() {
       ),
     ),
   );
-  $export['group_project_dati|node|project|form'] = $field_group;
+  $field_groups['group_project_dati|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -107,7 +107,7 @@ function rbv_project_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_project_description|node|project|form'] = $field_group;
+  $field_groups['group_project_description|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -137,7 +137,7 @@ function rbv_project_field_group_info() {
       ),
     ),
   );
-  $export['group_project_dis_contacts|node|project|default'] = $field_group;
+  $field_groups['group_project_dis_contacts|node|project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -167,7 +167,7 @@ function rbv_project_field_group_info() {
       ),
     ),
   );
-  $export['group_project_dis_description|node|project|default'] = $field_group;
+  $field_groups['group_project_dis_description|node|project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -194,7 +194,7 @@ function rbv_project_field_group_info() {
       ),
     ),
   );
-  $export['group_project_dis_history|node|project|default'] = $field_group;
+  $field_groups['group_project_dis_history|node|project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -220,7 +220,7 @@ function rbv_project_field_group_info() {
       ),
     ),
   );
-  $export['group_project_dis_private_og|node|project|default'] = $field_group;
+  $field_groups['group_project_dis_private_og|node|project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -249,7 +249,7 @@ function rbv_project_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_project_display_info|node|project|default'] = $field_group;
+  $field_groups['group_project_display_info|node|project|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -278,7 +278,7 @@ function rbv_project_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_project_history|node|project|form'] = $field_group;
+  $field_groups['group_project_history|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -309,7 +309,7 @@ function rbv_project_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_project_info|node|project|form'] = $field_group;
+  $field_groups['group_project_info|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -337,7 +337,7 @@ function rbv_project_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_project_private_og|node|project|form'] = $field_group;
+  $field_groups['group_project_private_og|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -373,7 +373,18 @@ function rbv_project_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_vmode_group_content|node|project|vmode_group_content'] = $field_group;
+  $field_groups['group_vmode_group_content|node|project|vmode_group_content'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Bacheca interna gruppo');
+  t('Contatti');
+  t('Dati');
+  t('Dati privati gruppo');
+  t('Descrizione');
+  t('Info');
+  t('Storia');
+  t('vmode group content');
+
+  return $field_groups;
 }

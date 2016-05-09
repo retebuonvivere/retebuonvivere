@@ -10,7 +10,7 @@
 function rbv_project_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-project-field_com_categories'
+  // Exported field_instance: 'node-project-field_com_categories'.
   $field_instances['node-project-field_com_categories'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_date'
+  // Exported field_instance: 'node-project-field_com_date'.
   $field_instances['node-project-field_com_date'] = array(
     'bundle' => 'project',
     'deleted' => 0,
@@ -143,7 +143,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_description'
+  // Exported field_instance: 'node-project-field_com_description'.
   $field_instances['node-project-field_com_description'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -210,7 +210,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_email'
+  // Exported field_instance: 'node-project-field_com_email'.
   $field_instances['node-project-field_com_email'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -261,7 +261,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_history'
+  // Exported field_instance: 'node-project-field_com_history'.
   $field_instances['node-project-field_com_history'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -315,7 +315,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_location'
+  // Exported field_instance: 'node-project-field_com_location'.
   $field_instances['node-project-field_com_location'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -379,7 +379,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_logo'
+  // Exported field_instance: 'node-project-field_com_logo'.
   $field_instances['node-project-field_com_logo'] = array(
     'bundle' => 'project',
     'deleted' => 0,
@@ -463,7 +463,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_mission'
+  // Exported field_instance: 'node-project-field_com_mission'.
   $field_instances['node-project-field_com_mission'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -517,7 +517,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_more'
+  // Exported field_instance: 'node-project-field_com_more'.
   $field_instances['node-project-field_com_more'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -574,7 +574,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_private_og'
+  // Exported field_instance: 'node-project-field_com_private_og'.
   $field_instances['node-project-field_com_private_og'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -631,7 +631,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_scope'
+  // Exported field_instance: 'node-project-field_com_scope'.
   $field_instances['node-project-field_com_scope'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -680,7 +680,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_social_links'
+  // Exported field_instance: 'node-project-field_com_social_links'.
   $field_instances['node-project-field_com_social_links'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -729,7 +729,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_tagline'
+  // Exported field_instance: 'node-project-field_com_tagline'.
   $field_instances['node-project-field_com_tagline'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -788,7 +788,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_tags'
+  // Exported field_instance: 'node-project-field_com_tags'.
   $field_instances['node-project-field_com_tags'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -840,7 +840,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_com_telephone'
+  // Exported field_instance: 'node-project-field_com_telephone'.
   $field_instances['node-project-field_com_telephone'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -891,7 +891,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_quick_links_links'
+  // Exported field_instance: 'node-project-field_quick_links_links'.
   $field_instances['node-project-field_quick_links_links'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -964,7 +964,7 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-og_group_ref'
+  // Exported field_instance: 'node-project-og_group_ref'.
   $field_instances['node-project-og_group_ref'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
