@@ -10,7 +10,7 @@
 function rbv_com_fields_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_com_categories'
+  // Exported field_base: 'field_com_categories'.
   $field_bases['field_com_categories'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -36,7 +36,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_com_date'
+  // Exported field_base: 'field_com_date'.
   $field_bases['field_com_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -65,7 +65,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'date',
   );
 
-  // Exported field_base: 'field_com_description'
+  // Exported field_base: 'field_com_description'.
   $field_bases['field_com_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -84,7 +84,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_com_email'
+  // Exported field_base: 'field_com_email'.
   $field_bases['field_com_email'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -99,7 +99,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_com_history'
+  // Exported field_base: 'field_com_history'.
   $field_bases['field_com_history'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -118,7 +118,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_com_ln_fb'
+  // Exported field_base: 'field_com_ln_fb'.
   $field_bases['field_com_ln_fb'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -147,7 +147,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_com_location'
+  // Exported field_base: 'field_com_location'.
   $field_bases['field_com_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -162,7 +162,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_com_logo'
+  // Exported field_base: 'field_com_logo'.
   $field_bases['field_com_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -184,7 +184,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_com_mission'
+  // Exported field_base: 'field_com_mission'.
   $field_bases['field_com_mission'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -203,7 +203,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_com_more'
+  // Exported field_base: 'field_com_more'.
   $field_bases['field_com_more'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -222,7 +222,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_com_private_og'
+  // Exported field_base: 'field_com_private_og'.
   $field_bases['field_com_private_og'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -241,7 +241,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_com_social_links'
+  // Exported field_base: 'field_com_social_links'.
   $field_bases['field_com_social_links'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -260,7 +260,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'social_profile_field_url',
   );
 
-  // Exported field_base: 'field_com_tagline'
+  // Exported field_base: 'field_com_tagline'.
   $field_bases['field_com_tagline'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -281,7 +281,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_com_tags'
+  // Exported field_base: 'field_com_tags'.
   $field_bases['field_com_tags'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -307,7 +307,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_com_telephone'
+  // Exported field_base: 'field_com_telephone'.
   $field_bases['field_com_telephone'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -322,7 +322,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'telephone',
   );
 
-  // Exported field_base: 'field_rel_categories'
+  // Exported field_base: 'field_rel_categories'.
   $field_bases['field_rel_categories'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -348,7 +348,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_rel_source'
+  // Exported field_base: 'field_rel_source'.
   $field_bases['field_rel_source'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -383,7 +383,7 @@ function rbv_com_fields_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_rel_target'
+  // Exported field_base: 'field_rel_target'.
   $field_bases['field_rel_target'] = array(
     'active' => 1,
     'cardinality' => 1,
