@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function rbv_event_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function rbv_event_field_group_info() {
       ),
     ),
   );
-  $export['group_event_dati|node|event|form'] = $field_group;
+  $field_groups['group_event_dati|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -72,7 +72,7 @@ function rbv_event_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_event_description|node|event|form'] = $field_group;
+  $field_groups['group_event_description|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -101,7 +101,7 @@ function rbv_event_field_group_info() {
       ),
     ),
   );
-  $export['group_event_dis_description|node|event|default'] = $field_group;
+  $field_groups['group_event_dis_description|node|event|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -131,7 +131,7 @@ function rbv_event_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_event_display_info|node|event|default'] = $field_group;
+  $field_groups['group_event_display_info|node|event|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -163,7 +163,7 @@ function rbv_event_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_event_info|node|event|form'] = $field_group;
+  $field_groups['group_event_info|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -198,7 +198,14 @@ function rbv_event_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_vmode_group_content|node|event|vmode_group_content'] = $field_group;
+  $field_groups['group_vmode_group_content|node|event|vmode_group_content'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Dati');
+  t('Descrizione');
+  t('Info');
+  t('vmode group content');
+
+  return $field_groups;
 }
