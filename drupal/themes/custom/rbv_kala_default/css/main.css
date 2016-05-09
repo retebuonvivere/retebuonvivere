@@ -5,12 +5,15 @@
 html {
  font-size: 100%;
 }
+/*a {
+  color: #FF9292;
+}*/
 /* FRONT PAGE */
 h1#site-name{
     font-size:30px;
 }
 /* HEADER */
-/*header.navbar{*/
+header.navbar
 /*    background:#D8C7A3;*/
 /*    border-radius:0;*/
 /*    border:none;*/
@@ -19,18 +22,45 @@ h1#site-name{
 .nav-search-box label{
     display:none;
 }
+.nav-search-box .form-wrapper {
+  float:right;
+}
 .nav-search-box .form-item-keys{
-/*    float:left;*/
-    margin-top:0;
+  float:let;
+  margin-top:0;
 }
 .nav-search-box input#edit-keys{
-    width:auto;
-    float:left;
+  /*width: auto;*/
+  min-width: 200px;
+  max-width: 60%;
+  float:left;
 }
 #logo img{
 /*    position:absolute;*/
 /*    float:left;*/
     width:82px;
+}
+
+#rbv-cover {
+  /* background: #196CB5; */
+  height: 22em;
+  /*background-size: cover;*/
+  background-image: url(../images/sky.jpg);
+  background-attachment: fixed;
+  /* background: linear-gradient(to bottom,rgba(255, 255, 255, 0.42) 10%,rgba(255, 255, 255, 0) 95%); */
+}
+
+#main-wrapper{
+/*  margin-top: 0;
+  position: relative;
+  top: -8em;*/
+}
+/*#page-wrapper {
+  background-color: #e5e5e5;
+}*/
+
+div#top-content {
+    /*margin-top: 6px;*/
 }
 
 /* FIELD LABELS */
@@ -42,8 +72,9 @@ h1#site-name{
 
 /* FIELDS */
 .field-type-addressfield {
- display: table;
- margin-bottom: .6em;
+  display: table;
+  margin-bottom: .6em;
+  color: #8D8785;
 }
 
 .field-type-addressfield .organisation-name {
@@ -89,26 +120,40 @@ h1#site-name{
   margin-top: 1.4em;
 }
 
-/* FIELD > DATE */
-.date-display-start, .date-display-single {
- -moz-border-radius: .4em;
- border-radius: .4em;
- background: #E3FFCE;
- padding: .3em .5em .2em .5em;
- line-height: 1.8em;
+/* FIELD DATE */
+
+/*
+.field-name-field-event-date {
+  line-height: 1.8em;
+}
+
+.date-display-single {
+  background: #E3FFCE;
+  display: inline-block;
+  -moz-border-radius: .4em;
+  border-radius: .4em;
+  padding: 0 .4em;
+}
+.date-display-range {
+  display: inline-block;
+}
+
+.date-display-start {
+  background: #E3FFCE;
+  padding: .3em .5em .2em .5em;
+  -moz-border-radius: .4em;
+  border-radius: .4em;
 }
 .date-display-end {
- -moz-border-radius: .4em;
- border-radius: .4em;
- background: #FFCECE;
- padding: .3em .5em .2em .5em;
- line-height: 1.8em;
+  background: #FFCECE;
+  padding: .3em .5em .2em .5em;
+  -moz-border-radius: .4em;
+  border-radius: .4em;
 }
-
-.views-view-grid .field-type-date, .masonry .field-type-date, .field-name-field-relpro-project .field-type-date, .views-field-field-relpro-project .field-type-date {
- clear: both;
+*/
+.date-display-range {
+  display: inline-block;
 }
-
 /* FIELD > GROUP VISIBILITY */
 .field-name-group-access {
  background: #FFF69B;
@@ -119,13 +164,21 @@ h1#site-name{
 }
 
 /* FIELD > LOGO */
-.field-name-field-com-logo, .views-field-field-com-logo {
+.field-name-field-com-logo .panopoly-image-square, .views-field-field-com-logo .panopoly-image-square {
  float: left;
  padding: 0 1em .8em 0;
 }
+.rbv-image-cover {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+}
 
 /* FIELD > SLOGAN */
-.content .field-name-field-com-tagline {
+.node .field-name-field-com-tagline {
  padding-bottom: 1em;
  font-family: georgia;
  font-style: italic;
@@ -141,7 +194,7 @@ h1#site-name{
  padding: 1em 1em 0 0;
  min-height: 46px;
 }
-.content .field-name-field-com-social-links .field-item {
+.node .field-name-field-com-social-links .field-item {
  padding-bottom: .45em;
  float: right;
 }
@@ -170,123 +223,121 @@ h1#site-name{
 /*
  * NODE TITLES
  */
-.node-type-org h1#page-title:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: 1em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f015";
- padding-right: .4em;
+.node-type-org h1#page-title:before, .node-org .rbv-teaser-title a:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  content: "\f015";
 }
-.node-type-project h1#page-title:before {
+.node h1#page-title:before {
+  font-size: 1em;
+  padding-right: .4em;
+}
+.node-teaser .rbv-teaser-title a:before {
+  font-size: .9em;
+  padding-right: .2em;
+}
+
+.node-type-project h1#page-title:before, .node-project .rbv-teaser-title a:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
- font-size: 1em;
  display: inline-block;
  text-decoration: inherit;
  content: "\f06c";
- padding-right: .4em;
 }
-.node-type-event h1#page-title:before {
+
+.node-type-event h1#page-title:before, .node-event .rbv-teaser-title a:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
- font-size: 1em;
  display: inline-block;
  text-decoration: inherit;
  content: "\f073";
- padding-right: .4em;
 }
-.node-type-collaboration h1#page-title:before {
+.node-type-collaboration h1#page-title:before, .node-collaboration .rbv-teaser-title a:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
- font-size: 1em;
  display: inline-block;
  text-decoration: inherit;
  content: "\f07e";
- padding-right: .4em;
 }
-.node-type-forum h1#page-title:before {
+.node-type-forum h1#page-title:before, .node-forum .rbv-teaser-title a:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
- font-size: 1em;
  display: inline-block;
  text-decoration: inherit;
  content: "\f075";
- padding-right: .4em;
 }
 
-article.node-org > h2 > a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: .9em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f015";
- padding-right: .2em;
-}
 
-article.node-project > h2 > a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: .9em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f06c";
- padding-right: .2em;
-}
-
-article.node-event > h2 > a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: .9em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f073";
- padding-right: .2em;
-}
-
-article.node-forum > h2 > a:before {
- font-family: FontAwesome;
- font-weight: normal;
- font-style: normal;
- font-size: .9em;
- display: inline-block;
- text-decoration: inherit;
- content: "\f075";
- padding-right: .2em;
-}
 
 /*
  * TAXONOMY 
  */
-.content .field-type-taxonomy-term-reference ul.links {
+.node .field-type-taxonomy-term-reference ul.links {
  list-style: none;
  padding-left: 0;
 }
-.content .field-type-taxonomy-term-reference a {
+.node .field-type-taxonomy-term-reference a {
  -moz-border-radius: .3em;
  border-radius: .3em;
- padding: .1em .3em;
+ padding: .2em .4em;
  margin: .2em;
  white-space: nowrap;
 }
 
 /* TAXONOMY > CATEGORIES */
-.content .field-name-field-com-categories a {
- background: #FFEAB9;
+.node .field-name-field-com-categories a {
+ /*background: #FFEAB9;*/
  float: left;
 }
+/* Abitare */
+.tid-7 a {
+  background: #FFD4B4;
+  color: #4F4D44;
+}
+/* Artigianato */
+.tid-4 a {
+  background: #795548;
+  color: #FFE032;
+}
+/* Bio */
+.tid-2 a {
+  background: #3F9F3A;
+  color: #C8FF47;
+}
+/* Salute e cura */
+.tid-3 a {
+  background: #1273B3;
+  color: #A0FFE8;
+}
+/* Turismo responsabile */
+.tid-8 a {
+  background: #ffffff;
+  color: #000000;
+}
+/* Finanza mutualistica servizi economici */
+.tid-55 a {
+  background: #ffffff;
+  color: #000000;
+}
+/* formazione */
+.tid-70 a {
+  background: #ffffff;
+  color: #000000;
+}
+/* informazione */
+.tid-13 a {
+  background: #ffffff;
+  color: #000000;
+}
 
-.content .field-name-field-com-categories a:before, .page-taxonomy-term h1#page-title:before {
+.node .field-name-field-com-categories a:before, .page-taxonomy-term h1#page-title:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
@@ -296,7 +347,7 @@ article.node-forum > h2 > a:before {
  padding-right: .5em;
 }
 
-.content .field-name-field-com-tags a:before {
+.node .field-name-field-com-tags a:before {
  font-family: FontAwesome;
  font-weight: normal;
  font-style: normal;
@@ -307,22 +358,22 @@ article.node-forum > h2 > a:before {
 }
 
 /* TAXONOMY > TAGS */
-.content .field-name-field-com-tags a {
+.node .field-name-field-com-tags a {
  background: #CEEAFF;
  float: left;
 }
 
 /* TAXONOMY > ORG-TYPE and SCOPE */
-.content .field-name-field-org-type a, .content .field-name-field-com-scope a {
+.node .field-name-field-org-type a, .node .field-name-field-com-scope a {
  background: #f5f5f5;
  padding: .3em .4em;
 }
 
-div .content .field-name-field-org-type:after {
+div .node .field-name-field-org-type:after {
  clear: none;
 }
 
-.content .field-name-field-com-scope {
+.node .field-name-field-com-scope {
  clear: both;
 }
 
@@ -333,7 +384,7 @@ div.view-content.row {
  margin-left: 0;
  margin-right: 0;
 }
-article .content {
+article .node {
  padding-bottom: 12px;
 }
 
@@ -346,7 +397,7 @@ article .content {
 }
 
 /* Project collaborators and Organization members */
-.node-type-project .views-row, .node-type-org .view-rbv-view-members .views-row, .content .field-name-field-relpro-project {
+.node-type-project .views-row, .node-type-org .view-rbv-view-members .views-row, .node .field-name-field-relpro-project {
  background: #f8f8f8;
  -moz-border-radius: .4em;
  border-radius: .4em;
@@ -416,7 +467,29 @@ article .content {
 .node h2 {
  font-size: 1.5em;
  margin-top: 15px;
- margin-bottom: 8px;
+}
+
+h1#page-title {
+/* -webkit-text-stroke: 1px black;
+ color: white;
+ text-shadow:
+    3px 3px 0 #000,
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000;*/
+  background: linear-gradient(to bottom,rgba(255,255,255,.4) 10%,#fff 95%);
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
 }
 
 h3 {
@@ -448,7 +521,7 @@ h3 {
  margin-bottom: 4px;
  padding: 4px;
 }
-.content .field-name-og-group-ref a:before {
+.node .field-name-og-group-ref a:before {
  content: 'di ';
 }
 
@@ -461,21 +534,69 @@ h3 {
 .node-teaser ul.links {
  clear: both;
 }
-.node-teaser .field-name-field-com-categories a {
+/*.node-teaser .field-name-field-com-categories a {
  float: left;
+}*/
+
+.node-teaser .panel-pane.pane-node-title .pane-title {
+  display: none;
 }
 
 /* EXPLORE VIEW MASONRY */
+.card, .node-teaser {
+  /*background: #272822;*/
+  background-color: #fff;
+  /*color: #A4BF27;*/
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  display: block;
+  /*float: left;*/
+  /*height: 300px;*/
+  margin: 8px!important;
+  /*position: relative;*/
+  /*width: 300px;*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover, .node-teaser:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.pane-node-field-com-categories, .pane-node-title, .pane-node-field-com-description, .pane-node-field-com-location, .rbv-teaser-when {
+  padding: 0 .6em;
+}
+.pane-node-field-com-description {
+  padding-bottom: 6px;
+}
+.pane-node-field-com-location {
+  padding-bottom: 6px; 
+}
+.rbv-teaser-when {
+  /*position: absolute;*/
+  /*color: #3B3B3B;*/
+}
+
 .masonry-item {
- background: #fcfcfc;
- padding: .5em;
- border: 5px solid #ffffff;
- border-radius: 4px;
- -moz-border-radius: 4px;
+ padding: 0;
  display: table;
 }
-.masonry-item.views-row-even {
- background: #F8F8F8;
+.rbv-org-teaser, .node-teaser.node-org {
+  /*background: #ABDC0A;*/
+  /*background: linear-gradient(to bottom,rgba(32,183,123,.9) 10%,#fff 95%)!important;*/
+  /*
+  background-image: url(../images/watercolor1.png);
+  background-repeat: no-repeat;
+  */
+}
+.rbv-project-teaser, .node-teaser.node-project {
+  /*background: #00CA76;*/
+}
+.rbv-event-teaser, .node-teaser.node-event {
+  /*background: #523C34;*/
+  /*color: #fff;*/
+  /*background-image: url(../images/watercolor1.png);
+  background-repeat: no-repeat;
+  background-size: cover;*/
 }
 
 /* IMAGES in firefox and IE */
@@ -648,7 +769,7 @@ html.js fieldset.collapsed {
 }
 
 /* div main content. i.e. excluding comments */
-.content {
+.node {
  padding-bottom: 1em;
 }
 
