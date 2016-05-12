@@ -44,7 +44,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Quando */
+  /* Field: Nodo: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -61,7 +61,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Indirizzo */
+  /* Field: Nodo: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -232,7 +232,7 @@ function rbv_event_views_default_views() {
 </ul>';
   $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Quando */
+  /* Field: Nodo: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -249,7 +249,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Indirizzo */
+  /* Field: Nodo: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -263,7 +263,7 @@ function rbv_event_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -316,7 +316,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Quando */
+  /* Field: Nodo: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -333,7 +333,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Indirizzo */
+  /* Field: Nodo: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -403,7 +403,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: OG membership: OG membership from Node */
+  /* Relationship: OG membership: OG membership from Nodo */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
@@ -494,7 +494,7 @@ function rbv_event_views_default_views() {
     'skip_blank_dates' => 1,
   );
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: OG membership: OG membership from Node */
+  /* Relationship: OG membership: OG membership from Nodo */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
@@ -508,7 +508,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Quando */
+  /* Field: Nodo: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -525,7 +525,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Indirizzo */
+  /* Field: Nodo: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -678,7 +678,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  /* Relationship: OG membership: OG membership from Node */
+  /* Relationship: OG membership: OG membership from Nodo */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
@@ -773,7 +773,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Quando */
+  /* Field: Nodo: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -786,7 +786,7 @@ function rbv_event_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Settori */
+  /* Field: Nodo: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -889,7 +889,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Quando */
+  /* Field: Nodo: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -902,7 +902,7 @@ function rbv_event_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Settori */
+  /* Field: Nodo: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -910,7 +910,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['field_com_categories']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -1040,6 +1040,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'rbv-card';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1061,7 +1062,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Progetto di riferimento */
+  /* Field: Nodo: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1074,11 +1075,6 @@ function rbv_event_views_default_views() {
     'links' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Soggetto (field_rel_source) */
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['id'] = 'field_rel_source_target_id';
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['table'] = 'field_data_field_rel_source';
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
-  $handler->display->display_options['sorts']['field_rel_source_target_id']['relationship'] = 'reverse_field_rel_source_node';
   /* Sort criterion: Field: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
@@ -1118,6 +1114,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
       'type' => 'context',
@@ -1176,7 +1173,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Progetto di riferimento */
+  /* Field: Nodo: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1185,8 +1182,8 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['field_relpro_project']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_relpro_project']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
-    'view_mode' => 'vmode_group_content',
-    'links' => 1,
+    'view_mode' => 'teaser',
+    'links' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Date - end date (field_com_date:value2) */

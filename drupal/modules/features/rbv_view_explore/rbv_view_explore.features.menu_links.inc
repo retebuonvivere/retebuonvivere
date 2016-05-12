@@ -10,7 +10,7 @@
 function rbv_view_explore_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_esplora-la-rete:esplora
+  // Exported menu link: main-menu_esplora-la-rete:esplora.
   $menu_links['main-menu_esplora-la-rete:esplora'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'esplora',

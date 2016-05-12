@@ -23,6 +23,7 @@ function rbv_view_explore_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Esplora la rete';
+  $handler->display->display_options['css_class'] = 'row';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -50,6 +51,8 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'masonry_views';
   $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-3';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['masonry_column_width_units'] = 'css';
   $handler->display->display_options['style_options']['masonry_gutter_width'] = '';
   $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
   $handler->display->display_options['style_options']['masonry_animated'] = TRUE;
@@ -57,6 +60,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
   $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -64,7 +68,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Nessun risultato trovato. Riprovare con altre impostazioni.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -147,7 +151,7 @@ function rbv_view_explore_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Settori (field_com_categories) */
+  /* Filter criterion: Nodo: Settori (field_com_categories) */
   $handler->display->display_options['filters']['field_com_categories_tid']['id'] = 'field_com_categories_tid';
   $handler->display->display_options['filters']['field_com_categories_tid']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['filters']['field_com_categories_tid']['field'] = 'field_com_categories_tid';
@@ -169,7 +173,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_com_categories_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_com_categories_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_com_categories_tid']['vocabulary'] = 'categories';
-  /* Filter criterion: Content: Tipologia (field_org_type) */
+  /* Filter criterion: Nodo: Tipologia (field_org_type) */
   $handler->display->display_options['filters']['field_org_type_tid']['id'] = 'field_org_type_tid';
   $handler->display->display_options['filters']['field_org_type_tid']['table'] = 'field_data_field_org_type';
   $handler->display->display_options['filters']['field_org_type_tid']['field'] = 'field_org_type_tid';
@@ -191,7 +195,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_org_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_org_type_tid']['vocabulary'] = 'org_types';
   $handler->display->display_options['filters']['field_org_type_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Parole chiave (field_com_tags) */
+  /* Filter criterion: Nodo: Parole chiave (field_com_tags) */
   $handler->display->display_options['filters']['field_com_tags_tid']['id'] = 'field_com_tags_tid';
   $handler->display->display_options['filters']['field_com_tags_tid']['table'] = 'field_data_field_com_tags';
   $handler->display->display_options['filters']['field_com_tags_tid']['field'] = 'field_com_tags_tid';
@@ -311,13 +315,13 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['label'] = 'total';
   $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> contenuti in totale.</p>';
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -370,7 +374,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
@@ -378,7 +382,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> eventi in programmazione.<br />
 Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> eventi</a>.</p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -398,7 +402,7 @@ Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> 
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Quando -  start date (field_event_date) */
+  /* Filter criterion: Nodo: Quando -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -442,7 +446,7 @@ Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> 
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
@@ -528,7 +532,7 @@ Vedi <a href="progetti">tutti i <i class="fa fa-leaf fa-lg"></i> progetti</a>.</
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
@@ -603,7 +607,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
@@ -656,7 +660,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
@@ -772,13 +776,13 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Piè di pagina: Global: Result summary */
+  /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['label'] = 'total';
   $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> collaborazioni in totale.</p>';
-  /* Piè di pagina: Global: Text area */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -796,7 +800,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['relationships']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
   $handler->display->display_options['relationships']['field_rel_source_target_id']['label'] = 'entity referenced from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Soggetto */
+  /* Field: Nodo: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -804,7 +808,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Field: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date_2']['id'] = 'field_com_date_2';
   $handler->display->display_options['fields']['field_com_date_2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_2']['field'] = 'field_com_date';
@@ -817,13 +821,13 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Content: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = 'collaborazione';
   $handler->display->display_options['fields']['view_node']['text'] = 'collabora a ';
-  /* Campo: Content: Tipo di collaborazione */
+  /* Field: Nodo: Tipo di collaborazione */
   $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
@@ -832,7 +836,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['fields']['field_rel_categories']['alter']['text'] = '([field_rel_categories])';
   $handler->display->display_options['fields']['field_rel_categories']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_rel_categories']['delta_offset'] = '0';
-  /* Campo: Field: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date']['id'] = 'field_com_date';
   $handler->display->display_options['fields']['field_com_date']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date']['field'] = 'field_com_date';
@@ -844,7 +848,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Content: Progetto */
+  /* Field: Nodo: Progetto di riferimento */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -852,7 +856,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Field: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_com_date_1']['id'] = 'field_com_date_1';
   $handler->display->display_options['fields']['field_com_date_1']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['fields']['field_com_date_1']['field'] = 'field_com_date';
@@ -865,7 +869,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -943,7 +947,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -998,7 +1002,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1054,7 +1058,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1117,7 +1121,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1176,7 +1180,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1222,7 +1226,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Logo */
+  /* Field: Nodo: Logo */
   $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';
@@ -1233,7 +1237,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     'image_style' => 'rbv_image_icon',
     'image_link' => 'content',
   );
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';

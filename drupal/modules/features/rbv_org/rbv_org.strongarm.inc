@@ -276,7 +276,7 @@ function rbv_org_strongarm() {
         'choice' => 0,
       ),
       'vmode_group_content' => array(
-        'status' => 0,
+        'status' => 1,
         'default' => 1,
         'choice' => 0,
       ),
