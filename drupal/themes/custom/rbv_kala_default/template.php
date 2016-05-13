@@ -73,3 +73,12 @@ function rbv_kala_default_fboauth_action__connect($variables) {
   $src = ($GLOBALS['is_https'] ? 'https' : 'http') . '://www.facebook.com/images/fbconnect/login-buttons/connect_light_medium_short.gif';
   return '<a ' . $attributes . ' href="' . $url . '"><i class="fa fa-facebook"></i>  Connettiti con facebook</a>';
 }
+
+/*
+ *  Preprocess image style to add boostrap classes.
+ */
+function rbv_kala_default_preprocess_image_style(&$vars) {
+     if($vars['style_name'] == 'rbv_image_circle'){
+        $vars['attributes']['class'][] = 'img-responsive img-circle';
+        }
+}

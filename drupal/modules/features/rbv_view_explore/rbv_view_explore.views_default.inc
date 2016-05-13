@@ -49,7 +49,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'successiva ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-3';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-4 col-lg-3 rbv-card';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['masonry_column_width_units'] = 'css';
@@ -151,7 +151,7 @@ function rbv_view_explore_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Nodo: Settori (field_com_categories) */
+  /* Filter criterion: Content: Settori (field_com_categories) */
   $handler->display->display_options['filters']['field_com_categories_tid']['id'] = 'field_com_categories_tid';
   $handler->display->display_options['filters']['field_com_categories_tid']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['filters']['field_com_categories_tid']['field'] = 'field_com_categories_tid';
@@ -173,7 +173,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_com_categories_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_com_categories_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_com_categories_tid']['vocabulary'] = 'categories';
-  /* Filter criterion: Nodo: Tipologia (field_org_type) */
+  /* Filter criterion: Content: Tipologia (field_org_type) */
   $handler->display->display_options['filters']['field_org_type_tid']['id'] = 'field_org_type_tid';
   $handler->display->display_options['filters']['field_org_type_tid']['table'] = 'field_data_field_org_type';
   $handler->display->display_options['filters']['field_org_type_tid']['field'] = 'field_org_type_tid';
@@ -195,7 +195,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['filters']['field_org_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_org_type_tid']['vocabulary'] = 'org_types';
   $handler->display->display_options['filters']['field_org_type_tid']['error_message'] = FALSE;
-  /* Filter criterion: Nodo: Parole chiave (field_com_tags) */
+  /* Filter criterion: Content: Parole chiave (field_com_tags) */
   $handler->display->display_options['filters']['field_com_tags_tid']['id'] = 'field_com_tags_tid';
   $handler->display->display_options['filters']['field_com_tags_tid']['table'] = 'field_data_field_com_tags';
   $handler->display->display_options['filters']['field_com_tags_tid']['field'] = 'field_com_tags_tid';
@@ -382,7 +382,7 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['footer']['result']['content'] = '<p>Ci sono <strong>@total</strong> eventi in programmazione.<br />
 Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> eventi</a>.</p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
+  /* Sort criterion: Content: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -402,7 +402,7 @@ Vedi <a href="calendario/eventi">tutti gli <i class="fa fa-calendar fa-lg"></i> 
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Nodo: Quando -  start date (field_event_date) */
+  /* Filter criterion: Content: Quando -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -800,7 +800,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['relationships']['field_rel_source_target_id']['field'] = 'field_rel_source_target_id';
   $handler->display->display_options['relationships']['field_rel_source_target_id']['label'] = 'entity referenced from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Nodo: Soggetto */
+  /* Field: Content: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -827,7 +827,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = 'collaborazione';
   $handler->display->display_options['fields']['view_node']['text'] = 'collabora a ';
-  /* Field: Nodo: Tipo di collaborazione */
+  /* Field: Content: Tipo di collaborazione */
   $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
@@ -848,7 +848,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Nodo: Progetto di riferimento */
+  /* Field: Content: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1226,7 +1226,7 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Nodo: Logo */
+  /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';

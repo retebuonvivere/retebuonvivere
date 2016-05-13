@@ -177,6 +177,10 @@ div#top-content {
   border-radius: .4em;
 }
 */
+
+.pane-node-field-event-date {
+  font-weight: bold;
+}
 .date-display-range {
   display: inline-block;
 }
@@ -439,10 +443,21 @@ article .node {
 }
 
 .node-type-org .views-row {
- margin-bottom: 12px;
- max-width: 400px
+ /*margin-bottom: 12px;*/
+ /*max-width: 400px;*/
  position: relative;
 }
+
+.rbv-minicard {
+  width: 100%;
+  max-width: 364px;
+  min-width: 245px;
+}
+
+.rbv-card {
+  max-width: 364px;
+}
+
 
 /* Project collaborators and Organization members */
 .node-type-project .views-row, .node-type-org .view-rbv-view-members .views-row, .node .field-name-field-relpro-project {
@@ -572,11 +587,6 @@ h3 {
  float: left;
 }*/
 
-.views-row .node-teaser .field-type-addressfield {
- float: left;
- padding: 0 1em 1em 0;
-}
-
 .node-teaser .panel-pane.pane-node-title .pane-title, .node-vmode-group-content .panel-pane.pane-node-title .pane-title {
   display: none;
 }
@@ -586,12 +596,8 @@ h3 {
   margin: 0;
   border: 7px solid rgba(255, 255, 255, 0);
   background: none;
-}
-.radix-layouts-sidebar .masonry-item {
-  width: 46%;
-}
-.rbv-card {
-  position: relative;
+  padding: 0;
+ /*display: table;*/
 }
 
 .node-teaser, .node-vmode-group-content {
@@ -615,19 +621,28 @@ h3 {
 .node-vmode-group-content h2 {
   margin-top: 0;
   margin-bottom: 0;
-  padding: 6px 6px 6px 0;
-  font-size: 1.4em;
+  padding: 12px 6px 6px 0;
+  font-size: 1.3em;
+}
+.truncate {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .node-vmode-group-content img {
-  max-width: 125px!important;
+  max-width: 130px!important;
   height: 100%;
   border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
-  padding: 0 6px 0 0!important;
+  padding: 0 10px 0 0!important;
 }
 
 .node-teaser .radix-layouts-footer .panel-panel-inner {
-  padding: 0 6px 6px 6px;
+  padding: 0 6px 1px 6px;
+}
+.node-vmode-group-content .radix-layouts-content .panel-panel-inner {
+  padding: 0 6px 1px 0px;
 }
 
 .rbv-teaser-when {
@@ -635,10 +650,6 @@ h3 {
   /*color: #3B3B3B;*/
 }
 
-.masonry-item {
- padding: 0;
- /*display: table;*/
-}
 .rbv-org-teaser, .node-teaser.node-org {
   /*background: #ABDC0A;*/
   /*background: linear-gradient(to bottom,rgba(32,183,123,.9) 10%,#fff 95%)!important;*/
@@ -870,6 +881,9 @@ html.js fieldset.collapsed {
 }
 .masonry-item .views-field-field-user-picture {
  margin: 0 .3em .3em 0;
+}
+.masonry-item .rbv-image-circle {
+  width: 45px;
 }
 
 /* USERS BACKEND */

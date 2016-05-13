@@ -43,6 +43,7 @@ features[field_base][] = field_com_telephone
 features[field_base][] = field_rel_categories
 features[field_base][] = field_rel_source
 features[field_base][] = field_rel_target
+features[image][] = rbv_image_circle
 features[image][] = rbv_image_cover
 features[image][] = rbv_image_icon
 features[image][] = rbv_image_teaser

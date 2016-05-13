@@ -1309,7 +1309,7 @@ calendario',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bryant_flipped_flipped';
+  $display->layout = 'radix_burr_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -2320,11 +2320,106 @@ collaborazioni',
   $pane->pid = 'new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
   $pane->panel = 'contentmain';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:9';
+  $pane->subtype = 'vid:1606';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1463130801,
+      'uid' => '1',
+      'title' => '',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '9',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => '0',
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1393407433',
+      'changed' => 1463130801,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1605',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
+ <span class="btn btn-link pull-right" disabled="disabled"><i class="fa fa-th fa-lg"></i></span>
+ <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
+ <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="calendario/elenco" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
+</div>
+<h2>Filtri</h2><a class="help" title="Questa pagina mostra tutte le organizzazioni, i progetti e gli eventi della rete. Utilizzate i filtri qui sotto per cercare quello che vi interessa. Per selezionare più categorie all\'interno dello stesso filtro tenete premuto il tasto \'Ctrl\' mentre cliccate. Il filtro \'Tipo di organizzazione\' funziona solo per i contenuti di tipo Organizzazione."><i class="fa fa-question-circle"></i></a>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => TRUE,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1605',
+        'timestamp' => '1463130768',
+        'uid' => '1',
+        'title' => '',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '9',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1393407433',
+        'changed' => '1463130768',
+        'uuid' => '',
+        'language' => 'und',
+        'current_vid' => '1605',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
+ <span class="btn btn-link pull-right" disabled="disabled"><i class="fa fa-th fa-lg"></i></span>
+ <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
+ <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="calendario/eventi/elenco" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
+</div>
+<h2>Filtri</h2><a class="help" title="Questa pagina mostra tutte le organizzazioni, i progetti e gli eventi della rete. Utilizzate i filtri qui sotto per cercare quello che vi interessa. Per selezionare più categorie all\'interno dello stesso filtro tenete premuto il tasto \'Ctrl\' mentre cliccate. Il filtro \'Tipo di organizzazione\' funziona solo per i contenuti di tipo Organizzazione."><i class="fa fa-question-circle"></i></a>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
+ <span class="btn btn-link pull-right" disabled="disabled"><i class="fa fa-th fa-lg"></i></span>
+ <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
+ <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="calendario/eventi/elenco" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
+</div>
+<h2>Filtri</h2><a class="help" title="Questa pagina mostra tutte le organizzazioni, i progetti e gli eventi della rete. Utilizzate i filtri qui sotto per cercare quello che vi interessa. Per selezionare più categorie all\'interno dello stesso filtro tenete premuto il tasto \'Ctrl\' mentre cliccate. Il filtro \'Tipo di organizzazione\' funziona solo per i contenuti di tipo Organizzazione."><i class="fa fa-question-circle"></i></a>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1605',
+      'vid' => '1606',
+    ),
   );
   $pane->cache = array();
   $pane->style = array();
@@ -4148,11 +4243,103 @@ progetti',
   $pane->pid = 'new-b09124b9-a385-4cfb-b378-26ac9754e26c';
   $pane->panel = 'contentmain';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:16';
+  $pane->subtype = 'current:16';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1463130842,
+      'uid' => '1',
+      'title' => '',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '16',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => '1',
+      'admin_title' => 'nav-explore',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1397047420',
+      'changed' => 1463130842,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1240',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
+ <span class="btn btn-link pull-right"><a href="esplora"><i class="fa fa-th fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
+ <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="calendario/elenco" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
+</div>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1240',
+        'timestamp' => '1414058408',
+        'uid' => '1',
+        'title' => '',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '16',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '1',
+        'admin_title' => 'nav-explore',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1397047420',
+        'changed' => '1414058408',
+        'uuid' => '',
+        'language' => 'und',
+        'current_vid' => '1240',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
+ <span class="btn btn-link pull-right"><a href="esplora"><i class="fa fa-th fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
+ <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="calendario/eventi" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
+</div>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
+ <span class="btn btn-link pull-right"><a href="esplora"><i class="fa fa-th fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
+ <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="calendario/eventi" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
+ <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
+</div>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1240',
+      'vid' => '1607',
+    ),
   );
   $pane->cache = array();
   $pane->style = array();

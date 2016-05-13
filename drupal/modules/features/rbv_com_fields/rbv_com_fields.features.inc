@@ -19,6 +19,12 @@ function rbv_com_fields_ctools_plugin_api($module = NULL, $api = NULL) {
 function rbv_com_fields_image_default_styles() {
   $styles = array();
 
+  // Exported image style: rbv_image_circle.
+  $styles['rbv_image_circle'] = array(
+    'label' => 'RBV image circle',
+    'effects' => array(),
+  );
+
   // Exported image style: rbv_image_cover.
   $styles['rbv_image_cover'] = array(
     'label' => 'RBV image cover',

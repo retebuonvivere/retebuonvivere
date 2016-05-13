@@ -93,8 +93,8 @@ function rbv_event_panelizer_defaults() {
     'delta_offset' => '0',
     'delta_reversed' => 0,
     'formatter_settings' => array(
-      'view_mode' => 'vmode_group_content',
-      'links' => 1,
+      'view_mode' => 'teaser',
+      'links' => 0,
     ),
     'context' => 'panelizer',
     'override_title' => 1,
@@ -112,6 +112,7 @@ function rbv_event_panelizer_defaults() {
     'link_to_view' => NULL,
     'more_link' => NULL,
     'path' => NULL,
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -417,7 +418,10 @@ function rbv_event_panelizer_defaults() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'clearfix',
+  );
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
@@ -576,7 +580,7 @@ function rbv_event_panelizer_defaults() {
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'taxonomy_term_reference_link',
-    'delta_limit' => '2',
+    'delta_limit' => '1',
     'delta_offset' => '0',
     'delta_reversed' => 0,
     'formatter_settings' => array(),
@@ -613,7 +617,7 @@ function rbv_event_panelizer_defaults() {
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
     'formatter_settings' => array(
-      'format_type' => 'medium',
+      'format_type' => 'short',
       'multiple_number' => '',
       'multiple_from' => '',
       'multiple_to' => '',

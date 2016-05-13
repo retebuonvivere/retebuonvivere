@@ -44,13 +44,13 @@ function rbv_org_panelizer_defaults() {
       'header' => NULL,
       'footer' => NULL,
       'contentmain' => NULL,
-      'sidebar' => NULL,
+      'sidebar' => array(),
     ),
     'contentmain' => array(
       'style' => '0',
     ),
     'sidebar' => array(
-      'style' => '0',
+      'style' => 'kalacustomize',
     ),
   );
   $display->cache = array();
@@ -180,7 +180,7 @@ return empty($vista);',
     'more_link' => NULL,
     'path' => NULL,
     'view_settings' => 'fields',
-    'header_type' => 'none',
+    'header_type' => 'titles',
     'override_title' => '',
     'override_title_text' => '',
   );
