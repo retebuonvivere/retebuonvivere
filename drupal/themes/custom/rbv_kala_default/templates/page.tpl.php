@@ -175,6 +175,9 @@
     </div>
   </header>
 
+  <!-- Cover image -->
+  <div id="rbv-cover"></div>
+
   <!-- Page Main -->
   <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
     <div id="top-content" class="column container">
