@@ -96,7 +96,9 @@ div#top-content {
 }
 
 /* NODE */
-
+/*img:hover {
+  -webkit-filter: contrast(120%);
+}*/
 /* div main content. i.e. excluding comments */
 .node {
  padding-bottom: 1em;
@@ -332,56 +334,92 @@ div#top-content {
 .node .field-type-taxonomy-term-reference a {
  -moz-border-radius: .3em;
  border-radius: .3em;
+ border: 1px solid rgba(66, 139, 202, 0.0);
  padding: .2em .4em;
  margin: .2em;
  white-space: nowrap;
 }
+.node .field-type-taxonomy-term-reference a:hover {
+  text-decoration: none;
+  /*color: #fff;
+  background-color: #333333;
+  border-color: #ffffff;*/
+  /*filter: grayscale(100%);*/
+  -webkit-filter: contrast(150%);
+  filter: contrast(150%);
+}
 
 /* TAXONOMY > CATEGORIES */
-.node-teaser .field-name-field-com-categories a, .group-org-display-description .field-name-field-com-categories a {
- /*background: #FFEAB9;*/
+.node-teaser .field-name-field-com-categories a, .field-group-fieldset .field-name-field-com-categories a {
  float: left;
 }
-/* Abitare */
-.tid-7 a {
-  background: #FFD4B4;
-  color: #4F4D44;
+.field-name-field-com-categories a {
+ background: #FFEAB9;
 }
-/* Artigianato */
-.tid-4 a {
+
+/* Rainbow rbv colors */
+/* red #F91D0C */
+/* orange #F88B19 */
+/* yellow #F9E107 */
+/* green #02C529 */
+/* blue #0194EC */
+/* purple #8601E6 */
+/* violet #B089F8 */
+
+/* Abitare, costruire */
+/*.tid-7 a {
+  background: #FFC1EC;
+  color: #4F4D44;
+}*/
+/* Arte, cultura */
+/*.tid-62 a {
+  background: #F88B19;
+  color: #8FD4FF;
+}*/
+/* Artigianato, riuso */
+/*.tid-4 a {
   background: #795548;
   color: #FFE032;
-}
-/* Bio */
-.tid-2 a {
+}*/
+/* Bio, natura, ecologia */
+/*.tid-2 a {
   background: #3F9F3A;
   color: #C8FF47;
-}
-/* Salute e cura */
-.tid-3 a {
-  background: #1273B3;
-  color: #A0FFE8;
-}
-/* Turismo responsabile */
-.tid-8 a {
-  background: #ffffff;
-  color: #000000;
-}
-/* Finanza mutualistica servizi economici */
-.tid-55 a {
-  background: #F12D2D;
+}*/
+/* Commercio solidale */
+/* Diritti, ativismo */
+/* Energie rinnovabili */
+/*.tid-5 a {
+  background: #8E914B;
+  color: #FFD75E;
+}*/
+/* Finanza solidale */
+/*.tid-55 a {
+  background: #F91D0C;
   color: #fff;
-}
-/* formazione */
-.tid-70 a {
-  background: #ffffff;
-  color: #000000;
-}
-/* informazione */
-.tid-13 a {
+}*/
+/* Formazione, educazione */
+/*.tid-70 a {
+  background: #092C9C;
+  color: #C795FF;
+}*/
+/* Informatica */
+/* Informazione, comunicazione */
+/*.tid-13 a {
   background: #AAAAFF;
   color: #000000;
-}
+}*/
+/* Salute, cura */
+/*.tid-3 a {
+  background: #0194EC;
+  color: #A0FFE8;
+}*/
+/* Tempo libero */
+/* Turismo sostenibile, responsabile */
+/*.tid-8 a {
+  background: #ffffff;
+  color: #000000;
+}*/
 
 .node .field-name-field-com-categories a:before, .page-taxonomy-term h1#page-title:before {
  font-family: FontAwesome;
@@ -405,7 +443,7 @@ div#top-content {
 
 /* TAXONOMY > TAGS */
 .node .field-name-field-com-tags a {
- background: #F3DC55;
+ background: #CEEAFF;
  float: left;
 }
 .node .field-name-field-com-tags {
@@ -505,7 +543,7 @@ article .node {
 }
 
 /* Project and Event taxonomy */
-.node-type-event .field-name-field-relpro-project, .page-taxonomy-term .node {
+.node-type-event .field-name-field-relpro-project {
  background: #f5f5f5;
  -moz-border-radius: .4em;
  border-radius: .4em;
