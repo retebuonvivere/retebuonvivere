@@ -595,7 +595,7 @@ function rbv_event_panelizer_defaults() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'clearfix',
+    'css_class' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
