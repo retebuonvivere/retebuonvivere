@@ -2317,35 +2317,29 @@ collaborazioni',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
+  $pane->pid = 'new-b07ab40c-3947-45ae-9599-284ccfff421c';
   $pane->panel = 'contentmain';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'vid:1606';
+  $pane->subtype = 'fpid:33';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
     'fieldable_panels_pane' => (object) array(
-      'timestamp' => 1463130801,
-      'uid' => '1',
-      'title' => '',
-      'log' => '',
-      'vuuid' => '',
-      'fpid' => '9',
       'bundle' => 'text',
+      'language' => 'und',
+      'is_new' => TRUE,
+      'title' => '',
       'link' => 0,
       'path' => '',
-      'reusable' => '0',
-      'admin_title' => '',
+      'reusable' => 1,
+      'admin_title' => 'nav_explore_main',
       'admin_description' => '',
       'category' => 'Reusable Content',
-      'view_access' => NULL,
-      'edit_access' => NULL,
-      'created' => '1393407433',
-      'changed' => 1463130801,
-      'uuid' => '',
-      'language' => 'und',
-      'current_vid' => '1605',
+      'vid' => '1605',
+      'current_vid' => '',
+      'revision' => 1,
+      'fpid' => '33',
       'field_basic_text_text' => array(
         'und' => array(
           0 => array(
@@ -2363,73 +2357,26 @@ collaborazioni',
           ),
         ),
       ),
-      'rdf_mapping' => array(),
-      'revision' => TRUE,
-      'is_new' => FALSE,
-      'original' => (object) array(
-        'vid' => '1605',
-        'timestamp' => '1463130768',
-        'uid' => '1',
-        'title' => '',
-        'log' => '',
-        'vuuid' => '',
-        'fpid' => '9',
-        'bundle' => 'text',
-        'link' => '0',
-        'path' => '',
-        'reusable' => '0',
-        'admin_title' => '',
-        'admin_description' => '',
-        'category' => 'Reusable Content',
-        'view_access' => NULL,
-        'edit_access' => NULL,
-        'created' => '1393407433',
-        'changed' => '1463130768',
-        'uuid' => '',
-        'language' => 'und',
-        'current_vid' => '1605',
-        'field_basic_text_text' => array(
-          'und' => array(
-            0 => array(
-              'value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
- <span class="btn btn-link pull-right" disabled="disabled"><i class="fa fa-th fa-lg"></i></span>
- <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
- <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="calendario/eventi/elenco" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
-</div>
-<h2>Filtri</h2><a class="help" title="Questa pagina mostra tutte le organizzazioni, i progetti e gli eventi della rete. Utilizzate i filtri qui sotto per cercare quello che vi interessa. Per selezionare più categorie all\'interno dello stesso filtro tenete premuto il tasto \'Ctrl\' mentre cliccate. Il filtro \'Tipo di organizzazione\' funziona solo per i contenuti di tipo Organizzazione."><i class="fa fa-question-circle"></i></a>',
-              'format' => 'rbv_full_html',
-              'safe_value' => '<div class="pull-right quadrato" style="max-width: 78%; max-height: 72px;">
- <span class="btn btn-link pull-right" disabled="disabled"><i class="fa fa-th fa-lg"></i></span>
- <span class="btn btn-link pull-right"><a href="search/site" title="Cerca nel sito"><i class="fa fa-search fa-lg"></a></i></span>
- <span class="btn btn-link pull-right"><a href="persone" title="Link veloce alla pagina con tutte le persone della rete"><i class="fa fa-user fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="collaborazioni" title="Link veloce alla pagina con tutte le collaborazioni della rete"><i class="fa fa-arrows-h fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="calendario/eventi/elenco" title="Link veloce alla pagina con tutti gli eventi della rete"><i class="fa fa-calendar fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="progetti" title="Link veloce alla pagina con tutti i progetti della rete"><i class="fa fa-leaf fa-lg"></i></a></span>
- <span class="btn btn-link pull-right"><a href="organizzazioni" title="Link veloce alla pagina con tutte le organizzazioni della rete"><i class="fa fa-home fa-lg"></i></a></span>
-</div>
-<h2>Filtri</h2><a class="help" title="Questa pagina mostra tutte le organizzazioni, i progetti e gli eventi della rete. Utilizzate i filtri qui sotto per cercare quello che vi interessa. Per selezionare più categorie all\'interno dello stesso filtro tenete premuto il tasto \'Ctrl\' mentre cliccate. Il filtro \'Tipo di organizzazione\' funziona solo per i contenuti di tipo Organizzazione."><i class="fa fa-question-circle"></i></a>',
-            ),
-          ),
-        ),
-        'rdf_mapping' => array(),
-      ),
-      'old_vid' => '1605',
-      'vid' => '1606',
+      'log' => '',
+      'created' => 1464525965,
+      'timestamp' => 1464525965,
+      'changed' => 1464525965,
+      'uuid' => '',
+      'uid' => '1',
+      'vuuid' => '',
     ),
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
-  $display->content['new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e'] = $pane;
-  $display->panels['contentmain'][0] = 'new-4742d2fd-ffcf-4bbf-aa8e-b6286ef6091e';
+  $pane->uuid = 'b07ab40c-3947-45ae-9599-284ccfff421c';
+  $display->content['new-b07ab40c-3947-45ae-9599-284ccfff421c'] = $pane;
+  $display->panels['contentmain'][0] = 'new-b07ab40c-3947-45ae-9599-284ccfff421c';
   $pane = new stdClass();
   $pane->pid = 'new-3a44c142-947f-4283-8c81-b2cc57c8cbfd';
   $pane->panel = 'contentmain';
@@ -2448,6 +2395,7 @@ collaborazioni',
   $pane->cache = array();
   $pane->style = array(
     'style' => 'default',
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
