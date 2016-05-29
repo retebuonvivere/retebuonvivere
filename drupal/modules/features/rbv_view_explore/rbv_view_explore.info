@@ -1,8 +1,8 @@
 name = Explore and lists views
-description = Explore and content lists views
+description = Views: Explore, content lists, taxonomy
 core = 7.x
 package = RBV contents
-version = 7.x-1.4-pan
+version = 7.x-1.5
 project = rbv_view_explore
 dependencies[] = ctools
 dependencies[] = features
@@ -18,5 +18,6 @@ features[features_api][] = api:2
 features[menu_links][] = main-menu_esplora-la-rete:esplora
 features[views_view][] = rbv_view_explore
 features[views_view][] = rbv_view_lists
+features[views_view][] = rbv_view_taxonomy
 features_exclude[menu_custom][main-menu] = main-menu
 project path = sites/all/modules/features
