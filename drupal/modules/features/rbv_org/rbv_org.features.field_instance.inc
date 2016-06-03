@@ -641,7 +641,7 @@ function rbv_org_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 341,
+      'default_image' => 415,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
