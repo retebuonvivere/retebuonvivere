@@ -25,7 +25,23 @@ function rbv_com_fields_image_default_styles() {
   // Exported image style: rbv_image_circle.
   $styles['rbv_image_circle'] = array(
     'label' => 'RBV image circle',
-    'effects' => array(),
+    'effects' => array(
+      3 => array(
+        'name' => 'manualcrop_auto_reuse',
+        'data' => array(
+          'style_priority' => array(
+            0 => 'panopoly_image_square',
+            1 => 'panopoly_image_featured',
+            2 => 'panopoly_image_full',
+            3 => 'panopoly_image_spotlight',
+            4 => 'panopoly_image_thumbnail',
+          ),
+          'apply_all_effects' => 1,
+          'fallback_style' => 'rbv_image_teaser',
+        ),
+        'weight' => 0,
+      ),
+    ),
   );
 
   // Exported image style: rbv_image_cover.

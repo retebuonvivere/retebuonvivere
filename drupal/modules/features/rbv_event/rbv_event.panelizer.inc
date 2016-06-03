@@ -503,6 +503,32 @@ function rbv_event_panelizer_defaults() {
   $pane->uuid = 'b54ec6b8-e0e9-4cca-b3a4-445ab21039cb';
   $display->content['new-b54ec6b8-e0e9-4cca-b3a4-445ab21039cb'] = $pane;
   $display->panels['header'][0] = 'new-b54ec6b8-e0e9-4cca-b3a4-445ab21039cb';
+  $pane = new stdClass();
+  $pane->pid = 'new-850828ce-ec4a-4b6a-af9d-5c91c656b439';
+  $pane->panel = 'header';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_reference-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'titles',
+    'view_mode' => 'teaser',
+    'arguments' => array(
+      'nid' => '%node:nid',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '850828ce-ec4a-4b6a-af9d-5c91c656b439';
+  $display->content['new-850828ce-ec4a-4b6a-af9d-5c91c656b439'] = $pane;
+  $display->panels['header'][1] = 'new-850828ce-ec4a-4b6a-af9d-5c91c656b439';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $panelizer->display = $display;
