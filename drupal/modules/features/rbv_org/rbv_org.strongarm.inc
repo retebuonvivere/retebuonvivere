@@ -120,7 +120,7 @@ function rbv_org_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'path' => array(
           'weight' => '1',

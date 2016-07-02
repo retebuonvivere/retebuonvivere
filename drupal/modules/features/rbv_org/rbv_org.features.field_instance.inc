@@ -183,6 +183,104 @@ function rbv_org_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-org-field_com_cover'.
+  $field_instances['node-org-field_com_cover'] = array(
+    'bundle' => 'org',
+    'deleted' => 0,
+    'description' => 'Presonalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'backstretch',
+        'settings' => array(
+          'center_x' => 1,
+          'center_y' => 1,
+          'delta' => '',
+          'duration' => 7000,
+          'element' => 'other',
+          'element_other' => '#rbv-cover',
+          'fade' => 2000,
+          'field' => '',
+          'image_style' => '',
+          'random' => 0,
+        ),
+        'type' => 'backstretch',
+        'weight' => 2,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_cover',
+    'label' => 'Immagine di copertina',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'cover',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '399x150',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-org-field_com_date'.
   $field_instances['node-org-field_com_date'] = array(
     'bundle' => 'org',
@@ -463,7 +561,7 @@ function rbv_org_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'featured' => array(
         'label' => 'above',
@@ -799,7 +897,7 @@ function rbv_org_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'featured' => array(
         'label' => 'above',
@@ -842,7 +940,7 @@ function rbv_org_field_default_field_instances() {
         'size' => 68,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -961,7 +1059,7 @@ function rbv_org_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'featured' => array(
         'label' => 'above',
@@ -994,7 +1092,7 @@ function rbv_org_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1197,6 +1295,7 @@ function rbv_org_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Email');
   t('Group');
+  t('Immagine di copertina');
   t('Indirizzo');
   t('Links');
   t('Logo');
@@ -1204,6 +1303,7 @@ function rbv_org_field_default_field_instances() {
   t('Pagina facebook');
   t('Parole chiave');
   t('Periodo');
+  t('Presonalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.');
   t('Quando è iniziata (ed eventualmente terminata) la collaborazione di questa persona all\'organizzazione?');
   t('Ruolo');
   t('Ruolo ricoperto dalla persona in questo periodo');

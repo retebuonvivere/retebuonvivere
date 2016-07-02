@@ -211,6 +211,7 @@ function rbv_org_field_group_info() {
       1 => 'field_com_logo',
       2 => 'field_com_tagline',
       3 => 'field_com_ln_fb',
+      4 => 'field_com_cover',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -269,8 +270,9 @@ function rbv_org_field_group_info() {
       0 => 'field_org_type',
       1 => 'field_com_logo',
       2 => 'field_com_tagline',
-      3 => 'title',
-      4 => 'group_org_social',
+      3 => 'field_com_cover',
+      4 => 'title',
+      5 => 'group_org_social',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -296,10 +298,9 @@ function rbv_org_field_group_info() {
   $field_group->parent_name = 'group_org_info';
   $field_group->data = array(
     'label' => 'Social links',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
-      0 => 'field_com_social_links',
-      1 => 'field_com_ln_fb',
+      0 => 'field_com_ln_fb',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
