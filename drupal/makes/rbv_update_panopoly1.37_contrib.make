@@ -30,8 +30,8 @@ projects[panopoly_search][version] = 1.37
 projects[panopoly_search][subdir] = panopoly
 
 ; Contrib modules to be downloaded
-; projects[backstretch][version] = 2.0-beta1
-; projects[backstretch][subdir] = contrib
+projects[backstretch][version] = 2.0-beta1
+projects[backstretch][subdir] = contrib
 
 ; Contrib modules to be updated
 ; projects[administerusersbyrole][version] = 2.0
@@ -40,9 +40,9 @@ projects[panopoly_search][subdir] = panopoly
 ; projects[og][subdir] = contrib
 
 ; Themes to be updates
-projects[kalatheme][type] = theme
-projects[kalatheme][version] = 3.2
-projects[kalatheme][subdir] = contrib
+; projects[kalatheme][type] = theme
+; projects[kalatheme][version] = 3.2
+; projects[kalatheme][subdir] = contrib
 
 ; Libraries to be downloaded
 
