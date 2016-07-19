@@ -289,6 +289,8 @@ function rbv_view_explore_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
@@ -1222,7 +1224,9 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1274,6 +1278,17 @@ Vedi <a href="discussioni">tutte le <i class="fa fa-comments fa-lg"></i> discuss
   $handler->display->display_options['filters']['uid']['value'] = array(
     0 => 0,
   );
+  /* Filter criterion: Nodo: Logo (field_com_logo:fid) */
+  $handler->display->display_options['filters']['field_com_logo_fid']['id'] = 'field_com_logo_fid';
+  $handler->display->display_options['filters']['field_com_logo_fid']['table'] = 'field_data_field_com_logo';
+  $handler->display->display_options['filters']['field_com_logo_fid']['field'] = 'field_com_logo_fid';
+  $handler->display->display_options['filters']['field_com_logo_fid']['operator'] = 'not empty';
+  /* Filter criterion: Nodo: Settori (field_com_categories:delta) */
+  $handler->display->display_options['filters']['delta']['id'] = 'delta';
+  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_com_categories';
+  $handler->display->display_options['filters']['delta']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta']['operator'] = '>';
+  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
