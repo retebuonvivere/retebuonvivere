@@ -685,28 +685,8 @@ h3 {
   padding: 0 6px 1px 0px;
 }
 
-.rbv-teaser-when {
-  /*position: absolute;*/
-  /*color: #3B3B3B;*/
-}
-
-.rbv-org-teaser, .node-teaser.node-org {
-  /*background: #ABDC0A;*/
-  /*background: linear-gradient(to bottom,rgba(32,183,123,.9) 10%,#fff 95%)!important;*/
-  /*
-  background-image: url(../images/watercolor1.png);
-  background-repeat: no-repeat;
-  */
-}
-.rbv-project-teaser, .node-teaser.node-project {
-  /*background: #00CA76;*/
-}
-.rbv-event-teaser, .node-teaser.node-event {
-  /*background: #523C34;*/
-  /*color: #fff;*/
-  /*background-image: url(../images/watercolor1.png);
-  background-repeat: no-repeat;
-  background-size: cover;*/
+.node-forum.node-teaser {
+	padding: 0 8px;
 }
 
 /* IMAGES in firefox and IE */
