@@ -473,6 +473,11 @@ div .node .field-name-field-org-type:after {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
+.node-full .panel, .front .panel, .fieldable-panels-pane .panel, .fieldable-panels-pane .callout {
+	background-color: #ffffff;
+}
+
 div.view-content.row {
  margin-left: 0;
  margin-right: 0;
@@ -513,11 +518,11 @@ article .node {
 	padding: 8px;
 }
 .view-rbv-view-lists.view-display-id-panel_pane_13 .views-row.views-row-first {
-  background: #eee;
+  background: #F18383;
   -moz-border-radius: .4em;
   border-radius: .4em;
   min-height: 54px;
-  font-size: 2em;
+  font-size: 1.2em;
 }
 
 .node-type-project .views-row.collaborator, .node-type-org .views-row.member {
@@ -572,15 +577,8 @@ article .node {
 }
 
 h1#page-title {
-/* -webkit-text-stroke: 1px black;
- color: white;
- text-shadow:
-    3px 3px 0 #000,
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-   -1px  1px 0 #000,
-    1px  1px 0 #000;*/
-  background: linear-gradient(to bottom,rgba(255,255,255,.5) 10%,#fff 95%);
+  /*background: linear-gradient(to bottom,rgba(255,255,255,.7) 18%, rgba(255,255,255,.99) 60%);*/
+  background-color: #D8C7A3;
   -moz-border-radius: 4px;
   border-radius: 4px;
   padding: 3px 3px 3px 7px;
@@ -637,6 +635,9 @@ h3 {
   background: none;
   padding: 0;
  /*display: table;*/
+}
+.panelizer-view-mode.node-teaser {
+	max-width: 364px;
 }
 
 .node-teaser, .node-vmode-group-content {
