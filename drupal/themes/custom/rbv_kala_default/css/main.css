@@ -96,13 +96,6 @@ div#top-content {
 }
 
 /* NODE */
-/*img:hover {
-  -webkit-filter: contrast(120%);
-}*/
-/* div main content. i.e. excluding comments */
-.node {
- padding-bottom: 1em;
-}
 
 /* fields */
 .field-type-addressfield {
