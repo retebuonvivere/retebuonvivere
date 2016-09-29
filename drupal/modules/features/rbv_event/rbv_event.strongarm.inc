@@ -254,7 +254,7 @@ function rbv_event_strongarm() {
       ),
       'default' => array(
         'status' => 0,
-        'default' => 1,
+        'default' => 0,
         'choice' => 0,
       ),
       'teaser' => array(

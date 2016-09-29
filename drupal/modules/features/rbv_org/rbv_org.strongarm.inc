@@ -267,7 +267,7 @@ function rbv_org_strongarm() {
       ),
       'default' => array(
         'status' => 0,
-        'default' => 1,
+        'default' => 0,
         'choice' => 0,
       ),
       'teaser' => array(
@@ -303,17 +303,17 @@ function rbv_org_strongarm() {
       ),
       'default' => array(
         'status' => 0,
-        'default' => 1,
+        'default' => 0,
         'choice' => 0,
       ),
       'full' => array(
         'status' => 0,
-        'default' => 1,
+        'default' => 0,
         'choice' => 0,
       ),
       'featured' => array(
         'status' => 0,
-        'default' => 1,
+        'default' => 0,
         'choice' => 0,
       ),
     ),

@@ -246,7 +246,7 @@ function rbv_relpro_strongarm() {
       ),
       'teaser' => array(
         'status' => 0,
-        'default' => 1,
+        'default' => 0,
         'choice' => 0,
       ),
       'vmode_group_content' => array(
