@@ -81,7 +81,7 @@
 	</script>
   <!--[facebook js sdk end]-->
   <div id="skip-link">
-    <a href="#main-content" class="element-focusable element-invisible"><?php print t('Skip to main content'); ?></a>
+    <a href="#main-content" class="element-focusable sr-only"><?php print t('Skip to main content'); ?></a>
   </div>
   <?php print $page_top; ?>
   <?php print $page; ?>

@@ -49,7 +49,7 @@ projects[masonry_views][subdir] = contrib
 
 ; Libraries to be downloaded
 libraries[masonry][download][type] = file
-libraries[masonry][download][url] = https://npmcdn.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js
+libraries[masonry][download][url] = https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js
 libraries[masonry][directory_name] = masonry
 libraries[masonry][type] = library
 libraries[imagesloaded][download][type] = file

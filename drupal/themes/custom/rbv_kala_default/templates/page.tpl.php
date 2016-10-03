@@ -29,20 +29,21 @@
  * - $site_slogan: The slogan of the site, empty when display has been disabled
  *   in theme settings.
  * - $hide_site_name: TRUE if the site name has been toggled off on the theme
- *   settings page. If hidden, the "element-invisible" class is added to make
+ *   settings page. If hidden, the "sr-only" class is added to make
  *   the site name visually hidden, but still accessible.
  * - $hide_site_slogan: TRUE if the site slogan has been toggled off on the
- *   theme settings page. If hidden, the "element-invisible" class is added to
+ *   theme settings page. If hidden, the "sr-only" class is added to
  *   make the site slogan visually hidden, but still accessible.
  *
  * Navigation:
  * - $main_menu (array): An array containing the Main menu links for the
  *   site, if they have been configured.
- * - $main_menu_expanded (array): An array containing 2 depths of the Main
- *   menu links
- *   for the site, if they have been configured.
+ * - $primary_nav (array): A render array for the primary navigation that uses
+ *   the main_menu
  * - $secondary_menu (array): An array containing the Secondary menu links for
  *   the site, if they have been configured.
+ * - $secondary_nav (array): A render array for the secondary navigation that
+ *   uses the secondary_menu
  * - $breadcrumb: The breadcrumb trail for the current page.
  *
  * Page content (in order of occurrence in the default page.tpl.php):
@@ -85,28 +86,28 @@
 <div id="page-wrapper"><div id="page">
 
    <!-- Page Header -->
-  <header class="navbar navbar-default <?php if ($hide_site_name && $hide_site_slogan && !$logo && !$main_menu && !$secondary_menu) { print ' element-invisible'; } ?>">
+  <header class="navbar navbar-default <?php if ($hide_site_name && $hide_site_slogan && !$logo && !$main_menu && !$secondary_menu) { print ' sr-only'; } ?>">
     <div class="container">
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar" aria-hidden="true"></span>
+          <span class="icon-bar" aria-hidden="true"></span>
+          <span class="icon-bar" aria-hidden="true"></span>
         </button>
         <?php if ($logo): ?>
           <div class='brand navbar-brand'>
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-              <?php if ($logo): ?><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /><?php endif; ?>
+              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
             </a>
           </div>
         <?php endif; ?>
 
         <?php if ($site_name || $site_slogan): ?>
-          <div id="site-name-slogan" class="brand navbar-brand <?php if ($hide_site_name && $hide_site_slogan) { print ' element-invisible'; } ?>">
+          <div id="site-name-slogan" class="brand navbar-brand <?php if ($hide_site_name && $hide_site_slogan) { print ' sr-only'; } ?>">
 
             <?php if ($site_name): ?>
-              <h1 id="site-name"<?php if ($hide_site_name) { print ' class="element-invisible"'; } ?>>
+              <h1 id="site-name"<?php if ($hide_site_name) { print ' class="sr-only"'; } ?>>
                 <strong>
                   <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
                 </strong>
@@ -114,7 +115,7 @@
             <?php endif; ?>
 
             <?php if ($site_slogan): ?>
-              <div id="site-slogan" <?php if ($hide_site_slogan) { print 'class="element-invisible"'; } ?>>
+              <div id="site-slogan" <?php if ($hide_site_slogan) { print 'class="sr-only"'; } ?>>
                 <?php print $site_slogan; ?>
               </div>
             <?php endif; ?>
@@ -122,56 +123,16 @@
           </div> <!-- /#name-and-slogan -->
         <?php endif; ?>
       </div><!-- /.navbar-header -->
+      
       <div class="navbar-right nav-search-box">
         <?php print $search_box; ?>
       </div>
-      <nav class="collapse navbar-collapse <?php if (!$main_menu && !$secondary_menu) { print 'element-invisible'; } ?>" role="navigation">
-        <?php
-          $pri_attributes = array();
-          $pri_attributes = array(
-            'class' => array(
-              'nav',
-              'navbar-nav',
-              'links',
-              'clearfix',
-            ),
-          );
-          if (!$main_menu) {
-            $pri_attributes['class'][] = 'element-invisible';
-          }
-        ?>
-        <?php print theme('links__system_main_menu', array(
-          'links' => $main_menu_expanded,
-          'attributes' => $pri_attributes,
-          'heading' => array(
-            'text' => t('Main menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-
-        <?php
-          $sec_attributes = array();
-          $sec_attributes = array(
-            'id' => 'secondary-menu-links',
-            'class' => array('nav', 'navbar-nav', 'secondary-links'),
-          );
-          if (!$secondary_menu) {
-            $sec_attributes['class'][] = 'element-invisible';
-          }
-        ?>
-
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => $sec_attributes,
-          'heading' => array(
-            'text' => t('Secondary menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
       
+      <nav class="collapse navbar-collapse <?php if (!$main_menu && !$secondary_menu) { print 'sr-only'; } ?>" role="navigation">
+        <?php print render($primary_nav); ?>
+        <?php print render($secondary_nav); ?>
+      </nav>
+
     </div>
   </header>
 
@@ -179,47 +140,51 @@
   <div id="rbv-cover"></div>
 
   <!-- Page Main -->
-  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
-    <div id="top-content" class="column container">
-      <a id="main-content"></a>
-      <?php if ($breadcrumb): ?>
-       <div id="breadcrumb" class="breadcrumbs">
-         <?php print $breadcrumb; ?>
-       </div>
-      <?php endif; ?>
-      <?php if (($no_panels || $always_show_page_title) && $title): ?>
-        <h1 id="page-title" class="title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
+  <div id="main-wrapper" class="clearfix">
+    <main id="main" class="clearfix" role="main">
+      <div id="top-content">
+        <div class="column container">
+          <a id="main-content"></a>
+          <?php if ($breadcrumb): ?>
+            <div id="breadcrumb" class="breadcrumbs">
+              <?php print $breadcrumb; ?>
+            </div>
+          <?php endif; ?>
+          <?php if (($no_panels || $always_show_page_title) && $title): ?>
+            <h1 id="page-title" class="title">
+              <?php print $title; ?>
+            </h1>
+          <?php endif; ?>
 
-      <?php if ($messages): ?>
-        <div id="messages">
-          <?php print $messages; ?>
+          <?php if ($messages): ?>
+            <div id="messages">
+              <?php print $messages; ?>
+            </div>
+          <?php endif; ?>
+
+          <?php if (!empty($tabs['#primary']) || !empty($tabs['#secondary'])): ?>
+            <div id="tabs">
+              <?php print render($tabs); ?>
+            </div>
+          <?php endif; ?>
+
+          <?php if ($action_links): ?>
+            <div id="action-links">
+              <?php print render($action_links); ?>
+            </div>
+          <?php endif; ?>
         </div>
-      <?php endif; ?>
+      </div> <!-- /.section, /#top-content -->
 
-      <?php if ($tabs): ?>
-        <div id="tabs">
-          <?php print render($tabs); ?>
+      <div class="container">
+        <div id="content">
+          <div class="column <?php $no_panels ? print 'container' : ''; ?>">
+            <?php print render($page['content']); ?>
+          </div>
         </div>
-      <?php endif; ?>
+      </div><!-- /.section, /#content -->
 
-      <?php if ($action_links): ?>
-        <div id="action-links">
-          <?php print render($action_links); ?>
-        </div>
-      <?php endif; ?>
-    </div> <!-- /.section, /#top-content -->
-
-    <div id="content" class="column <?php $no_panels ? print 'container' : ''; ?>">
-      <?php print render($page['content']); ?>
-    </div> <!-- /.section, /#content -->
-
-  </div></div> <!-- /#main, /#main-wrapper -->
+    </main><!-- /#main -->
+  </div> <!-- /#main-wrapper -->
 
 </div></div> <!-- /#page, /#page-wrapper -->
-
-
-
-
