@@ -71,6 +71,109 @@ function rbv_event_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_com_cover'.
+  $field_instances['node-event-field_com_cover'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => 'Personalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'backstretch',
+        'settings' => array(
+          'center_x' => 1,
+          'center_y' => 1,
+          'delta' => '',
+          'duration' => 7000,
+          'element' => 'other',
+          'element_other' => '#rbv-cover',
+          'fade' => 2000,
+          'field' => '',
+          'image_style' => '',
+          'random' => 0,
+        ),
+        'type' => 'backstretch',
+        'weight' => 10,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_cover',
+    'label' => 'Immagine di copertina',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'covers/[current-date:custom:Y]/[current-date:custom:m]',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '399x150',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_com_description'.
   $field_instances['node-event-field_com_description'] = array(
     'bundle' => 'event',
@@ -162,7 +265,7 @@ function rbv_event_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'featured' => array(
         'label' => 'above',
@@ -229,7 +332,7 @@ function rbv_event_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -293,7 +396,7 @@ function rbv_event_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 413,
-      'file_directory' => '',
+      'file_directory' => 'events//[current-date:custom:Y]/[current-date:custom:m]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -339,7 +442,7 @@ function rbv_event_field_default_field_instances() {
         'module' => 'social_profile_field',
         'settings' => array(),
         'type' => 'social_profile_field_icons',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'featured' => array(
         'label' => 'above',
@@ -378,7 +481,7 @@ function rbv_event_field_default_field_instances() {
       'module' => 'social_profile_field',
       'settings' => array(),
       'type' => 'social_profile_field_default',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -459,7 +562,7 @@ function rbv_event_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'featured' => array(
         'label' => 'above',
@@ -533,7 +636,7 @@ function rbv_event_field_default_field_instances() {
         'year_range' => '-50:+50',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -612,7 +715,7 @@ function rbv_event_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -800,9 +903,11 @@ function rbv_event_field_default_field_instances() {
   t('Descrizione');
   t('Dove');
   t('Immagine / logo');
+  t('Immagine di copertina');
   t('Links');
   t('Organizzazione promotrice');
   t('Parole chiave');
+  t('Personalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.');
   t('Progetto di riferimento');
   t('Quando');
   t('Segui l\'evento su');

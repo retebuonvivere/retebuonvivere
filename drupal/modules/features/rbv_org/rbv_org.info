@@ -159,6 +159,7 @@ features[variable][] = entity_view_modes
 features[variable][] = field_bundle_settings_node__org
 features[variable][] = field_bundle_settings_og_membership__rbv_membership_default
 features[variable][] = field_bundle_settings_user__user
+features[variable][] = language_content_type_org
 features[variable][] = menu_options_org
 features[variable][] = menu_parent_org
 features[variable][] = node_options_org

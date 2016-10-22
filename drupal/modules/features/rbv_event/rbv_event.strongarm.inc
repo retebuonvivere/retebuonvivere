@@ -174,6 +174,9 @@ function rbv_event_strongarm() {
         'path' => array(
           'weight' => '3',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),

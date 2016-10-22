@@ -238,6 +238,7 @@ function rbv_project_field_group_info() {
       0 => 'field_com_logo',
       1 => 'field_com_social_links',
       2 => 'field_com_tagline',
+      3 => 'field_com_cover',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -296,7 +297,8 @@ function rbv_project_field_group_info() {
       0 => 'field_com_logo',
       1 => 'field_com_social_links',
       2 => 'field_com_tagline',
-      3 => 'title',
+      3 => 'field_com_cover',
+      4 => 'title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

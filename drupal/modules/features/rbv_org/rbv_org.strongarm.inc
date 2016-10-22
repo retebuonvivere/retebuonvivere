@@ -14,7 +14,7 @@ function rbv_org_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_org';
-  $strongarm->value = 'edit-panelizer';
+  $strongarm->value = 'edit-auto-nodetitle';
   $export['additional_settings__active_tab_org'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -212,6 +212,13 @@ function rbv_org_strongarm() {
     ),
   );
   $export['field_bundle_settings_user__user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_org';
+  $strongarm->value = '0';
+  $export['language_content_type_org'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

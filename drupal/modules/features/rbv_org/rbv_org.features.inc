@@ -37,7 +37,7 @@ function rbv_org_node_info() {
     'org' => array(
       'name' => t('Organizzazione'),
       'base' => 'node_content',
-      'description' => t('Organizzazione della Società Civile. Associazione, Cooperativa Sociale, Impresa Sociale, Gruppo di Acquisto Solidale (GAS), Rete di Economia Solidale (RES), Comitato... e tutti gli altri tipi di gruppo.'),
+      'description' => t('Organizzazione della Società Civile e/o dell\'Economia Sociale e Solidale. Es: Associazione, Cooperativa Sociale, Impresa Sociale, Impresa Unipersonale, Gruppo di Acquisto Solidale (GAS), Rete di Economia Solidale (RES), Comitato, Gruppo informale...'),
       'has_title' => '1',
       'title_label' => t('Nome'),
       'help' => '',

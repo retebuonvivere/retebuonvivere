@@ -61,6 +61,103 @@ function rbv_project_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project-field_com_cover'.
+  $field_instances['node-project-field_com_cover'] = array(
+    'bundle' => 'project',
+    'deleted' => 0,
+    'description' => 'Presonalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'backstretch',
+        'settings' => array(
+          'center_x' => 1,
+          'center_y' => 1,
+          'delta' => '',
+          'duration' => 7000,
+          'element' => 'other',
+          'element_other' => '#rbv-cover',
+          'fade' => 2000,
+          'field' => '',
+          'image_style' => '',
+          'random' => 0,
+        ),
+        'type' => 'backstretch',
+        'weight' => 3,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'vmode_group_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_com_cover',
+    'label' => 'Immagine di copertina',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'covers/[current-date:custom:Y]/[current-date:custom:m]',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '399x150',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_com_date'.
   $field_instances['node-project-field_com_date'] = array(
     'bundle' => 'project',
@@ -692,7 +789,7 @@ function rbv_project_field_default_field_instances() {
         'module' => 'social_profile_field',
         'settings' => array(),
         'type' => 'social_profile_field_icons',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'featured' => array(
         'label' => 'above',
@@ -725,7 +822,7 @@ function rbv_project_field_default_field_instances() {
       'module' => 'social_profile_field',
       'settings' => array(),
       'type' => 'social_profile_field_default',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -741,7 +838,7 @@ function rbv_project_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'featured' => array(
         'label' => 'above',
@@ -784,7 +881,7 @@ function rbv_project_field_default_field_instances() {
         'size' => 68,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1076,12 +1173,14 @@ function rbv_project_field_default_field_instances() {
   t('Date');
   t('Descrizione');
   t('Email');
+  t('Immagine di copertina');
   t('Indirizzo');
   t('Links');
   t('Logo');
   t('Mission');
   t('Organizzazione promotrice');
   t('Parole chiave');
+  t('Presonalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.');
   t('Segui il progetto su');
   t('Settori');
   t('Slogan');

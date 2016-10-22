@@ -120,6 +120,7 @@ function rbv_event_field_group_info() {
       1 => 'field_com_logo',
       2 => 'field_com_social_links',
       3 => 'field_event_date',
+      4 => 'field_com_cover',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -151,6 +152,7 @@ function rbv_event_field_group_info() {
       2 => 'field_com_social_links',
       3 => 'field_event_date',
       4 => 'field_quick_links_links',
+      5 => 'field_com_cover',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

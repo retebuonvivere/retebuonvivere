@@ -39,7 +39,7 @@ function rbv_com_fields_field_default_field_bases() {
   // Exported field_base: 'field_com_cover'.
   $field_bases['field_com_cover'] = array(
     'active' => 1,
-    'cardinality' => 10,
+    'cardinality' => 5,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_com_cover',
