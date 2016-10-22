@@ -179,25 +179,11 @@ function rbv_event_field_group_info() {
   $field_group->data = array(
     'label' => 'vmode group content',
     'weight' => '0',
-    'children' => array(
-      0 => 'field_com_categories',
-      1 => 'field_com_location',
-      2 => 'field_com_logo',
-      3 => 'field_event_date',
-    ),
-    'format_type' => 'div',
+    'children' => array(),
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'label' => 'vmode group content',
-      'instance_settings' => array(
-        'classes' => 'group-vmode-group-content field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-        'id' => 'node_event_vmode_group_content_group_vmode_group_content',
-      ),
-      'formatter' => 'open',
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_vmode_group_content|node|event|vmode_group_content'] = $field_group;

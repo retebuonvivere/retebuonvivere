@@ -44,7 +44,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['field'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['relationships']['reverse_field_relpro_project_node']['label'] = 'Content referencing nid from field_relpro_project';
-  /* Campo: Content: Soggetto */
+  /* Field: Nodo: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -54,7 +54,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['field_rel_source']['settings'] = array(
     'link' => 1,
   );
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -106,7 +106,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['relationships']['field_rel_source_target_id']['relationship'] = 'reverse_field_relpro_project_node';
   $handler->display->display_options['relationships']['field_rel_source_target_id']['label'] = 'Content referenced from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Logo */
+  /* Field: Nodo: Logo */
   $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';
@@ -118,7 +118,7 @@ function rbv_relpro_views_default_views() {
     'image_style' => 'rbv_image_icon',
     'image_link' => 'content',
   );
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -129,7 +129,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Logo (field_com_logo:fid) */
+  /* Sort criterion: Nodo: Logo (field_com_logo:fid) */
   $handler->display->display_options['sorts']['field_com_logo_fid']['id'] = 'field_com_logo_fid';
   $handler->display->display_options['sorts']['field_com_logo_fid']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['sorts']['field_com_logo_fid']['field'] = 'field_com_logo_fid';
@@ -190,7 +190,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Campo: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -198,7 +198,7 @@ function rbv_relpro_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Quando -  start date (field_event_date) */
+  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';

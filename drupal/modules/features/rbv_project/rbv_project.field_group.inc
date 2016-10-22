@@ -355,12 +355,12 @@ function rbv_project_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_com_categories',
-      1 => 'field_com_logo',
-      2 => 'field_com_tagline',
-      3 => 'og_group_ref',
-      4 => 'field_com_date',
+      1 => 'field_com_date',
+      2 => 'field_com_logo',
+      3 => 'field_com_tagline',
+      4 => 'og_group_ref',
     ),
-    'format_type' => 'div',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'vmode group content',
       'instance_settings' => array(

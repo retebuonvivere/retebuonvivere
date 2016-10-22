@@ -10,7 +10,7 @@
 function rbv_relpro_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-collaboration-field_com_date'
+  // Exported field_instance: 'node-collaboration-field_com_date'.
   $field_instances['node-collaboration-field_com_date'] = array(
     'bundle' => 'collaboration',
     'deleted' => 0,
@@ -76,7 +76,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collaboration-field_com_description'
+  // Exported field_instance: 'node-collaboration-field_com_description'.
   $field_instances['node-collaboration-field_com_description'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
@@ -130,7 +130,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collaboration-field_rel_categories'
+  // Exported field_instance: 'node-collaboration-field_rel_categories'.
   $field_instances['node-collaboration-field_rel_categories'] = array(
     'bundle' => 'collaboration',
     'default_value' => array(
@@ -184,7 +184,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collaboration-field_rel_source'
+  // Exported field_instance: 'node-collaboration-field_rel_source'.
   $field_instances['node-collaboration-field_rel_source'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
@@ -270,7 +270,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collaboration-field_relpro_project'
+  // Exported field_instance: 'node-collaboration-field_relpro_project'.
   $field_instances['node-collaboration-field_relpro_project'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
@@ -353,7 +353,7 @@ function rbv_relpro_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collaboration-og_group_ref'
+  // Exported field_instance: 'node-collaboration-og_group_ref'.
   $field_instances['node-collaboration-og_group_ref'] = array(
     'bundle' => 'collaboration',
     'default_value' => NULL,
