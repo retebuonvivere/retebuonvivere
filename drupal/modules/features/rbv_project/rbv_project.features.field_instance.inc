@@ -63,7 +63,7 @@ function rbv_project_field_default_field_instances() {
   $field_instances['node-project-field_com_cover'] = array(
     'bundle' => 'project',
     'deleted' => 0,
-    'description' => 'Presonalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.',
+    'description' => '<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Immagini di copertina" data-content="Personalizza la copertina di questa pagina! Se si scelgono più immagini (max 5), verranno presentante come slideshow." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -75,7 +75,7 @@ function rbv_project_field_default_field_instances() {
           'duration' => 7000,
           'element' => 'other',
           'element_other' => '#rbv-cover',
-          'fade' => 2000,
+          'fade' => 350,
           'field' => '',
           'image_style' => '',
           'random' => 0,
@@ -111,7 +111,7 @@ function rbv_project_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'covers/[current-date:custom:Y]/[current-date:custom:m]',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
+      'max_filesize' => '1.5 MB',
       'max_resolution' => '',
       'min_resolution' => '399x150',
       'title_field' => 0,
@@ -449,7 +449,7 @@ function rbv_project_field_default_field_instances() {
   $field_instances['node-project-field_com_logo'] = array(
     'bundle' => 'project',
     'deleted' => 0,
-    'description' => '<a class="help" title="Il logo è sempre visibile accanto al nome del progetto. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>',
+    'description' => '<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Logo/immagine principale" data-content="Inserire il logo o un\'immagine caratterizzante dell\'evento. Sarà sempre visibile vicino al titolo, in forma quadrata (ideale per il logo) o a coprire tutta la larghezza nel formato tessera." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -487,12 +487,12 @@ function rbv_project_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 414,
-      'file_directory' => 'logos',
+      'file_directory' => 'logos/[current-date:custom:Y]/[current-date:custom:m]',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
+      'max_filesize' => '1.5 MB',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 1,
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1109,7 +1109,6 @@ function rbv_project_field_default_field_instances() {
   t('<a class="help" title="Agricoltura, Bio, Informazione, Salute... Scegliete i settori su cui questo progetto ha un impatto. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Avete scelto il settore \'economia solidale\' e volete specificare che il progetto è in particolare sul \'baratto\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Descrivete il progetto come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
-  t('<a class="help" title="Il logo è sempre visibile accanto al nome del progetto. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo progetto è presente. Questi link vengono visualizzati subito sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Locale, regionale, interregionale, nazionale, globale... Qual\'è l\'ambito o la portata del progetto?"><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Mission, la ragione d\'essere di questo progetto, che cosa il progetto intende fare per il mondo. Un breve testo che possa indicare gli obiettivi e gli intenti del progetto, che possa guidarne le azioni ed essere d\'ispirazione per gli altri."><i class="fa fa-question-circle"></i></a>');
@@ -1120,6 +1119,8 @@ function rbv_project_field_default_field_instances() {
   t('<a class="help" title="Una frase breve che dovrebbe riassumere l\'intero universo di questo progetto. Lo slogan viene sempre visualizzato a fianco del logo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale del progetto. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Usate il pulsante \'Aggiungi un altro elemento\' per aggiungere altri indirizzi, ad esempio il blog del progetto. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>');
+  t('<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Immagini di copertina" data-content="Personalizza la copertina di questa pagina! Se si scelgono più immagini (max 5), verranno presentante come slideshow." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>');
+  t('<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Logo/immagine principale" data-content="Inserire il logo o un\'immagine caratterizzante dell\'evento. Sarà sempre visibile vicino al titolo, in forma quadrata (ideale per il logo) o a coprire tutta la larghezza nel formato tessera." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>');
   t('<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Organizzazione promotrice" data-content="Se appartieni ad una sola organizzazione il sistema la seleziona automaticamente. Altrimenti puoi selezionare una o più tra le tue organizzazioni." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>');
   t('Altro');
   t('Ambito/portata');
@@ -1133,7 +1134,6 @@ function rbv_project_field_default_field_instances() {
   t('Mission');
   t('Organizzazione promotrice');
   t('Parole chiave');
-  t('Presonalizza la copertina di questa pagina! Se si scelgono più immagini, verranno presentante come slideshow.');
   t('Segui il progetto su');
   t('Settori');
   t('Slogan');
