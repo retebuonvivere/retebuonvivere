@@ -359,7 +359,7 @@ function rbv_relpro_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => '<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>',
+    'description' => '<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Organizzazione promotrice" data-content="Se appartieni ad una sola organizzazione il sistema la seleziona automaticamente. Altrimenti puoi selezionare una o più tra le tue organizzazioni." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -394,10 +394,10 @@ function rbv_relpro_field_default_field_instances() {
       'behaviors' => array(
         'og_widget' => array(
           'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
+            'widget_type' => 'entityreference_autocomplete_tags',
           ),
           'default' => array(
-            'widget_type' => 'options_select',
+            'widget_type' => 'options_buttons',
           ),
           'status' => TRUE,
         ),
@@ -405,8 +405,11 @@ function rbv_relpro_field_default_field_instances() {
           'action' => 'hide',
           'action_on_edit' => 0,
           'fallback' => 'none',
-          'og_context' => 0,
-          'skip_perm' => 'administer group',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 'administer permissions',
           'status' => 1,
         ),
       ),
@@ -436,7 +439,6 @@ function rbv_relpro_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('<a class="help" title="Descrivete questa collaborazione come preferite."><i class="fa fa-question-circle"></i></a>');
-  t('<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Qual è il progetto a cui l\'organizzazione indicata collabora?"><i class="fa fa-hand-o-down"></i></a>
 <p class="alert alert-info">Qual è il progetto a cui l\'organizzazione indicata collabora?<br><br> Nella <i class="fa fa-eye"></i> rete delle collaborazioni verrà disegnato un legame tra organizzazione e progetto. Nella <i class="fa fa-eye"></i> rete delle relazioni verrà disegnato un legame tra le organizzazioni che collaborano a questo progetto.</p>');
   t('<a class="help" title="Qual è il soggetto della collaborazione?"><i class="fa fa-hand-o-down"></i></a>
@@ -446,6 +448,7 @@ function rbv_relpro_field_default_field_instances() {
 <i class="fa fa-circle"></i> Inoltre potete indicare <strong>un\'organizzazione non ancora presente in retebuonvivere.org</strong>. In questo caso, non appena l\'organizzazione indicata entrerà in retebuonvivere.org, questa collaborazione le verrà attribuita.</p>');
   t('<a class="help" title="Quando è stata iniziata questa collaborazione? Le date sono importanti. Ad esempio nella rete potremmo sviluppare l\'asse del tempo e visualizzare le connessioni che si creano nel tempo. Se la data di inizio non viene indicata, il sistema selezionerà la data di oggi. Quando sarà il momento, usate il pulsante \'Show end date\' per indicare che la collaborazione è terminata."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Scegliere il tipo di collaborazione, ad esempio il ruolo che l\'organizzazione svolge in questo progetto/attività. Pensate che ne manchi qualcuno? C\'è una discussione nel forum appositamente per questo."><i class="fa fa-question-circle"></i></a>');
+  t('<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Organizzazione promotrice" data-content="Se appartieni ad una sola organizzazione il sistema la seleziona automaticamente. Altrimenti puoi selezionare una o più tra le tue organizzazioni." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>');
   t('Date');
   t('Descrizione della collaborazione');
   t('Organizzazione promotrice');

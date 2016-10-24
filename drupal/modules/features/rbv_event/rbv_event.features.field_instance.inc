@@ -754,7 +754,7 @@ function rbv_event_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => '<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>',
+    'description' => '<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Organizzazione promotrice" data-content="Se appartieni ad una sola organizzazione il sistema la seleziona automaticamente. Altrimenti puoi selezionare una o più tra le tue organizzazioni." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -790,15 +790,15 @@ function rbv_event_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Organizzazione promotrice',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
           'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
+            'widget_type' => 'entityreference_autocomplete_tags',
           ),
           'default' => array(
-            'widget_type' => 'options_select',
+            'widget_type' => 'options_buttons',
           ),
           'status' => TRUE,
         ),
@@ -806,8 +806,11 @@ function rbv_event_field_default_field_instances() {
           'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
-          'og_context' => 0,
-          'skip_perm' => 'administer group',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 'administer permissions',
           'status' => 1,
         ),
       ),
@@ -840,12 +843,12 @@ function rbv_event_field_default_field_instances() {
   t('<a class="help" title="Avete scelto il settore \'beni comuni\' e volete specificare che l\'evento si concentrerà in particolare su \'auto-organizzazione\'? Aggiungete parole chiave per specificare ulteriormente l\'attività. Potete creare nuove parole chiave semplicemente digitandole. Separate le parole con la virgola."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Descrivete l\'evento come preferite. Alcune domande cui spesso è utile rispondere sono Cos\'è? Cosa fa? Ricordate che nella versione breve - quella usata ad esempio nella sezione Esplora la rete - saranno visualizzati i primi 500 caratteri. Perciò cercate di rendere il primo paragrafo significativo."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Il logo è sempre visibile accanto al nome dell\'evento. L\'immagine viene ritagliata in modo da ottenere un formato quadrato, l\'ideale per il logo. Se l\'immagine originale ha un formato verticale, è possibile che vengano tagliate delle parti. Per ottenere un miglior risultato, modificate l\'immagine e ritagliatela in forma quadrata prima di caricarla. Non sapete come fare? Nessun problema, segnalatecelo con una email."><i class="fa fa-question-circle"></i></a>');
-  t('<a class="help" title="Il sistema seleziona atomaticamente la propria organizzazione. Se appartenete a più di un\'organizzazione potete selezionare una o più di queste."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Inserite gli indirizzi internet di tutti i social network in cui questo evento è presente. Questi link vengono visualizzati  sotto lo slogan, usando le icone specifiche dei social network. Sono supportati facebook, twitter, wiser.org, zoes.it, github, instagram, ma anche wikipedia e tanti altri. Usare il pulsante \'Aggiungi un\'altro elemento\' per inserire più social network."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="L\'evento si riferisce ad un progetto? Indicate quale digitando il nome del progetto qui, l\'evento sarà visibile nella pagina del progetto. In questo modo si può ad esempio creare un progetto/attività per raggruppare una rassegna di eventi."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Quando inizia e quando termina questo evento? Le date permettono di visualizzare l\'evento nel calendario della vostra organizzazione e nel calendario condiviso."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="Usate la riga 1 per l\'indirizzo ufficiale, come via e civico. Usate la riga 2 per ulteriori dettagli utili ad identificare correttamente il luogo, come ad esempio il numero dell\'interno, oppure presso ... se la sede è presso qualche altra sede..."><i class="fa fa-question-circle"></i></a>');
   t('<a class="help" title="È imprtante chiarire ai visitatori qual\'è il sito internet principale dell\'evento. Inserite qui l\'indirizzo e assegnate un titolo chiaro, ad esempio \'Sito principale\'. Usate il pulsante \'Aggiungi un altro elemento\' per aggiungere altri indirizzi, ad esempio il blog del progetto. Assegnate anche a questo un titolo chiaro, ad esempio \'Blog\'."><i class="fa fa-question-circle"></i></a>');
+  t('<a tabindex="0" class="btn btn-info" role="button" data-toggle="popover" data-trigger="focus" data-original-title="Organizzazione promotrice" data-content="Se appartieni ad una sola organizzazione il sistema la seleziona automaticamente. Altrimenti puoi selezionare una o più tra le tue organizzazioni." data-html="true"><i class="fa fa-question-circle fa-lg"></i> Aiuto</a>');
   t('Descrizione');
   t('Dove');
   t('Immagine / logo');
