@@ -22,6 +22,10 @@ header.navbar {
   margin-bottom: 0;
 }
 
+/*.navbar-fixed-top {
+  position: fixed;
+}*/
+
 .nav-search-box label{
   display:none;
 }
@@ -63,7 +67,7 @@ form[id^="search-form"] input.form-submit {
   height: 22em;
   background-size: cover;
   background-image: url(../images/default.jpg);
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   /* background: linear-gradient(to bottom,rgba(255, 255, 255, 0.42) 10%,rgba(255, 255, 255, 0) 95%); */
 }
 
@@ -202,11 +206,13 @@ div#top-content {
  padding: 0 1em .8em 0;
 }
 
-div#edit-field-com-logo .image-widget .image-widget-data .form-item.form-type-textfield.form-group {
+div#edit-field-com-logo .image-widget-data .form-item.form-type-textfield.form-group, 
+div#edit-field-user-picture .image-widget-data .form-item.form-type-textfield.form-group {
   display: table;
 }
 
-div#edit-field-com-logo .image-widget .image-widget-data .form-item.form-type-textfield.form-group input.form-control {
+div#edit-field-com-logo .image-widget-data .form-item.form-type-textfield.form-group input.form-control,
+div#edit-field-user-picture .image-widget-data .form-item.form-type-textfield.form-group input.form-control {
   display: table-cell;
 }
 
@@ -1241,6 +1247,22 @@ padding: .3em;
   background-color: #ffffff;
   border-color: #cccccc;
 }
+
+.media-thumbnail label {
+  line-height: 1em;
+  font-weight: normal;
+}
+
+.media-thumbnail img {
+  max-width: 100%;
+  height: auto;
+}
+
+#skip-link {
+  display: none;
+}
+
+/* CALLOUTS */
 
 .callout {
     padding: 20px;
