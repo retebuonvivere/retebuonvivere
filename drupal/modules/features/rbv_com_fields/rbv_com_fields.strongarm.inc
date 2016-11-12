@@ -13,6 +13,13 @@ function rbv_com_fields_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_wysiwyg_upload_directory';
+  $strongarm->value = 'wysiwyg/[current-date:custom:Y]/[current-date:custom:m]';
+  $export['media_wysiwyg_wysiwyg_upload_directory'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_defaults_taxonomy_term_categories';
   $strongarm->value = array(
     'status' => 1,
