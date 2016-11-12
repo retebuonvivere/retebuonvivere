@@ -50,7 +50,7 @@ form[id^="search-form"] input.form-submit {
   }
 }
 
-/* LOGO */
+/* WEBSITE LOGO */
 #logo img{
 /*    position:absolute;*/
 /*    float:left;*/
@@ -96,6 +96,13 @@ div#top-content {
 }
 
 /* NODE */
+/*img:hover {
+  -webkit-filter: contrast(120%);
+}*/
+/* div main content. i.e. excluding comments */
+.node {
+ padding-bottom: 1em;
+}
 
 /* fields */
 .field-type-addressfield {
@@ -194,6 +201,15 @@ div#top-content {
  float: left;
  padding: 0 1em .8em 0;
 }
+
+div#edit-field-com-logo .image-widget .image-widget-data .form-item.form-type-textfield.form-group {
+  display: table;
+}
+
+div#edit-field-com-logo .image-widget .image-widget-data .form-item.form-type-textfield.form-group input.form-control {
+  display: table-cell;
+}
+
 .rbv-image-cover {
   width: 100%;
   height: auto;
@@ -941,6 +957,14 @@ margin: .2em;
 white-space: nowrap;
 background: black;
 }
+
+/* group reference field 
+.page-node-edit.node-type-event .field-name-og-group-ref a, .page-node-edit.node-type-project .field-name-og-group-ref a {
+ background: none;
+ -moz-border-radius: none;
+ border-radius: none;
+ padding: 0;
+} */
 
 /*
  * MENU 
