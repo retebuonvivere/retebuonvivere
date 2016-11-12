@@ -111,7 +111,7 @@ function rbv_project_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'covers/[current-date:custom:Y]/[current-date:custom:m]',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '1.5 MB',
+      'max_filesize' => '1.75 MB',
       'max_resolution' => '',
       'min_resolution' => '399x150',
       'title_field' => 0,
@@ -135,7 +135,7 @@ function rbv_project_field_default_field_instances() {
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'media_internet' => 'media_internet',
+          'media_internet' => 0,
           'upload' => 'upload',
         ),
         'manualcrop_crop_info' => 1,
