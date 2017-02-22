@@ -3132,6 +3132,21 @@ progetti/attività',
       'secondarycolumn2' => NULL,
       'secondarycolumn3' => NULL,
       'footer' => NULL,
+      'slider' => array(
+        'devices' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'pane_style' => array(
+          'pull-left' => 0,
+          'pull-right' => 0,
+          'clearfix' => 0,
+          'jumbotron' => 0,
+          'well' => 0,
+        ),
+      ),
     ),
     'header' => array(
       'style' => 'kalacustomize',
@@ -3146,7 +3161,7 @@ progetti/attività',
       'style' => '0',
     ),
     'slider' => array(
-      'style' => '0',
+      'style' => 'kalacustomize',
     ),
   );
   $display->cache = array();
@@ -3958,8 +3973,8 @@ progetti/attività',
       ),
       'pane_style' => array(
         'pull-left' => 'pull-left',
-        'clearfix' => 'clearfix',
         'pull-right' => 0,
+        'clearfix' => 0,
         'jumbotron' => 0,
         'well' => 0,
       ),
@@ -4044,8 +4059,8 @@ progetti/attività',
       ),
       'pane_style' => array(
         'pull-left' => 'pull-left',
-        'clearfix' => 'clearfix',
         'pull-right' => 0,
+        'clearfix' => 0,
         'jumbotron' => 0,
         'well' => 0,
       ),
@@ -4062,6 +4077,25 @@ progetti/attività',
   $pane->uuid = 'bcecce42-7e7d-4dd2-bc9d-de9188fede84';
   $display->content['new-bcecce42-7e7d-4dd2-bc9d-de9188fede84'] = $pane;
   $display->panels['slider'][6] = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+  $pane = new stdClass();
+  $pane->pid = 'new-a94dc327-a978-4ee9-b60d-a4d205ab71ca';
+  $pane->panel = 'slider';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'vid:1637';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array();
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = 'a94dc327-a978-4ee9-b60d-a4d205ab71ca';
+  $display->content['new-a94dc327-a978-4ee9-b60d-a4d205ab71ca'] = $pane;
+  $display->panels['slider'][7] = 'new-a94dc327-a978-4ee9-b60d-a4d205ab71ca';
   $pane = new stdClass();
   $pane->pid = 'new-692ecd7b-7241-4b4c-b36a-f4c23c35626b';
   $pane->panel = 'slidergutter';
