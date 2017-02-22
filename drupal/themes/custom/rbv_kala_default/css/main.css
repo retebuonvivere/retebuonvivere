@@ -467,6 +467,7 @@ div.view-content.row {
  margin-left: 0;
  margin-right: 0;
 }
+
 article .node {
  padding-bottom: 12px;
 }
@@ -497,8 +498,10 @@ article .node {
  padding: 0 .7em 0 .7em;
 }
 
-/* nuove nate*/
-.view-rbv-view-lists.view-display-id-panel_pane_13 .views-row {
+/* nuove nate: panel_13 
+ * upcoming: panel_1 
+ * */
+.view-rbv-view-lists.view-display-id-panel_pane_13 .views-row, .view-rbv-view-lists.view-display-id-panel_pane_1 .views-row {
 	clear: both;
 	padding: 8px;
 }
@@ -508,6 +511,28 @@ article .node {
   border-radius: .4em;
   min-height: 54px;
   font-size: 1.2em;
+}
+
+/* upcoming events */
+.page-home .pane-rbv-view-lists-panel-pane-1 {
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.page-home .pane-rbv-view-lists-panel-pane-1 .pane-title {
+  padding: 8px 8px 0 8px;
+  margin-bottom: 0;
+}
+
+/* counters  */
+.rbv-count {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 1.6em;
+}
+
+.rbv-count .badge {
+  font-size: 1.7em;
 }
 
 .node-type-project .views-row.collaborator, .node-type-org .views-row.member {

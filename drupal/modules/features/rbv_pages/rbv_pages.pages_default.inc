@@ -3085,14 +3085,13 @@ progetti/attività',
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'radix_pond';
+  $display->layout = 'radix_brown';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'sidebar' => NULL,
       'contentmain' => NULL,
-      'slider' => NULL,
       'slidergutter' => NULL,
       'column1' => NULL,
       'column2' => NULL,
@@ -3132,6 +3131,7 @@ progetti/attività',
       ),
       'secondarycolumn2' => NULL,
       'secondarycolumn3' => NULL,
+      'footer' => NULL,
     ),
     'header' => array(
       'style' => 'kalacustomize',
@@ -3145,6 +3145,9 @@ progetti/attività',
     'footer' => array(
       'style' => '0',
     ),
+    'slider' => array(
+      'style' => '0',
+    ),
   );
   $display->cache = array();
   $display->title = '';
@@ -3152,422 +3155,8 @@ progetti/attività',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f';
-  $pane->panel = 'column1';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f';
-  $display->content['new-c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f'] = $pane;
-  $display->panels['column1'][0] = 'new-c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f';
-  $pane = new stdClass();
-  $pane->pid = 'new-abbc6489-2ffb-48c1-b51e-833422a09eb6';
-  $pane->panel = 'column2';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'abbc6489-2ffb-48c1-b51e-833422a09eb6';
-  $display->content['new-abbc6489-2ffb-48c1-b51e-833422a09eb6'] = $pane;
-  $display->panels['column2'][0] = 'new-abbc6489-2ffb-48c1-b51e-833422a09eb6';
-  $pane = new stdClass();
-  $pane->pid = 'new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
-  $pane->panel = 'column3';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:5';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
-  $display->content['new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290'] = $pane;
-  $display->panels['column3'][0] = 'new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
-  $pane = new stdClass();
-  $pane->pid = 'new-b3fcedf0-0c13-47aa-9690-43204521dbe4';
-  $pane->panel = 'footer';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:29';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array();
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'b3fcedf0-0c13-47aa-9690-43204521dbe4';
-  $display->content['new-b3fcedf0-0c13-47aa-9690-43204521dbe4'] = $pane;
-  $display->panels['footer'][0] = 'new-b3fcedf0-0c13-47aa-9690-43204521dbe4';
-  $pane = new stdClass();
-  $pane->pid = 'new-e6f28570-ac83-4356-8f80-e07ab7ee616c';
-  $pane->panel = 'footer';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:6';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'e6f28570-ac83-4356-8f80-e07ab7ee616c';
-  $display->content['new-e6f28570-ac83-4356-8f80-e07ab7ee616c'] = $pane;
-  $display->panels['footer'][1] = 'new-e6f28570-ac83-4356-8f80-e07ab7ee616c';
-  $pane = new stdClass();
-  $pane->pid = 'new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
-  $pane->panel = 'header';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
-  $display->content['new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50'] = $pane;
-  $display->panels['header'][0] = 'new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
-  $pane = new stdClass();
-  $pane->pid = 'new-d31acf8f-4cc9-4aa4-953d-bc4817880efe';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_8';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'd31acf8f-4cc9-4aa4-953d-bc4817880efe';
-  $display->content['new-d31acf8f-4cc9-4aa4-953d-bc4817880efe'] = $pane;
-  $display->panels['header'][1] = 'new-d31acf8f-4cc9-4aa4-953d-bc4817880efe';
-  $pane = new stdClass();
-  $pane->pid = 'new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_members-panel_pane_3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'full',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
-  $display->content['new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f'] = $pane;
-  $display->panels['header'][2] = 'new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
-  $pane = new stdClass();
-  $pane->pid = 'new-3bf42efe-2286-4999-ac6b-5f1ac27d4232';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_netadmview_joined-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '3bf42efe-2286-4999-ac6b-5f1ac27d4232';
-  $display->content['new-3bf42efe-2286-4999-ac6b-5f1ac27d4232'] = $pane;
-  $display->panels['header'][3] = 'new-3bf42efe-2286-4999-ac6b-5f1ac27d4232';
-  $pane = new stdClass();
-  $pane->pid = 'new-6f189743-9d3c-4d04-92ea-9bbc60931db3';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_11';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '6f189743-9d3c-4d04-92ea-9bbc60931db3';
-  $display->content['new-6f189743-9d3c-4d04-92ea-9bbc60931db3'] = $pane;
-  $display->panels['header'][4] = 'new-6f189743-9d3c-4d04-92ea-9bbc60931db3';
-  $pane = new stdClass();
-  $pane->pid = 'new-ae41e07c-6708-4013-b08e-330da2e07741';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_9';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 5;
-  $pane->locks = array();
-  $pane->uuid = 'ae41e07c-6708-4013-b08e-330da2e07741';
-  $display->content['new-ae41e07c-6708-4013-b08e-330da2e07741'] = $pane;
-  $display->panels['header'][5] = 'new-ae41e07c-6708-4013-b08e-330da2e07741';
-  $pane = new stdClass();
-  $pane->pid = 'new-f036e35b-6f76-4690-bd61-d146575e42af';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_10';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => '',
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
-    'widget_title' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'pull-left' => 'pull-left',
-        'pull-right' => 0,
-        'clearfix' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 6;
-  $pane->locks = array();
-  $pane->uuid = 'f036e35b-6f76-4690-bd61-d146575e42af';
-  $display->content['new-f036e35b-6f76-4690-bd61-d146575e42af'] = $pane;
-  $display->panels['header'][6] = 'new-f036e35b-6f76-4690-bd61-d146575e42af';
-  $pane = new stdClass();
-  $pane->pid = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'rbv_view_lists-panel_pane_12';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_settings' => 'fields',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'devices' => array(
-        'hidden-xs' => 0,
-        'hidden-sm' => 0,
-        'hidden-md' => 0,
-        'hidden-lg' => 0,
-      ),
-      'pane_style' => array(
-        'clearfix' => 'clearfix',
-        'pull-left' => 0,
-        'pull-right' => 0,
-        'jumbotron' => 0,
-        'well' => 0,
-      ),
-    ),
-    'style' => 'kalacustomize',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 7;
-  $pane->locks = array();
-  $pane->uuid = 'bcecce42-7e7d-4dd2-bc9d-de9188fede84';
-  $display->content['new-bcecce42-7e7d-4dd2-bc9d-de9188fede84'] = $pane;
-  $display->panels['header'][7] = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
-  $pane = new stdClass();
   $pane->pid = 'new-dee56f38-c61a-465f-99f1-0fd2b3ab1ec7';
-  $pane->panel = 'secondarycolumn1';
+  $pane->panel = 'column1';
   $pane->type = 'views_panes';
   $pane->subtype = 'rbv_view_lists-panel_pane_13';
   $pane->shown = TRUE;
@@ -3582,19 +3171,199 @@ progetti/attività',
     'widget_title' => 'Nuove realtà aderenti',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'dee56f38-c61a-465f-99f1-0fd2b3ab1ec7';
   $display->content['new-dee56f38-c61a-465f-99f1-0fd2b3ab1ec7'] = $pane;
-  $display->panels['secondarycolumn1'][0] = 'new-dee56f38-c61a-465f-99f1-0fd2b3ab1ec7';
+  $display->panels['column1'][0] = 'new-dee56f38-c61a-465f-99f1-0fd2b3ab1ec7';
+  $pane = new stdClass();
+  $pane->pid = 'new-d3c43ffd-b51e-4019-b0f5-adcf3129eabd';
+  $pane->panel = 'column2';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'current:35';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd3c43ffd-b51e-4019-b0f5-adcf3129eabd';
+  $display->content['new-d3c43ffd-b51e-4019-b0f5-adcf3129eabd'] = $pane;
+  $display->panels['column2'][0] = 'new-d3c43ffd-b51e-4019-b0f5-adcf3129eabd';
+  $pane = new stdClass();
+  $pane->pid = 'new-36db1c73-4dcf-45a5-a158-86d618cc71ff';
+  $pane->panel = 'column2';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'current:10';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1484843711,
+      'uid' => '1',
+      'title' => 'Contatti',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '10',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => '1',
+      'admin_title' => 'contatti',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1393581288',
+      'changed' => 1484843711,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1601',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div class="panel panel-default">
+<a id="anccontact"></a>
+ <div class="panel-heading" style="background-color: #D8C7A3;">
+  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
+ </div>
+ <div class="panel-body">
+  <p style="padding-left: .6em;">Email gruppo di redazione RBV:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/organizzazioni/mag-verona">Mag Verona</a>  - Casa Comune:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-phone"></i> 045 8100279</li>
+    <li><i class="fa fa-map-marker fa-lg"></i> Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
+   </ul>
+  </p>
+ </div>
+</div>',
+            'format' => 'rbv_full_html',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => 1,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1601',
+        'timestamp' => '1461136274',
+        'uid' => '1',
+        'title' => 'Contatti',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '10',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '1',
+        'admin_title' => 'contatti',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1393581288',
+        'changed' => '1461136274',
+        'uuid' => '',
+        'language' => '',
+        'current_vid' => '1601',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div class="panel panel-default">
+<a id="anccontact"></a>
+ <div class="panel-heading" style="background-color: #D8C7A3;">
+  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
+ </div>
+ <div class="panel-body">
+  <p style="padding-left: .6em;">Email generica retebuonvivere.org
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone"></i> 045 8100279</li>
+    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone"></i> 340 7665125</li>
+   </ul>
+  </p>
+ </div>
+</div>',
+              'format' => 'rbv_full_html',
+              'safe_value' => '<div class="panel panel-default">
+<a id="anccontact"></a>
+ <div class="panel-heading" style="background-color: #D8C7A3;">
+  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
+ </div>
+ <div class="panel-body">
+  <p style="padding-left: .6em;">Email generica retebuonvivere.org
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
+    <li><i class="fa fa-phone"></i> 045 8100279</li>
+    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
+   </ul>
+  </p>
+  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
+   <ul style="list-style-type:none;">
+    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
+    <li><i class="fa fa-phone"></i> 340 7665125</li>
+   </ul>
+  </p>
+ </div>
+</div>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1601',
+      'vid' => '1606',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '36db1c73-4dcf-45a5-a158-86d618cc71ff';
+  $display->content['new-36db1c73-4dcf-45a5-a158-86d618cc71ff'] = $pane;
+  $display->panels['column2'][1] = 'new-36db1c73-4dcf-45a5-a158-86d618cc71ff';
   $pane = new stdClass();
   $pane->pid = 'new-82c6055a-c4d0-4398-8a76-68c70f1a70a6';
-  $pane->panel = 'secondarycolumn2';
+  $pane->panel = 'column3';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:19';
+  $pane->subtype = 'current:19';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -3739,165 +3508,92 @@ progetti/attività',
     ),
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '82c6055a-c4d0-4398-8a76-68c70f1a70a6';
   $display->content['new-82c6055a-c4d0-4398-8a76-68c70f1a70a6'] = $pane;
-  $display->panels['secondarycolumn2'][0] = 'new-82c6055a-c4d0-4398-8a76-68c70f1a70a6';
+  $display->panels['column3'][0] = 'new-82c6055a-c4d0-4398-8a76-68c70f1a70a6';
   $pane = new stdClass();
-  $pane->pid = 'new-36db1c73-4dcf-45a5-a158-86d618cc71ff';
-  $pane->panel = 'secondarycolumn3';
+  $pane->pid = 'new-c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f';
+  $pane->panel = 'footercolumn1';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'fpid:10';
+  $pane->subtype = 'vid:1609';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
     'fieldable_panels_pane' => (object) array(
-      'timestamp' => 1461136274,
+      'timestamp' => 1484844325,
       'uid' => '1',
-      'title' => 'Contatti',
+      'title' => 'Chi',
       'log' => '',
       'vuuid' => '',
-      'fpid' => '10',
+      'fpid' => '3',
       'bundle' => 'text',
       'link' => 0,
       'path' => '',
-      'reusable' => 1,
-      'admin_title' => 'contatti',
+      'reusable' => '0',
+      'admin_title' => '',
       'admin_description' => '',
       'category' => 'Reusable Content',
       'view_access' => NULL,
       'edit_access' => NULL,
-      'created' => '1393581288',
-      'changed' => 1461136274,
+      'created' => '1391267201',
+      'changed' => 1484844325,
       'uuid' => '',
-      'language' => '',
-      'current_vid' => '1600',
+      'language' => 'und',
+      'current_vid' => '1608',
       'field_basic_text_text' => array(
         'und' => array(
           0 => array(
-            'value' => '<div class="panel panel-default">
-<a id="anccontact"></a>
- <div class="panel-heading" style="background-color: #D8C7A3;">
-  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
- </div>
- <div class="panel-body">
-  <p style="padding-left: .6em;">Email generica retebuonvivere.org
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope-o"></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
-   </ul>
-  </p>
-  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
-    <li><i class="fa fa-phone"></i> 045 8100279</li>
-    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
-   </ul>
-  </p>
-  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
-    <li><i class="fa fa-phone"></i> 340 7665125</li>
-   </ul>
-  </p>
- </div>
-</div>',
-            'format' => 'rbv_full_html',
+            'value' => '<p><strong>Una pluralità e diversità di soggetti autonomi</strong>: associazioni, cooperative sociali, fondazioni, imprese ed imprenditori sociali, reti di imprese, gruppi di acquisto solidale GAS, reti di economia solidale RES, reti di piccola distribuzione organizzata, comitati cittadini, artigiani, commercianti etici, gruppi informali, centri di ricerca... Scoprite le <a href="organizzazioni"><i class="fa fa-home fa-lg"></i> organizzazioni</a> e le <a href="persone"><i class="fa fa-user fa-lg"></i> persone</a> che già partecipano.</p>',
+            'format' => 'panopoly_html_text',
           ),
         ),
       ),
       'rdf_mapping' => array(),
-      'revision' => 1,
+      'revision' => TRUE,
       'is_new' => FALSE,
       'original' => (object) array(
-        'vid' => '1600',
-        'timestamp' => '1459921615',
+        'vid' => '1608',
+        'timestamp' => '1484844241',
         'uid' => '1',
-        'title' => 'Contatti',
+        'title' => 'Cos\'è',
         'log' => '',
         'vuuid' => '',
-        'fpid' => '10',
+        'fpid' => '3',
         'bundle' => 'text',
         'link' => '0',
         'path' => '',
-        'reusable' => '1',
-        'admin_title' => 'contatti',
+        'reusable' => '0',
+        'admin_title' => '',
         'admin_description' => '',
         'category' => 'Reusable Content',
         'view_access' => NULL,
         'edit_access' => NULL,
-        'created' => '1393581288',
-        'changed' => '1459921615',
+        'created' => '1391267201',
+        'changed' => '1484844241',
         'uuid' => '',
-        'language' => '',
-        'current_vid' => '1600',
+        'language' => 'und',
+        'current_vid' => '1608',
         'field_basic_text_text' => array(
           'und' => array(
             0 => array(
-              'value' => '<div class="panel panel-default">
-<a id="anccontact"></a>
- <div class="panel-heading" style="background-color: #D8C7A3;">
-  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
- </div>
- <div class="panel-body">
-  <p style="padding-left: .6em;">Email generica retebuonvivere.org
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope-o" fa-lg></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
-   </ul>
-  </p>
-  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
-    <li><i class="fa fa-phone"></i> 045 8100279</li>
-    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
-   </ul>
-  </p>
-  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
-    <li><i class="fa fa-phone"></i> 340 7665125</li>
-   </ul>
-  </p>
- </div>
-</div>',
-              'format' => 'rbv_full_html',
-              'safe_value' => '<div class="panel panel-default">
-<a id="anccontact"></a>
- <div class="panel-heading" style="background-color: #D8C7A3;">
-  <h2 class="panel-title"><i class="fa fa-coffee fa-4x"></i> Per maggiori informazioni</h2>
- </div>
- <div class="panel-body">
-  <p style="padding-left: .6em;">Email generica retebuonvivere.org
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope-o" fa-lg></i> <a href="mailto:info@retebuonvivere.org">info@retebuonvivere.org</a></li>
-   </ul>
-  </p>
-  <p style="padding-left: .6em;"><a href="/persone/paolo-dagazzini">Paolo Dagazzini</a>, <a href="/organizzazioni/mag-verona">Mag Verona</a>, Ufficio – Formazione e Progetti:
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope"></i> <a href="mailto:formazione.progetti@magverona.it">formazione.progetti@magverona.it</a></li>
-    <li><i class="fa fa-phone"></i> 045 8100279</li>
-    <li><i class="fa fa-map-marker fa-lg"></i> Casa Comune Mag: Via Adriano Cristofoli 31A, 37138 Verona (dal lunedì al venerdì, dalle 09:00 alle 18:00).</li>
-   </ul>
-  </p>
-  <p style="padding-left: .6em;"><a href="/persone/miro-marchi">Miro Marchi</a>, <a href="/organizzazioni/naturalmente-verona-arcipelago-scec">Naturalmente Verona - Arcipelago Scec</a>:
-   <ul style="list-style-type:none;">
-    <li><i class="fa fa-envelope"></i> <a href="mailto:miro.marchi@gmail.com">miro.marchi@gmail.com</a></li>
-    <li><i class="fa fa-phone"></i> 340 7665125</li>
-   </ul>
-  </p>
- </div>
-</div>',
+              'value' => '<p>La Rete del Buon Vivere è un portale web per favorire l’incontro tra chi cerca e chi offre prodotti, servizi e iniziative delle realtà della società civile, dell’economia buona, della finanza solidale, dei beni comuni, che si occupano di agricoltura biologica, cultura, arte, sostenibilità, ambiente, servizi di cura, commercio equo, artigianato locale, lavori manuali riaggiornati, turismo sociale e responsabile, cittadinanza attiva, diritti.',
+              'format' => 'panopoly_html_text',
+              'safe_value' => '<p>La Rete del Buon Vivere è un portale web per favorire l’incontro tra chi cerca e chi offre prodotti, servizi e iniziative delle realtà della società civile, dell’economia buona, della finanza solidale, dei beni comuni, che si occupano di agricoltura biologica, cultura, arte, sostenibilità, ambiente, servizi di cura, commercio equo, artigianato locale, lavori manuali riaggiornati, turismo sociale e responsabile, cittadinanza attiva, diritti.</p>',
             ),
           ),
         ),
         'rdf_mapping' => array(),
       ),
-      'old_vid' => '1600',
-      'vid' => '1601',
+      'old_vid' => '1608',
+      'vid' => '1609',
     ),
   );
   $pane->cache = array();
@@ -3908,9 +3604,489 @@ progetti/attività',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '36db1c73-4dcf-45a5-a158-86d618cc71ff';
-  $display->content['new-36db1c73-4dcf-45a5-a158-86d618cc71ff'] = $pane;
-  $display->panels['secondarycolumn3'][0] = 'new-36db1c73-4dcf-45a5-a158-86d618cc71ff';
+  $pane->uuid = 'c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f';
+  $display->content['new-c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f'] = $pane;
+  $display->panels['footercolumn1'][0] = 'new-c89fee4b-b3a2-4cf6-a9a7-f37f3aa2f07f';
+  $pane = new stdClass();
+  $pane->pid = 'new-abbc6489-2ffb-48c1-b51e-833422a09eb6';
+  $pane->panel = 'footercolumn1';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'fpid:4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'abbc6489-2ffb-48c1-b51e-833422a09eb6';
+  $display->content['new-abbc6489-2ffb-48c1-b51e-833422a09eb6'] = $pane;
+  $display->panels['footercolumn1'][1] = 'new-abbc6489-2ffb-48c1-b51e-833422a09eb6';
+  $pane = new stdClass();
+  $pane->pid = 'new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
+  $pane->panel = 'footercolumn1';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'fpid:5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
+  $display->content['new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290'] = $pane;
+  $display->panels['footercolumn1'][2] = 'new-ec8ff0e5-a03a-406e-a8b9-b2ed180b9290';
+  $pane = new stdClass();
+  $pane->pid = 'new-b3fcedf0-0c13-47aa-9690-43204521dbe4';
+  $pane->panel = 'footercolumn2';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'fpid:29';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b3fcedf0-0c13-47aa-9690-43204521dbe4';
+  $display->content['new-b3fcedf0-0c13-47aa-9690-43204521dbe4'] = $pane;
+  $display->panels['footercolumn2'][0] = 'new-b3fcedf0-0c13-47aa-9690-43204521dbe4';
+  $pane = new stdClass();
+  $pane->pid = 'new-e6f28570-ac83-4356-8f80-e07ab7ee616c';
+  $pane->panel = 'footercolumn3';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'fpid:6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e6f28570-ac83-4356-8f80-e07ab7ee616c';
+  $display->content['new-e6f28570-ac83-4356-8f80-e07ab7ee616c'] = $pane;
+  $display->panels['footercolumn3'][0] = 'new-e6f28570-ac83-4356-8f80-e07ab7ee616c';
+  $pane = new stdClass();
+  $pane->pid = 'new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
+  $pane->panel = 'slider';
+  $pane->type = 'fieldable_panels_pane';
+  $pane->subtype = 'vid:1610';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'fieldable_panels_pane' => (object) array(
+      'timestamp' => 1484844485,
+      'uid' => '1',
+      'title' => '',
+      'log' => '',
+      'vuuid' => '',
+      'fpid' => '2',
+      'bundle' => 'text',
+      'link' => 0,
+      'path' => '',
+      'reusable' => '0',
+      'admin_title' => '',
+      'admin_description' => '',
+      'category' => 'Reusable Content',
+      'view_access' => NULL,
+      'edit_access' => NULL,
+      'created' => '1391264652',
+      'changed' => 1484844485,
+      'uuid' => '',
+      'language' => 'und',
+      'current_vid' => '1426',
+      'field_basic_text_text' => array(
+        'und' => array(
+          0 => array(
+            'value' => '<div style="float: right; margin-top: 2em; margin-right: 1em;"><a href="http://tagboard.com/retebuonvivere">#retebuonvivere</a></div><h1 class="site-title"><strong>[[{"fid":"14","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"retebuonvivere logo","field_file_image_title_text[und][0][value]":"logo 008"},"type":"media","attributes":{"alt":"retebuonvivere logo","title":"logo 008","height":"250","width":"250","class":"media-element file-default"}}]]retebuonvivere</strong><span class="invisible-separator"> </span><small>.org</small></h1>
+<h3 style="text-align: center;">Prodotti, servizi e iniziative dell\'economia sociale <em>in rete</em></h3><p></p>',
+            'format' => 'panopoly_html_text',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(),
+      'revision' => TRUE,
+      'is_new' => FALSE,
+      'original' => (object) array(
+        'vid' => '1426',
+        'timestamp' => '1427045559',
+        'uid' => '1',
+        'title' => '',
+        'log' => '',
+        'vuuid' => '',
+        'fpid' => '2',
+        'bundle' => 'text',
+        'link' => '0',
+        'path' => '',
+        'reusable' => '0',
+        'admin_title' => '',
+        'admin_description' => '',
+        'category' => 'Reusable Content',
+        'view_access' => NULL,
+        'edit_access' => NULL,
+        'created' => '1391264652',
+        'changed' => '1427045559',
+        'uuid' => '',
+        'language' => '',
+        'current_vid' => '1426',
+        'field_basic_text_text' => array(
+          'und' => array(
+            0 => array(
+              'value' => '<div style="float: right; margin-top: 2em; margin-right: 1em;"><a href="http://tagboard.com/retebuonvivere">#retebuonvivere</a></div><h1 class="site-title"><strong>[[{"fid":"14","view_mode":"default","fields":{"format":"default","field_file_image_alt_text[und][0][value]":"retebuonvivere logo","field_file_image_title_text[und][0][value]":"logo 008"},"type":"media","attributes":{"alt":"retebuonvivere logo","title":"logo 008","height":"250","width":"250","class":"media-element file-default"}}]]retebuonvivere</strong><span class="invisible-separator"> </span><small>.org</small></h1><h3 style="text-align: center;">Organizzazioni e persone della società civile e dell\'economia solidale di Verona ed oltre</h3><h4 style="text-align: center;">Per prenderci cura della sostenibilità sociale, economica, ambientale e della qualità della vita, nel segno dei beni comuni</h4><blockquote><h3 style="text-align: center;">"Insieme siamo una rete"</h3></blockquote><p></p>',
+              'format' => 'panopoly_html_text',
+              'safe_value' => '<div style="float:right"><a href="http://tagboard.com/retebuonvivere">#retebuonvivere</a></div><h1 class="site-title"><strong><img alt="retebuonvivere logo" title="logo 008" height="250" width="250" class="media-element file-default panopoly-image-original" typeof="foaf:Image" src="http://www.retebuonvivere.org/sites/default/files/styles/panopoly_image_original/public/rete08-250.png?itok=TO5q_a6L" />retebuonvivere</strong><span class="invisible-separator"> </span>.org</h1><h3 style="text-align:center">Organizzazioni e persone della società civile e dell\'economia solidale di Verona ed oltre</h3><h4 style="text-align:center">Per prenderci cura della sostenibilità sociale, economica, ambientale e della qualità della vita, nel segno dei beni comuni</h4><blockquote><h3 style="text-align:center">"Insieme siamo una rete"</h3></blockquote><p></p>',
+            ),
+          ),
+        ),
+        'rdf_mapping' => array(),
+      ),
+      'old_vid' => '1426',
+      'vid' => '1610',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'jumbotron' => 'jumbotron',
+        'pull-left' => 0,
+        'pull-right' => 0,
+        'clearfix' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
+  $display->content['new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50'] = $pane;
+  $display->panels['slider'][0] = 'new-73df4042-9bf4-4ad6-8cdb-9d59e7fb6d50';
+  $pane = new stdClass();
+  $pane->pid = 'new-3bf42efe-2286-4999-ac6b-5f1ac27d4232';
+  $pane->panel = 'slider';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_netadmview_joined-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'pull-left' => 'pull-left',
+        'pull-right' => 0,
+        'clearfix' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'rbv-count',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '3bf42efe-2286-4999-ac6b-5f1ac27d4232';
+  $display->content['new-3bf42efe-2286-4999-ac6b-5f1ac27d4232'] = $pane;
+  $display->panels['slider'][1] = 'new-3bf42efe-2286-4999-ac6b-5f1ac27d4232';
+  $pane = new stdClass();
+  $pane->pid = 'new-6f189743-9d3c-4d04-92ea-9bbc60931db3';
+  $pane->panel = 'slider';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_lists-panel_pane_11';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'pull-left' => 'pull-left',
+        'pull-right' => 0,
+        'clearfix' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'rbv-count',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '6f189743-9d3c-4d04-92ea-9bbc60931db3';
+  $display->content['new-6f189743-9d3c-4d04-92ea-9bbc60931db3'] = $pane;
+  $display->panels['slider'][2] = 'new-6f189743-9d3c-4d04-92ea-9bbc60931db3';
+  $pane = new stdClass();
+  $pane->pid = 'new-ae41e07c-6708-4013-b08e-330da2e07741';
+  $pane->panel = 'slider';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_lists-panel_pane_9';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'pull-left' => 'pull-left',
+        'pull-right' => 0,
+        'clearfix' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'rbv-count',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'ae41e07c-6708-4013-b08e-330da2e07741';
+  $display->content['new-ae41e07c-6708-4013-b08e-330da2e07741'] = $pane;
+  $display->panels['slider'][3] = 'new-ae41e07c-6708-4013-b08e-330da2e07741';
+  $pane = new stdClass();
+  $pane->pid = 'new-f036e35b-6f76-4690-bd61-d146575e42af';
+  $pane->panel = 'slider';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_lists-panel_pane_10';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'pull-left' => 'pull-left',
+        'clearfix' => 'clearfix',
+        'pull-right' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'rbv-count',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'f036e35b-6f76-4690-bd61-d146575e42af';
+  $display->content['new-f036e35b-6f76-4690-bd61-d146575e42af'] = $pane;
+  $display->panels['slider'][4] = 'new-f036e35b-6f76-4690-bd61-d146575e42af';
+  $pane = new stdClass();
+  $pane->pid = 'new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
+  $pane->panel = 'slider';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_members-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'full',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'pull-left' => 'pull-left',
+        'pull-right' => 0,
+        'clearfix' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'rbv-count',
+  );
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
+  $display->content['new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f'] = $pane;
+  $display->panels['slider'][5] = 'new-71ef9e9a-65ee-4af0-9f6c-78698bdb998f';
+  $pane = new stdClass();
+  $pane->pid = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+  $pane->panel = 'slider';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_lists-panel_pane_12';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'devices' => array(
+        'hidden-xs' => 0,
+        'hidden-sm' => 0,
+        'hidden-md' => 0,
+        'hidden-lg' => 0,
+      ),
+      'pane_style' => array(
+        'pull-left' => 'pull-left',
+        'clearfix' => 'clearfix',
+        'pull-right' => 0,
+        'jumbotron' => 0,
+        'well' => 0,
+      ),
+    ),
+    'style' => 'kalacustomize',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'rbv-count',
+  );
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = 'bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+  $display->content['new-bcecce42-7e7d-4dd2-bc9d-de9188fede84'] = $pane;
+  $display->panels['slider'][6] = 'new-bcecce42-7e7d-4dd2-bc9d-de9188fede84';
+  $pane = new stdClass();
+  $pane->pid = 'new-692ecd7b-7241-4b4c-b36a-f4c23c35626b';
+  $pane->panel = 'slidergutter';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_lists-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'more_link' => 0,
+    'use_pager' => 0,
+    'pager_id' => '0',
+    'items_per_page' => '4',
+    'view_mode' => 'vmode_group_content',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '692ecd7b-7241-4b4c-b36a-f4c23c35626b';
+  $display->content['new-692ecd7b-7241-4b4c-b36a-f4c23c35626b'] = $pane;
+  $display->panels['slidergutter'][0] = 'new-692ecd7b-7241-4b4c-b36a-f4c23c35626b';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

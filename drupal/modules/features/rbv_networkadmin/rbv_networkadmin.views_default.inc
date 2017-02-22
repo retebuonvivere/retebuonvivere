@@ -115,7 +115,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Nome';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Settori */
+  /* Field: Nodo: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -165,7 +165,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-participant" title="Totale organizzazioni partecipanti (iscritte a rbv)">[nid]</span> <a href="esplora?type%5B%5D=org">org. partecipanti</a>.';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-org" title="Totale organizzazioni iscritte a rbv">[nid]</span> <a href="esplora?type%5B%5D=org">organizzazioni</a>.';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'RBV count';
@@ -737,7 +737,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Logo */
+  /* Field: Nodo: Logo */
   $handler->display->display_options['fields']['field_com_logo']['id'] = 'field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['table'] = 'field_data_field_com_logo';
   $handler->display->display_options['fields']['field_com_logo']['field'] = 'field_com_logo';
@@ -752,12 +752,12 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Nome';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Settori */
+  /* Field: Nodo: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
-  /* Field: Content: Slogan */
+  /* Field: Nodo: Slogan */
   $handler->display->display_options['fields']['field_com_tagline']['id'] = 'field_com_tagline';
   $handler->display->display_options['fields']['field_com_tagline']['table'] = 'field_data_field_com_tagline';
   $handler->display->display_options['fields']['field_com_tagline']['field'] = 'field_com_tagline';
@@ -794,7 +794,7 @@ function rbv_networkadmin_views_default_views() {
     ),
     'trim_preserve_tags' => '',
   );
-  /* Field: Content: Mission */
+  /* Field: Nodo: Mission */
   $handler->display->display_options['fields']['field_com_mission']['id'] = 'field_com_mission';
   $handler->display->display_options['fields']['field_com_mission']['table'] = 'field_data_field_com_mission';
   $handler->display->display_options['fields']['field_com_mission']['field'] = 'field_com_mission';
@@ -813,7 +813,7 @@ function rbv_networkadmin_views_default_views() {
     ),
     'trim_preserve_tags' => '',
   );
-  /* Field: Content: Storia */
+  /* Field: Nodo: Storia */
   $handler->display->display_options['fields']['field_com_history']['id'] = 'field_com_history';
   $handler->display->display_options['fields']['field_com_history']['table'] = 'field_data_field_com_history';
   $handler->display->display_options['fields']['field_com_history']['field'] = 'field_com_history';
@@ -832,7 +832,7 @@ function rbv_networkadmin_views_default_views() {
     ),
     'trim_preserve_tags' => '',
   );
-  /* Field: Content: Pagina facebook */
+  /* Field: Nodo: Pagina facebook */
   $handler->display->display_options['fields']['field_com_ln_fb']['id'] = 'field_com_ln_fb';
   $handler->display->display_options['fields']['field_com_ln_fb']['table'] = 'field_data_field_com_ln_fb';
   $handler->display->display_options['fields']['field_com_ln_fb']['field'] = 'field_com_ln_fb';
@@ -868,7 +868,7 @@ function rbv_networkadmin_views_default_views() {
     t('Partecipano già'),
     t('RBV stats'),
     t('pane: partecipanti count'),
-    t('<span class="badge badge-participant" title="Totale organizzazioni partecipanti (iscritte a rbv)">[nid]</span> <a href="esplora?type%5B%5D=org">org. partecipanti</a>.'),
+    t('<span class="badge badge-org" title="Totale organizzazioni iscritte a rbv">[nid]</span> <a href="esplora?type%5B%5D=org">organizzazioni</a>.'),
     t('RBV count'),
     t('pane: adesioni data'),
     t('Data adesioni'),
@@ -980,7 +980,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['field'] = 'field_relpro_project_target_id';
   $handler->display->display_options['relationships']['field_relpro_project_target_id']['label'] = 'e referenced from field_relpro_project';
-  /* Field: Content: Soggetto */
+  /* Field: Nodo: Soggetto */
   $handler->display->display_options['fields']['field_rel_source']['id'] = 'field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['table'] = 'field_data_field_rel_source';
   $handler->display->display_options['fields']['field_rel_source']['field'] = 'field_rel_source';
@@ -994,7 +994,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'il giorno';
   $handler->display->display_options['fields']['created']['date_format'] = 'panopoly_day';
-  /* Field: Content: Organizzazione promotrice */
+  /* Field: Nodo: Organizzazione promotrice */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1004,7 +1004,7 @@ function rbv_networkadmin_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Field: Content: Progetto di riferimento */
+  /* Field: Nodo: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1012,7 +1012,7 @@ function rbv_networkadmin_views_default_views() {
   $handler->display->display_options['fields']['field_relpro_project']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Content: Tipo di collaborazione */
+  /* Field: Nodo: Tipo di collaborazione */
   $handler->display->display_options['fields']['field_rel_categories']['id'] = 'field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['table'] = 'field_data_field_rel_categories';
   $handler->display->display_options['fields']['field_rel_categories']['field'] = 'field_rel_categories';
