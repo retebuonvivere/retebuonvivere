@@ -11,6 +11,125 @@ function rbv_event_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'rbv_group_taxonomy';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'rbv_group_taxonomy';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Forum';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: OG membership: OG membership from Termine della tassonomia */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Campo: Termine della tassonomia: Nome */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Tutti';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
+  /* Filter criterion: Vocabolario della tassonomia: Nome ad uso interno */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'all' => 'all',
+    'forums' => 'forums',
+    'project_scopes' => 'project_scopes',
+    'membership_roles' => 'membership_roles',
+    'categories' => 'categories',
+    'tags' => 'tags',
+    'org_types' => 'org_types',
+    'relation_categories' => 'relation_categories',
+    'panopoly_categories' => 'panopoly_categories',
+  );
+  /* Filter criterion: OG membership: Group_type */
+  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
+  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
+  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['group_type']['value'] = array(
+    'node' => 'node',
+  );
+
+  /* Display: Pane: group forums */
+  $handler = $view->new_display('panel_pane', 'Pane: group forums', 'panel_pane_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Vocabolario della tassonomia: Nome ad uso interno */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'forums' => 'forums',
+  );
+  /* Filter criterion: OG membership: Group_type */
+  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
+  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
+  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['group_type']['value'] = array(
+    'node' => 'node',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'RBV group';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Group ID',
+    ),
+  );
+  $translatables['rbv_group_taxonomy'] = array(
+    t('Master'),
+    t('Forum'),
+    t('more'),
+    t('Apply'),
+    t('Ripristina'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from taxonomy_term'),
+    t('Tutti'),
+    t('Pane: group forums'),
+    t('RBV group'),
+  );
+  $export['rbv_group_taxonomy'] = $view;
+
+  $view = new view();
   $view->name = 'rbv_view_calendar';
   $view->description = '';
   $view->tag = 'Calendar, RBV';
@@ -35,7 +154,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['pager']['options']['date_id'] = 'month';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -44,7 +163,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Nodo: Quando */
+  /* Campo: Contenuto: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -61,7 +180,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Nodo: Indirizzo */
+  /* Campo: Contenuto: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -74,14 +193,14 @@ function rbv_event_views_default_views() {
       'address' => 'address',
     ),
   );
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -108,7 +227,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -124,14 +243,14 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -163,7 +282,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -218,7 +337,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -232,7 +351,7 @@ function rbv_event_views_default_views() {
 </ul>';
   $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Nodo: Quando */
+  /* Campo: Contenuto: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -249,7 +368,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Nodo: Indirizzo */
+  /* Campo: Contenuto: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -263,14 +382,14 @@ function rbv_event_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
+  /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -278,7 +397,7 @@ function rbv_event_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -307,7 +426,7 @@ function rbv_event_views_default_views() {
     'skip_blank_dates' => 1,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -316,7 +435,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Nodo: Quando */
+  /* Campo: Contenuto: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -333,7 +452,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Nodo: Indirizzo */
+  /* Campo: Contenuto: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -346,7 +465,7 @@ function rbv_event_views_default_views() {
       'address' => 'address',
     ),
   );
-  /* Field: Field: Descrizione */
+  /* Campo: Campo: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
@@ -354,7 +473,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['field_com_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -362,14 +481,14 @@ function rbv_event_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Date: Date (node) */
+  /* Filter criterion: Data: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -421,7 +540,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -436,14 +555,14 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Title */
+  /* Filter criterion: Contenuto: Titolo */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -499,7 +618,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -508,7 +627,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Nodo: Quando */
+  /* Campo: Contenuto: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -525,7 +644,7 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Nodo: Indirizzo */
+  /* Campo: Contenuto: Indirizzo */
   $handler->display->display_options['fields']['field_com_location']['id'] = 'field_com_location';
   $handler->display->display_options['fields']['field_com_location']['table'] = 'field_data_field_com_location';
   $handler->display->display_options['fields']['field_com_location']['field'] = 'field_com_location';
@@ -538,7 +657,7 @@ function rbv_event_views_default_views() {
       'address' => 'address',
     ),
   );
-  /* Field: Field: Descrizione */
+  /* Campo: Campo: Descrizione */
   $handler->display->display_options['fields']['field_com_description']['id'] = 'field_com_description';
   $handler->display->display_options['fields']['field_com_description']['table'] = 'field_data_field_com_description';
   $handler->display->display_options['fields']['field_com_description']['field'] = 'field_com_description';
@@ -560,7 +679,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -568,14 +687,14 @@ function rbv_event_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Date: Date (node) */
+  /* Filter criterion: Data: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -682,7 +801,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Contenuto: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
@@ -700,7 +819,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -763,7 +882,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -772,13 +891,13 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'panopoly_html_text';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Nodo: Quando */
+  /* Campo: Contenuto: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -791,19 +910,18 @@ function rbv_event_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Nodo: Settori */
+  /* Campo: Contenuto: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['label'] = '';
   $handler->display->display_options['fields']['field_com_categories']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
-  /* Field: Content: Path */
+  /* Campo: Contenuto: Percorso */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['label'] = 'Percorso';
-  /* Field: OG membership: Group ID */
+  /* Campo: OG membership: Group ID */
   $handler->display->display_options['fields']['gid']['id'] = 'gid';
   $handler->display->display_options['fields']['gid']['table'] = 'og_membership';
   $handler->display->display_options['fields']['gid']['field'] = 'gid';
@@ -811,7 +929,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['gid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -824,14 +942,14 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Date: Date (node) */
+  /* Filter criterion: Data: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -899,13 +1017,13 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Nodo: Quando */
+  /* Campo: Contenuto: Quando */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -918,7 +1036,7 @@ function rbv_event_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Nodo: Settori */
+  /* Campo: Contenuto: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
@@ -926,14 +1044,14 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['field_com_categories']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Nodo: Quando -  start date (field_event_date) */
+  /* Sort criterion: Contenuto: Quando -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -946,7 +1064,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -992,14 +1110,14 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'vmode_group_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Date - end date (field_com_date:value2) */
+  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1012,7 +1130,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1065,7 +1183,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Piè di pagina: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1078,7 +1196,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1088,7 +1206,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Nodo: Progetto */
+  /* Campo: Contenuto: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1101,14 +1219,14 @@ function rbv_event_views_default_views() {
     'links' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Date - end date (field_com_date:value2) */
+  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Contenuto: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -1120,12 +1238,12 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
-  /* Filter criterion: Content: Title */
+  /* Filter criterion: Contenuto: Titolo */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -1191,7 +1309,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['field'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['relationships']['reverse_field_rel_source_node']['label'] = 'referencing from field_rel_source';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1201,7 +1319,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>';
   $handler->display->display_options['fields']['title']['element_class'] = 'collab-link pull-right';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Nodo: Progetto */
+  /* Campo: Contenuto: Progetto */
   $handler->display->display_options['fields']['field_relpro_project']['id'] = 'field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['table'] = 'field_data_field_relpro_project';
   $handler->display->display_options['fields']['field_relpro_project']['field'] = 'field_relpro_project';
@@ -1214,14 +1332,14 @@ function rbv_event_views_default_views() {
     'links' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Date - end date (field_com_date:value2) */
+  /* Sort criterion: Campo: Date - end date (field_com_date:value2) */
   $handler->display->display_options['sorts']['field_com_date_value2']['id'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['table'] = 'field_data_field_com_date';
   $handler->display->display_options['sorts']['field_com_date_value2']['field'] = 'field_com_date_value2';
   $handler->display->display_options['sorts']['field_com_date_value2']['relationship'] = 'reverse_field_rel_source_node';
   $handler->display->display_options['sorts']['field_com_date_value2']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Contenuto: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -1233,12 +1351,12 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
-  /* Filter criterion: Content: Title */
+  /* Filter criterion: Contenuto: Titolo */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -1363,12 +1481,12 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Relationship: Content: Author */
+  /* Relationship: Contenuto: Autore */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['label'] = 'content author';
-  /* Relationship: Content: Taxonomy terms on node */
+  /* Relationship: Contenuto: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -1384,12 +1502,12 @@ function rbv_event_views_default_views() {
     'panopoly_categories' => 0,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Discussione';
-  /* Field: User: Name */
+  /* Campo: Utente: Nome */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -1398,7 +1516,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['text'] = '<br /> di [name] ';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
+  /* Campo: Contenuto: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1406,20 +1524,19 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['created']['alter']['text'] = '» [created]';
   $handler->display->display_options['fields']['created']['date_format'] = 'panopoly_time';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'panopoly_time';
-  /* Field: Nodo: Settori */
+  /* Campo: Contenuto: Settori */
   $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
   $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
-  /* Field: Content: New comments */
+  /* Campo: Contenuto: Nuovi commenti */
   $handler->display->display_options['fields']['new_comments']['id'] = 'new_comments';
   $handler->display->display_options['fields']['new_comments']['table'] = 'node';
   $handler->display->display_options['fields']['new_comments']['field'] = 'new_comments';
-  $handler->display->display_options['fields']['new_comments']['label'] = 'Nuovi commenti';
   $handler->display->display_options['fields']['new_comments']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['new_comments']['prefix'] = 'View';
-  $handler->display->display_options['fields']['new_comments']['suffix'] = 'new';
-  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['new_comments']['prefix'] = 'Visualizza';
+  $handler->display->display_options['fields']['new_comments']['suffix'] = 'nuovo';
+  /* Campo: Contenuto: Numero commenti */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
@@ -1428,27 +1545,27 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = '[comment_count]<br />[new_comments] ';
   $handler->display->display_options['fields']['comment_count']['empty'] = '0';
   $handler->display->display_options['fields']['comment_count']['empty_zero'] = TRUE;
-  /* Field: Content statistics: Total views */
+  /* Campo: Content statistics: Total views */
   $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
   $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['label'] = 'Views';
   $handler->display->display_options['fields']['totalcount']['empty'] = '0';
   $handler->display->display_options['fields']['totalcount']['empty_zero'] = TRUE;
-  /* Field: Content: Last comment author */
+  /* Campo: Contenuto: Last comment author */
   $handler->display->display_options['fields']['last_comment_name']['id'] = 'last_comment_name';
   $handler->display->display_options['fields']['last_comment_name']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['last_comment_name']['field'] = 'last_comment_name';
   $handler->display->display_options['fields']['last_comment_name']['label'] = 'Ultimo contenuto';
   $handler->display->display_options['fields']['last_comment_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['last_comment_name']['alter']['text'] = 'di [last_comment_name]';
-  /* Field: Content: Updated/commented date */
+  /* Campo: Contenuto: Updated/commented date */
   $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['date_format'] = 'panopoly_time';
   $handler->display->display_options['fields']['last_updated']['second_date_format'] = 'panopoly_time';
-  /* Field: Taxonomy term: Name */
+  /* Campo: Termine della tassonomia: Nome */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
@@ -1457,7 +1574,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['fields']['name_1']['link_to_taxonomy'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1470,7 +1587,7 @@ function rbv_event_views_default_views() {
   $handler->display->display_options['filters']['group_type']['value'] = array(
     'node' => 'node',
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Contenuto: Tipo */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1542,8 +1659,8 @@ function rbv_event_views_default_views() {
     t('» [created]'),
     t('Settori'),
     t('Nuovi commenti'),
-    t('View'),
-    t('new'),
+    t('Visualizza'),
+    t('nuovo'),
     t('Risposte'),
     t('[comment_count]<br />[new_comments] '),
     t('Views'),
