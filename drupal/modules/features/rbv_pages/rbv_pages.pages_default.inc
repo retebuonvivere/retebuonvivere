@@ -1600,6 +1600,169 @@ elenco',
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'rbv_group_forum';
+  $page->task = 'page';
+  $page->admin_title = 'rbv group forum';
+  $page->admin_description = '';
+  $page->path = 'node/%node/forum';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'org' => 'org',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'empty view',
+          'php' => '$vista = views_get_view_result(\'rbv_group_taxonomy\',\'panel_pane_1\',$contexts[\'argument_entity_id:node_1\']->data->nid);
+return empty($vista);',
+        ),
+        'not' => TRUE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'tab',
+    'title' => 'Discussioni',
+    'name' => 'navigation',
+    'weight' => '1',
+    'parent' => array(
+      'type' => 'tab',
+      'title' => 'Eventi',
+      'name' => 'navigation',
+      'weight' => '4',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Node: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_rbv_group_forum__panel_context_354fb601-567b-4f27-9e23-68eced8086b2';
+  $handler->task = 'page';
+  $handler->subtask = 'rbv_group_forum';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel group forum',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'organizzazioni
+%node
+discussioni',
+    'panels_breadcrumbs_paths' => 'organizzazioni
+%node:url
+%node:url/discussioni',
+    'panels_breadcrumbs_home' => 1,
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'radix_burr_flipped';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'e760bc41-21b9-4e8a-878a-61431d6f815b';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-4d1ce6ef-424a-4251-a8c8-fa4e99d46f66';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_view_group_content-panel_pane_7';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'view_settings' => 'rendered_entity',
+    'header_type' => 'none',
+    'view_mode' => 'vmode_group_content',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '4d1ce6ef-424a-4251-a8c8-fa4e99d46f66';
+  $display->content['new-4d1ce6ef-424a-4251-a8c8-fa4e99d46f66'] = $pane;
+  $display->panels['contentmain'][0] = 'new-4d1ce6ef-424a-4251-a8c8-fa4e99d46f66';
+  $pane = new stdClass();
+  $pane->pid = 'new-d61bc637-b15a-4556-8639-a6f020dd20e7';
+  $pane->panel = 'sidebar';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'rbv_group_taxonomy-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'full',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd61bc637-b15a-4556-8639-a6f020dd20e7';
+  $display->content['new-d61bc637-b15a-4556-8639-a6f020dd20e7'] = $pane;
+  $display->panels['sidebar'][0] = 'new-d61bc637-b15a-4556-8639-a6f020dd20e7';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['rbv_group_forum'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'rbv_group_own_proj_add';
   $page->task = 'page';
   $page->admin_title = 'rbv group own proj add';

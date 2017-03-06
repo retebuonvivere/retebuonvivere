@@ -5,6 +5,7 @@ package = RBV contents
 version = 7.x-1.6-pan
 project = rbv_event
 dependencies[] = addressfield
+dependencies[] = advanced_forum
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = date_ical

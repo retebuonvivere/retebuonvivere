@@ -1265,6 +1265,230 @@ function rbv_event_views_default_views() {
   );
   $handler->display->display_options['link_to_view'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: pane: discussions */
+  $handler = $view->new_display('panel_pane', 'pane: discussions', 'panel_pane_7');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Discussioni';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'forum_topic_list';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'name' => 'title',
+    'created' => 'title',
+    'field_com_categories' => 'field_com_categories',
+    'new_comments' => 'new_comments',
+    'comment_count' => 'comment_count',
+    'totalcount' => 'totalcount',
+    'last_comment_name' => 'last_comment_name',
+    'last_updated' => 'last_comment_name',
+    'name_1' => 'name_1',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_com_categories' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'new_comments' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'comment_count' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '<br />',
+      'empty_column' => 0,
+    ),
+    'totalcount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'last_comment_name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '<br />',
+      'empty_column' => 0,
+    ),
+    'last_updated' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: OG membership: OG membership from Nodo */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['label'] = 'content author';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'forum term';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'forums' => 'forums',
+    'project_scopes' => 0,
+    'membership_roles' => 0,
+    'categories' => 0,
+    'tags' => 0,
+    'org_types' => 0,
+    'relation_categories' => 0,
+    'panopoly_categories' => 0,
+  );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Discussione';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<br /> di [name] ';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['created']['alter']['text'] = '» [created]';
+  $handler->display->display_options['fields']['created']['date_format'] = 'panopoly_time';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'panopoly_time';
+  /* Field: Nodo: Settori */
+  $handler->display->display_options['fields']['field_com_categories']['id'] = 'field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['table'] = 'field_data_field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['field'] = 'field_com_categories';
+  $handler->display->display_options['fields']['field_com_categories']['delta_offset'] = '0';
+  /* Field: Content: New comments */
+  $handler->display->display_options['fields']['new_comments']['id'] = 'new_comments';
+  $handler->display->display_options['fields']['new_comments']['table'] = 'node';
+  $handler->display->display_options['fields']['new_comments']['field'] = 'new_comments';
+  $handler->display->display_options['fields']['new_comments']['label'] = 'Nuovi commenti';
+  $handler->display->display_options['fields']['new_comments']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['new_comments']['prefix'] = 'View';
+  $handler->display->display_options['fields']['new_comments']['suffix'] = 'new';
+  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = 'Risposte';
+  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['alter']['text'] = '[comment_count]<br />[new_comments] ';
+  $handler->display->display_options['fields']['comment_count']['empty'] = '0';
+  $handler->display->display_options['fields']['comment_count']['empty_zero'] = TRUE;
+  /* Field: Content statistics: Total views */
+  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['label'] = 'Views';
+  $handler->display->display_options['fields']['totalcount']['empty'] = '0';
+  $handler->display->display_options['fields']['totalcount']['empty_zero'] = TRUE;
+  /* Field: Content: Last comment author */
+  $handler->display->display_options['fields']['last_comment_name']['id'] = 'last_comment_name';
+  $handler->display->display_options['fields']['last_comment_name']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['last_comment_name']['field'] = 'last_comment_name';
+  $handler->display->display_options['fields']['last_comment_name']['label'] = 'Ultimo contenuto';
+  $handler->display->display_options['fields']['last_comment_name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['last_comment_name']['alter']['text'] = 'di [last_comment_name]';
+  /* Field: Content: Updated/commented date */
+  $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
+  $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
+  $handler->display->display_options['fields']['last_updated']['date_format'] = 'panopoly_time';
+  $handler->display->display_options['fields']['last_updated']['second_date_format'] = 'panopoly_time';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Forum';
+  $handler->display->display_options['fields']['name_1']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: OG membership: Group_type */
+  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
+  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
+  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['group_type']['value'] = array(
+    'node' => 'node',
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'forum' => 'forum',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'RBV group';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'OG membership: Group ID',
+    ),
+  );
   $translatables['rbv_view_group_content'] = array(
     t('Defaults'),
     t('more'),
@@ -1308,6 +1532,26 @@ function rbv_event_views_default_views() {
     t('<i class="fa fa-arrows-h fa-lg" title="Scheda della collaborazione"></i>'),
     t('pane: collab masonry'),
     t('successiva ›'),
+    t('pane: discussions'),
+    t('Discussioni'),
+    t('content author'),
+    t('forum term'),
+    t('Discussione'),
+    t('<br /> di [name] '),
+    t('Post date'),
+    t('» [created]'),
+    t('Settori'),
+    t('Nuovi commenti'),
+    t('View'),
+    t('new'),
+    t('Risposte'),
+    t('[comment_count]<br />[new_comments] '),
+    t('Views'),
+    t('Ultimo contenuto'),
+    t('di [last_comment_name]'),
+    t('Updated/commented date'),
+    t('Forum'),
+    t('RBV group'),
   );
   $export['rbv_view_group_content'] = $view;
 
