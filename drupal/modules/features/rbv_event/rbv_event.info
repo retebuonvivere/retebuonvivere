@@ -72,7 +72,6 @@ features[og_features_permission][] = node:org:update any event content
 features[og_features_permission][] = node:org:update field_event_date field
 features[og_features_permission][] = node:org:update own event content
 features[og_features_permission][] = node:org:view field_event_date field
-features[og_features_role][] = node:org:editor member
 features[panelizer_defaults][] = node:event:default
 features[panelizer_defaults][] = node:event:default:default
 features[panelizer_defaults][] = node:event:default:teaser
